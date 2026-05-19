@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaKit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-0.02em;}
+.logo-icon{width:32px;height:32px;background:#1c1c18;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:transparent;border:1px solid var(--border-s);color:var(--text);}
+.btn-ghost:hover{background:var(--bg2);}
+
+/* HERO */
+.hero{padding:90px 40px 70px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--pill-bg);color:var(--accent);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:600;letter-spacing:0.02em;margin-bottom:22px;}
+[data-theme="light"] .hero-eyebrow{color:#8f3718;}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;flex-shrink:0;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(38px,4.5vw,60px);line-height:1.07;letter-spacing:-0.02em;margin-bottom:18px;}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero p{font-size:16px;line-height:1.75;color:var(--muted);margin-bottom:28px;max-width:460px;}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:28px;margin-top:40px;padding-top:40px;border-top:1px solid var(--border);}
+.stat-num{font-size:26px;font-weight:700;letter-spacing:-0.03em;}
+.stat-label{font-size:12px;color:var(--muted);margin-top:2px;}
+
+/* HERO CARD */
+.hero-visual{position:relative;padding-top:24px;padding-bottom:24px;}
+.skill-demo-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;position:relative;overflow:hidden;}
+
+/* Floating badges */
+.float-badge{
+  position:absolute;background:var(--surface);
+  border:1px solid var(--border);border-radius:10px;
+  padding:9px 14px;font-size:12px;font-weight:500;
+  box-shadow:0 4px 16px rgba(0,0,0,0.14);
+  display:flex;align-items:center;gap:8px;white-space:nowrap;z-index:10;
+  transition:opacity .5s, transform .5s;
+}
+.float-badge.hidden-badge{opacity:0;transform:translateY(6px);}
+.float-badge.show-badge{opacity:1;transform:translateY(0);}
+.fb-slop{top:4px;right:16px;}
+.fb-trend{bottom:4px;right:16px;}
+.fb-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* Skill file logo */
+.sdc-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:10px;}
+.skill-logo-wrap{flex-shrink:0;width:72px;border-radius:8px;overflow:hidden;background:#fff;}
+.skill-logo-img{width:72px;height:auto;display:block;border:none;}
+.sdc-info{flex:1;display:flex;flex-direction:column;justify-content:space-between;min-height:72px;}
+.sdc-name{font-size:15px;font-weight:700;margin-bottom:3px;line-height:1.3;}
+.sdc-meta{font-size:11.5px;color:var(--muted);}
+.sdc-trend-badge{display:inline-flex;margin-top:8px;font-size:10px;font-weight:700;letter-spacing:0.08em;padding:4px 10px;border-radius:6px;background:var(--green-bg);color:var(--green-text);}
+
+/* Skill selector dots */
+.skill-dots{display:flex;gap:6px;justify-content:center;margin:10px 0 12px;}
+.skill-dot{width:6px;height:6px;border-radius:50%;background:var(--border-s);cursor:pointer;transition:all .3s;}
+.skill-dot.active{background:var(--accent);width:18px;border-radius:3px;}
+
+/* Chat bubble */
+.chat-bubble-wrap{margin-bottom:12px;}
+.chat-bubble{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:14px 14px 14px 4px;
+  padding:11px 14px;font-size:12px;line-height:1.5;
+  display:inline-block;max-width:100%;
+}
+.chat-cmd{color:var(--accent);font-weight:600;font-family:'Geist Mono',monospace;}
+[data-theme="light"] .chat-cmd{color:#b5451e;}
+.chat-text{color:var(--text);}
+
+/* Demo area — top: question/timeline swap, bottom: always-on output strip */
+.demo-body{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+/* Top slot: 200px fixed, shows Q1/Q2/Q3 then timeline */
+.demo-top{
+  height:200px;
+  position:relative;
+  overflow:hidden;
+  flex-shrink:0;
+}
+/* Single question slot — fills demo-top */
+.q-slot{
+  position:absolute;inset:0;
+  background:var(--surface2);border:1px solid var(--border-s);
+  border-radius:12px;
+  overflow:hidden;
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity .38s ease, transform .38s ease;
+  pointer-events:none;
+}
+.q-slot.active{opacity:1;transform:translateY(0);pointer-events:auto;}
+.q-slot.exit{opacity:0;transform:translateY(-10px);transition:opacity .25s ease, transform .25s ease;}
+.q-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 14px 0;
+}
+.q-title{font-size:13px;font-weight:600;}
+.q-count{font-size:11px;color:var(--muted);}
+.q-options{padding:8px 10px 10px;}
+.q-option{
+  display:flex;align-items:center;gap:10px;
+  padding:7px 10px;border-radius:8px;
+  font-size:12px;cursor:default;
+  border:1px solid transparent;margin-bottom:3px;
+}
+.q-option:last-child{margin-bottom:0;}
+.q-option.selected{background:var(--surface);border-color:var(--border-s);font-weight:600;}
+.q-num{
+  width:20px;height:20px;border-radius:6px;background:var(--surface);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;flex-shrink:0;border:1px solid var(--border);
+}
+.q-option.selected .q-num{background:var(--accent);color:#fff;border-color:var(--accent);}
+.q-arrow{margin-left:auto;color:var(--muted);font-size:12px;}
+/* Timeline slot — same position as q-slot */
+.tl-slot{
+  position:absolute;inset:0;
+  opacity:0;transform:translateY(14px);
+  transition:opacity .38s ease, transform .38s ease;
+  pointer-events:none;overflow:hidden;
+}
+.tl-slot.active{opacity:1;transform:translateY(0);pointer-events:auto;}
+/* Bottom: always-visible output strip */
+.demo-output-strip{
+  background:var(--code-bg);border-radius:8px;padding:12px;
+  font-size:11.5px;font-family:'Geist Mono',monospace;
+  color:var(--blue-text);line-height:1.8;
+  min-height:100px;
+  flex-shrink:0;
+}
+[data-theme="light"] .demo-output-strip{color:#1557b0;}
+
+/* Execution timeline */
+.sdc-timeline{background:var(--surface2);border-radius:10px;padding:12px;margin-bottom:8px;}
+.sdc-tl-label{font-size:10px;font-weight:700;letter-spacing:0.1em;color:var(--faint);text-transform:uppercase;margin-bottom:8px;}
+.tl-step{display:flex;align-items:flex-start;gap:10px;margin-bottom:7px;font-size:12px;}
+.tl-step:last-child{margin-bottom:0;}
+.tl-dot{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;margin-top:1px;transition:all .4s;}
+.tl-done{background:var(--green-bg);color:var(--green-text);}
+.tl-active{background:var(--pill-bg);color:var(--accent);animation:pulse 1.4s infinite;}
+.tl-wait{background:var(--border);color:var(--faint);}
+[data-theme="light"] .tl-wait{background:#e2e1dd;color:#545249;}
+.tl-text{font-weight:500;line-height:1.3;}
+.tl-sub{color:var(--muted);font-size:11px;margin-top:1px;}
+
+.out-line{opacity:0;transition:opacity .4s;}
+.out-line.vis{opacity:1;}
+.out-comment{color:var(--faint);}
+[data-theme="light"] .out-comment{color:var(--muted);}
+
+/* INSTALL SECTION */
+.install-section{padding:60px 40px;border-bottom:1px solid var(--border);}
+.install-inner{max-width:1200px;margin:0 auto;}
+.install-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:36px;}
+.install-visual{
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:14px;padding:24px;
+}
+.iv-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.iv-row:last-child{margin-bottom:0;}
+.iv-step-num{
+  width:28px;height:28px;border-radius:8px;
+  background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;flex-shrink:0;
+}
+.iv-step-text{font-size:13px;font-weight:500;}
+.iv-step-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.iv-divider{width:1px;height:16px;background:var(--border);margin-left:13px;}
+.free-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--green-bg);color:var(--green-text);
+  border-radius:99px;padding:6px 14px;font-size:12px;font-weight:600;
+  margin-top:18px;
+}
+
+/* HOW IT WORKS */
+.hiw-section{padding:70px 40px;background:var(--bg2);}
+.hiw-inner{max-width:1200px;margin:0 auto;}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+[data-theme="light"] .section-eyebrow{color:#b5451e;}
+.section-title{font-family:'Instrument Serif',serif;font-size:clamp(28px,3.5vw,42px);line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px;}
+.section-sub{font-size:15px;color:var(--muted);line-height:1.7;max-width:520px;}
+.hiw-cols{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:50px;align-items:start;}
+.hiw-step{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border);}
+.hiw-step:first-child{padding-top:0;}
+.hiw-step:last-child{border-bottom:none;}
+.hiw-num{font-family:'Geist Mono',monospace;font-size:13px;font-weight:700;color:var(--accent);width:28px;flex-shrink:0;padding-top:2px;}
+[data-theme="light"] .hiw-num{color:#b5451e;}
+.hiw-body h3{font-size:15px;font-weight:700;margin-bottom:4px;}
+.hiw-body p{font-size:13px;color:var(--muted);line-height:1.6;}
+.hiw-tag{display:inline-flex;margin-top:8px;font-size:10px;font-weight:700;letter-spacing:0.07em;padding:3px 10px;border-radius:99px;}
+.tag-dynamic{background:var(--pill-bg);color:var(--accent);}
+[data-theme="light"] .tag-dynamic{color:#8f3718;}
+.tag-always{background:var(--green-bg);color:var(--green-text);}
+.quality-panel{}
+.qp-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:12px;}
+.qp-card.accent-card{border-color:var(--accent);}
+.qp-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.qp-icon{font-size:20px;}
+.qp-title{font-size:14px;font-weight:700;}
+.qp-text{font-size:13px;color:var(--muted);line-height:1.6;}
+.qp-badge{display:inline-flex;margin-top:10px;font-size:10px;font-weight:700;letter-spacing:0.08em;padding:3px 10px;border-radius:99px;text-transform:uppercase;}
+[data-theme="light"] .qp-badge[style*="pill"]{color:#8f3718 !important;}
+
+/* SKILLS */
+.skills-section{padding:70px 40px;}
+.skills-inner{max-width:1200px;margin:0 auto;}
+.tab-bar{display:flex;gap:4px;padding:4px;background:var(--bg2);border-radius:10px;width:fit-content;margin-bottom:36px;}
+.tab-btn{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--muted);font-family:'Geist',sans-serif;transition:all .18s;}
+.tab-btn.active{background:var(--surface);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,0.1);}
+.tab-btn:hover:not(.active){color:var(--text);}
+.bundles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
+.bundle-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;}
+.bundle-card:hover{border-color:var(--border-s);transform:translateY(-2px);}
+.bc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.bc-dot{width:9px;height:9px;border-radius:50%;}
+.bc-save{font-size:10px;font-weight:700;letter-spacing:0.06em;padding:3px 9px;border-radius:99px;background:var(--green-bg);color:var(--green-text);}
+.bc-name{font-size:15px;font-weight:700;margin-bottom:3px;}
+.bc-count{font-size:12px;color:var(--muted);margin-bottom:12px;}
+.bc-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;flex:1;align-content:flex-start;}
+.bc-pill{font-size:11px;padding:3px 9px;border-radius:99px;background:var(--bg2);color:var(--muted);border:1px solid var(--border);}
+.bc-footer{display:flex;align-items:baseline;gap:8px;padding-top:14px;border-top:1px solid var(--border);}
+.bc-price{font-size:20px;font-weight:700;letter-spacing:-0.02em;}
+.bc-ind{font-size:12px;color:var(--muted);text-decoration:line-through;}
+.filter-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
+.fchip{font-size:12px;padding:6px 14px;border-radius:99px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-family:'Geist',sans-serif;transition:all .15s;}
+.fchip:hover,.fchip.on{border-color:var(--border-s);color:var(--text);background:var(--surface);}
+.tier-section{margin-bottom:36px;}
+.tier-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.tlabel{font-size:10px;font-weight:700;letter-spacing:0.1em;padding:4px 12px;border-radius:99px;text-transform:uppercase;}
+.tl1{background:rgba(222,115,86,0.12);color:var(--accent);}
+.tl2{background:var(--blue-bg);color:var(--blue-text);}
+.tl3{background:var(--green-bg);color:var(--green-text);}
+.tline{flex:1;height:1px;background:var(--border);}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;}
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:all .18s;}
+.skill-card:hover{border-color:var(--border-s);transform:translateY(-1px);}
+.sc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;}
+.sc-name{font-size:14px;font-weight:600;line-height:1.4;}
+.sc-buyer{font-size:11px;color:var(--muted);}
+.sc-bdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.sc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);}
+.sc-price{font-size:14px;font-weight:700;}
+.sc-cat{font-size:10px;padding:3px 8px;border-radius:6px;background:var(--bg2);color:var(--muted);}
+
+/* PROOF */
+.proof-section{padding:70px 40px;background:var(--bg2);}
+.proof-inner{max-width:1200px;margin:0 auto;}
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:40px;}
+.proof-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;}
+.pc-quote{font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;line-height:1.7;margin-bottom:18px;}
+.pc-author{display:flex;align-items:center;gap:10px;}
+.pc-av{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+[data-theme="light"] .pc-av{filter:saturate(1.2);}
+.pc-name{font-size:13px;font-weight:600;}
+.pc-role{font-size:11px;color:var(--muted);}
+
+/* ND RULES */
+.nd-section{padding:60px 40px;border-top:1px solid var(--border);}
+.nd-inner{max-width:1200px;margin:0 auto;}
+.nd-toggle{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;font-weight:600;color:var(--muted);user-select:none;}
+.nd-toggle:hover{color:var(--text);}
+.nd-chevron{font-size:12px;transition:transform .3s;}
+.nd-chevron.open{transform:rotate(180deg);}
+.nd-content{display:none;margin-top:32px;}
+.nd-content.open{display:block;}
+.nd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;}
+.nd-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;}
+.nd-label{font-family:'Geist Mono',monospace;font-size:10px;color:var(--accent);font-weight:700;letter-spacing:0.1em;margin-bottom:6px;}
+.nd-title{font-size:13px;font-weight:600;margin-bottom:4px;}
+.nd-text{font-size:11.5px;color:var(--muted);line-height:1.5;}
+
+/* CTA */
+.cta-section{padding:90px 40px;text-align:center;background:var(--bg2);}
+.cta-inner{max-width:560px;margin:0 auto;}
+.cta-section h2{font-family:'Instrument Serif',serif;font-size:clamp(34px,5vw,52px);line-height:1.1;letter-spacing:-0.02em;margin-bottom:14px;}
+.cta-section p{font-size:16px;color:var(--muted);margin-bottom:36px;line-height:1.7;}
+.cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.cta-note{font-size:12px;color:var(--faint);margin-top:14px;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.footer-left{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.65);align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:32px;max-width:500px;width:100%;position:relative;}
+.modal-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:7px;border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--muted);font-size:16px;display:flex;align-items:center;justify-content:center;}
+.modal-close:hover{color:var(--text);}
+.modal h3{font-size:19px;font-weight:700;margin-bottom:6px;}
+.modal-cat{font-size:12px;color:var(--muted);margin-bottom:18px;}
+.ms-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;}
+.ms-body{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.ms-pattern{background:var(--code-bg);border-radius:9px;padding:14px;font-size:12px;font-family:'Geist Mono',monospace;color:var(--text);line-height:1.7;white-space:pre-wrap;margin-bottom:20px;}
+.modal-footer{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--border);}
+.modal-price{font-size:22px;font-weight:700;}
+
+.anim{opacity:0;transform:translateY(20px);transition:opacity .55s,transform .55s;}
+.anim.in{opacity:1;transform:none;}
+/* Bundle modal skill rows */
+.bm-skill-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;border-radius:10px;
+  background:var(--surface2);border:1px solid var(--border);
+  gap:12px;
+}
+.bm-skill-name{font-size:13px;font-weight:600;}
+.bm-skill-meta{font-size:11px;color:var(--muted);}
+.bm-skill-price{font-size:13px;font-weight:700;flex-shrink:0;color:var(--muted);}
+
+@media(max-width:768px){
+  nav{padding:0 16px;}
+  .nav-links{display:none;}
+  .hero{grid-template-columns:1fr;padding:50px 16px 50px;gap:40px;}
+  .hiw-cols{grid-template-columns:1fr;}
+  .install-grid{grid-template-columns:1fr;}
+  section,.hiw-section,.skills-section,.proof-section,.nd-section,.cta-section,.install-section{padding:50px 16px;}
+  footer{padding:24px 16px;}
+  .float-badge{display:none;}
+  #vs-callout{padding:40px 16px;}
+  #vs-callout > div{padding:24px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">NovaKit</div>
+
+  <div class="nav-links">
+    <a href="#how-it-works">How it works</a>
+    <a href="#skills">Skills</a>
+    <a href="#proof">Reviews</a>
+    <a href="#install">Install</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><span id="theme-icon">☀️</span></button>
+    <a href="#skills" class="btn btn-primary">Browse Skills →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-eyebrow"><div class="live-dot"></div>Live research on every run · Never a stale output</div>
+    <h1>Skills that<br>research before<br>they <em>write.</em></h1>
+    <p style="font-size:13px;font-weight:600;letter-spacing:0.04em;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:8px;">
+      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" style="flex-shrink:0;opacity:0.85"><rect x="8.5" y="0" width="3" height="20" rx="1.5" fill="currentColor"/><rect x="0" y="8.5" width="20" height="3" rx="1.5" fill="currentColor"/><rect x="8.5" y="0" width="3" height="20" rx="1.5" fill="currentColor" transform="rotate(45 10 10)"/><rect x="0" y="8.5" width="20" height="3" rx="1.5" fill="currentColor" transform="rotate(45 10 10)"/></svg>
+      Built for Claude.&nbsp; Works from day one.
+    </p>
+    <p>Before writing a single word, every NovaKit skill checks what's actually working right now — on your platform, for your audience. Not a template. Not a guess. The output you get today would be different if you ran it next month, because what converts will have changed. And the skill will know.</p>
+    <div class="hero-ctas">
+      <a href="#skills" class="btn btn-primary">Explore Skills →</a>
+      <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">40+</div><div class="stat-label">Skills available</div></div>
+      <div><div class="stat-num">8</div><div class="stat-label">Bundles</div></div>
+      <div><div class="stat-num">$5</div><div class="stat-label">Any individual skill</div></div>
+    </div>
+  </div>
+
+  <!-- HERO CARD -->
+  <div class="hero-visual">
+    <div class="float-badge fb-slop hidden-badge" id="badge-slop" style="color:var(--green-text)">
+      <div class="fb-dot" style="background:var(--green-text)"></div>Anti-slop gate passed
+    </div>
+    <div class="float-badge fb-trend hidden-badge" id="badge-trend" style="color:var(--blue-text)">
+      <div class="fb-dot" style="background:var(--blue-text)"></div>Trend research: live
+    </div>
+
+    <div class="skill-demo-card">
+      <!-- Header: logo + name -->
+      <div class="sdc-header">
+        <div class="skill-logo-wrap"><img class="skill-logo-img" src="data:image/png;base64,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" alt="Claude Skill File" /></div>
+        <div class="sdc-info">
+          <div>
+            <div class="sdc-name" id="card-name">LinkedIn Post Engine</div>
+            <div class="sdc-meta" id="card-meta">Social · Creator Bundle · $9</div>
+          </div>
+          <div class="sdc-trend-badge" id="trend-badge-inner">TREND-VERIFIED</div>
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div class="skill-dots">
+        <div class="skill-dot active" onclick="manualSwitch(0)" id="dot0"></div>
+        <div class="skill-dot" onclick="manualSwitch(1)" id="dot1"></div>
+        <div class="skill-dot" onclick="manualSwitch(2)" id="dot2"></div>
+      </div>
+
+      <!-- Chat bubble trigger -->
+      <div class="chat-bubble-wrap" id="chat-wrap">
+        <div class="chat-bubble">
+          <span class="chat-cmd" id="chat-cmd">/linkedin-post-engine</span>
+          <span class="chat-text" id="chat-msg"> write me a LinkedIn post</span>
+        </div>
+      </div>
+
+      <!-- Demo body: top slot (Q/timeline swap) + always-on output strip below -->
+      <div class="demo-body">
+        <!-- TOP: question/timeline swap zone -->
+        <div class="demo-top">
+          <!-- Q slot — reused for all 3 questions -->
+          <div class="q-slot" id="q-slot">
+            <div class="q-header">
+              <div class="q-title" id="qt-active"></div>
+              <div class="q-count" id="qc-active"></div>
+            </div>
+            <div class="q-options" id="qo-active"></div>
+          </div>
+          <!-- Timeline slot — shown after questions -->
+          <div class="tl-slot" id="tl-slot">
+            <div class="sdc-timeline" id="exec-timeline">
+              <div class="sdc-tl-label">Skill execution loop</div>
+              <div class="tl-step"><div class="tl-dot tl-done">✓</div><div><div class="tl-text">Trigger received</div><div class="tl-sub" id="tl-trigger">topic: "AI replacing junior devs"</div></div></div>
+              <div class="tl-step"><div class="tl-dot tl-done">✓</div><div><div class="tl-text">Live trend research</div><div class="tl-sub" id="tl-research">LinkedIn algorithm · May 2026 patterns fetched</div></div></div>
+              <div class="tl-step"><div class="tl-dot tl-done">✓</div><div><div class="tl-text">3 questions answered</div><div class="tl-sub" id="tl-q">post type, persona, industry locked</div></div></div>
+              <div class="tl-step"><div class="tl-dot tl-active" id="s3">◉</div><div><div class="tl-text">Anti-slop quality gate</div><div class="tl-sub" id="tl-gate">✓ 15/15 checks passed</div></div></div>
+              <div class="tl-step"><div class="tl-dot tl-wait" id="s4">→</div><div><div class="tl-text" id="tl-deliver-text">Delivering output</div><div class="tl-sub" id="tl-deliver">hook + body + CTA, trend-stamped</div></div></div>
+            </div>
+          </div>
+        </div>
+        <!-- BOTTOM: output strip — always visible, blank until skill loop runs -->
+        <div class="demo-output-strip" id="output-area">
+          <span class="out-line out-comment vis" id="ol0">// output preview</span><br>
+          <span class="out-line" id="ol1"></span><br>
+          <span class="out-line" id="ol2"></span><br>
+          <span class="out-line" id="ol3"></span><br>
+          <span class="out-line" id="ol4"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- DIFFERENCE STRIP -->
+<section style="padding:0;border-bottom:1px solid var(--border);">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-top:1px solid var(--border);">
+
+    <div style="padding:28px 32px;border-right:1px solid var(--border);">
+      <div style="font-size:22px;margin-bottom:10px;">🔍</div>
+      <div style="font-size:14px;font-weight:700;margin-bottom:6px;">4 research checks before it writes</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.6;">Hook formats trending now. Optimal length for your platform. What topics are oversaturated. Which CTAs are actually getting responses. All checked. Every single run.</div>
+    </div>
+
+    <div style="padding:28px 32px;border-right:1px solid var(--border);">
+      <div style="font-size:22px;margin-bottom:10px;">✂️</div>
+      <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Skip the editing step entirely</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.6;">Most AI outputs need 20 minutes of fixing before they're usable. NovaKit skills check their own work first. Weak opening? Rewritten. No clear ending? Rewritten. You get the finished version.</div>
+    </div>
+
+    <div style="padding:28px 32px;border-right:1px solid var(--border);">
+      <div style="font-size:22px;margin-bottom:10px;">📈</div>
+      <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Gets better the more you use it</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.6;">The skill quietly scores its own outputs and adjusts over time. The tenth time you use it, it's sharper than the first. No updates needed. It just quietly improves in the background.</div>
+    </div>
+
+    <div style="padding:28px 32px;">
+      <div style="font-size:22px;margin-bottom:10px;">🔄</div>
+      <div style="font-size:14px;font-weight:700;margin-bottom:6px;">Same input. Always a fresh output.</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.6;">Run the same skill on the same topic today and in three months. You'll get two completely different results — because the skill researches what's working <em>now</em>, not what worked when it was built.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INSTALL SECTION -->
+<section class="install-section" id="install">
+  <div class="install-inner">
+    <div class="section-eyebrow anim">Getting started</div>
+    <h2 class="section-title anim">Works with your <em style="font-style:italic;color:var(--accent)">free</em> Claude account.<br>Up and running in 60 seconds.</h2>
+    <div class="install-grid anim">
+      <div>
+        <p style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:20px;">Download a skill file. Open Claude. Upload it once. It lives in your sidebar from then on, ready whenever you need it.</p>
+        <p style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:20px;">No code. No technical setup. If you can attach a file to an email, you can do this.</p>
+        <div class="free-pill">✓ Free Claude plan fully supported · Pro unlocks longer outputs</div>
+      </div>
+      <div class="install-visual">
+        <div class="iv-row">
+          <div class="iv-step-num">1</div>
+          <div><div class="iv-step-text">Download your skill file</div><div class="iv-step-sub">A .skill file lands in your Downloads folder</div></div>
+        </div>
+        <div class="iv-divider"></div>
+        <div class="iv-row">
+          <div class="iv-step-num">2</div>
+          <div><div class="iv-step-text">Open Claude → click Customize</div><div class="iv-step-sub">Find it in the left sidebar — works on claude.ai and the desktop app</div></div>
+        </div>
+        <div class="iv-divider"></div>
+        <div class="iv-row">
+          <div class="iv-step-num">3</div>
+          <div><div class="iv-step-text">Skills → + → Create skill → Upload a skill</div><div class="iv-step-sub">Drag and drop or browse — takes 5 seconds</div></div>
+        </div>
+        <div class="iv-divider"></div>
+        <div class="iv-row">
+          <div class="iv-step-num">4</div>
+          <div><div class="iv-step-text">Type / and pick your skill</div><div class="iv-step-sub">It appears in your slash-command list immediately</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="hiw-section" id="how-it-works">
+  <div class="hiw-inner">
+    <div class="section-eyebrow anim">How every skill works</div>
+    <h2 class="section-title anim">Same loop. <em style="font-style:italic;color:var(--accent)">Every</em> skill. Always.</h2>
+    <p class="section-sub anim">Pitch deck, resume, product listing, social post. Every NovaKit skill runs the same five steps. Every time. No exceptions.</p>
+    <div class="hiw-cols anim">
+      <div>
+        <div class="hiw-step">
+          <div class="hiw-num">01</div>
+          <div class="hiw-body"><h3>You tell it what you need</h3><p>Type a topic, a product, a job title. Whatever you're working on. Plain English. No setup, no prompting tricks.</p></div>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-num">02</div>
+          <div class="hiw-body"><h3>It does 4 live research checks</h3><p>Before writing anything, the skill checks: what hook formats are landing right now, what length is getting read in full, what topics are already oversaturated, and which CTAs are driving action. Not from six months ago. Right now.</p><span class="hiw-tag tag-dynamic">Live research · every run</span></div>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-num">03</div>
+          <div class="hiw-body"><h3>It asks you 3 quick questions</h3><p>Who's it for, what's the goal, where does it go. Thirty seconds. That's what stops it from writing something generic.</p></div>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-num">04</div>
+          <div class="hiw-body"><h3>It checks itself before sending</h3><p>A quality check runs automatically before you see anything. Weak opening? Rewritten. No clear action? Rewritten. You only ever see the good version.</p><span class="hiw-tag tag-always">Always runs · You never see the bad draft</span></div>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-num">05</div>
+          <div class="hiw-body"><h3>Ready to use, straight away</h3><p>What comes out is complete. Not a rough draft you need to fix. Copy it, post it, send it. Every output tells you when the research was done so you know exactly how fresh it is.</p></div>
+        </div>
+      </div>
+      <div class="quality-panel">
+        <div class="qp-card accent-card">
+          <div class="qp-top"><div class="qp-icon">🛡️</div><div class="qp-title">Anti-Slop Quality Gate</div></div>
+          <div class="qp-text">Before you see anything, the skill checks its own work. Bad opening line? Rewritten. No clear next step? Rewritten. You always get the fixed version, never the rough one.</div>
+          <span class="qp-badge" style="background:var(--pill-bg);color:var(--accent)">NON-NEGOTIABLE</span>
+        </div>
+        <div class="qp-card">
+          <div class="qp-top"><div class="qp-icon">🔁</div><div class="qp-title">Silent Auto-Improve</div></div>
+          <div class="qp-text">Run a skill ten times and the tenth output will be noticeably sharper than the first. It tracks which outputs hit the mark and quietly adjusts. You don't do anything. It happens on its own.</div>
+          <span class="qp-badge" style="background:var(--green-bg);color:var(--green-text)">BUILT-IN</span>
+        </div>
+        <div class="qp-card">
+          <div class="qp-top"><div class="qp-icon">📡</div><div class="qp-title">Trend Verification Stamp</div></div>
+          <div class="qp-text">Every output is stamped with when the research happened. Run the same skill today and again next year and you'll get two completely different results. Not because the skill changed, but because what works will have changed. It always knows the difference.</div>
+          <span class="qp-badge" style="background:var(--blue-bg);color:var(--blue-text)">TRANSPARENT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="skills-inner">
+    <div class="section-eyebrow anim">Skill catalogue</div>
+    <h2 class="section-title anim">Pick a bundle or go <em style="font-style:italic;color:var(--accent)">à la carte.</em></h2>
+    <p class="section-sub anim" style="margin-bottom:32px">Every skill $5. Starter bundle $9. All 28 skills for $79, saving 45%.</p>
+    <div class="tab-bar anim">
+      <button class="tab-btn active" onclick="showTab('bundles',this)">Bundles</button>
+      <button class="tab-btn" onclick="showTab('individual',this)">Individual Skills</button>
+    </div>
+    <div id="tab-bundles"><div class="bundles-grid anim" id="bundles-grid"></div></div>
+    <div id="tab-individual" style="display:none">
+      <div class="filter-bar anim">
+        <button class="fchip on" onclick="filterTier('all',this)">All skills</button>
+        <button class="fchip" onclick="filterTier('content',this)">Content & Social</button>
+        <button class="fchip" onclick="filterTier('business',this)">Business & Career</button>
+        <button class="fchip" onclick="filterTier('image',this)">Image & Creative</button>
+        <button class="fchip" onclick="filterTier('everyday',this)">Everyday</button>
+      </div>
+      <div id="skills-list"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof-section" id="proof">
+  <div class="proof-inner">
+    <div class="section-eyebrow anim">What people are saying</div>
+    <h2 class="section-title anim">Outputs that <em style="font-style:italic;color:var(--accent)">get used.</em></h2>
+    <p class="section-sub anim" style="margin-bottom:40px;">Not screenshots of prompts. Results from people who bought, installed, and ran the skills.</p>
+    <div class="proof-grid anim">
+      <div class="proof-card">
+        <div class="pc-quote">"Bought the Creator bundle mostly for the LinkedIn skill. Used it a few weeks apart on literally the same topic and the posts came out completely different. Both performed well. I didn't change anything, the skill just knew what was landing that week. Kinda wild honestly."</div>
+        <div class="pc-author"><div class="pc-av" style="background:var(--pill-bg);color:var(--accent)">JM</div><div><div class="pc-name">Jamie M.</div><div class="pc-role">Freelance content strategist</div></div></div>
+      </div>
+      <div class="proof-card">
+        <div class="pc-quote">"Was putting together a deck for a Series A and tried the Founder bundle on a whim. The pitch deck skill asked me 3 questions and then built out a narrative I genuinely wouldn't have structured that way myself. Got two investor calls from a cold outreach batch I ran the same day using the other skill in the bundle. Not bad for $19."</div>
+        <div class="pc-author"><div class="pc-av" style="background:var(--green-bg);color:var(--green-text)">SR</div><div><div class="pc-name">Sam R.</div><div class="pc-role">Co-founder, B2B SaaS</div></div></div>
+      </div>
+      <div class="proof-card">
+        <div class="pc-quote">"Honestly I bought the $9 starter just to test it, wasn't expecting much. First output from the LinkedIn skill was better than stuff I've spent an hour writing. The cold outreach one got a reply rate I've never hit before. I've since bought two more bundles, its just become part of how I work now."</div>
+        <div class="pc-author"><div class="pc-av" style="background:var(--blue-bg);color:var(--blue-text)">NK</div><div><div class="pc-name">Nadia K.</div><div class="pc-role">Independent consultant</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- VS CALLOUT -->
+<section style="padding:60px 40px;background:var(--bg);">
+  <div style="max-width:720px;margin:0 auto;background:var(--surface);border:1px solid var(--border-s);border-radius:16px;padding:36px 40px;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Wait — can't I just use Claude directly?</div>
+    <h3 style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1.2;letter-spacing:-0.02em;margin-bottom:16px;">Yes. But you'd be starting from scratch every time.</h3>
+    <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px;">Claude is incredibly capable. But when you type a request into Claude directly, it doesn't know what's trending on LinkedIn this week, it doesn't ask the right narrowing questions, it doesn't check if the opening is weak before showing you the output, and it starts from zero every single time you use it.</p>
+    <p style="font-size:15px;color:var(--muted);line-height:1.8;">A NovaKit skill is Claude with a professional framework already built in. The research, the questions, the quality check, the improvement loop — all of that happens automatically, before you see anything. You get Claude's intelligence and a specialist's structure, every time.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner anim">
+    <h2>Your first great output<br>is <em style="font-style:italic;color:var(--accent)">one skill away.</em></h2>
+    <p>Try the Starter bundle for $9. Three skills, live research, quality checked. If it doesn't produce something better than what you'd write yourself, you'll know within ten minutes.</p>
+    <div class="cta-btns">
+      <a href="#skills" class="btn btn-primary" style="font-size:16px;padding:12px 28px">Get the Starter Bundle — $9 →</a>
+      <a href="#skills" class="btn btn-ghost" style="font-size:16px;padding:12px 28px">See all skills</a>
+    </div>
+    <p style="font-size:12px;color:var(--faint);margin-top:14px;">Free Claude account works · Instant download · No subscription</p>
+    <div style="display:flex;align-items:center;gap:8px;justify-content:center;margin-top:16px;padding:12px 20px;border-radius:10px;background:var(--green-bg);width:fit-content;margin-left:auto;margin-right:auto;">
+      <span style="font-size:16px;">🛡️</span>
+      <span style="font-size:13px;font-weight:600;color:var(--green-text);">7-day money back guarantee.</span>
+      <span style="font-size:13px;color:var(--muted);">Not what you expected? Email us for a full refund. No questions.</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="#how-it-works">How it works</a>
+    <a href="#skills">Skills</a>
+    <a href="#proof">Reviews</a>
+    <a href="#install">Install</a>
+  </div>
+</footer>
+
+<!-- BUNDLE MODAL -->
+<div class="modal-overlay" id="bundleModal" onclick="closeBundleModal(event)">
+  <div class="modal" style="max-width:580px;">
+    <button class="modal-close" onclick="closeBundleModalDirect()">✕</button>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;">
+      <div id="bm-dot" style="width:12px;height:12px;border-radius:50%;flex-shrink:0;"></div>
+      <h3 id="bm-name" style="margin-bottom:0;"></h3>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;">
+      <div id="bm-price" style="font-size:22px;font-weight:700;letter-spacing:-0.02em;"></div>
+      <div id="bm-save" style="font-size:11px;font-weight:700;letter-spacing:0.06em;padding:3px 10px;border-radius:99px;background:var(--green-bg);color:var(--green-text);"></div>
+      <div id="bm-ind" style="font-size:12px;color:var(--muted);text-decoration:line-through;"></div>
+    </div>
+    <div class="ms-label" style="margin-bottom:12px;">Skills included</div>
+    <div id="bm-skills" style="display:flex;flex-direction:column;gap:8px;"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-top:20px;margin-top:16px;border-top:1px solid var(--border);">
+      <div style="font-size:12px;color:var(--muted);">All skills included · Instant delivery · 7-day refund</div>
+      <a href="#" class="btn btn-primary" onclick="closeBundleModalDirect()">Get this bundle →</a>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL MODAL -->
+<div class="modal-overlay" id="skillModal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <h3 id="m-name"></h3>
+    <div class="modal-cat" id="m-cat"></div>
+    <div class="ms-label">Target buyer</div><div class="ms-body" id="m-buyer"></div>
+    <div class="ms-label">What you get</div>
+    <div class="ms-body" id="m-pattern" style="font-size:13px;color:var(--muted);"></div>
+    <div style="font-size:11px;color:var(--green-text);margin-bottom:12px;display:flex;align-items:center;gap:6px;">🛡️ 7-day money back guarantee · no questions asked</div>
+    <div class="modal-footer"><div class="modal-price" id="m-price"></div><a href="#skills" class="btn btn-primary" onclick="closeModalDirect()">Get this skill →</a></div>
+  </div>
+</div>
+
+<script>
+// ── CARD DATA ──
+const cardSkills = [
+  {
+    name:'LinkedIn Post Engine', meta:'Social · Creator Bundle · $5',
+    cmd:'/linkedin-post-engine', msg:' write me a LinkedIn post',
+    questions:[
+      {title:'Tell me about your topic', count:'1 of 3', opts:['I have a specific idea','Give me a trending angle','Based on my niche','Surprise me'], sel:0},
+      {title:'Who should this reach?', count:'2 of 3', opts:['My professional network','Decision makers','Broad audience','Niche community'], sel:0},
+      {title:'What\'s the goal?', count:'3 of 3', opts:['Build credibility','Drive engagement','Generate leads','Share a perspective'], sel:2}
+    ],
+    trigger:'topic: "AI is making juniors irrelevant"',
+    research:'LinkedIn feed patterns · top hooks this week fetched',
+    q:'post type, audience seniority, goal locked',
+    deliver:'hook + body + CTA, trend-stamped',
+    lines:['Hook: "Nobody\'s replacing senior devs."','Body: "Juniors aren\'t losing to AI — they\'re losing to seniors who use AI well. The gap isn\'t skill, it\'s leverage."','CTA: "Which side of that line are you on? ↓"','Trend-stamp: LinkedIn · current ✓']
+  },
+  {
+    name:'Cold Outreach Email', meta:'Sales · Founder Bundle · $5',
+    cmd:'/cold-outreach-email', msg:' write a cold outreach email',
+    questions:[
+      {title:'Who are you reaching out to?', count:'1 of 3', opts:['Potential client','Investor','Hiring manager','Partnership contact'], sel:0},
+      {title:'What\'s your opener?', count:'2 of 3', opts:['Lead with a result','Reference their work','Ask a sharp question','Keep it ultra-short'], sel:2},
+      {title:'What\'s the one ask?', count:'3 of 3', opts:['15-minute call','Reply with feedback','Intro to someone','Just a yes or no'], sel:0}
+    ],
+    trigger:'target: "Head of Growth at B2B SaaS"',
+    research:'Cold email reply rates · current best formats fetched',
+    q:'target role, opener style, single ask locked',
+    deliver:'subject line + 4-line email + follow-up',
+    lines:['Subject: "Quick question about your Q3 pipeline"','Line 1: "Saw you mentioned outbound reply rates dropping. Ours went up 34% last quarter using one change."','Ask: "Worth a 12-minute call this week?"','Trend-stamp: Cold email · current ✓']
+  },
+  {
+    name:'Pitch Deck Narrative', meta:'Business · Founder Bundle · $9',
+    cmd:'/pitch-deck-narrative', msg:' write my pitch deck narrative',
+    questions:[
+      {title:'What stage are you at?', count:'1 of 3', opts:['Pre-seed / idea stage','Seed round','Series A','Raising growth capital'], sel:1},
+      {title:'Who\'s in the room?', count:'2 of 3', opts:['Angel investors','VC fund','Corporate partner','Accelerator panel'], sel:0},
+      {title:'What\'s your strongest card?', count:'3 of 3', opts:['Traction and numbers','Team and background','Market size','Unique insight'], sel:0}
+    ],
+    trigger:'startup: "AI scheduling tool for clinics"',
+    research:'VC deck patterns · what\'s getting funded now fetched',
+    q:'stage, audience type, strongest proof point locked',
+    deliver:'10-slide narrative arc, investor-language ready',
+    lines:['Slide 1: "Every clinic loses 11 hrs/week to no-shows. We fixed it."','Problem: "Manual scheduling costs US clinics $14B/yr in lost appointments."','Traction: "47 clinics. $28k MRR. 3 months post-launch."','Trend-stamp: Seed decks · current ✓']
+  }
+];
+
+// ── STATE ──
+let currentSkill = 0;
+let animPhase = 0;
+let animTimer = null;
+
+// Phase map:
+// 0 = show Q1, 1 = show Q2 (hide Q1), 2 = show Q3 (hide Q2),
+// 3 = hide Q3, show timeline+output slot, show trend badge
+// 4 = gate passes, output opens
+// 5-8 = output lines appear one by one
+// 9 = show anti-slop badge, pause, then next skill
+
+const DELAYS = [2400, 2200, 2200, 800, 900, 750, 750, 750, 750, 3200];
+let typeTimer = null;
+function typeWriter(elId, text, i, speed, onDone) {
+  const el = document.getElementById(elId);
+  if(!el) return;
+  if(i < text.length) {
+    el.textContent += text.charAt(i);
+    typeTimer = setTimeout(() => typeWriter(elId, text, i+1, speed, onDone), speed);
+  } else if(onDone) {
+    onDone();
+  }
+}
+
+function showQSlot(qi) {
+  const slot = document.getElementById('q-slot');
+  const s = cardSkills[currentSkill];
+  const q = s.questions[qi];
+  // Update content
+  document.getElementById('qt-active').textContent = q.title;
+  document.getElementById('qc-active').textContent = q.count;
+  document.getElementById('qo-active').innerHTML = q.opts.map((opt,oi) =>
+    '<div class="q-option' + (oi===q.sel?' selected':'') + '">' +
+      '<div class="q-num">' + (oi+1) + '</div>' +
+      '<div>' + opt + '</div>' +
+      (oi===q.sel ? '<div class="q-arrow">→</div>' : '') +
+    '</div>'
+  ).join('');
+  // Animate in
+  slot.classList.remove('exit');
+  slot.classList.add('active');
+}
+
+function hideQSlot(cb) {
+  const slot = document.getElementById('q-slot');
+  slot.classList.add('exit');
+  slot.classList.remove('active');
+  setTimeout(cb, 320);
+}
+
+function showTLSlot() {
+  document.getElementById('tl-slot').classList.add('active');
+  document.getElementById('badge-trend').classList.remove('hidden-badge');
+  document.getElementById('badge-trend').classList.add('show-badge');
+}
+
+function clearCard() {
+  clearTimeout(typeTimer);
+  document.getElementById('chat-msg').textContent = '';
+  // Hide q-slot
+  const qslot = document.getElementById('q-slot');
+  qslot.classList.remove('active','exit');
+  // Hide tl-slot
+  document.getElementById('tl-slot').classList.remove('active');
+  // Hide badges
+  document.getElementById('badge-slop').className = 'float-badge fb-slop hidden-badge';
+  document.getElementById('badge-trend').className = 'float-badge fb-trend hidden-badge';
+  // Clear output lines (strip stays visible but blank)
+  [1,2,3,4].forEach(i => {
+    const el = document.getElementById('ol'+i);
+    el.classList.remove('vis');
+    el.textContent = '';
+  });
+  // Reset tl dots
+  document.getElementById('s3').className = 'tl-dot tl-active';
+  document.getElementById('s4').className = 'tl-dot tl-wait';
+  document.getElementById('tl-deliver-text').textContent = 'Delivering output';
+}
+
+function applySkillMeta(idx) {
+  const s = cardSkills[idx];
+  document.getElementById('card-name').textContent = s.name;
+  document.getElementById('card-meta').textContent = s.meta;
+  document.getElementById('chat-cmd').textContent = s.cmd;
+  document.getElementById('chat-msg').textContent = '';
+  // typewriter starts after a short delay so cmd is visible first
+  clearTimeout(typeTimer);
+  typeTimer = setTimeout(() => typeWriter('chat-msg', s.msg, 0, 38, () => scheduleNext(400)), 400);
+  document.getElementById('tl-trigger').textContent = s.trigger;
+  document.getElementById('tl-research').textContent = s.research;
+  document.getElementById('tl-q').textContent = s.q;
+  document.getElementById('tl-deliver').textContent = s.deliver;
+  [1,2,3,4].forEach((id,i) => {
+    document.getElementById('ol'+id).textContent = s.lines[i] || '';
+  });
+  [0,1,2].forEach(i => {
+    document.getElementById('dot'+i).classList.toggle('active', i===idx);
+  });
+}
+
+function runPhase() {
+  if(animPhase === 0) {
+    // Show Q1
+    showQSlot(0);
+    animPhase = 1;
+    scheduleNext(DELAYS[0]);
+  } else if(animPhase === 1) {
+    // Swap Q1 → Q2
+    hideQSlot(() => { showQSlot(1); });
+    animPhase = 2;
+    scheduleNext(DELAYS[1]);
+  } else if(animPhase === 2) {
+    // Swap Q2 → Q3
+    hideQSlot(() => { showQSlot(2); });
+    animPhase = 3;
+    scheduleNext(DELAYS[2]);
+  } else if(animPhase === 3) {
+    // Hide Q3, show timeline slot
+    hideQSlot(() => { showTLSlot(); });
+    animPhase = 4;
+    scheduleNext(DELAYS[3]);
+  } else if(animPhase === 4) {
+    // Gate passes — output strip is already visible, just start typing lines
+    document.getElementById('s3').className = 'tl-dot tl-done';
+    document.getElementById('s4').className = 'tl-dot tl-active';
+    document.getElementById('tl-deliver-text').textContent = 'Delivering…';
+    animPhase = 5;
+    scheduleNext(DELAYS[4]);
+  } else if(animPhase >= 5 && animPhase <= 8) {
+    const lineIdx = animPhase - 4;
+    document.getElementById('ol'+lineIdx).classList.add('vis');
+    animPhase++;
+    scheduleNext(DELAYS[5]);
+  } else if(animPhase === 9) {
+    // Delivery complete
+    document.getElementById('s4').className = 'tl-dot tl-done';
+    document.getElementById('tl-deliver-text').textContent = 'Delivered ✓';
+    document.getElementById('badge-slop').classList.remove('hidden-badge');
+    document.getElementById('badge-slop').classList.add('show-badge');
+    animPhase = 10;
+    scheduleNext(DELAYS[9]);
+  } else {
+    // Next skill
+    switchSkill((currentSkill + 1) % 3);
+  }
+}
+
+function scheduleNext(delay) {
+  clearTimeout(animTimer);
+  animTimer = setTimeout(runPhase, delay);
+}
+
+function switchSkill(idx) {
+  currentSkill = idx;
+  animPhase = 0;
+  clearTimeout(animTimer);
+  clearCard();
+  applySkillMeta(idx);
+  // Do NOT call scheduleNext here — typeWriter fires it when typing is done
+}
+
+function manualSwitch(idx) { switchSkill(idx); }
+
+// init — typeWriter's onDone callback fires scheduleNext, so no manual call needed
+applySkillMeta(0);
+
+// ── THEME ──
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+
+// ── TABS ──
+function showTab(tab,el){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-bundles').style.display=tab==='bundles'?'':'none';
+  document.getElementById('tab-individual').style.display=tab==='individual'?'':'none';
+}
+
+// ── ND ──
+function toggleND(){
+  const c=document.getElementById('nd-content');
+  const ch=document.getElementById('nd-chevron');
+  const open=c.classList.toggle('open');
+  ch.classList.toggle('open',open);
+}
+
+// ── DATA ──
+const bundles={
+  starter:  {color:'#DE7356',name:'Starter',  price:'$9',  save:'Save 40%',ind:'$15',  skills:['LinkedIn post engine','Cold outreach email','Social content engine']},
+  creator:  {color:'#a78bfa',name:'Creator',  price:'$19', save:'Save 37%',ind:'$30',  skills:['LinkedIn post engine','SEO blog post brief','Social content engine','YouTube thumbnail prompt','Email newsletter engine','Twitter / X thread engine']},
+  founder:  {color:'#34d399',name:'Founder',  price:'$19', save:'Save 44%',ind:'$34',  skills:['Pitch deck narrative','Cold outreach email','Business plan','Investor update email','Job description writer','Sales page / landing page copy']},
+  marketing:{color:'#f472b6',name:'Marketing',price:'$19', save:'Save 24%',ind:'$25',  skills:['Brand & marketing copy','Sales page / landing page copy','Product photography prompt','Content calendar','PR press release']},
+  student:  {color:'#60a5fa',name:'Student',  price:'$19', save:'Save 24%',ind:'$25',  skills:['Resume & CV builder','Cover letter writer','Course & curriculum builder','Twitter / X thread engine','Short story prompt']},
+  realtor:  {color:'#fbbf24',name:'Realtor',  price:'$19', save:'Save 24%',ind:'$25',  skills:['Real estate listing copy','Product photography prompt','Cold outreach email','Social content engine','Content calendar']},
+  events:   {color:'#f87171',name:'Events',   price:'$19', save:'Save 24%',ind:'$25',  skills:['Wedding vows','Social content engine','Email newsletter engine','Menu description copy','Short story prompt']},
+  allaccess:{color:'#DE7356',name:'All Access',price:'$79',save:'Save 45%',ind:'$144', skills:['LinkedIn post engine','SEO blog post brief','Social content engine','YouTube thumbnail prompt','Email newsletter engine','Twitter / X thread engine','Pitch deck narrative','Cold outreach email','Business plan','Investor update email','Job description writer','Sales page / landing page copy','Brand & marketing copy','Product photography prompt','Content calendar','PR press release','Resume & CV builder','Cover letter writer','Course & curriculum builder','Short story prompt','Real estate listing copy','Performance review writer','Health & wellness plan','Menu description copy','Travel itinerary planner','Wedding vows','Grant & proposal writing','Lesson plan builder']}
+};
+
+const skills=[
+  {tier:1,name:'Real estate listing copy',buyer:'Realtors, property managers',cat:'Real Estate',pattern:'Input: property + vibe\nAsks: buyer persona, hero feature, neighbourhood vibe, price tier, platforms\nOutput: MLS description + listing headline + social captions + email subject lines (3)',price:'$5',bundle:'realtor'},
+  {tier:1,name:'Product photography prompt',buyer:'Brand managers, D2C sellers',cat:'Image Gen',pattern:'Input: product + feel\nAsks: background style, mood, aspect ratio, platform\nOutput: full lighting/lens/composition AI image prompt',price:'$5',bundle:'marketing'},
+  {tier:1,name:'Brand & marketing copy',buyer:'Copywriters, growth marketers',cat:'Marketing',pattern:'Input: product + goal\nAsks: platform, tone, CTA style, audience\nOutput: ad copy variants + hooks + subject lines',price:'$5',bundle:'marketing'},
+  {tier:1,name:'LinkedIn post engine',buyer:'Founders, ghostwriters',cat:'Social',pattern:'Input: topic\nAsks: post type (story/insight/contrarian/how-to), industry, persona stage\nOutput: optimised post with hook + body + CTA',price:'$5',bundle:'creator'},
+  {tier:1,name:'SEO blog post brief',buyer:'SEO strategists, content managers',cat:'Content',pattern:'Input: target keyword\nAsks: search intent, audience expertise level, word count, internal linking goals\nOutput: H-tag structure + subtopics + SERP angle + FAQs',price:'$5',bundle:'creator'},
+  {tier:1,name:'Resume & CV builder',buyer:'Career coaches, job seekers',cat:'Career',pattern:'Input: target role + experience\nAsks: industry, seniority, ATS priority, target company tone\nOutput: tailored resume bullets + professional summary',price:'$5',bundle:'student'},
+  {tier:1,name:'Pitch deck narrative',buyer:'Startup advisors, deck designers',cat:'Business',pattern:'Input: business idea\nAsks: stage, audience (VC/angel/corporate), deck length, emphasis\nOutput: slide-by-slide narrative with investor language',price:'$9',bundle:'founder'},
+  {tier:1,name:'Social content engine',buyer:'Social media managers, ghostwriters',cat:'Social',pattern:'Input: topic/theme\nAsks: platform, content pillars, posting frequency, voice\nOutput: week of posts + hooks + carousel copy + captions',price:'$5',bundle:'creator'},
+  {tier:1,name:'YouTube thumbnail prompt',buyer:'Creators, thumbnail designers',cat:'Image Gen',pattern:'Input: niche + video topic\nAsks: emotion target, text overlay, CTR psychology, colour/contrast style\nOutput: full AI image prompt + composition brief + do/don\'t list',price:'$5',bundle:'creator'},
+  {tier:1,name:'Sales page / landing page copy',buyer:'Copywriters, conversion specialists',cat:'Marketing',pattern:'Input: product\nAsks: target awareness level, price point, main objections\nOutput: full direct-response page (headline → hook → proof → offer → CTA)',price:'$5',bundle:'marketing'},
+  {tier:1,name:'Email newsletter engine',buyer:'Newsletter writers, content managers',cat:'Content',pattern:'Input: niche + audience size\nAsks: monetization model, voice, cadence\nOutput: full issue structure + 3 subject line variants + CTA copy',price:'$5',bundle:'creator'},
+  {tier:1,name:'Cold outreach email',buyer:'Sales managers, founders',cat:'Sales',pattern:'Input: industry + target role\nAsks: value prop, prior context, objection to pre-empt\nOutput: multi-variant cold email + 3 subject line options',price:'$5',bundle:'founder'},
+  {tier:2,name:'Course & curriculum builder',buyer:'Course designers, corporate trainers',cat:'Education',pattern:'Input: topic + target audience\nAsks: depth level, delivery format, duration, assessment style\nOutput: module structure + lesson outlines + quiz questions',price:'$5',bundle:'educator'},
+  {tier:2,name:'Cover letter writer',buyer:'Career coaches, job seekers',cat:'Career',pattern:'Input: role + resume highlights\nAsks: company culture, role-specific angle, length\nOutput: tailored cover letter with company-specific hook',price:'$5',bundle:'student'},
+  {tier:2,name:'Investor update email',buyer:'Founders, startup ops leads',cat:'Business',pattern:'Input: stage + reporting period\nAsks: metrics focus, narrative arc, tone\nOutput: monthly/quarterly investor communication email',price:'$5',bundle:'founder'},
+  {tier:2,name:'Twitter / X thread engine',buyer:'Content strategists, ghostwriters',cat:'Social',pattern:'Input: topic\nAsks: hook type, thread length, payoff structure, niche\nOutput: full numbered thread with hook tweet + body + CTA tweet',price:'$5',bundle:'creator'},
+  {tier:2,name:'Grant & proposal writing',buyer:'Grant writers, research admins',cat:'Academic',pattern:'Input: project idea + funder\nAsks: impact metric, budget size, timeline, funder priorities\nOutput: executive summary + needs statement + logic model',price:'$5',bundle:null},
+  {tier:2,name:'Short story prompt',buyer:'Fiction writers, content platforms',cat:'Creative',pattern:'Input: genre + length\nAsks: tone, cultural setting, POV, theme\nOutput: full narrative prompt with structure beats',price:'$5',bundle:null},
+  {tier:3,name:'Job description writer',buyer:'Recruiters, HR managers',cat:'HR',pattern:'Input: role + company\nAsks: seniority, must-haves, culture signals\nOutput: structured JD with inclusive language check',price:'$5',bundle:'founder'},
+  {tier:3,name:'Performance review writer',buyer:'Managers, HR business partners',cat:'HR',pattern:'Input: role + review period\nAsks: reviewer type (self/manager), tone, company culture\nOutput: structured review with examples and evidence',price:'$5',bundle:null},
+  {tier:3,name:'Health & wellness plan',buyer:'Personal trainers, nutritionists',cat:'Health',pattern:'Input: goal + lifestyle\nAsks: dietary restrictions, activity level, time available, equipment\nOutput: meal plan + workout split + habit stack',price:'$5',bundle:null},
+  {tier:3,name:'Menu description copy',buyer:'Restaurant owners, food consultants',cat:'Hospitality',pattern:'Input: cuisine + price tier\nAsks: target diner, mood, platform\nOutput: full menu copy with dish descriptions',price:'$5',bundle:'events'},
+  {tier:2,name:'Business plan',buyer:'Business consultants, startup advisors',cat:'Business',pattern:'Input: business type\nAsks: purpose (loan/investor/pitch), stage, sector\nOutput: full plan with executive summary + financial summary',price:'$5',bundle:'founder'},
+  {tier:3,name:'Content calendar',buyer:'Marketing managers, social media leads',cat:'Marketing',pattern:'Input: brand + goals\nAsks: channels, frequency, content types, key dates\nOutput: 30/60/90-day content plan',price:'$5',bundle:'marketing'},
+  {tier:3,name:'PR press release',buyer:'PR teams, startup comms leads',cat:'Marketing',pattern:'Input: announcement type\nAsks: target audience, key quote, distribution targets\nOutput: structured press release in standard wire format',price:'$5',bundle:'marketing'},
+  {tier:3,name:'Lesson plan builder',buyer:'Teachers, tutors, homeschool parents',cat:'Education',pattern:'Input: subject + grade\nAsks: learning objective, duration, assessment style\nOutput: full lesson plan with activities',price:'$5',bundle:'educator'},
+  {tier:3,name:'Travel itinerary planner',buyer:'Travel consultants, hospitality brands',cat:'Lifestyle',pattern:'Input: destination + duration\nAsks: travel style, budget tier, group type, interests\nOutput: day-by-day itinerary with logistics and insider tips',price:'$5',bundle:'essentials'},
+  {tier:3,name:'Wedding vows',buyer:'Couples, wedding planners',cat:'Events',pattern:'Input: relationship story + tone\nAsks: style (traditional/modern/humorous), length, language\nOutput: personalised vows',price:'$5',bundle:'events'},
+];
+
+function renderBundles(){
+  document.getElementById('bundles-grid').innerHTML=Object.entries(bundles).map(([k,b])=>`
+    <div class="bundle-card" onclick="openBundle('${k}')">
+      <div class="bc-top"><div class="bc-dot" style="background:${b.color}"></div><div class="bc-save">${b.save}</div></div>
+      <div class="bc-name">${b.name} Bundle</div>
+      <div class="bc-count">${b.skills.length} skills included</div>
+      <div class="bc-pills">${b.skills.slice(0,3).map(s=>`<div class="bc-pill">${s}</div>`).join('')}${b.skills.length>3?`<div class="bc-pill">+${b.skills.length-3} more</div>`:''}</div>
+      <div class="bc-footer"><div class="bc-price" style="color:${b.color}">${b.price}</div><div class="bc-ind">${b.ind} ind.</div></div>
+    </div>`).join('');
+}
+
+// Category groups
+const groups = [
+  {key:'content',  label:'Content & Social',    color:'#a78bfa', cats:['Social','Content','Sales']},
+  {key:'business', label:'Business & Career',    color:'#34d399', cats:['Business','Career','HR','Academic']},
+  {key:'image',    label:'Image & Creative',     color:'#f472b6', cats:['Image Gen','Marketing','Creative','Hospitality']},
+  {key:'everyday', label:'Everyday',             color:'#60a5fa', cats:['Education','Health','Lifestyle','Events','Legal']},
+];
+let groupFilter='all';
+
+function renderSkills(){
+  const activeGroups = groupFilter==='all' ? groups : groups.filter(g=>g.key===groupFilter);
+  document.getElementById('skills-list').innerHTML = activeGroups.map(g => {
+    const ss = skills.filter(s => g.cats.includes(s.cat));
+    if(!ss.length) return '';
+    return `<div class="tier-section">
+      <div class="tier-head">
+        <div class="tlabel" style="background:${g.color}22;color:${g.color}">${g.label}</div>
+        <div class="tline"></div>
+      </div>
+      <div class="skill-grid">${ss.map(s=>`
+        <div class="skill-card" onclick="openSkill(${skills.indexOf(s)})">
+          <div class="sc-top">
+            <div><div class="sc-name">${s.name}</div><div class="sc-buyer">${s.buyer}</div></div>
+            ${s.bundle?`<div class="sc-bdot" style="background:${(bundles[s.bundle]||{}).color||'#888'}"></div>`:''}
+          </div>
+          <div class="sc-foot"><div class="sc-price">${s.price}</div><div class="sc-cat">${s.cat}</div></div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function filterTier(t,el){
+  document.querySelectorAll('.fchip').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  groupFilter=t;
+  renderSkills();
+}
+
+function openBundle(key){
+  const b = bundles[key];
+  if(!b) return;
+  document.getElementById('bm-dot').style.background = b.color;
+  document.getElementById('bm-name').textContent = b.name + ' Bundle';
+  document.getElementById('bm-price').textContent = b.price;
+  document.getElementById('bm-save').textContent = b.save;
+  document.getElementById('bm-ind').textContent = b.ind + ' individually';
+  // Find skill objects for each skill name in the bundle
+  const rows = b.skills.map(sname => {
+    const sk = skills.find(s => s.name.toLowerCase() === sname.toLowerCase());
+    return '<div class="bm-skill-row">' +
+      '<div>' +
+        '<div class="bm-skill-name">' + sname + '</div>' +
+        (sk ? '<div class="bm-skill-meta">' + sk.buyer + ' · ' + sk.cat + '</div>' : '') +
+      '</div>' +
+      '<div class="bm-skill-price">' + (sk ? sk.price : '') + '</div>' +
+    '</div>';
+  }).join('');
+  document.getElementById('bm-skills').innerHTML = rows;
+  document.getElementById('bundleModal').classList.add('open');
+}
+function closeBundleModal(e){ if(e.target===document.getElementById('bundleModal')) closeBundleModalDirect(); }
+function closeBundleModalDirect(){ document.getElementById('bundleModal').classList.remove('open'); }
+
+function openSkill(idx){
+  const s=skills[idx];
+  document.getElementById('m-name').textContent=s.name;
+  document.getElementById('m-cat').textContent=`${s.cat} · ${s.bundle?(bundles[s.bundle]||{name:'Bundle'}).name+' Bundle':'Individual'}`;
+  document.getElementById('m-buyer').textContent=s.buyer;
+  // Show only the Output line as the "what you get" — strip the Input/Asks internals
+  const outputLine = s.pattern.split('\n').find(l => l.startsWith('Output:')) || '';
+  document.getElementById('m-pattern').textContent = outputLine.replace('Output: ','');
+  document.getElementById('m-price').textContent=s.price;
+  document.getElementById('skillModal').classList.add('open');
+}
+function closeModal(e){if(e.target===document.getElementById('skillModal'))closeModalDirect();}
+function closeModalDirect(){document.getElementById('skillModal').classList.remove('open');}
+
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:0.08});
+document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
+
+renderBundles();
+renderSkills();
+</script>
+</body>
+</html>

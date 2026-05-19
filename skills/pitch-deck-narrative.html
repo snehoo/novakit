@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pitch Deck Narrative — NovaKit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-0.02em;}
+.logo-icon{width:32px;height:32px;background:#1c1c18;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-back{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;transition:color .2s;}
+.nav-back:hover{color:var(--text);}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:transparent;border:1px solid var(--border-s);color:var(--text);}
+.btn-ghost:hover{background:var(--bg2);}
+.btn-lg{font-size:16px;padding:14px 32px;border-radius:10px;}
+
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;flex-shrink:0;}
+
+/* ── HERO ── */
+.skill-hero{
+  max-width:1160px;margin:0 auto;
+  padding:70px 40px 60px;
+  display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;
+}
+.sh-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--pill-bg);color:var(--pill-text);
+  padding:5px 14px;border-radius:99px;
+  font-size:12px;font-weight:600;letter-spacing:0.02em;
+  margin-bottom:20px;
+}
+[data-theme="light"] .sh-eyebrow{color:#8f3718;}
+.sh-logo{width:56px;height:auto;margin-bottom:18px;display:block;border-radius:6px;overflow:hidden;background:#fff;}
+.sh-logo img{width:100%;display:block;}
+.sh-title{
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(36px,4vw,54px);
+  line-height:1.08;letter-spacing:-0.02em;margin-bottom:16px;
+}
+.sh-title em{font-style:italic;color:var(--accent);}
+.sh-sub{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:28px;max-width:440px;}
+.sh-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
+.sh-meta{
+  display:flex;align-items:center;gap:20px;
+  padding-top:24px;border-top:1px solid var(--border);
+  flex-wrap:wrap;
+}
+.sh-meta-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);}
+.sh-meta-item strong{color:var(--text);font-weight:600;}
+
+/* ── BEFORE/AFTER DEMO ── */
+.demo-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 8px 40px rgba(0,0,0,0.1);
+}
+.demo-tabs{
+  display:flex;border-bottom:1px solid var(--border);
+  background:var(--surface2);
+}
+.demo-tab{
+  flex:1;padding:12px;font-size:12px;font-weight:600;
+  text-align:center;cursor:pointer;border:none;
+  background:transparent;color:var(--muted);
+  font-family:'Geist',sans-serif;
+  transition:all .2s;border-bottom:2px solid transparent;
+}
+.demo-tab.active{color:var(--text);border-bottom-color:var(--accent);background:var(--surface);}
+.demo-panel{display:none;padding:20px;}
+.demo-panel.active{display:block;}
+
+/* Before panel */
+.before-msg{
+  background:var(--surface2);border-radius:10px;
+  padding:14px 16px;font-size:13px;line-height:1.7;
+  color:var(--muted);margin-bottom:12px;
+  border-left:3px solid var(--border-s);
+}
+.before-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;}
+.before-result{
+  background:var(--code-bg);border-radius:10px;
+  padding:14px 16px;font-size:12.5px;line-height:1.8;
+  color:var(--text);
+}
+.before-result .strike{color:var(--faint);text-decoration:line-through;font-size:11px;}
+
+/* After panel — slide show */
+.after-slides{position:relative;min-height:280px;}
+.after-slide{
+  display:none;
+  animation:fadeSlide .4s ease;
+}
+.after-slide.active{display:block;}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.slide-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--pill-bg);color:var(--pill-text);
+  font-size:10px;font-weight:700;letter-spacing:0.08em;
+  padding:3px 10px;border-radius:6px;margin-bottom:10px;
+  text-transform:uppercase;
+}
+[data-theme="light"] .slide-chip{color:#8f3718;}
+.slide-title{font-size:13px;font-weight:700;margin-bottom:8px;color:var(--text);}
+.slide-body{
+  background:var(--surface2);border-radius:10px;
+  padding:14px 16px;font-size:13px;line-height:1.75;
+  color:var(--text);border-left:3px solid var(--accent);
+}
+.slide-body em{font-style:normal;color:var(--accent);font-weight:600;}
+.slide-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:14px;
+}
+.slide-dots{display:flex;gap:5px;}
+.slide-dot{width:6px;height:6px;border-radius:50%;background:var(--border-s);cursor:pointer;transition:all .25s;}
+.slide-dot.active{background:var(--accent);width:16px;border-radius:3px;}
+.slide-arrows{display:flex;gap:6px;}
+.slide-arrow{
+  width:28px;height:28px;border-radius:7px;
+  border:1px solid var(--border-s);background:transparent;
+  cursor:pointer;font-size:12px;color:var(--muted);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.slide-arrow:hover{border-color:var(--accent);color:var(--accent);}
+.slide-counter{font-size:11px;color:var(--faint);}
+
+/* ── WHAT YOU GET ── */
+.wug-section{padding:70px 40px;background:var(--bg2);}
+.wug-inner{max-width:1160px;margin:0 auto;}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+[data-theme="light"] .section-eyebrow{color:#b5451e;}
+.section-title{font-family:'Instrument Serif',serif;font-size:clamp(28px,3.5vw,42px);line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px;}
+.wug-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:40px;}
+.wug-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:22px;
+}
+.wug-icon{font-size:22px;margin-bottom:12px;}
+.wug-title{font-size:14px;font-weight:700;margin-bottom:6px;}
+.wug-text{font-size:13px;color:var(--muted);line-height:1.6;}
+.wug-tag{
+  display:inline-flex;margin-top:10px;
+  font-size:10px;font-weight:700;letter-spacing:0.07em;
+  padding:3px 10px;border-radius:99px;text-transform:uppercase;
+}
+
+/* ── WHO IT'S FOR ── */
+.for-section{padding:70px 40px;}
+.for-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.for-list{margin-top:32px;}
+.for-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 0;border-bottom:1px solid var(--border);
+}
+.for-item:last-child{border-bottom:none;}
+.for-check{
+  width:22px;height:22px;border-radius:6px;flex-shrink:0;
+  background:var(--green-bg);color:var(--green-text);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;margin-top:1px;
+}
+.for-title{font-size:14px;font-weight:600;margin-bottom:3px;}
+.for-sub{font-size:13px;color:var(--muted);line-height:1.5;}
+
+/* Not for panel */
+.notfor-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:24px;margin-top:32px;
+}
+.notfor-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
+.notfor-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-size:13px;color:var(--muted);}
+.notfor-item:last-child{margin-bottom:0;}
+.notfor-x{color:var(--faint);font-size:14px;flex-shrink:0;margin-top:1px;}
+
+/* ── HOW IT RUNS ── */
+.how-section{padding:70px 40px;background:var(--bg2);}
+.how-inner{max-width:1160px;margin:0 auto;}
+.how-steps{margin-top:40px;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface);}
+.how-step{
+  display:flex;align-items:flex-start;gap:20px;
+  padding:22px 24px;border-bottom:1px solid var(--border);
+}
+.how-step:last-child{border-bottom:none;}
+.how-num{
+  font-family:'Geist Mono',monospace;
+  font-size:12px;font-weight:700;color:var(--accent);
+  width:24px;flex-shrink:0;padding-top:2px;
+}
+[data-theme="light"] .how-num{color:#b5451e;}
+.how-title{font-size:14px;font-weight:700;margin-bottom:4px;}
+.how-text{font-size:13px;color:var(--muted);line-height:1.6;}
+.how-tag{display:inline-flex;margin-top:8px;font-size:10px;font-weight:700;letter-spacing:0.07em;padding:3px 10px;border-radius:99px;background:var(--pill-bg);color:var(--pill-text);text-transform:uppercase;}
+[data-theme="light"] .how-tag{color:#8f3718;}
+
+/* ── PROOF PULLQUOTE ── */
+.proof-section{padding:70px 40px;}
+.proof-inner{max-width:760px;margin:0 auto;text-align:center;}
+.pullquote{
+  font-family:'Instrument Serif',serif;font-style:italic;
+  font-size:clamp(20px,2.5vw,28px);line-height:1.5;
+  color:var(--text);margin-bottom:24px;
+}
+.pullquote em{font-style:normal;color:var(--accent);}
+.pq-author{display:flex;align-items:center;gap:12px;justify-content:center;}
+.pq-av{width:38px;height:38px;border-radius:50%;background:var(--green-bg);color:var(--green-text);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;}
+.pq-name{font-size:14px;font-weight:600;text-align:left;}
+.pq-role{font-size:12px;color:var(--muted);text-align:left;}
+
+/* ── BUY SECTION ── */
+.buy-section{
+  padding:70px 40px;
+  background:var(--bg2);
+}
+.buy-inner{max-width:860px;margin:0 auto;}
+.buy-card{
+  background:var(--surface);border:1px solid var(--border-s);
+  border-radius:20px;overflow:hidden;
+}
+.buy-top{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+}
+.buy-left{
+  padding:36px 40px;border-right:1px solid var(--border);
+}
+.buy-right{
+  padding:36px 40px;background:var(--surface2);
+}
+.buy-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);margin-bottom:16px;}
+.buy-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:20px;}
+.buy-price{font-size:48px;font-weight:700;letter-spacing:-0.04em;color:var(--text);}
+.buy-compare{font-size:14px;color:var(--faint);text-decoration:line-through;}
+.buy-save{font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--green-bg);color:var(--green-text);}
+.buy-includes{list-style:none;margin-bottom:24px;}
+.buy-includes li{display:flex;align-items:center;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px solid var(--border);}
+.buy-includes li:last-child{border-bottom:none;}
+.buy-includes .bi-check{color:var(--green-text);font-size:14px;flex-shrink:0;}
+.buy-cta-wrap{display:flex;flex-direction:column;gap:10px;}
+.guarantee-box{
+  display:flex;align-items:flex-start;gap:10px;
+  background:var(--green-bg);border-radius:10px;padding:14px;
+  margin-top:16px;
+}
+.gb-icon{font-size:18px;flex-shrink:0;}
+.gb-title{font-size:13px;font-weight:700;color:var(--green-text);margin-bottom:2px;}
+.gb-text{font-size:12px;color:var(--muted);line-height:1.5;}
+.bundle-upsell{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 40px;border-top:1px solid var(--border);
+  background:var(--surface2);
+}
+.bu-text{font-size:13px;color:var(--muted);}
+.bu-text strong{color:var(--text);}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.footer-left{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+
+/* ── SCROLL ANIM ── */
+.anim{opacity:0;transform:translateY(18px);transition:opacity .5s,transform .5s;}
+.anim.in{opacity:1;transform:none;}
+
+@media(max-width:768px){
+  nav{padding:0 16px;}
+  .skill-hero{grid-template-columns:1fr;padding:50px 16px 50px;gap:40px;}
+  .for-inner{grid-template-columns:1fr;}
+  .buy-top{grid-template-columns:1fr;}
+  .buy-left{border-right:none;border-bottom:1px solid var(--border);}
+  .buy-left,.buy-right,.buy-left{padding:24px 20px;}
+  .bundle-upsell{padding:14px 20px;flex-direction:column;gap:10px;align-items:flex-start;}
+  .wug-section,.for-section,.how-section,.proof-section,.buy-section{padding:50px 16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo"><a href="index.html" style="color:inherit;">NovaKit</a></div>
+  <div class="nav-links">
+    <a href="index.html#how-it-works">How it works</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#proof">Reviews</a>
+    <a href="index.html#install">Install</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><span id="theme-icon">☀️</span></button>
+    <a href="#buy" class="btn btn-primary">Get this skill — $9 →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="skill-hero">
+  <div>
+    <div class="sh-eyebrow"><div class="live-dot"></div>Founder Bundle · $9</div>
+    <div class="sh-logo"><img src="data:image/png;base64,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" alt="Claude Skill File"/></div>
+    <h1 class="sh-title">Your pitch deck,<br>built like <em>a VC wrote it.</em></h1>
+    <p class="sh-sub">Most decks fail before the first meeting because the narrative is wrong. This skill structures your story the way investors actually read — problem first, proof second, ask last. Every time. Researched live against what's getting funded right now.</p>
+    <div class="sh-ctas">
+      <a href="#buy" class="btn btn-primary btn-lg">Get this skill — $9 →</a>
+      <a href="#demo" class="btn btn-ghost btn-lg">See the output ↓</a>
+    </div>
+    <div class="sh-meta">
+      <div class="sh-meta-item">⚡ <strong>Instant download</strong></div>
+      <div class="sh-meta-item">🔍 <strong>Live research</strong> every run</div>
+      <div class="sh-meta-item">🛡️ <strong>7-day refund</strong> — no questions</div>
+    </div>
+  </div>
+
+  <!-- BEFORE / AFTER DEMO CARD -->
+  <div id="demo">
+    <div class="demo-card">
+      <div class="demo-tabs">
+        <button class="demo-tab active" onclick="switchTab('before',this)">❌ Without the skill</button>
+        <button class="demo-tab" onclick="switchTab('after',this)">✅ With the skill</button>
+      </div>
+
+      <!-- BEFORE -->
+      <div class="demo-panel active" id="panel-before">
+        <div class="before-label">What you type into Claude directly</div>
+        <div class="before-msg">"Write me a pitch deck for my AI scheduling app for clinics."</div>
+        <div class="before-label" style="margin-top:14px;">What Claude gives you back</div>
+        <div class="before-result">
+          <div style="margin-bottom:8px;font-weight:600;">Slide 1: Introduction</div>
+          <div style="color:var(--muted);font-size:12px;margin-bottom:8px;">ClinicAI is an AI-powered scheduling solution for healthcare clinics that reduces no-shows and improves operational efficiency.</div>
+          <div style="margin-bottom:8px;font-weight:600;">Slide 2: Problem</div>
+          <div style="color:var(--muted);font-size:12px;margin-bottom:8px;">Many clinics face challenges with scheduling, patient no-shows, and administrative overhead...</div>
+          <div style="color:var(--faint);font-size:11px;font-style:italic;border-top:1px solid var(--border);padding-top:10px;margin-top:4px;">Generic opener. No hook. No investor language. No urgency. You'd spend an hour rewriting this.</div>
+        </div>
+      </div>
+
+      <!-- AFTER — slide show of output slides -->
+      <div class="demo-panel" id="panel-after">
+        <div class="after-slides">
+
+          <div class="after-slide active" id="aslide-0">
+            <div class="slide-chip">Slide 1 · Hook</div>
+            <div class="slide-title">The opening that makes them lean in</div>
+            <div class="slide-body">
+              <strong>"Every clinic loses 11 hours a week to no-shows. We've solved it."</strong>
+              <div style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;">One sentence. Specific number. Clear claim. This is what the skill writes for slide 1 — not an introduction, a hook. Investors see 300 decks a year. This one they read.</div>
+            </div>
+          </div>
+
+          <div class="after-slide" id="aslide-1">
+            <div class="slide-chip">Slide 2 · Problem</div>
+            <div class="slide-title">The problem, sized and sourced</div>
+            <div class="slide-body">
+              <strong>"Manual scheduling costs US clinics $14B/year in lost appointments. No-show rates average 23%. There's no automated fix — just staff manually calling patients the day before."</strong>
+              <div style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;">Market size with a dollar figure. The pain made concrete. The gap made obvious. This is how VCs think about problems.</div>
+            </div>
+          </div>
+
+          <div class="after-slide" id="aslide-2">
+            <div class="slide-chip">Slide 4 · Traction</div>
+            <div class="slide-title">Proof that makes the number real</div>
+            <div class="slide-body">
+              <strong>"47 clinics. $28k MRR. 3 months post-launch. No-show rate reduced from 23% to 8% on average across our customer base."</strong>
+              <div style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;">Numbers only. No adjectives. Investors don't want to hear "significant growth" — they want the metric. The skill knows the difference.</div>
+            </div>
+          </div>
+
+          <div class="after-slide" id="aslide-3">
+            <div class="slide-chip">Slide 8 · Ask</div>
+            <div class="slide-title">The ask — clear, specific, confident</div>
+            <div class="slide-body">
+              <strong>"Raising $1.2M seed. Extending to 200 clinics, 6 months of runway. Lead investor committed at $600k. Looking for one strategic co-investor."</strong>
+              <div style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6;">Specific number. Use of funds in one sentence. Social proof baked in. The skill structures your ask so it sounds like you've done this before — even if you haven't.</div>
+            </div>
+          </div>
+
+          <div class="after-slide" id="aslide-4">
+            <div class="slide-chip">Full output</div>
+            <div class="slide-title">What you get — complete deck narrative</div>
+            <div class="slide-body" style="font-size:12px;font-family:'Geist Mono',monospace;line-height:2;">
+              <div>✓ 10-slide narrative arc</div>
+              <div>✓ Investor-language on every slide</div>
+              <div>✓ Hook, problem, solution, traction, team, market, ask</div>
+              <div>✓ Calibrated to your round size + audience type</div>
+              <div>✓ Trend-stamped — built on what's getting funded <em>right now</em></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="slide-nav">
+          <div class="slide-counter" id="slide-counter">1 / 5</div>
+          <div class="slide-dots" id="slide-dots"></div>
+          <div class="slide-arrows">
+            <button class="slide-arrow" onclick="moveSlide(-1)">←</button>
+            <button class="slide-arrow" onclick="moveSlide(1)">→</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- WHAT YOU GET -->
+<section class="wug-section">
+  <div class="wug-inner">
+    <div class="section-eyebrow anim">What you get</div>
+    <h2 class="section-title anim">10 slides. Investor-ready.<br>Out in under 5 minutes.</h2>
+    <div class="wug-grid anim">
+      <div class="wug-card">
+        <div class="wug-icon">🎯</div>
+        <div class="wug-title">Narrative arc, not a template</div>
+        <div class="wug-text">The skill structures your story the way investors actually read: hook → problem → solution → proof → ask. Not a generic slide list — a persuasive sequence.</div>
+        <span class="wug-tag" style="background:var(--pill-bg);color:var(--pill-text);">Investor logic built in</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">🔍</div>
+        <div class="wug-title">Researched against live funding patterns</div>
+        <div class="wug-text">Before writing a word, the skill checks what's getting funded right now — what VCs at your stage are responding to, what's oversaturated, what language is landing.</div>
+        <span class="wug-tag" style="background:var(--green-bg);color:var(--green-text);">Live research · every run</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">💬</div>
+        <div class="wug-title">Investor language, not founder language</div>
+        <div class="wug-text">Founders describe features. Investors want market size, traction, and defensibility. The skill writes in the vocabulary that gets decks read — not filed.</div>
+        <span class="wug-tag" style="background:var(--blue-bg);color:var(--blue-text);">Vocabulary that converts</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">✂️</div>
+        <div class="wug-title">No editing needed</div>
+        <div class="wug-text">Quality-checked before you see it. Vague slide? Rewritten. Weak hook? Rewritten. What comes out is ready to drop into your deck builder.</div>
+        <span class="wug-tag" style="background:var(--pill-bg);color:var(--pill-text);">Anti-slop gate included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="for-section">
+  <div class="for-inner">
+    <div>
+      <div class="section-eyebrow anim">Who it's for</div>
+      <h2 class="section-title anim">Built for anyone<br>who needs a <em style="font-style:italic;color:var(--accent)">yes.</em></h2>
+      <div class="for-list anim">
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div><div class="for-title">First-time founders</div><div class="for-sub">You've never written a deck before and you don't know what investors actually want to see. This does.</div></div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div><div class="for-title">Founders who've been rejected</div><div class="for-sub">You have the business. The deck isn't telling the story right. This restructures the narrative from scratch.</div></div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div><div class="for-title">Startup advisors and consultants</div><div class="for-sub">You build decks for clients. This gets you to a strong first draft in minutes, not hours.</div></div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div><div class="for-title">Accelerator and grant applicants</div><div class="for-sub">The same narrative logic applies to accelerator applications, pitch competitions, and grant proposals.</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="notfor-card anim" style="margin-top:0;">
+        <div class="notfor-label">Not what this is for</div>
+        <div class="notfor-item"><div class="notfor-x">✕</div><div>Designing slides — you'll need Figma, Pitch, or Canva for that. This is the words and structure.</div></div>
+        <div class="notfor-item"><div class="notfor-x">✕</div><div>Building your financial model — it references your numbers but doesn't create them.</div></div>
+        <div class="notfor-item"><div class="notfor-x">✕</div><div>Guaranteed funding — it gives you the best possible narrative. The rest is on you.</div></div>
+      </div>
+      <div class="anim" style="margin-top:16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:12px;">How it runs</div>
+        <div style="font-size:13px;color:var(--muted);line-height:1.9;">
+          <div style="margin-bottom:6px;"><span style="color:var(--accent);font-weight:600;margin-right:8px;">01</span>Type <span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--text);">/pitch-deck-narrative</span> in Claude</div>
+          <div style="margin-bottom:6px;"><span style="color:var(--accent);font-weight:600;margin-right:8px;">02</span>Answer 3 quick questions (stage, audience, proof)</div>
+          <div style="margin-bottom:6px;"><span style="color:var(--accent);font-weight:600;margin-right:8px;">03</span>Live research fires — funding patterns checked</div>
+          <div style="margin-bottom:6px;"><span style="color:var(--accent);font-weight:600;margin-right:8px;">04</span>Quality gate runs — weak slides rewritten</div>
+          <div><span style="color:var(--green-text);font-weight:600;margin-right:8px;">✓</span>10-slide narrative in your chat, ready to copy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT RUNS -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="section-eyebrow anim">What the skill checks before it writes</div>
+    <h2 class="section-title anim">4 live research checks.<br>Every single run.</h2>
+    <div class="how-steps anim">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <div><div class="how-title">What narrative structures are getting funded right now</div><div class="how-text">The skill checks current VC deck patterns — what order of slides is performing, what opening hooks are working at seed vs Series A, what's changed in the last few weeks.</div></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <div><div class="how-title">What language investors at your stage respond to</div><div class="how-text">Seed investors read differently than Series A partners. The vocabulary, the level of proof required, the ask size that sounds credible — all calibrated to your specific round.</div></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <div><div class="how-title">What's oversaturated in your sector right now</div><div class="how-text">If every AI startup is leading with "the market is $X trillion," yours shouldn't. The skill knows what's been said too many times and writes around it.</div></div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">04</div>
+        <div><div class="how-title">What slide structures are getting meetings vs getting passed</div><div class="how-text">Real-time pattern from current funding activity. Not theory. Not a framework from a blog post. What's actually getting decks read this season.</div></div>
+        <span class="how-tag">Live · every run · never assumed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF PULLQUOTE -->
+<section class="proof-section">
+  <div class="proof-inner anim">
+    <div class="pullquote">"The pitch deck skill asked me 3 questions and built out a narrative I wouldn't have structured that way myself. Got <em>two investor calls</em> from a cold outreach batch I ran the same day."</div>
+    <div class="pq-author">
+      <div class="pq-av">SR</div>
+      <div><div class="pq-name">Sam R.</div><div class="pq-role">Co-founder, B2B SaaS · Founder Bundle</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY -->
+<section class="buy-section" id="buy">
+  <div class="buy-inner anim">
+    <div class="buy-card">
+      <div class="buy-top">
+        <div class="buy-left">
+          <div class="buy-label">Pitch Deck Narrative Skill</div>
+          <div class="buy-price-row">
+            <div class="buy-price">$9</div>
+            <div style="display:flex;flex-direction:column;gap:4px;">
+              <div class="buy-save">Best value in the Founder Bundle</div>
+            </div>
+          </div>
+          <ul class="buy-includes">
+            <li><span class="bi-check">✓</span> Pitch Deck Narrative skill file (.skill)</li>
+            <li><span class="bi-check">✓</span> Works on claude.ai and Claude desktop</li>
+            <li><span class="bi-check">✓</span> Free Claude plan supported</li>
+            <li><span class="bi-check">✓</span> Live research on every run</li>
+            <li><span class="bi-check">✓</span> Anti-slop quality gate included</li>
+            <li><span class="bi-check">✓</span> Instant download · no subscription</li>
+          </ul>
+          <div class="guarantee-box">
+            <div class="gb-icon">🛡️</div>
+            <div>
+              <div class="gb-title">7-day money back guarantee</div>
+              <div class="gb-text">Not what you expected? Email us within 7 days for a full refund. No questions, no forms.</div>
+            </div>
+          </div>
+        </div>
+        <div class="buy-right">
+          <div class="buy-label">Get it now</div>
+          <div class="buy-cta-wrap">
+            <a href="#" class="btn btn-primary btn-lg" style="justify-content:center;">Buy Pitch Deck Skill — $9 →</a>
+            <a href="index.html#skills" class="btn btn-ghost btn-lg" style="justify-content:center;">Or get the Founder Bundle — $19</a>
+          </div>
+          <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">The Founder Bundle includes</div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="font-size:13px;display:flex;align-items:center;gap:8px;"><span style="color:var(--accent);">→</span> Pitch Deck Narrative</div>
+              <div style="font-size:13px;display:flex;align-items:center;gap:8px;"><span style="color:var(--muted);">→</span> Cold Outreach Email</div>
+              <div style="font-size:13px;display:flex;align-items:center;gap:8px;"><span style="color:var(--muted);">→</span> Business Plan</div>
+              <div style="font-size:13px;display:flex;align-items:center;gap:8px;"><span style="color:var(--muted);">→</span> Investor Update Email</div>
+              <div style="font-size:13px;display:flex;align-items:center;gap:8px;"><span style="color:var(--muted);">→</span> Job Description Writer</div>
+              <div style="font-size:13px;display:flex;align-items:center;gap:8px;"><span style="color:var(--muted);">→</span> Sales Page Copy</div>
+            </div>
+            <div style="margin-top:16px;font-size:12px;color:var(--green-text);font-weight:600;">$19 total · save $15 vs buying individually</div>
+          </div>
+        </div>
+      </div>
+      <div class="bundle-upsell">
+        <div class="bu-text">Want everything? <strong>All Access — all 28 skills for $79.</strong> Every skill. Every update. One purchase.</div>
+        <a href="index.html#skills" class="btn btn-ghost" style="white-space:nowrap;font-size:13px;">See All Access →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="index.html#how-it-works">How it works</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#proof">Reviews</a>
+  </div>
+</footer>
+
+<script>
+// Theme
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+
+// Before/After tabs
+function switchTab(tab, el){
+  document.querySelectorAll('.demo-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.demo-panel').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('panel-'+tab).classList.add('active');
+  if(tab==='after') initSlides();
+}
+
+// After slides
+let currentSlide = 0;
+const totalSlides = 5;
+
+function initSlides(){
+  const dotsEl = document.getElementById('slide-dots');
+  if(dotsEl.children.length) return;
+  for(let i=0;i<totalSlides;i++){
+    const d = document.createElement('div');
+    d.className = 'slide-dot' + (i===0?' active':'');
+    d.onclick = () => goSlide(i);
+    dotsEl.appendChild(d);
+  }
+  updateSlide();
+}
+
+function goSlide(n){
+  document.getElementById('aslide-'+currentSlide).classList.remove('active');
+  document.querySelectorAll('.slide-dot')[currentSlide].classList.remove('active');
+  currentSlide = (n + totalSlides) % totalSlides;
+  document.getElementById('aslide-'+currentSlide).classList.add('active');
+  document.querySelectorAll('.slide-dot')[currentSlide].classList.add('active');
+  updateSlide();
+}
+
+function moveSlide(dir){ goSlide(currentSlide + dir); }
+
+function updateSlide(){
+  document.getElementById('slide-counter').textContent = (currentSlide+1) + ' / ' + totalSlides;
+}
+
+// Auto-advance after slides
+let slideTimer;
+document.getElementById('panel-after') && (function(){
+  const panel = document.getElementById('panel-after');
+  const observer = new MutationObserver(()=>{
+    if(panel.classList.contains('active')){
+      clearInterval(slideTimer);
+      slideTimer = setInterval(()=>moveSlide(1), 3200);
+    } else {
+      clearInterval(slideTimer);
+    }
+  });
+  observer.observe(panel, {attributes:true, attributeFilter:['class']});
+})();
+
+// Scroll animations
+const obs = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:0.08});
+document.querySelectorAll('.anim').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
