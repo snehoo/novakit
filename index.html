@@ -245,7 +245,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 /* INSTALL SECTION */
 .install-section{padding:60px 40px;border-bottom:1px solid var(--border);}
 .install-inner{max-width:1200px;margin:0 auto;}
-.install-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:36px;}
+.install-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:36px;}
 .install-visual{
   background:var(--surface2);border:1px solid var(--border);
   border-radius:14px;padding:24px;
@@ -266,6 +266,90 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
   background:var(--green-bg);color:var(--green-text);
   border-radius:99px;padding:8px 18px;font-size:15px;font-weight:600;
   margin-top:22px;
+}
+/* Install iframe card — matches hero card style */
+.demo-iframe-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 1px 3px rgba(0,0,0,0.04);
+}
+.dic-header{
+  display:flex;align-items:center;gap:6px;
+  padding:10px 14px;
+  background:var(--surface2);
+  border-bottom:1px solid var(--border);
+}
+.dic-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:var(--border-s);flex-shrink:0;
+}
+.dic-dot:nth-child(1){background:#ff5f57;}
+.dic-dot:nth-child(2){background:#febc2e;}
+.dic-dot:nth-child(3){background:#28c840;}
+.dic-label{
+  font-size:12px;color:var(--muted);font-weight:500;
+  margin-left:6px;
+}
+.demo-iframe-zoom{
+  width:100%;
+  height:350px;
+  overflow:hidden;
+  position:relative;
+}
+.demo-iframe-zoom iframe{
+  width:142.8%;
+  height:500px;
+  border:none;
+  display:block;
+  transform:scale(0.7);
+  transform-origin:top left;
+  position:absolute;
+  top:0;left:0;
+}
+@media(max-width:768px){
+  .demo-iframe-zoom{height:293px;}
+  .demo-iframe-zoom iframe{
+    width:166.6%;
+    height:500px;
+    transform:scale(0.6);
+    transform-origin:top left;
+  }
+}
+/* Install demo trigger */
+
+/* Iframe panel */
+
+.demo-iframe-wrap.open{max-height:293px;}
+/* Zoom container */
+.demo-iframe-zoom{
+  width:100%;
+  height:293px;
+  overflow:hidden;
+  position:relative;
+  border-radius:0 0 12px 12px;
+}
+.demo-iframe-zoom iframe{
+  width:142.8%;
+  height:428px;      /* 300/0.7 */
+  border:none;
+  display:block;
+  transform:scale(0.7);
+  transform-origin:top left;
+  position:absolute;
+  top:0;left:0;
+}
+@media(max-width:768px){
+  .demo-iframe-wrap.open{max-height:293px;}
+  .demo-iframe-zoom{height:293px;}
+  .demo-iframe-zoom iframe{
+    width:166.6%;
+    height:500px;    /* 300/0.6 */
+    transform:scale(0.6);
+    transform-origin:top left;
+  }
+  .dt-title{font-size:15px;}
 }
 
 /* HOW IT WORKS */
@@ -734,33 +818,34 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
 <!-- INSTALL SECTION -->
 <section class="install-section" id="install">
   <div class="install-inner">
-    <div class="section-eyebrow anim">Getting started</div>
-    <h2 class="section-title anim">Works with your <em style="font-style:italic;color:var(--accent)">free</em> Claude account.<br>Up and running in 60 seconds.</h2>
+    <!-- Heading + iframe both inside the grid so they align at the same top edge -->
     <div class="install-grid anim">
       <div>
+        <div class="section-eyebrow" style="margin-bottom:12px;">Getting started</div>
+        <h2 class="section-title" style="margin-bottom:24px;">Works with your <em style="font-style:italic;color:var(--accent)">free</em> Claude account.<br>Up and running in 60 seconds.</h2>
         <p style="font-size:17px;color:var(--muted);line-height:1.75;margin-bottom:20px;">Download a skill file. Open Claude. Upload it once. It lives in your sidebar from then on, ready whenever you need it.</p>
         <p style="font-size:17px;color:var(--muted);line-height:1.75;margin-bottom:20px;">No code. No technical setup. If you can attach a file to an email, you can do this.</p>
         <div class="free-pill">✓ Free Claude plan fully supported · Pro unlocks longer outputs</div>
       </div>
+
+      <!-- iframe aligned to top of left column -->
       <div class="install-visual">
-        <div class="iv-row">
-          <div class="iv-step-num">1</div>
-          <div><div class="iv-step-text">Download your skill file</div><div class="iv-step-sub">A .skill file lands in your Downloads folder</div></div>
-        </div>
-        <div class="iv-divider"></div>
-        <div class="iv-row">
-          <div class="iv-step-num">2</div>
-          <div><div class="iv-step-text">Open Claude → click Customize</div><div class="iv-step-sub">Find it in the left sidebar — works on claude.ai and the desktop app</div></div>
-        </div>
-        <div class="iv-divider"></div>
-        <div class="iv-row">
-          <div class="iv-step-num">3</div>
-          <div><div class="iv-step-text">Skills → + → Create skill → Upload a skill</div><div class="iv-step-sub">Drag and drop or browse — takes 5 seconds</div></div>
-        </div>
-        <div class="iv-divider"></div>
-        <div class="iv-row">
-          <div class="iv-step-num">4</div>
-          <div><div class="iv-step-text">Type / and pick your skill</div><div class="iv-step-sub">It appears in your slash-command list immediately</div></div>
+        <div class="demo-iframe-card">
+          <div class="dic-header">
+            <div class="dic-dot"></div>
+            <div class="dic-dot"></div>
+            <div class="dic-dot"></div>
+            <span class="dic-label">Installation guide</span>
+          </div>
+          <div class="demo-iframe-zoom">
+            <iframe
+              id="install-demo-iframe"
+              src="assets/novakit_Add_a_Skill_Demo.html"
+              title="How to install a NovaKit skill"
+              frameborder="0"
+              allow="autoplay"
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>
