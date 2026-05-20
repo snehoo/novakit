@@ -1,0 +1,10 @@
+# Allow all bots to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://novakit.tech/sitemap.xml
+
+# Disallow private/admin paths (add as needed)
+# Disallow: /admin/
+# Disallow: /private/
