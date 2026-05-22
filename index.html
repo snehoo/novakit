@@ -25,8 +25,8 @@
 <meta name="twitter:image" content="https://novakit.tech/og-image.png">
 
 <!-- Favicon -->
-<link rel="icon" type="image/jpeg" href="assets/favicon.ico">
-<link rel="apple-touch-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/jpeg" href="assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="assets/faviconnk.jpg">
 
 <!-- Structured data — Product/Organization -->
 <script type="application/ld+json">
@@ -102,7 +102,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
 .btn-ghost{background:transparent;border:1px solid var(--border-s);color:var(--text);}
 .btn-ghost:hover{background:var(--bg2);}
-.btn-lg{font-size:18px;padding:14px 32px;border-radius:10px;}
+.btn-lg{font-size:16px;padding:13px 22px;border-radius:10px;}
 
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
 .live-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;flex-shrink:0;}
@@ -115,7 +115,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .hero h1 em{font-style:italic;color:var(--accent);}
 .hero-tagline{font-size:20px;font-weight:700;letter-spacing:-0.01em;line-height:1.5;color:var(--text);margin-bottom:8px;}
 .hero-sub{font-size:17px;color:var(--muted);margin-bottom:28px;line-height:1.7;}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+.hero-ctas{display:flex;gap:10px;flex-wrap:nowrap;margin-bottom:36px;}
 .hero-stats{display:flex;gap:32px;padding-top:28px;border-top:1px solid var(--border);flex-wrap:wrap;}
 .stat-num{font-size:52px;font-weight:800;letter-spacing:-0.04em;line-height:1;}
 .stat-label{font-size:13px;color:var(--muted);margin-top:6px;}
@@ -206,24 +206,24 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .skills-section{padding:80px 40px;background:var(--bg2);}
 .skills-inner{max-width:1200px;margin:0 auto;}
 .tab-bar{display:flex;gap:4px;padding:4px;background:var(--bg);border-radius:10px;width:fit-content;margin-bottom:36px;}
-.tab-btn{padding:8px 20px;border-radius:8px;font-size:15px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--muted);font-family:'Geist',sans-serif;transition:all .18s;}
+.tab-btn{padding:10px 26px;border-radius:9px;font-size:17px;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--muted);font-family:'Geist',sans-serif;transition:all .18s;}
 .tab-btn.active{background:var(--surface);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,0.1);}
 .tab-btn:hover:not(.active){color:var(--text);}
-.bundles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
-.bundle-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;}
+.bundles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+.bundle-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;}
 .bundle-card:hover{border-color:var(--border-s);transform:translateY(-2px);}
 .bc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
 .bc-dot{width:9px;height:9px;border-radius:50%;}
 .bc-save{font-size:10px;font-weight:700;letter-spacing:0.06em;padding:3px 9px;border-radius:99px;background:var(--green-bg);color:var(--green-text);}
-.bc-name{font-size:15px;font-weight:700;margin-bottom:3px;}
-.bc-count{font-size:12px;color:var(--muted);margin-bottom:12px;}
+.bc-name{font-size:19px;font-weight:800;margin-bottom:4px;}
+.bc-count{font-size:14px;color:var(--muted);margin-bottom:14px;}
 .bc-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;flex:1;align-content:flex-start;}
-.bc-pill{font-size:11px;padding:3px 9px;border-radius:99px;background:var(--bg2);color:var(--muted);border:1px solid var(--border);}
+.bc-pill{font-size:13px;padding:5px 11px;border-radius:99px;background:var(--bg2);color:var(--muted);border:1px solid var(--border);}
 .bc-footer{display:flex;align-items:baseline;gap:8px;padding-top:14px;border-top:1px solid var(--border);}
-.bc-price{font-size:20px;font-weight:700;letter-spacing:-0.02em;}
-.bc-ind{font-size:12px;color:var(--muted);text-decoration:line-through;}
+.bc-price{font-size:32px;font-weight:800;letter-spacing:-0.03em;}
+.bc-ind{font-size:13px;color:var(--muted);text-decoration:line-through;}
 .filter-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
-.fchip{font-size:13px;padding:6px 14px;border-radius:99px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-family:'Geist',sans-serif;transition:all .15s;}
+.fchip{font-size:16px;padding:8px 18px;border-radius:99px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-family:'Geist',sans-serif;transition:all .15s;}
 .fchip:hover,.fchip.on{border-color:var(--border-s);color:var(--text);background:var(--surface);}
 .tier-section{margin-bottom:36px;}
 .tier-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
@@ -232,16 +232,16 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .tl2{background:var(--blue-bg);color:var(--blue-text);}
 .tl3{background:var(--green-bg);color:var(--green-text);}
 .tline{flex:1;height:1px;background:var(--border);}
-.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;}
-.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:all .18s;}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;}
+.skill-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;cursor:pointer;transition:all .18s;}
 .skill-card:hover{border-color:var(--border-s);transform:translateY(-1px);}
 .sc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;}
-.sc-name{font-size:14px;font-weight:600;line-height:1.4;}
-.sc-buyer{font-size:11px;color:var(--muted);}
+.sc-name{font-size:17px;font-weight:700;line-height:1.4;}
+.sc-buyer{font-size:13px;color:var(--muted);}
 .sc-bdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px;}
 .sc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);}
-.sc-price{font-size:14px;font-weight:700;}
-.sc-cat{font-size:10px;padding:3px 8px;border-radius:6px;background:var(--bg2);color:var(--muted);}
+.sc-price{font-size:18px;font-weight:800;}
+.sc-cat{font-size:12px;padding:4px 10px;border-radius:6px;background:var(--bg2);color:var(--muted);}
 
 /* ── WHO IT'S FOR ── */
 .for-section{padding:80px 40px;}
@@ -310,13 +310,39 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
 .footer-links a:hover{color:var(--text);}
 
 /* ── MODALS ── */
-.modal-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.65);align-items:center;justify-content:center;padding:20px;}
+.modal-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.7);align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;}
 .modal-overlay.open{display:flex;}
-.modal{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:32px;max-width:500px;width:100%;position:relative;}
-.modal-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:7px;border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--muted);font-size:16px;display:flex;align-items:center;justify-content:center;}
-.modal-close:hover{color:var(--text);}
-.modal h3{font-size:19px;font-weight:700;margin-bottom:6px;}
-.modal-cat{font-size:12px;color:var(--muted);margin-bottom:18px;}
+.modal{
+  background:var(--surface);border:1px solid var(--border);border-radius:18px;
+  padding:32px;max-width:560px;width:100%;position:relative;
+  margin:auto;
+}
+.modal-head{padding:0;border-bottom:none;flex-shrink:unset;}
+.modal-body{padding:0;overflow-y:unset;flex:unset;}
+.modal-foot{padding:0;border-top:none;flex-shrink:unset;display:block;}
+.modal-close{
+  position:absolute;top:16px;right:16px;
+  width:32px;height:32px;border-radius:8px;
+  border:1px solid var(--border);background:var(--surface);
+  cursor:pointer;color:var(--muted);font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  z-index:2;
+}
+.modal-close:hover{color:var(--text);border-color:var(--border-s);}
+.modal h3{font-size:20px;font-weight:700;margin-bottom:4px;padding-right:40px;}
+.modal-cat{font-size:12px;color:var(--muted);margin-bottom:0;}
+/* Bundle modal 2-col skill grid */
+.bm-skill-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+}
+.bm-skill-chip{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:8px;padding:10px 14px;border-radius:10px;
+  background:var(--surface2);border:1px solid var(--border);
+}
+.bm-skill-chip-name{font-size:14px;font-weight:600;color:var(--text);line-height:1.3;}
+.bm-skill-chip-price{font-size:13px;font-weight:700;color:var(--accent);flex-shrink:0;}
+[data-theme="light"] .bm-skill-chip-price{color:#b5451e;}
 .ms-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;}
 .ms-body{font-size:13px;color:var(--muted);margin-bottom:16px;}
 .modal-footer{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--border);}
@@ -373,7 +399,7 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
     <p style="font-size:15px;font-weight:600;color:var(--accent);margin-bottom:24px;">For anyone who uses Claude. &nbsp;Skills from $9.</p>
     <div class="hero-ctas">
       <a href="#skills" class="btn btn-primary btn-lg">Browse Skills</a>
-      <a href="#install" class="btn btn-ghost btn-lg">See how to install</a>
+      <a href="#install" class="btn btn-ghost btn-lg">How to install</a>
     </div>
     <div class="hero-stats">
       <div><div class="stat-num">60+</div><div class="stat-label">Claude Skills</div></div>
@@ -673,7 +699,7 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
     <div class="ms-label">Target buyer</div><div class="ms-body" id="m-buyer"></div>
     <div class="ms-label">What you get</div>
     <div class="ms-body" id="m-pattern"></div>
-    <div style="font-size:11px;color:var(--green-text);margin-bottom:12px;display:flex;align-items:center;gap:6px;">🛡️ 7-day money back guarantee</div>
+    <div style="font-size:12px;color:var(--green-text);margin-bottom:12px;display:flex;align-items:center;gap:6px;">🛡️ 7-day money back guarantee</div>
     <div class="modal-footer"><div class="modal-price" id="m-price"></div><a href="#skills" class="btn btn-primary" onclick="closeModalDirect()">Get this skill</a></div>
   </div>
 </div>
