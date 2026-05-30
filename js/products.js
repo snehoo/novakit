@@ -1,6 +1,6 @@
 // NovaKit Products — single source of truth
+// Prices locked May 2026 — from novakit-pricing-ref-final.html
 // Update razorpayLink per SKU before launch
-// fileUrl uses hashed filename — matches file in R2 /skill/ folder
 
 window.NK_PRODUCTS = {
 
@@ -8,7 +8,7 @@ window.NK_PRODUCTS = {
     name: "AI Animation Film Prompt",
     slug: 'ai-animation-film-prompt',
     icon: '🎨',
-    price: 29,
+    price: 15,
     type: 'Individual skill',
     description: "Transforms a concept + style reference into a complete, production-ready AI animation film system: animation aesthetic spec, character consistency bible, physics and motion level, ",
     includes: [
@@ -19,14 +19,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/11b7433e.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'ai-video-prompt': {
-    name: "AI Video Prompt",
+    name: "Short-Form AI Video",
     slug: 'ai-video-prompt',
     icon: '🎬',
-    price: 29,
+    price: 19,
     type: 'Individual skill',
     description: "Generates structured, tool-specific short-form AI video prompts for Seedance, Higgsfield, Kling, and compatible tools \u2014 calibrated to scene concept, platform, genre, tone, shot cou",
     includes: [
@@ -37,14 +37,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/342705ad.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'architecture-diagram-prompt': {
     name: "Architecture Diagram Prompt",
     slug: 'architecture-diagram-prompt',
     icon: '🏗️',
-    price: 29,
+    price: 15,
     type: 'Individual skill',
     description: "Converts a system description and constraints into a complete architecture deliverable: Mermaid diagram code (C4 Context, Container, Sequence, or Flowchart), a written architecture",
     includes: [
@@ -55,14 +55,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/41d52fab.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'book-cover-prompt': {
     name: "Book Cover Prompt",
     slug: 'book-cover-prompt',
     icon: '📖',
-    price: 19,
+    price: 5,
     type: 'Individual skill',
     description: "Transforms genre + mood into a complete, production-ready book cover system: competitive shelf analysis, design strategy brief, title treatment direction, typography spec, and a fu",
     includes: [
@@ -73,14 +73,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/f12c976a.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'brand-ad-copy': {
-    name: "Brand Ad Copy",
+    name: "Brand & Ad Copy",
     slug: 'brand-ad-copy',
     icon: '📣',
-    price: 39,
+    price: 19,
     type: 'Individual skill',
     description: "Converts a product + goal into high-converting ad copy variants, scroll-stopping hooks, and subject lines across Meta, Google, LinkedIn, TikTok, and email. Built for D2C brands, Sa",
     includes: [
@@ -91,14 +91,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/96e05c36.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'brand-voice-guide': {
     name: "Brand Voice Guide",
     slug: 'brand-voice-guide',
     icon: '🎨',
-    price: 39,
+    price: 15,
     type: 'Individual skill',
     description: "Produces a complete, ready-to-use brand voice guide \u2014 from personality definition through vocabulary lists, banned phrases, and channel-specific tone rules. Built for new brands, r",
     includes: [
@@ -109,14 +109,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/ae523689.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'business-plan': {
     name: "Business Plan",
     slug: 'business-plan',
     icon: '📋',
-    price: 49,
+    price: 9,
     type: 'Individual skill',
     description: "Generates full, audience-calibrated business plans with executive summary and financial summary, tailored to the purpose (bank loan, investor, incubator, government scheme, grant, ",
     includes: [
@@ -127,14 +127,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/27804122.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'childrens-book-prompt': {
     name: "Children's Book Prompt",
     slug: 'childrens-book-prompt',
     icon: '🧒',
-    price: 19,
+    price: 6,
     type: 'Individual skill',
     description: "Builds complete children's picture books \u2014 spread-by-spread text and paired AI illustration prompts \u2014 for Amazon KDP self-publishers, educational publishers, authors, illustrators,",
     includes: [
@@ -145,14 +145,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/02cbfdee.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'cold-outreach-email': {
     name: "Cold Outreach Email",
     slug: 'cold-outreach-email',
     icon: '✉️',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Generates multi-variant cold outreach emails with 3 subject line options, calibrated to industry, target role, value proposition, and a pre-empted objection. Use whenever a B2B sal",
     includes: [
@@ -163,14 +163,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/150352ad.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'conference-abstract': {
     name: "Conference Abstract",
     slug: 'conference-abstract',
     icon: '🎤',
-    price: 19,
+    price: 7,
     type: 'Individual skill',
     description: "Transforms a research project + target conference into a submission-ready conference abstract \u2014 calibrated to the conference's field conventions, word/character limits, structured ",
     includes: [
@@ -181,14 +181,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/8e98f978.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'content-calendar': {
     name: "Content Calendar",
     slug: 'content-calendar',
     icon: '📅',
-    price: 29,
+    price: 8,
     type: 'Individual skill',
     description: "Builds complete 30/60/90-day content plans for brands, agencies, and creator managers. Input: brand + goals. The skill asks about channels, frequency, content types, and key dates,",
     includes: [
@@ -199,14 +199,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/e18688e4.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'course-curriculum-builder': {
     name: "Course Curriculum Builder",
     slug: 'course-curriculum-builder',
     icon: '📚',
-    price: 39,
+    price: 15,
     type: 'Individual skill',
     description: "Builds complete course curricula \u2014 module structure, lesson outlines, learning objectives, and quiz questions \u2014 for online course creators, L&D teams, and bootcamps. Input: topic +",
     includes: [
@@ -217,14 +217,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/bb4dbc32.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'cover-letter-writer': {
     name: "Cover Letter Writer",
     slug: 'cover-letter-writer',
     icon: '✍️',
-    price: 19,
+    price: 9,
     type: 'Individual skill',
     description: "Generates a tailored, company-specific cover letter from a target role and resume highlights. Pairs with the resume-cv-builder skill. Built for job seekers globally. Used by career",
     includes: [
@@ -235,14 +235,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/d171af7a.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'dialogue-character-film-prompt': {
-    name: "Dialogue Character Film Prompt",
+    name: "Dialogue / Character Film Prompt",
     slug: 'dialogue-character-film-prompt',
     icon: '🎭',
-    price: 29,
+    price: 15,
     type: 'Individual skill',
     description: "Builds complete Seedance 2.0 dialogue-driven film prompts \u2014 shot by shot \u2014 for short film creators, video makers, and dialogue-driven content producers. Input: character + spoken l",
     includes: [
@@ -253,14 +253,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/6f6c2f3b.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'ecommerce-product-listing': {
     name: "Ecommerce Product Listing",
     slug: 'ecommerce-product-listing',
     icon: '🛍️',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Transforms a product + category into a complete, platform-optimised listing package \u2014 title, bullet points, product description, A+ content brief, backend keywords, and SEO meta co",
     includes: [
@@ -271,14 +271,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/8bf6cca6.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'email-newsletter-engine': {
     name: "Email Newsletter Engine",
     slug: 'email-newsletter-engine',
     icon: '📰',
-    price: 39,
+    price: 9,
     type: 'Individual skill',
     description: "Generates a complete, publish-ready email newsletter issue from a niche and audience size. Built for Substack, Beehiiv, and media brand creators. Used by newsletter writers and con",
     includes: [
@@ -289,14 +289,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/eb1ce6e9.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'eulogy-writer': {
     name: "Eulogy Writer",
     slug: 'eulogy-writer',
     icon: '🕊️',
-    price: 19,
+    price: 5,
     type: 'Individual skill',
     description: "Helps grieving family members, close friends, and funeral celebrants write a personal, spoken-word eulogy for someone who has died. Transforms what a person shares about the one th",
     includes: [
@@ -307,14 +307,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/e680e63f.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'event-speech-writer': {
     name: "Event Speech Writer",
     slug: 'event-speech-writer',
     icon: '🎤',
-    price: 19,
+    price: 5,
     type: 'Individual skill',
     description: "Writes complete, delivery-ready event speeches \u2014 wedding toasts, best man and maid of honour speeches, retirement tributes, anniversary speeches, eulogies, graduation toasts, and m",
     includes: [
@@ -325,14 +325,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/4f085f10.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'exam-paper-generator': {
     name: "Exam Paper Generator",
     slug: 'exam-paper-generator',
     icon: '📝',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Generates complete, curriculum-aligned exam papers with full marking schemes, calibrated to curriculum board, subject, grade level, difficulty distribution, question types, and tot",
     includes: [
@@ -343,14 +343,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/c4e7a9bf.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'festival-holiday-greeting-prompt': {
     name: "Festival Holiday Greeting Prompt",
     slug: 'festival-holiday-greeting-prompt',
     icon: '🎉',
-    price: 9,
+    price: 5,
     type: 'Individual skill',
     description: "Transforms a festival name + brand identity into a complete, culturally-calibrated greeting campaign system: message strategy brief, visual identity brief, AI image generation prom",
     includes: [
@@ -361,14 +361,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/18c12516.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'financial-model-prompt': {
     name: "Financial Model Prompt",
     slug: 'financial-model-prompt',
     icon: '💹',
-    price: 39,
+    price: 19,
     type: 'Individual skill',
     description: "Use this skill when a founder, fractional CFO, or financial analyst needs to generate a structured, assumption-rich financial model prompt for Excel or Google Sheets. Triggers: \"bu",
     includes: [
@@ -379,14 +379,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/fc151db9.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'grant-and-proposal-writing': {
-    name: "Grant And Proposal Writing",
+    name: "Grant & Proposal Writing",
     slug: 'grant-and-proposal-writing',
     icon: '💰',
-    price: 39,
+    price: 15,
     type: 'Individual skill',
     description: "Transforms a project idea + funder profile into a complete, submission-ready grant package: executive summary, needs statement, logic model, budget narrative, and timeline \u2014 calibr",
     includes: [
@@ -397,14 +397,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/322f3e7c.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'health-wellness-plan': {
     name: "Health Wellness Plan",
     slug: 'health-wellness-plan',
     icon: '💪',
-    price: 19,
+    price: 8,
     type: 'Individual skill',
     description: "Use this skill when a personal trainer, health coach, or nutritionist needs to generate a complete, personalized health and wellness plan for a client. Triggers: \"build me a wellne",
     includes: [
@@ -415,14 +415,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/28113cf3.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'home-renovation-brief': {
     name: "Home Renovation Brief",
     slug: 'home-renovation-brief',
     icon: '🏗️',
-    price: 19,
+    price: 5,
     type: 'Individual skill',
     description: "Room + style reference \u2192 full scope-of-work brief for contractor, with mood board direction, material specifications, budget allocation, timeline, and phasing plan. Built for homeo",
     includes: [
@@ -433,14 +433,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/2bff4beb.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'hotel-airbnb-listing-copy': {
-    name: "Hotel Airbnb Listing Copy",
+    name: "Hotel / Airbnb Listing Copy",
     slug: 'hotel-airbnb-listing-copy',
     icon: '🏨',
-    price: 29,
+    price: 7,
     type: 'Individual skill',
     description: "Use this skill when an Airbnb host, boutique hotel manager, or hospitality consultant needs to write or rewrite OTA listing copy. Triggers: \"write my Airbnb listing\", \"improve my p",
     includes: [
@@ -451,14 +451,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/8e28e7d6.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'investor-update-email': {
     name: "Investor Update Email",
     slug: 'investor-update-email',
     icon: '📧',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Generates monthly or quarterly investor update emails calibrated to funding stage, metrics focus, narrative arc, and tone. Use whenever a founder, startup ops lead, or COO says thi",
     includes: [
@@ -469,14 +469,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/64a1cbd4.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'job-description-writer': {
     name: "Job Description Writer",
     slug: 'job-description-writer',
     icon: '💼',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Generates structured, inclusive job descriptions with a built-in bias check, calibrated to role, seniority, must-have requirements, and culture signals. Use whenever a recruiter, H",
     includes: [
@@ -487,14 +487,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/053190af.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'lesson-plan-builder': {
     name: "Lesson Plan Builder",
     slug: 'lesson-plan-builder',
     icon: '🏫',
-    price: 29,
+    price: 8,
     type: 'Individual skill',
     description: "Builds complete, classroom-ready lesson plans for school teachers, tutors, and homeschool parents. Input: subject + grade level. The skill asks about learning objective, lesson dur",
     includes: [
@@ -505,14 +505,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/766c52e4.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'linkedin-post-engine': {
     name: "Linkedin Post Engine",
     slug: 'linkedin-post-engine',
     icon: '💼',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Writes optimised LinkedIn posts for founders and ghostwriters serving the \u20b950k\u20132L/month ghostwriting market. Input: topic. Asks: post type (story/insight/contrarian/how-to), indust",
     includes: [
@@ -523,14 +523,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/38357a65.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'logo-brand-identity-prompt': {
-    name: "Logo Brand Identity Prompt",
+    name: "Logo & Brand Identity Prompt",
     slug: 'logo-brand-identity-prompt',
     icon: '✏️',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Transforms Industry + 5 personality adjectives \u2192 competitor refs, style era, colour values \u2192 a complete multi-prompt brand system covering logo mark, app icon, colour palette, and ",
     includes: [
@@ -541,14 +541,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/852bd26e.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'menu-description-copy': {
     name: "Menu Description Copy",
     slug: 'menu-description-copy',
     icon: '🍽️',
-    price: 19,
+    price: 5,
     type: 'Individual skill',
     description: "Use this skill when a restaurant owner, food consultant, cloud kitchen operator, or hospitality manager needs to write or rewrite menu copy. Triggers: \"write my menu descriptions\",",
     includes: [
@@ -559,14 +559,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/2140eab9.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'nda-contract-draft': {
-    name: "NDA Contract Draft",
+    name: "NDA / Contract Draft",
     slug: 'nda-contract-draft',
     icon: '⚖️',
-    price: 29,
+    price: 15,
     type: 'Individual skill',
     description: "Generates structured NDA and contract drafts for small businesses, freelancers, and startups. Built for legal tech builders and solo attorneys. Input: agreement type + parties. Ask",
     includes: [
@@ -577,14 +577,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/6347e573.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'performance-review-writer': {
     name: "Performance Review Writer",
     slug: 'performance-review-writer',
     icon: '⭐',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Generates structured, evidence-based performance reviews calibrated to reviewer type (self/manager/360), company culture, tone, and role \u2014 with specific behavioural examples and fo",
     includes: [
@@ -595,14 +595,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/9195cefb.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'pitch-deck-narrative': {
     name: "Pitch Deck Narrative",
     slug: 'pitch-deck-narrative',
     icon: '📊',
-    price: 49,
+    price: 19,
     type: 'Individual skill',
     description: "Generates slide-by-slide pitch deck narratives with investor-grade language, calibrated to funding stage, audience type, and deck length. Use whenever a founder, startup advisor, a",
     includes: [
@@ -613,14 +613,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/32b68317.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'podcast-episode-script': {
     name: "Podcast Episode Script",
     slug: 'podcast-episode-script',
     icon: '🎙️',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Generates complete podcast episode scripts and outlines for independent podcasters and media brands globally. Used by podcast producers and solo hosts. Input: episode topic + show ",
     includes: [
@@ -631,14 +631,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/968fd5fa.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'podcast-show-notes': {
     name: "Podcast Show Notes",
     slug: 'podcast-show-notes',
     icon: '📝',
-    price: 19,
+    price: 8,
     type: 'Individual skill',
     description: "Transforms a podcast episode topic + guest into a complete publishing package: SEO-optimised show notes, Spotify/Apple meta description, timestamped chapter markers, and a newslett",
     includes: [
@@ -649,14 +649,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/1f1c0298.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'poetry-verse-prompt': {
     name: "Poetry Verse Prompt",
     slug: 'poetry-verse-prompt',
     icon: '🖋️',
-    price: 9,
+    price: 5,
     type: 'Individual skill',
     description: "Generates original poetry and verse across forms, occasions, moods, and languages \u2014 with structural guidance for each form used. Use whenever a poet, event MC, gifting service, or ",
     includes: [
@@ -667,14 +667,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/0a3d4675.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'pr-press-release': {
     name: "PR Press Release",
     slug: 'pr-press-release',
     icon: '📰',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Produces journalist-ready press releases in standard wire format for startups announcing funding rounds, product launches, partnerships, executive hires, and rebrands. Input: annou",
     includes: [
@@ -685,14 +685,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/ff663a1d.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'prd-writer': {
     name: "PRD Writer",
     slug: 'prd-writer',
     icon: '🛠️',
-    price: 49,
+    price: 15,
     type: 'Individual skill',
     description: "Converts a feature idea into a complete, engineering-ready Product Requirements Document. Produces user stories in As a / I want / So that format, Given-When-Then acceptance criter",
     includes: [
@@ -703,14 +703,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/bbcc353a.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'product-ad-film-prompt': {
     name: "Product Ad Film Prompt",
     slug: 'product-ad-film-prompt',
     icon: '🎥',
-    price: 29,
+    price: 15,
     type: 'Individual skill',
     description: "Transforms a product + vibe into a complete Seedance 2.0 AI video prompt suite for short-form product ads \u2014 covering hero shot, reveal, lifestyle, detail/texture, and end-card scen",
     includes: [
@@ -721,14 +721,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/317a2df7.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'product-photography-prompt': {
     name: "Product Photography Prompt",
     slug: 'product-photography-prompt',
     icon: '📸',
-    price: 19,
+    price: 9,
     type: 'Individual skill',
     description: "Generates complete, platform-ready AI image generation prompts for product photography. Use when a Shopify seller, Amazon FBA operator, or D2C brand manager needs professional-grad",
     includes: [
@@ -739,14 +739,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/6f7cb170.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'real-estate-listing-copy': {
     name: "Real Estate Listing Copy",
     slug: 'real-estate-listing-copy',
     icon: '🏠',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "",
     includes: [
@@ -757,14 +757,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/51900a7d.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'real-estate-photo-prompt': {
     name: "Real Estate Photo Prompt",
     slug: 'real-estate-photo-prompt',
     icon: '📸',
-    price: 19,
+    price: 9,
     type: 'Individual skill',
     description: "Generates professional AI image-generation prompts for real estate marketing visuals. Covers twilight/dusk exterior shots and styled interior scenes. Use whenever a real estate pho",
     includes: [
@@ -775,14 +775,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/af9d1714.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'recipe-development-prompt': {
     name: "Recipe Development Prompt",
     slug: 'recipe-development-prompt',
     icon: '🍳',
-    price: 9,
+    price: 5,
     type: 'Individual skill',
     description: "Dish concept + constraints \u2192 full recipe with origin story, tested method, plating notes, and platform-ready variations. Built for food influencers, cookbook authors, and cloud kit",
     includes: [
@@ -793,14 +793,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/60a3a6e9.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'research-paper-outline': {
     name: "Research Paper Outline",
     slug: 'research-paper-outline',
     icon: '🔬',
-    price: 29,
+    price: 7,
     type: 'Individual skill',
     description: "Transforms a research topic + field into a complete, publication-ready paper outline \u2014 with argument map, chapter summaries, methodology selection, section structure, and writing g",
     includes: [
@@ -811,14 +811,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/90259ac9.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'resume-cv-builder': {
     name: "Resume Cv Builder",
     slug: 'resume-cv-builder',
     icon: '📄',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Generates tailored resume bullet points and a professional summary from a target role and experience input. Built for career platforms, universities, and professionals. Used by car",
     includes: [
@@ -829,14 +829,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/429e1caa.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'sales-landing-page-copy': {
     name: "Sales Landing Page Copy",
     slug: 'sales-landing-page-copy',
     icon: '🚀',
-    price: 49,
+    price: 9,
     type: 'Individual skill',
     description: "Builds complete direct-response sales pages and landing pages from headline to CTA \u2014 for SaaS, D2C founders, and direct-response copywriters. Input: a product. The skill asks about",
     includes: [
@@ -847,14 +847,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/0a97cf13.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'screenplay-script': {
     name: "Screenplay Script",
     slug: 'screenplay-script',
     icon: '🎬',
-    price: 39,
+    price: 6,
     type: 'Individual skill',
     description: "Transforms a concept + format into a full, industry-standard screenplay \u2014 with scene headings, action lines, dialogue, character introductions, and structural beats \u2014 calibrated to",
     includes: [
@@ -865,14 +865,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/09f71fae.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'seo-blog-post-brief': {
     name: "SEO Blog Post Brief",
     slug: 'seo-blog-post-brief',
     icon: '🔍',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Generates a complete SEO content brief from a target keyword. Built for digital agencies, SaaS blogs, and media companies. Used by SEO strategists and content managers. Input: targ",
     includes: [
@@ -883,14 +883,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/93d25b78.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'short-story-prompt': {
     name: "Short Story Prompt",
     slug: 'short-story-prompt',
     icon: '📖',
-    price: 19,
+    price: 5,
     type: 'Individual skill',
     description: "Transforms a genre + length into a fully-developed, publication-ready short story writing prompt \u2014 complete with structure beats, character seeds, opening hook, thematic spine, cul",
     includes: [
@@ -901,14 +901,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/69d8335f.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'social-content-engine': {
     name: "Social Content Engine",
     slug: 'social-content-engine',
     icon: '📱',
-    price: 39,
+    price: 9,
     type: 'Individual skill',
     description: "Generates a full week of platform-optimised social content from a single topic or theme. Built for the creator economy: influencers, coaches, and personal brand builders. Used by s",
     includes: [
@@ -919,14 +919,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/4d90ecbd.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'social-media-carousel-prompt': {
     name: "Social Media Carousel Prompt",
     slug: 'social-media-carousel-prompt',
     icon: '🎠',
-    price: 19,
+    price: 8,
     type: 'Individual skill',
     description: "Transforms a topic + slide count into a complete, platform-calibrated carousel system: design system brief, hook architecture, per-slide copy + visual prompt, CTA placement strateg",
     includes: [
@@ -937,14 +937,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/8ac45937.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'tos-privacy-policy': {
     name: "Terms of Service & Privacy Policy",
     slug: 'tos-privacy-policy',
     icon: '📜',
-    price: 29,
+    price: 15,
     type: 'Individual skill',
     description: "Generates structured Terms of Service and Privacy Policy drafts for websites, apps, SaaS platforms, and D2C brands. Built for every new website, app, and D2C brand globally. Used b",
     includes: [
@@ -955,14 +955,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/feb323b0.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'travel-itinerary-planner': {
     name: "Travel Itinerary Planner",
     slug: 'travel-itinerary-planner',
     icon: '✈️',
-    price: 19,
+    price: 5,
     type: 'Individual skill',
     description: "Destination + duration \u2192 full day-by-day travel itinerary with logistics, insider tips, transport notes, alternatives, and platform-ready copy. Built for travel agents, influencers",
     includes: [
@@ -973,14 +973,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/a7b1c005.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'twitter-x-thread-engine': {
     name: "Twitter/X Thread Engine",
     slug: 'twitter-x-thread-engine',
     icon: '🐦',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Generates a complete, numbered X (Twitter) thread from a single topic. Built for creators monetising their audience and thread ghostwriters. Used by content strategists and ghostwr",
     includes: [
@@ -991,14 +991,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/b165dc30.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'ugc-ad-creator': {
     name: "UGC Ad Creator",
     slug: 'ugc-ad-creator',
     icon: '🎬',
-    price: 39,
+    price: 19,
     type: 'Individual skill',
     description: "Creates complete, scroll-stopping Higgsfield MCP UGC ad plans for ecommerce products. Use whenever the user mentions \"make a UGC ad\", \"create a TikTok ad\", \"Higgsfield ad\", \"build ",
     includes: [
@@ -1009,14 +1009,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/d2c6833e.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'university-sop': {
-    name: "University Sop",
+    name: "University Application SOP",
     slug: 'university-sop',
     icon: '🎓',
-    price: 19,
+    price: 15,
     type: 'Individual skill',
     description: "Generates structured, program-specific Statements of Purpose (SOPs) for university applications \u2014 calibrated to the program, the institution's tone, the applicant's academic backgr",
     includes: [
@@ -1027,14 +1027,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/f7d24804.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'video-script-engine': {
     name: "Video Script Engine",
     slug: 'video-script-engine',
     icon: '🎥',
-    price: 39,
+    price: 15,
     type: 'Individual skill',
     description: "Generates complete, production-ready video scripts for YouTube (long-form and Shorts), Instagram Reels, and TikTok. Built for creators and content agencies globally. Input: topic +",
     includes: [
@@ -1045,14 +1045,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/5a151387.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'visa-cover-letter': {
-    name: "Visa Cover Letter",
+    name: "Visa Application Cover Letter",
     slug: 'visa-cover-letter',
     icon: '🛂',
-    price: 19,
+    price: 5,
     type: 'Individual skill',
     description: "Generates consulate-preferred visa application cover letters for international applicants. Covers Schengen (all 27 countries), UK, US (B1/B2, F1, J1), Canada (visitor, study, work)",
     includes: [
@@ -1063,14 +1063,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/f1176071.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'webinar-online-event-script': {
-    name: "Webinar Online Event Script",
+    name: "Webinar / Online Event Script",
     slug: 'webinar-online-event-script',
     icon: '🎙️',
-    price: 29,
+    price: 9,
     type: 'Individual skill',
     description: "Use this skill when an online educator, SaaS marketer, course creator, or coach needs to write a complete webinar or online event script. Triggers: \"write my webinar script\", \"crea",
     includes: [
@@ -1081,14 +1081,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/e29a4da2.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'wedding-invitation-prompt': {
     name: "Wedding Invitation Prompt",
     slug: 'wedding-invitation-prompt',
     icon: '💌',
-    price: 9,
+    price: 5,
     type: 'Individual skill',
     description: "Transforms a couple's ceremony style and aesthetic into a complete AI image prompt suite for wedding invitation design \u2014 covering main card, envelope liner, RSVP card, save-the-dat",
     includes: [
@@ -1099,14 +1099,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/69b2dc11.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'wedding-vows-writer': {
     name: "Wedding Vows Writer",
     slug: 'wedding-vows-writer',
     icon: '💍',
-    price: 19,
+    price: 5,
     type: 'Individual skill',
     description: "Transforms a couple's relationship story, tone preference, and style into fully personalised wedding vows \u2014 for one or both partners \u2014 covering traditional, modern, romantic, humor",
     includes: [
@@ -1117,14 +1117,14 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/eb66b0c0.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'youtube-thumbnail-prompt': {
     name: "Youtube Thumbnail Prompt",
     slug: 'youtube-thumbnail-prompt',
     icon: '▶️',
-    price: 9,
+    price: 8,
     type: 'Individual skill',
     description: "Generates a complete AI image generation prompt, composition brief, and do/don't list for a YouTube thumbnail. Built for YouTube creators, editors, and thumbnail designers. Input: ",
     includes: [
@@ -1135,117 +1135,129 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/b18e7bfb.skill',
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   // ─── BUNDLES ────────────────────────────────────────────────
 
   'founder-bundle': {
-    name: 'Founder Bundle',
+    name: "Founder Bundle",
     slug: 'founder-bundle',
     icon: '🚀',
-    price: 89,
+    price: 39,
     type: 'Bundle · 6 skills',
     description: 'Bundle of 6 skills.',
-    includes: ["Cold Outreach Email", "Pitch Deck Narrative", "Business Plan", "Investor Update Email", "Job Description Writer", "Sales Landing Page Copy"],
-    fileUrls: ['https://assets.novakit.tech/skill/150352ad.skill', 'https://assets.novakit.tech/skill/32b68317.skill', 'https://assets.novakit.tech/skill/27804122.skill', 'https://assets.novakit.tech/skill/64a1cbd4.skill', 'https://assets.novakit.tech/skill/053190af.skill', 'https://assets.novakit.tech/skill/0a97cf13.skill'],
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    includes: ["Pitch Deck Narrative", "Cold Outreach Email", "Business Plan", "Investor Update Email", "Job Description Writer", "Sales Landing Page Copy"],
+    fileUrls: ['https://assets.novakit.tech/skill/32b68317.skill', 'https://assets.novakit.tech/skill/150352ad.skill', 'https://assets.novakit.tech/skill/27804122.skill', 'https://assets.novakit.tech/skill/64a1cbd4.skill', 'https://assets.novakit.tech/skill/053190af.skill', 'https://assets.novakit.tech/skill/0a97cf13.skill'],
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'creator-bundle': {
-    name: 'Creator Bundle',
+    name: "Creator Bundle",
     slug: 'creator-bundle',
     icon: '✨',
-    price: 89,
+    price: 45,
     type: 'Bundle · 7 skills',
     description: 'Bundle of 7 skills.',
-    includes: ["Linkedin Post Engine", "Twitter X Thread Engine", "Email Newsletter Engine", "Content Calendar", "Video Script Engine", "Ugc Ad Creator", "Social Content Engine"],
-    fileUrls: ['https://assets.novakit.tech/skill/38357a65.skill', 'https://assets.novakit.tech/skill/b165dc30.skill', 'https://assets.novakit.tech/skill/eb1ce6e9.skill', 'https://assets.novakit.tech/skill/e18688e4.skill', 'https://assets.novakit.tech/skill/5a151387.skill', 'https://assets.novakit.tech/skill/d2c6833e.skill', 'https://assets.novakit.tech/skill/4d90ecbd.skill'],
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    includes: ["Linkedin Post Engine", "SEO Blog Post Brief", "Email Newsletter Engine", "Social Content Engine", "Twitter/X Thread Engine", "Brand Voice Guide", "Content Calendar"],
+    fileUrls: ['https://assets.novakit.tech/skill/38357a65.skill', 'https://assets.novakit.tech/skill/93d25b78.skill', 'https://assets.novakit.tech/skill/eb1ce6e9.skill', 'https://assets.novakit.tech/skill/4d90ecbd.skill', 'https://assets.novakit.tech/skill/b165dc30.skill', 'https://assets.novakit.tech/skill/ae523689.skill', 'https://assets.novakit.tech/skill/e18688e4.skill'],
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'marketing-bundle': {
-    name: 'Marketing Bundle',
+    name: "Marketing Bundle",
     slug: 'marketing-bundle',
     icon: '📣',
-    price: 89,
-    type: 'Bundle · 7 skills',
-    description: 'Bundle of 7 skills.',
-    includes: ["Brand Ad Copy", "Brand Voice Guide", "Seo Blog Post Brief", "Pr Press Release", "Sales Landing Page Copy", "Ecommerce Product Listing", "Content Calendar"],
-    fileUrls: ['https://assets.novakit.tech/skill/96e05c36.skill', 'https://assets.novakit.tech/skill/ae523689.skill', 'https://assets.novakit.tech/skill/93d25b78.skill', 'https://assets.novakit.tech/skill/ff663a1d.skill', 'https://assets.novakit.tech/skill/0a97cf13.skill', 'https://assets.novakit.tech/skill/8bf6cca6.skill', 'https://assets.novakit.tech/skill/e18688e4.skill'],
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    price: 45,
+    type: 'Bundle · 5 skills',
+    description: 'Bundle of 5 skills.',
+    includes: ["Brand & Ad Copy", "UGC Ad Creator", "Ecommerce Product Listing", "Product Photography Prompt", "PR Press Release"],
+    fileUrls: ['https://assets.novakit.tech/skill/96e05c36.skill', 'https://assets.novakit.tech/skill/d2c6833e.skill', 'https://assets.novakit.tech/skill/8bf6cca6.skill', 'https://assets.novakit.tech/skill/6f7cb170.skill', 'https://assets.novakit.tech/skill/ff663a1d.skill'],
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'legal-biz-bundle': {
-    name: 'Legal & Biz Bundle',
+    name: "Legal & Biz Bundle",
     slug: 'legal-biz-bundle',
     icon: '⚖️',
-    price: 89,
-    type: 'Bundle · 6 skills',
-    description: 'Bundle of 6 skills.',
-    includes: ["Nda Contract Draft", "Tos Privacy Policy", "Business Plan", "Prd Writer", "Grant And Proposal Writing", "Performance Review Writer"],
-    fileUrls: ['https://assets.novakit.tech/skill/6347e573.skill', 'https://assets.novakit.tech/skill/feb323b0.skill', 'https://assets.novakit.tech/skill/27804122.skill', 'https://assets.novakit.tech/skill/bbcc353a.skill', 'https://assets.novakit.tech/skill/322f3e7c.skill', 'https://assets.novakit.tech/skill/9195cefb.skill'],
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    price: 45,
+    type: 'Bundle · 5 skills',
+    description: 'Bundle of 5 skills.',
+    includes: ["NDA / Contract Draft", "Terms of Service & Privacy Policy", "Financial Model Prompt", "Grant & Proposal Writing", "Visa Application Cover Letter"],
+    fileUrls: ['https://assets.novakit.tech/skill/6347e573.skill', 'https://assets.novakit.tech/skill/feb323b0.skill', 'https://assets.novakit.tech/skill/fc151db9.skill', 'https://assets.novakit.tech/skill/322f3e7c.skill', 'https://assets.novakit.tech/skill/f1176071.skill'],
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'video-pod-bundle': {
-    name: 'Video & Podcast Bundle',
+    name: "Video & Podcast Bundle",
     slug: 'video-pod-bundle',
     icon: '🎙️',
-    price: 59,
-    type: 'Bundle · 6 skills',
-    description: 'Bundle of 6 skills.',
-    includes: ["Video Script Engine", "Podcast Episode Script", "Podcast Show Notes", "Ugc Ad Creator", "Youtube Thumbnail Prompt", "Ai Video Prompt"],
-    fileUrls: ['https://assets.novakit.tech/skill/5a151387.skill', 'https://assets.novakit.tech/skill/968fd5fa.skill', 'https://assets.novakit.tech/skill/1f1c0298.skill', 'https://assets.novakit.tech/skill/d2c6833e.skill', 'https://assets.novakit.tech/skill/b18e7bfb.skill', 'https://assets.novakit.tech/skill/342705ad.skill'],
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    price: 69,
+    type: 'Bundle · 9 skills',
+    description: 'Bundle of 9 skills.',
+    includes: ["Video Script Engine", "AI Animation Film Prompt", "Product Ad Film Prompt", "Dialogue / Character Film Prompt", "Short-Form AI Video", "Podcast Episode Script", "Webinar / Online Event Script", "Podcast Show Notes", "Youtube Thumbnail Prompt"],
+    fileUrls: ['https://assets.novakit.tech/skill/5a151387.skill', 'https://assets.novakit.tech/skill/11b7433e.skill', 'https://assets.novakit.tech/skill/317a2df7.skill', 'https://assets.novakit.tech/skill/6f6c2f3b.skill', 'https://assets.novakit.tech/skill/342705ad.skill', 'https://assets.novakit.tech/skill/968fd5fa.skill', 'https://assets.novakit.tech/skill/e29a4da2.skill', 'https://assets.novakit.tech/skill/1f1c0298.skill', 'https://assets.novakit.tech/skill/b18e7bfb.skill'],
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'student-bundle': {
-    name: 'Student Bundle',
+    name: "Student Bundle",
     slug: 'student-bundle',
     icon: '🎓',
-    price: 59,
+    price: 29,
     type: 'Bundle · 5 skills',
     description: 'Bundle of 5 skills.',
-    includes: ["Resume Cv Builder", "Cover Letter Writer", "University Sop", "Research Paper Outline", "Exam Paper Generator"],
-    fileUrls: ['https://assets.novakit.tech/skill/429e1caa.skill', 'https://assets.novakit.tech/skill/d171af7a.skill', 'https://assets.novakit.tech/skill/f7d24804.skill', 'https://assets.novakit.tech/skill/90259ac9.skill', 'https://assets.novakit.tech/skill/c4e7a9bf.skill'],
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    includes: ["Resume Cv Builder", "Cover Letter Writer", "University Application SOP", "Research Paper Outline", "Conference Abstract"],
+    fileUrls: ['https://assets.novakit.tech/skill/429e1caa.skill', 'https://assets.novakit.tech/skill/d171af7a.skill', 'https://assets.novakit.tech/skill/f7d24804.skill', 'https://assets.novakit.tech/skill/90259ac9.skill', 'https://assets.novakit.tech/skill/8e98f978.skill'],
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'realtor-bundle': {
-    name: 'Realtor Bundle',
+    name: "Realtor Bundle",
     slug: 'realtor-bundle',
     icon: '🏠',
-    price: 59,
+    price: 29,
     type: 'Bundle · 5 skills',
     description: 'Bundle of 5 skills.',
-    includes: ["Real Estate Listing Copy", "Real Estate Photo Prompt", "Hotel Airbnb Listing Copy", "Brand Voice Guide", "Social Content Engine"],
-    fileUrls: ['https://assets.novakit.tech/skill/51900a7d.skill', 'https://assets.novakit.tech/skill/af9d1714.skill', 'https://assets.novakit.tech/skill/8e28e7d6.skill', 'https://assets.novakit.tech/skill/ae523689.skill', 'https://assets.novakit.tech/skill/4d90ecbd.skill'],
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    includes: ["Real Estate Listing Copy", "Real Estate Photo Prompt", "Hotel / Airbnb Listing Copy", "Ecommerce Product Listing", "Product Photography Prompt"],
+    fileUrls: ['https://assets.novakit.tech/skill/51900a7d.skill', 'https://assets.novakit.tech/skill/af9d1714.skill', 'https://assets.novakit.tech/skill/8e28e7d6.skill', 'https://assets.novakit.tech/skill/8bf6cca6.skill', 'https://assets.novakit.tech/skill/6f7cb170.skill'],
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'educator-bundle': {
-    name: 'Educator Bundle',
+    name: "Educator Bundle",
     slug: 'educator-bundle',
     icon: '📚',
     price: 29,
     type: 'Bundle · 4 skills',
     description: 'Bundle of 4 skills.',
-    includes: ["Lesson Plan Builder", "Course Curriculum Builder", "Exam Paper Generator", "Research Paper Outline"],
-    fileUrls: ['https://assets.novakit.tech/skill/766c52e4.skill', 'https://assets.novakit.tech/skill/bb4dbc32.skill', 'https://assets.novakit.tech/skill/c4e7a9bf.skill', 'https://assets.novakit.tech/skill/90259ac9.skill'],
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    includes: ["Course Curriculum Builder", "University Application SOP", "Lesson Plan Builder", "Exam Paper Generator"],
+    fileUrls: ['https://assets.novakit.tech/skill/bb4dbc32.skill', 'https://assets.novakit.tech/skill/f7d24804.skill', 'https://assets.novakit.tech/skill/766c52e4.skill', 'https://assets.novakit.tech/skill/c4e7a9bf.skill'],
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
   'wedding-bundle': {
-    name: 'Wedding Bundle',
+    name: "Wedding Bundle",
     slug: 'wedding-bundle',
     icon: '💍',
-    price: 29,
+    price: 15,
     type: 'Bundle · 4 skills',
     description: 'Bundle of 4 skills.',
-    includes: ["Wedding Vows Writer", "Wedding Invitation Prompt", "Event Speech Writer", "Eulogy Writer"],
-    fileUrls: ['https://assets.novakit.tech/skill/eb66b0c0.skill', 'https://assets.novakit.tech/skill/69b2dc11.skill', 'https://assets.novakit.tech/skill/4f085f10.skill', 'https://assets.novakit.tech/skill/e680e63f.skill'],
-    razorpayLink: 'YOUR_LINK_HERE', // set in Razorpay dashboard
+    includes: ["Wedding Vows Writer", "Wedding Invitation Prompt", "Event Speech Writer", "Menu Description Copy"],
+    fileUrls: ['https://assets.novakit.tech/skill/eb66b0c0.skill', 'https://assets.novakit.tech/skill/69b2dc11.skill', 'https://assets.novakit.tech/skill/4f085f10.skill', 'https://assets.novakit.tech/skill/2140eab9.skill'],
+    razorpayLink: 'YOUR_LINK_HERE',
+  },
+
+  'creative-bundle': {
+    name: "Creative Bundle",
+    slug: 'creative-bundle',
+    icon: '🖋️',
+    price: 19,
+    type: 'Bundle · 6 skills',
+    description: 'Bundle of 6 skills.',
+    includes: ["Short Story Prompt", "Screenplay Script", "Book Cover Prompt", "Poetry Verse Prompt", "Children's Book Prompt", "Festival Holiday Greeting Prompt"],
+    fileUrls: ['https://assets.novakit.tech/skill/69d8335f.skill', 'https://assets.novakit.tech/skill/09f71fae.skill', 'https://assets.novakit.tech/skill/f12c976a.skill', 'https://assets.novakit.tech/skill/0a3d4675.skill', 'https://assets.novakit.tech/skill/02cbfdee.skill', 'https://assets.novakit.tech/skill/18c12516.skill'],
+    razorpayLink: 'YOUR_LINK_HERE',
   },
 
 };
