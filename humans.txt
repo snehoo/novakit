@@ -1,7 +1,7 @@
 /* humanstxt.org */
 
 /* TEAM */
-  Owner: Snehal Omprakash
+  Owner: Snehal Patel
   Contact: snehalp@gmail.com
   Twitter: @snehoo
   Location: San Francisco, CA
