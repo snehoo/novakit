@@ -18,7 +18,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/11b7433e.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-ai-animation-film-prompt-11b743.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -36,7 +36,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/342705ad.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-ai-video-prompt-342705.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -54,7 +54,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/41d52fab.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-architecture-diagram-prompt-41d52f.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -72,7 +72,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/f12c976a.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-book-cover-prompt-f12c97.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -90,7 +90,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/96e05c36.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-brand-ad-copy-96e05c.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -108,7 +108,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/ae523689.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-brand-voice-guide-ae5236.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -126,7 +126,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/27804122.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-business-plan-278041.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -144,7 +144,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/02cbfdee.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-childrens-book-prompt-02cbfd.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -162,7 +162,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/150352ad.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-cold-outreach-email-150352.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -180,7 +180,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/8e98f978.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-conference-abstract-8e98f9.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -198,7 +198,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/e18688e4.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-content-calendar-e18688.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -216,7 +216,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/bb4dbc32.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-course-curriculum-builder-bb4dbc.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -234,7 +234,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/d171af7a.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-cover-letter-writer-d171af.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -252,7 +252,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/6f6c2f3b.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-dialogue-character-film-prompt-6f6c2f.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -270,7 +270,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/8bf6cca6.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-ecommerce-product-listing-8bf6cc.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -288,7 +288,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/eb1ce6e9.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-email-newsletter-engine-eb1ce6.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -306,7 +306,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/e680e63f.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-eulogy-writer-e680e6.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -324,7 +324,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/4f085f10.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-event-speech-writer-4f085f.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -342,7 +342,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/c4e7a9bf.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-exam-paper-generator-c4e7a9.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -360,7 +360,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/18c12516.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-festival-holiday-greeting-prompt-18c125.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -378,7 +378,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/fc151db9.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-financial-model-prompt-fc151d.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -396,7 +396,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/322f3e7c.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-grant-and-proposal-writing-322f3e.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -414,7 +414,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/28113cf3.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-health-wellness-plan-28113c.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -432,7 +432,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/2bff4beb.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-home-renovation-brief-2bff4b.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -450,7 +450,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/8e28e7d6.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-hotel-airbnb-listing-copy-8e28e7.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -468,7 +468,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/64a1cbd4.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-investor-update-email-64a1cb.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -486,7 +486,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/053190af.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-job-description-writer-053190.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -504,7 +504,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/766c52e4.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-lesson-plan-builder-766c52.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -522,7 +522,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/38357a65.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-linkedin-post-engine-38357a.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -540,7 +540,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/852bd26e.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-logo-brand-identity-prompt-852bd2.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -558,7 +558,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/2140eab9.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-menu-description-copy-2140ea.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -576,7 +576,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/6347e573.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-nda-contract-draft-6347e5.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -594,7 +594,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/9195cefb.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-performance-review-writer-9195ce.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -612,7 +612,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/32b68317.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-pitch-deck-narrative-32b683.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -630,7 +630,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/968fd5fa.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-podcast-episode-script-968fd5.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -648,7 +648,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/1f1c0298.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-podcast-show-notes-1f1c02.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -666,7 +666,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/0a3d4675.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-poetry-verse-prompt-0a3d46.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -684,7 +684,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/ff663a1d.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-pr-press-release-ff663a.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -702,7 +702,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/bbcc353a.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-prd-writer-bbcc35.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -720,7 +720,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/317a2df7.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-product-ad-film-prompt-317a2d.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -738,7 +738,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/6f7cb170.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-product-photography-prompt-6f7cb1.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -756,7 +756,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/51900a7d.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-real-estate-listing-copy-51900a.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -774,7 +774,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/af9d1714.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-real-estate-photo-prompt-af9d17.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -792,7 +792,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/60a3a6e9.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-recipe-development-prompt-60a3a6.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -810,7 +810,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/90259ac9.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-research-paper-outline-90259a.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -828,7 +828,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/429e1caa.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-resume-cv-builder-429e1c.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -846,7 +846,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/0a97cf13.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-sales-landing-page-copy-0a97cf.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -864,7 +864,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/09f71fae.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-screenplay-script-09f71f.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -882,7 +882,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/93d25b78.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-seo-blog-post-brief-93d25b.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -900,7 +900,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/69d8335f.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-short-story-prompt-69d833.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -918,7 +918,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/4d90ecbd.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-social-content-engine-4d90ec.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -936,7 +936,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/8ac45937.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-social-media-carousel-prompt-8ac459.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -954,7 +954,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/feb323b0.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-tos-privacy-policy-feb323.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -972,7 +972,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/a7b1c005.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-travel-itinerary-planner-a7b1c0.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -990,7 +990,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/b165dc30.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-twitter-x-thread-engine-b165dc.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1008,7 +1008,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/d2c6833e.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-ugc-ad-creator-d2c683.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1026,7 +1026,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/f7d24804.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-university-sop-f7d248.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1044,7 +1044,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/5a151387.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-video-script-engine-5a1513.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1062,7 +1062,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/f1176071.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-visa-cover-letter-f11760.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1080,7 +1080,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/e29a4da2.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-webinar-online-event-script-e29a4d.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1098,7 +1098,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/69b2dc11.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-wedding-invitation-prompt-69b2dc.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1116,7 +1116,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/eb66b0c0.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-wedding-vows-writer-eb66b0.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1134,7 +1134,7 @@ window.NK_PRODUCTS = {
       'Anti-slop quality gate before delivery',
       'Auto-improve — gets sharper with use',
     ],
-    fileUrl: 'https://assets.novakit.tech/skill/b18e7bfb.skill',
+    fileUrl: 'https://assets.novakit.tech/skill/nk-youtube-thumbnail-prompt-b18e7b.skill',
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1148,7 +1148,7 @@ window.NK_PRODUCTS = {
     type: 'Bundle · 6 skills',
     description: 'Bundle of 6 skills.',
     includes: ["Pitch Deck Narrative", "Cold Outreach Email", "Business Plan", "Investor Update Email", "Job Description Writer", "Sales Landing Page Copy"],
-    fileUrls: ['https://assets.novakit.tech/skill/32b68317.skill', 'https://assets.novakit.tech/skill/150352ad.skill', 'https://assets.novakit.tech/skill/27804122.skill', 'https://assets.novakit.tech/skill/64a1cbd4.skill', 'https://assets.novakit.tech/skill/053190af.skill', 'https://assets.novakit.tech/skill/0a97cf13.skill'],
+    fileUrls: ['https://assets.novakit.tech/skill/nk-pitch-deck-narrative-32b683.skill', 'https://assets.novakit.tech/skill/nk-cold-outreach-email-150352.skill', 'https://assets.novakit.tech/skill/nk-business-plan-278041.skill', 'https://assets.novakit.tech/skill/nk-investor-update-email-64a1cb.skill', 'https://assets.novakit.tech/skill/nk-job-description-writer-053190.skill', 'https://assets.novakit.tech/skill/nk-sales-landing-page-copy-0a97cf.skill'],
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1160,7 +1160,7 @@ window.NK_PRODUCTS = {
     type: 'Bundle · 7 skills',
     description: 'Bundle of 7 skills.',
     includes: ["Linkedin Post Engine", "SEO Blog Post Brief", "Email Newsletter Engine", "Social Content Engine", "Twitter/X Thread Engine", "Brand Voice Guide", "Content Calendar"],
-    fileUrls: ['https://assets.novakit.tech/skill/38357a65.skill', 'https://assets.novakit.tech/skill/93d25b78.skill', 'https://assets.novakit.tech/skill/eb1ce6e9.skill', 'https://assets.novakit.tech/skill/4d90ecbd.skill', 'https://assets.novakit.tech/skill/b165dc30.skill', 'https://assets.novakit.tech/skill/ae523689.skill', 'https://assets.novakit.tech/skill/e18688e4.skill'],
+    fileUrls: ['https://assets.novakit.tech/skill/nk-linkedin-post-engine-38357a.skill', 'https://assets.novakit.tech/skill/nk-seo-blog-post-brief-93d25b.skill', 'https://assets.novakit.tech/skill/nk-email-newsletter-engine-eb1ce6.skill', 'https://assets.novakit.tech/skill/nk-social-content-engine-4d90ec.skill', 'https://assets.novakit.tech/skill/nk-twitter-x-thread-engine-b165dc.skill', 'https://assets.novakit.tech/skill/nk-brand-voice-guide-ae5236.skill', 'https://assets.novakit.tech/skill/nk-content-calendar-e18688.skill'],
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1172,7 +1172,7 @@ window.NK_PRODUCTS = {
     type: 'Bundle · 5 skills',
     description: 'Bundle of 5 skills.',
     includes: ["Brand & Ad Copy", "UGC Ad Creator", "Ecommerce Product Listing", "Product Photography Prompt", "PR Press Release"],
-    fileUrls: ['https://assets.novakit.tech/skill/96e05c36.skill', 'https://assets.novakit.tech/skill/d2c6833e.skill', 'https://assets.novakit.tech/skill/8bf6cca6.skill', 'https://assets.novakit.tech/skill/6f7cb170.skill', 'https://assets.novakit.tech/skill/ff663a1d.skill'],
+    fileUrls: ['https://assets.novakit.tech/skill/nk-brand-ad-copy-96e05c.skill', 'https://assets.novakit.tech/skill/nk-ugc-ad-creator-d2c683.skill', 'https://assets.novakit.tech/skill/nk-ecommerce-product-listing-8bf6cc.skill', 'https://assets.novakit.tech/skill/nk-product-photography-prompt-6f7cb1.skill', 'https://assets.novakit.tech/skill/nk-pr-press-release-ff663a.skill'],
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1184,7 +1184,7 @@ window.NK_PRODUCTS = {
     type: 'Bundle · 5 skills',
     description: 'Bundle of 5 skills.',
     includes: ["NDA / Contract Draft", "Terms of Service & Privacy Policy", "Financial Model Prompt", "Grant & Proposal Writing", "Visa Application Cover Letter"],
-    fileUrls: ['https://assets.novakit.tech/skill/6347e573.skill', 'https://assets.novakit.tech/skill/feb323b0.skill', 'https://assets.novakit.tech/skill/fc151db9.skill', 'https://assets.novakit.tech/skill/322f3e7c.skill', 'https://assets.novakit.tech/skill/f1176071.skill'],
+    fileUrls: ['https://assets.novakit.tech/skill/nk-nda-contract-draft-6347e5.skill', 'https://assets.novakit.tech/skill/nk-tos-privacy-policy-feb323.skill', 'https://assets.novakit.tech/skill/nk-financial-model-prompt-fc151d.skill', 'https://assets.novakit.tech/skill/nk-grant-and-proposal-writing-322f3e.skill', 'https://assets.novakit.tech/skill/nk-visa-cover-letter-f11760.skill'],
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1196,7 +1196,7 @@ window.NK_PRODUCTS = {
     type: 'Bundle · 9 skills',
     description: 'Bundle of 9 skills.',
     includes: ["Video Script Engine", "AI Animation Film Prompt", "Product Ad Film Prompt", "Dialogue / Character Film Prompt", "Short-Form AI Video", "Podcast Episode Script", "Webinar / Online Event Script", "Podcast Show Notes", "Youtube Thumbnail Prompt"],
-    fileUrls: ['https://assets.novakit.tech/skill/5a151387.skill', 'https://assets.novakit.tech/skill/11b7433e.skill', 'https://assets.novakit.tech/skill/317a2df7.skill', 'https://assets.novakit.tech/skill/6f6c2f3b.skill', 'https://assets.novakit.tech/skill/342705ad.skill', 'https://assets.novakit.tech/skill/968fd5fa.skill', 'https://assets.novakit.tech/skill/e29a4da2.skill', 'https://assets.novakit.tech/skill/1f1c0298.skill', 'https://assets.novakit.tech/skill/b18e7bfb.skill'],
+    fileUrls: ['https://assets.novakit.tech/skill/nk-video-script-engine-5a1513.skill', 'https://assets.novakit.tech/skill/nk-ai-animation-film-prompt-11b743.skill', 'https://assets.novakit.tech/skill/nk-product-ad-film-prompt-317a2d.skill', 'https://assets.novakit.tech/skill/nk-dialogue-character-film-prompt-6f6c2f.skill', 'https://assets.novakit.tech/skill/nk-ai-video-prompt-342705.skill', 'https://assets.novakit.tech/skill/nk-podcast-episode-script-968fd5.skill', 'https://assets.novakit.tech/skill/nk-webinar-online-event-script-e29a4d.skill', 'https://assets.novakit.tech/skill/nk-podcast-show-notes-1f1c02.skill', 'https://assets.novakit.tech/skill/nk-youtube-thumbnail-prompt-b18e7b.skill'],
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1208,7 +1208,7 @@ window.NK_PRODUCTS = {
     type: 'Bundle · 5 skills',
     description: 'Bundle of 5 skills.',
     includes: ["Resume Cv Builder", "Cover Letter Writer", "University Application SOP", "Research Paper Outline", "Conference Abstract"],
-    fileUrls: ['https://assets.novakit.tech/skill/429e1caa.skill', 'https://assets.novakit.tech/skill/d171af7a.skill', 'https://assets.novakit.tech/skill/f7d24804.skill', 'https://assets.novakit.tech/skill/90259ac9.skill', 'https://assets.novakit.tech/skill/8e98f978.skill'],
+    fileUrls: ['https://assets.novakit.tech/skill/nk-resume-cv-builder-429e1c.skill', 'https://assets.novakit.tech/skill/nk-cover-letter-writer-d171af.skill', 'https://assets.novakit.tech/skill/nk-university-sop-f7d248.skill', 'https://assets.novakit.tech/skill/nk-research-paper-outline-90259a.skill', 'https://assets.novakit.tech/skill/nk-conference-abstract-8e98f9.skill'],
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1220,7 +1220,7 @@ window.NK_PRODUCTS = {
     type: 'Bundle · 5 skills',
     description: 'Bundle of 5 skills.',
     includes: ["Real Estate Listing Copy", "Real Estate Photo Prompt", "Hotel / Airbnb Listing Copy", "Ecommerce Product Listing", "Product Photography Prompt"],
-    fileUrls: ['https://assets.novakit.tech/skill/51900a7d.skill', 'https://assets.novakit.tech/skill/af9d1714.skill', 'https://assets.novakit.tech/skill/8e28e7d6.skill', 'https://assets.novakit.tech/skill/8bf6cca6.skill', 'https://assets.novakit.tech/skill/6f7cb170.skill'],
+    fileUrls: ['https://assets.novakit.tech/skill/nk-real-estate-listing-copy-51900a.skill', 'https://assets.novakit.tech/skill/nk-real-estate-photo-prompt-af9d17.skill', 'https://assets.novakit.tech/skill/nk-hotel-airbnb-listing-copy-8e28e7.skill', 'https://assets.novakit.tech/skill/nk-ecommerce-product-listing-8bf6cc.skill', 'https://assets.novakit.tech/skill/nk-product-photography-prompt-6f7cb1.skill'],
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1232,7 +1232,7 @@ window.NK_PRODUCTS = {
     type: 'Bundle · 4 skills',
     description: 'Bundle of 4 skills.',
     includes: ["Course Curriculum Builder", "University Application SOP", "Lesson Plan Builder", "Exam Paper Generator"],
-    fileUrls: ['https://assets.novakit.tech/skill/bb4dbc32.skill', 'https://assets.novakit.tech/skill/f7d24804.skill', 'https://assets.novakit.tech/skill/766c52e4.skill', 'https://assets.novakit.tech/skill/c4e7a9bf.skill'],
+    fileUrls: ['https://assets.novakit.tech/skill/nk-course-curriculum-builder-bb4dbc.skill', 'https://assets.novakit.tech/skill/nk-university-sop-f7d248.skill', 'https://assets.novakit.tech/skill/nk-lesson-plan-builder-766c52.skill', 'https://assets.novakit.tech/skill/nk-exam-paper-generator-c4e7a9.skill'],
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1244,7 +1244,7 @@ window.NK_PRODUCTS = {
     type: 'Bundle · 4 skills',
     description: 'Bundle of 4 skills.',
     includes: ["Wedding Vows Writer", "Wedding Invitation Prompt", "Event Speech Writer", "Menu Description Copy"],
-    fileUrls: ['https://assets.novakit.tech/skill/eb66b0c0.skill', 'https://assets.novakit.tech/skill/69b2dc11.skill', 'https://assets.novakit.tech/skill/4f085f10.skill', 'https://assets.novakit.tech/skill/2140eab9.skill'],
+    fileUrls: ['https://assets.novakit.tech/skill/nk-wedding-vows-writer-eb66b0.skill', 'https://assets.novakit.tech/skill/nk-wedding-invitation-prompt-69b2dc.skill', 'https://assets.novakit.tech/skill/nk-event-speech-writer-4f085f.skill', 'https://assets.novakit.tech/skill/nk-menu-description-copy-2140ea.skill'],
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
@@ -1256,7 +1256,7 @@ window.NK_PRODUCTS = {
     type: 'Bundle · 6 skills',
     description: 'Bundle of 6 skills.',
     includes: ["Short Story Prompt", "Screenplay Script", "Book Cover Prompt", "Poetry Verse Prompt", "Children's Book Prompt", "Festival Holiday Greeting Prompt"],
-    fileUrls: ['https://assets.novakit.tech/skill/69d8335f.skill', 'https://assets.novakit.tech/skill/09f71fae.skill', 'https://assets.novakit.tech/skill/f12c976a.skill', 'https://assets.novakit.tech/skill/0a3d4675.skill', 'https://assets.novakit.tech/skill/02cbfdee.skill', 'https://assets.novakit.tech/skill/18c12516.skill'],
+    fileUrls: ['https://assets.novakit.tech/skill/nk-short-story-prompt-69d833.skill', 'https://assets.novakit.tech/skill/nk-screenplay-script-09f71f.skill', 'https://assets.novakit.tech/skill/nk-book-cover-prompt-f12c97.skill', 'https://assets.novakit.tech/skill/nk-poetry-verse-prompt-0a3d46.skill', 'https://assets.novakit.tech/skill/nk-childrens-book-prompt-02cbfd.skill', 'https://assets.novakit.tech/skill/nk-festival-holiday-greeting-prompt-18c125.skill'],
     razorpayLink: 'YOUR_LINK_HERE',
   },
 
