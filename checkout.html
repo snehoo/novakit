@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkout — NovaKit</title>
 <meta name="robots" content="noindex,nofollow">
-<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="icon" type="image/jpeg" href="/assets/faviconnk.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -334,6 +334,7 @@ function toggleTheme(){
   h.setAttribute('data-theme', dark ? 'light' : 'dark');
   document.getElementById('theme-icon').textContent = dark ? '🌙' : '☀️';
 }
+window.toggleTheme = toggleTheme;
 
 /* consent */
 let consentChecked = false;
@@ -342,6 +343,7 @@ function toggleConsent(){
   document.getElementById('consent-box').classList.toggle('checked', consentChecked);
   validateForm();
 }
+window.toggleConsent = toggleConsent;
 
 /* validation */
 const emailInput = document.getElementById('email-input');
@@ -394,6 +396,7 @@ function handlePay(){
 emailInput.addEventListener('keydown', e => {
   if(e.key === 'Enter' && !document.getElementById('pay-btn').disabled) handlePay();
 });
+window.handlePay = handlePay;
 
 }); // DOMContentLoaded
 </script>
