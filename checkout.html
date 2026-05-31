@@ -117,6 +117,17 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .spinner{width:18px;height:18px;border:2.5px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;display:none;}
 @keyframes spin{to{transform:rotate(360deg)}}
 
+/* Bundle nudge */
+.bundle-nudge{background:rgba(222,115,86,0.07);border:1.5px solid rgba(222,115,86,0.25);border-radius:12px;padding:16px;margin-bottom:18px;}
+.bn-top{margin-bottom:8px;}
+.bn-pill{font-size:10px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;background:rgba(222,115,86,0.15);color:var(--accent);padding:3px 9px;border-radius:99px;}
+.bn-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.bn-sub{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:12px;}
+.bn-btn{width:100%;padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-family:'Geist',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;margin-bottom:8px;}
+.bn-btn:hover{background:var(--accent-h);}
+.bn-skip{text-align:center;font-size:12px;color:var(--muted);cursor:pointer;transition:color .15s;}
+.bn-skip:hover{color:var(--text);}
+
 /* Razorpay footer — once, below button */
 .rzp-footer{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:var(--muted);}
 .rzp-badge{font-weight:700;font-size:11px;background:var(--bg2);padding:3px 9px;border-radius:5px;letter-spacing:0.02em;}
@@ -140,6 +151,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
   .ph-amount{font-size:52px;}
 }
 </style>
+<script src="/js/products.js"></script>
 </head>
 <body>
 
@@ -184,6 +196,19 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
         <div class="inc-label">What's included</div>
         <div class="inc-list" id="includes-list"></div>
 
+        <!-- Bundle upsell nudge — shown for individual skills only -->
+        <div class="bundle-nudge" id="bundle-nudge" style="display:none;">
+          <div class="bn-top">
+            <span class="bn-pill">Better value</span>
+          </div>
+          <div class="bn-body">
+            <div class="bn-title" id="bn-title">Get the Founder Bundle</div>
+            <div class="bn-sub" id="bn-sub">6 skills for $39 — instead of buying one at a time.</div>
+          </div>
+          <button class="bn-btn" id="bn-btn" onclick="switchToBundle()">Switch to bundle →</button>
+          <div class="bn-skip" onclick="dismissNudge()">No thanks, just this skill</div>
+        </div>
+
         <div class="guarantee">🛡️ 7-day refund · no questions asked</div>
 
       </div>
@@ -222,7 +247,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
       <div class="consent-row" onclick="toggleConsent()">
         <div class="consent-box" id="consent-box"></div>
         <div class="consent-text">
-          I agree to the <a href="/legal/terms.html" target="_blank">Terms of Service</a> and <a href="/legal/refund.html" target="_blank">Refund Policy</a>.
+          I agree to the <a href="#" onclick="return false;">Terms of Service</a> and <a href="#" onclick="return false;">Refund Policy</a>.
           Digital product — instant delivery, 7-day refund if unsatisfied.
         </div>
       </div>
@@ -244,14 +269,14 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
   </div>
 </div>
 
-<script src="/js/products.js" defer></script>
 <script defer>
 document.addEventListener('DOMContentLoaded', function() {
 
 const DEFAULT_SKU = 'cold-outreach-email';
 const params = new URLSearchParams(window.location.search);
 const sku    = params.get('sku') || DEFAULT_SKU;
-const skill  = window.NK_PRODUCTS[sku] || window.NK_PRODUCTS[DEFAULT_SKU];
+const skill  = (window.NK_PRODUCTS || {})[sku] || (window.NK_PRODUCTS || {})[DEFAULT_SKU];
+if(!skill){ console.error('NK_PRODUCTS not loaded or SKU not found:', sku); return; }
 
 /* populate */
 document.getElementById('oc-icon').textContent          = skill.icon;
@@ -268,6 +293,39 @@ skill.includes.forEach(item => {
   el.innerHTML = '<span class="inc-check">✓</span>' + item;
   list.appendChild(el);
 });
+
+/* Bundle nudge — only for individual skills */
+let bundleSlugForNudge = null;
+if(!sku.endsWith('-bundle')){
+  const bundleEntry = Object.entries(window.NK_PRODUCTS).find(([slug, p]) => {
+    return slug.endsWith('-bundle') &&
+           Array.isArray(p.fileUrls) &&
+           p.fileUrls.some(url => url === skill.fileUrl);
+  });
+  if(bundleEntry){
+    const [bSlug, bundle] = bundleEntry;
+    bundleSlugForNudge = bSlug;
+    document.getElementById('bn-title').textContent = 'Get the ' + bundle.name;
+    document.getElementById('bn-sub').textContent =
+      bundle.includes.length + ' skills for $' + bundle.price +
+      ' — instead of $' + skill.price + ' for just this one.';
+    document.getElementById('bn-btn').textContent =
+      'Switch to ' + bundle.name + ' — $' + bundle.price + ' →';
+    document.getElementById('bundle-nudge').style.display = 'block';
+  }
+}
+
+function switchToBundle(){
+  if(bundleSlugForNudge){
+    window.location.href = '/checkout.html?sku=' + bundleSlugForNudge;
+  }
+}
+window.switchToBundle = switchToBundle;
+
+function dismissNudge(){
+  document.getElementById('bundle-nudge').style.display = 'none';
+}
+window.dismissNudge = dismissNudge;
 
 /* theme */
 function toggleTheme(){
