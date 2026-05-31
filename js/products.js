@@ -19,7 +19,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-ai-animation-film-prompt-11b743.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/h6ROSh2',
   },
 
   'ai-video-prompt': {
@@ -37,7 +37,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-ai-video-prompt-342705.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/Z8Dxi5i',
   },
 
   'architecture-diagram-prompt': {
@@ -55,7 +55,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-architecture-diagram-prompt-41d52f.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/0TXpjixx',
   },
 
   'book-cover-prompt': {
@@ -73,7 +73,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-book-cover-prompt-f12c97.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/ETbr2Tuh',
   },
 
   'brand-ad-copy': {
@@ -91,7 +91,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-brand-ad-copy-96e05c.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/iEMIkNAZ',
   },
 
   'brand-voice-guide': {
@@ -109,7 +109,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-brand-voice-guide-ae5236.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/Ew55RVB',
   },
 
   'business-plan': {
@@ -127,7 +127,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-business-plan-278041.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/5DbgZic5',
   },
 
   'childrens-book-prompt': {
@@ -145,7 +145,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-childrens-book-prompt-02cbfd.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/eKAKC8W',
   },
 
   'cold-outreach-email': {
@@ -163,7 +163,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-cold-outreach-email-150352.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/dYADxdO',
   },
 
   'conference-abstract': {
@@ -181,7 +181,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-conference-abstract-8e98f9.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/KzJcFsiQ',
   },
 
   'content-calendar': {
@@ -199,7 +199,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-content-calendar-e18688.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/bd8IKZGW',
   },
 
   'course-curriculum-builder': {
@@ -217,7 +217,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-course-curriculum-builder-bb4dbc.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/6hoYjWrP',
   },
 
   'cover-letter-writer': {
@@ -235,7 +235,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-cover-letter-writer-d171af.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/V8eE7BDT',
   },
 
   'dialogue-character-film-prompt': {
@@ -253,7 +253,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-dialogue-character-film-prompt-6f6c2f.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/cE10nQQ',
   },
 
   'ecommerce-product-listing': {
@@ -271,7 +271,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-ecommerce-product-listing-8bf6cc.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/20QxthpV',
   },
 
   'email-newsletter-engine': {
@@ -289,7 +289,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-email-newsletter-engine-eb1ce6.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/vtYpBM2w',
   },
 
   'eulogy-writer': {
@@ -307,7 +307,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-eulogy-writer-e680e6.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/gLCtlwv',
   },
 
   'event-speech-writer': {
@@ -325,7 +325,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-event-speech-writer-4f085f.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/s6Aav18',
   },
 
   'exam-paper-generator': {
@@ -343,7 +343,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-exam-paper-generator-c4e7a9.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/qMY9stt',
   },
 
   'festival-holiday-greeting-prompt': {
@@ -361,7 +361,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-festival-holiday-greeting-prompt-18c125.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/o9h9wKN',
   },
 
   'financial-model-prompt': {
@@ -379,7 +379,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-financial-model-prompt-fc151d.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/1MrYA7Na',
   },
 
   'grant-and-proposal-writing': {
@@ -397,7 +397,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-grant-and-proposal-writing-322f3e.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/jFirdiD',
   },
 
   'health-wellness-plan': {
@@ -415,7 +415,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-health-wellness-plan-28113c.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/6UXQqz1p',
   },
 
   'home-renovation-brief': {
@@ -433,7 +433,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-home-renovation-brief-2bff4b.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/eePAMD0',
   },
 
   'hotel-airbnb-listing-copy': {
@@ -451,7 +451,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-hotel-airbnb-listing-copy-8e28e7.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/xpvca2S',
   },
 
   'investor-update-email': {
@@ -469,7 +469,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-investor-update-email-64a1cb.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/EVVyJsJh',
   },
 
   'job-description-writer': {
@@ -487,7 +487,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-job-description-writer-053190.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/F18B2JRu',
   },
 
   'lesson-plan-builder': {
@@ -505,7 +505,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-lesson-plan-builder-766c52.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/mRu7LiE',
   },
 
   'linkedin-post-engine': {
@@ -523,7 +523,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-linkedin-post-engine-38357a.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/GeF5bcJ',
   },
 
   'logo-brand-identity-prompt': {
@@ -541,7 +541,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-logo-brand-identity-prompt-852bd2.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/CI670gf',
   },
 
   'menu-description-copy': {
@@ -559,7 +559,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-menu-description-copy-2140ea.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/53sRGRoY',
   },
 
   'nda-contract-draft': {
@@ -577,7 +577,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-nda-contract-draft-6347e5.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/KRhgWKGN',
   },
 
   'performance-review-writer': {
@@ -595,7 +595,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-performance-review-writer-9195ce.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/EwWFIHO',
   },
 
   'pitch-deck-narrative': {
@@ -613,7 +613,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-pitch-deck-narrative-32b683.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/bQXartA',
   },
 
   'podcast-episode-script': {
@@ -631,7 +631,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-podcast-episode-script-968fd5.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/fro9d17S',
   },
 
   'podcast-show-notes': {
@@ -649,7 +649,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-podcast-show-notes-1f1c02.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/PiLIPyS',
   },
 
   'poetry-verse-prompt': {
@@ -667,7 +667,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-poetry-verse-prompt-0a3d46.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/s7E7A2B6',
   },
 
   'pr-press-release': {
@@ -685,7 +685,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-pr-press-release-ff663a.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/5WW222O',
   },
 
   'prd-writer': {
@@ -703,7 +703,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-prd-writer-bbcc35.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/TWDvFjxV',
   },
 
   'product-ad-film-prompt': {
@@ -721,7 +721,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-product-ad-film-prompt-317a2d.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/NacKbIJ',
   },
 
   'product-photography-prompt': {
@@ -739,7 +739,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-product-photography-prompt-6f7cb1.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/AOR7bzl',
   },
 
   'real-estate-listing-copy': {
@@ -757,7 +757,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-real-estate-listing-copy-51900a.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/koFfw3Gn',
   },
 
   'real-estate-photo-prompt': {
@@ -775,7 +775,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-real-estate-photo-prompt-af9d17.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/DT3VEeEp',
   },
 
   'recipe-development-prompt': {
@@ -793,7 +793,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-recipe-development-prompt-60a3a6.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/g4hT3jO',
   },
 
   'research-paper-outline': {
@@ -811,7 +811,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-research-paper-outline-90259a.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/1PmogOe',
   },
 
   'resume-cv-builder': {
@@ -829,7 +829,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-resume-cv-builder-429e1c.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/hY2v2Qub',
   },
 
   'sales-landing-page-copy': {
@@ -847,7 +847,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-sales-landing-page-copy-0a97cf.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/047vgRw',
   },
 
   'screenplay-script': {
@@ -865,7 +865,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-screenplay-script-09f71f.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/946rei9',
   },
 
   'seo-blog-post-brief': {
@@ -883,7 +883,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-seo-blog-post-brief-93d25b.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/Mcz4H8NU',
   },
 
   'short-story-prompt': {
@@ -901,7 +901,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-short-story-prompt-69d833.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/883XNuF',
   },
 
   'social-content-engine': {
@@ -919,7 +919,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-social-content-engine-4d90ec.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/3LhoKMW',
   },
 
   'social-media-carousel-prompt': {
@@ -937,7 +937,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-social-media-carousel-prompt-8ac459.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/lO6m6sDb',
   },
 
   'tos-privacy-policy': {
@@ -955,7 +955,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-tos-privacy-policy-feb323.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/QvHkNYm',
   },
 
   'travel-itinerary-planner': {
@@ -973,7 +973,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-travel-itinerary-planner-a7b1c0.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/O86XprF2',
   },
 
   'twitter-x-thread-engine': {
@@ -991,7 +991,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-twitter-x-thread-engine-b165dc.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/9aogGMet',
   },
 
   'ugc-ad-creator': {
@@ -1009,7 +1009,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-ugc-ad-creator-d2c683.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/47oN7Wf',
   },
 
   'university-sop': {
@@ -1027,7 +1027,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-university-sop-f7d248.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/3r9F4by',
   },
 
   'video-script-engine': {
@@ -1045,7 +1045,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-video-script-engine-5a1513.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/NANEBQdi',
   },
 
   'visa-cover-letter': {
@@ -1063,7 +1063,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-visa-cover-letter-f11760.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/jBs5kC5R',
   },
 
   'webinar-online-event-script': {
@@ -1081,7 +1081,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-webinar-online-event-script-e29a4d.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/17NS0Ux',
   },
 
   'wedding-invitation-prompt': {
@@ -1099,7 +1099,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-wedding-invitation-prompt-69b2dc.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/32ZwWJar',
   },
 
   'wedding-vows-writer': {
@@ -1117,7 +1117,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-wedding-vows-writer-eb66b0.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/1bwkqK4',
   },
 
   'youtube-thumbnail-prompt': {
@@ -1135,7 +1135,7 @@ window.NK_PRODUCTS = {
       'Auto-improve — gets sharper with use',
     ],
     fileUrl: 'https://assets.novakit.tech/skill/nk-youtube-thumbnail-prompt-b18e7b.skill',
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/NKhGfOk',
   },
 
   // ─── BUNDLES ────────────────────────────────────────────────
@@ -1149,7 +1149,7 @@ window.NK_PRODUCTS = {
     description: 'Bundle of 6 skills.',
     includes: ["Pitch Deck Narrative", "Cold Outreach Email", "Business Plan", "Investor Update Email", "Job Description Writer", "Sales Landing Page Copy"],
     fileUrls: ['https://assets.novakit.tech/skill/nk-pitch-deck-narrative-32b683.skill', 'https://assets.novakit.tech/skill/nk-cold-outreach-email-150352.skill', 'https://assets.novakit.tech/skill/nk-business-plan-278041.skill', 'https://assets.novakit.tech/skill/nk-investor-update-email-64a1cb.skill', 'https://assets.novakit.tech/skill/nk-job-description-writer-053190.skill', 'https://assets.novakit.tech/skill/nk-sales-landing-page-copy-0a97cf.skill'],
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/x0uepKpv',
   },
 
   'creator-bundle': {
@@ -1161,7 +1161,7 @@ window.NK_PRODUCTS = {
     description: 'Bundle of 7 skills.',
     includes: ["Linkedin Post Engine", "SEO Blog Post Brief", "Email Newsletter Engine", "Social Content Engine", "Twitter/X Thread Engine", "Brand Voice Guide", "Content Calendar"],
     fileUrls: ['https://assets.novakit.tech/skill/nk-linkedin-post-engine-38357a.skill', 'https://assets.novakit.tech/skill/nk-seo-blog-post-brief-93d25b.skill', 'https://assets.novakit.tech/skill/nk-email-newsletter-engine-eb1ce6.skill', 'https://assets.novakit.tech/skill/nk-social-content-engine-4d90ec.skill', 'https://assets.novakit.tech/skill/nk-twitter-x-thread-engine-b165dc.skill', 'https://assets.novakit.tech/skill/nk-brand-voice-guide-ae5236.skill', 'https://assets.novakit.tech/skill/nk-content-calendar-e18688.skill'],
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/mQTFWPM6',
   },
 
   'marketing-bundle': {
@@ -1173,7 +1173,7 @@ window.NK_PRODUCTS = {
     description: 'Bundle of 5 skills.',
     includes: ["Brand & Ad Copy", "UGC Ad Creator", "Ecommerce Product Listing", "Product Photography Prompt", "PR Press Release"],
     fileUrls: ['https://assets.novakit.tech/skill/nk-brand-ad-copy-96e05c.skill', 'https://assets.novakit.tech/skill/nk-ugc-ad-creator-d2c683.skill', 'https://assets.novakit.tech/skill/nk-ecommerce-product-listing-8bf6cc.skill', 'https://assets.novakit.tech/skill/nk-product-photography-prompt-6f7cb1.skill', 'https://assets.novakit.tech/skill/nk-pr-press-release-ff663a.skill'],
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/rzqnQEh',
   },
 
   'legal-biz-bundle': {
@@ -1185,7 +1185,7 @@ window.NK_PRODUCTS = {
     description: 'Bundle of 5 skills.',
     includes: ["NDA / Contract Draft", "Terms of Service & Privacy Policy", "Financial Model Prompt", "Grant & Proposal Writing", "Visa Application Cover Letter"],
     fileUrls: ['https://assets.novakit.tech/skill/nk-nda-contract-draft-6347e5.skill', 'https://assets.novakit.tech/skill/nk-tos-privacy-policy-feb323.skill', 'https://assets.novakit.tech/skill/nk-financial-model-prompt-fc151d.skill', 'https://assets.novakit.tech/skill/nk-grant-and-proposal-writing-322f3e.skill', 'https://assets.novakit.tech/skill/nk-visa-cover-letter-f11760.skill'],
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/wID8P5s7',
   },
 
   'video-pod-bundle': {
@@ -1197,7 +1197,7 @@ window.NK_PRODUCTS = {
     description: 'Bundle of 9 skills.',
     includes: ["Video Script Engine", "AI Animation Film Prompt", "Product Ad Film Prompt", "Dialogue / Character Film Prompt", "Short-Form AI Video", "Podcast Episode Script", "Webinar / Online Event Script", "Podcast Show Notes", "Youtube Thumbnail Prompt"],
     fileUrls: ['https://assets.novakit.tech/skill/nk-video-script-engine-5a1513.skill', 'https://assets.novakit.tech/skill/nk-ai-animation-film-prompt-11b743.skill', 'https://assets.novakit.tech/skill/nk-product-ad-film-prompt-317a2d.skill', 'https://assets.novakit.tech/skill/nk-dialogue-character-film-prompt-6f6c2f.skill', 'https://assets.novakit.tech/skill/nk-ai-video-prompt-342705.skill', 'https://assets.novakit.tech/skill/nk-podcast-episode-script-968fd5.skill', 'https://assets.novakit.tech/skill/nk-webinar-online-event-script-e29a4d.skill', 'https://assets.novakit.tech/skill/nk-podcast-show-notes-1f1c02.skill', 'https://assets.novakit.tech/skill/nk-youtube-thumbnail-prompt-b18e7b.skill'],
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/36LJVAi',
   },
 
   'student-bundle': {
@@ -1209,7 +1209,7 @@ window.NK_PRODUCTS = {
     description: 'Bundle of 5 skills.',
     includes: ["Resume Cv Builder", "Cover Letter Writer", "University Application SOP", "Research Paper Outline", "Conference Abstract"],
     fileUrls: ['https://assets.novakit.tech/skill/nk-resume-cv-builder-429e1c.skill', 'https://assets.novakit.tech/skill/nk-cover-letter-writer-d171af.skill', 'https://assets.novakit.tech/skill/nk-university-sop-f7d248.skill', 'https://assets.novakit.tech/skill/nk-research-paper-outline-90259a.skill', 'https://assets.novakit.tech/skill/nk-conference-abstract-8e98f9.skill'],
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/MCLWGQJ',
   },
 
   'realtor-bundle': {
@@ -1221,7 +1221,7 @@ window.NK_PRODUCTS = {
     description: 'Bundle of 5 skills.',
     includes: ["Real Estate Listing Copy", "Real Estate Photo Prompt", "Hotel / Airbnb Listing Copy", "Ecommerce Product Listing", "Product Photography Prompt"],
     fileUrls: ['https://assets.novakit.tech/skill/nk-real-estate-listing-copy-51900a.skill', 'https://assets.novakit.tech/skill/nk-real-estate-photo-prompt-af9d17.skill', 'https://assets.novakit.tech/skill/nk-hotel-airbnb-listing-copy-8e28e7.skill', 'https://assets.novakit.tech/skill/nk-ecommerce-product-listing-8bf6cc.skill', 'https://assets.novakit.tech/skill/nk-product-photography-prompt-6f7cb1.skill'],
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/SEQDTAp',
   },
 
   'educator-bundle': {
@@ -1233,7 +1233,7 @@ window.NK_PRODUCTS = {
     description: 'Bundle of 4 skills.',
     includes: ["Course Curriculum Builder", "University Application SOP", "Lesson Plan Builder", "Exam Paper Generator"],
     fileUrls: ['https://assets.novakit.tech/skill/nk-course-curriculum-builder-bb4dbc.skill', 'https://assets.novakit.tech/skill/nk-university-sop-f7d248.skill', 'https://assets.novakit.tech/skill/nk-lesson-plan-builder-766c52.skill', 'https://assets.novakit.tech/skill/nk-exam-paper-generator-c4e7a9.skill'],
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/elr4013',
   },
 
   'wedding-bundle': {
@@ -1245,7 +1245,7 @@ window.NK_PRODUCTS = {
     description: 'Bundle of 4 skills.',
     includes: ["Wedding Vows Writer", "Wedding Invitation Prompt", "Event Speech Writer", "Menu Description Copy"],
     fileUrls: ['https://assets.novakit.tech/skill/nk-wedding-vows-writer-eb66b0.skill', 'https://assets.novakit.tech/skill/nk-wedding-invitation-prompt-69b2dc.skill', 'https://assets.novakit.tech/skill/nk-event-speech-writer-4f085f.skill', 'https://assets.novakit.tech/skill/nk-menu-description-copy-2140ea.skill'],
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/NkmXXhG',
   },
 
   'creative-bundle': {
@@ -1257,7 +1257,7 @@ window.NK_PRODUCTS = {
     description: 'Bundle of 6 skills.',
     includes: ["Short Story Prompt", "Screenplay Script", "Book Cover Prompt", "Poetry Verse Prompt", "Children's Book Prompt", "Festival Holiday Greeting Prompt"],
     fileUrls: ['https://assets.novakit.tech/skill/nk-short-story-prompt-69d833.skill', 'https://assets.novakit.tech/skill/nk-screenplay-script-09f71f.skill', 'https://assets.novakit.tech/skill/nk-book-cover-prompt-f12c97.skill', 'https://assets.novakit.tech/skill/nk-poetry-verse-prompt-0a3d46.skill', 'https://assets.novakit.tech/skill/nk-childrens-book-prompt-02cbfd.skill', 'https://assets.novakit.tech/skill/nk-festival-holiday-greeting-prompt-18c125.skill'],
-    razorpayLink: 'YOUR_LINK_HERE',
+    razorpayLink: 'https://rzp.io/rzp/CCKR3PuD',
   },
 
 };
