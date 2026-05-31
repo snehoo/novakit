@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refund Policy — NovaKit</title>
+<meta name="description" content="NovaKit 7-day refund policy. Not happy? Get a full refund within 7 days — no questions asked.">
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#9a9890;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:none;}.logo-light{display:block;}
+[data-theme="dark"] .logo-dark{display:block!important;}[data-theme="dark"] .logo-light{display:none!important;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-h);}
+
+/* PAGE */
+.page{max-width:720px;margin:0 auto;padding:64px 24px 100px;}
+
+/* HERO */
+.doc-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+.doc-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,52px);line-height:1.08;letter-spacing:-0.02em;margin-bottom:12px;}
+.doc-title em{font-style:italic;color:var(--accent);}
+.doc-meta{font-size:14px;color:var(--muted);margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--border);}
+.doc-meta strong{color:var(--text);}
+
+/* CONTENT */
+.doc-section{margin-bottom:44px;}
+.doc-section h2{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.doc-section p{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:14px;}
+.doc-section p:last-child{margin-bottom:0;}
+.doc-section ul{margin:0 0 14px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.doc-section ul li{font-size:16px;color:var(--muted);line-height:1.65;padding-left:20px;position:relative;}
+.doc-section ul li::before{content:'—';position:absolute;left:0;color:var(--faint);}
+.doc-section strong{color:var(--text);font-weight:600;}
+
+/* GUARANTEE CARD */
+.guarantee-card{background:var(--green-bg);border-radius:16px;padding:32px;margin-bottom:48px;text-align:center;}
+.gc-icon{font-size:40px;margin-bottom:14px;}
+.gc-title{font-family:'Instrument Serif',serif;font-size:28px;line-height:1.1;letter-spacing:-0.02em;color:var(--green-text);margin-bottom:8px;}
+.gc-sub{font-size:15px;color:var(--green-text);opacity:.8;line-height:1.6;}
+
+/* STEPS */
+.steps-list{display:flex;flex-direction:column;gap:0;margin-bottom:14px;}
+.step-item{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid var(--border);}
+.step-item:last-child{border-bottom:none;}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.step-body{flex:1;}
+.step-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.step-desc{font-size:14px;color:var(--muted);line-height:1.6;}
+
+/* CTA */
+.refund-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;text-align:center;margin-top:48px;}
+.refund-cta p{font-size:16px;color:var(--muted);margin-bottom:16px;}
+.refund-cta a.email-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:var(--accent);color:#fff;border-radius:9px;font-size:15px;font-weight:700;transition:all .18s;}
+.refund-cta a.email-btn:hover{background:var(--accent-h);text-decoration:none;transform:translateY(-1px);}
+
+/* FOOTER */
+footer{padding:24px 40px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+
+@media(max-width:600px){
+  nav{padding:0 20px;}
+  .page{padding:40px 20px 80px;}
+  footer{padding:20px;}
+  .guarantee-card{padding:24px;}
+  .refund-cta{padding:24px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" alt="NovaKit" class="logo-img logo-dark"/>
+    <img src="../assets/nkblack.jpg" alt="NovaKit" class="logo-img logo-light"/>
+  </a>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">🌙</span></button>
+    <a href="../index.html#skills" class="btn btn-primary">Browse Skills</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="doc-eyebrow">Policy</div>
+  <h1 class="doc-title">Refund <em>Policy.</em></h1>
+  <div class="doc-meta">
+    <strong>Last updated: May 2026</strong> · Applies to all NovaKit purchases.<br>
+    We stand behind every skill we sell. If it's not right for you, we'll make it right.
+  </div>
+
+  <div class="guarantee-card">
+    <div class="gc-icon">🛡️</div>
+    <div class="gc-title">7-day money back guarantee</div>
+    <div class="gc-sub">Not happy for any reason? Email us within 7 days of purchase.<br>We'll refund you in full — no questions, no forms, no waiting.</div>
+  </div>
+
+  <div class="doc-section">
+    <h2>Our promise</h2>
+    <p>Every NovaKit skill comes with a <strong>full 7-day refund guarantee</strong>. If the skill doesn't work the way you expected, doesn't fit your workflow, or just isn't what you needed — email us within 7 days and we'll issue a complete refund. No questions asked, no explanation required.</p>
+    <p>We believe in our skills enough to back every purchase with this guarantee. The risk is entirely on us.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>How to get a refund</h2>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Email us within 7 days</div>
+          <div class="step-desc">Send an email to <a href="mailto:support@novakit.tech">support@novakit.tech</a> from the email address you used to purchase. Include your order details if you have them — not required, but helps us find your order faster.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">We confirm and process</div>
+          <div class="step-desc">We'll confirm receipt within 24 hours on business days and initiate the refund immediately. No back-and-forth, no conditions, no proving anything.</div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Refund arrives in 5–10 business days</div>
+          <div class="step-desc">Refunds are processed via Razorpay back to your original payment method. Timing depends on your bank — typically 5–10 business days. We'll confirm when the refund has been initiated from our side.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-section">
+    <h2>What's covered</h2>
+    <ul>
+      <li><strong>Individual skills</strong> — any skill purchased within the last 7 days</li>
+      <li><strong>Bundles</strong> — full bundle refund within 7 days; we do not offer partial bundle refunds for individual skills within a bundle</li>
+      <li><strong>Duplicate purchases</strong> — if you accidentally purchased the same skill twice, we'll refund the duplicate immediately regardless of timing</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>What's not covered</h2>
+    <ul>
+      <li>Requests made more than 7 days after the purchase date</li>
+      <li>Claims that Claude itself didn't perform as expected — skill output depends on Claude's capabilities, which are controlled by Anthropic, not NovaKit</li>
+    </ul>
+    <p>If you're outside the 7-day window but have a genuine issue — a technical problem, a file that won't open, something that clearly went wrong on our end — email us anyway. We'll do the right thing.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>Refund timing</h2>
+    <p>Once we initiate the refund via Razorpay, it typically takes <strong>5–10 business days</strong> to appear on your statement. This is determined by your bank or card issuer, not by us. We'll send you a confirmation email once the refund has been processed from our end.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>Questions</h2>
+    <p>If you have any questions about this policy or want to check on a refund, email <a href="mailto:support@novakit.tech">support@novakit.tech</a>. We respond within 24 hours on business days (Mon–Fri, IST).</p>
+    <p>See our <a href="terms.html">Terms of Service</a> for the full legal framework.</p>
+  </div>
+
+  <div class="refund-cta">
+    <p>Need a refund? Just send us an email — we'll take care of it.</p>
+    <a href="mailto:support@novakit.tech?subject=Refund Request — NovaKit" class="email-btn">
+      ✉️ Email support@novakit.tech
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit</div>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="refund.html">Refund Policy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+</script>
+</body>
+</html>

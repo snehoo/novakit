@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — NovaKit</title>
+<meta name="description" content="NovaKit Terms of Service. Learn about your rights and responsibilities when purchasing Claude AI skill files from NovaKit.">
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#9a9890;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:none;}.logo-light{display:block;}
+[data-theme="dark"] .logo-dark{display:block!important;}[data-theme="dark"] .logo-light{display:none!important;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-h);}
+
+/* PAGE */
+.page{max-width:720px;margin:0 auto;padding:64px 24px 100px;}
+
+/* HERO */
+.doc-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+.doc-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,52px);line-height:1.08;letter-spacing:-0.02em;margin-bottom:12px;}
+.doc-title em{font-style:italic;color:var(--accent);}
+.doc-meta{font-size:14px;color:var(--muted);margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid var(--border);}
+.doc-meta strong{color:var(--text);}
+
+/* CONTENT */
+.doc-section{margin-bottom:44px;}
+.doc-section h2{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.doc-section p{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:14px;}
+.doc-section p:last-child{margin-bottom:0;}
+.doc-section ul{margin:0 0 14px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;}
+.doc-section ul li{font-size:16px;color:var(--muted);line-height:1.65;padding-left:20px;position:relative;}
+.doc-section ul li::before{content:'—';position:absolute;left:0;color:var(--faint);}
+.doc-section strong{color:var(--text);font-weight:600;}
+.doc-section a{color:var(--accent);}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:var(--green-bg);border-radius:12px;padding:20px 24px;margin-bottom:32px;}
+.highlight-box p{font-size:15px;color:var(--green-text);margin-bottom:0;line-height:1.65;}
+.highlight-box strong{color:var(--green-text);}
+
+/* FOOTER */
+footer{padding:24px 40px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+
+@media(max-width:600px){
+  nav{padding:0 20px;}
+  .page{padding:40px 20px 80px;}
+  footer{padding:20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" alt="NovaKit" class="logo-img logo-dark"/>
+    <img src="../assets/nkblack.jpg" alt="NovaKit" class="logo-img logo-light"/>
+  </a>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">🌙</span></button>
+    <a href="../index.html#skills" class="btn btn-primary">Browse Skills</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="doc-eyebrow">Legal</div>
+  <h1 class="doc-title">Terms of <em>Service.</em></h1>
+  <div class="doc-meta">
+    <strong>Last updated: May 2026</strong> · Effective immediately for all purchases.<br>
+    By purchasing from NovaKit you agree to these terms. Please read them.
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>The short version:</strong> Buy a skill, download it instantly, use it inside Claude. 7-day refund if you're not happy — no questions. Don't resell or redistribute the files. That's most of it.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>1. Who we are</h2>
+    <p>NovaKit ("we", "us", "our") is a digital product marketplace selling Claude AI skill files for use inside Anthropic's Claude platform. We operate at <a href="https://novakit.tech">novakit.tech</a>. NovaKit is not affiliated with Anthropic.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>2. What you're buying</h2>
+    <p>When you purchase a skill or bundle from NovaKit, you receive a licence to use the downloaded <strong>.skill file(s)</strong> for your own personal or professional work inside Claude. You are not purchasing ownership of the file — you are purchasing a non-exclusive, non-transferable licence to use it.</p>
+    <ul>
+      <li>Skills are delivered as downloadable <strong>.skill files</strong> — digital files that run inside Claude Projects</li>
+      <li>Delivery is <strong>instant</strong> — your download link is emailed immediately after payment</li>
+      <li>Skills require an active Claude account (free or Pro) to use</li>
+      <li>Skills are in English and produce English-language output</li>
+      <li>NovaKit does not guarantee specific business outcomes from using skills</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>3. Pricing and payment</h2>
+    <p>All prices are displayed in <strong>USD</strong>. Payments are processed securely via Razorpay. We do not store your card details — payment is handled entirely by Razorpay.</p>
+    <ul>
+      <li>Prices are one-time payments — there is no subscription</li>
+      <li>Bundle pricing reflects a discount on the combined individual skill prices</li>
+      <li>Currency conversion (if applicable) is handled by your payment provider</li>
+      <li>All sales are final except as described in our <a href="refund.html">Refund Policy</a></li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>4. Refunds</h2>
+    <p>We offer a <strong>7-day refund on all purchases</strong> — no questions asked. If you're not satisfied for any reason within 7 days of purchase, email us and we will process a full refund promptly.</p>
+    <p>See our full <a href="refund.html">Refund Policy</a> for details on how to request a refund.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>5. Licence and permitted use</h2>
+    <p>When you purchase a NovaKit skill, you receive a <strong>personal, non-exclusive, non-transferable licence</strong> to use the skill file for your own work. You may:</p>
+    <ul>
+      <li>Use the skill for personal or commercial work output</li>
+      <li>Install it across multiple Claude accounts you personally own</li>
+      <li>Use outputs generated by the skill commercially (blog posts, emails, pitches, etc.)</li>
+    </ul>
+    <p>You may <strong>not</strong>:</p>
+    <ul>
+      <li>Resell, redistribute, or share the .skill file with others</li>
+      <li>Upload the skill file to any public repository, marketplace, or file-sharing service</li>
+      <li>Claim authorship of the skill file itself</li>
+      <li>Reverse-engineer or extract the underlying instructions for commercial repackaging</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>6. Intellectual property</h2>
+    <p>All NovaKit skill files, their contents, structure, and methodology are the intellectual property of NovaKit. Purchasing a skill does not transfer any intellectual property rights. The outputs you generate using the skills are yours — NovaKit claims no ownership of content you produce.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>7. No warranty</h2>
+    <p>Skills are provided as-is. We believe they deliver real value and back that belief with our 7-day refund policy. However, we make no warranties about specific business results, output quality for your specific use case, or compatibility with future versions of Claude. Claude's behaviour is controlled by Anthropic, not NovaKit.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>8. Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, NovaKit's liability for any claim arising from use of our products is limited to the amount you paid for the relevant skill or bundle. We are not liable for indirect, consequential, or incidental damages.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>9. Changes to these terms</h2>
+    <p>We may update these terms from time to time. We will update the "Last updated" date at the top of this page. Continued use of our products after changes constitutes acceptance. We will never retroactively apply stricter terms to purchases you've already made.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>10. Contact</h2>
+    <p>For any questions about these terms, or to request a refund, email us at <a href="mailto:support@novakit.tech">support@novakit.tech</a>. We respond within 24 hours on business days.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit</div>
+  <div class="footer-links">
+    <a href="../index.html">Home</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="refund.html">Refund Policy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+</script>
+</body>
+</html>
