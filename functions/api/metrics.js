@@ -8,10 +8,10 @@
 import { getClient } from '../_db.js';
 
 const RANGES = {
-  '7d':  '7 days',
-  '30d': '30 days',
-  '90d': '90 days',
-  'all': '100 years',  // effectively all-time
+  '7d':  7,
+  '30d': 30,
+  '90d': 90,
+  'all': 36500,
 };
 
 export async function onRequestGet({ request, env }) {
@@ -49,10 +49,10 @@ export async function onRequestGet({ request, env }) {
           COUNT(*)                                               AS total_orders,
           COUNT(DISTINCT buyer_hash)                             AS unique_buyers,
           (SELECT COUNT(*) FROM downloads
-           WHERE downloaded_at > NOW() - $1::interval)          AS total_downloads
+           WHERE downloaded_at > NOW() - ($1 * INTERVAL '1 day'))          AS total_downloads
         FROM orders
         WHERE status = 'paid'
-          AND created_at > NOW() - $1::interval
+          AND created_at > NOW() - ($1 * INTERVAL '1 day')
       `, [interval]),
 
       // Revenue per day (last N days)
@@ -62,7 +62,7 @@ export async function onRequestGet({ request, env }) {
           SUM(amount_paise)          AS paise
         FROM orders
         WHERE status = 'paid'
-          AND paid_at > NOW() - $1::interval
+          AND paid_at > NOW() - ($1 * INTERVAL '1 day')
         GROUP BY 1
         ORDER BY 1
       `, [interval]),
@@ -73,7 +73,7 @@ export async function onRequestGet({ request, env }) {
           DATE_TRUNC('day', downloaded_at) AS day,
           COUNT(*)                          AS count
         FROM downloads
-        WHERE downloaded_at > NOW() - $1::interval
+        WHERE downloaded_at > NOW() - ($1 * INTERVAL '1 day')
         GROUP BY 1
         ORDER BY 1
       `, [interval]),
@@ -90,7 +90,7 @@ export async function onRequestGet({ request, env }) {
         FROM orders o
         JOIN skills s ON s.slug = o.skill_slug
         WHERE o.status = 'paid'
-          AND o.created_at > NOW() - $1::interval
+          AND o.created_at > NOW() - ($1 * INTERVAL '1 day')
         GROUP BY o.skill_slug, s.name, s.category
         ORDER BY total_paise DESC
         LIMIT 15
@@ -103,7 +103,7 @@ export async function onRequestGet({ request, env }) {
           SUM(amount_paise) AS paise
         FROM orders
         WHERE status = 'paid'
-          AND created_at > NOW() - $1::interval
+          AND created_at > NOW() - ($1 * INTERVAL '1 day')
         GROUP BY 1
       `, [interval]),
 
@@ -115,7 +115,7 @@ export async function onRequestGet({ request, env }) {
         FROM orders o
         JOIN skills s ON s.slug = o.skill_slug
         WHERE o.status = 'paid'
-          AND o.created_at > NOW() - $1::interval
+          AND o.created_at > NOW() - ($1 * INTERVAL '1 day')
         GROUP BY s.category
         ORDER BY paise DESC
         LIMIT 8
@@ -143,7 +143,7 @@ export async function onRequestGet({ request, env }) {
           SUM(CASE WHEN result_count = 0 THEN 1 ELSE 0 END) AS misses,
           AVG(result_count)             AS avg_results
         FROM search_queries
-        WHERE searched_at > NOW() - $1::interval
+        WHERE searched_at > NOW() - ($1 * INTERVAL '1 day')
         GROUP BY query
         ORDER BY searches DESC
         LIMIT 20
@@ -154,7 +154,7 @@ export async function onRequestGet({ request, env }) {
         SELECT query, COUNT(*) AS searches
         FROM search_queries
         WHERE result_count = 0
-          AND searched_at > NOW() - $1::interval
+          AND searched_at > NOW() - ($1 * INTERVAL '1 day')
         GROUP BY query
         ORDER BY searches DESC
         LIMIT 10
@@ -162,13 +162,13 @@ export async function onRequestGet({ request, env }) {
 
       // Funnel (page views → orders in same period)
       client.query(`
-        SELECT
-          COUNT(DISTINCT session_id)                          AS visitors,
-          COUNT(DISTINCT CASE WHEN skill_slug IS NOT NULL
-                         THEN session_id END)                 AS skill_page_views
-        FROM page_views
-        WHERE viewed_at > NOW() - $1::interval
-      `, [interval]),
+  SELECT
+    COUNT(DISTINCT session_id)                          AS visitors,
+    COUNT(DISTINCT CASE WHEN skill_slug IS NOT NULL
+                   THEN session_id END)                 AS skill_page_views
+  FROM page_views
+  WHERE viewed_at > NOW() - INTERVAL '30 days'
+`),
 
       // Buyer geography
       client.query(`
