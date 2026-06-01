@@ -409,12 +409,12 @@ body { min-height: 100vh; }
       </div>
     </div>
     <div class="cohort-grid" style="margin-bottom:20px">
-      <div class="cohort-card"><div class="cohort-val">2,847</div><div class="cohort-label">Total buyers</div></div>
-      <div class="cohort-card"><div class="cohort-val" style="color:var(--accent)">24%</div><div class="cohort-label">Repeat rate</div></div>
-      <div class="cohort-card"><div class="cohort-val">1.6</div><div class="cohort-label">Avg skills / buyer</div></div>
-      <div class="cohort-card"><div class="cohort-val" style="color:var(--accent2)">₹847</div><div class="cohort-label">Avg order value</div></div>
-      <div class="cohort-card"><div class="cohort-val" style="color:var(--accent3)">₹1,380</div><div class="cohort-label">LTV (repeat buyers)</div></div>
-      <div class="cohort-card"><div class="cohort-val">68%</div><div class="cohort-label">Single-purchase</div></div>
+      <div class="cohort-card"><div class="cohort-val" id="cohort-total">—</div><div class="cohort-label">Total buyers</div></div>
+      <div class="cohort-card"><div class="cohort-val" id="cohort-repeat" style="color:var(--accent)">—</div><div class="cohort-label">Repeat rate</div></div>
+      <div class="cohort-card"><div class="cohort-val" id="cohort-avg-skills">—</div><div class="cohort-label">Avg skills / buyer</div></div>
+      <div class="cohort-card"><div class="cohort-val" id="cohort-aov" style="color:var(--accent2)">—</div><div class="cohort-label">Avg order value</div></div>
+      <div class="cohort-card"><div class="cohort-val" id="cohort-ltv" style="color:var(--accent3)">—</div><div class="cohort-label">LTV (repeat buyers)</div></div>
+      <div class="cohort-card"><div class="cohort-val" id="cohort-single">—</div><div class="cohort-label">Single-purchase</div></div>
     </div>
     <div class="grid-2">
       <div class="card">
@@ -487,8 +487,32 @@ body { min-height: 100vh; }
 </div>
 
 <script>
+// ── PASSWORD GATE ───────────────────────────────────────
+(function() {
+  const HASH = 'cc308e3104632fe7892aee012ac5961dfd356b9c14c9840a35942515c5dc4afb';
+  async function sha256(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+  async function check() {
+    const stored = sessionStorage.getItem('nk_admin_auth');
+    if (stored === HASH) { document.body.style.display = ''; return; }
+    document.body.style.display = 'none';
+    const pwd = prompt('NovaKit Admin — enter password:');
+    if (!pwd) { document.body.innerHTML = ''; return; }
+    const h = await sha256(pwd);
+    if (h === HASH) {
+      sessionStorage.setItem('nk_admin_auth', h);
+      document.body.style.display = '';
+    } else {
+      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0f0f11;color:#f08080;font-family:monospace">Incorrect password.</div>';
+    }
+  }
+  check();
+})();
+// ───────────────────────────────────────────────────────
+
 // ── CONFIG ─────────────────────────────────────────────
-// Set your METRICS_SECRET here (the one you created in wrangler secrets)
 const METRICS_SECRET = 'YOUR_METRICS_SECRET_HERE';
 const API_BASE = '/api/metrics';
 // ───────────────────────────────────────────────────────
@@ -705,6 +729,24 @@ function buildSkills(topSkills) {
 }
 
 function buildBuyers(entrySkills) {
+  // Cohort stats from live KPI data
+  if (DATA) {
+    const kpi = DATA.kpi;
+    const totalBuyers  = kpi.uniqueBuyers || 0;
+    const repeatRate   = kpi.repeatRate || 0;
+    const totalOrders  = kpi.totalOrders || 0;
+    const totalPaise   = kpi.totalPaise || 0;
+    const aov          = totalOrders ? Math.round(totalPaise / totalOrders / 100) : 0;
+    const singlePct    = 100 - repeatRate;
+
+    document.getElementById('cohort-total').textContent      = totalBuyers.toLocaleString();
+    document.getElementById('cohort-repeat').textContent     = repeatRate + '%';
+    document.getElementById('cohort-avg-skills').textContent = totalBuyers ? (totalOrders/totalBuyers).toFixed(1) : '—';
+    document.getElementById('cohort-aov').textContent        = aov ? '₹' + aov.toLocaleString('en-IN') : '—';
+    document.getElementById('cohort-ltv').textContent        = '—';
+    document.getElementById('cohort-single').textContent     = singlePct + '%';
+  }
+
   if (!entrySkills || !entrySkills.length) {
     document.getElementById('entry-skills').innerHTML = '<div style="color:var(--muted);font-size:12px;padding:12px 0">No purchase data yet.</div>';
     return;
