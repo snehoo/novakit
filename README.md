@@ -39,3 +39,4 @@ Copy `skills/pitch-deck-narrative.html`, update:
 5. 4 research checks
 6. Proof pullquote
 7. Buy section price + bundle name
+
