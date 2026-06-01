@@ -487,121 +487,122 @@ body { min-height: 100vh; }
 </div>
 
 <script>
-const SEED = {
-  revByDay: [1200,980,1540,2100,870,1320,1760,2300,1100,1450,1980,2650,1380,900,1620,2040,2900,1550,1200,1840,2200,3100,1760,1400,2080,1620,2440,1900,2750,3200],
-  dlByDay:  [8,6,11,15,7,9,12,16,8,10,13,18,9,7,11,14,19,11,8,12,15,21,12,9,14,11,17,13,19,22],
-  topSkills: [
-    {name:'Video Script Engine',        cat:'Video',    rev:48200, dl:187},
-    {name:'LinkedIn Post Engine',       cat:'Social',   rev:41800, dl:312},
-    {name:'E-Commerce Product Listing', cat:'E-Comm',   rev:38600, dl:274},
-    {name:'UGC Ad Creator',             cat:'Marketing',rev:34200, dl:198},
-    {name:'Brand Voice Guide',          cat:'Marketing',rev:29800, dl:156},
-    {name:'Pitch Deck Narrative',       cat:'Business', rev:27400, dl:132},
-    {name:'Sales Page',                 cat:'Sales',    rev:24900, dl:189},
-    {name:'SEO Blog Post Brief',        cat:'Content',  rev:22100, dl:208},
-    {name:'Resume & CV Builder',        cat:'Career',   rev:19800, dl:231},
-    {name:'Business Plan',              cat:'Business', rev:17600, dl:162},
-    {name:'NDA / Contract Draft',       cat:'Legal',    rev:15400, dl:89},
-    {name:'Podcast Show Notes',         cat:'Video',    rev:13200, dl:118},
-    {name:'Social Content Engine',      cat:'Social',   rev:12800, dl:142},
-    {name:'Financial Model Prompt',     cat:'Finance',  rev:11400, dl:78},
-    {name:'Cold Outreach Email',        cat:'Sales',    rev:10200, dl:93},
-  ],
-  categories:[
-    {name:'Video / Podcast', rev:74800},
-    {name:'Social & Content',rev:62100},
-    {name:'Marketing',       rev:54200},
-    {name:'Business',        rev:47200},
-    {name:'Sales',           rev:38400},
-    {name:'Education',       rev:29800},
-    {name:'Legal',           rev:21600},
-  ],
-  activity:[
-    {type:'buy',  text:'<strong>Priya S.</strong> purchased <strong>Video Script Engine</strong>',      time:'2 min ago'},
-    {type:'dl',   text:'<strong>Karan M.</strong> downloaded <strong>LinkedIn Post Engine</strong>',    time:'5 min ago'},
-    {type:'buy',  text:'<strong>Ananya R.</strong> purchased <strong>Founder Bundle</strong> (6 skills)',time:'11 min ago'},
-    {type:'visit',text:'Anonymous visitor viewed <strong>UGC Ad Creator</strong> — did not convert',    time:'14 min ago'},
-    {type:'buy',  text:'<strong>James T.</strong> purchased <strong>E-Commerce Listing</strong>',       time:'22 min ago'},
-    {type:'dl',   text:'<strong>Sara K.</strong> downloaded <strong>Brand Voice Guide</strong>',        time:'31 min ago'},
-    {type:'buy',  text:'<strong>Vikram P.</strong> purchased <strong>Sales Page</strong>',              time:'48 min ago'},
-    {type:'visit',text:'Anonymous visitor searched "instagram caption" — no result',                    time:'1 hr ago'},
-  ],
-  searches:[
-    {term:'linkedin post',         count:234, result:'hit'},
-    {term:'cold email template',   count:198, result:'hit'},
-    {term:'video script',          count:187, result:'hit'},
-    {term:'instagram caption',     count:142, result:'miss'},
-    {term:'pitch deck',            count:138, result:'hit'},
-    {term:'business plan template',count:124, result:'hit'},
-    {term:'cover letter',          count:118, result:'hit'},
-    {term:'twitter thread',        count:109, result:'hit'},
-    {term:'sop template',          count:98,  result:'miss'},
-    {term:'amazon listing',        count:87,  result:'partial'},
-  ],
-  misses:[
-    {term:'instagram caption prompt',count:142, idea:'Social media caption generator — direct competitor to LinkedIn Post Engine'},
-    {term:'sop template',            count:98,  idea:'Standard Operating Procedure writer — high B2B value, underfed category'},
-    {term:'ai music prompt',         count:76,  idea:'Music generation prompt builder — fast-growing Suno/Udio use case'},
-    {term:'notion template prompt',  count:64,  idea:'Notion AI integration prompt — productivity niche'},
-    {term:'chatgpt system prompt',   count:58,  idea:'Custom GPT / system prompt builder — meta-AI audience'},
-  ],
-  entrySkills:[
-    {name:'LinkedIn Post Engine',  pct:18},
-    {name:'Video Script Engine',   pct:14},
-    {name:'SEO Blog Post Brief',   pct:11},
-    {name:'E-Commerce Listing',    pct:9},
-    {name:'Resume & CV Builder',   pct:8},
-    {name:'Pitch Deck Narrative',  pct:7},
-  ],
-  unconverted:[
-    {name:'Financial Model Prompt', views:1240, cvr:'3.2%'},
-    {name:'Architecture Diagram',  views:980,  cvr:'2.8%'},
-    {name:'PRD Writer',            views:860,  cvr:'4.1%'},
-    {name:'Visa Cover Letter',     views:740,  cvr:'5.9%'},
-  ],
-  pairs:[
-    {a:'Video Script Engine',     b:'Podcast Show Notes',    count:84},
-    {a:'LinkedIn Post Engine',    b:'Social Content Engine', count:71},
-    {a:'Pitch Deck Narrative',    b:'Business Plan',         count:62},
-    {a:'Sales Page',              b:'Cold Outreach Email',   count:58},
-    {a:'UGC Ad Creator',          b:'Brand Voice Guide',     count:44},
-  ],
-  geo:[
-    {country:'India',    pct:42},
-    {country:'USA',      pct:21},
-    {country:'UK',       pct:8},
-    {country:'Australia',pct:6},
-    {country:'Canada',   pct:5},
-    {country:'UAE',      pct:4},
-    {country:'Singapore',pct:3},
-    {country:'Other',    pct:11},
-  ],
-};
-
-const RANGE_DATA = {
-  '7d': { rev:'₹18,420', dl:'147', buyers:'104', repeat:'19%', revDelta:'↑ 12% vs last 7d', dlDelta:'↑ 8%', buyersDelta:'+22 new', label:'7 days' },
-  '30d':{ rev:'₹74,200', dl:'612', buyers:'389', repeat:'24%', revDelta:'↑ 31% vs last 30d', dlDelta:'↑ 18%', buyersDelta:'+127 new', label:'30 days' },
-  '90d':{ rev:'₹198,400',dl:'1,840',buyers:'1,102',repeat:'27%',revDelta:'↑ 58% vs last 90d',dlDelta:'↑ 42%',buyersDelta:'+384 new', label:'90 days'},
-  'all':{ rev:'₹341,600',dl:'3,200',buyers:'2,847',repeat:'24%',revDelta:'since launch', dlDelta:'all time',buyersDelta:'all time', label:'All time' },
-};
+// ── CONFIG ─────────────────────────────────────────────
+// Set your METRICS_SECRET here (the one you created in wrangler secrets)
+const METRICS_SECRET = 'YOUR_METRICS_SECRET_HERE';
+const API_BASE = '/api/metrics';
+// ───────────────────────────────────────────────────────
 
 let revChart, dlChart, typeChart, catChart, trafficChart, geoChart;
+let currentRange = '30d';
+let DATA = null;
+
+function fmt(paise) {
+  const inr = paise / 100;
+  if (inr >= 100000) return '₹' + (inr/100000).toFixed(1) + 'L';
+  if (inr >= 1000)   return '₹' + (inr/1000).toFixed(1) + 'k';
+  return '₹' + inr.toLocaleString('en-IN');
+}
+
+function timeAgo(ts) {
+  const diff = Math.floor((Date.now() - new Date(ts)) / 1000);
+  if (diff < 60)   return diff + 's ago';
+  if (diff < 3600) return Math.floor(diff/60) + ' min ago';
+  if (diff < 86400)return Math.floor(diff/3600) + ' hr ago';
+  return Math.floor(diff/86400) + 'd ago';
+}
+
+function fillDays(rows, field, n) {
+  const map = {};
+  rows.forEach(r => { map[r.day?.slice(0,10)] = parseInt(r[field]||0,10); });
+  return Array.from({length:n},(_,i)=>{
+    const d = new Date(); d.setDate(d.getDate()-n+1+i);
+    return map[d.toISOString().slice(0,10)] || 0;
+  });
+}
+
+function dayLabels(n) {
+  return Array.from({length:n},(_,i)=>{
+    const d=new Date(); d.setDate(d.getDate()-n+1+i);
+    return (d.getMonth()+1)+'/'+(d.getDate());
+  });
+}
+
+async function loadData(range) {
+  document.getElementById('kpi-rev').textContent     = '…';
+  document.getElementById('kpi-dl').textContent      = '…';
+  document.getElementById('kpi-buyers').textContent  = '…';
+  document.getElementById('kpi-repeat').textContent  = '…';
+  try {
+    const res = await fetch(`${API_BASE}?range=${range}`, {
+      headers: { 'x-metrics-secret': METRICS_SECRET }
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    DATA = await res.json();
+    renderAll(DATA, range);
+  } catch(e) {
+    document.getElementById('kpi-rev').textContent = 'Error';
+    console.error('Metrics fetch failed:', e);
+  }
+}
+
+function renderAll(d, range) {
+  const n = range === '7d' ? 7 : range === '90d' ? 90 : range === 'all' ? 365 : 30;
+
+  // KPIs
+  document.getElementById('kpi-rev').textContent    = fmt(d.kpi.totalPaise);
+  document.getElementById('kpi-dl').textContent     = d.kpi.totalDownloads.toLocaleString();
+  document.getElementById('kpi-buyers').textContent = d.kpi.uniqueBuyers.toLocaleString();
+  document.getElementById('kpi-repeat').textContent = d.kpi.repeatRate + '%';
+  document.getElementById('kpi-rev-delta').textContent    = d.kpi.totalOrders + ' orders';
+  document.getElementById('kpi-dl-delta').textContent     = 'all downloads';
+  document.getElementById('kpi-buyers-delta').textContent = 'unique buyers';
+  document.getElementById('rev-chart-label').textContent  = range === 'all' ? 'All time' : 'Last ' + n + ' days';
+
+  const labels = dayLabels(n);
+  const revData = fillDays(d.revenueByDay, 'paise', n).map(v=>v/100);
+  const dlData  = fillDays(d.downloadsByDay, 'count', n);
+
+  // Revenue chart
+  if (revChart) { revChart.data.labels = labels; revChart.data.datasets[0].data = revData; revChart.update(); }
+  // Downloads chart
+  if (dlChart)  { dlChart.data.labels = labels;  dlChart.data.datasets[0].data = dlData;  dlChart.update(); }
+
+  // Category chart
+  if (catChart && d.categoryRevenue.length) {
+    catChart.data.labels = d.categoryRevenue.map(c=>c.category);
+    catChart.data.datasets[0].data = d.categoryRevenue.map(c=>parseInt(c.paise,10)/100);
+    catChart.update();
+  }
+
+  // Individual vs bundle donut
+  const indiv = d.revenueByType.find(r=>r.type==='individual');
+  const bundl = d.revenueByType.find(r=>r.type==='bundle');
+  const total = (parseInt(indiv?.paise||0,10) + parseInt(bundl?.paise||0,10)) || 1;
+  const indPct = Math.round(parseInt(indiv?.paise||0,10)/total*100);
+  if (typeChart) { typeChart.data.datasets[0].data = [indPct, 100-indPct]; typeChart.update(); }
+
+  // Geo chart
+  if (geoChart && d.buyerGeo.length) {
+    geoChart.data.labels = d.buyerGeo.map(g=>g.country||'Unknown');
+    geoChart.data.datasets[0].data = d.buyerGeo.map(g=>parseInt(g.buyers,10));
+    geoChart.update();
+  }
+
+  buildActivity(d.recentActivity);
+  buildSkills(d.topSkills);
+  buildBuyers(d.entrySkills);
+  buildFunnel(d.funnel, d.kpi);
+  buildSearch(d.topSearches, d.missedSearches);
+}
 
 function setRange(range, btn) {
   document.querySelectorAll('.df-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  const d = RANGE_DATA[range];
-  document.getElementById('kpi-rev').textContent = d.rev;
-  document.getElementById('kpi-dl').textContent = d.dl;
-  document.getElementById('kpi-buyers').textContent = d.buyers;
-  document.getElementById('kpi-repeat').textContent = d.repeat;
-  document.getElementById('kpi-rev-delta').textContent = d.revDelta;
-  document.getElementById('kpi-dl-delta').textContent = d.dlDelta;
-  document.getElementById('kpi-buyers-delta').textContent = d.buyersDelta;
-  document.getElementById('rev-chart-label').textContent = d.label;
-  setDeltaClass('kpi-rev-delta', true);
-  setDeltaClass('kpi-dl-delta', true);
+  currentRange = range;
+  loadData(range);
 }
+
 function setDeltaClass(id, up) {
   const el = document.getElementById(id);
   el.className = 'kpi-delta ' + (up ? 'up' : 'down');
@@ -615,34 +616,31 @@ function showTab(name) {
 }
 
 function buildCharts() {
-  const labels30 = Array.from({length:30},(_,i)=>{
-    const d=new Date(); d.setDate(d.getDate()-29+i);
-    return (d.getMonth()+1)+'/'+(d.getDate());
-  });
+  const labels = dayLabels(30);
 
   revChart = new Chart(document.getElementById('revChart'),{
     type:'line',
-    data:{labels:labels30,datasets:[{label:'Revenue',data:SEED.revByDay,borderColor:'#c8f565',backgroundColor:'rgba(200,245,101,0.06)',tension:0.4,pointRadius:0,borderWidth:2,fill:true}]},
+    data:{labels,datasets:[{label:'Revenue',data:Array(30).fill(0),borderColor:'#c8f565',backgroundColor:'rgba(200,245,101,0.06)',tension:0.4,pointRadius:0,borderWidth:2,fill:true}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'₹'+c.raw.toLocaleString()}}},scales:{x:{ticks:{color:'#444',font:{size:10},maxTicksLimit:8},grid:{color:'rgba(255,255,255,0.03)'}},y:{ticks:{color:'#444',font:{size:10},callback:v=>'₹'+Math.round(v/1000)+'k'},grid:{color:'rgba(255,255,255,0.04)'}}}}
   });
 
   dlChart = new Chart(document.getElementById('dlChart'),{
     type:'bar',
-    data:{labels:labels30,datasets:[{label:'Downloads',data:SEED.dlByDay,backgroundColor:'rgba(106,242,200,0.5)',borderColor:'#6af2c8',borderWidth:1,borderRadius:3}]},
+    data:{labels,datasets:[{label:'Downloads',data:Array(30).fill(0),backgroundColor:'rgba(106,242,200,0.5)',borderColor:'#6af2c8',borderWidth:1,borderRadius:3}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#444',font:{size:10},maxTicksLimit:8},grid:{display:false}},y:{ticks:{color:'#444',font:{size:10}},grid:{color:'rgba(255,255,255,0.03)'}}}}
   });
 
   typeChart = new Chart(document.getElementById('typeChart'),{
     type:'doughnut',
-    data:{labels:['Individual','Bundles'],datasets:[{data:[58,42],backgroundColor:['#c8f565','#6af2c8'],borderColor:'#161619',borderWidth:3}]},
+    data:{labels:['Individual','Bundles'],datasets:[{data:[50,50],backgroundColor:['#c8f565','#6af2c8'],borderColor:'#161619',borderWidth:3}]},
     options:{responsive:true,maintainAspectRatio:false,cutout:'72%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.label+': '+c.raw+'%'}}}}
   });
 
   catChart = new Chart(document.getElementById('catChart'),{
     type:'bar',
     data:{
-      labels:SEED.categories.map(c=>c.name),
-      datasets:[{label:'Revenue',data:SEED.categories.map(c=>c.rev),backgroundColor:'rgba(200,245,101,0.55)',borderColor:'#c8f565',borderWidth:1,borderRadius:3}]
+      labels:[],
+      datasets:[{label:'Revenue',data:[],backgroundColor:'rgba(200,245,101,0.55)',borderColor:'#c8f565',borderWidth:1,borderRadius:3}]
     },
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'₹'+c.raw.toLocaleString()}}},scales:{x:{ticks:{color:'#444',font:{size:10},callback:v=>'₹'+Math.round(v/1000)+'k'},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{color:'#888',font:{size:11}},grid:{display:false}}}}
   });
@@ -655,74 +653,79 @@ function buildCharts() {
 
   geoChart = new Chart(document.getElementById('geoChart'),{
     type:'bar',
-    data:{labels:SEED.geo.map(g=>g.country),datasets:[{label:'%',data:SEED.geo.map(g=>g.pct),backgroundColor:'rgba(106,242,200,0.5)',borderColor:'#6af2c8',borderWidth:1,borderRadius:3}]},
+    data:{labels:[],datasets:[{label:'Buyers',data:[],backgroundColor:'rgba(106,242,200,0.5)',borderColor:'#6af2c8',borderWidth:1,borderRadius:3}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw+'%'}}},scales:{x:{ticks:{color:'#444',font:{size:10},callback:v=>v+'%'},grid:{color:'rgba(255,255,255,0.03)'}},y:{ticks:{color:'#888',font:{size:11}},grid:{display:false}}}}
   });
 }
 
-function buildActivity() {
+function buildActivity(activity) {
   const feed = document.getElementById('activity-feed');
-  feed.innerHTML = SEED.activity.map(a=>`
+  if (!activity || !activity.length) {
+    feed.innerHTML = '<div style="color:var(--muted);font-size:12px;padding:12px 0">No activity yet — waiting for first orders.</div>';
+    return;
+  }
+  feed.innerHTML = activity.map(a=>`
     <div class="activity-item">
-      <div class="activity-dot ${a.type}"></div>
+      <div class="activity-dot ${a.type==='order'?'buy':'dl'}"></div>
       <div class="activity-body">
-        <div class="activity-text">${a.text}</div>
-        <div class="activity-time">${a.time}</div>
+        <div class="activity-text">
+          ${a.type==='order'
+            ? `Anonymous buyer purchased <strong>${a.skill_name||a.skill_slug}</strong> · ${fmt(parseInt(a.amount_paise||0,10))}`
+            : `Anonymous user downloaded <strong>${a.skill_name||a.skill_slug}</strong>`
+          }
+        </div>
+        <div class="activity-time">${timeAgo(a.ts)}</div>
       </div>
     </div>
   `).join('');
 }
 
-function buildSkills() {
-  const maxRev = SEED.topSkills[0].rev;
-  document.getElementById('skill-leaderboard').innerHTML = SEED.topSkills.map((s,i)=>`
+function buildSkills(topSkills) {
+  if (!topSkills || !topSkills.length) {
+    document.getElementById('skill-leaderboard').innerHTML = '<div style="color:var(--muted);font-size:12px;padding:12px 0">No sales yet — data will appear after first purchases.</div>';
+    document.getElementById('unconverted-list').innerHTML  = '<div style="color:var(--muted);font-size:12px;padding:12px 0">No data yet.</div>';
+    document.getElementById('pairs-list').innerHTML        = '<div style="color:var(--muted);font-size:12px;padding:12px 0">No data yet.</div>';
+    return;
+  }
+  const maxRev = parseInt(topSkills[0].total_paise||0,10);
+  document.getElementById('skill-leaderboard').innerHTML = topSkills.map((s,i)=>`
     <div class="skill-row">
       <span class="skill-rank">${i+1}</span>
       <div style="flex:1">
-        <div class="skill-name">${s.name}</div>
-        <div class="skill-cat">${s.cat}</div>
+        <div class="skill-name">${s.name||s.skill_slug}</div>
+        <div class="skill-cat">${s.category||''}</div>
       </div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:${Math.round(s.rev/maxRev*100)}%"></div></div>
-      <span class="skill-rev">₹${(s.rev/1000).toFixed(1)}k</span>
-      <span class="skill-dl">${s.dl}</span>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:${maxRev?Math.round(parseInt(s.total_paise,10)/maxRev*100):0}%"></div></div>
+      <span class="skill-rev">${fmt(parseInt(s.total_paise||0,10))}</span>
+      <span class="skill-dl">${s.download_count||0}</span>
     </div>
   `).join('');
-
-  document.getElementById('unconverted-list').innerHTML = SEED.unconverted.map(u=>`
-    <div class="skill-row">
-      <div style="flex:1">
-        <div class="skill-name">${u.name}</div>
-        <div class="skill-cat">${u.views.toLocaleString()} views · ${u.cvr} CVR</div>
-      </div>
-    </div>
-  `).join('');
-
-  document.getElementById('pairs-list').innerHTML = SEED.pairs.map(p=>`
-    <div class="activity-item">
-      <div class="activity-body">
-        <div class="activity-text" style="font-size:12px"><strong>${p.a}</strong> + <strong>${p.b}</strong></div>
-        <div class="activity-time">${p.count} buyers bought both</div>
-      </div>
-    </div>
-  `).join('');
+  document.getElementById('unconverted-list').innerHTML = '<div style="color:var(--muted);font-size:12px;padding:12px 0">Conversion data available after more traffic builds up.</div>';
+  document.getElementById('pairs-list').innerHTML       = '<div style="color:var(--muted);font-size:12px;padding:12px 0">Pair data available after multiple purchases.</div>';
 }
 
-function buildBuyers() {
-  document.getElementById('entry-skills').innerHTML = SEED.entrySkills.map(e=>`
+function buildBuyers(entrySkills) {
+  if (!entrySkills || !entrySkills.length) {
+    document.getElementById('entry-skills').innerHTML = '<div style="color:var(--muted);font-size:12px;padding:12px 0">No purchase data yet.</div>';
+    return;
+  }
+  const max = entrySkills[0].first_purchases || 1;
+  document.getElementById('entry-skills').innerHTML = entrySkills.map(e=>`
     <div class="funnel-row">
-      <div class="funnel-label"><span>${e.name}</span><span>${e.pct}%</span></div>
-      <div class="funnel-track"><div class="funnel-fill f1" style="width:${e.pct*5}%"></div></div>
+      <div class="funnel-label"><span>${e.name||e.skill_slug}</span><span>${e.first_purchases} buyers</span></div>
+      <div class="funnel-track"><div class="funnel-fill f1" style="width:${Math.round(e.first_purchases/max*100)}%"></div></div>
     </div>
   `).join('');
 }
 
-function buildFunnel() {
+function buildFunnel(funnel, kpi) {
+  const visitors  = funnel?.visitors || 0;
+  const skillViews= funnel?.skillPageViews || 0;
+  const orders    = kpi?.totalOrders || 0;
   const steps = [
-    {label:'Unique visitors',    val:12480, pct:100, cls:'f1'},
-    {label:'Skill page views',   val:8640,  pct:69,  cls:'f2'},
-    {label:'Add to cart / CTA',  val:2190,  pct:18,  cls:'f3'},
-    {label:'Reached Razorpay',   val:1640,  pct:13,  cls:'f3'},
-    {label:'Completed payment',  val:1312,  pct:10.5,cls:'f4'},
+    {label:'Unique visitors',   val:visitors,   pct:100,                                          cls:'f1'},
+    {label:'Skill page views',  val:skillViews, pct:visitors?Math.round(skillViews/visitors*100):0, cls:'f2'},
+    {label:'Completed payment', val:orders,     pct:visitors?+(orders/visitors*100).toFixed(1):0,   cls:'f4'},
   ];
   document.getElementById('funnel-bars').innerHTML = steps.map(s=>`
     <div class="funnel-row">
@@ -733,41 +736,37 @@ function buildFunnel() {
       <div class="funnel-track"><div class="funnel-fill ${s.cls}" style="width:${s.pct}%"></div></div>
     </div>
   `).join('');
-
-  const payment = [
-    {label:'Initiated payment',  val:1640, pct:100},
-    {label:'OTP / bank verified',val:1480, pct:90},
-    {label:'Payment successful', val:1312, pct:80},
-    {label:'Failed / dropped',   val:168,  pct:10},
-  ];
-  document.getElementById('payment-funnel').innerHTML = payment.map(p=>`
-    <div class="funnel-row">
-      <div class="funnel-label"><span>${p.label}</span><span>${p.val} · ${p.pct}%</span></div>
-      <div class="funnel-track"><div class="funnel-fill ${p.pct===10?'f4':'f1'}" style="width:${p.pct}%"></div></div>
-    </div>
-  `).join('');
+  document.getElementById('payment-funnel').innerHTML = '<div style="color:var(--muted);font-size:12px;padding:12px 0">Razorpay payment funnel data will appear after purchases begin.</div>';
 }
 
-function buildSearch() {
-  document.getElementById('search-list').innerHTML = SEED.searches.map(s=>`
-    <div class="query-row">
-      <span class="query-term">${s.term}</span>
-      <div style="display:flex;align-items:center">
-        <span class="query-count">${s.count}</span>
-        <span class="query-result-dot ${s.result}"></span>
+function buildSearch(searches, misses) {
+  if (!searches || !searches.length) {
+    document.getElementById('search-list').innerHTML = '<div style="color:var(--muted);font-size:12px;padding:12px 0">No search data yet.</div>';
+  } else {
+    document.getElementById('search-list').innerHTML = searches.map(s=>`
+      <div class="query-row">
+        <span class="query-term">${s.query}</span>
+        <div style="display:flex;align-items:center">
+          <span class="query-count">${s.searches}</span>
+          <span class="query-result-dot ${parseInt(s.misses,10)===parseInt(s.searches,10)?'miss':'hit'}"></span>
+        </div>
       </div>
-    </div>
-  `).join('');
+    `).join('');
+  }
 
-  document.getElementById('miss-list').innerHTML = SEED.misses.map(m=>`
-    <div class="activity-item">
-      <div class="activity-dot" style="background:#f08080;margin-top:5px"></div>
-      <div class="activity-body">
-        <div class="activity-text" style="font-size:12px"><strong>"${m.term}"</strong> — ${m.count} searches</div>
-        <div class="activity-time" style="color:var(--muted)">${m.idea}</div>
+  if (!misses || !misses.length) {
+    document.getElementById('miss-list').innerHTML = '<div style="color:var(--muted);font-size:12px;padding:12px 0">No missed searches yet.</div>';
+  } else {
+    document.getElementById('miss-list').innerHTML = misses.map(m=>`
+      <div class="activity-item">
+        <div class="activity-dot" style="background:#f08080;margin-top:5px"></div>
+        <div class="activity-body">
+          <div class="activity-text" style="font-size:12px"><strong>"${m.query}"</strong> — ${m.searches} searches with no results</div>
+          <div class="activity-time" style="color:var(--muted)">Consider adding a skill for this topic</div>
+        </div>
       </div>
-    </div>
-  `).join('');
+    `).join('');
+  }
 }
 
 function buildSchema() {
@@ -858,14 +857,9 @@ function buildSchema() {
   `).join('');
 }
 
-setRange('30d', document.querySelector('.df-btn.active'));
 buildCharts();
-buildActivity();
-buildSkills();
-buildBuyers();
-buildFunnel();
-buildSearch();
 buildSchema();
+loadData('30d');
 </script>
 </body>
 </html>
