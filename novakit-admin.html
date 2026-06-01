@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaKit — Admin Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0f0f11;
+  --bg2: #161619;
+  --bg3: #1e1e22;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.12);
+  --text: #f0ede8;
+  --muted: #7a7875;
+  --faint: #444240;
+  --accent: #c8f565;
+  --accent2: #6af2c8;
+  --accent3: #f5a623;
+  --font: 'Syne', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+  --r: 10px;
+  --r2: 6px;
+}
+
+html { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 14px; line-height: 1.5; }
+body { min-height: 100vh; }
+
+.shell { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+
+/* ── SIDEBAR ── */
+.sidebar {
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  padding: 28px 0;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+.logo {
+  padding: 0 22px 28px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+.logo-mark { font-size: 18px; font-weight: 700; letter-spacing: -0.03em; }
+.logo-mark span { color: var(--accent); }
+.logo-sub { font-size: 11px; color: var(--muted); font-family: var(--mono); margin-top: 2px; }
+
+.nav-group { padding: 0 12px; margin-bottom: 8px; }
+.nav-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); padding: 6px 10px 4px; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; border-radius: var(--r2);
+  font-size: 13px; color: var(--muted); cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.nav-item:hover { background: var(--bg3); color: var(--text); }
+.nav-item.active { background: var(--bg3); color: var(--accent); }
+.nav-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--faint); }
+.nav-item.active .nav-dot { background: var(--accent); }
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: 20px 22px 0;
+  border-top: 1px solid var(--border);
+}
+.live-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(200, 245, 101, 0.08);
+  border: 1px solid rgba(200, 245, 101, 0.2);
+  color: var(--accent);
+  font-size: 11px; font-family: var(--mono);
+  padding: 4px 10px; border-radius: 20px;
+  margin-bottom: 10px;
+}
+.live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+/* ── MAIN ── */
+.main { padding: 32px 36px; max-width: 1100px; }
+
+.page-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 32px;
+}
+.page-title { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+.page-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+.date-filter {
+  display: flex; gap: 2px;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r2); padding: 2px;
+}
+.df-btn {
+  font-size: 12px; font-family: var(--font); padding: 5px 12px;
+  border-radius: 4px; border: none; background: transparent;
+  color: var(--muted); cursor: pointer; transition: all 0.15s;
+}
+.df-btn.active { background: var(--bg3); color: var(--text); }
+.df-btn:hover:not(.active) { color: var(--text); }
+
+/* ── KPI ROW ── */
+.kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+.kpi-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 18px 20px;
+  transition: border-color 0.15s;
+}
+.kpi-card:hover { border-color: var(--border2); }
+.kpi-label { font-size: 11px; color: var(--muted); font-family: var(--mono); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+.kpi-value { font-size: 28px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+.kpi-value.green { color: var(--accent); }
+.kpi-value.teal { color: var(--accent2); }
+.kpi-value.amber { color: var(--accent3); }
+.kpi-delta { font-size: 12px; font-family: var(--mono); margin-top: 6px; }
+.kpi-delta.up { color: var(--accent); }
+.kpi-delta.down { color: #f08080; }
+.kpi-delta.neutral { color: var(--muted); }
+
+/* ── GRID 2-COL ── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.grid-3-1 { display: grid; grid-template-columns: 1.8fr 1fr; gap: 16px; margin-bottom: 20px; }
+
+/* ── CARD ── */
+.card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 20px 22px;
+}
+.card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.card-title { font-size: 13px; font-weight: 600; }
+.card-badge {
+  font-size: 10px; font-family: var(--mono); padding: 3px 8px;
+  border-radius: 4px; background: var(--bg3); color: var(--muted);
+}
+
+/* ── CHART WRAPPERS ── */
+.chart-wrap { position: relative; width: 100%; }
+
+/* ── SKILL LEADERBOARD ── */
+.skill-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 9px 0; border-bottom: 1px solid var(--border);
+}
+.skill-row:last-child { border-bottom: none; }
+.skill-rank { font-size: 11px; font-family: var(--mono); color: var(--faint); width: 18px; text-align: right; flex-shrink: 0; }
+.skill-name { flex: 1; font-size: 13px; }
+.skill-cat { font-size: 10px; font-family: var(--mono); color: var(--muted); }
+.skill-bar-wrap { width: 80px; height: 4px; background: var(--bg3); border-radius: 2px; }
+.skill-bar { height: 4px; border-radius: 2px; background: var(--accent); }
+.skill-rev { font-size: 12px; font-family: var(--mono); color: var(--accent); width: 52px; text-align: right; flex-shrink: 0; }
+.skill-dl { font-size: 11px; font-family: var(--mono); color: var(--muted); width: 32px; text-align: right; flex-shrink: 0; }
+
+/* ── ACTIVITY FEED ── */
+.activity-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.activity-item:last-child { border-bottom: none; }
+.activity-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.activity-dot.buy { background: var(--accent); }
+.activity-dot.dl { background: var(--accent2); }
+.activity-dot.visit { background: var(--faint); }
+.activity-body { flex: 1; }
+.activity-text { font-size: 12px; line-height: 1.4; }
+.activity-text strong { font-weight: 600; color: var(--text); }
+.activity-time { font-size: 11px; font-family: var(--mono); color: var(--faint); margin-top: 2px; }
+
+/* ── FUNNEL ── */
+.funnel-row { margin-bottom: 10px; }
+.funnel-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px; }
+.funnel-label span:first-child { color: var(--muted); }
+.funnel-label span:last-child { font-family: var(--mono); }
+.funnel-track { height: 6px; background: var(--bg3); border-radius: 3px; }
+.funnel-fill { height: 6px; border-radius: 3px; }
+.f1 { background: #c8f565; }
+.f2 { background: #a0d44a; }
+.f3 { background: #78b32f; }
+.f4 { background: #6af2c8; }
+
+/* ── BUYER COHORTS ── */
+.cohort-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.cohort-card {
+  background: var(--bg3); border-radius: var(--r2); padding: 12px 14px;
+  text-align: center;
+}
+.cohort-val { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+.cohort-label { font-size: 11px; color: var(--muted); font-family: var(--mono); margin-top: 3px; }
+
+/* ── SEARCH QUERIES ── */
+.query-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 0; border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.query-row:last-child { border-bottom: none; }
+.query-term { color: var(--text); }
+.query-count { font-family: var(--mono); color: var(--muted); }
+.query-result-dot { width: 6px; height: 6px; border-radius: 50%; margin-left: 8px; flex-shrink: 0; }
+.query-result-dot.hit { background: var(--accent); }
+.query-result-dot.miss { background: #f08080; }
+.query-result-dot.partial { background: var(--accent3); }
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--faint); margin-bottom: 12px; margin-top: 28px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--border);
+}
+
+/* ── TOP TOOLTIP AREA ── */
+.alert-bar {
+  background: rgba(200,245,101,0.06);
+  border: 1px solid rgba(200,245,101,0.15);
+  border-radius: var(--r2); padding: 10px 16px;
+  font-size: 12px; color: var(--accent);
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 10px;
+}
+.alert-icon { font-size: 14px; }
+
+/* ── DB SCHEMA SECTION ── */
+.schema-table { width: 100%; border-collapse: collapse; font-size: 12px; font-family: var(--mono); }
+.schema-table th { text-align: left; padding: 6px 10px; background: var(--bg3); color: var(--muted); font-weight: 500; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid var(--border); }
+.schema-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); }
+.schema-table tr:last-child td { border-bottom: none; }
+.col-name { color: var(--accent2); }
+.col-type { color: var(--accent3); }
+.col-note { color: var(--muted); font-size: 11px; }
+.col-pk { color: #f08080; }
+.schema-title { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 8px; font-family: var(--font); }
+.schema-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* ── TABS ── */
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+.tab-btn {
+  font-family: var(--font); font-size: 13px; padding: 8px 16px;
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  border-bottom: 2px solid transparent; transition: all 0.15s; margin-bottom: -1px;
+}
+.tab-btn.active { color: var(--text); border-bottom-color: var(--accent); }
+.tab-btn:hover:not(.active) { color: var(--text); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="logo">
+    <div class="logo-mark">Nova<span>Kit</span></div>
+    <div class="logo-sub">admin / v1.0</div>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-label">Overview</div>
+    <div class="nav-item active" onclick="showTab('overview')"><div class="nav-dot"></div> Dashboard</div>
+    <div class="nav-item" onclick="showTab('skills')"><div class="nav-dot"></div> Skills</div>
+    <div class="nav-item" onclick="showTab('buyers')"><div class="nav-dot"></div> Buyers</div>
+    <div class="nav-item" onclick="showTab('funnel')"><div class="nav-dot"></div> Funnel</div>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-label">Data</div>
+    <div class="nav-item" onclick="showTab('schema')"><div class="nav-dot"></div> DB schema</div>
+    <div class="nav-item" onclick="showTab('search')"><div class="nav-dot"></div> Search queries</div>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="live-pill"><div class="live-dot"></div> DEMO DATA</div>
+    <div style="font-size:11px; color:var(--faint); line-height:1.6">Replace seed data with Razorpay webhook output once live.</div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- OVERVIEW TAB -->
+  <div id="tab-overview" class="tab-panel active">
+
+    <div class="page-header">
+      <div>
+        <div class="page-title">Dashboard</div>
+        <div class="page-sub">All metrics — seed data. Wire to Razorpay webhooks to go live.</div>
+      </div>
+      <div class="date-filter">
+        <button class="df-btn" onclick="setRange('7d',this)">7d</button>
+        <button class="df-btn active" onclick="setRange('30d',this)">30d</button>
+        <button class="df-btn" onclick="setRange('90d',this)">90d</button>
+        <button class="df-btn" onclick="setRange('all',this)">All</button>
+      </div>
+    </div>
+
+    <div class="alert-bar">
+      <span class="alert-icon">&#9679;</span>
+      Razorpay integration pending — once live, replace <code style="font-family:var(--mono);font-size:11px">SEED_DATA</code> at the top of this file with webhook payloads.
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Revenue</div>
+        <div class="kpi-value green" id="kpi-rev">₹0</div>
+        <div class="kpi-delta up" id="kpi-rev-delta">— awaiting data</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Total downloads</div>
+        <div class="kpi-value teal" id="kpi-dl">0</div>
+        <div class="kpi-delta neutral" id="kpi-dl-delta">— awaiting data</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Unique buyers</div>
+        <div class="kpi-value" id="kpi-buyers">0</div>
+        <div class="kpi-delta neutral" id="kpi-buyers-delta">— awaiting data</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Repeat buyer rate</div>
+        <div class="kpi-value amber" id="kpi-repeat">0%</div>
+        <div class="kpi-delta neutral" id="kpi-repeat-delta">target ≥ 20%</div>
+      </div>
+    </div>
+
+    <div class="grid-3-1">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Revenue over time</div>
+          <div class="card-badge" id="rev-chart-label">30 days</div>
+        </div>
+        <div class="chart-wrap" style="height:200px"><canvas id="revChart" role="img" aria-label="Revenue over time line chart">Revenue trend chart</canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Revenue by type</div>
+        </div>
+        <div class="chart-wrap" style="height:180px"><canvas id="typeChart" role="img" aria-label="Individual vs bundle revenue donut chart">Individual vs bundle split</canvas></div>
+        <div style="display:flex;gap:16px;margin-top:12px;font-size:11px;font-family:var(--mono);color:var(--muted)">
+          <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:2px;background:#c8f565"></span>Individual 58%</span>
+          <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:2px;background:#6af2c8"></span>Bundles 42%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Downloads per day</div>
+          <div class="card-badge">last 30d</div>
+        </div>
+        <div class="chart-wrap" style="height:160px"><canvas id="dlChart" role="img" aria-label="Downloads per day bar chart">Downloads trend</canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Top categories by revenue</div>
+        </div>
+        <div class="chart-wrap" style="height:160px"><canvas id="catChart" role="img" aria-label="Category revenue horizontal bar chart">Category breakdown</canvas></div>
+      </div>
+    </div>
+
+    <div class="section-label">Recent activity</div>
+    <div class="card">
+      <div id="activity-feed"></div>
+    </div>
+
+  </div>
+
+  <!-- SKILLS TAB -->
+  <div id="tab-skills" class="tab-panel">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Skill performance</div>
+        <div class="page-sub">Revenue and downloads per skill — sorted by revenue.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Top 15 skills by revenue</div>
+        <div class="card-badge">all time</div>
+      </div>
+      <div id="skill-leaderboard"></div>
+    </div>
+
+    <div style="margin-top:16px" class="grid-2">
+      <div class="card">
+        <div class="card-header"><div class="card-title">Most viewed (unconverted)</div></div>
+        <div id="unconverted-list"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Common skill pairs (bought together)</div></div>
+        <div id="pairs-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUYERS TAB -->
+  <div id="tab-buyers" class="tab-panel">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Buyer analytics</div>
+        <div class="page-sub">Who's buying, how often, and what.</div>
+      </div>
+    </div>
+    <div class="cohort-grid" style="margin-bottom:20px">
+      <div class="cohort-card"><div class="cohort-val">2,847</div><div class="cohort-label">Total buyers</div></div>
+      <div class="cohort-card"><div class="cohort-val" style="color:var(--accent)">24%</div><div class="cohort-label">Repeat rate</div></div>
+      <div class="cohort-card"><div class="cohort-val">1.6</div><div class="cohort-label">Avg skills / buyer</div></div>
+      <div class="cohort-card"><div class="cohort-val" style="color:var(--accent2)">₹847</div><div class="cohort-label">Avg order value</div></div>
+      <div class="cohort-card"><div class="cohort-val" style="color:var(--accent3)">₹1,380</div><div class="cohort-label">LTV (repeat buyers)</div></div>
+      <div class="cohort-card"><div class="cohort-val">68%</div><div class="cohort-label">Single-purchase</div></div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header"><div class="card-title">Entry-point skills (first purchase)</div></div>
+        <div id="entry-skills"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Buyer location (top 8)</div></div>
+        <div class="chart-wrap" style="height:200px"><canvas id="geoChart" role="img" aria-label="Buyer location horizontal bar chart">Buyer geography</canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FUNNEL TAB -->
+  <div id="tab-funnel" class="tab-panel">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Conversion funnel</div>
+        <div class="page-sub">Where visitors drop off — site-wide.</div>
+      </div>
+    </div>
+    <div class="card" style="max-width:520px">
+      <div class="card-header"><div class="card-title">Site-wide funnel (30d)</div></div>
+      <div id="funnel-bars"></div>
+    </div>
+    <div style="margin-top:16px" class="grid-2">
+      <div class="card">
+        <div class="card-header"><div class="card-title">Traffic sources</div></div>
+        <div class="chart-wrap" style="height:200px"><canvas id="trafficChart" role="img" aria-label="Traffic source donut chart">Traffic breakdown</canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Payment completion rate</div></div>
+        <div style="padding-top:8px" id="payment-funnel"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHEMA TAB -->
+  <div id="tab-schema" class="tab-panel">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Database schema</div>
+        <div class="page-sub">Recommended tables for tracking all NovaKit metrics.</div>
+      </div>
+    </div>
+    <div class="schema-grid" id="schema-content"></div>
+  </div>
+
+  <!-- SEARCH TAB -->
+  <div id="tab-search" class="tab-panel">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Search queries</div>
+        <div class="page-sub">What visitors are searching for on-site. Misses = product ideas.</div>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header"><div class="card-title">Top search terms (30d)</div><div class="card-badge" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent)"></span> hit <span style="width:6px;height:6px;border-radius:50%;background:#f08080;margin-left:4px"></span> miss</div></div>
+        <div id="search-list"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-title">Missed searches = skill ideas</div></div>
+        <div id="miss-list"></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<script>
+const SEED = {
+  revByDay: [1200,980,1540,2100,870,1320,1760,2300,1100,1450,1980,2650,1380,900,1620,2040,2900,1550,1200,1840,2200,3100,1760,1400,2080,1620,2440,1900,2750,3200],
+  dlByDay:  [8,6,11,15,7,9,12,16,8,10,13,18,9,7,11,14,19,11,8,12,15,21,12,9,14,11,17,13,19,22],
+  topSkills: [
+    {name:'Video Script Engine',        cat:'Video',    rev:48200, dl:187},
+    {name:'LinkedIn Post Engine',       cat:'Social',   rev:41800, dl:312},
+    {name:'E-Commerce Product Listing', cat:'E-Comm',   rev:38600, dl:274},
+    {name:'UGC Ad Creator',             cat:'Marketing',rev:34200, dl:198},
+    {name:'Brand Voice Guide',          cat:'Marketing',rev:29800, dl:156},
+    {name:'Pitch Deck Narrative',       cat:'Business', rev:27400, dl:132},
+    {name:'Sales Page',                 cat:'Sales',    rev:24900, dl:189},
+    {name:'SEO Blog Post Brief',        cat:'Content',  rev:22100, dl:208},
+    {name:'Resume & CV Builder',        cat:'Career',   rev:19800, dl:231},
+    {name:'Business Plan',              cat:'Business', rev:17600, dl:162},
+    {name:'NDA / Contract Draft',       cat:'Legal',    rev:15400, dl:89},
+    {name:'Podcast Show Notes',         cat:'Video',    rev:13200, dl:118},
+    {name:'Social Content Engine',      cat:'Social',   rev:12800, dl:142},
+    {name:'Financial Model Prompt',     cat:'Finance',  rev:11400, dl:78},
+    {name:'Cold Outreach Email',        cat:'Sales',    rev:10200, dl:93},
+  ],
+  categories:[
+    {name:'Video / Podcast', rev:74800},
+    {name:'Social & Content',rev:62100},
+    {name:'Marketing',       rev:54200},
+    {name:'Business',        rev:47200},
+    {name:'Sales',           rev:38400},
+    {name:'Education',       rev:29800},
+    {name:'Legal',           rev:21600},
+  ],
+  activity:[
+    {type:'buy',  text:'<strong>Priya S.</strong> purchased <strong>Video Script Engine</strong>',      time:'2 min ago'},
+    {type:'dl',   text:'<strong>Karan M.</strong> downloaded <strong>LinkedIn Post Engine</strong>',    time:'5 min ago'},
+    {type:'buy',  text:'<strong>Ananya R.</strong> purchased <strong>Founder Bundle</strong> (6 skills)',time:'11 min ago'},
+    {type:'visit',text:'Anonymous visitor viewed <strong>UGC Ad Creator</strong> — did not convert',    time:'14 min ago'},
+    {type:'buy',  text:'<strong>James T.</strong> purchased <strong>E-Commerce Listing</strong>',       time:'22 min ago'},
+    {type:'dl',   text:'<strong>Sara K.</strong> downloaded <strong>Brand Voice Guide</strong>',        time:'31 min ago'},
+    {type:'buy',  text:'<strong>Vikram P.</strong> purchased <strong>Sales Page</strong>',              time:'48 min ago'},
+    {type:'visit',text:'Anonymous visitor searched "instagram caption" — no result',                    time:'1 hr ago'},
+  ],
+  searches:[
+    {term:'linkedin post',         count:234, result:'hit'},
+    {term:'cold email template',   count:198, result:'hit'},
+    {term:'video script',          count:187, result:'hit'},
+    {term:'instagram caption',     count:142, result:'miss'},
+    {term:'pitch deck',            count:138, result:'hit'},
+    {term:'business plan template',count:124, result:'hit'},
+    {term:'cover letter',          count:118, result:'hit'},
+    {term:'twitter thread',        count:109, result:'hit'},
+    {term:'sop template',          count:98,  result:'miss'},
+    {term:'amazon listing',        count:87,  result:'partial'},
+  ],
+  misses:[
+    {term:'instagram caption prompt',count:142, idea:'Social media caption generator — direct competitor to LinkedIn Post Engine'},
+    {term:'sop template',            count:98,  idea:'Standard Operating Procedure writer — high B2B value, underfed category'},
+    {term:'ai music prompt',         count:76,  idea:'Music generation prompt builder — fast-growing Suno/Udio use case'},
+    {term:'notion template prompt',  count:64,  idea:'Notion AI integration prompt — productivity niche'},
+    {term:'chatgpt system prompt',   count:58,  idea:'Custom GPT / system prompt builder — meta-AI audience'},
+  ],
+  entrySkills:[
+    {name:'LinkedIn Post Engine',  pct:18},
+    {name:'Video Script Engine',   pct:14},
+    {name:'SEO Blog Post Brief',   pct:11},
+    {name:'E-Commerce Listing',    pct:9},
+    {name:'Resume & CV Builder',   pct:8},
+    {name:'Pitch Deck Narrative',  pct:7},
+  ],
+  unconverted:[
+    {name:'Financial Model Prompt', views:1240, cvr:'3.2%'},
+    {name:'Architecture Diagram',  views:980,  cvr:'2.8%'},
+    {name:'PRD Writer',            views:860,  cvr:'4.1%'},
+    {name:'Visa Cover Letter',     views:740,  cvr:'5.9%'},
+  ],
+  pairs:[
+    {a:'Video Script Engine',     b:'Podcast Show Notes',    count:84},
+    {a:'LinkedIn Post Engine',    b:'Social Content Engine', count:71},
+    {a:'Pitch Deck Narrative',    b:'Business Plan',         count:62},
+    {a:'Sales Page',              b:'Cold Outreach Email',   count:58},
+    {a:'UGC Ad Creator',          b:'Brand Voice Guide',     count:44},
+  ],
+  geo:[
+    {country:'India',    pct:42},
+    {country:'USA',      pct:21},
+    {country:'UK',       pct:8},
+    {country:'Australia',pct:6},
+    {country:'Canada',   pct:5},
+    {country:'UAE',      pct:4},
+    {country:'Singapore',pct:3},
+    {country:'Other',    pct:11},
+  ],
+};
+
+const RANGE_DATA = {
+  '7d': { rev:'₹18,420', dl:'147', buyers:'104', repeat:'19%', revDelta:'↑ 12% vs last 7d', dlDelta:'↑ 8%', buyersDelta:'+22 new', label:'7 days' },
+  '30d':{ rev:'₹74,200', dl:'612', buyers:'389', repeat:'24%', revDelta:'↑ 31% vs last 30d', dlDelta:'↑ 18%', buyersDelta:'+127 new', label:'30 days' },
+  '90d':{ rev:'₹198,400',dl:'1,840',buyers:'1,102',repeat:'27%',revDelta:'↑ 58% vs last 90d',dlDelta:'↑ 42%',buyersDelta:'+384 new', label:'90 days'},
+  'all':{ rev:'₹341,600',dl:'3,200',buyers:'2,847',repeat:'24%',revDelta:'since launch', dlDelta:'all time',buyersDelta:'all time', label:'All time' },
+};
+
+let revChart, dlChart, typeChart, catChart, trafficChart, geoChart;
+
+function setRange(range, btn) {
+  document.querySelectorAll('.df-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const d = RANGE_DATA[range];
+  document.getElementById('kpi-rev').textContent = d.rev;
+  document.getElementById('kpi-dl').textContent = d.dl;
+  document.getElementById('kpi-buyers').textContent = d.buyers;
+  document.getElementById('kpi-repeat').textContent = d.repeat;
+  document.getElementById('kpi-rev-delta').textContent = d.revDelta;
+  document.getElementById('kpi-dl-delta').textContent = d.dlDelta;
+  document.getElementById('kpi-buyers-delta').textContent = d.buyersDelta;
+  document.getElementById('rev-chart-label').textContent = d.label;
+  setDeltaClass('kpi-rev-delta', true);
+  setDeltaClass('kpi-dl-delta', true);
+}
+function setDeltaClass(id, up) {
+  const el = document.getElementById(id);
+  el.className = 'kpi-delta ' + (up ? 'up' : 'down');
+}
+
+function showTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+function buildCharts() {
+  const labels30 = Array.from({length:30},(_,i)=>{
+    const d=new Date(); d.setDate(d.getDate()-29+i);
+    return (d.getMonth()+1)+'/'+(d.getDate());
+  });
+
+  revChart = new Chart(document.getElementById('revChart'),{
+    type:'line',
+    data:{labels:labels30,datasets:[{label:'Revenue',data:SEED.revByDay,borderColor:'#c8f565',backgroundColor:'rgba(200,245,101,0.06)',tension:0.4,pointRadius:0,borderWidth:2,fill:true}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'₹'+c.raw.toLocaleString()}}},scales:{x:{ticks:{color:'#444',font:{size:10},maxTicksLimit:8},grid:{color:'rgba(255,255,255,0.03)'}},y:{ticks:{color:'#444',font:{size:10},callback:v=>'₹'+Math.round(v/1000)+'k'},grid:{color:'rgba(255,255,255,0.04)'}}}}
+  });
+
+  dlChart = new Chart(document.getElementById('dlChart'),{
+    type:'bar',
+    data:{labels:labels30,datasets:[{label:'Downloads',data:SEED.dlByDay,backgroundColor:'rgba(106,242,200,0.5)',borderColor:'#6af2c8',borderWidth:1,borderRadius:3}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#444',font:{size:10},maxTicksLimit:8},grid:{display:false}},y:{ticks:{color:'#444',font:{size:10}},grid:{color:'rgba(255,255,255,0.03)'}}}}
+  });
+
+  typeChart = new Chart(document.getElementById('typeChart'),{
+    type:'doughnut',
+    data:{labels:['Individual','Bundles'],datasets:[{data:[58,42],backgroundColor:['#c8f565','#6af2c8'],borderColor:'#161619',borderWidth:3}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'72%',plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.label+': '+c.raw+'%'}}}}
+  });
+
+  catChart = new Chart(document.getElementById('catChart'),{
+    type:'bar',
+    data:{
+      labels:SEED.categories.map(c=>c.name),
+      datasets:[{label:'Revenue',data:SEED.categories.map(c=>c.rev),backgroundColor:'rgba(200,245,101,0.55)',borderColor:'#c8f565',borderWidth:1,borderRadius:3}]
+    },
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'₹'+c.raw.toLocaleString()}}},scales:{x:{ticks:{color:'#444',font:{size:10},callback:v=>'₹'+Math.round(v/1000)+'k'},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{color:'#888',font:{size:11}},grid:{display:false}}}}
+  });
+
+  trafficChart = new Chart(document.getElementById('trafficChart'),{
+    type:'doughnut',
+    data:{labels:['Organic search','Direct','Social media','Referral','Email'],datasets:[{data:[38,28,18,11,5],backgroundColor:['#c8f565','#6af2c8','#f5a623','#7f77dd','#888'],borderColor:'#161619',borderWidth:3}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'65%',plugins:{legend:{display:false}}}
+  });
+
+  geoChart = new Chart(document.getElementById('geoChart'),{
+    type:'bar',
+    data:{labels:SEED.geo.map(g=>g.country),datasets:[{label:'%',data:SEED.geo.map(g=>g.pct),backgroundColor:'rgba(106,242,200,0.5)',borderColor:'#6af2c8',borderWidth:1,borderRadius:3}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw+'%'}}},scales:{x:{ticks:{color:'#444',font:{size:10},callback:v=>v+'%'},grid:{color:'rgba(255,255,255,0.03)'}},y:{ticks:{color:'#888',font:{size:11}},grid:{display:false}}}}
+  });
+}
+
+function buildActivity() {
+  const feed = document.getElementById('activity-feed');
+  feed.innerHTML = SEED.activity.map(a=>`
+    <div class="activity-item">
+      <div class="activity-dot ${a.type}"></div>
+      <div class="activity-body">
+        <div class="activity-text">${a.text}</div>
+        <div class="activity-time">${a.time}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function buildSkills() {
+  const maxRev = SEED.topSkills[0].rev;
+  document.getElementById('skill-leaderboard').innerHTML = SEED.topSkills.map((s,i)=>`
+    <div class="skill-row">
+      <span class="skill-rank">${i+1}</span>
+      <div style="flex:1">
+        <div class="skill-name">${s.name}</div>
+        <div class="skill-cat">${s.cat}</div>
+      </div>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:${Math.round(s.rev/maxRev*100)}%"></div></div>
+      <span class="skill-rev">₹${(s.rev/1000).toFixed(1)}k</span>
+      <span class="skill-dl">${s.dl}</span>
+    </div>
+  `).join('');
+
+  document.getElementById('unconverted-list').innerHTML = SEED.unconverted.map(u=>`
+    <div class="skill-row">
+      <div style="flex:1">
+        <div class="skill-name">${u.name}</div>
+        <div class="skill-cat">${u.views.toLocaleString()} views · ${u.cvr} CVR</div>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('pairs-list').innerHTML = SEED.pairs.map(p=>`
+    <div class="activity-item">
+      <div class="activity-body">
+        <div class="activity-text" style="font-size:12px"><strong>${p.a}</strong> + <strong>${p.b}</strong></div>
+        <div class="activity-time">${p.count} buyers bought both</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function buildBuyers() {
+  document.getElementById('entry-skills').innerHTML = SEED.entrySkills.map(e=>`
+    <div class="funnel-row">
+      <div class="funnel-label"><span>${e.name}</span><span>${e.pct}%</span></div>
+      <div class="funnel-track"><div class="funnel-fill f1" style="width:${e.pct*5}%"></div></div>
+    </div>
+  `).join('');
+}
+
+function buildFunnel() {
+  const steps = [
+    {label:'Unique visitors',    val:12480, pct:100, cls:'f1'},
+    {label:'Skill page views',   val:8640,  pct:69,  cls:'f2'},
+    {label:'Add to cart / CTA',  val:2190,  pct:18,  cls:'f3'},
+    {label:'Reached Razorpay',   val:1640,  pct:13,  cls:'f3'},
+    {label:'Completed payment',  val:1312,  pct:10.5,cls:'f4'},
+  ];
+  document.getElementById('funnel-bars').innerHTML = steps.map(s=>`
+    <div class="funnel-row">
+      <div class="funnel-label">
+        <span>${s.label}</span>
+        <span>${s.val.toLocaleString()} · ${s.pct}%</span>
+      </div>
+      <div class="funnel-track"><div class="funnel-fill ${s.cls}" style="width:${s.pct}%"></div></div>
+    </div>
+  `).join('');
+
+  const payment = [
+    {label:'Initiated payment',  val:1640, pct:100},
+    {label:'OTP / bank verified',val:1480, pct:90},
+    {label:'Payment successful', val:1312, pct:80},
+    {label:'Failed / dropped',   val:168,  pct:10},
+  ];
+  document.getElementById('payment-funnel').innerHTML = payment.map(p=>`
+    <div class="funnel-row">
+      <div class="funnel-label"><span>${p.label}</span><span>${p.val} · ${p.pct}%</span></div>
+      <div class="funnel-track"><div class="funnel-fill ${p.pct===10?'f4':'f1'}" style="width:${p.pct}%"></div></div>
+    </div>
+  `).join('');
+}
+
+function buildSearch() {
+  document.getElementById('search-list').innerHTML = SEED.searches.map(s=>`
+    <div class="query-row">
+      <span class="query-term">${s.term}</span>
+      <div style="display:flex;align-items:center">
+        <span class="query-count">${s.count}</span>
+        <span class="query-result-dot ${s.result}"></span>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('miss-list').innerHTML = SEED.misses.map(m=>`
+    <div class="activity-item">
+      <div class="activity-dot" style="background:#f08080;margin-top:5px"></div>
+      <div class="activity-body">
+        <div class="activity-text" style="font-size:12px"><strong>"${m.term}"</strong> — ${m.count} searches</div>
+        <div class="activity-time" style="color:var(--muted)">${m.idea}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function buildSchema() {
+  const tables = [
+    {
+      name:'orders',
+      cols:[
+        {name:'id',           type:'UUID',      note:'PK', pk:true},
+        {name:'razorpay_id',  type:'TEXT',      note:'Razorpay order_id'},
+        {name:'buyer_email',  type:'TEXT',      note:'Hashed for privacy'},
+        {name:'skill_slug',   type:'TEXT',      note:'FK → skills.slug'},
+        {name:'bundle_key',   type:'TEXT',      note:'null if individual'},
+        {name:'amount_inr',   type:'INTEGER',   note:'Paise (×100)'},
+        {name:'status',       type:'ENUM',      note:'paid/failed/refunded'},
+        {name:'created_at',   type:'TIMESTAMP', note:''},
+      ]
+    },
+    {
+      name:'downloads',
+      cols:[
+        {name:'id',           type:'UUID',      note:'PK', pk:true},
+        {name:'order_id',     type:'UUID',      note:'FK → orders.id'},
+        {name:'skill_slug',   type:'TEXT',      note:''},
+        {name:'buyer_hash',   type:'TEXT',      note:'Anonymised buyer id'},
+        {name:'downloaded_at',type:'TIMESTAMP', note:''},
+        {name:'download_no',  type:'INTEGER',   note:'1 = first, 2 = re-dl'},
+      ]
+    },
+    {
+      name:'page_views',
+      cols:[
+        {name:'id',           type:'BIGINT',    note:'PK auto-inc', pk:true},
+        {name:'skill_slug',   type:'TEXT',      note:'null = non-skill page'},
+        {name:'session_id',   type:'TEXT',      note:'Anonymous session'},
+        {name:'referrer',     type:'TEXT',      note:'traffic source'},
+        {name:'viewed_at',    type:'TIMESTAMP', note:''},
+      ]
+    },
+    {
+      name:'search_queries',
+      cols:[
+        {name:'id',           type:'BIGINT',    note:'PK', pk:true},
+        {name:'query',        type:'TEXT',      note:'Normalised, lowercased'},
+        {name:'result_count', type:'INTEGER',   note:'0 = miss'},
+        {name:'session_id',   type:'TEXT',      note:''},
+        {name:'searched_at',  type:'TIMESTAMP', note:''},
+      ]
+    },
+    {
+      name:'skills',
+      cols:[
+        {name:'slug',         type:'TEXT',      note:'PK — unique id', pk:true},
+        {name:'name',         type:'TEXT',      note:'Display name'},
+        {name:'category',     type:'TEXT',      note:''},
+        {name:'price_inr',    type:'INTEGER',   note:'Paise'},
+        {name:'bundle_key',   type:'TEXT',      note:'null if standalone'},
+        {name:'active',       type:'BOOLEAN',   note:''},
+      ]
+    },
+    {
+      name:'buyers',
+      cols:[
+        {name:'buyer_hash',   type:'TEXT',      note:'PK — SHA256 of email', pk:true},
+        {name:'first_order',  type:'TIMESTAMP', note:''},
+        {name:'order_count',  type:'INTEGER',   note:'Denormalised'},
+        {name:'total_spend',  type:'INTEGER',   note:'Paise, denormalised'},
+        {name:'country',      type:'TEXT',      note:'From Razorpay / IP'},
+      ]
+    },
+  ];
+
+  document.getElementById('schema-content').innerHTML = tables.map(t=>`
+    <div class="card">
+      <div class="schema-title">table: ${t.name}</div>
+      <table class="schema-table">
+        <thead><tr><th>Column</th><th>Type</th><th>Note</th></tr></thead>
+        <tbody>
+          ${t.cols.map(c=>`
+            <tr>
+              <td class="${c.pk?'col-pk':'col-name'}">${c.name}${c.pk?' 🔑':''}</td>
+              <td class="col-type">${c.type}</td>
+              <td class="col-note">${c.note}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `).join('');
+}
+
+setRange('30d', document.querySelector('.df-btn.active'));
+buildCharts();
+buildActivity();
+buildSkills();
+buildBuyers();
+buildFunnel();
+buildSearch();
+buildSchema();
+</script>
+</body>
+</html>
