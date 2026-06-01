@@ -8,9 +8,5 @@
       "binding": "HYPERDRIVE",
       "id": "db2ee9355c1743f49fb744be2bc87390"
     }
-  ],
-
-  "vars": {
-    "RAZORPAY_WEBHOOK_SECRET": "YOUR_RAZORPAY_WEBHOOK_SECRET"
-  }
+  ]
 }
