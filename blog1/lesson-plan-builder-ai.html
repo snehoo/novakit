@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lesson Plan AI Writes vs the One Your Class Actually Needs | NovaKit Blog</title>
+<meta name="description" content="AI lesson plans look right but teach wrong. The Lesson Plan Builder Claude skill calibrates to your year group, subject, and objective before writing — so the plan works in the room.">
+<meta name="keywords" content="lesson plan builder AI, AI lesson plan Claude, lesson plan generator teacher, NovaKit lesson plan skill, AI lesson planning tool">
+<link rel="canonical" href="https://novakit.tech/blog/lesson-plan-builder-ai">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novakit.tech/blog/lesson-plan-builder-ai">
+<meta property="og:title" content="The Lesson Plan AI Writes vs the One Your Class Actually Needs">
+<meta property="og:description" content="Generic AI lesson plans are structurally correct and pedagogically hollow. The Lesson Plan Builder skill asks about your class before it plans anything.">
+<meta property="og:image" content="https://novakit.tech/og-blog-lesson-plan-builder-ai.png">
+<meta property="og:site_name" content="NovaKit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Lesson Plan AI Writes vs the One Your Class Actually Needs">
+<meta name="twitter:description" content="Generic AI lesson plans are structurally correct and pedagogically hollow. The Lesson Plan Builder skill asks about your class before it plans anything.">
+<meta name="twitter:image" content="https://novakit.tech/og-blog-lesson-plan-builder-ai.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Lesson Plan AI Writes vs the One Your Class Actually Needs",
+  "description": "AI lesson plans look right but teach wrong. The Lesson Plan Builder Claude skill calibrates to your year group, subject, and objective before writing — so the plan works in the room.",
+  "datePublished": "2026-05-27",
+  "dateModified": "2026-05-27",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/lesson-plan-builder-ai"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "The Lesson Plan AI Writes vs the One Your Class Actually Needs", "item": "https://novakit.tech/blog/lesson-plan-builder-ai"}
+  ]
+}
+</script>
+
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="../assets/faviconnk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,56px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body strong{font-weight:700;color:var(--text);}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);}
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+.step-list{margin:32px 0;display:flex;flex-direction:column;}
+.step-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--border);}
+.step-item:last-child{border-bottom:none;}
+.step-num{width:34px;height:34px;border-radius:8px;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--accent);flex-shrink:0;margin-top:2px;}
+.step-title{font-size:16px;font-weight:700;margin-bottom:6px;}
+.step-body{font-size:15px;color:var(--muted);line-height:1.65;}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:16px;font-size:14px;line-height:1.75;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.rc-meta{font-size:12px;color:var(--muted);}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:32px;}
+  .before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress"></div>
+
+<nav>
+  <a href="../index.html">
+    <img src="../assets/nkwhite.jpg" class="logo-img logo-dark" alt="NovaKit">
+    <img src="../assets/nkblack.jpg" class="logo-img logo-light" alt="NovaKit">
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span id="theme-icon">☀️</span>
+    </button>
+    <a href="../index.html#skills" class="btn btn-primary btn-sm">Browse Skills</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">NovaKit</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="index.html">Blog</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>Lesson Plan Builder AI</span>
+</div>
+
+<header class="post-header">
+  <div class="post-meta">
+    <span class="post-cat">Skill Deep-Dive</span>
+    <span class="meta-dot"></span>
+    <span class="post-date">27 May 2026</span>
+    <span class="meta-dot"></span>
+    <span class="post-readtime">7 min read</span>
+  </div>
+
+  <h1 class="post-title">The Lesson Plan AI Writes vs the One <em>Your Class Actually Needs</em></h1>
+
+  <p class="post-subtitle">Generic AI lesson plans pass the inspection test and fail the classroom test. They have every section a lesson plan should have — and none of the specificity that makes a lesson actually teachable to your year group, your subject, and your students' current level.</p>
+
+  <div class="post-byline">
+    <div class="author">
+      <div class="author-av">NK</div>
+      <div>
+        <div class="author-name">NovaKit</div>
+        <div class="author-role">Claude Skill Research</div>
+      </div>
+    </div>
+    <div class="share-links">
+      <span>Share →</span>
+      <button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+      <button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+      <button class="share-btn" onclick="copyLink()">Copy link</button>
+    </div>
+  </div>
+</header>
+
+<div class="post-hero-card">
+  <div class="hero-card-inner">
+    <div class="hero-card-icon">📚</div>
+    <div>
+      <div class="hero-card-label">NovaKit Skill · Educator Bundle</div>
+      <div class="hero-card-text">Lesson Plan Builder — objective-driven lesson plans calibrated to your year group, subject, and current pedagogical approaches</div>
+    </div>
+  </div>
+</div>
+
+<article class="post-body">
+
+  <p>Every teacher who has tried using AI for lesson planning has had the same moment. The plan comes back looking exactly like a lesson plan should look. Learning objective: check. Starter activity: check. Main activity: check. Plenary: check. It even uses the right vocabulary — "differentiation," "success criteria," "formative assessment." You read it through and something is wrong, but it takes a second to name what.</p>
+
+  <p>What's wrong is that it could have been written for any class, any teacher, any school. The Year 8 science lesson on covalent bonding reads like it was assembled by someone who knows what Year 8 science lessons look like but has never taught one. The activities are plausible. The timing is reasonable. The objective is correctly formatted. And not one part of it reflects anything specific about the concept you're teaching, the prior knowledge your class has, the misconceptions they reliably arrive with, or the approach that actually works for this age group and this topic.</p>
+
+  <p>That's not a lesson plan. That's a lesson plan template with content inserted. The difference matters the moment you're standing in front of thirty students and the activity doesn't land because it assumed the wrong starting point.</p>
+
+
+  <h2>What Generic AI <em>Gets Wrong About Lesson Planning</em></h2>
+
+  <p>The failure isn't structural — generic AI knows what sections a lesson plan needs. The failure is pedagogical. A lesson plan exists to get a specific group of learners from where they are to where the learning objective says they should be, by the end of a specific amount of time. Every element of the plan — the hook, the activities, the differentiation, the assessment — should be in service of that movement. Generic AI produces plans where the elements are present but not coordinated toward a specific destination.</p>
+
+  <p>Take differentiation. A generic AI lesson plan will include a differentiation section. It will say something like "provide additional support for lower-ability students through visual aids; challenge higher-ability students with extension tasks." That sentence is simultaneously correct and useless. It describes a category of action without specifying any action. What visual aids? Which extension tasks? At what point in the lesson? Triggered by what student response? A teacher reading that note has to generate all of the actual content themselves — which means the AI saved them nothing on the hardest part and only wrote the easy parts for them.</p>
+
+  <div class="callout callout-blue">
+    <div class="callout-icon">💡</div>
+    <div class="callout-content">
+      <div class="callout-label">The core problem</div>
+      <p>A generic AI lesson plan has the right sections and wrong specificity. It tells you what to do in categories. A usable lesson plan tells you what to do in that lesson — because it knows what topic, what age, what prior knowledge, and what misconceptions you're working with.</p>
+    </div>
+  </div>
+
+  <p>The same failure appears in starter activities. Generic AI produces starters that are generically appropriate — a retrieval quiz, a think-pair-share, a stimulus image. What it can't produce without context is a starter designed specifically to activate the prior knowledge this lesson depends on, or to surface the exact misconception that most students in this age group carry into this topic. Those are the starters that make the rest of the lesson work. They're also the ones that require knowing something about the subject, the concept, and the learner.</p>
+
+
+  <h2>What <em>Calibrated Planning</em> Changes</h2>
+
+  <p>The Lesson Plan Builder skill runs a three-question interview before producing anything. Year group and subject, the specific learning objective for this lesson, and the prior knowledge students are coming in with. Those three inputs change every structural decision that follows — not as aesthetic preferences, but as pedagogical requirements.</p>
+
+  <p>Year group calibration isn't just about vocabulary level. The pedagogical approaches that work for Key Stage 2 students engaging with a new concept are structurally different from those that work for A-level students consolidating existing knowledge. The optimal balance of teacher-led instruction versus student-led activity shifts with age and subject. The formative assessment techniques that generate useful information about learning vary by developmental stage. A lesson plan that doesn't know the year group can't make these decisions correctly — it averages across all of them and produces something that fits none of them precisely.</p>
+
+  <div class="pull-quote">
+    <p>A starter that surfaces the right misconception <em>at the right moment</em> does more pedagogical work than three well-designed main activities that assume the misconception doesn't exist.</p>
+  </div>
+
+  <p>The learning objective input is where the biggest change happens. The skill doesn't just note the objective and move on — it uses it to design the lesson backward. The plenary is designed to assess specifically whether the objective was met. The main activity is designed to produce the learning the objective describes. The starter is designed to build the cognitive bridge between prior knowledge and the new concept. Every element points at the same destination because the skill knows what that destination is before it plans the route.</p>
+
+
+  <h2>How the <em>Lesson Plan Builder</em> Skill Works</h2>
+
+  <p>Three questions, then a research pass for current approaches to this concept at this level, then a complete lesson plan — with differentiation that actually specifies the activities, not just the category.</p>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Year group, subject, and lesson duration</div>
+        <div class="step-body">The age group and subject determine pedagogical approach, appropriate activity types, language level, and the balance between instruction and student activity. Duration shapes pacing — a 50-minute lesson and a 90-minute lesson are structurally different documents, not the same plan compressed or expanded.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Specific learning objective and prior knowledge</div>
+        <div class="step-body">The objective drives backward design: the lesson is built from what students need to be able to do at the end, not forward from what content exists. Prior knowledge input lets the skill design a starter that activates exactly what this lesson depends on — and flag the common misconceptions this topic arrives with at this level.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Live research on current approaches</div>
+        <div class="step-body">Before writing the plan, the skill identifies current evidence-based approaches to teaching this concept at this level. Not historical examples from ten years ago — what's being used in classrooms for this specific topic, age group, and subject area right now. That research informs activity design and differentiation strategies.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Complete plan with specified differentiation</div>
+        <div class="step-body">The output is a complete lesson plan where differentiation names the actual activities — not "provide support through visual aids" but the specific visual aid, when it's introduced, and what it represents. Extension tasks are specified, not implied. Success criteria are observable, not aspirational. The plan is usable without supplementary invention from the teacher.</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">NovaKit Skill · Educator Bundle</div>
+      <div class="soft-cta-title">Lesson Plan Builder — complete, usable plans calibrated to your class</div>
+      <div class="soft-cta-sub">Works inside Claude. No setup. Full lesson plan with specified differentiation, backward-designed activities, and formative assessment built for your learning objective.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/lesson-plan-builder.html" class="btn btn-primary">See the skill</a>
+      <span class="soft-cta-price">$9 · instant download</span>
+    </div>
+  </div>
+
+
+  <h2>Generic Plan vs <em>Calibrated Plan</em></h2>
+
+  <p>Same topic, same year group. One produced by vanilla AI, one by the skill. The difference is whether a teacher can pick it up and teach from it without rewriting half of it first.</p>
+
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-header">Without NovaKit — Year 9 science, photosynthesis</div>
+      <div class="ba-body">
+        <strong>Learning Objective:</strong> Students will understand photosynthesis.<br><br>
+        <strong>Starter (10 min):</strong> Ask students what they already know about plants. Discuss as a class.<br><br>
+        <strong>Main Activity (30 min):</strong> Explain the photosynthesis equation. Students complete a worksheet on the inputs and outputs. Higher-ability students can research limiting factors.<br><br>
+        <strong>Plenary (10 min):</strong> Ask students to summarise what they learned.<br><br>
+        <strong>Differentiation:</strong> Provide visual aids for students who need support. Challenge extension students with additional questions.<br><br>
+        <strong>Assessment:</strong> Observe student participation and check worksheets.
+      </div>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-header">✓ With NovaKit Skill — same topic, calibrated</div>
+      <div class="ba-body">
+        <strong>Learning Objective:</strong> Students can write and explain the photosynthesis equation, identifying the role of chlorophyll and distinguishing inputs from outputs.<br><br>
+        <strong>Starter (8 min):</strong> "Odd one out" card sort: oxygen, carbon dioxide, glucose, water, light energy, heat energy. Students identify which doesn't belong and explain why — surfaces the common misconception that light is a raw material consumed rather than an energy source.<br><br>
+        <strong>Main Activity 1 — Concept input (12 min):</strong> Annotated equation build: teacher reveals equation one component at a time, students predict next component and justify. Targets the specific confusion between where glucose goes versus where oxygen goes.<br><br>
+        <strong>Main Activity 2 — Application (18 min):</strong> Three-level activity cards. Level 1 (scaffolded): equation completion with word bank. Level 2 (core): explain each component's role in one sentence without prompts. Level 3 (extension): design an experiment to test one limiting factor, predicting the outcome using the equation.<br><br>
+        <strong>Plenary (7 min):</strong> Exit ticket — three questions mapped directly to the objective: write the equation; identify one input, one output, one energy source; explain why a plant kept in the dark stops producing glucose.<br><br>
+        <strong>Success criteria (observable):</strong> Student can write equation unprompted; correctly identifies chlorophyll's role; distinguishes light as energy source not reactant.
+      </div>
+    </div>
+  </div>
+
+  <p>The left plan lists activities in the right order. The right plan has a starter that's specifically designed to surface a named misconception before the lesson proceeds — because that misconception will silently undermine everything that follows if it isn't addressed first. The differentiation on the right isn't a category ("visual aids"); it's three specific, tiered activity cards with defined tasks at each level. The plenary on the right directly assesses the objective — not "did students participate" but "can students do the specific thing this lesson was supposed to teach." A teacher can pick the right plan up and teach from it. The left one needs another forty minutes of work before it's ready for a classroom.</p>
+
+
+  <hr class="post-divider">
+  <h2>Who Gets the Most from <em>This Skill</em></h2>
+
+  <div class="callout callout-green">
+    <div class="callout-icon">✓</div>
+    <div class="callout-content">
+      <div class="callout-label">Built for</div>
+      <p>Classroom teachers planning lessons under time pressure who need plans that are immediately teachable, not templates that need rebuilding. Newly qualified teachers building planning fluency who benefit from seeing backward design done well for their subject. Tutors and homeschool educators who need structured lesson plans without a department's scheme of work to draw from.</p>
+    </div>
+  </div>
+
+  <p>The skill is most valuable when you know what you want students to learn but don't have the time to design every activity from scratch. It's also useful as a planning model — the output demonstrates what backward design looks like in practice for your subject, which builds planning instinct over time rather than creating dependency on external tools.</p>
+
+  <p>It's less useful if you work from a highly prescriptive scheme of work that specifies exactly what activity to use at each stage, or if your school has a specific lesson plan format that requires fields the skill's output doesn't map to. The plan it produces is pedagogically complete but may need reformatting for certain institutional templates. What it won't need is pedagogical redesign — the teaching logic is already there.</p>
+
+
+  <h2>The Output You <em>Walk Away With</em></h2>
+
+  <p>A complete lesson plan with timed sections from starter through plenary, a backward-designed activity sequence tied to the specific learning objective, tiered differentiation that names the actual tasks at each level, a set of observable success criteria the plenary assesses directly, and a note on the primary misconception for this concept at this age group and how the lesson addresses it. For most secondary lessons, that's a document you can carry into the classroom as-is. For primary, the output also includes specific language scaffolds appropriate to the age group.</p>
+
+  <p>From download to lesson ready: open the skill in Claude, answer three questions, receive a complete plan. The editing left to do is adaptation to your specific students — your knowledge of who struggles with what, which examples land better in your context, which activities your class engages with. That part was always yours. The skill handles everything that can be researched and structured before you walk in the room.</p>
+
+
+  <p>Teachers don't struggle to teach well. They struggle to find the hours to plan well. Those aren't the same problem, and the solution to one isn't automatically the solution to the other. A tool that produces structurally correct lesson plans faster doesn't solve the planning problem — it just moves where the work gets done. A skill that produces pedagogically complete plans that are immediately usable solves a different problem entirely. That's the one worth solving.</p>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">Ready to try it?</div>
+      <div class="soft-cta-title">Lesson Plan Builder for Claude</div>
+      <div class="soft-cta-sub">Complete lesson plan with backward-designed activities, tiered differentiation, and objective-linked assessment. Works with your free Claude account.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/lesson-plan-builder.html" class="btn btn-primary">Get the skill</a>
+      <span class="soft-cta-price">$9 · instant download · 7-day refund</span>
+    </div>
+  </div>
+
+
+  <div class="post-tags">
+    <span class="tags-label">Tags</span>
+    <span class="tag">Lesson Planning</span>
+    <span class="tag">Claude AI</span>
+    <span class="tag">Teacher Tools</span>
+    <span class="tag">AI Skills</span>
+    <span class="tag">Educator Bundle</span>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <div class="related-label">More from the blog</div>
+  <div class="related-grid">
+    <a href="why-ai-lesson-plans-fail-the-learning-objective-test.html" class="related-card">
+      <div class="rc-cat">Teaching Strategy</div>
+      <div class="rc-title">Why AI Lesson Plans Fail the Learning Objective Test</div>
+      <div class="rc-meta">27 May 2026 · 8 min read</div>
+    </a>
+    <a href="course-curriculum-builder-ai.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">Building a Course That Actually Teaches — Not Just Covers</div>
+      <div class="rc-meta">27 May 2026 · 7 min read</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

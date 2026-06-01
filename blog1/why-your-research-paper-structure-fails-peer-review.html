@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Your Research Paper Structure Fails Before Reviewers Read Your Argument | NovaKit Blog</title>
+<meta name="description" content="Research paper structure signals methodology literacy before a reviewer reads your argument. Learn what generic outlines miss — and what field-calibrated structure fixes.">
+<meta name="keywords" content="research paper structure, academic paper outline, peer review structure, Claude AI research outline, NovaKit research skill">
+<link rel="canonical" href="https://novakit.tech/blog/why-your-research-paper-structure-fails-peer-review">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novakit.tech/blog/why-your-research-paper-structure-fails-peer-review">
+<meta property="og:title" content="Why Your Research Paper Structure Fails Before Reviewers Read Your Argument">
+<meta property="og:description" content="A bad outline doesn't just make your paper harder to write. It makes it harder to pass peer review — for reasons that have nothing to do with your findings.">
+<meta property="og:image" content="https://novakit.tech/og-blog-why-your-research-paper-structure-fails-peer-review.png">
+<meta property="og:site_name" content="NovaKit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Your Research Paper Structure Fails Before Reviewers Read Your Argument">
+<meta name="twitter:description" content="A bad outline doesn't just make your paper harder to write. It makes it harder to pass peer review — for reasons that have nothing to do with your findings.">
+<meta name="twitter:image" content="https://novakit.tech/og-blog-why-your-research-paper-structure-fails-peer-review.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Your Research Paper Structure Fails Before Reviewers Read Your Argument",
+  "description": "Research paper structure signals methodology literacy before a reviewer reads your argument. Learn what generic outlines miss — and what field-calibrated structure fixes.",
+  "datePublished": "2026-05-27",
+  "dateModified": "2026-05-27",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/why-your-research-paper-structure-fails-peer-review"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "Why Your Research Paper Structure Fails Peer Review", "item": "https://novakit.tech/blog/why-your-research-paper-structure-fails-peer-review"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do reviewers reject papers with good findings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reviewers often reject structurally weak papers because poor structure signals methodological confusion. If the theoretical framework appears after the literature review, or positionality is missing from qualitative work, reviewers infer the author doesn't fully understand their own methodology — regardless of the quality of the findings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a research paper outline need to include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beyond the standard IMRaD sections, a strong outline includes per-section purpose notes (what each section must accomplish for the next to land), subsection logic for methodology defense, and field-specific conventions like positionality statements for qualitative work or PRISMA subsections for systematic reviews."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the order of sections in a research paper matter for peer review?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — significantly. In qualitative research, placing positionality before methodology is a disciplinary convention that signals methodological awareness. In theoretical papers, where the contribution statement sits relative to the literature review signals whether the paper is extending or challenging existing work. Reviewers notice both."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the Research Paper Outline skill different from asking Claude to outline my paper?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Asking vanilla Claude gives you a generic IMRaD skeleton — the same six sections regardless of your study type, field, or methodology. The Research Paper Outline skill interviews you about your research question, methodology, and discipline first, then produces a two-level argument-mapped outline with per-section purpose notes specific to your paper."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this skill for a dissertation or thesis chapter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The skill handles standalone papers and thesis chapters. For chapters, it adjusts the contribution statement logic — a chapter doesn't need to be self-contained in the same way a journal article does, and the outline reflects that. You can specify dissertation chapter when answering the skill's three calibrating questions."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="../assets/faviconnk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(34px,4.5vw,52px);line-height:1.09;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;color:var(--text);}
+.post-body em{font-style:italic;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+.post-body ul,.post-body ol{margin:0 0 22px 22px;line-height:1.75;}
+.post-body li{margin-bottom:6px;}
+.post-body li::marker{color:var(--accent);}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);font-style:italic;}
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-accent{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-accent .callout-label{color:var(--accent);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+.data-table{width:100%;border-collapse:separate;border-spacing:0;margin:32px 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.data-table thead th{padding:13px 18px;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;background:var(--surface2);border-bottom:1px solid var(--border);text-align:left;color:var(--muted);}
+.data-table tbody td{padding:13px 18px;font-size:15px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55;color:var(--text);}
+.data-table tbody tr:last-child td{border-bottom:none;}
+.data-table tbody td:first-child{font-weight:600;color:var(--accent);}
+.data-table tbody tr:last-child td:first-child{border-radius:0 0 0 12px;}
+.data-table tbody tr:last-child td:last-child{border-radius:0 0 12px 0;}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:16px;font-size:14px;line-height:1.7;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-left{}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+.faq-section{margin:52px 0 0;}
+.faq-section h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:24px;}
+.faq-section h2 em{font-style:italic;color:var(--accent);}
+.faq-item{border-bottom:1px solid var(--border);padding:22px 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:16px;font-weight:700;margin-bottom:10px;line-height:1.4;color:var(--text);}
+.faq-a{font-size:15px;color:var(--muted);line-height:1.7;}
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;cursor:pointer;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.rc-meta{font-size:12px;color:var(--muted);}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:30px;}
+  .before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress"></div>
+
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" class="logo-img logo-dark" alt="NovaKit">
+    <img src="../assets/nkblack.jpg" class="logo-img logo-light" alt="NovaKit">
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span id="theme-icon">☀️</span>
+    </button>
+    <a href="../index.html#skills" class="btn btn-primary btn-sm">Browse Skills</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">NovaKit</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="index.html">Blog</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>Why Research Paper Structure Fails</span>
+</div>
+
+<header class="post-header">
+  <div class="post-meta">
+    <span class="post-cat">Academic Writing</span>
+    <span class="meta-dot"></span>
+    <span class="post-date">27 May 2026</span>
+    <span class="meta-dot"></span>
+    <span class="post-readtime">8 min read</span>
+  </div>
+
+  <h1 class="post-title">Why Your Research Paper Structure <em>Fails Peer Review</em> Before Reviewers Read Your Argument</h1>
+
+  <p class="post-subtitle">Structure isn't packaging. For peer reviewers, the order and depth of your sections signals whether you understand your own methodology — and that signal fires before they've assessed a single finding.</p>
+
+  <div class="post-byline">
+    <div class="author">
+      <div class="author-av">NK</div>
+      <div>
+        <div class="author-name">NovaKit</div>
+        <div class="author-role">Claude Skill Research</div>
+      </div>
+    </div>
+    <div class="share-links">
+      <span>Share →</span>
+      <button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+      <button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+      <button class="share-btn" onclick="copyLink()">Copy link</button>
+    </div>
+  </div>
+</header>
+
+<div class="post-hero-card">
+  <div class="hero-card-inner">
+    <div class="hero-card-icon">📄</div>
+    <div>
+      <div class="hero-card-label">NovaKit Skill · Student Bundle</div>
+      <div class="hero-card-text">Research Paper Outline — field-calibrated, argument-mapped structure for any study type or discipline</div>
+    </div>
+  </div>
+</div>
+
+<article class="post-body">
+
+  <p>The rejection email arrives and the reviewer's comments don't mention your data once. Instead: "the theoretical framework is underdeveloped," "the relationship between methodology and research question is unclear," "the contribution is not clearly positioned relative to the existing literature." Your findings were solid. Your analysis was careful. But the paper reads, to the reviewer, like someone who hasn't fully thought through what they're claiming or why their study design supports that claim.</p>
+
+  <p>This is a structural problem, not a writing problem. And it's one that starts at the outline stage — often with an outline that was never calibrated to your study type in the first place.</p>
+
+  <p>The standard six-section skeleton (Introduction, Literature Review, Methodology, Results, Discussion, Conclusion) isn't wrong. It's just incomplete as a planning instrument. It tells you nothing about what each section needs to accomplish for your specific argument to hold, which sections need to appear in which order for your disciplinary tradition, or where the reviewers in your field will concentrate their critical attention. An outline that doesn't answer those questions produces a paper that technically follows the structure but fails the argument test.</p>
+
+
+  <h2>The Sections Reviewers Use as <em>Argument Proxies</em></h2>
+
+  <p>Reviewers don't evaluate your paper section by section in isolation. They use early sections as predictive signals for whether the later sections will hold up. The theoretical framework tells them how you're going to interpret your results before they've seen the results. If it's thin, or positioned after the literature review when your field expects it before, the reviewer's trust in your methodology is already eroding by page four.</p>
+
+  <p>Three sections carry the most structural weight, and they're the three that generic outlines handle most superficially.</p>
+
+  <h3>The theoretical framework</h3>
+
+  <p>Most generic outlines fold this into the literature review, or treat it as a subsection under Introduction. In many social science and humanities disciplines, that's a structural error. The theoretical framework establishes the interpretive lens through which you selected your literature — it can't logically follow the literature review if it's the thing that determined what literature mattered. Reviewers in these fields know immediately when the order is wrong, and they read it as evidence that the author doesn't fully understand the relationship between their theoretical commitments and their methodological choices.</p>
+
+  <h3>The positionality statement</h3>
+
+  <p>In qualitative research — ethnography, phenomenology, grounded theory, discourse analysis — a positionality statement before the methodology isn't optional. It's a disciplinary requirement that signals the author understands what qualitative rigour actually means. Its absence, or its relegation to a footnote, tells reviewers the paper was likely written by someone trained in quantitative traditions applying a qualitative method. That inference is hard to undo regardless of how well the rest of the paper is executed.</p>
+
+  <h3>The limitations section</h3>
+
+  <p>Generic outlines give this a single-line slot at the end of Discussion. Strong papers — the ones that get revised-and-resubmitted rather than rejected — treat limitations as a methodological argument, not a concession. The difference is specificity: "the sample size may limit generalisability" is a liability. "The purposive sampling strategy was designed for depth over breadth, and transferability to contexts beyond X is conditional on Y" is a methodological position. That distinction is structural before it's verbal.</p>
+
+  <div class="callout callout-blue">
+    <div class="callout-icon">💡</div>
+    <div class="callout-content">
+      <div class="callout-label">What reviewers are actually reading</div>
+      <p>The sections before your findings are a test of methodological literacy. Reviewers use them to decide how much trust to extend to the findings themselves. Structural weakness in those sections costs you that trust before the results section opens.</p>
+    </div>
+  </div>
+
+
+  <h2>What Generic AI Outlines Get <em>Structurally Wrong</em></h2>
+
+  <p>Ask vanilla Claude to outline a research paper and you'll receive the standard IMRaD skeleton, filled out with the right headings and sensible word-count suggestions. It's the statistical average of all research paper structures — which means it's right for a study that is itself perfectly average: quantitative, mid-complexity, discipline-neutral. The moment your study is qualitative, theoretical, mixed-methods, or written for a field with strong methodological conventions, the generic outline starts giving you bad architectural advice.</p>
+
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-header">Generic AI outline — qualitative sociology study</div>
+      <div class="ba-body">
+        1. Introduction (400–500 words)<br>
+        2. Literature Review (800–1000 words)<br>
+        3. Methodology (600–800 words)<br>
+        &nbsp;&nbsp;&nbsp;— Research design<br>
+        &nbsp;&nbsp;&nbsp;— Data collection<br>
+        &nbsp;&nbsp;&nbsp;— Data analysis<br>
+        4. Results (700–900 words)<br>
+        5. Discussion (600–800 words)<br>
+        &nbsp;&nbsp;&nbsp;— Implications<br>
+        &nbsp;&nbsp;&nbsp;— Limitations<br>
+        6. Conclusion (300–400 words)
+      </div>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-header">✓ NovaKit skill — same study, calibrated</div>
+      <div class="ba-body">
+        1. Introduction — establish the empirical gap, not just the topic. End with RQ + significance of mechanism-level inquiry.<br><br>
+        2. Theoretical Framework — position before literature review. Establishes interpretive lens that determined literature selection.<br><br>
+        3. Literature Review — organised by conceptual theme, not chronology. Sub-sections map to the framework's key constructs.<br><br>
+        4. Positionality Statement — required before methodology in this tradition. Establishes researcher's relationship to the field site and participants.<br><br>
+        5. Methodology<br>
+        &nbsp;&nbsp;&nbsp;— Epistemological grounding (constructivist/interpretivist)<br>
+        &nbsp;&nbsp;&nbsp;— Participant selection rationale<br>
+        &nbsp;&nbsp;&nbsp;— Interview protocol and reflexivity<br>
+        &nbsp;&nbsp;&nbsp;— Thematic analysis — Braun &amp; Clarke six-phase approach<br>
+        &nbsp;&nbsp;&nbsp;— Trustworthiness: credibility, transferability, dependability, confirmability<br><br>
+        6. Findings — three to four themes with illustrative quotes. Organised thematically, not by participant.<br><br>
+        7. Discussion — map findings back to framework. Confirm, complicate, and extend theory.<br><br>
+        8. Conclusion — contribution, implications, directions for further inquiry.
+      </div>
+    </div>
+  </div>
+
+  <p>The right-hand outline has two additional major sections, five specific subsections the generic version omits, and uses the correct terminology throughout — "trustworthiness" rather than "validity," "transferability" rather than "generalisability." Those aren't cosmetic differences. A qualitative paper that uses "validity" and "generalisability" without qualification signals to its reviewers that the author is applying quantitative evaluation criteria to a qualitative study. That's a methodological error embedded in the structure before a word of the paper is written.</p>
+
+
+  <h2>How Study Type Changes <em>Every Structural Decision</em></h2>
+
+  <p>The Research Paper Outline skill starts by establishing three things: your research question, your methodology type, and your field. Those three inputs determine what gets generated. Here's what changes across the most common study types:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Study type</th>
+        <th>Structural difference from IMRaD default</th>
+        <th>Why it matters for reviewers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Qualitative (interview/ethnographic)</td>
+        <td>Positionality section before Methodology; trustworthiness criteria replace validity; findings organised by theme not participant</td>
+        <td>Absence of positionality signals methodological confusion; wrong validity language signals quantitative framing applied to qualitative work</td>
+      </tr>
+      <tr>
+        <td>Systematic review</td>
+        <td>PRISMA-informed search strategy subsection; inclusion/exclusion criteria as standalone section; synthesis approach before findings</td>
+        <td>Missing PRISMA alignment is a desk-reject trigger at most journals publishing systematic reviews</td>
+      </tr>
+      <tr>
+        <td>Theoretical/conceptual</td>
+        <td>Contribution statement explicitly positioned before or within lit review; argument development replaces Methodology; no Results section</td>
+        <td>Without an explicit contribution positioning, reviewers can't assess whether the paper is extending, challenging, or merely summarising theory</td>
+      </tr>
+      <tr>
+        <td>Mixed-methods</td>
+        <td>Integration logic section explaining how qual and quant strands inform each other; findings section structured to weave, not stack, the two threads</td>
+        <td>Stacking qual and quant findings sequentially without integration logic reads as two separate studies — reviewers will note this directly</td>
+      </tr>
+      <tr>
+        <td>Quantitative experimental</td>
+        <td>Hypotheses must follow theoretical framework, not precede it; power analysis in Methods; effect sizes required alongside p-values in Results</td>
+        <td>Hypotheses before theoretical framework implies HARKing (hypothesising after results are known) — a serious methodological credibility issue</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>None of this appears in a generic outline. The skill knows it because the three-question interview establishes which row of that table applies to your paper before any section is planned.</p>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">NovaKit Skill</div>
+      <div class="soft-cta-title">Research Paper Outline — calibrated to your study type, field, and methodology</div>
+      <div class="soft-cta-sub">Two-level argument-mapped outline with per-section purpose notes. Works inside Claude. No technical setup required.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/research-paper-outline.html" class="btn btn-primary">See the skill</a>
+      <span class="soft-cta-price">$9 · instant download</span>
+    </div>
+  </div>
+
+
+  <h2>The <em>Structural Vulnerabilities</em> Every Paper Has</h2>
+
+  <p>Beyond section order and terminology, every paper has three or four points where the argument is structurally most at risk. These are the places where a reviewer who is looking for reasons to reject will find them — not because the research is weak, but because the paper hasn't pre-empted the obvious objection at the right structural moment.</p>
+
+  <p>The skill's output includes a note on the specific structural vulnerabilities in your paper's design, based on your methodology type. For a qualitative study, that's typically the epistemological grounding, the researcher-participant relationship, and the move from raw data to theme. For a quantitative study, it's usually the operationalisation of constructs, the handling of confounds, and the distinction between statistical and practical significance. These aren't problems with the research — they're the places the outline needs to give you extra depth before you sit down to write.</p>
+
+  <div class="pull-quote">
+    <p>The sections you're most tempted to write quickly are <em>the ones reviewers read most slowly.</em></p>
+  </div>
+
+  <p>Methodology sections in particular are where graduate students consistently underwrite. The impulse is to get to the findings, which feel like the real contribution. But reviewers read the methodology as the warrant for the findings — if the warrant is thin, the findings aren't trusted. An outline that tells you where to go deep, and why, is doing the work that a supervisor does in a meeting: not writing the paper for you, but making sure you know where it's exposed before you start.</p>
+
+
+  <hr class="post-divider">
+
+  <h2>Who This Is <em>Most Useful For</em></h2>
+
+  <div class="callout callout-green">
+    <div class="callout-icon">✓</div>
+    <div class="callout-content">
+      <div class="callout-label">Built for</div>
+      <p>Postgraduate students planning dissertation chapters or their first journal submission. Early-career researchers crossing into a new methodology — particularly those trained quantitatively now working qualitatively. Academics writing in a second language who need the structural logic made explicit before drafting begins.</p>
+    </div>
+  </div>
+
+  <p>The skill is a planning instrument, most valuable before drafting starts. It's also genuinely useful mid-project when a paper isn't working and you suspect the problem isn't the writing — because often the problem isn't the writing. A paper that reads as confused is usually structured confusingly: sections doing the wrong jobs, subsections missing that the argument actually depends on, limitations framed as concessions rather than methodological positions. The outline is where those problems are cheapest to fix.</p>
+
+
+  <div class="faq-section">
+    <h2>Questions About <em>Research Paper Structure</em></h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Why do reviewers reject papers with good findings?</div>
+      <div class="faq-a">Reviewers often reject structurally weak papers because poor structure signals methodological confusion. If the theoretical framework appears after the literature review, or positionality is missing from qualitative work, reviewers infer the author doesn't fully understand their own methodology — regardless of the quality of the findings themselves.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What does a research paper outline actually need to include?</div>
+      <div class="faq-a">Beyond the standard IMRaD sections, a strong outline needs per-section purpose notes — what each section must accomplish for the next to land — subsection logic for the methodology defense, and field-specific conventions. For qualitative work, that includes a positionality statement. For systematic reviews, PRISMA alignment. For theoretical papers, an explicit contribution positioning section.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Does the order of sections in a research paper matter for peer review?</div>
+      <div class="faq-a">Significantly. In qualitative research, placing positionality before methodology is a disciplinary convention — its absence signals that the author may not understand qualitative rigour. In theoretical papers, where the contribution statement sits relative to the literature review signals whether the paper is extending or merely summarising existing work. Reviewers notice both, and they draw inferences from both.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How is the Research Paper Outline skill different from asking Claude to outline my paper?</div>
+      <div class="faq-a">Asking vanilla Claude produces a generic IMRaD skeleton — the same six sections regardless of your study type, field, or methodology. The Research Paper Outline skill asks three calibrating questions first, then produces a two-level argument-mapped outline with per-section purpose notes specific to your paper's research question, methodology, and disciplinary conventions.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I use this for a dissertation or thesis chapter?</div>
+      <div class="faq-a">Yes. The skill handles both standalone papers and thesis chapters. For chapters, it adjusts the contribution statement logic — a chapter doesn't need to be self-contained the way a journal article does, and the outline reflects that structural difference. You specify dissertation chapter when answering the three calibrating questions at the start.</div>
+    </div>
+  </div>
+
+
+  <p>The papers that get accepted aren't always the ones with the most original findings. They're the ones where the reviewer never had to doubt whether the author understood what they were doing. Structure is how that confidence gets established — or doesn't. Getting it right before you start writing isn't a shortcut. It's the work.</p>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">Ready to try it?</div>
+      <div class="soft-cta-title">Research Paper Outline for Claude</div>
+      <div class="soft-cta-sub">Two-level argument-mapped outline with per-section purpose notes and structural vulnerability flags. Calibrated to your study type, field, and citation conventions. Works with your free Claude account.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/research-paper-outline.html" class="btn btn-primary">Get the skill</a>
+      <span class="soft-cta-price">$9 · instant download · 7-day refund</span>
+    </div>
+  </div>
+
+
+  <div class="post-tags">
+    <span class="tags-label">Tags</span>
+    <span class="tag">Research Paper</span>
+    <span class="tag">Peer Review</span>
+    <span class="tag">Academic Writing</span>
+    <span class="tag">Claude AI</span>
+    <span class="tag">Student Bundle</span>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <div class="related-label">More from the blog</div>
+  <div class="related-grid">
+    <a href="research-paper-outline-ai.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">The Research Paper Outline AI Gets Wrong — and How to Fix It</div>
+      <div class="rc-meta">27 May 2026 · 7 min read</div>
+    </a>
+    <a href="university-application-sop-ai.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">Why Your Statement of Purpose Reads Like Everyone Else's</div>
+      <div class="rc-meta">27 May 2026 · 6 min read</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

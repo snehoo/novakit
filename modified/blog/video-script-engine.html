@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Video Script Engine That Knows What's Holding Attention Right Now | NovaKit Blog</title>
+<meta content="Video Script Engine Claude AI skill researches current retention patterns before writing. Scripts built for how your platform rewards attention this week — not last year." name="description"/>
+<meta content="video script AI, Claude AI skill, YouTube script writer AI, NovaKit, video script engine" name="keywords"/>
+<link href="https://novakit.tech/blog/video-script-engine" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="https://novakit.tech/blog/video-script-engine" property="og:url"/>
+<meta content="The Video Script Engine That Knows What's Holding Attention Right Now | NovaKit Blog" property="og:title"/>
+<meta content="Generic AI scripts are written for the page, not the camera. This skill researches current platform retention patterns before writing a single line." property="og:description"/>
+<meta content="https://novakit.tech/og-blog-video-script-engine.png" property="og:image"/>
+<meta content="NovaKit" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The Video Script Engine That Knows What's Holding Attention Right Now | NovaKit Blog" name="twitter:title"/>
+<meta content="A video script written without knowing what's retaining viewers on your platform right now is just someone's outline with punctuation. Here's what changes when the research happens first." name="twitter:description"/>
+<meta content="https://novakit.tech/og-blog-video-script-engine.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Video Script Engine That Knows What's Holding Attention Right Now",
+  "description": "Video Script Engine Claude AI skill researches current retention patterns before writing. Scripts built for how your platform rewards attention this week — not last year.",
+  "datePublished": "2026-05-27",
+  "dateModified": "2026-05-27",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/video-script-engine"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "Video Script Engine", "item": "https://novakit.tech/blog/video-script-engine"}
+  ]
+}
+</script>
+<link href="../assets/faviconnk.jpg" rel="icon" type="image/jpeg"/>
+<link href="../assets/faviconnk.jpg" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700;800;900&amp;family=Geist+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,56px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;color:var(--text);}
+.post-body em{font-style:italic;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);font-style:italic;}
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-accent{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-accent .callout-label{color:var(--accent);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:16px;font-size:14px;line-height:1.7;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+.step-list{margin:32px 0;display:flex;flex-direction:column;gap:0;}
+.step-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--border);}
+.step-item:last-child{border-bottom:none;}
+.step-num{width:34px;height:34px;border-radius:8px;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--accent);flex-shrink:0;margin-top:2px;}
+.step-content{}
+.step-title{font-size:16px;font-weight:700;margin-bottom:6px;}
+.step-body{font-size:15px;color:var(--muted);line-height:1.65;}
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-left{}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;cursor:pointer;display:block;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.rc-meta{font-size:12px;color:var(--muted);}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:32px;}
+  .before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+<div class="reading-progress" id="reading-progress"></div>
+<nav>
+<a class="logo" href="../index.html">
+<img alt="NovaKit" class="logo-img logo-dark" src="../assets/nkwhite.jpg"/>
+<img alt="NovaKit" class="logo-img logo-light" src="../assets/nkblack.jpg"/>
+</a>
+<div class="nav-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle theme" class="theme-toggle" onclick="toggleTheme()">
+<span id="theme-icon">☀️</span>
+</button>
+<a class="btn btn-primary btn-sm" href="../index.html#skills">Browse Skills</a>
+</div>
+</nav>
+<div class="breadcrumb">
+<a href="../index.html">NovaKit</a>
+<span class="breadcrumb-sep">›</span>
+<a href="index.html">Blog</a>
+<span class="breadcrumb-sep">›</span>
+<span>Video Script Engine</span>
+</div>
+<header class="post-header">
+<div class="post-meta">
+<span class="post-cat">Skill Deep-Dive</span>
+<span class="meta-dot"></span>
+<span class="post-date">27 May 2026</span>
+<span class="meta-dot"></span>
+<span class="post-readtime">7 min read</span>
+</div>
+<h1 class="post-title">The Script That Opens the Way <em>Viewers Stay</em> — Not the Way You Write</h1>
+<p class="post-subtitle">Video retention is decided in the first eight seconds. Generic AI scripts open the way an essay opens — context, background, setup. The Video Script Engine researches what's actually holding attention on your platform right now, then builds the script around that.</p>
+<div class="post-byline">
+<div class="author">
+<div class="author-av">NK</div>
+<div>
+<div class="author-name">NovaKit</div>
+<div class="author-role">Claude Skill Research</div>
+</div>
+</div>
+<div class="share-links">
+<span>Share →</span>
+<button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+<button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+<button class="share-btn" onclick="copyLink()">Copy link</button>
+</div>
+</div>
+</header>
+<div class="post-hero-card">
+<div class="hero-card-inner">
+<div class="hero-card-icon">🎬</div>
+<div>
+<div class="hero-card-label">NovaKit Skill</div>
+<div class="hero-card-text">Video Script Engine — platform-aware scripts built around current retention patterns, calibrated to your format, audience, and voice</div>
+</div>
+</div>
+</div>
+<article class="post-body">
+<p>You asked Claude to write a YouTube script about your SaaS product's onboarding flow. It gave you an introduction explaining what onboarding is, why it matters for user retention, and a sentence promising that "in this video, we'll cover everything you need to know." You filmed it. You watched the analytics. Viewers left at the 45-second mark, right where the actual content was about to start.</p>
+<p>The problem wasn't the topic. It wasn't even the information — the script covered everything it promised. The problem was structure. A generic AI script is written to be read, organised the way a blog post or an explainer doc gets organised: context first, substance later. Video doesn't work like that. Viewers are one tap from leaving at every moment, and the opening eight seconds of a video has to give them a reason not to. "In this video, we'll cover everything you need to know" is not that reason.</p>
+<p>What that reason actually looks like varies by platform, by format, by niche, and — critically — by what's working right now. The hook structure that held attention on YouTube educational content eighteen months ago isn't the same hook structure performing today. Generic AI doesn't know this. It defaults to what a good script has always looked like, which is no longer what a good script needs to look like.</p>
+<h2>What Generic AI Gets Wrong About <em>Video Structure</em></h2>
+<p>Ask vanilla Claude for a <a href="https://novakit.tech/skills/video-script.html">video script</a> with a basic brief and it will produce something with clean sections, reasonable transitions, and an opening that explains the topic before engaging with it. The content will be accurate. The pacing will be off. The hook will be a statement rather than a pattern interrupt. The call to action will arrive after a summary that told the viewer they're already done.</p>
+<p>These aren't small problems. Script structure in video is not a stylistic preference — it's the mechanism by which the algorithm decides whether your content gets recommended. A video where 60% of viewers leave in the first thirty seconds gets deprioritised regardless of how good the remaining content is. A video where viewers watch past the midpoint signals quality and gets pushed. The script controls that outcome more than the camera, the lighting, or the editing — because the script determines whether the viewer is still there to see the camera, the lighting, and the editing.</p>
+<div class="callout callout-blue">
+<div class="callout-icon">💡</div>
+<div class="callout-content">
+<div class="callout-label">The core problem</div>
+<p>A script written for readability on a page and a script written for retention on a screen are two different documents — and generic AI produces the first one every time, regardless of which you asked for.</p>
+</div>
+</div>
+<p>The failure is structural, not cosmetic. You can't fix it by adjusting a few sentences. The entire architecture of a high-retention script — where the payoff lands relative to the hook, how pattern interrupts are distributed through the middle section, how the CTA is embedded rather than appended — has to be built in from the first line. That architecture changes as platforms update what they reward, and it differs across YouTube long-form, LinkedIn video, TikTok, Instagram Reels, and brand content. Generic AI treats all of these as the same task.</p>
+<h2>Why <em>Live Platform Research</em> Changes What the Script Does</h2>
+<p>Before writing a single line of your script, the Video Script Engine checks what's currently performing on your platform. It looks at the hook structures earning strong retention in your content category, the pacing patterns that are holding viewers past the thirty-second and two-minute marks, the call-to-action placements that are converting engagement without killing watch time, and the specific opener formats that are cutting through right now versus those that have become invisible from overuse.</p>
+<p>This is the difference between a script built on how video has worked and a script built on how video is working. Platform algorithms shift. Audience attention patterns shift with them. The "question hook" that reliably stopped the scroll on LinkedIn in 2024 has been so thoroughly copied that it no longer registers as a pattern interrupt — it's become expected, which means it no longer interrupts anything. The skill catches those shifts because it checks before every run. Not periodically. Every time.</p>
+<div class="pull-quote">
+<p>The eight seconds that determine whether a viewer stays aren't won by writing well — they're won by knowing <em>what this particular audience is used to ignoring</em> and doing something else.</p>
+</div>
+<p>When the skill understands the current retention mechanics of your platform, it builds the script's architecture around them — not as a template applied on top of your content, but as the underlying structure your content is written into. The hook earns attention in the format that's actually working. The middle section is paced around the drop-off points that are real for your content category. The CTA is placed where engagement data says it should be, not where it feels natural to put it.</p>
+<h2>What the Video Script Engine <em>Actually Does</em></h2>
+<p>The skill asks three calibrating questions before generating anything: your platform and format, your target audience and their existing relationship with your content, and the specific outcome this video needs to drive. The same skill produces a fundamentally different script for a ten-minute YouTube tutorial aimed at intermediate developers than for a ninety-second LinkedIn thought leadership video aimed at founders — because those are different platforms, different audiences, different retention mechanics, and different success metrics.</p>
+<div class="step-list">
+<div class="step-item">
+<div class="step-num">1</div>
+<div class="step-content">
+<div class="step-title">Platform and Format Research</div>
+<div class="step-body">The skill identifies the current hook structures, pacing patterns, and CTA placements performing in your content category on your specific platform. YouTube long-form, LinkedIn video, short-form vertical, and brand explainer content each have distinct mechanics — the script is built for yours.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">2</div>
+<div class="step-content">
+<div class="step-title">Hook Architecture First</div>
+<div class="step-body">The opening eight seconds are scripted as a standalone unit before the rest of the video is structured. The hook earns the watch before the content earns the engagement — and the skill treats these as separate problems, not one continuous task.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">3</div>
+<div class="step-content">
+<div class="step-title">Retention Pacing Through the Middle</div>
+<div class="step-body">Most viewer drop-off happens in the 30–90 second range, where the hook's momentum dies and the content hasn't paid off yet. The skill structures pattern interrupts, restatements of the viewer's benefit, and pacing shifts at the points where generic scripts lose the audience.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">4</div>
+<div class="step-content">
+<div class="step-title">Voice and Audience Calibration</div>
+<div class="step-body">The script is written in language that fits your audience's existing familiarity with you and the topic. A creator with an established community of practitioners gets different register and assumed knowledge than one addressing a general audience encountering the topic for the first time.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">5</div>
+<div class="step-content">
+<div class="step-title">Quality Gate Before Delivery</div>
+<div class="step-body">The draft is checked automatically for the patterns that kill watch time: slow openers, over-explained context before the payoff, CTAs that interrupt rather than embed, and transitions that read well on paper but land flat when spoken aloud. Anything that fails gets rewritten before you see it.</div>
+</div>
+</div>
+</div>
+<div class="soft-cta">
+<div class="soft-cta-left">
+<div class="soft-cta-kicker">NovaKit Skill</div>
+<div class="soft-cta-title">Video Script Engine — built for retention, not just readability</div>
+<div class="soft-cta-sub">Works inside Claude. No technical setup. Produces a complete script with hook, body, pattern interrupts, and CTA — calibrated to your platform and format.</div>
+</div>
+<div class="soft-cta-right">
+<a class="btn btn-primary" href="../skills/video-script-engine.html">See the skill</a>
+<span class="soft-cta-price">from $15 · instant download</span>
+</div>
+</div>
+<h2>Generic Script vs <em>Platform-Aware</em> Script</h2>
+<p>Both of these open a YouTube video about a SaaS product's new AI feature. The topic, the speaker, and the intended audience are identical. The structure is not.</p>
+<div class="before-after">
+<div class="ba-card ba-before">
+<div class="ba-header">Without NovaKit</div>
+<div class="ba-body">Hey everyone, welcome back to the channel. Today we're going to be talking about our new AI-powered analytics feature. A lot of you have been asking about this since we announced it last month, so I'm really excited to finally walk you through everything. We'll cover what it does, how to set it up, and some tips for getting the most out of it. Let's get started.</div>
+</div>
+<div class="ba-card ba-after">
+<div class="ba-header">✓ With NovaKit Skill</div>
+<div class="ba-body">Most people set up analytics dashboards and then never look at them — because the data is there but the signal isn't. [pause] Our new AI layer fixes the specific thing that makes dashboards useless: it tells you what changed, why it probably changed, and what to do about it. That's the whole video. Three minutes.</div>
+</div>
+</div>
+<p>The first opening spends thirty words confirming the viewer is in the right place before giving them any reason to stay. The second opens with the viewer's problem — dashboards they don't use — lands the specific promise in the first sentence, and closes with a time commitment that removes the friction of wondering how long this will take. The content of both videos is the same. The second one gets watched.</p>
+<hr class="post-divider"/>
+<h2>Who Gets the Most from the <em>Video Script Engine</em></h2>
+<div class="callout callout-green">
+<div class="callout-icon">✓</div>
+<div class="callout-content">
+<div class="callout-label">Built for</div>
+<p>Creators publishing to YouTube, LinkedIn, or short-form platforms who are producing content regularly and losing viewers before the midpoint. Founders and marketers making product or brand videos who need scripts that actually get watched. Agencies scripting on behalf of clients across multiple formats and content types.</p>
+</div>
+</div>
+<p>The skill does its sharpest work for creators who already have a channel and an audience but are struggling with retention — where the views are there but the watch time isn't converting, where good content is getting less distribution than it should because the platform's algorithm is reading weak completion signals. A script built around current retention mechanics doesn't change the content; it changes how the content lands, which changes the number the algorithm sees, which changes the distribution.</p>
+<p>It's also strong for founders and product marketers who are making video for the first time or producing it infrequently enough that they don't have an instinct for what structure works. The skill doesn't require any existing knowledge of video craft — it handles the structural decisions so you can focus on knowing your topic and your audience, which is the part only you can supply.</p>
+<h2>The Output You <em>Actually Film From</em></h2>
+<p>The skill produces a complete, camera-ready script: a hook section with the platform-specific opening structure, a body with pacing markers indicating where to pause, change tone, or restate the viewer benefit, and a CTA embedded at the point where engagement data puts it rather than where it feels tidy to add it. The script includes speaker direction — not full stage directions, but brief notes on delivery that account for the difference between how a line reads and how it lands when spoken. Those notes are the part most AI scripts omit entirely, and they're the part that determines whether the on-camera delivery matches the script's intent.</p>
+<p>Download it, read it aloud once before filming, adjust any line that doesn't feel natural in your voice, and shoot. The structural architecture — the part that determines retention — is already done. Your job is to deliver the content; the script's job is to keep the viewer there long enough to hear it.</p>
+<p>Every creator eventually learns that the video you made and the video people watched are different objects. The script is where that gap either opens or closes — before a single frame is shot.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/short-form-ai-video.html">short-form video prompts built for vertical formats</a>. If you're working across the full Video &amp; Pod workflow, the <a href="https://novakit.tech/skills/bundles/video-pod-bundle.html">Video &amp; Pod bundle</a> covers everything in one place.</p>
+<div class="soft-cta">
+<div class="soft-cta-left">
+<div class="soft-cta-kicker">Ready to try it?</div>
+<div class="soft-cta-title">Video Script Engine for Claude</div>
+<div class="soft-cta-sub">A complete, camera-ready script with hook architecture, retention pacing, and embedded CTA — calibrated to your platform. Works with your free Claude account. Part of the Video/Pod Bundle.</div>
+</div>
+<div class="soft-cta-right">
+<a class="btn btn-primary" href="../skills/video-script-engine.html">Get the skill</a>
+<span class="soft-cta-price">$15 · instant download · 7-day refund</span>
+</div>
+</div>
+<div class="post-tags">
+<span class="tags-label">Tags</span>
+<span class="tag">Video Script</span>
+<span class="tag">Claude AI</span>
+<span class="tag">YouTube</span>
+<span class="tag">Creator Tools</span>
+<span class="tag">Video/Pod Bundle</span>
+</div>
+</article>
+<section class="related-section">
+<div class="related-label">More from the blog</div>
+<div class="related-grid">
+<a class="related-card" href="video-script-engine-why-ai-scripts-fail.html">
+<div class="rc-cat">Deep Dive</div>
+<div class="rc-title">Why AI-Written Video Scripts Get Rewritten Before Filming</div>
+<div class="rc-meta">27 May 2026 · 6 min read</div>
+</a>
+<a class="related-card" href="linkedin-post-engine.html">
+<!-- TODO: update when live -->
+<div class="rc-cat">Skill Deep-Dive</div>
+<div class="rc-title">The LinkedIn Post Format That's Actually Working in 2026</div>
+<div class="rc-meta">Coming soon</div>
+</a>
+</div>
+</section>
+<footer>
+<div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+<div class="footer-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+</footer>
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

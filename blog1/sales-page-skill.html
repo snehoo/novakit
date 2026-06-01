@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Why Your Sales Page Reads Like a Sales Page | NovaKit Blog</title>
+<meta name="description" content="Sales page AI content written from your product outward converts poorly. The Sales Page skill researches your buyer's language first, then builds the page around that.">
+<meta name="keywords" content="sales page AI Claude, AI sales page writer, Claude AI skill, NovaKit, sales page copywriting">
+<link rel="canonical" href="https://novakit.tech/blog/sales-page-skill">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novakit.tech/blog/sales-page-skill">
+<meta property="og:title" content="Why Your Sales Page Reads Like a Sales Page | NovaKit Blog">
+<meta property="og:description" content="The problem isn't the design or the traffic. It's that the page was written from your product outward — not from your buyer's frustration inward.">
+<meta property="og:image" content="https://novakit.tech/og-blog-sales-page-skill.png">
+<meta property="og:site_name" content="NovaKit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Your Sales Page Reads Like a Sales Page | NovaKit Blog">
+<meta name="twitter:description" content="Sales pages written from your product outward convert poorly. Here's what writing from your buyer's frustration inward looks like instead.">
+<meta name="twitter:image" content="https://novakit.tech/og-blog-sales-page-skill.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Your Sales Page Reads Like a Sales Page",
+  "description": "Sales page AI content written from your product outward converts poorly. The Sales Page skill researches your buyer's language first, then builds the page around that.",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/sales-page-skill"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "Why Your Sales Page Reads Like a Sales Page", "item": "https://novakit.tech/blog/sales-page-skill"}
+  ]
+}
+</script>
+
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="../assets/faviconnk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,56px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;color:var(--text);}
+.post-body em{font-style:italic;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);}
+
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-accent{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-accent .callout-label{color:var(--accent);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+
+.step-list{margin:32px 0;display:flex;flex-direction:column;gap:0;}
+.step-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--border);}
+.step-item:last-child{border-bottom:none;}
+.step-num{width:34px;height:34px;border-radius:8px;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--accent);flex-shrink:0;margin-top:2px;}
+.step-content{}
+.step-title{font-size:16px;font-weight:700;margin-bottom:6px;}
+.step-body{font-size:15px;color:var(--muted);line-height:1.65;}
+
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:16px;font-size:14px;line-height:1.75;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+.ba-body strong{font-weight:700;}
+
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-left{}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;display:block;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;color:var(--text);}
+.rc-meta{font-size:12px;color:var(--muted);}
+
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:32px;}
+  .before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress"></div>
+
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" class="logo-img logo-dark" alt="NovaKit">
+    <img src="../assets/nkblack.jpg" class="logo-img logo-light" alt="NovaKit">
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span id="theme-icon">☀️</span>
+    </button>
+    <a href="../index.html#skills" class="btn btn-primary btn-sm">Browse Skills</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">NovaKit</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="index.html">Blog</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>Sales Page</span>
+</div>
+
+<header class="post-header">
+  <div class="post-meta">
+    <span class="post-cat">Skill Deep-Dive</span>
+    <span class="meta-dot"></span>
+    <span class="post-date">26 May 2026</span>
+    <span class="meta-dot"></span>
+    <span class="post-readtime">7 min read</span>
+  </div>
+
+  <h1 class="post-title">Why Your Sales Page <em>Reads Like a Sales Page</em></h1>
+
+  <p class="post-subtitle">Traffic is arriving. The page looks right. Conversions are not happening. The problem isn't the design — it's that the copy was written from your product outward, and buyers can feel it the moment they land.</p>
+
+  <div class="post-byline">
+    <div class="author">
+      <div class="author-av">NK</div>
+      <div>
+        <div class="author-name">NovaKit</div>
+        <div class="author-role">Claude Skill Research</div>
+      </div>
+    </div>
+    <div class="share-links">
+      <span>Share →</span>
+      <button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+      <button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+      <button class="share-btn" onclick="copyLink()">Copy link</button>
+    </div>
+  </div>
+</header>
+
+<div class="post-hero-card">
+  <div class="hero-card-inner">
+    <div class="hero-card-icon">💰</div>
+    <div>
+      <div class="hero-card-label">NovaKit Skill · Founder Bundle</div>
+      <div class="hero-card-text">Sales Page — a conversion-focused sales page built from your buyer's frustration inward, not your product features outward.</div>
+    </div>
+  </div>
+</div>
+
+<article class="post-body">
+
+  <p>The page has been live for two weeks. You've sent it to your list, posted it twice, run a small ad. Visitors are arriving — you can see them in the analytics. Average time on page is 47 seconds. Conversion rate is 1.1%. You know 47 seconds is enough time to read the hero section and leave. Something on that page is failing in the first three sentences, and you can't see what it is because you wrote it.</p>
+
+  <p>You go back to the copy. It looks right. Hero headline with the main benefit. Three bullet points. Social proof section. CTA button. Maybe the headline could be punchier. Maybe the CTA button colour. You make small edits, republish, wait. 1.3%. The problem isn't the details. It's the direction.</p>
+
+  <p>The copy was written from your product outward — what it does, what it includes, what makes it different from your perspective. A buyer landing on that page for the first time doesn't read it that way. They read it looking for one thing: evidence that whoever wrote this page understands exactly what they're struggling with right now. When they don't find that evidence in the first paragraph, they leave. Not because your product is wrong — because the page didn't speak their language before it tried to sell them something.</p>
+
+
+  <h2>The Failure Mode <em>No Design Change Fixes</em></h2>
+
+  <p>Generic AI sales page copy has a recognisable structure that experienced buyers have learned to skim past: a bold claim in the hero, a "here's what you get" section that lists features as benefits, a proof block with testimonials that all sound the same, and a close that creates urgency without earning it. The structure itself signals "sales page" before a word is processed — and the moment a reader's pattern-matching fires, scepticism engages.</p>
+
+  <p>The specific failure is in the problem section, which generic copy either skips entirely or renders so broadly that it describes nobody in particular. "Struggling to grow your business?" describes every person on earth who runs one. It creates no recognition. A buyer who doesn't feel recognised in the first paragraph has no reason to believe the solution section applies to them either — so they read it with arms crossed, if they read it at all.</p>
+
+  <p>High-converting sales pages open in the buyer's own language, with the specific frustration that brought them here. Not "grow your business faster" — but the exact situation: the product that took three months to build and launched to silence, the consulting offer that gets interest on calls but loses people at the pricing page, the course that gets purchased and not completed. The reader who recognises their own situation in the first paragraph is already halfway sold before the product is mentioned.</p>
+
+  <div class="callout callout-blue">
+    <div class="callout-icon">💡</div>
+    <div class="callout-content">
+      <div class="callout-label">The core problem</div>
+      <p>A sales page written from your product outward describes what you built. A sales page written from your buyer's frustration inward describes what they've been living with. Only one of those makes the reader feel seen — and feeling seen is what earns the scroll to the offer.</p>
+    </div>
+  </div>
+
+  <p>This isn't a copywriting instinct most founders have naturally. It requires knowing how your specific buyers describe their own problem — the exact words, the specific context, the moment that made them go looking for something. That knowledge doesn't come from understanding your product well. It comes from researching the buyer before the page is written.</p>
+
+
+  <h2>What <em>Researching the Buyer First</em> Changes on the Page</h2>
+
+  <p>Before the Sales Page skill writes a headline or a bullet point, it researches two things: what your buyers are saying about the problem your product solves, and what the highest-converting pages in your category are doing differently right now. Those findings don't just inform the tone — they determine the structure of the entire page.</p>
+
+  <p>Buyer language research surfaces the specific phrases people use when they describe their frustration before they've found a solution. Not the polished language of someone who has solved the problem, but the raw version — the late-night forum post, the sales call objection, the exact sentence a customer used in their first email to you. When that language appears in your hero section, a reader landing on your page for the first time has the specific experience of feeling understood. That's not a soft outcome. It's the mechanism that keeps them reading past the fold.</p>
+
+  <p>Category research surfaces what the pages converting in your space right now are doing structurally — where the proof is placed, how objections are handled, which CTA framing is outperforming the obvious options, what social proof format carries more weight than a generic testimonial. These patterns shift as buyer behaviour changes, and a page built on conventions from two years ago is competing with pages built on what's working today.</p>
+
+  <div class="pull-quote">
+    <p>The best-converting sales pages don't sound like sales pages. They sound like someone <em>who already knows what you've been going through.</em></p>
+  </div>
+
+  <p>Together, those two research inputs produce a page that leads with the problem in the buyer's language, earns trust before making a claim, handles objections in the body rather than at the close, and uses proof that addresses the specific hesitation your buyer brings — not generic five-star praise.</p>
+
+
+  <h2>How the <em>Sales Page</em> Skill Builds the Copy</h2>
+
+  <p>Three calibrating questions establish the offer, the buyer, and the primary objection before any copy is written. Those answers drive the research direction and the page architecture.</p>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Buyer Frustration Research</div>
+        <div class="step-body">Before the hero headline exists, the skill surfaces how your specific buyer type describes the problem your product solves — in their language, at the level of specificity that creates recognition. This feeds the problem section, the hero subheadline, and the objection-handling copy throughout the page.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Category Conversion Research</div>
+        <div class="step-body">The skill pulls what high-converting pages in your category are doing structurally right now — proof placement, CTA framing, how the offer is scoped, which headline formulas are outperforming the defaults. Page architecture is built around current patterns, not evergreen templates.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Objection-First Architecture</div>
+        <div class="step-body">The primary objection — price, trust, fit, or timing — is established in the calibrating questions and woven into the page body, not handled at the close. A reader who has their objection addressed before they've consciously formed it reads the rest of the page differently than one who reaches the CTA still holding it.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Quality Gate</div>
+        <div class="step-body">Before output reaches you, the copy is checked against the most common conversion killers: hero sections that lead with the product instead of the problem, proof blocks that assert rather than demonstrate, CTAs that create urgency without establishing desire. Sections that fail are rewritten before delivery.</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">NovaKit Skill · Founder Bundle</div>
+      <div class="soft-cta-title">Sales Page — written from your buyer's frustration inward</div>
+      <div class="soft-cta-sub">Works inside Claude. No setup. Delivers a complete sales page: hero section, problem framing, offer presentation, proof block, objection handling, and CTA — all in your buyer's language.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/sales-page.html" class="btn btn-primary">See the skill</a>
+      <span class="soft-cta-price">$15 · instant download</span>
+    </div>
+  </div>
+
+
+  <h2>Product-Outward vs <em>Buyer-Inward</em> — the Same Offer, Two Hero Sections</h2>
+
+  <p>A solopreneur is launching a productised consulting service for early-stage founders who need help with their go-to-market strategy. Same offer, two approaches to the hero section.</p>
+
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-header">Written from the product outward</div>
+      <div class="ba-body"><strong>Go-to-Market Strategy for Startups</strong><br><br>Get a clear, actionable go-to-market plan built specifically for your stage and market. Work 1:1 with an experienced founder who has helped 20+ early-stage companies find their first customers.<br><br>✓ Personalised GTM roadmap<br>✓ ICP and positioning workshop<br>✓ Channel strategy and 90-day execution plan<br><br>Perfect for founders who are ready to stop guessing and start growing.<br><br><em>Limited spots available. Book your intro call today.</em></div>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-header">✓ Written from the buyer's frustration inward</div>
+      <div class="ba-body"><strong>You built something people say they want. Now nobody's buying it.</strong><br><br>You've had the calls. You've heard "this is exactly what I need." You've sent the follow-up. The silence after that follow-up is the most expensive thing in your business right now — and it usually means the gap isn't the product. It's the path between the person who needs it and the moment they decide to pay for it.<br><br>That path is what we build together. Not a deck, not a framework — a specific sequence of moves for your offer, your market, and the customers you actually have evidence for.<br><br>Four weeks. One clear plan. You leave knowing exactly which channel to own first and why.</div>
+    </div>
+  </div>
+
+  <p>The first version describes the service accurately. The second opens with the specific moment the buyer is in right now — they've had the "this is great" calls and are staring at an inbox with no conversions in it. That recognition is what keeps them reading. The offer comes third, after the problem has been named precisely enough that the buyer has already nodded twice. Notice also that the proof is embedded in the framing ("evidence for" signals experience without asserting it), the objection about deliverables is handled in the body ("not a deck, not a framework"), and the CTA is specific about time and outcome rather than urging urgency the page hasn't earned.</p>
+
+
+  <hr class="post-divider">
+
+  <h2>Who This Is <em>Actually For</em></h2>
+
+  <div class="callout callout-green">
+    <div class="callout-icon">✓</div>
+    <div class="callout-content">
+      <div class="callout-label">Built for</div>
+      <p>Founders launching a new product, course, or service who need a conversion-focused page before they drive traffic to it. Solopreneurs with an existing page that's getting visitors but not converting — and can't identify why. Freelancers and consultants scoping a new offer who want the copy shaped before the offer is fully defined.</p>
+    </div>
+  </div>
+
+  <p>The skill is most useful when you know your offer well but struggle to step outside your own knowledge of it — the curse of expertise that makes founders write about what they built rather than what their buyer needs. You understand the product better than anyone. That depth is exactly what makes it hard to write the first paragraph a cold reader needs to feel recognised.</p>
+
+  <p>It's less the right fit if your offer is not yet defined enough to brief against — if you're still deciding what's included, who it's for, or what the primary outcome is. The skill builds the copy architecture from a clear offer brief. It accelerates and sharpens that process; it can't substitute for the product clarity that a compelling brief requires.</p>
+
+
+  <h2>What You <em>Actually Get</em></h2>
+
+  <p>One complete sales page — hero section with headline and subheadline, problem framing in buyer language, offer presentation with scoped deliverables, proof block structure, objection-handling woven through the body, and a CTA built around the specific action your page needs to drive. Section order is determined by the research outputs, not a fixed template — if the proof needs to come before the offer for your buyer type and objection profile, it does.</p>
+
+  <p>From open to page: load the skill in Claude, answer three questions about your offer, your buyer, and the primary objection that loses you deals, then receive complete copy ready to drop into your page builder. The quality gate runs internally — hero sections that lead with features instead of problems get rewritten before you see them.</p>
+
+
+  <p>Every sales page that isn't converting is a negotiation the founder is losing before the reader reaches the offer. The negotiation happens in the first paragraph — either the buyer feels understood and keeps reading, or they feel like they've landed on a page written for someone else and leave. Product knowledge doesn't write that first paragraph well. Buyer research does. The 47 seconds your visitor spends on the page is enough time to be won or lost three times over — the question is whether you've given them a reason to stay past the first one.</p>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">Ready to try it?</div>
+      <div class="soft-cta-title">Sales Page skill for Claude</div>
+      <div class="soft-cta-sub">Complete sales page copy — hero, problem framing, offer, proof, objections, CTA — written from your buyer's frustration inward. Works with your free Claude account.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/sales-page.html" class="btn btn-primary">Get the skill</a>
+      <span class="soft-cta-price">$15 · instant download · 7-day refund</span>
+    </div>
+  </div>
+
+
+  <div class="post-tags">
+    <span class="tags-label">Tags</span>
+    <span class="tag">Sales Page</span>
+    <span class="tag">Conversion Copy</span>
+    <span class="tag">Claude AI</span>
+    <span class="tag">Founders</span>
+    <span class="tag">AI Copywriting</span>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <div class="related-label">More from the blog</div>
+  <div class="related-grid">
+    <!-- TODO: update slugs when live -->
+    <a href="cold-outreach-email-skill.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">Why Every Sales Email That Starts With "I Wanted to Reach Out" Gets Deleted</div>
+      <div class="rc-meta">26 May 2026 · 7 min read</div>
+    </a>
+    <a href="pitch-deck-narrative-skill.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">Why Your Pitch Deck Sounds Like a Founder Explaining Their Own Product</div>
+      <div class="rc-meta">26 May 2026 · 7 min read</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

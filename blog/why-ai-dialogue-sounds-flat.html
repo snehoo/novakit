@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Why AI Dialogue Sounds Flat — and What's Actually Missing | NovaKit Blog</title>
+<meta name="description" content="AI screenplay dialogue fails for a specific, fixable reason: it writes what characters say without knowing who they are. Here's the structural problem — and how to fix it.">
+<meta name="keywords" content="AI dialogue flat generic, AI screenplay character voice, why AI script sounds bad, NovaKit, dialogue character film prompt Claude">
+<link rel="canonical" href="https://novakit.tech/blog/why-ai-dialogue-sounds-flat">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novakit.tech/blog/why-ai-dialogue-sounds-flat">
+<meta property="og:title" content="Why AI Dialogue Sounds Flat — and What's Actually Missing">
+<meta property="og:description" content="Generic AI writes the archetype. Here's why character voice collapses without psychology — and what it takes to fix that inside Claude.">
+<meta property="og:image" content="https://novakit.tech/og-blog-why-ai-dialogue-sounds-flat.png">
+<meta property="og:site_name" content="NovaKit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why AI Dialogue Sounds Flat — and What's Actually Missing">
+<meta name="twitter:description" content="Generic AI writes the archetype. Here's why character voice collapses without psychology — and what it takes to fix that inside Claude.">
+<meta name="twitter:image" content="https://novakit.tech/og-blog-why-ai-dialogue-sounds-flat.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why AI Dialogue Sounds Flat — and What's Actually Missing",
+  "description": "AI screenplay dialogue fails for a specific, fixable reason: it writes what characters say without knowing who they are. Here's the structural problem — and how to fix it.",
+  "datePublished": "2026-06-01",
+  "dateModified": "2026-06-01",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/why-ai-dialogue-sounds-flat"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "Why AI Dialogue Sounds Flat", "item": "https://novakit.tech/blog/why-ai-dialogue-sounds-flat"}
+  ]
+}
+</script>
+
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="../assets/faviconnk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:transparent;border:1px solid var(--border-s);color:var(--text);}
+.btn-ghost:hover{background:var(--bg2);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,56px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;color:var(--text);}
+.post-body em{font-style:italic;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+.post-body ul,.post-body ol{margin:0 0 22px 22px;line-height:1.75;}
+.post-body li{margin-bottom:6px;}
+.post-body li::marker{color:var(--accent);}
+
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);font-style:italic;}
+
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-accent{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-accent .callout-label{color:var(--accent);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;margin:32px 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.compare-table th{padding:14px 18px;font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;background:var(--surface2);border-bottom:1px solid var(--border);text-align:left;}
+.compare-table th:first-child{color:var(--muted);}
+.compare-table th:last-child{color:var(--accent);}
+.compare-table td{padding:13px 18px;font-size:15px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55;}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table td:first-child{color:var(--muted);}
+.compare-table td:last-child{color:var(--text);font-weight:500;}
+.compare-table tr:last-child td:first-child{border-radius:0 0 0 12px;}
+.compare-table tr:last-child td:last-child{border-radius:0 0 12px 0;}
+
+.failure-list{margin:32px 0;display:flex;flex-direction:column;gap:0;}
+.failure-item{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--border);}
+.failure-item:last-child{border-bottom:none;}
+.failure-num{width:34px;height:34px;border-radius:8px;background:rgba(255,100,80,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#e05a40;flex-shrink:0;margin-top:2px;}
+.failure-content .failure-title{font-size:16px;font-weight:700;margin-bottom:6px;}
+.failure-content .failure-body{font-size:15px;color:var(--muted);line-height:1.65;}
+
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:16px;font-size:14px;line-height:1.7;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-left{}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;cursor:pointer;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.rc-meta{font-size:12px;color:var(--muted);}
+
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:32px;}
+  .before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress"></div>
+
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" class="logo-img logo-dark" alt="NovaKit">
+    <img src="../assets/nkblack.jpg" class="logo-img logo-light" alt="NovaKit">
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span id="theme-icon">☀️</span>
+    </button>
+    <a href="../index.html#skills" class="btn btn-primary btn-sm">Browse Skills</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">NovaKit</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="index.html">Blog</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>AI Dialogue</span>
+</div>
+
+<header class="post-header">
+  <div class="post-meta">
+    <span class="post-cat">AI for Work</span>
+    <span class="meta-dot"></span>
+    <span class="post-date">1 June 2026</span>
+    <span class="meta-dot"></span>
+    <span class="post-readtime">6 min read</span>
+  </div>
+
+  <h1 class="post-title">Why AI Dialogue Sounds <em>Flat</em> — and What's Actually Missing</h1>
+
+  <p class="post-subtitle">It's not that the AI can't write. It's that it writes every character the same way: as a vehicle for plot. Here's the specific structural failure — and the one thing that fixes it.</p>
+
+  <div class="post-byline">
+    <div class="author">
+      <div class="author-av">NK</div>
+      <div>
+        <div class="author-name">NovaKit</div>
+        <div class="author-role">Claude Skill Research</div>
+      </div>
+    </div>
+    <div class="share-links">
+      <span>Share →</span>
+      <button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+      <button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+      <button class="share-btn" onclick="copyLink()">Copy link</button>
+    </div>
+  </div>
+</header>
+
+<div class="post-hero-card">
+  <div class="hero-card-inner">
+    <div class="hero-card-icon">🎬</div>
+    <div>
+      <div class="hero-card-label">The problem this post addresses</div>
+      <div class="hero-card-text">AI-generated dialogue where every character sounds like a slightly different version of the same narrator — and why that's a structural issue, not a quality one.</div>
+    </div>
+  </div>
+</div>
+
+<article class="post-body">
+
+  <p>You've seen it. You've probably produced it without meaning to. A scene between two people where the dialogue is technically correct — the conflict is there, the beats land, the pacing is fine — and yet when you read it back, something is wrong. Both characters sound like they were written by the same person with the same vocabulary making the same rhetorical choices. Because they were.</p>
+
+  <p><strong>That's not a Claude problem. That's a context problem.</strong> AI generates dialogue the way it generates everything else: from the statistical shape of what it's seen before. And what it's seen before is thousands of generic scenes where characters serve plot functions rather than exist as specific people. Give it a scene setup with no character psychology, and it produces the most probable version of that scene — which is exactly what everybody else's AI-generated script also looks like.</p>
+
+  <p>The failure isn't in the output. It's in what doesn't go into the request.</p>
+
+
+  <h2>The Three Things Generic AI <em>Never Knows</em> Before It Writes</h2>
+
+  <p>Most people prompt AI dialogue the same way: describe the scene, maybe name the characters, sometimes describe what needs to happen. Then ask it to write. That approach skips three things that determine whether dialogue sounds like a real person or a plot delivery mechanism.</p>
+
+  <div class="failure-list">
+    <div class="failure-item">
+      <div class="failure-num">1</div>
+      <div class="failure-content">
+        <div class="failure-title">What the character is hiding</div>
+        <div class="failure-body">Not what they're trying to accomplish in the scene — what they can't afford to say directly. Real dialogue is shaped more by what's unsaid than what's spoken. Without knowing a character's specific fear in this moment, the AI defaults to a character who says exactly what they mean. Nobody talks like that.</div>
+      </div>
+    </div>
+    <div class="failure-item">
+      <div class="failure-num">2</div>
+      <div class="failure-content">
+        <div class="failure-title">The relational history between characters</div>
+        <div class="failure-body">Two people who've known each other for fifteen years and are carrying unresolved resentment speak in a completely different register than two strangers navigating the same situation. Without that history, the AI writes the interaction as if they're meeting for the first time — regardless of your setup.</div>
+      </div>
+    </div>
+    <div class="failure-item">
+      <div class="failure-num">3</div>
+      <div class="failure-content">
+        <div class="failure-title">What the scene costs each person</div>
+        <div class="failure-body">Every meaningful scene involves risk — something each character stands to lose. Generic AI skips this because you didn't supply it. The result is dialogue where the stakes feel abstract rather than personal, and every character seems equally comfortable saying difficult things.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-blue">
+    <div class="callout-icon">💡</div>
+    <div class="callout-content">
+      <div class="callout-label">The structural failure</div>
+      <p>Generic AI writes characters as plot functions. It moves them through the scene efficiently. It doesn't know — and can't infer — who they are underneath the scene's surface objective.</p>
+    </div>
+  </div>
+
+
+  <h2>What "Sounds <em>Like a Real Character</em>" Actually Requires</h2>
+
+  <p>Think about the dialogue you remember from films or scripts you've read. Almost none of it is a character directly stating what they need. It's a character trying to get what they need while avoiding saying what they actually feel, using vocabulary and rhythm specific to who they are, in a way that reveals something about them whether they intend it to or not.</p>
+
+  <p>That's not stylistic flourish — it's structural. And it requires the writer (or the AI) to know three things simultaneously: what the character is after on the surface, what they actually want underneath that, and what they're protecting themselves from revealing. That's the psychological architecture. Without it, even technically accomplished dialogue reads like a transcript of a scene rather than a scene itself.</p>
+
+  <div class="pull-quote">
+    <p>The problem with AI dialogue isn't the writing. It's that the AI is asked to write <em>before it knows who anyone is.</em></p>
+  </div>
+
+  <p>This is why prompting harder doesn't fix it. Asking for "more naturalistic dialogue" or "sharper conflict" or "stronger character voices" gives the AI stylistic instructions without giving it the psychological foundation those styles need to emerge from. You get more confidently delivered generic dialogue, not genuinely different character voices.</p>
+
+
+  <h2>The Difference Between <em>Archetype and Character</em></h2>
+
+  <p>Archetypes are categories. The grieving parent. The ambitious young executive. The burned-out detective. AI trained on scripts has seen thousands of examples of each archetype and will produce a competent version on request — because it's averaging the most common choices made by other writers in similar scenes.</p>
+
+  <p>Characters are specific. The grieving parent who makes inappropriate jokes when cornered. The ambitious executive who becomes weirdly still when she's angry rather than louder. The burned-out detective who is inexplicably kind to people he thinks are lying to him. Those specificities don't come from statistical averaging. They come from a writer deciding exactly who this person is and what makes them unusual within their situation.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Archetype-level dialogue</th>
+        <th>Character-level dialogue</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>"I know what you're doing and it needs to stop."</td>
+        <td>"You know what, just — leave the dishes. I'll do them."</td>
+      </tr>
+      <tr>
+        <td>"This isn't what I signed up for."</td>
+        <td>"I keep thinking about that summer we drove to the coast. You remember? You didn't talk the whole way there."</td>
+      </tr>
+      <tr>
+        <td>"We need to talk about what happened."</td>
+        <td>"I rescheduled the dentist again. Third time. I just — anyway."</td>
+      </tr>
+      <tr>
+        <td>"I'm not angry, I'm disappointed."</td>
+        <td>"No, it's fine. It's completely fine. Do you want coffee?"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The right column isn't better writing in isolation. It's better writing because it comes from someone who knows this specific person — their deflection habits, their avoidance patterns, the way they signal the exact opposite of how they feel. That knowledge has to exist before the first line is drafted.</p>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">NovaKit Skill</div>
+      <div class="soft-cta-title">Dialogue & Character Film Prompt — for Claude</div>
+      <div class="soft-cta-sub">Builds character psychology before the first line is written. Three calibration questions. Produces scene dialogue with subtext architecture, not just formatted lines.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/dialogue-character-film-prompt.html" class="btn btn-primary">See the skill</a>
+      <span class="soft-cta-price">from $15 · instant download</span>
+    </div>
+  </div>
+
+
+  <h2>What a Calibrated <em>Approach</em> Looks Like</h2>
+
+  <p>The fix isn't more detailed prompting. It's structured psychological input before any dialogue generation begins. Character psychology mapping: surface objective, actual objective, emotional vulnerability. Relationship dynamic: the history, the power balance, the unspoken rules between these two people. And scene function: what's this scene doing for the story, and what does it cost each character to be in it.</p>
+
+  <p>When those three elements are established first, the dialogue that follows is shaped by them rather than by what an average script would do in a similar situation. The AI isn't averaging across its training data anymore — it's working from a specific psychological brief.</p>
+
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-header">Uncalibrated — standard AI approach</div>
+      <div class="ba-body">
+        MARCUS<br>
+        We can't keep pretending everything is fine between us.<br><br>
+        ELENA<br>
+        I don't know what you want me to say.<br><br>
+        MARCUS<br>
+        I want you to tell me the truth. That's all I've ever wanted.<br><br>
+        ELENA<br>
+        The truth? You can't handle the truth, Marcus. You never could.
+      </div>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-header">✓ Calibrated — character psychology first</div>
+      <div class="ba-body">
+        Marcus crosses to the window. Doesn't turn around.<br><br>
+        MARCUS<br>
+        Your brother called. Said to say hi.<br><br>
+        Elena puts down her glass.<br><br>
+        ELENA<br>
+        When did you two start talking?<br><br>
+        MARCUS<br>
+        We don't. He just — he wanted me to know he knew. I think.<br><br>
+        A long beat.<br><br>
+        ELENA<br>
+        I should have told you myself.
+      </div>
+    </div>
+  </div>
+
+  <p>The second scene establishes conflict through what's being deliberately avoided. The brother is a stand-in for everything unspoken. Marcus's sentence that trails off tells you more about his state than a direct declaration would. And Elena's final line — which admits fault without explaining anything — lands with weight precisely because it doesn't over-explain. That restraint doesn't come from better prompting. It comes from the AI knowing, before it wrote line one, what Marcus can't bring himself to say directly and what Elena is genuinely afraid to confirm.</p>
+
+
+  <hr class="post-divider">
+  <h2>The <em>One Change</em> That Fixes Most AI Dialogue</h2>
+
+  <p>Build the character before the scene. Not a biography — a psychological brief. What does this person want right now, what are they actually protecting, and what relationship history makes this specific conversation difficult. Five minutes of context produces dramatically different output than five minutes spent rephrasing the scene description.</p>
+
+  <p>The <a href="dialogue-character-film-prompt.html">Dialogue & Character Film Prompt</a> skill does exactly that kind of calibration before any line is generated — three targeted questions that extract the psychological architecture a scene needs to produce character-level rather than archetype-level dialogue.</p>
+
+  <p>Good dialogue isn't the writer telling you who a character is. It's a character revealing who they are through what they choose not to say. You can't get there by asking AI to write more naturally. You get there by giving it something specific to work from — which is what the character was always supposed to supply.</p>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">Fix the input, fix the output</div>
+      <div class="soft-cta-title">Dialogue & Character Film Prompt for Claude</div>
+      <div class="soft-cta-sub">Character psychology calibration before the first line. Scene dialogue with subtext architecture. Works in your free Claude account. Part of the Video/Pod Bundle.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/dialogue-character-film-prompt.html" class="btn btn-primary">Get the skill</a>
+      <span class="soft-cta-price">$15 · instant download · 7-day refund</span>
+    </div>
+  </div>
+
+
+  <div class="post-tags">
+    <span class="tags-label">Tags</span>
+    <span class="tag">AI Screenwriting</span>
+    <span class="tag">Character Voice</span>
+    <span class="tag">Claude AI</span>
+    <span class="tag">Script Dialogue</span>
+    <span class="tag">Film Writing</span>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <div class="related-label">More from the blog</div>
+  <div class="related-grid">
+    <a href="dialogue-character-film-prompt.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">The AI Script That Sounds Like a Real Character — Not a Chatbot</div>
+      <div class="rc-meta">1 June 2026 · 7 min read</div>
+    </a>
+    <a href="video-script-engine.html" class="related-card">
+      <!-- TODO: update when live -->
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">The Video Script Engine: From Brief to Broadcast-Ready Draft</div>
+      <div class="rc-meta">Coming soon</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

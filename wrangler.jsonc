@@ -1,0 +1,16 @@
+{
+  "name": "novakit",
+  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2025-09-23",
+
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "db2ee9355c1743f49fb744be2bc87390"
+    }
+  ],
+
+  "vars": {
+    "RAZORPAY_WEBHOOK_SECRET": "YOUR_RAZORPAY_WEBHOOK_SECRET"
+  }
+}

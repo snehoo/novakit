@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Spreadsheet Is Fine. Your Assumptions Are the Problem. | NovaKit Blog</title>
+<meta content="Why founder financial models fail due diligence — and how the NovaKit Financial Model skill builds projections grounded in investor-relevant assumptions from the start." name="description"/>
+<meta content="financial model assumptions founders, AI financial model Claude, investor due diligence financial model, NovaKit financial model skill" name="keywords"/>
+<link href="https://novakit.tech/blog/financial-model-why-spreadsheets-arent-the-problem" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="https://novakit.tech/blog/financial-model-why-spreadsheets-arent-the-problem" property="og:url"/>
+<meta content="Your Spreadsheet Is Fine. Your Assumptions Are the Problem." property="og:title"/>
+<meta content="Most financial models fail due diligence not because the math is wrong — but because the assumptions were never built for the person asking the questions." property="og:description"/>
+<meta content="https://novakit.tech/og-blog-financial-model-why-spreadsheets-arent-the-problem.png" property="og:image"/>
+<meta content="NovaKit" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Your Spreadsheet Is Fine. Your Assumptions Are the Problem." name="twitter:title"/>
+<meta content="Most financial models fail due diligence not because the math is wrong — but because the assumptions were never built for the person asking the questions." name="twitter:description"/>
+<meta content="https://novakit.tech/og-blog-financial-model-why-spreadsheets-arent-the-problem.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Your Spreadsheet Is Fine. Your Assumptions Are the Problem.",
+  "description": "Why founder financial models fail due diligence — and how the NovaKit Financial Model skill builds projections grounded in investor-relevant assumptions from the start.",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/financial-model-why-spreadsheets-arent-the-problem"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "Your Assumptions Are the Problem", "item": "https://novakit.tech/blog/financial-model-why-spreadsheets-arent-the-problem"}
+  ]
+}
+</script>
+<link href="../assets/faviconnk.jpg" rel="icon" type="image/jpeg"/>
+<link href="../assets/faviconnk.jpg" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700;800;900&amp;family=Geist+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,56px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;color:var(--text);}
+.post-body em{font-style:italic;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+.post-body ul,.post-body ol{margin:0 0 22px 22px;line-height:1.75;}
+.post-body li{margin-bottom:6px;}
+.post-body li::marker{color:var(--accent);}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);font-style:italic;}
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-accent{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-accent .callout-label{color:var(--accent);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;margin:32px 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.compare-table th{padding:14px 18px;font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;background:var(--surface2);border-bottom:1px solid var(--border);text-align:left;}
+.compare-table th:first-child{color:var(--muted);}
+.compare-table th.accent{color:var(--accent);}
+.compare-table td{padding:13px 18px;font-size:15px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55;}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table td:first-child{color:var(--muted);font-weight:600;}
+.compare-table tr:last-child td:first-child{border-radius:0 0 0 12px;}
+.compare-table tr:last-child td:last-child{border-radius:0 0 12px 0;}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:16px;font-size:14px;line-height:1.7;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-left{}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;cursor:pointer;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.rc-meta{font-size:12px;color:var(--muted);}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:32px;}
+  .compare-table{font-size:13px;}
+  .before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+<div class="reading-progress" id="reading-progress"></div>
+<nav>
+<a class="logo" href="../index.html">
+<img alt="NovaKit" class="logo-img logo-dark" src="../assets/nkwhite.jpg"/>
+<img alt="NovaKit" class="logo-img logo-light" src="../assets/nkblack.jpg"/>
+</a>
+<div class="nav-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle theme" class="theme-toggle" onclick="toggleTheme()">
+<span id="theme-icon">☀️</span>
+</button>
+<a class="btn btn-primary btn-sm" href="../index.html#skills">Browse Skills</a>
+</div>
+</nav>
+<div class="breadcrumb">
+<a href="../index.html">NovaKit</a>
+<span class="breadcrumb-sep">›</span>
+<a href="index.html">Blog</a>
+<span class="breadcrumb-sep">›</span>
+<span>Assumptions Are the Problem</span>
+</div>
+<header class="post-header">
+<div class="post-meta">
+<span class="post-cat">AI for Work</span>
+<span class="meta-dot"></span>
+<span class="post-date">26 May 2026</span>
+<span class="meta-dot"></span>
+<span class="post-readtime">6 min read</span>
+</div>
+<h1 class="post-title">Your Spreadsheet Is Fine. Your <em>Assumptions</em> Are the Problem.</h1>
+<p class="post-subtitle">Founders spend hours on financial model formatting and thirty seconds on the assumption layer. Investors spend thirty seconds on the formatting and hours on the assumptions. The mismatch is where deals slow down.</p>
+<div class="post-byline">
+<div class="author">
+<div class="author-av">NK</div>
+<div>
+<div class="author-name">NovaKit</div>
+<div class="author-role">Claude Skill Research</div>
+</div>
+</div>
+<div class="share-links">
+<span>Share →</span>
+<button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+<button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+<button class="share-btn" onclick="copyLink()">Copy link</button>
+</div>
+</div>
+</header>
+<div class="post-hero-card">
+<div class="hero-card-inner">
+<div class="hero-card-icon">📊</div>
+<div>
+<div class="hero-card-label">NovaKit Skill</div>
+<div class="hero-card-text">Financial Model — stage-calibrated projections built around the assumptions your investor type actually interrogates</div>
+</div>
+</div>
+</div>
+<article class="post-body">
+<p>There's a pattern that shows up consistently in early-stage fundraising. A founder sends a <a href="https://novakit.tech/skills/financial-model-prompt.html">financial model</a>. An investor opens it, skips to the assumptions tab, and asks one question: "How did you get to a 4% monthly growth rate?" The founder says something reasonable. The investor asks a follow-up: "And what's that assumption based on?" At this point, the model stops being a financial model and becomes a negotiation about whether the numbers were made up.</p>
+<p>The model looked right. Three-year projection, monthly detail, neat charts. The math was fine. What wasn't there was the reasoning behind the inputs — why <em>that</em> churn rate, why <em>that</em> CAC, why headcount scales at <em>that</em> ratio. When an investor can't see the logic, they supply their own. And their version is usually more conservative than yours.</p>
+<p>This is the specific failure mode of AI-generated financial models built without business model research. The output is formatted correctly and reasoned generically. It answers the question "what does a financial model look like?" rather than "what does this business's financial model look like?" The NovaKit Financial Model skill treats those as completely different questions — because they are.</p>
+<h2>The <em>Assumption Layer</em> Is the Whole Model</h2>
+<p>Investors don't invest in your revenue projections. They invest in your assumptions — because the projections are just the assumptions multiplied through time. If they believe your CAC will stay at $400 as you scale, the model works. If they think it'll double once you exhaust your warm network, it doesn't. The numbers on the page are downstream of that conversation.</p>
+<p>Which assumptions get challenged depends entirely on the investor type and the business model. A marketplace investor will stress-test your liquidity assumptions and your take rate trajectory. A SaaS investor will immediately go to net revenue retention and CAC payback. A generalist angel will probe growth rate and burn pace. None of those are the same interrogation, and a model that doesn't know which one it's going to face has to hope for the best.</p>
+<div class="callout callout-blue">
+<div class="callout-icon">💡</div>
+<div class="callout-content">
+<div class="callout-label">The real problem</div>
+<p>Generic financial models optimise for looking right. Investor-ready models optimise for surviving the specific questions your specific reader will ask — and those questions depend on things a template doesn't know.</p>
+</div>
+</div>
+<p>This is where the format-first approach to financial modelling falls apart. Spending four hours on Excel formatting is preparation for the wrong test. The test is: can you defend each assumption with a number, a benchmark, or a logical mechanism? If not, the model is a visual aid, not an argument.</p>
+<h2>What Different Investor Types <em>Actually Ask</em></h2>
+<p>The questions change by stage and investor type. Here's what the assumption layer needs to answer for each:</p>
+<table class="compare-table">
+<thead>
+<tr>
+<th>Investor type</th>
+<th>Assumptions they stress-test first</th>
+<th class="accent">What the model needs to show</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pre-seed angel</td>
+<td>Burn rate, path to next milestone, founder credibility signals</td>
+<td>What the funding buys and when you hit the next decision point</td>
+</tr>
+<tr>
+<td>Series A fund</td>
+<td>CAC payback, NRR, unit economics at scale</td>
+<td>ARR bridge, LTV:CAC, Rule of 40 trajectory, net dollar retention by cohort</td>
+</tr>
+<tr>
+<td>Marketplace / growth investor</td>
+<td>Take rate, GMV growth, liquidity thresholds</td>
+<td>Supply-demand balance, rake defensibility, frequency and basket size</td>
+</tr>
+<tr>
+<td>Debt / bank</td>
+<td>Coverage ratios, asset quality, downside scenario</td>
+<td>DSCR, collateral value, conservative case that still services the debt</td>
+</tr>
+<tr>
+<td>Strategic / corporate</td>
+<td>Revenue synergies, integration costs, time to contribution</td>
+<td>Combined revenue model, cost overlap analysis, contribution timeline</td>
+</tr>
+</tbody>
+</table>
+<p>A model built without knowing which row applies to your situation is a model built for the wrong audience. The numbers might be identical — what changes is the structure that surfaces them and the assumption documentation that supports them.</p>
+<div class="pull-quote">
+<p>The investor isn't evaluating your model. They're evaluating <em>your judgment</em> — and the model is the evidence.</p>
+</div>
+<h2>How the Financial Model Skill <em>Fixes the Assumption Layer</em></h2>
+<p>Before the NovaKit Financial Model skill generates a single projection, it asks three questions: what stage are you at, what's your business model, and who is the model for. Those answers change what gets built — not cosmetically, but structurally. A pre-seed founder building for an angel gets a different model than a Series A founder building for a fund, even if the business is the same.</p>
+<p>The skill then researches current benchmarks for your business type and stage. What's a defensible CAC payback for B2B SaaS at Series A right now? What gross margin range is expected for a marketplace at this GMV level? What NRR benchmarks are funds using to filter? That research runs before the model is built, so the assumption ranges in the output are grounded in what your specific reader considers normal rather than in what a generic template assumes.</p>
+<p>The result is a model where the assumption table is the first thing in the document, not an afterthought. Each assumption is named, benchmarked, and supported by a one-line rationale. When the investor asks "how did you get to that churn number?", the answer is already in the model — because the skill built the model around the question rather than hoping the question wouldn't come up.</p>
+<div class="soft-cta">
+<div class="soft-cta-left">
+<div class="soft-cta-kicker">NovaKit Skill</div>
+<div class="soft-cta-title">Financial Model — the assumption layer your investor will actually read</div>
+<div class="soft-cta-sub">Works inside Claude. No technical setup. Delivers projections, a benchmarked assumptions table, and scenario analysis built for your stated reader.</div>
+</div>
+<div class="soft-cta-right">
+<a class="btn btn-primary" href="../skills/financial-model.html">See the skill</a>
+<span class="soft-cta-price">from $15 · instant download</span>
+</div>
+</div>
+<h2>The Same Model, <em>Wrong Audience vs Right Audience</em></h2>
+<p>Here's the same B2B SaaS business, modelled for a generic investor versus for a Series A fund specifically:</p>
+<div class="before-after">
+<div class="ba-card ba-before">
+<div class="ba-header">Generic model — no audience targeting</div>
+<div class="ba-body">
+<strong>Key assumptions</strong><br/><br/>
+        Revenue growth: 15% MoM<br/>
+        Churn: 5% monthly<br/>
+        Gross margin: 70%<br/>
+        Sales headcount: 2 in Year 1, 5 in Year 2<br/><br/>
+<em>No benchmark context. No rationale for specific figures. No mention of CAC, LTV, payback period, or NRR — the metrics a Series A fund will evaluate first.</em>
+</div>
+</div>
+<div class="ba-card ba-after">
+<div class="ba-header">✓ NovaKit — calibrated for Series A</div>
+<div class="ba-body">
+<strong>Assumption table — Series A SaaS (ARR $400k–$800k)</strong><br/><br/>
+        NRR: 112% (cohort-modelled; benchmark 110–130%)<br/>
+        CAC payback: 16 months blended (target: &lt;18 months at this stage)<br/>
+        Gross margin: 73%, expanding to 78% in Year 3 as infrastructure amortises<br/>
+        LTV:CAC: 3.8x at 24-month horizon (fund threshold: typically 3x+)<br/><br/>
+<em>Rule of 40 score: Year 2: 29 → Year 3: 42. ARR bridge by cohort attached.</em>
+</div>
+</div>
+</div>
+<p>Both models cover the same business over the same period. The second one speaks the language of the reader — ARR bridge, NRR, LTV:CAC, Rule of 40, benchmarked against what that specific investor type actually uses as a filter. The first one forces the investor to translate your numbers into their framework. The second one does the translation for them. That gap is the difference between a model that moves the conversation forward and one that generates three weeks of back-and-forth.</p>
+<hr class="post-divider"/>
+<h2>Who Gets the Most from the <em>Financial Model Skill</em></h2>
+<div class="callout callout-green">
+<div class="callout-icon">✓</div>
+<div class="callout-content">
+<div class="callout-label">Built for</div>
+<p>Founders who've had financial model conversations go sideways and want to understand why. Operators who are tired of models that don't survive the first actuals comparison. Consultants who build financial work for clients across different sectors and need the assumption layer to be credible from the start — not patched together after the first round of questions.</p>
+</div>
+</div>
+<p>The founders who get the most from this skill are the ones who already know their model is technically correct but suspect the assumptions are the weak point. That suspicion is usually right. The skill doesn't fix math — it fixes the layer underneath the math, where the real interrogation happens.</p>
+<h2>The Output You <em>Walk Away With</em></h2>
+<p>The skill produces a three-year model with monthly granularity in year one and quarterly thereafter, a named assumptions table with benchmarks for every key variable, a scenario analysis covering base, upside, and downside cases with the primary driver of each, and a one-page summary formatted for the reader you specified. The assumption table is designed to be the first thing an investor reads — not an appendix they have to hunt for.</p>
+<p>Most founders fix their financial models after the first investor meeting, when the questions reveal which assumptions weren't defensible. The skill builds the model as if those questions have already been asked. That's not a small difference in output — it's the difference between a document that starts a conversation and one that survives it.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/nda-contract-draft.html">an NDA drafted around your specific terms</a>. If you're working across the full Legal &amp; Biz workflow, the <a href="https://novakit.tech/skills/bundles/legal-biz-bundle.html">Legal &amp; Biz bundle</a> covers everything in one place.</p>
+<div class="soft-cta">
+<div class="soft-cta-left">
+<div class="soft-cta-kicker">Ready to try it?</div>
+<div class="soft-cta-title">Financial Model Skill for Claude</div>
+<div class="soft-cta-sub">Benchmarked assumptions table, stage-calibrated projections, and scenario analysis. Works with your free Claude account. No technical setup required.</div>
+</div>
+<div class="soft-cta-right">
+<a class="btn btn-primary" href="../skills/financial-model.html">Get the skill</a>
+<span class="soft-cta-price">$15 · instant download · 7-day refund</span>
+</div>
+</div>
+<div class="post-tags">
+<span class="tags-label">Tags</span>
+<span class="tag">Financial Model</span>
+<span class="tag">Fundraising</span>
+<span class="tag">Claude AI</span>
+<span class="tag">Due Diligence</span>
+<span class="tag">AI for Founders</span>
+</div>
+</article>
+<section class="related-section">
+<div class="related-label">More from the blog</div>
+<div class="related-grid">
+<a class="related-card" href="financial-model.html">
+<div class="rc-cat">Skill Deep-Dive</div>
+<div class="rc-title">The Financial Model Skill That Thinks Like an Investor</div>
+<div class="rc-meta">26 May 2026 · 7 min read</div>
+</a>
+<!-- TODO: update when live -->
+<a class="related-card" href="index.html">
+<div class="rc-cat">Claude Tips</div>
+<div class="rc-title">More from the NovaKit Blog</div>
+<div class="rc-meta">Browse all posts</div>
+</a>
+</div>
+</section>
+<footer>
+<div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+<div class="footer-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+</footer>
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

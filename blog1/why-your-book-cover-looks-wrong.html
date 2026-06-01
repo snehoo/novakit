@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Why Your Book Cover Looks Wrong (It's Not the Designer) | NovaKit Blog</title>
+<meta name="description" content="Book cover briefs that describe your story produce generic covers. A design brief is a genre document, not a plot summary. Here's the difference — and how to write one that works.">
+<meta name="keywords" content="book cover design brief, AI book cover prompt, Claude AI skill, NovaKit, self-publishing cover brief">
+<link rel="canonical" href="https://novakit.tech/blog/book-cover-prompt-skill">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novakit.tech/blog/book-cover-prompt-skill">
+<meta property="og:title" content="Why Your Book Cover Looks Wrong (It's Not the Designer) | NovaKit Blog">
+<meta property="og:description" content="Story descriptions produce generic covers. A real design brief is written in genre language — colour, typography, shelf signal. Here's what that looks like.">
+<meta property="og:image" content="https://novakit.tech/og-blog-book-cover-prompt-skill.png">
+<meta property="og:site_name" content="NovaKit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Your Book Cover Looks Wrong (It's Not the Designer) | NovaKit Blog">
+<meta name="twitter:description" content="Story descriptions produce generic covers. A design brief is a genre document — colour, typography, shelf signal. Here's the difference.">
+<meta name="twitter:image" content="https://novakit.tech/og-blog-book-cover-prompt-skill.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Your Book Cover Looks Wrong (It's Not the Designer)",
+  "description": "Book cover briefs that describe your story produce generic covers. A design brief is a genre document, not a plot summary. Here's the difference — and how to write one that works.",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/book-cover-prompt-skill"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "Why Your Book Cover Looks Wrong (It's Not the Designer)", "item": "https://novakit.tech/blog/book-cover-prompt-skill"}
+  ]
+}
+</script>
+
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="../assets/faviconnk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,56px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;color:var(--text);}
+.post-body em{font-style:italic;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);}
+
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-accent{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-accent .callout-label{color:var(--accent);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:16px;font-size:14px;line-height:1.75;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+.ba-body strong{font-weight:700;}
+
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;}
+.fc-icon{font-size:22px;margin-bottom:10px;}
+.fc-title{font-size:15px;font-weight:700;margin-bottom:6px;line-height:1.3;}
+.fc-body{font-size:14px;color:var(--muted);line-height:1.6;}
+
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-left{}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;display:block;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;color:var(--text);}
+.rc-meta{font-size:12px;color:var(--muted);}
+
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:32px;}
+  .feature-grid,.before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress"></div>
+
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" class="logo-img logo-dark" alt="NovaKit">
+    <img src="../assets/nkblack.jpg" class="logo-img logo-light" alt="NovaKit">
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span id="theme-icon">☀️</span>
+    </button>
+    <a href="../index.html#skills" class="btn btn-primary btn-sm">Browse Skills</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">NovaKit</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="index.html">Blog</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>Book Cover Brief</span>
+</div>
+
+<header class="post-header">
+  <div class="post-meta">
+    <span class="post-cat">Skill Deep-Dive</span>
+    <span class="meta-dot"></span>
+    <span class="post-date">26 May 2026</span>
+    <span class="meta-dot"></span>
+    <span class="post-readtime">7 min read</span>
+  </div>
+
+  <h1 class="post-title">Why Your Book Cover <em>Looks Wrong</em> (It's Not the Designer)</h1>
+
+  <p class="post-subtitle">The problem isn't the execution — it's the brief. A story description and a design brief are not the same document, and the gap between them is where most self-published covers go wrong before a single pixel is placed.</p>
+
+  <div class="post-byline">
+    <div class="author">
+      <div class="author-av">NK</div>
+      <div>
+        <div class="author-name">NovaKit</div>
+        <div class="author-role">Claude Skill Research</div>
+      </div>
+    </div>
+    <div class="share-links">
+      <span>Share →</span>
+      <button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+      <button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+      <button class="share-btn" onclick="copyLink()">Copy link</button>
+    </div>
+  </div>
+</header>
+
+<div class="post-hero-card">
+  <div class="hero-card-inner">
+    <div class="hero-card-icon">🎨</div>
+    <div>
+      <div class="hero-card-label">NovaKit Skill · Creative Bundle</div>
+      <div class="hero-card-text">Book Cover Prompt — a genre-researched design brief that speaks the visual language your designer actually needs.</div>
+    </div>
+  </div>
+</div>
+
+<article class="post-body">
+
+  <p>The cover came back and something was off. Not broken — it looked like a book. The typography was clean, the colours worked together, the composition was professional. But it didn't look like <em>your</em> book. Worse, it didn't look like the shelf your book belongs on.</p>
+
+  <p>You sent it back with notes. "More tension." "Darker, maybe?" "Can the font feel more literary?" Three revision rounds later it's better, but you're still not sure it's right, and you can't fully explain why. The designer is doing exactly what you asked. That's the problem.</p>
+
+  <p>What you asked for was a story description. What a designer needs is a genre document — and those two things pull from completely different knowledge. Your story description lives in your head. The genre document lives on the shelf, and it changes by season.</p>
+
+
+  <h2>The Brief Is Written in <em>the Wrong Language</em></h2>
+
+  <p>Ask most authors what they send a designer and you'll get some version of the same answer: a paragraph about the book. The protagonist. The mood. The themes. Maybe a few films or other covers they admire, attached as loose reference images with no explanation of what specifically to take from them.</p>
+
+  <p>That's not a design brief. It's a pitch. And designers — even excellent ones — can't extract visual direction from a pitch the way they can from genre-specific instruction.</p>
+
+  <p>A design brief for a book cover needs to answer a specific set of questions that have nothing to do with your plot: What colour treatments are dominating this sub-genre on Amazon right now? Is the trend running toward illustrated or photographic? Silhouette figures or environmental objects? What typographic weight signals "upmarket literary" vs "commercial thriller" to a reader scanning at thumbnail scale? What's being overused in the category — and is therefore the one thing your cover should avoid?</p>
+
+  <div class="callout callout-blue">
+    <div class="callout-icon">💡</div>
+    <div class="callout-content">
+      <div class="callout-label">The real gap</div>
+      <p>Readers pattern-match covers against genre conventions they've absorbed from thousands of purchases. A cover that doesn't speak that visual language gets skipped — not because it's ugly, but because it doesn't register as belonging to the category they're browsing.</p>
+    </div>
+  </div>
+
+  <p>None of this is information you have from writing the book. It requires sustained shelf-watching — tracking what's on the Amazon bestseller lists in your sub-genre, what's changed in the past two years, what cover styles are winning reviews and what's starting to look dated. That's a separate job, and most authors — reasonably — aren't doing it.</p>
+
+
+  <h2>What a <em>Genre-First Brief</em> Actually Contains</h2>
+
+  <p>A brief built from genre research answers the questions a designer needs before they open their software. Not "the story feels dark and tense" — but precisely which visual moves encode "dark and tense" for readers in your specific sub-category, right now.</p>
+
+  <p>Here's the difference in practice. The same psychological thriller gets two briefs — one written from the manuscript, one written after researching the current shelf.</p>
+
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-header">Written from the story</div>
+      <div class="ba-body">Dark psychological thriller — a woman discovers her husband has been living a double life. Looking for something atmospheric and tense. Dark blues and greys. Maybe a woman's silhouette or a shadowy figure. Title should feel clean and serious. Think: secrets, paranoia, the sense that someone isn't who they claim to be.</div>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-header">✓ Written from the genre</div>
+      <div class="ba-body"><strong>Sub-genre:</strong> Domestic noir / psychological suspense.<br><br><strong>Visual direction:</strong> Current bestsellers favour close-cropped domestic objects over posed figures — a door handle, a wine glass, a reflection in a window. Full silhouettes are reading as mid-2010s in this category. Object-led imagery converts better at thumbnail scale.<br><br><strong>Palette:</strong> Desaturated teal-to-charcoal gradient. Single warm accent (amber or burnt sienna) creates the tension pure cool palettes lose. Avoid solid black backgrounds — they're flagging as self-published right now.<br><br><strong>Type:</strong> High-contrast condensed serif, off-white, flush left. Author name in a lighter weight sans beneath. No script fonts in this sub-genre — they signal domestic drama, not thriller.<br><br><strong>Differentiation:</strong> Use a partial reveal or reflection — something in frame that implies the reader isn't seeing the full picture. This is the visual hook that earns a second look.</div>
+    </div>
+  </div>
+
+  <p>The first brief starts a conversation. The second one starts the work. The designer reading the second brief knows exactly what to put in frame, what colour logic to follow, what typographic weight signals the sub-genre at thumbnail scale, and what single visual move creates stopping power. That's three revision rounds recovered before the first draft is submitted.</p>
+
+
+  <h2>How the <em>Book Cover Prompt</em> Skill Builds the Brief</h2>
+
+  <p>The skill is built for this specific job: producing a genre-researched design brief from your book's details, rather than a story-description that a designer then has to interpret. It does three things before it writes a single line of your brief.</p>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="fc-icon">🔍</div>
+      <div class="fc-title">Live Genre Research</div>
+      <div class="fc-body">Before any output, the skill pulls what's working in your specific sub-genre right now — dominant visual patterns, what's converting, what's becoming overused. Not cached data. Current shelf.</div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon">🎯</div>
+      <div class="fc-title">Sub-Genre Calibration</div>
+      <div class="fc-body">The three calibrating questions establish exactly which shelf this cover needs to work on. Domestic noir and Nordic crime have distinct visual languages. The brief is built for one, not blended across both.</div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon">✦</div>
+      <div class="fc-title">Differentiation Point</div>
+      <div class="fc-body">The brief doesn't just describe convention — it defines the one element that should deliberately break from it. Genre-fluent covers that have a single point of visual tension outperform those that comply entirely.</div>
+    </div>
+    <div class="feature-card">
+      <div class="fc-icon">✓</div>
+      <div class="fc-title">Quality Gate</div>
+      <div class="fc-body">Before the brief reaches you, it's checked against the most common failure modes: briefs too vague to act on, missing typographic direction, genre-convention gaps. Weak sections are rewritten before delivery.</div>
+    </div>
+  </div>
+
+  <p>What comes out is a structured brief covering: visual direction with current genre context, colour palette with specific treatment notes, typography guidance (title weight, author name hierarchy, what font styles signal which sub-genres), primary imagery approach, mood framing, and the differentiation point. It's formatted to hand directly to a designer or paste into an AI image tool as a generation instruction.</p>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">NovaKit Skill · Creative Bundle</div>
+      <div class="soft-cta-title">Book Cover Prompt — genre-researched design brief</div>
+      <div class="soft-cta-sub">Works inside Claude. No setup. Produces a complete, structured brief ready to hand to your designer or paste into Midjourney, Ideogram, or Firefly.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/book-cover-prompt.html" class="btn btn-primary">See the skill</a>
+      <span class="soft-cta-price">$9 · instant download</span>
+    </div>
+  </div>
+
+
+  <hr class="post-divider">
+
+  <h2>Who This Is <em>Actually For</em></h2>
+
+  <div class="callout callout-green">
+    <div class="callout-icon">✓</div>
+    <div class="callout-content">
+      <div class="callout-label">Built for</div>
+      <p>Indie and self-published authors briefing a freelance designer for the first time. Authors using AI image tools (Midjourney, Ideogram, Firefly) who need a structured generation prompt rather than a vague description. Small press editors who commission covers without a dedicated art director.</p>
+    </div>
+  </div>
+
+  <p>The skill is most useful when you know your book well but haven't spent the last six months tracking your sub-genre's visual trends — which is almost every author. Writing and shelf-watching are two separate activities, and most people doing one aren't doing the other. The skill fills that gap so the brief it produces is grounded in what's actually working now, not what you absorbed from the last batch of books you happened to read.</p>
+
+  <p>It's less useful if you're a cover designer yourself, or if you've spent real time studying the visual conventions of your category. The skill's advantage is in the research it brings, not in its ability to translate expertise you already have.</p>
+
+
+  <h2>What You <em>Walk Away With</em></h2>
+
+  <p>One complete, structured cover brief — visual direction with current genre context, colour palette with specific treatment guidance, typography notes (title treatment, author name hierarchy, which font styles encode which sub-genre signals), primary imagery approach, mood framing, and a defined differentiation point. Everything a designer needs to open their software and start, not just a direction to discuss.</p>
+
+  <p>From download to brief: open the skill file in Claude, answer three questions about your book and genre, receive a publication-ready brief. The quality gate runs internally — what you receive is the output after weak sections have already been caught and rewritten. No iteration required before it's usable.</p>
+
+
+  <p>A reader decides whether to open your book in under three seconds. That decision happens on the cover — and the cover is only as good as the brief that produced it. Spending months writing a manuscript that earns a reader's trust on page 200 while sending a story description to a designer on page one is the most expensive mistake in self-publishing that nobody talks about like a mistake.</p>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">Ready to try it?</div>
+      <div class="soft-cta-title">Book Cover Prompt for Claude</div>
+      <div class="soft-cta-sub">A complete, genre-researched design brief in one session. Works with your free Claude account. Hand it to your designer or use it directly in an AI image tool.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/book-cover-prompt.html" class="btn btn-primary">Get the skill</a>
+      <span class="soft-cta-price">$9 · instant download · 7-day refund</span>
+    </div>
+  </div>
+
+
+  <div class="post-tags">
+    <span class="tags-label">Tags</span>
+    <span class="tag">Book Cover Design</span>
+    <span class="tag">Self-Publishing</span>
+    <span class="tag">Claude AI</span>
+    <span class="tag">Creative Skills</span>
+    <span class="tag">AI Design Brief</span>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <div class="related-label">More from the blog</div>
+  <div class="related-grid">
+    <!-- TODO: update slugs when live -->
+    <a href="short-story-prompt-skill.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">What the Short Story Prompt Skill Does That a Blank Page Can't</div>
+      <div class="rc-meta">26 May 2026 · 6 min read</div>
+    </a>
+    <a href="poetry-verse-prompt-skill.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">Why Every AI Poem Sounds Like Every Other AI Poem</div>
+      <div class="rc-meta">26 May 2026 · 5 min read</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "novakitwebsite",
+  "version": "1.0.0",
+  "description": "Claude Skills marketplace. Living skills that do live trend research before every output.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snehoo/novakit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snehoo/novakit/issues"
+  },
+  "homepage": "https://github.com/snehoo/novakit#readme",
+  "dependencies": {
+    "pg": "^8.21.0"
+  }
+}

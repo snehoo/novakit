@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Vows That Sound Like You Wrote Them — Because You Did | NovaKit Blog</title>
+<meta name="description" content="Generic AI wedding vows have the right structure and the wrong everything else. The Wedding Vows Writer skill interviews you about your partner before writing a single word.">
+<meta name="keywords" content="wedding vows writer AI, AI wedding vows Claude, write wedding vows AI, NovaKit, Wedding Vows Writer AI skill">
+<link rel="canonical" href="https://novakit.tech/blog/wedding-vows-writer-ai">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novakit.tech/blog/wedding-vows-writer-ai">
+<meta property="og:title" content="The Vows That Sound Like You Wrote Them — Because You Did">
+<meta property="og:description" content="Generic AI vows have the right cadence and the wrong everything else. Here's what changes when the skill learns about your partner before it writes about them.">
+<meta property="og:image" content="https://novakit.tech/og-blog-wedding-vows-writer-ai.png">
+<meta property="og:site_name" content="NovaKit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Vows That Sound Like You Wrote Them — Because You Did">
+<meta name="twitter:description" content="Generic AI vows have the right cadence and the wrong everything else. Here's what changes when the skill learns about your partner before it writes about them.">
+<meta name="twitter:image" content="https://novakit.tech/og-blog-wedding-vows-writer-ai.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Vows That Sound Like You Wrote Them — Because You Did",
+  "description": "Generic AI wedding vows have the right structure and the wrong everything else. The Wedding Vows Writer skill interviews you about your partner before writing a single word.",
+  "datePublished": "2026-05-28",
+  "dateModified": "2026-05-28",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/wedding-vows-writer-ai"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "The Vows That Sound Like You Wrote Them", "item": "https://novakit.tech/blog/wedding-vows-writer-ai"}
+  ]
+}
+</script>
+
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="../assets/faviconnk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:transparent;border:1px solid var(--border-s);color:var(--text);}
+.btn-ghost:hover{background:var(--bg2);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,56px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;color:var(--text);}
+.post-body em{font-style:italic;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+.post-body ul,.post-body ol{margin:0 0 22px 22px;line-height:1.75;}
+.post-body li{margin-bottom:6px;}
+.post-body li::marker{color:var(--accent);}
+
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);font-style:italic;}
+
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-accent{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-accent .callout-label{color:var(--accent);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+
+.step-list{margin:32px 0;display:flex;flex-direction:column;gap:0;}
+.step-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--border);}
+.step-item:last-child{border-bottom:none;}
+.step-num{width:34px;height:34px;border-radius:8px;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--accent);flex-shrink:0;margin-top:2px;}
+.step-content{}
+.step-title{font-size:16px;font-weight:700;margin-bottom:6px;}
+.step-body{font-size:15px;color:var(--muted);line-height:1.65;}
+
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:16px;font-size:14px;line-height:1.7;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-left{}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;cursor:pointer;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.rc-meta{font-size:12px;color:var(--muted);}
+
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:32px;}
+  .before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress"></div>
+
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" class="logo-img logo-dark" alt="NovaKit">
+    <img src="../assets/nkblack.jpg" class="logo-img logo-light" alt="NovaKit">
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span id="theme-icon">☀️</span>
+    </button>
+    <a href="../index.html#skills" class="btn btn-primary btn-sm">Browse Skills</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">NovaKit</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="index.html">Blog</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>Wedding Vows Writer AI</span>
+</div>
+
+<header class="post-header">
+  <div class="post-meta">
+    <span class="post-cat">Skill Deep-Dive</span>
+    <span class="meta-dot"></span>
+    <span class="post-date">28 May 2026</span>
+    <span class="meta-dot"></span>
+    <span class="post-readtime">6 min read</span>
+  </div>
+
+  <h1 class="post-title">The Vows That Sound Like <em>You Wrote Them</em> — Because You Did</h1>
+
+  <p class="post-subtitle">Generic AI wedding vows have the right structure, the right length, and the wrong everything else. Here's what changes when the skill learns about your partner before it writes a single word about them.</p>
+
+  <div class="post-byline">
+    <div class="author">
+      <div class="author-av">NK</div>
+      <div>
+        <div class="author-name">NovaKit</div>
+        <div class="author-role">Claude Skill Research</div>
+      </div>
+    </div>
+    <div class="share-links">
+      <span>Share →</span>
+      <button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+      <button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+      <button class="share-btn" onclick="copyLink()">Copy link</button>
+    </div>
+  </div>
+</header>
+
+<div class="post-hero-card">
+  <div class="hero-card-inner">
+    <div class="hero-card-icon">💍</div>
+    <div>
+      <div class="hero-card-label">NovaKit Skill</div>
+      <div class="hero-card-text">Wedding Vows Writer — personal, specific wedding vows drafted from your stories and your voice, not from a template about love in general.</div>
+    </div>
+  </div>
+</div>
+
+<article class="post-body">
+
+  <p>You know exactly what you want to say. You know the moment you realised this was the person. You know the specific thing they do — the way they handle bad news, the thing they say when you're anxious, the look they gave you the first time you saw them properly — and you know that whatever you say on the day has to contain that, or it isn't really your vows. It's just vows.</p>
+
+  <p>The problem isn't knowing what to say. The problem is that when you sit down to write it, what comes out reads like a wedding speech from a film about a wedding. "From the moment I met you, I knew." "You make me a better person." "I promise to love you through every storm." You've heard all of it before. You're going to say it in front of everyone you know. And somewhere between knowing exactly how you feel and the blank page, the specific, true thing you wanted to say turned into a greeting card.</p>
+
+  <p>This is the gap the Wedding Vows Writer skill is built to close. Not by writing vows for you — by writing vows <em>from</em> you, from the actual details you give it about your actual person.</p>
+
+
+  <h2>What <em>Generic AI Vows</em> Actually Produce</h2>
+
+  <p>Ask Claude — without calibration, without any context about your relationship — to write wedding vows, and you'll get something structurally sound. An opening about when you knew. A middle section about specific qualities, described in general terms. A set of promises, each one beginning with "I promise to." A closing about forever. It's three minutes long. It hits the expected beats. It will make your aunt cry because weddings make your aunt cry, not because anything in it is specific enough to land differently on anyone who knows you both.</p>
+
+  <p>The tell is in the details — or the absence of them. Generic vows contain no details that could only come from your relationship. They contain no moment that your partner will recognise and feel seen by. They contain no specific promise that means something because of a specific history. The word "adventures" appears. The phrase "your laugh" appears. Nothing in it is wrong. Nothing in it is yours.</p>
+
+  <div class="callout callout-blue">
+    <div class="callout-icon">💡</div>
+    <div class="callout-content">
+      <div class="callout-label">The core problem</div>
+      <p>Vows written without knowing anything about your partner are vows about love in general — which is the one thing your vows are specifically not supposed to be about. Specificity is what separates vows from a speech at a stranger's wedding.</p>
+    </div>
+  </div>
+
+  <p>You can feel the difference when you read them back. Generic vows produce a vague sense of satisfaction — they say the right things — followed by an equally vague sense that you still haven't written your vows. Because you haven't. You've produced a structure that needs to be filled with the actual content, which is the specific true thing you knew before you started and still haven't managed to put into sentences.</p>
+
+
+  <h2>Why <em>Knowing Your Partner First</em> Changes Everything</h2>
+
+  <p>The Wedding Vows Writer skill doesn't start writing until it knows something real. Before it produces a draft, it asks you about the moment, the quality, the specific thing — the detail that, if you read the vows back, would make your partner know without any doubt that these were written about them and not slotted into a template with their name in the gaps.</p>
+
+  <p>That research changes the output at the sentence level. "You make me feel safe" becomes the specific thing your partner actually does that makes you feel safe — the text they send at midnight, the way they stay quiet when you need to think, the decision they made that one time that told you something important about who they are. Generic AI can't write that sentence because it doesn't know that thing. The skill asks for it first, then builds the vows around it.</p>
+
+  <div class="pull-quote">
+    <p>The vow that makes someone cry isn't the one about love — it's the one that names a <em>specific moment</em> they thought only the two of you remembered.</p>
+  </div>
+
+  <p>The tone calibration matters just as much. Vows that are earnest and sincere read completely differently from vows that are warm and gently funny, which read completely differently from vows that are spare and direct. The skill asks about your register before it writes — because vows that don't sound like you are almost as uncomfortable as vows that don't mention your partner specifically. The person standing across from you on the day knows how you talk. They'll know immediately if the words aren't yours.</p>
+
+
+  <h2>What the Wedding Vows Writer Skill <em>Actually Does</em></h2>
+
+  <p>The skill gathers three things before writing anything: a moment or story that captures something essential about your partner, the tone you want (sincere, warm and funny, simple and direct, or any combination), and any specific promises or commitments you already know you want to include. Those three inputs are the difference between vows that could have been written for anyone and vows that could only have been written for this person, by you.</p>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Story and Detail Gathering</div>
+        <div class="step-body">The skill asks for the real material — a specific memory, a quality you noticed early, a moment that clarified something. These become the anchors the vows are built around, so the final draft contains details that are recognisably true rather than recognisably generic.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Tone and Voice Calibration</div>
+        <div class="step-body">Sincere and earnest, warm with moments of humour, spare and direct — the skill matches your natural register so the vows sound like you at your most considered, not like a professional speechwriter's idea of what wedding vows should sound like.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Promise and Commitment Weaving</div>
+        <div class="step-body">Any specific promises you already have in mind — the ones that come from your actual life together rather than generic vow templates — are worked into the structure naturally rather than listed as a separate section. Promises that mean something because of a shared history land differently than promises that could apply to anyone.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Length and Ceremony Format Matching</div>
+        <div class="step-body">The skill calibrates to your ceremony format — religious or civil, traditional or informal, two minutes or four — so the pacing and length fit the actual moment rather than running short or reading like a speech that escaped its container.</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">NovaKit Skill</div>
+      <div class="soft-cta-title">Wedding Vows Writer — personal vows built from your stories, in your voice</div>
+      <div class="soft-cta-sub">Works inside Claude. No technical setup. Delivers a complete draft you can read straight from the page or use as the base you refine into your final version.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/wedding-vows-writer.html" class="btn btn-primary">See the skill</a>
+      <span class="soft-cta-price">$9 · instant download</span>
+    </div>
+  </div>
+
+
+  <h2>Generic Vows vs <em>Skill-Written</em> Vows — The Same Feeling, Expressed Two Ways</h2>
+
+  <p>The feeling being expressed is identical in both versions: the moment of certainty — the point where you knew this was the person. Here's how the same emotion reads when it's generic versus when it's built from a specific detail.</p>
+
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-header">Without NovaKit</div>
+      <div class="ba-body">
+        From the moment I met you, I knew you were someone special. You have a warmth and kindness that makes everyone around you feel valued. You make me want to be a better person every single day. I knew early on that I wanted to spend my life with you, and I have never once doubted that feeling.<br><br>
+        <em>Today, in front of everyone we love, I choose you.</em>
+      </div>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-header">✓ With NovaKit Skill</div>
+      <div class="ba-body">
+        I knew on the drive home from that dinner in February — the one where your car broke down and we sat on the kerb for two hours waiting and you just started pointing out constellations like it was the obvious thing to do. That was it for me. Not a grand moment. Just you, deciding that being stuck was a fine time to learn something.<br><br>
+        <em>I have been trying to live like that ever since. Today I'm asking to keep trying, with you.</em>
+      </div>
+    </div>
+  </div>
+
+  <p>The left-hand version says all the correct things and contains nothing your partner could point to as theirs. The right-hand version names a specific evening, a specific detail — the constellations, the kerb, the two hours — and builds to a promise that means something because of what just preceded it. Your partner hears the right-hand version and knows, in the middle of a room full of people, that it was written about them. That's the difference specificity makes. And specificity only arrives when the skill knows something real before it starts writing.</p>
+
+
+  <hr class="post-divider">
+  <h2>Who Gets the Most from <em>Wedding Vows Writer</em></h2>
+
+  <div class="callout callout-green">
+    <div class="callout-icon">✓</div>
+    <div class="callout-content">
+      <div class="callout-label">Built for</div>
+      <p>People who know exactly what they feel but freeze when they try to write it down. Anyone who has started their vows three times and ended up with something that reads like everyone else's vows. People who want help with the sentences without losing the fact that the content has to be theirs.</p>
+    </div>
+  </div>
+
+  <p>The skill is most useful for the person who already has the material — the stories, the moments, the specific things — but can't find the form. That's the most common version of the problem. You don't need help knowing what to say. You need help with the architecture that turns what you know into something you can actually stand up and read out loud without it sounding like you lifted it from the internet. The skill provides that architecture from your material, not from a template.</p>
+
+  <p>It's less useful for someone who wants to write their vows entirely from scratch with no AI involvement at all — the skill's output is a draft, not a finished document, and finishing it requires your own editing hand. What you get is a strong, specific, voiced first draft that sounds like you and contains the things that matter to you. From there, most people find that the hard part is done and the final version writes itself.</p>
+
+
+  <h2>What You <em>Actually Walk Away With</em></h2>
+
+  <p>The skill delivers a complete vows draft — opening, the specific story or detail at the centre, the promises, and a closing — timed to your ceremony format and written in your register. It's not a template with your name inserted. It's a piece of writing built from the details you gave it, which means the first time you read it back, it will sound like you on a very good day rather than like a competent stranger's idea of what you might want to say.</p>
+
+  <p>Most people use the draft in one of two ways: they read it almost as-is, changing a word here and there, because the skill got close enough that the editing is minor. Or they use it as the thing that unlocks the version they actually want to write — because seeing their own stories and details in vow form shows them what they were trying to say, and from there the final version comes quickly. Either way, the blank page problem is solved. The hardest part of writing vows isn't the writing. It's knowing that what you've written is actually yours. The skill gives you something specific enough to tell.</p>
+
+
+  <p>Everyone at your wedding has heard vows before. The ones they remember — the ones that make the room go quiet in a different way — are the ones where something specific gets said that makes it obvious these two people know each other in a way no one else in the room quite does. That specificity is available to you. It's in the stories you already have. The skill's job is to help you get it off the floor and into a sentence you can say out loud.</p>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">Ready to write them?</div>
+      <div class="soft-cta-title">Wedding Vows Writer for Claude</div>
+      <div class="soft-cta-sub">A complete, personal vows draft built from your stories and written in your voice. Works with your free Claude account. Takes about ten minutes from start to draft.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/wedding-vows-writer.html" class="btn btn-primary">Get the skill</a>
+      <span class="soft-cta-price">$9 · instant download · 7-day refund</span>
+    </div>
+  </div>
+
+
+  <div class="post-tags">
+    <span class="tags-label">Tags</span>
+    <span class="tag">Wedding Vows</span>
+    <span class="tag">Claude AI</span>
+    <span class="tag">Wedding Planning</span>
+    <span class="tag">AI Writing</span>
+    <span class="tag">AI Skills</span>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <div class="related-label">More from the blog</div>
+  <div class="related-grid">
+    <a href="course-curriculum-builder-ai.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">Why Your AI-Built Course Teaches Nothing — and How to Fix the Structure</div>
+      <div class="rc-meta">26 May 2026 · 7 min read</div>
+    </a>
+    <a href="lesson-plan-builder-ai.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">The Lesson Plan That Falls Apart in the Room — and What to Build Instead</div>
+      <div class="rc-meta">26 May 2026 · 7 min read</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

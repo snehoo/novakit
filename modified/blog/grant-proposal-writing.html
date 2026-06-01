@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Grant You Didn't Get Wasn't Rejected for Lack of Effort | NovaKit Blog</title>
+<meta content="Grant &amp; Proposal Writing Claude skill by NovaKit: why generic proposal language gets filed, not funded — and how live research into funder priorities changes what gets written. $15." name="description"/>
+<meta content="grant proposal writing AI, Claude AI skill, NovaKit, AI grant writing tool, proposal writing Claude" name="keywords"/>
+<link href="https://novakit.tech/blog/grant-proposal-writing" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="https://novakit.tech/blog/grant-proposal-writing" property="og:url"/>
+<meta content="The Grant You Didn't Get Wasn't Rejected for Lack of Effort" property="og:title"/>
+<meta content="Most proposals fail not because the work is weak, but because the writing doesn't match what the funder is actually looking for right now." property="og:description"/>
+<meta content="https://novakit.tech/og-blog-grant-proposal-writing.png" property="og:image"/>
+<meta content="NovaKit" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The Grant You Didn't Get Wasn't Rejected for Lack of Effort" name="twitter:title"/>
+<meta content="Generic proposal language is the most common reason strong work goes unfunded. Here's what the NovaKit Grant &amp; Proposal Writing skill does differently." name="twitter:description"/>
+<meta content="https://novakit.tech/og-blog-grant-proposal-writing.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Grant You Didn't Get Wasn't Rejected for Lack of Effort",
+  "description": "Grant & Proposal Writing Claude skill by NovaKit: why generic proposal language gets filed, not funded — and how live research into funder priorities changes what gets written.",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/grant-proposal-writing"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "Grant & Proposal Writing", "item": "https://novakit.tech/blog/grant-proposal-writing"}
+  ]
+}
+</script>
+<link href="../assets/faviconnk.jpg" rel="icon" type="image/jpeg"/>
+<link href="../assets/faviconnk.jpg" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700;800;900&amp;family=Geist+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,56px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;color:var(--text);}
+.post-body em{font-style:italic;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);font-style:italic;}
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-accent{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-accent .callout-label{color:var(--accent);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+.step-list{margin:32px 0;display:flex;flex-direction:column;gap:0;}
+.step-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--border);}
+.step-item:last-child{border-bottom:none;}
+.step-num{width:34px;height:34px;border-radius:8px;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--accent);flex-shrink:0;margin-top:2px;}
+.step-content{}
+.step-title{font-size:16px;font-weight:700;margin-bottom:6px;}
+.step-body{font-size:15px;color:var(--muted);line-height:1.65;}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:16px;font-size:14px;line-height:1.7;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-left{}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;cursor:pointer;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.rc-meta{font-size:12px;color:var(--muted);}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:32px;}
+  .before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+<div class="reading-progress" id="reading-progress"></div>
+<nav>
+<a class="logo" href="../index.html">
+<img alt="NovaKit" class="logo-img logo-dark" src="../assets/nkwhite.jpg"/>
+<img alt="NovaKit" class="logo-img logo-light" src="../assets/nkblack.jpg"/>
+</a>
+<div class="nav-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle theme" class="theme-toggle" onclick="toggleTheme()">
+<span id="theme-icon">☀️</span>
+</button>
+<a class="btn btn-primary btn-sm" href="../index.html#skills">Browse Skills</a>
+</div>
+</nav>
+<div class="breadcrumb">
+<a href="../index.html">NovaKit</a>
+<span class="breadcrumb-sep">›</span>
+<a href="index.html">Blog</a>
+<span class="breadcrumb-sep">›</span>
+<span>Grant &amp; Proposal Writing</span>
+</div>
+<header class="post-header">
+<div class="post-meta">
+<span class="post-cat">Skill Deep-Dive</span>
+<span class="meta-dot"></span>
+<span class="post-date">26 May 2026</span>
+<span class="meta-dot"></span>
+<span class="post-readtime">6 min read</span>
+</div>
+<h1 class="post-title">The Grant You Didn't Get Wasn't Rejected for <em>Lack of Effort</em></h1>
+<p class="post-subtitle">Most proposals fail not because the work behind them is weak, but because the writing doesn't reflect what the funder is actually prioritising right now. That's a research problem, not a writing problem.</p>
+<div class="post-byline">
+<div class="author">
+<div class="author-av">NK</div>
+<div>
+<div class="author-name">NovaKit</div>
+<div class="author-role">Claude Skill Research</div>
+</div>
+</div>
+<div class="share-links">
+<span>Share →</span>
+<button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+<button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+<button class="share-btn" onclick="copyLink()">Copy link</button>
+</div>
+</div>
+</header>
+<div class="post-hero-card">
+<div class="hero-card-inner">
+<div class="hero-card-icon">📋</div>
+<div>
+<div class="hero-card-label">NovaKit Skill</div>
+<div class="hero-card-text">Grant &amp; Proposal Writing — a Claude skill that researches funder priorities before writing a single sentence, then produces a proposal calibrated to what this reviewer is looking for right now.</div>
+</div>
+</div>
+</div>
+<article class="post-body">
+<p>The development director had spent eleven days on the application. She'd pulled the previous year's successful proposals as reference, restructured the needs statement twice, and had three colleagues read the final draft. The funder passed. The feedback — where it came at all — was a single line: "did not align with current funding priorities." Eleven days. One line.</p>
+<p>What she hadn't done — what almost no one does when writing a <a href="https://novakit.tech/skills/grant-proposal-writing.html">grant proposal</a> — was research what that funder had actually funded in the previous six months, what language appeared consistently in their most recent awards, and whether the strategic priorities on their website had been updated since the last cycle. The proposal was well-written. It described real work with real impact. It just wasn't written for the funder it was sent to — not the funder as they existed when the proposal was submitted, but the funder as they'd been described on a webpage that hadn't been updated in eighteen months.</p>
+<p>This is the gap that trips up most grant writers, most of the time. Not weak writing. Not insufficient impact data. A mismatch between what you wrote and what the reviewer needed to see — a mismatch that a few hours of targeted funder research would have caught before submission.</p>
+<h2>What Generic Proposal Writing <em>Actually Produces</em></h2>
+<p>Ask any AI — including vanilla Claude — to write a grant proposal and you'll receive something that is structurally correct and substantively hollow. The needs statement will use sector-standard language. The outcomes section will list measurable goals that sound right but aren't anchored to this funder's theory of change. The budget narrative will be formatted properly. And a reviewer who reads forty proposals a week will recognise it immediately as something that could have been sent to any funder in the category.</p>
+<p>The tell isn't bad writing — it's interchangeable writing. A proposal written without research into the specific funder uses language that is technically appropriate and strategically blind. It doesn't echo the funder's own vocabulary back to them. It doesn't speak to the gap they've identified in their most recent annual report. It doesn't connect the applicant's work to the specific outcome the funder has publicly committed to achieving in this funding cycle. It's a strong application for a different funder, sent to the wrong address.</p>
+<div class="callout callout-blue">
+<div class="callout-icon">💡</div>
+<div class="callout-content">
+<div class="callout-label">The core problem</div>
+<p>A proposal written without funder research is technically a grant application and strategically a form letter — it describes your work, not the match between your work and this funder's current priorities.</p>
+</div>
+</div>
+<p>The most expensive part of this mistake isn't the rejected application. It's the work that went into it: the hours drafting, the colleagues consulted, the emotional investment in a submission that was never going to land because the alignment work was skipped before the writing began.</p>
+<h2>Why <em>Funder Research First</em> Changes Everything That Follows</h2>
+<p>The NovaKit Grant &amp; Proposal Writing skill doesn't open with a blank document and a prompt. It opens with research: what has this funder funded recently, what language appears in their active RFPs and strategic documents, what priorities have shifted since their last cycle, and what gaps in their portfolio does your work potentially fill. That research stage happens before a single sentence of the proposal is drafted.</p>
+<p>What comes out of that research isn't just better framing — it's a fundamentally different document. The needs statement speaks directly to the gap the funder has publicly identified, in language that mirrors their own. The outcomes section maps to their stated theory of change, not a generic logic model. The organisational capacity section emphasises the specific credentials this funder has historically weighted most heavily. Every section is written for this reviewer, reading this application, in this funding cycle.</p>
+<div class="pull-quote">
+<p>The skill earns the right to write the proposal by <em>understanding who's reading it</em> before writing a word.</p>
+</div>
+<p>The practical result is a proposal that reads as if the applicant deeply understands the funder's work — because the skill genuinely does the research to make that true. Reviewers notice. Not because the writing is clever, but because the alignment is real: the proposal is answering the questions the reviewer actually has, not the questions a generic template assumes they have.</p>
+<h2>What the Grant &amp; Proposal Writing Skill <em>Actually Does</em></h2>
+<p>The skill runs a structured sequence that mirrors what an experienced grant consultant would do before touching a first draft — but compressed into a single Claude session.</p>
+<div class="step-list">
+<div class="step-item">
+<div class="step-num">1</div>
+<div class="step-content">
+<div class="step-title">Funder and RFP research</div>
+<div class="step-body">Before writing begins, the skill researches the specific funder: recent awards, current strategic priorities, language patterns in their active solicitations, and any shifts in focus since their last major funding cycle. This is the stage most proposal writers skip or do incompletely — it's where the skill spends the most time.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">2</div>
+<div class="step-content">
+<div class="step-title">Three-question calibration</div>
+<div class="step-body">The skill asks three questions to establish your specific context: the organisation or project being described, the funding amount and use, and the single strongest alignment point between your work and this funder's stated priorities. The same funder produces a different proposal for a community health organisation than for a research institution — calibration ensures the output reflects that.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">3</div>
+<div class="step-content">
+<div class="step-title">Section-by-section drafting with alignment checks</div>
+<div class="step-body">Each section — needs statement, project description, outcomes, evaluation plan, budget narrative, organisational capacity — is drafted with the funder research active. Alignment with funder priorities is checked at each section, not as an afterthought in a final edit pass.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">4</div>
+<div class="step-content">
+<div class="step-title">Anti-slop quality gate</div>
+<div class="step-body">Before the proposal is delivered, each section is reviewed for the specific tells that mark a generic application: interchangeable language, outcomes not tied to funder theory of change, needs statements that could appear in any proposal in the category. Anything that would read as form-letter writing to an experienced reviewer gets rewritten before you see it.</div>
+</div>
+</div>
+</div>
+<div class="soft-cta">
+<div class="soft-cta-left">
+<div class="soft-cta-kicker">NovaKit Skill</div>
+<div class="soft-cta-title">Grant &amp; Proposal Writing — funder-research-first, for Claude</div>
+<div class="soft-cta-sub">Works inside Claude. No technical setup. Produces a complete proposal draft — needs statement, project description, outcomes, budget narrative, and capacity section — calibrated to your specific funder's current priorities.</div>
+</div>
+<div class="soft-cta-right">
+<a class="btn btn-primary" href="../skills/grant-proposal-writing.html">See the skill</a>
+<span class="soft-cta-price">from $15 · instant download</span>
+</div>
+</div>
+<h2>Generic Proposal vs <em>NovaKit</em> Proposal</h2>
+<p>The difference between a generic proposal and a well-researched one isn't visible in the structure — both have a needs statement, a project description, an outcomes section. It's visible in whether the writing sounds like it was written for this funder or for any funder.</p>
+<div class="before-after">
+<div class="ba-card ba-before">
+<div class="ba-header">Without NovaKit</div>
+<div class="ba-body">
+<strong>Needs Statement:</strong> "Youth in under-resourced communities face significant barriers to educational attainment. Studies show that access to quality after-school programming correlates with improved academic outcomes. Our organisation addresses this critical gap by providing structured learning environments..."<br/><br/>
+<em style="font-size:13px;opacity:0.7;">Written from memory. No reference to this funder's specific language or current priorities. Could appear in any application in the education sector.</em>
+</div>
+</div>
+<div class="ba-card ba-after">
+<div class="ba-header">✓ With NovaKit Skill</div>
+<div class="ba-body">
+<strong>Needs Statement:</strong> "The Eastside district's 2025 learning recovery data — cited in the Foundation's December equity brief — shows a 23-month literacy gap for students in the three zip codes our programme serves. The Foundation's current priority of closing measurable gaps by 2027 maps directly to what our structured tutoring model has demonstrated in pilot: a 1.4-grade-level gain per academic year for students with consistent attendance..."<br/><br/>
+<em style="font-size:13px;opacity:0.9;">Opens with the funder's own cited data. Connects to their published 2027 priority. Outcome figure is specific and tied to the funder's stated metric of interest.</em>
+</div>
+</div>
+</div>
+<p>The difference is that the second version is in a conversation with the funder — it's using their data, referencing their timeline, and connecting its outcomes to the specific change they've publicly committed to funding. That's not a stylistic choice. It's the result of researching the funder before writing the proposal, which is what the skill does automatically before producing a single draft sentence.</p>
+<hr class="post-divider"/>
+<h2>Who Gets the Most from <em>Grant &amp; Proposal Writing</em></h2>
+<div class="callout callout-green">
+<div class="callout-icon">✓</div>
+<div class="callout-content">
+<div class="callout-label">Built for</div>
+<p>Nonprofit development officers writing multiple applications per quarter who need stronger funder alignment without proportionally more research time. Independent researchers applying for project grants. Freelance consultants writing client proposals where the quality of the document directly determines whether the engagement is won.</p>
+</div>
+</div>
+<p>The skill does its sharpest work for anyone who writes proposals regularly and already understands the structure — they know what a good proposal looks like, but the research stage before each application is the bottleneck. Compressing that research into the skill's opening stage, then having it inform every section of the draft, is where the time saving and quality improvement happen simultaneously.</p>
+<p>For freelance consultants, the dynamic is slightly different: the proposal is both a sales document and a scope-of-work, and the alignment question is between the consultant's capabilities and the client's specific current pain. The skill's calibration questions and research stage apply equally — the output is a proposal that reads as if the consultant already understands the client's situation in depth, because the research stage ensured that's actually true.</p>
+<h2>The Output You <em>Walk Away With</em></h2>
+<p>The skill produces a complete proposal draft: needs statement, project description, outcomes and evaluation framework, organisational capacity section, and budget narrative outline — each section drafted with funder alignment built in, not added at the end. You don't receive a template with blanks to fill; you receive a draft that reads as a finished document, written for your specific funder in their current funding cycle.</p>
+<p>From the download: open Claude, load the skill, answer three questions about your organisation, project, and target funder. The skill runs its research stage, calibrates to your context, drafts each section with alignment checks active, passes the quality gate, and delivers the complete proposal. The draft is ready to review, refine, and submit — not ready to start from.</p>
+<p>Eleven days and one rejection line is a pattern that doesn't change by writing harder. It changes by adding the research stage that most proposals skip — the stage where you stop describing your work in general and start describing your work in the specific language of the funder who's going to decide whether it gets funded. That's what the skill does before it writes a word of the proposal. The writing that follows is different because the understanding that precedes it is real.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/visa-application-cover-letter.html">a visa cover letter that addresses every required point</a>. If you're working across the full Legal &amp; Biz workflow, the <a href="https://novakit.tech/skills/bundles/legal-biz-bundle.html">Legal &amp; Biz bundle</a> covers everything in one place.</p>
+<div class="soft-cta">
+<div class="soft-cta-left">
+<div class="soft-cta-kicker">Ready to try it?</div>
+<div class="soft-cta-title">Grant &amp; Proposal Writing for Claude</div>
+<div class="soft-cta-sub">A complete funder-aligned proposal draft — needs statement through budget narrative — produced in one Claude session. Works with your free Claude account.</div>
+</div>
+<div class="soft-cta-right">
+<a class="btn btn-primary" href="../skills/grant-proposal-writing.html">Get the skill</a>
+<span class="soft-cta-price">$15 · instant download · 7-day refund</span>
+</div>
+</div>
+<div class="post-tags">
+<span class="tags-label">Tags</span>
+<span class="tag">Grant Writing</span>
+<span class="tag">Proposal Writing</span>
+<span class="tag">Claude AI</span>
+<span class="tag">Nonprofits</span>
+<span class="tag">AI Skills</span>
+</div>
+</article>
+<section class="related-section">
+<div class="related-label">More from the blog</div>
+<div class="related-grid">
+<a class="related-card" href="grant-proposal-writing-why-generic-fails.html">
+<div class="rc-cat">AI for Work</div>
+<div class="rc-title">Why Every Grant Proposal Sounds the Same — and Why Reviewers Can Tell</div>
+<div class="rc-meta">26 May 2026 · 5 min read</div>
+</a>
+<a class="related-card" href="content-calendar.html">
+<div class="rc-cat">Skill Deep-Dive</div>
+<div class="rc-title">Your Content Calendar Is Full — and Still Not Working</div>
+<div class="rc-meta">26 May 2026 · 6 min read</div>
+</a>
+</div>
+</section>
+<footer>
+<div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+<div class="footer-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+</footer>
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

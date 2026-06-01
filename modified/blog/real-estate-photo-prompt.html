@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Real Estate Photo Prompt That Produces Images You Can Actually Use | NovaKit Blog</title>
+<meta content="Real Estate Photo Prompt Claude AI skill: why generic AI writes room descriptions and how a calibrated skill writes the technical brief that produces listing-ready property images." name="description"/>
+<meta content="real estate photo prompt AI Claude, AI real estate photography prompt, property listing photo AI, NovaKit, real estate photo prompt skill" name="keywords"/>
+<link href="https://novakit.tech/blog/real-estate-photo-prompt" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="https://novakit.tech/blog/real-estate-photo-prompt" property="og:url"/>
+<meta content="The Real Estate Photo Prompt That Produces Images You Can Actually Use" property="og:title"/>
+<meta content="Generic AI writes room descriptions. The Real Estate Photo Prompt skill writes the technical brief — calibrated to property type, listing tier, and the buyer emotion you need to land." property="og:description"/>
+<meta content="https://novakit.tech/og-blog-real-estate-photo-prompt.png" property="og:image"/>
+<meta content="NovaKit" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The Real Estate Photo Prompt That Produces Images You Can Actually Use" name="twitter:title"/>
+<meta content="Generic AI writes room descriptions. The Real Estate Photo Prompt skill writes technical briefs — calibrated to property type, listing tier, and buyer emotion." name="twitter:description"/>
+<meta content="https://novakit.tech/og-blog-real-estate-photo-prompt.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Real Estate Photo Prompt That Produces Images You Can Actually Use",
+  "description": "Real Estate Photo Prompt Claude AI skill: why generic AI writes room descriptions and how a calibrated skill writes the technical brief that produces listing-ready property images.",
+  "datePublished": "2026-05-27",
+  "dateModified": "2026-05-27",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/real-estate-photo-prompt"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "The Real Estate Photo Prompt That Produces Images You Can Actually Use", "item": "https://novakit.tech/blog/real-estate-photo-prompt"}
+  ]
+}
+</script>
+<link href="../assets/faviconnk.jpg" rel="icon" type="image/jpeg"/>
+<link href="../assets/faviconnk.jpg" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700;800;900&amp;family=Geist+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,56px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;}
+.post-body em{font-style:italic;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);font-style:italic;}
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-accent{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-accent .callout-label{color:var(--accent);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+.step-list{margin:32px 0;display:flex;flex-direction:column;gap:0;}
+.step-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--border);}
+.step-item:last-child{border-bottom:none;}
+.step-num{width:34px;height:34px;border-radius:8px;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--accent);flex-shrink:0;margin-top:2px;}
+.step-content{}
+.step-title{font-size:16px;font-weight:700;margin-bottom:6px;}
+.step-body{font-size:15px;color:var(--muted);line-height:1.65;}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:16px;font-size:14px;line-height:1.7;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-left{}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;cursor:pointer;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.rc-meta{font-size:12px;color:var(--muted);}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:32px;}
+  .before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+<div class="reading-progress" id="reading-progress"></div>
+<nav>
+<a class="logo" href="../index.html">
+<img alt="NovaKit" class="logo-img logo-dark" src="../assets/nkwhite.jpg"/>
+<img alt="NovaKit" class="logo-img logo-light" src="../assets/nkblack.jpg"/>
+</a>
+<div class="nav-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle theme" class="theme-toggle" onclick="toggleTheme()">
+<span id="theme-icon">☀️</span>
+</button>
+<a class="btn btn-primary btn-sm" href="../index.html#skills">Browse Skills</a>
+</div>
+</nav>
+<div class="breadcrumb">
+<a href="../index.html">NovaKit</a>
+<span class="breadcrumb-sep">›</span>
+<a href="index.html">Blog</a>
+<span class="breadcrumb-sep">›</span>
+<span>Real Estate Photo Prompt</span>
+</div>
+<header class="post-header">
+<div class="post-meta">
+<span class="post-cat">Skill Deep-Dive</span>
+<span class="meta-dot"></span>
+<span class="post-date">27 May 2026</span>
+<span class="meta-dot"></span>
+<span class="post-readtime">7 min read</span>
+</div>
+<h1 class="post-title">The Real Estate Photo Prompt That Produces <em>Images You Can Actually Use</em></h1>
+<p class="post-subtitle">Generic AI gives you a description of a room. The Real Estate Photo Prompt skill gives you a technical brief — the lighting spec, the staging detail, the emotional register — that an AI image tool can actually execute.</p>
+<div class="post-byline">
+<div class="author">
+<div class="author-av">NK</div>
+<div>
+<div class="author-name">NovaKit</div>
+<div class="author-role">Claude Skill Research</div>
+</div>
+</div>
+<div class="share-links">
+<span>Share →</span>
+<button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+<button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+<button class="share-btn" onclick="copyLink()">Copy link</button>
+</div>
+</div>
+</header>
+<div class="post-hero-card">
+<div class="hero-card-inner">
+<div class="hero-card-icon">🏠</div>
+<div>
+<div class="hero-card-label">NovaKit Skill</div>
+<div class="hero-card-text">Real Estate Photo Prompt — technically specified, listing-ready image briefs calibrated to property type, tier, and buyer emotion</div>
+</div>
+</div>
+</div>
+<article class="post-body">
+<p>You have a mid-century modern home to list. Good bones, strong natural light, a kitchen that photographs well when you get the angle right. You need hero images before the listing goes live on Friday. You ask Claude to write a photo prompt for the main living area and it comes back with: "A bright, modern living room with large windows, natural light streaming in, comfortable furniture arranged around a central coffee table, warm and inviting atmosphere."</p>
+<p>You paste that into Midjourney. The image it produces looks like a stock photo from a furniture catalogue — the furniture is generically stylish, the light is flat and even, the room has no character at all. Nothing about it says mid-century modern, nothing about it suggests a specific time of day or a specific mood, and nothing about it would make a buyer looking at twelve listings on a Saturday morning stop scrolling. You try again with a slightly different description. Same result.</p>
+<p>The problem isn't the image tool. It's the brief. A <a href="https://novakit.tech/skills/real-estate-photo-prompt.html">real estate photo</a> prompt is not a description of a room — it's a technical specification for a shot. The lighting direction, the focal length equivalent, the time of day, the specific staging elements that should be visible, the emotional register the image needs to land in. Generic AI doesn't know any of this because it's never been told it matters. The skill does, because researching what makes property photography work is the first thing it does before writing a word.</p>
+<h2>Why Property Photography Is a <em>Technical Discipline</em>, Not a Description Task</h2>
+<p>Professional real estate photographers don't walk into a property and describe what they see. They make a series of precise decisions before they pick up the camera: which corner to shoot from to maximise perceived room size, whether to use ambient light or supplemental lighting, what time of day produces the warmest light through west-facing windows, which staging elements to pull into the frame and which to remove. The resulting image doesn't just document the room — it constructs a specific version of it that photographs better than it looks in person.</p>
+<p>An AI image tool needs the same information to produce a useful result. "Bright and inviting" is not a lighting specification. "Warm atmosphere" is not a colour temperature. "Modern furniture" is not a staging brief. The gap between a description and a technical brief is the gap between an image that looks like a stock photo and one that looks like a real property shot by someone who knew exactly what they were doing.</p>
+<div class="callout callout-blue">
+<div class="callout-icon">💡</div>
+<div class="callout-content">
+<div class="callout-label">The core problem</div>
+<p>An AI image tool produces what you specify. Specify a description and you get a generic room. Specify a technical brief — lens equivalent, light direction, time of day, staging detail, emotional register — and you get a shot that could go straight into a listing.</p>
+</div>
+</div>
+<p>The listing tier compounds this. A $280,000 terrace house and a $2.8M waterfront property need completely different photography — different lighting moods, different staging density, different shot compositions, different emotional registers. The terrace needs images that feel attainable and warm. The waterfront needs images that feel aspirational and considered. Generic AI writes the same kind of prompt for both, because it has no awareness of price point, buyer profile, or what emotion needs to be created in the person scrolling the listing at 9pm on a Sunday.</p>
+<h2>What <em>Live Research</em> Changes for a Photography Prompt Skill</h2>
+<p>The Real Estate Photo Prompt skill researches current property photography trends before writing a single line of the brief. Not what was working in real estate imagery two years ago — what compositions, lighting approaches, and staging aesthetics are performing in listings at your property tier right now. The market for property photography shifts: the warm golden-hour aesthetic that dominated listings in 2022 is no longer cutting through in the same way; the staging density that luxury properties used to favour has thinned out considerably. A skill that researches before it writes knows this.</p>
+<p>That research shapes which technical decisions get made in the brief. If twilight exterior shots are performing strongly for properties in a particular price bracket right now, the skill knows to include them and to specify them correctly — the exact blue-hour window, the interior lighting that needs to be on, the exterior elements that should be in frame. If drone perspectives are currently overused in a specific market segment and actually reducing click-through, the skill knows to steer away from them. Generic AI produces whatever it thinks real estate photography looks like from its training data. The skill produces what's working in the current market.</p>
+<div class="pull-quote">
+<p>A photo brief written without knowledge of what's performing in listings right now produces images that look like <em>last year's <a href="https://novakit.tech/skills/bundles/realtor-bundle.html">property market</a></em>.</p>
+</div>
+<p>The calibration to property type is the second major differentiator. A Victorian terrace, a new-build apartment, a rural farmhouse, and a penthouse with city views each require a completely different photographic approach — different focal lengths, different light quality, different staging register, different compositional priorities. The skill asks which property type it's working with and adjusts every technical parameter accordingly. Generic AI produces a prompt that could describe any residential interior and does justice to none of them specifically.</p>
+<h2>What the <em>Real Estate Photo Prompt</em> Skill Produces</h2>
+<p>The skill asks four questions before writing: property type and tier, the key selling features of the specific property, the target buyer profile, and the listing context — whether this is for an online portal, a social campaign, a print brochure, or all three. Those answers determine a complete photographic brief for each shot, not just a description:</p>
+<div class="step-list">
+<div class="step-item">
+<div class="step-num">1</div>
+<div class="step-content">
+<div class="step-title">Shot composition and camera position</div>
+<div class="step-body">The specific corner, height, and angle that maximises perceived space for this room type. For a narrow kitchen, that means a specific wide-angle equivalent from the far corner at counter height. For a living room with a feature wall, it means a three-quarter angle that keeps the wall in frame without distorting the furniture scale. The brief specifies the position, not just the subject.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">2</div>
+<div class="step-content">
+<div class="step-title">Lighting specification</div>
+<div class="step-body">Time of day, light direction, colour temperature, and whether the look requires supplemental fill or pure ambient. A south-facing kitchen at 10am has a specific quality of light that the brief captures in technical terms — not "bright and natural" but the actual parameters that tell an AI image tool what to render. The emotional register of the lighting is specified, not implied.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">3</div>
+<div class="step-content">
+<div class="step-title">Staging and detail brief</div>
+<div class="step-body">Which elements should be visible and where — a single vase, an open book, a specific textile — and which should be removed from frame. Staging density is calibrated to listing tier: entry-level properties need warm, lived-in details; luxury properties need considered sparseness. The brief specifies both what to include and what to exclude, which is as important for a clean result.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">4</div>
+<div class="step-content">
+<div class="step-title">Emotional register and buyer target</div>
+<div class="step-body">The specific feeling the image needs to create in the buyer looking at it — not "inviting" but the precise emotional state that moves a specific buyer profile from scrolling to clicking. A first-home buyer needs to feel possibility. A downsizer needs to feel ease. A luxury buyer needs to feel arrival. The brief is written toward the buyer, not toward the room.</div>
+</div>
+</div>
+<div class="step-item">
+<div class="step-num">5</div>
+<div class="step-content">
+<div class="step-title">Full shot list for the property</div>
+<div class="step-body">The skill doesn't produce a single prompt — it produces a complete shot list for the property, with a technical brief for each key space. Hero exterior, primary living area, kitchen, main bedroom, and any feature spaces specific to this property. Each brief is self-contained: paste it directly into an AI image tool and get a consistent result across the whole listing.</div>
+</div>
+</div>
+</div>
+<div class="soft-cta">
+<div class="soft-cta-left">
+<div class="soft-cta-kicker">NovaKit Skill</div>
+<div class="soft-cta-title">Real Estate Photo Prompt — technical briefs for listing-ready property images</div>
+<div class="soft-cta-sub">Complete shot list with per-space technical briefs. Works inside Claude. No setup required.</div>
+</div>
+<div class="soft-cta-right">
+<a class="btn btn-primary" href="../skills/real-estate-photo-prompt.html">See the skill</a>
+<span class="soft-cta-price">from $15 · instant download</span>
+</div>
+</div>
+<h2>Generic Prompt vs <em>Technical Brief</em></h2>
+<p>Same property: a three-bedroom Victorian terrace, asking price £485,000, south-facing kitchen as the key selling feature. Here's the kitchen prompt handled two ways:</p>
+<div class="before-after">
+<div class="ba-card ba-before">
+<div class="ba-header">Without NovaKit</div>
+<div class="ba-body">
+        A bright, modern kitchen in a Victorian terraced house. Natural light streams through the window. The kitchen has white cabinets and marble countertops. There are some plants on the windowsill. The atmosphere is warm and inviting. Professional real estate photography style, wide angle lens.
+      </div>
+</div>
+<div class="ba-card ba-after">
+<div class="ba-header">✓ With NovaKit Skill</div>
+<div class="ba-body">
+        Architectural interior photography, south-facing Victorian terrace kitchen, 10am late spring light, shot from the far left corner at standing height with a 24mm equivalent lens. White shaker cabinets, honed Carrara marble worktop. Window centred in frame, direct southern sun creating warm directional shadows across the countertop. Windowsill: three terracotta herb pots, nothing else. No overhead lighting — pure ambient. Colour temperature 4800K. Emotional register: Sunday morning, unhurried. Shot for a £485,000 family-market listing.
+      </div>
+</div>
+</div>
+<p>The right side gives an AI image tool something it can actually execute. The corner position, the lens equivalent, the time of day, the specific light quality, the staging detail, and the emotional register are all specified — not implied. "Sunday morning, unhurried" is not decoration; it's a lighting and atmosphere direction that produces a materially different image from "warm and inviting." The left side produces a competent generic kitchen image. The right side produces the specific kitchen shot that makes a buyer in the target market stop scrolling.</p>
+<hr class="post-divider"/>
+<h2>Who Gets the Most from <em>Real Estate Photo Prompt</em></h2>
+<div class="callout callout-green">
+<div class="callout-icon">✓</div>
+<div class="callout-content">
+<div class="callout-label">Built for</div>
+<p>Agents and brokers using AI image tools to generate listing visuals before a professional shoot, or for properties where a full shoot isn't in the budget. Property developers marketing off-plan units who need consistent, high-quality renders for each space type. Airbnb and short-let hosts who need photography that converts browsers into bookings rather than documenting the property accurately.</p>
+</div>
+</div>
+<p>The clearest value is for agents who are already using AI image generation as part of their listing workflow — and finding that the images come back looking like stock photography rather than the specific property. At that point, the bottleneck is always the brief. A more specific, technically grounded brief produces a categorically better result from the same tools. The skill supplies the specification knowledge that turns an AI image tool from a generic room generator into something that can produce listing-ready shots.</p>
+<p>For off-plan property developers, the shot list output is particularly useful: consistent technical briefs across every unit type — one-bed, two-bed, penthouse — that produce a coherent visual language across the whole development's marketing material. Without that consistency, renders for the same development can look like they came from different properties, which undermines the campaign's premium positioning before a single buyer has visited the site.</p>
+<h2>The Output You <em>Walk Away With</em></h2>
+<p>Each run of the Real Estate Photo Prompt skill produces a complete shot list for the property — typically five to eight briefs covering the hero exterior, key interior spaces, and any feature areas specific to this listing. Each brief is a self-contained technical specification: paste it directly into Midjourney, DALL-E, or any comparable AI image tool and generate a consistent result without additional adjustment. The briefs are also formatted to hand to a professional photographer as a pre-shoot specification, which removes the briefing conversation from the process and produces more consistent results from the shoot itself.</p>
+<p>The path from output to listing image is the generation itself: paste the brief, generate, select from the variants. No rewriting, no re-describing, no iteration through progressively more specific descriptions until you accidentally land on something that works. The research and specification have already happened. What's left is choosing the best image from a set of technically correct options.</p>
+<p>The listing image is not a photograph of a property. It is a constructed argument for why a buyer should spend their Saturday viewing it. The technical decisions in the brief — the light, the angle, the staging, the emotional register — are the argument. A generic description leaves those decisions to chance. A technical brief makes them deliberately.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/hotel-airbnb-listing-copy.html">a listing that converts browsers into confirmed bookings</a>.</p>
+<div class="soft-cta">
+<div class="soft-cta-left">
+<div class="soft-cta-kicker">Ready to try it?</div>
+<div class="soft-cta-title">Real Estate Photo Prompt for Claude</div>
+<div class="soft-cta-sub">Complete property shot list with per-space technical briefs. Works with your existing Claude account.</div>
+</div>
+<div class="soft-cta-right">
+<a class="btn btn-primary" href="../skills/real-estate-photo-prompt.html">Get the skill</a>
+<span class="soft-cta-price">$15 · instant download · 7-day refund</span>
+</div>
+</div>
+<div class="post-tags">
+<span class="tags-label">Tags</span>
+<span class="tag">Real Estate Photography</span>
+<span class="tag">Property Listings</span>
+<span class="tag">Claude AI</span>
+<span class="tag">AI Image Prompts</span>
+<span class="tag">Realtors</span>
+</div>
+</article>
+<section class="related-section">
+<div class="related-label">More from the blog</div>
+<div class="related-grid">
+<a class="related-card" href="real-estate-photo-prompt-why-generic-fails.html">
+<div class="rc-cat">AI for Work</div>
+<div class="rc-title">Why Your Real Estate Photo Prompts Produce Stock Photos Instead of Listing Images</div>
+<div class="rc-meta">27 May 2026 · 6 min read</div>
+</a>
+<a class="related-card" href="job-description-writer.html">
+<div class="rc-cat">Skill Deep-Dive</div>
+<div class="rc-title">The Job Description That Attracts the Hire You Actually Need</div>
+<div class="rc-meta">26 May 2026 · 7 min read</div>
+</a>
+</div>
+</section>
+<footer>
+<div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+<div class="footer-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+</footer>
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

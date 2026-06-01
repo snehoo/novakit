@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Business Plan Investors Read Past the Executive Summary | NovaKit Blog</title>
+<meta name="description" content="Business plan AI Claude: why generic AI business plans get ignored and how a stage-calibrated Claude skill produces plans built to the spec investors actually evaluate — not the template they don't.">
+<meta name="keywords" content="business plan AI Claude, AI business plan writer, Claude business plan skill, NovaKit business plan, startup business plan AI">
+<link rel="canonical" href="https://novakit.tech/blog/business-plan">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novakit.tech/blog/business-plan">
+<meta property="og:title" content="The Business Plan Investors Read Past the Executive Summary">
+<meta property="og:description" content="A generic AI business plan looks complete and convinces no one. Here's how stage calibration and investor-aware structure change what a plan actually does.">
+<meta property="og:image" content="https://novakit.tech/og-blog-business-plan.png">
+<meta property="og:site_name" content="NovaKit">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Business Plan Investors Read Past the Executive Summary">
+<meta name="twitter:description" content="A generic AI business plan looks complete and convinces no one. Here's how stage calibration and investor-aware structure change what a plan actually does.">
+<meta name="twitter:image" content="https://novakit.tech/og-blog-business-plan.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Business Plan Investors Read Past the Executive Summary",
+  "description": "Business plan AI Claude: why generic AI business plans get ignored and how a stage-calibrated Claude skill produces plans built to the spec investors actually evaluate.",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/business-plan"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "The Business Plan Investors Read Past the Executive Summary", "item": "https://novakit.tech/blog/business-plan"}
+  ]
+}
+</script>
+
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="../assets/faviconnk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,54px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);}
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+.stage-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.stage-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;}
+.stage-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.stage-title{font-size:16px;font-weight:700;margin-bottom:10px;line-height:1.3;}
+.stage-body{font-size:14px;color:var(--muted);line-height:1.65;}
+.step-list{margin:32px 0;display:flex;flex-direction:column;gap:0;}
+.step-item{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--border);}
+.step-item:last-child{border-bottom:none;}
+.step-num{width:34px;height:34px;border-radius:8px;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:var(--accent);flex-shrink:0;margin-top:2px;}
+.step-content{}
+.step-title{font-size:16px;font-weight:700;margin-bottom:6px;}
+.step-body{font-size:15px;color:var(--muted);line-height:1.65;}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:32px 0;}
+.ba-card{border-radius:12px;overflow:hidden;border:1px solid var(--border);}
+.ba-header{padding:10px 16px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+.ba-before .ba-header{background:rgba(255,255,255,0.04);color:var(--muted);}
+.ba-after .ba-header{background:var(--green-bg);color:var(--green-text);}
+.ba-body{padding:18px;font-size:14px;line-height:1.75;background:var(--surface);}
+.ba-before .ba-body{color:var(--muted);}
+.ba-after .ba-body{color:var(--text);}
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;display:block;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.rc-meta{font-size:12px;color:var(--muted);}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:32px;}
+  .stage-grid,.before-after,.related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+}
+</style>
+</head>
+<body>
+
+<div class="reading-progress" id="reading-progress"></div>
+
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" class="logo-img logo-dark" alt="NovaKit">
+    <img src="../assets/nkblack.jpg" class="logo-img logo-light" alt="NovaKit">
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <span id="theme-icon">☀️</span>
+    </button>
+    <a href="../index.html#skills" class="btn btn-primary btn-sm">Browse Skills</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">NovaKit</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="index.html">Blog</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>Business Plan</span>
+</div>
+
+<header class="post-header">
+  <div class="post-meta">
+    <span class="post-cat">Skill Deep-Dive</span>
+    <span class="meta-dot"></span>
+    <span class="post-date">26 May 2026</span>
+    <span class="meta-dot"></span>
+    <span class="post-readtime">8 min read</span>
+  </div>
+
+  <h1 class="post-title">The Business Plan Investors Read <em>Past the Executive Summary</em></h1>
+
+  <p class="post-subtitle">A generic AI business plan looks thorough and convinces no one. The problem isn't the writing — it's that the plan was built to the wrong spec. Stage calibration is what changes that.</p>
+
+  <div class="post-byline">
+    <div class="author">
+      <div class="author-av">NK</div>
+      <div>
+        <div class="author-name">NovaKit</div>
+        <div class="author-role">Claude Skill Research</div>
+      </div>
+    </div>
+    <div class="share-links">
+      <span>Share →</span>
+      <button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+      <button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+      <button class="share-btn" onclick="copyLink()">Copy link</button>
+    </div>
+  </div>
+</header>
+
+<div class="post-hero-card">
+  <div class="hero-card-inner">
+    <div class="hero-card-icon">📊</div>
+    <div>
+      <div class="hero-card-label">NovaKit Skill</div>
+      <div class="hero-card-text">Business Plan — stage-calibrated, investor-aware plans that address what your specific audience actually evaluates</div>
+    </div>
+  </div>
+</div>
+
+<article class="post-body">
+
+  <p>The business plan that comes back from vanilla Claude is complete in every technical sense. It has an executive summary, a market analysis, a competitive landscape section, a financial model with projections, an operations plan, and a team section. It covers all the things a business plan is supposed to cover. It reads like a document produced by someone who studied what business plans contain rather than someone who understood what this particular investor, at this particular stage, with this particular thesis, is actually trying to evaluate.</p>
+
+  <p>That distinction is the entire gap between a plan that gets a follow-up meeting and one that gets a polite pass. Investors reading a seed-stage plan from a pre-revenue founder are not evaluating the same things as investors reading a Series A plan from a company with eighteen months of ARR data. The questions they're asking, the sections they weight, the signals they're looking for — all of it shifts. A plan built without accounting for that shift answers questions the reader isn't asking and buries answers to questions they are, under sections they've already stopped reading.</p>
+
+  <p>The Business Plan skill is built around one premise: stage and audience calibration happen before the first section is written, not after.</p>
+
+
+  <h2>Why <em>Every Business Plan Looks the Same</em> — And Why That's a Problem</h2>
+
+  <p>Ask any AI for a business plan and you'll get the same architecture: executive summary, company overview, market analysis, product description, competitive analysis, marketing and sales strategy, operations plan, financial projections, team and management, appendix. This is the canonical structure taught in MBA programmes and business planning courses. It is also the structure that investors at every stage have learned to skim efficiently — which means it's a structure optimised for being read quickly by someone looking for a reason to pass.</p>
+
+  <p>The canonical structure makes no distinction between a pre-revenue founder raising a £150k friends-and-family round and a post-product founder raising a $3M seed from institutional investors. Both get the same document architecture, the same section weighting, the same emphasis on market size calculations that early-stage investors discount heavily and later-stage investors rely on entirely. A plan that's right for one context is actively wrong for the other — and because the structure looks the same from the outside, neither the founder nor the AI generating it has any way to know the difference without stage awareness built into the generation process.</p>
+
+  <div class="callout callout-blue">
+    <div class="callout-icon">💡</div>
+    <div class="callout-content">
+      <div class="callout-label">The core problem</div>
+      <p>A business plan written for "investors" is written for no one in particular. Angel investors, seed funds, family offices, strategic corporates, and bank lenders read business plans through completely different lenses — and a plan that doesn't account for which lens it's being read through fails to address what the reader is actually evaluating.</p>
+    </div>
+  </div>
+
+  <p>The financial projections section illustrates this cleanly. A pre-revenue founder producing a five-year financial model with month-by-month revenue forecasts is spending significant time building something an early-stage investor will treat as almost entirely fictional — because without revenue history, every assumption in the model is a guess and experienced investors know it. The same founder would be far better served by a plan that spends that section explaining the unit economics logic, the pricing rationale, and the key assumptions that would have to hold true for the business to work — and acknowledges directly that the projections are illustrative rather than predictive. That's a plan that demonstrates understanding of how early-stage investing works. The five-year model demonstrates the opposite.</p>
+
+
+  <h2>What <em>Stage Calibration</em> Changes About the Plan</h2>
+
+  <p>Before the Business Plan skill writes a single section heading, it establishes three things: funding stage and target raise amount, investor type (angel, seed fund, bank, strategic, grant body), and whether the business is pre-revenue, early-revenue, or scaling. From those three inputs, the entire architecture of the plan changes — not just the tone, but which sections exist, how much space each section occupies, what the financial model looks like, and what questions each section is designed to answer.</p>
+
+  <div class="stage-grid">
+    <div class="stage-card">
+      <div class="stage-label">Pre-revenue · Angel / Friends & Family</div>
+      <div class="stage-title">Lead with founder, vision, and the problem's size</div>
+      <div class="stage-body">Angels at pre-revenue stage are betting on people and problems, not models. The plan leads with the founder's credibility and the problem's urgency. Financial projections are simplified and explicitly framed as directional. Market size is treated as a ceiling, not a precision estimate. The team section carries disproportionate weight.</div>
+    </div>
+    <div class="stage-card">
+      <div class="stage-label">Early revenue · Seed fund</div>
+      <div class="stage-title">Lead with traction, unit economics, and the specific use of funds</div>
+      <div class="stage-body">Seed funds evaluating companies with early revenue want evidence that the model works at small scale and a credible argument for why it works at larger scale. Traction data — however modest — becomes the centrepiece. The financial section shifts to unit economics and the assumptions behind them. Growth projections are tied explicitly to the specific activities the raise will fund.</div>
+    </div>
+    <div class="stage-card">
+      <div class="stage-label">Scaling · Institutional Series A</div>
+      <div class="stage-title">Lead with metrics, competitive moat, and the path to market leadership</div>
+      <div class="stage-body">Institutional investors at Series A are evaluating whether this company can become a category leader. The plan centres on ARR growth rate, NRR, CAC/LTV ratios, and the competitive dynamics that make the current position defensible. The narrative arc shifts from "will this work" to "how big can this get and why us."</div>
+    </div>
+    <div class="stage-card">
+      <div class="stage-label">Any stage · Bank / SBA / grant</div>
+      <div class="stage-title">Lead with repayment capacity, assets, and operational rigour</div>
+      <div class="stage-body">Bank lenders and grant bodies are not evaluating equity upside — they're evaluating risk of non-repayment or fund misuse. The plan emphasises cash flow predictability, existing assets, management experience, and specific operational plans. The financial model is more conservative and explicitly tied to debt service capacity.</div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <p>The investor reads to find the answer to one question first: <em>does this founder understand the business they're building</em>? The plan's structure either answers that question immediately or delays it long enough that the investor stops looking.</p>
+  </div>
+
+  <p>Stage calibration also changes how the plan handles risk. A canonical business plan tends to either ignore risks or list them in a late-section appendix that signals the founder hasn't thought hard about them. An investor-aware plan addresses the three most significant risks to the business model directly, in the body of the plan, with a clear-eyed account of how the business mitigates each one. Naming your risks before the investor names them for you is one of the clearest signals that a founder understands their business — and most AI-generated plans never do it.</p>
+
+
+  <h2>What the Business Plan Skill <em>Actually Produces</em></h2>
+
+  <p>The skill runs a calibration interview before generating anything — stage, investor type, and current revenue status, plus the core business description. From that, it determines the appropriate architecture and section weighting before the first word is written.</p>
+
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Stage-appropriate architecture</div>
+        <div class="step-body">Not the canonical template. A section structure determined by what this investor type at this stage actually evaluates — which sections lead, which sections are present at all, and how much depth each one gets. A pre-revenue angel plan and a Series A institutional plan are structurally different documents. The skill builds the right one.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Investor-aware financial framing</div>
+        <div class="step-body">The financial section is calibrated to what can credibly be claimed at the current stage. Pre-revenue plans get unit economics logic and directional projections explicitly framed as assumptions. Revenue-stage plans get traction data and the specific mechanics of how more capital converts to more growth. The model isn't padded to look impressive — it's built to be credible.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Risk section built into the body</div>
+        <div class="step-body">Not an appendix, not a boilerplate list. The three most material risks to the business model, named and addressed in the plan's body, with a specific account of how the business manages each one. This is the section that separates plans written by founders who understand their business from plans written by founders who understand what business plans are supposed to contain.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Use-of-funds section tied to milestones</div>
+        <div class="step-body">Not a general budget breakdown — a specific account of what the raise enables and what milestones it funds the business to reach. Investors want to know what they're buying with their capital: what inflection point does this round get the company to, and why is that inflection point the one that unlocks the next stage of growth or the next round of funding.</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">NovaKit Skill</div>
+      <div class="soft-cta-title">Business Plan — stage-calibrated, investor-aware, milestone-anchored</div>
+      <div class="soft-cta-sub">Works inside Claude. Tell it your stage, your investor type, and your business — get a plan built to the spec your specific audience evaluates.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/business-plan.html" class="btn btn-primary">See the skill</a>
+      <span class="soft-cta-price">from $15 · instant download</span>
+    </div>
+  </div>
+
+
+  <h2>Generic Plan vs <em>Stage-Calibrated Plan</em></h2>
+
+  <p>Same business — a pre-revenue SaaS founder raising a £200k angel round. The financial section, handled two ways.</p>
+
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-header">Without NovaKit</div>
+      <div class="ba-body">
+        <strong>Financial Projections</strong><br><br>
+        Year 1: £180,000 revenue · £340,000 expenses · (£160,000) net loss<br>
+        Year 2: £520,000 revenue · £410,000 expenses · £110,000 net profit<br>
+        Year 3: £1,400,000 revenue · £680,000 expenses · £720,000 net profit<br><br>
+        Revenue growth is projected at 190% in Year 2 and 170% in Year 3, driven by increased marketing spend and product-led growth initiatives. These projections are based on conservative market penetration assumptions and an average contract value of £2,400 per annum.
+      </div>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-header">✓ With NovaKit Skill</div>
+      <div class="ba-body">
+        <strong>Unit Economics and Financial Logic</strong><br><br>
+        Our pricing is £200/month (£2,400 ARR) per seat, based on competitive benchmarking and early beta pricing conversations with twelve prospective customers. At that price point, the business reaches contribution margin positive at approximately 85 customers — a milestone we project reaching within 14 months of the raise.<br><br>
+        CAC from direct outbound is currently running at £420 in beta, implying a 5-month payback period at current pricing. We expect this to improve as inbound content compounds.<br><br>
+        <em>These projections are directional. We are pre-revenue and have built them around assumptions we can defend, not outcomes we can promise.</em>
+      </div>
+    </div>
+  </div>
+
+  <p>The canonical projection table looks like a financial model. It isn't — it's a guess formatted to look like a model, and any angel investor with deal experience recognises it immediately. The stage-calibrated version does something riskier and more effective: it names the assumptions, shows the unit economics logic, and explicitly acknowledges that pre-revenue projections are directional. That honesty, combined with the specificity of twelve beta conversations and a £420 CAC figure from actual outbound work, signals something far more valuable than a three-year projection table — it signals a founder who understands their numbers and knows how to talk about uncertainty without hiding behind it.</p>
+
+
+  <hr class="post-divider">
+  <h2>Who Gets the Most from <em>Business Plan</em></h2>
+
+  <div class="callout callout-green">
+    <div class="callout-icon">✓</div>
+    <div class="callout-content">
+      <div class="callout-label">Built for</div>
+      <p>Pre-seed and seed-stage founders preparing for their first or second institutional raise who need a plan architecture that matches how early-stage investors actually evaluate deals. First-time founders who understand their business well but haven't navigated the investor document landscape before. Founders raising from a specific investor type — angel networks, grant bodies, bank lenders — who need the plan calibrated to that audience's specific evaluation criteria rather than a generic investor template.</p>
+    </div>
+  </div>
+
+  <p>The skill augments founder judgment — it doesn't replace it. The facts about the business, the traction data, the team's specific credentials, the actual pricing conversations and beta customer feedback — those come from the founder. The skill provides the architecture that puts those facts in the right order, in the right sections, framed in the way a specific investor type at a specific stage is set up to receive them. It's the difference between knowing your business and knowing how to communicate it to the person writing the cheque.</p>
+
+  <p>That gap — between understanding the business and presenting it to investors — is where most first-time founders lose time they don't have. The plan they produce isn't wrong about the business. It's formatted for an audience it hasn't been built for, which produces the same outcome as being wrong: the reader stops before they get to the parts that would have convinced them.</p>
+
+
+  <div class="soft-cta">
+    <div class="soft-cta-left">
+      <div class="soft-cta-kicker">Ready to try it?</div>
+      <div class="soft-cta-title">Business Plan for Claude</div>
+      <div class="soft-cta-sub">Stage-calibrated architecture, investor-aware financial framing, risk section built in. A plan structured for your specific audience — not the canonical template they've already learned to skim. Works with your existing Claude account.</div>
+    </div>
+    <div class="soft-cta-right">
+      <a href="../skills/business-plan.html" class="btn btn-primary">Get the skill</a>
+      <span class="soft-cta-price">$15 · instant download · 7-day refund</span>
+    </div>
+  </div>
+
+
+  <div class="post-tags">
+    <span class="tags-label">Tags</span>
+    <span class="tag">Business Plan</span>
+    <span class="tag">Founders</span>
+    <span class="tag">Fundraising</span>
+    <span class="tag">Claude AI</span>
+    <span class="tag">AI Skills</span>
+  </div>
+
+</article>
+
+<section class="related-section">
+  <div class="related-label">More from the blog</div>
+  <div class="related-grid">
+    <a href="what-investors-want-in-a-business-plan.html" class="related-card">
+      <div class="rc-cat">Founders</div>
+      <div class="rc-title">What Investors Actually Want in a Business Plan (And the Five Sections They Skip)</div>
+      <div class="rc-meta">26 May 2026 · 7 min read</div>
+    </a>
+    <a href="cold-outreach-email.html" class="related-card">
+      <div class="rc-cat">Skill Deep-Dive</div>
+      <div class="rc-title">The Cold Email That Gets a Reply When Claude Knows the Signal Behind It</div>
+      <div class="rc-meta">26 May 2026 · 7 min read</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#bundles">Bundles</a>
+    <a href="index.html">Blog</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>

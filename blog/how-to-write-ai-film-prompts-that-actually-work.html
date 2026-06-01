@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How to Write AI Film Prompts That Actually Work: Filmmaker vs. Marketer vs. Calibrated Skill | NovaKit Blog</title>
+<meta content="How to write AI film prompts that actually work — a direct comparison of the filmmaker approach, the marketer approach, and a cinematically calibrated Claude skill, with real prompt examples for each." name="description"/>
+<meta content="how to write AI film prompts that actually work, AI video prompt tips, Sora prompt writing, Runway prompt guide, NovaKit film prompt skill" name="keywords"/>
+<link href="https://novakit.tech/blog/how-to-write-ai-film-prompts-that-actually-work" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="https://novakit.tech/blog/how-to-write-ai-film-prompts-that-actually-work" property="og:url"/>
+<meta content="How to Write AI Film Prompts That Actually Work: Filmmaker vs. Marketer vs. Calibrated Skill" property="og:title"/>
+<meta content="Three approaches to AI film prompts. The filmmaker writes in visual specification. The marketer writes in narrative description. The calibrated skill does both — with cinematic research first." property="og:description"/>
+<meta content="https://novakit.tech/og-blog-how-to-write-ai-film-prompts-that-actually-work.png" property="og:image"/>
+<meta content="NovaKit" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="How to Write AI Film Prompts That Actually Work: Filmmaker vs. Marketer vs. Calibrated Skill" name="twitter:title"/>
+<meta content="Three approaches to AI film prompts — what each produces and why visual specification beats narrative description every time." name="twitter:description"/>
+<meta content="https://novakit.tech/og-blog-how-to-write-ai-film-prompts-that-actually-work.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Write AI Film Prompts That Actually Work: Filmmaker vs. Marketer vs. Calibrated Skill",
+  "description": "How to write AI film prompts that actually work — a direct comparison of three approaches with real prompt examples and a framework for choosing the right method for your production.",
+  "datePublished": "2026-05-28",
+  "dateModified": "2026-05-28",
+  "author": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "NovaKit",
+    "logo": {"@type": "ImageObject", "url": "https://novakit.tech/og-image.png"}
+  },
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/how-to-write-ai-film-prompts-that-actually-work"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What makes an AI film prompt actually work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Visual specification rather than narrative description. A working AI film prompt specifies camera position and movement, lens type, character physical specifics, lighting direction and colour temperature, and a cinematic reference. Every element left unspecified defaults to the model's training average — which is what generic footage looks like."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a filmmaker approach and a marketer approach to AI film prompts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A filmmaker writes in visual specification — camera, light, character body, scene grammar. A marketer writes in narrative description — what happens, how it feels, the emotion conveyed. The marketer approach produces footage that looks like stock video. The filmmaker approach produces footage with intentional visual decisions. The gap is entirely in how the prompt is written, not in the AI tool being used."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do AI video prompts produce generic footage even with good tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the prompt left too many visual decisions unspecified. AI video generation tools fill every unspecified element with the most common choice from their training data. The more a prompt specifies — camera, character physicality, lighting, colour grade, cinematic reference — the more the model's output reflects intentional decisions rather than statistical averages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need film school training to write good AI video prompts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — but you need to learn to think in visual specification rather than narrative description. The core skill is translating 'she's nervous' into physical camera and character terms: camera height, character posture and movement quality, eye direction, lighting position. A calibrated skill can do this translation automatically, producing camera-specific prompts from a character and scene description."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is cinematic reference in an AI film prompt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A cinematic reference is a named director, film, or visual movement that anchors the prompt's visual language — lighting style, colour palette, camera proximity, movement grammar. 'Reference: Chloé Zhao, naturalistic drama' gives the model a specific visual tradition to work within. Without a reference, the model averages across all visual traditions simultaneously, producing footage that belongs to none of them distinctly."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "How to Write AI Film Prompts That Actually Work", "item": "https://novakit.tech/blog/how-to-write-ai-film-prompts-that-actually-work"}
+  ]
+}
+</script>
+<link href="../assets/faviconnk.jpg" rel="icon" type="image/jpeg"/>
+<link href="../assets/faviconnk.jpg" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700;800;900&amp;family=Geist+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --surface2:#f7f6f2;
+  --blog-width:720px;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.breadcrumb a{color:var(--muted);transition:color .2s;}
+.breadcrumb a:hover{color:var(--text)}
+.breadcrumb-sep{color:var(--faint);}
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}
+[data-theme="light"] .post-cat{color:#8f3718;}
+.post-date{font-size:13px;color:var(--muted);}
+.post-readtime{font-size:13px;color:var(--muted);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.post-updated{font-size:12px;color:var(--faint);font-style:italic;}
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}
+.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}
+.author{display:flex;align-items:center;gap:12px;}
+.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}
+.author-name{font-size:14px;font-weight:600;}
+.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.share-links span{margin-right:4px;}
+.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}
+.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+.post-hero-card{max-width:var(--blog-width);margin:0 auto 44px;padding:0 40px;}
+.hero-card-inner{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;gap:20px;}
+.hero-card-icon{font-size:40px;flex-shrink:0;}
+.hero-card-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:4px;}
+.hero-card-text{font-size:18px;font-weight:600;line-height:1.4;}
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}
+.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}
+.post-body h2 em{font-style:italic;color:var(--accent);}
+.post-body h3{font-size:18px;font-weight:700;letter-spacing:-0.01em;margin:34px 0 10px;}
+.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{font-weight:700;}
+.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}
+.post-body a:hover{text-decoration-color:var(--accent);}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}
+.pull-quote p em{color:var(--accent);}
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}
+.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}
+.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.callout-content{flex:1;}
+.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}
+.callout-blue .callout-label{color:var(--blue-text);}
+.callout-green .callout-label{color:var(--green-text);}
+.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;margin:28px 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);font-size:14px;}
+.compare-table th{padding:12px 16px;background:var(--surface2);font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid var(--border);text-align:left;color:var(--muted);}
+.compare-table th.winner{color:var(--accent);}
+.compare-table td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55;}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table td:first-child{font-weight:600;color:var(--text);}
+.compare-table td.pro{color:var(--green-text);}
+.compare-table td.mid{color:var(--text);}
+.compare-table td.con{color:var(--muted);}
+.option-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:20px;}
+.option-header{padding:16px 22px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--border);background:var(--surface2);}
+.option-badge{font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:4px 10px;border-radius:6px;white-space:nowrap;}
+.badge-filmmaker{background:var(--blue-bg);color:var(--blue-text);}
+.badge-marketer{background:rgba(255,255,255,0.06);color:var(--muted);}
+.badge-skill{background:var(--green-bg);color:var(--green-text);}
+.option-title{font-size:16px;font-weight:700;}
+.option-body{padding:20px 22px;background:var(--surface);}
+.option-row{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);align-items:flex-start;}
+.option-row:last-child{border-bottom:none;}
+.option-key{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);padding-top:2px;}
+.option-val{font-size:14px;color:var(--text);line-height:1.65;}
+.option-val.dim{color:var(--muted);}
+.prompt-example{margin-top:10px;padding:14px 16px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);font-size:13px;line-height:1.75;font-family:'Geist Mono',monospace;}
+.prompt-example.bad{color:var(--muted);}
+.prompt-example.good{color:var(--text);}
+.verdict-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:28px 0;}
+.verdict-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.verdict-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--border);gap:16px;}
+.verdict-row:last-child{border-bottom:none;}
+.verdict-situation{font-size:14px;color:var(--text);flex:1;line-height:1.5;}
+.verdict-winner{font-size:13px;font-weight:700;color:var(--green-text);white-space:nowrap;}
+.faq-list{margin:28px 0;display:flex;flex-direction:column;gap:0;}
+.faq-item{border-bottom:1px solid var(--border);padding:18px 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.4;}
+.faq-a{font-size:15px;color:var(--muted);line-height:1.7;}
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}
+.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}
+.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}
+.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}
+.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;cursor:default;}
+.tag:hover{border-color:var(--accent);color:var(--accent);}
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}
+.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;display:block;}
+.related-card:hover{border-color:var(--border-s);}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}
+.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}
+.rc-meta{font-size:12px;color:var(--muted);}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:14px;color:var(--muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text)}
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+@media(max-width:768px){
+  nav{padding:0 20px;}
+  .breadcrumb,.post-header,.post-hero-card,.post-body,.related-section{padding-left:20px;padding-right:20px;}
+  .post-title{font-size:28px;}
+  .related-grid{grid-template-columns:1fr;}
+  .soft-cta{flex-direction:column;}
+  footer{flex-direction:column;gap:16px;}
+  .compare-table{font-size:13px;}
+  .compare-table th,.compare-table td{padding:10px 12px;}
+  .option-row{grid-template-columns:85px 1fr;}
+}
+</style>
+</head>
+<body>
+<div class="reading-progress" id="reading-progress"></div>
+<nav>
+<a class="logo" href="../index.html">
+<img alt="NovaKit" class="logo-img logo-dark" src="../assets/nkwhite.jpg"/>
+<img alt="NovaKit" class="logo-img logo-light" src="../assets/nkblack.jpg"/>
+</a>
+<div class="nav-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle theme" class="theme-toggle" onclick="toggleTheme()">
+<span id="theme-icon">☀️</span>
+</button>
+<a class="btn btn-primary btn-sm" href="../index.html#skills">Browse Skills</a>
+</div>
+</nav>
+<div class="breadcrumb">
+<a href="../index.html">NovaKit</a>
+<span class="breadcrumb-sep">›</span>
+<a href="index.html">Blog</a>
+<span class="breadcrumb-sep">›</span>
+<span>AI Film Prompt Comparison</span>
+</div>
+<header class="post-header">
+<div class="post-meta">
+<span class="post-cat">Comparison</span>
+<span class="meta-dot"></span>
+<span class="post-date">28 May 2026</span>
+<span class="meta-dot"></span>
+<span class="post-readtime">7 min read</span>
+<span class="meta-dot"></span>
+<span class="post-updated">Last updated: May 2026</span>
+</div>
+<h1 class="post-title">How to Write AI Film Prompts That Actually Work: <em>Filmmaker vs. Marketer vs. Calibrated Skill</em></h1>
+<p class="post-subtitle">Three approaches to the same scene. Each produces different footage, serves different production contexts, and has a different failure mode. The gap between them is entirely in how the prompt is written — not in the tool being used.</p>
+<div class="post-byline">
+<div class="author">
+<div class="author-av">NK</div>
+<div>
+<div class="author-name">NovaKit</div>
+<div class="author-role">Claude Skill Research</div>
+</div>
+</div>
+<div class="share-links">
+<span>Share →</span>
+<button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+<button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+<button class="share-btn" onclick="copyLink()">Copy link</button>
+</div>
+</div>
+</header>
+<div class="post-hero-card">
+<div class="hero-card-inner">
+<div class="hero-card-icon">🎬</div>
+<div>
+<div class="hero-card-label">Related: NovaKit Skill</div>
+<div class="hero-card-text">Dialogue / Character Film Prompt — the calibrated approach, three variants per scene, character reference included</div>
+</div>
+</div>
+</div>
+<article class="post-body">
+<p>The complaint about AI video generation tools is almost always framed as a technology problem: the model isn't good enough, the motion is inconsistent, the character doesn't hold across shots. These are real limitations. But the majority of generic-looking AI footage is not a technology failure — it's a prompt failure. The same Sora or Runway model that produces stock-video aesthetics from a narrative prompt produces footage with genuine visual intention from a cinematically specified one. The tool is the same. The prompt is different.</p>
+<p><strong>There are three distinct ways people write <a href="https://novakit.tech/skills/ai-animation-film-prompt.html">AI film</a> prompts, and they produce three fundamentally different kinds of footage.</strong> Understanding which approach you're using — and what its failure mode is — is the fastest way to improve AI video output without waiting for the next model release.</p>
+<h2>At a Glance: <em>How the Three Approaches Compare</em></h2>
+<p><strong>Every row below maps to a real difference in what the footage looks like</strong> — not a theoretical distinction, but a practical one that shows up in the first five seconds of playback.</p>
+<table class="compare-table">
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Filmmaker approach</th>
+<th>Marketer approach</th>
+<th class="winner">Calibrated skill ✓</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prompt language</td>
+<td class="mid">Visual specification — camera, light, body</td>
+<td class="con">Narrative description — what happens, how it feels</td>
+<td class="pro">Visual specification + cinematic research</td>
+</tr>
+<tr>
+<td>Camera decisions</td>
+<td class="pro">Explicit — lens, height, movement</td>
+<td class="con">Left to model — defaults to training average</td>
+<td class="pro">Explicit + format-researched</td>
+</tr>
+<tr>
+<td>Character physicality</td>
+<td class="mid">Usually specified if filmmaker knows the character</td>
+<td class="con">Emotional description only — "nervous," "sad"</td>
+<td class="pro">Physical vocabulary derived from character profile</td>
+</tr>
+<tr>
+<td>Lighting specification</td>
+<td class="pro">Direction, quality, colour temperature</td>
+<td class="con">"Beautiful lighting" / "cinematic lighting"</td>
+<td class="pro">Full specification + colour grade reference</td>
+</tr>
+<tr>
+<td>Cinematic reference</td>
+<td class="mid">Sometimes — depends on the filmmaker's knowledge</td>
+<td class="con">Absent or generic ("like a Hollywood film")</td>
+<td class="pro">Researched and specific — director / visual movement</td>
+</tr>
+<tr>
+<td>Shot consistency</td>
+<td class="mid">Possible if character reference is maintained manually</td>
+<td class="con">Low — each prompt produces a different character</td>
+<td class="pro">Master character reference included for reuse</td>
+</tr>
+<tr>
+<td>Requires film knowledge</td>
+<td class="con">Yes — significant</td>
+<td class="pro">No</td>
+<td class="pro">No — calibration happens automatically</td>
+</tr>
+</tbody>
+</table>
+<h2>Approach 1: <em>The Filmmaker</em></h2>
+<p><strong>A filmmaker writing AI video prompts thinks in the same language they use on set: camera position, lens choice, lighting setup, blocking, character physicality.</strong> This approach produces the most intentional footage of the three — when it works. The failure mode is that cinematic specification requires substantial film knowledge, and even experienced filmmakers often leave gaps that the model fills with training averages.</p>
+<div class="option-card">
+<div class="option-header">
+<span class="option-badge badge-filmmaker">Filmmaker</span>
+<div class="option-title">Visual specification from film knowledge</div>
+</div>
+<div class="option-body">
+<div class="option-row">
+<div class="option-key">Strength</div>
+<div class="option-val">Produces footage with intentional visual decisions when the filmmaker has the knowledge to specify every layer. Camera choice reflects the scene's emotional logic. Character physicality is grounded in actual performance direction. Lighting serves the mood rather than defaulting to generic "cinematic."</div>
+</div>
+<div class="option-row">
+<div class="option-key">Failure mode</div>
+<div class="option-val dim">Knowledge gaps. A filmmaker who specifies camera and lighting precisely but leaves character physical vocabulary unspecified still gets generic performance from the model. Every unspecified layer defaults to training average — and filmmakers often don't know which layers they've left blank until the footage arrives.</div>
+</div>
+<div class="option-row">
+<div class="option-key">Example prompt</div>
+<div class="option-val">
+<div class="prompt-example good">Handheld medium close-up, 50mm, slight drift. Woman, 30s, sits at kitchen table, morning. Hard side light from left, 4500K. She's thinking about something difficult. Colour grade: desaturated, teal shadow base. Reference: early Andrea Arnold.</div>
+</div>
+</div>
+<div class="option-row">
+<div class="option-key">Gap</div>
+<div class="option-val dim">Character physical vocabulary not specified — "thinking about something difficult" is still emotional description. The model fills the character's body posture, eye movement, and physical stillness or animation from training averages.</div>
+</div>
+</div>
+</div>
+<h2>Approach 2: <em>The Marketer</em></h2>
+<p><strong>A marketer writing AI video prompts thinks in narrative outcomes: what the scene should convey, the feeling it should create, the story it should tell.</strong> This produces footage that accurately reflects the narrative situation but makes no visual decisions — every camera, lighting, character, and colour choice defaults to the model's training average. The result is technically competent footage that looks like it belongs in a corporate stock library.</p>
+<div class="option-card">
+<div class="option-header">
+<span class="option-badge badge-marketer">Marketer</span>
+<div class="option-title">Narrative description — what happens and how it feels</div>
+</div>
+<div class="option-body">
+<div class="option-row">
+<div class="option-key">Strength</div>
+<div class="option-val">Fast to write. No film knowledge required. Produces footage that is narratively correct — the scene depicted matches the brief. Adequate for social media content, explainer footage, or background video where visual specificity doesn't matter.</div>
+</div>
+<div class="option-row">
+<div class="option-key">Failure mode</div>
+<div class="option-val dim">Every visual decision defaults to training average. The camera height, lighting setup, character expression, and colour palette all represent the model's most common choice for each unspecified element. This is what "looks like AI" means — not the technology, but the absence of visual intention in the prompt.</div>
+</div>
+<div class="option-row">
+<div class="option-key">Example prompt</div>
+<div class="option-val">
+<div class="prompt-example bad">A woman sits alone at a kitchen table early in the morning, looking thoughtful and a little sad. Beautiful natural lighting. Cinematic style. Emotional, intimate mood. 4K.</div>
+</div>
+</div>
+<div class="option-row">
+<div class="option-key">Gap</div>
+<div class="option-val dim">Everything visual is unspecified. "Beautiful natural lighting" and "cinematic style" are not specifications — they're aspirations. The model interprets these through its training distribution and produces the most common version of each. "Cinematic" to a model trained on millions of clips means whatever appears most frequently in cinematic content — which is not a visual decision, it's a statistical average.</div>
+</div>
+</div>
+</div>
+<div class="callout callout-blue">
+<div class="callout-icon">💡</div>
+<div class="callout-content">
+<div class="callout-label">The key insight</div>
+<p>"Cinematic," "beautiful," "emotional," and "realistic" are not visual specifications — they are aesthetic aspirations. A model cannot render an aspiration. It renders a specification. Every unspecified element gets filled by statistical averaging across the training data, which is the definition of generic.</p>
+</div>
+</div>
+<h2>Approach 3: <em>The Calibrated Skill</em></h2>
+<p><strong>A calibrated skill combines the visual specificity of the filmmaker approach with the accessibility of the marketer approach — adding a research layer that neither provides.</strong> The <a href="../skills/dialogue-character-film-prompt.html">NovaKit Dialogue / Character Film Prompt skill</a> researches current cinematic references in the scene's genre and visual register before writing a word, then derives the character's physical vocabulary from the character description, and produces fully specified prompts across all five visual layers — camera, character body, lighting, colour grade, and scene grammar.</p>
+<div class="option-card">
+<div class="option-header">
+<span class="option-badge badge-skill">Editor's Choice</span>
+<div class="option-title">NovaKit Dialogue / Character Film Prompt skill</div>
+</div>
+<div class="option-body">
+<div class="option-row">
+<div class="option-key">Strength</div>
+<div class="option-val">Research before writing. Cinematic reference identified and embedded in every prompt. Character physical vocabulary derived from character description and scene emotional logic — not left to the model. All five visual layers specified. Three variants per scene with different camera approaches. Master character reference for shot-to-shot consistency. No film knowledge required from the user.</div>
+</div>
+<div class="option-row">
+<div class="option-key">Still needs from you</div>
+<div class="option-val dim">Character description and scene emotional context. The skill handles the visual translation — turning "she's nervous" into specific physical behaviour — but the character's emotional situation comes from the writer or director. The skill augments visual specification; it doesn't replace narrative understanding.</div>
+</div>
+<div class="option-row">
+<div class="option-key">Example prompt output</div>
+<div class="option-val">
+<div class="prompt-example good">35mm film grain. Handheld medium close-up, table height, camera drifts slightly left — does not push. 50mm equivalent. Woman, late 30s, dark hair pulled back, sits completely still — hands flat on table surface, fingers spread, not gripping. Eyes fixed on a point off-frame right, jaw set. She does not blink for three full seconds. Hard directional morning light from high window, frame left, 4800K — sharp shadow bisects her face vertically, right side underexposed. Teal shadow base, desaturated highlights, slight halation on the window source. No score. Room ambience — refrigerator hum, distant traffic. She breathes in through her nose. Still. 9 seconds. Reference: Chloé Zhao, Songs My Brothers Taught Me — extended stillness, naturalistic drama, non-performative emotion.</div>
+</div>
+</div>
+<div class="option-row">
+<div class="option-key">Improvement over filmmaker</div>
+<div class="option-val">The character physical vocabulary is fully specified — "does not blink for three full seconds," "hands flat, fingers spread, not gripping." The cinematic reference is specific to a film and a director, not a genre or style. The lighting includes exact colour temperature and describes what the shadow does to the character's face. Nothing is left to the training average.</div>
+</div>
+</div>
+</div>
+<div class="pull-quote">
+<p>The footage you get from an AI video tool is a <em>direct rendering of what you specified</em>. Generic footage is not the model's failure — it is the prompt's absence of specification.</p>
+</div>
+<h2>Which Approach Should You Use?</h2>
+<p><strong>The right choice depends on your production context and the level of visual intentionality your content requires.</strong> Not all use cases need cinematically calibrated prompts — background video and social content can absorb narrative prompts without losing value. Character-driven and narrative content cannot.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/dialogue-character-film-prompt.html">character dialogue prompts that hold a consistent voice</a>. If you're working across the full Video &amp; Pod workflow, the <a href="https://novakit.tech/skills/bundles/video-pod-bundle.html">Video &amp; Pod bundle</a> covers everything in one place.</p>
+<div class="verdict-box">
+<div class="verdict-label">Production context → recommended approach</div>
+<div class="verdict-row">
+<div class="verdict-situation">Narrative short film or character-driven content for an audience</div>
+<div class="verdict-winner">Calibrated skill</div>
+</div>
+<div class="verdict-row">
+<div class="verdict-situation">Dialogue scenes requiring shot continuity across multiple takes</div>
+<div class="verdict-winner">Calibrated skill</div>
+</div>
+<div class="verdict-row">
+<div class="verdict-situation">Pre-visualisation for a production with a clear visual reference</div>
+<div class="verdict-winner">Filmmaker approach or calibrated skill</div>
+</div>
+<div class="verdict-row">
+<div class="verdict-situation">Social media content — background footage, atmosphere, no characters</div>
+<div class="verdict-winner">Marketer approach</div>
+</div>
+<div class="verdict-row">
+<div class="verdict-situation">Brand content where "cinematic feel" is sufficient</div>
+<div class="verdict-winner">Marketer approach with lighting specification added</div>
+</div>
+<div class="verdict-row">
+<div class="verdict-situation">Filmmaker with strong visual knowledge, one-off shot</div>
+<div class="verdict-winner">Filmmaker approach</div>
+</div>
+<div class="verdict-row">
+<div class="verdict-situation">Filmmaker needing character reference consistency across a sequence</div>
+<div class="verdict-winner">Calibrated skill for the reference, filmmaker for the variants</div>
+</div>
+</div>
+<hr class="post-divider"/>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q">What makes an AI film prompt actually work?</div>
+<div class="faq-a">Visual specification rather than narrative description. A working AI film prompt specifies camera position and movement, lens type and approximate focal length, character physical specifics — posture, movement quality, eye direction — lighting direction and colour temperature, a colour grade reference, and a named cinematic reference that anchors the visual language. Every element left unspecified defaults to the model's training average, which is what generic footage looks like.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is the difference between the filmmaker approach and the marketer approach?</div>
+<div class="faq-a">A filmmaker writes in visual specification — camera, light, character body, scene grammar. A marketer writes in narrative description — what happens, how it feels, the emotion conveyed. The marketer approach produces footage that looks like stock video because every visual decision was left to the model's training average. The filmmaker approach produces footage with intentional visual decisions. The gap is entirely in how the prompt is written, not in the AI tool being used.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Why do AI video prompts produce generic footage even with good tools?</div>
+<div class="faq-a">Because the prompt left too many visual decisions unspecified. AI video generation tools fill every unspecified element with the most statistically common choice from their training data. The more a prompt specifies — camera height and movement, character physicality, lighting direction and temperature, colour grade, cinematic reference — the more the model's output reflects intentional decisions rather than training distribution averages.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Do I need film school training to write good AI video prompts?</div>
+<div class="faq-a">No — but you need to learn to think in visual specification rather than narrative description. The core translation is: "she's nervous" → "stands very still, weight shifted to one foot, eyes tracking the exit door, jaw set, one hand flat against the wall." A calibrated skill can perform this translation automatically from a character and scene description, producing camera-specific prompts without requiring the user to know cinematography vocabulary.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What is cinematic reference in an AI film prompt?</div>
+<div class="faq-a">A cinematic reference is a named director, film, or visual movement that anchors the prompt's visual language — lighting style, colour palette, camera proximity and movement grammar, relationship between camera and character. "Reference: Chloé Zhao, Songs My Brothers Taught Me — extended stillness, naturalistic drama" gives the model a specific visual tradition to work within. Without a specific reference, the model averages across all visual traditions in its training data simultaneously, producing footage that belongs to none of them distinctly.</div>
+</div>
+</div>
+<div class="soft-cta">
+<div class="soft-cta-left">
+<div class="soft-cta-kicker">The calibrated approach</div>
+<div class="soft-cta-title">Dialogue / Character Film Prompt for Claude</div>
+<div class="soft-cta-sub">Three cinematically calibrated prompt variants per scene, master character reference for shot continuity. No film knowledge required. Works with your existing Claude account.</div>
+</div>
+<div class="soft-cta-right">
+<a class="btn btn-primary" href="../skills/dialogue-character-film-prompt.html">Get the skill</a>
+<span class="soft-cta-price">$15 · instant download · 7-day refund</span>
+</div>
+</div>
+<div class="post-tags">
+<span class="tags-label">Tags</span>
+<span class="tag">AI Film</span>
+<span class="tag">Comparison</span>
+<span class="tag">Sora</span>
+<span class="tag">Runway</span>
+<span class="tag">Film Prompts</span>
+<span class="tag">Claude AI</span>
+</div>
+</article>
+<section class="related-section">
+<div class="related-label">More from the blog</div>
+<div class="related-grid">
+<a class="related-card" href="the-ai-film-prompt-that-gives-sora-a-character-not-just-a-scene.html">
+<div class="rc-cat">Skill Deep-Dive</div>
+<div class="rc-title">The AI Film Prompt That Gives Sora a Character, Not Just a Scene</div>
+<div class="rc-meta">28 May 2026 · 8 min read</div>
+</a>
+<a class="related-card" href="the-podcast-script-that-sounds-like-you-wrote-it-not-like-youre-reading-it.html">
+<div class="rc-cat">Skill Deep-Dive</div>
+<div class="rc-title">The Podcast Script That Sounds Like You Wrote It, Not Like You're Reading It</div>
+<div class="rc-meta">27 May 2026 · 8 min read</div>
+</a>
+</div>
+</section>
+<footer>
+<div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+<div class="footer-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+</footer>
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('reading-progress');
+  const body=document.body,html=document.documentElement;
+  const total=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight)-html.clientHeight;
+  const pct=Math.min((window.scrollY/total)*100,100);
+  el.style.width=pct+'%';
+});
+function sharePost(platform){
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(document.title);
+  const urls={
+    twitter:`https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+    linkedin:`https://www.linkedin.com/sharing/share-offsite/?url=${url}`
+  };
+  if(urls[platform]) window.open(urls[platform],'_blank','width=600,height=400');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const btn=document.querySelector('.share-btn:last-child');
+    const orig=btn.textContent;
+    btn.textContent='Copied ✓';
+    btn.style.color='var(--green-text)';
+    btn.style.borderColor='var(--green)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.color='';btn.style.borderColor='';},2000);
+  });
+}
+</script>
+</body>
+</html>
