@@ -8,5 +8,11 @@
       "binding": "HYPERDRIVE",
       "id": "db2ee9355c1743f49fb744be2bc87390"
     }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "R2_BUCKET",
+      "bucket_name": "novakit"
+    }
   ]
 }
