@@ -44,46 +44,77 @@ export async function onRequestPost({ request, env }) {
       <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.08);">
 
         <!-- Header -->
-        <tr><td style="background:#0d0d0b;padding:32px 40px;text-align:center;">
-          <img src="https://assets.novakit.tech/nkwhite.jpg" alt="NovaKit" height="28" style="display:block;margin:0 auto;">
+        <tr><td style="background:#0d0d0b;padding:28px 40px;text-align:left;">
+          <span style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:20px;font-weight:800;color:#f0efe8;letter-spacing:-0.02em;">Nova<span style="color:#DE7356;">Kit</span></span>
         </td></tr>
 
         <!-- Body -->
         <tr><td style="padding:40px;">
-          <p style="margin:0 0 8px;font-size:13px;color:#8a8980;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Your skill is ready</p>
-          <h1 style="margin:0 0 24px;font-size:26px;font-weight:800;color:#111110;letter-spacing:-0.02em;">${skillName}</h1>
+          <p style="margin:0 0 8px;font-size:12px;color:#8a8980;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;">Your skill is ready</p>
+          <h1 style="margin:0 0 20px;font-size:26px;font-weight:800;color:#111110;letter-spacing:-0.02em;">${skillName}</h1>
 
-          <p style="margin:0 0 24px;font-size:15px;color:#545249;line-height:1.6;">
-            Your purchase was successful. Download your skill file below and add it to Claude to get started.
+          <p style="margin:0 0 28px;font-size:15px;color:#545249;line-height:1.6;">
+            Your purchase was successful. Download your skill file below and follow the 3-step install to get started.
           </p>
 
           <!-- Download buttons -->
-          <div style="margin:0 0 32px;">
+          <div style="margin:0 0 36px;">
             ${fileLinksHtml}
           </div>
 
-          <!-- How to use -->
-          <div style="background:#f7f6f2;border-radius:10px;padding:24px;margin:0 0 32px;">
-            <p style="margin:0 0 12px;font-size:13px;font-weight:700;color:#111110;text-transform:uppercase;letter-spacing:0.06em;">How to use your skill</p>
-            <ol style="margin:0;padding:0 0 0 18px;font-size:14px;color:#545249;line-height:1.8;">
-              <li>Download the <code style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:13px;">.skill</code> file above</li>
-              <li>Open <a href="https://claude.ai" style="color:#DE7356;">claude.ai</a> and start a new project</li>
-              <li>Add the skill file to your project knowledge</li>
-              <li>Type your request — the skill takes it from there</li>
-            </ol>
+          <!-- How to install -->
+          <div style="background:#f7f6f2;border-radius:12px;padding:28px;margin:0 0 32px;">
+            <p style="margin:0 0 20px;font-size:12px;font-weight:700;color:#111110;text-transform:uppercase;letter-spacing:0.08em;">How to install — 3 steps</p>
+
+            <table cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+                <td style="padding:14px 0;border-bottom:1px solid #eeecea;vertical-align:top;">
+                  <table cellpadding="0" cellspacing="0"><tr>
+                    <td style="width:28px;height:28px;background:#DE7356;border-radius:50%;text-align:center;vertical-align:middle;font-size:12px;font-weight:700;color:#fff;padding:0 0 0 0;" width="28">1</td>
+                    <td style="padding-left:14px;vertical-align:top;">
+                      <div style="font-size:14px;font-weight:700;color:#111110;margin-bottom:4px;">Open Claude → Customize → Skills → <span style="color:#DE7356;">+</span></div>
+                      <div style="font-size:13px;color:#545249;line-height:1.5;">In Claude's sidebar click <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">Customize</span>, then <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">Skills</span>, then the <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">+</span> button and choose <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">Upload a skill</span>.</div>
+                    </td>
+                  </tr></table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:14px 0;border-bottom:1px solid #eeecea;vertical-align:top;">
+                  <table cellpadding="0" cellspacing="0"><tr>
+                    <td style="width:28px;height:28px;background:#DE7356;border-radius:50%;text-align:center;vertical-align:middle;font-size:12px;font-weight:700;color:#fff;" width="28">2</td>
+                    <td style="padding-left:14px;vertical-align:top;">
+                      <div style="font-size:14px;font-weight:700;color:#111110;margin-bottom:4px;">Drop in your .skill file</div>
+                      <div style="font-size:13px;color:#545249;line-height:1.5;">Drag the downloaded <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">.skill</span> file into the upload area. Wait a moment for validation — you'll see it appear in your skills list.</div>
+                    </td>
+                  </tr></table>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:14px 0 0;vertical-align:top;">
+                  <table cellpadding="0" cellspacing="0"><tr>
+                    <td style="width:28px;height:28px;background:#DE7356;border-radius:50%;text-align:center;vertical-align:middle;font-size:12px;font-weight:700;color:#fff;" width="28">3</td>
+                    <td style="padding-left:14px;vertical-align:top;">
+                      <div style="font-size:14px;font-weight:700;color:#111110;margin-bottom:4px;">Type / in any chat to use it</div>
+                      <div style="font-size:13px;color:#545249;line-height:1.5;">Start any new chat, type <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">/</span> and select your skill from the menu. Done.</div>
+                    </td>
+                  </tr></table>
+                </td>
+              </tr>
+            </table>
           </div>
 
           <!-- Support note -->
-          <p style="margin:0;font-size:13px;color:#8a8980;line-height:1.6;">
-            Questions? Reply to this email or visit <a href="https://novakit.tech" style="color:#DE7356;">novakit.tech</a>.<br>
-            Order ID: <code style="font-size:12px;">${orderId}</code>
+          <p style="margin:0;font-size:13px;color:#8a8980;line-height:1.7;">
+            Questions or need a refund? Just reply to this email — we're at <a href="mailto:support@novakit.tech" style="color:#DE7356;">support@novakit.tech</a>.<br>
+            We have a <strong style="color:#111110;">7-day refund policy</strong> — no questions asked.<br>
+            Order ID: <span style="font-family:monospace;font-size:12px;">${orderId}</span>
           </p>
         </td></tr>
 
         <!-- Footer -->
-        <tr><td style="background:#f7f6f2;padding:24px 40px;text-align:center;border-top:1px solid #eeecea;">
+        <tr><td style="background:#f7f6f2;padding:20px 40px;text-align:center;border-top:1px solid #eeecea;">
           <p style="margin:0;font-size:12px;color:#8a8980;">
-            © 2026 NovaKit · <a href="https://novakit.tech/legal/privacy.html" style="color:#8a8980;">Privacy</a> · <a href="https://novakit.tech/legal/terms.html" style="color:#8a8980;">Terms</a>
+            © 2026 NovaKit &nbsp;·&nbsp; <a href="https://novakit.tech/legal/refund.html" style="color:#8a8980;">Refund Policy</a> &nbsp;·&nbsp; <a href="https://novakit.tech/legal/privacy.html" style="color:#8a8980;">Privacy</a> &nbsp;·&nbsp; <a href="https://novakit.tech/legal/terms.html" style="color:#8a8980;">Terms</a>
           </p>
         </td></tr>
 
@@ -101,7 +132,7 @@ export async function onRequestPost({ request, env }) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'NovaKit <skills@novakit.tech>',
+        from: 'NovaKit <support@novakit.tech>',
         to: [to],
         subject: `Your skill is ready — ${skillName}`,
         html: emailHtml,

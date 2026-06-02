@@ -92,7 +92,16 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .step-text strong{color:var(--text);font-weight:600;}
 code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;}
 
-/* FOOTER LINKS */
+/* DEMO IFRAME */
+.demo-iframe-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.dic-header{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--bg2);border-bottom:1px solid var(--border);}
+.dic-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.dic-dot:nth-child(1){background:#ff5f57;}
+.dic-dot:nth-child(2){background:#febc2e;}
+.dic-dot:nth-child(3){background:#28c840;}
+.dic-label{font-size:12px;color:var(--muted);font-weight:500;margin-left:6px;}
+.demo-iframe-zoom{width:100%;min-height:300px;overflow:hidden;position:relative;}
+.demo-iframe-zoom iframe{width:1920px;height:1080px;border:none;display:block;position:absolute;top:0;left:0;transform-origin:top left;}
 .footer-links{text-align:center;animation:fadeUp .5s .4s ease both;}
 .footer-links a{font-size:13px;color:var(--muted);margin:0 12px;transition:color .15s;}
 .footer-links a:hover{color:var(--accent);}
@@ -156,32 +165,40 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
       </div>
     </div>
 
-    <!-- How to use -->
+    <!-- How to install -->
     <div class="how-to">
-      <div class="how-to-title">How to use your skill</div>
+      <div class="how-to-title">How to install — 3 steps</div>
       <ul class="how-to-steps">
         <li class="how-to-step">
           <div class="step-num">1</div>
-          <div class="step-text"><strong>Download the <code>.skill</code> file</strong> using the button above.</div>
+          <div class="step-text"><strong>Open Claude → Customize → Skills → <span style="color:var(--accent)">+</span></strong><br>In Claude's sidebar click <code>Customize</code>, then <code>Skills</code>, then the <code>+</code> button and choose <code>Upload a skill</code>.</div>
         </li>
         <li class="how-to-step">
           <div class="step-num">2</div>
-          <div class="step-text"><strong>Open <a href="https://claude.ai" style="color:var(--accent)">claude.ai</a></strong> and create a new Project.</div>
+          <div class="step-text"><strong>Drop in your .skill file</strong><br>Drag the downloaded <code>.skill</code> file into the upload area. Wait a moment for validation — you'll see it appear in your skills list.</div>
         </li>
         <li class="how-to-step">
           <div class="step-num">3</div>
-          <div class="step-text"><strong>Add the skill file</strong> to your Project Knowledge.</div>
-        </li>
-        <li class="how-to-step">
-          <div class="step-num">4</div>
-          <div class="step-text"><strong>Type your request</strong> — the skill handles calibration, research, and quality automatically.</div>
+          <div class="step-text"><strong>Type <code>/</code> in any chat to use it</strong><br>Start any new chat, type <code>/</code> and select your skill from the menu. Done.</div>
         </li>
       </ul>
+
+      <!-- Demo iframe -->
+      <div class="demo-iframe-card" style="margin-top:24px;">
+        <div class="dic-header">
+          <div class="dic-dot"></div><div class="dic-dot"></div><div class="dic-dot"></div>
+          <span class="dic-label">Installation guide</span>
+        </div>
+        <div class="demo-iframe-zoom">
+          <iframe id="install-demo-iframe" src="/assets/novakit_Add_a_Skill_Demo.html" title="How to install a NovaKit skill" frameborder="0" allow="autoplay"></iframe>
+        </div>
+      </div>
     </div>
 
     <div class="footer-links">
-      <a href="/">← Back to NovaKit</a>
-      <a href="mailto:hello@novakit.tech">Need help?</a>
+      <a href="/">← All Skills</a>
+      <a href="/legal/refund.html">Refunds</a>
+      <a href="mailto:support@novakit.tech">Support</a>
     </div>
 
   </div><!-- /success -->
@@ -259,7 +276,23 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
       }).join('');
     }
 
-    // 4. Fire download tracking
+    // Scale iframe to fit container
+  function scaleIframe() {
+    const iframe = document.getElementById('install-demo-iframe');
+    if (!iframe) return;
+    const wrap = iframe.closest('.demo-iframe-zoom');
+    if (!wrap) return;
+    const scale = wrap.offsetWidth / 1920;
+    iframe.style.transform = `scale(${scale})`;
+    wrap.style.height = (1080 * scale) + 'px';
+  }
+  window.addEventListener('resize', scaleIframe);
+  // Run after iframe loads
+  const iframe = document.getElementById('install-demo-iframe');
+  if (iframe) iframe.addEventListener('load', scaleIframe);
+  setTimeout(scaleIframe, 300);
+
+
     if (window.nk) {
       nk.download(skillSlug, orderId, null);
     }
