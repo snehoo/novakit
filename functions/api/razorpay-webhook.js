@@ -78,7 +78,7 @@ export async function onRequestPost({ request, env }) {
            VALUES ($1, $2)
            ON CONFLICT (buyer_hash) DO UPDATE
              SET order_count = buyers.order_count + 1,
-                 total_paise = buyers.total_paise + $3`,
+                 total_cents = buyers.total_cents + $3`,
           [buyerHash, country, payment.amount]
         );
       }
@@ -87,7 +87,7 @@ export async function onRequestPost({ request, env }) {
       await client.query(
         `INSERT INTO orders
            (razorpay_order_id, razorpay_payment_id, buyer_hash,
-            skill_slug, bundle_key, amount_paise, currency, status, country, paid_at)
+            skill_slug, bundle_key, amount_cents, currency, status, country, paid_at)
          VALUES ($1,$2,$3,$4,$5,$6,$7,'paid',$8,NOW())
          ON CONFLICT (razorpay_order_id) DO UPDATE
            SET razorpay_payment_id = EXCLUDED.razorpay_payment_id,
@@ -109,7 +109,7 @@ export async function onRequestPost({ request, env }) {
     if (eventName === 'payment.failed') {
       const payment = payload.payment.entity;
       await client.query(
-        `INSERT INTO orders (razorpay_order_id, amount_paise, currency, status)
+        `INSERT INTO orders (razorpay_order_id, amount_cents, currency, status)
          VALUES ($1, $2, $3, 'failed')
          ON CONFLICT (razorpay_order_id) DO UPDATE SET status = 'failed'`,
         [payment.order_id, payment.amount, payment.currency]

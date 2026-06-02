@@ -521,11 +521,11 @@ let revChart, dlChart, typeChart, catChart, trafficChart, geoChart;
 let currentRange = '30d';
 let DATA = null;
 
-function fmt(paise) {
-  const inr = paise / 100;
-  if (inr >= 100000) return '₹' + (inr/100000).toFixed(1) + 'L';
-  if (inr >= 1000)   return '₹' + (inr/1000).toFixed(1) + 'k';
-  return '₹' + inr.toLocaleString('en-IN');
+function fmt(cents) {
+  const usd = cents / 100;
+  if (usd >= 1000000) return '$' + (usd/1000000).toFixed(1) + 'M';
+  if (usd >= 1000)    return '$' + (usd/1000).toFixed(1) + 'k';
+  return '$' + usd.toFixed(2);
 }
 
 function timeAgo(ts) {
@@ -742,7 +742,7 @@ function buildBuyers(entrySkills) {
     document.getElementById('cohort-total').textContent      = totalBuyers.toLocaleString();
     document.getElementById('cohort-repeat').textContent     = repeatRate + '%';
     document.getElementById('cohort-avg-skills').textContent = totalBuyers ? (totalOrders/totalBuyers).toFixed(1) : '—';
-    document.getElementById('cohort-aov').textContent        = aov ? '₹' + aov.toLocaleString('en-IN') : '—';
+    document.getElementById('cohort-aov').textContent = aov ? '$' + (aov/100).toFixed(2) : '—';
     document.getElementById('cohort-ltv').textContent        = '—';
     document.getElementById('cohort-single').textContent     = singlePct + '%';
   }

@@ -45,7 +45,7 @@ export async function onRequestGet({ request, env }) {
       // KPIs
       client.query(`
         SELECT
-          COALESCE(SUM(amount_paise),0)                          AS total_paise,
+          COALESCE(SUM(amount_cents),0)                          AS total_cents,
           COUNT(*)                                               AS total_orders,
           COUNT(DISTINCT buyer_hash)                             AS unique_buyers,
           (SELECT COUNT(*) FROM downloads
@@ -59,7 +59,7 @@ export async function onRequestGet({ request, env }) {
       client.query(`
         SELECT
           DATE_TRUNC('day', paid_at) AS day,
-          SUM(amount_paise)          AS paise
+          SUM(amount_cents)          AS paise
         FROM orders
         WHERE status = 'paid'
           AND paid_at > NOW() - ($1 * INTERVAL '1 day')
@@ -84,7 +84,7 @@ export async function onRequestGet({ request, env }) {
           o.skill_slug,
           s.name,
           s.category,
-          SUM(o.amount_paise)                                  AS total_paise,
+          SUM(o.amount_cents)                                  AS total_cents,
           COUNT(*)                                             AS order_count,
           (SELECT COUNT(*) FROM downloads d WHERE d.skill_slug = o.skill_slug) AS download_count
         FROM orders o
@@ -92,7 +92,7 @@ export async function onRequestGet({ request, env }) {
         WHERE o.status = 'paid'
           AND o.created_at > NOW() - ($1 * INTERVAL '1 day')
         GROUP BY o.skill_slug, s.name, s.category
-        ORDER BY total_paise DESC
+        ORDER BY total_cents DESC
         LIMIT 15
       `, [interval]),
 
@@ -100,7 +100,7 @@ export async function onRequestGet({ request, env }) {
       client.query(`
         SELECT
           CASE WHEN bundle_key IS NULL THEN 'individual' ELSE 'bundle' END AS type,
-          SUM(amount_paise) AS paise
+          SUM(amount_cents) AS paise
         FROM orders
         WHERE status = 'paid'
           AND created_at > NOW() - ($1 * INTERVAL '1 day')
@@ -111,7 +111,7 @@ export async function onRequestGet({ request, env }) {
       client.query(`
         SELECT
           s.category,
-          SUM(o.amount_paise) AS paise
+          SUM(o.amount_cents) AS paise
         FROM orders o
         JOIN skills s ON s.slug = o.skill_slug
         WHERE o.status = 'paid'
@@ -124,7 +124,7 @@ export async function onRequestGet({ request, env }) {
       // Recent activity (last 20 events)
       client.query(`
         (SELECT 'order' AS type, o.skill_slug, s.name AS skill_name,
-                o.buyer_hash, o.amount_paise, o.created_at AS ts
+                o.buyer_hash, o.amount_cents, o.created_at AS ts
          FROM orders o JOIN skills s ON s.slug = o.skill_slug
          WHERE o.status = 'paid' ORDER BY o.created_at DESC LIMIT 10)
         UNION ALL
@@ -212,7 +212,7 @@ export async function onRequestGet({ request, env }) {
     const data = {
       range,
       kpi: {
-        totalPaise:    parseInt(kpi.rows[0].total_paise, 10),
+        totalPaise:    parseInt(kpi.rows[0].total_cents, 10),
         totalOrders:   parseInt(kpi.rows[0].total_orders, 10),
         uniqueBuyers:  parseInt(kpi.rows[0].unique_buyers, 10),
         totalDownloads:parseInt(kpi.rows[0].total_downloads, 10),
