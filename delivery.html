@@ -208,9 +208,14 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
 <script src="/js/products.js"></script>
 <script>
 (async function() {
-  const params  = new URLSearchParams(location.search);
-  const orderId = params.get('order_id');    // Razorpay order ID
-  const email   = params.get('email');       // buyer email from checkout
+  const params = new URLSearchParams(location.search);
+
+  const paymentId       = params.get('razorpay_payment_id');
+  const paymentLinkId   = params.get('razorpay_payment_link_id');
+  const paymentLinkRef  = params.get('razorpay_payment_link_reference_id') || '';
+  const paymentStatus   = params.get('razorpay_payment_link_status') || 'paid';
+  const signature       = params.get('razorpay_signature');
+  const sku             = params.get('sku');
 
   const $loading = document.getElementById('loading');
   const $error   = document.getElementById('error');
@@ -222,33 +227,30 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
     document.getElementById('error-msg').textContent = msg;
   }
 
-  if (!orderId || !email) {
-    showError('Missing order information. If you just purchased, check your email for the download link.');
+  if (!paymentId || !sku) {
+    showError('Missing payment information. If you just purchased, check your email or contact support@novakit.tech.');
     return;
   }
 
   try {
-    // 1. Verify order + get file URLs
-    const deliverRes = await fetch('/api/deliver', {
+    const verifyRes = await fetch('/api/verify-payment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ razorpayOrderId: orderId, buyerEmail: email }),
+      body: JSON.stringify({ paymentId, sku, signature, paymentLinkId, paymentLinkRefId: paymentLinkRef, paymentLinkStatus: paymentStatus }),
     });
 
-    if (!deliverRes.ok) {
-      const err = await deliverRes.json();
-      showError(err.error || 'Order verification failed.');
+    if (!verifyRes.ok) {
+      const err = await verifyRes.json();
+      showError(err.error || 'Payment verification failed. Contact support@novakit.tech with payment ID: ' + paymentId);
       return;
     }
 
-    const { skillName, skillSlug, isBundle, bundleKey, fileUrls, downloadNo } = await deliverRes.json();
+    const { skillName, skillSlug, isBundle, bundleKey, fileUrls, email, orderId } = await verifyRes.json();
 
-    // 2. Find product info from products.js
     const product = window.NK_PRODUCTS?.[skillSlug] || window.NK_PRODUCTS?.[bundleKey] || {};
     const icon    = product.icon || '⚡';
     const type    = product.type || (isBundle ? 'Bundle' : 'Individual skill');
 
-    // 3. Render success UI
     $loading.style.display = 'none';
     $success.style.display = 'block';
 
@@ -257,68 +259,50 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
     document.getElementById('skill-type').textContent = type;
     document.getElementById('skill-icon').textContent = icon;
 
-    // Build download buttons
+    if (email) {
+      document.getElementById('hero-sub').textContent = 'Download below and follow the 3-step install. A copy has also been sent to ' + email + '.';
+    }
+
     const btns = document.getElementById('download-buttons');
     if (fileUrls.length === 1) {
-      btns.innerHTML = `
-        <a href="${fileUrls[0]}" download class="download-btn">
-          <span class="download-btn-name">⬇ Download ${skillName}.skill</span>
-          <span class="download-btn-arrow">↓</span>
-        </a>`;
+      const fname = skillName.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+      btns.innerHTML = '<a href="' + fileUrls[0] + '" download="' + fname + '.skill" class="download-btn"><span class="download-btn-name">⬇ Download ' + skillName + '.skill</span><span class="download-btn-arrow">↓</span></a>';
     } else {
-      // Bundle — show each file
-      btns.innerHTML = fileUrls.map((url, i) => {
-        const fname = url.split('/').pop().replace('nk-','').replace(/-[a-f0-9]+\.skill$/,'.skill');
-        return `<a href="${url}" download class="download-btn ${i > 0 ? 'secondary' : ''}">
-          <span class="download-btn-name">${i === 0 ? '⬇' : '⬇'} ${fname}</span>
-          <span class="download-btn-arrow">↓</span>
-        </a>`;
+      btns.innerHTML = fileUrls.map(function(url, i) {
+        var fname = url.split('/').pop().replace('nk-','').replace(/-[a-f0-9]+\.skill$/,'.skill');
+        return '<a href="' + url + '" download class="download-btn ' + (i > 0 ? 'secondary' : '') + '"><span class="download-btn-name">⬇ ' + fname + '</span><span class="download-btn-arrow">↓</span></a>';
       }).join('');
     }
 
-    // Scale iframe to fit container
-  function scaleIframe() {
-    const iframe = document.getElementById('install-demo-iframe');
-    if (!iframe) return;
-    const wrap = iframe.closest('.demo-iframe-zoom');
-    if (!wrap) return;
-    const scale = wrap.offsetWidth / 1920;
-    iframe.style.transform = `scale(${scale})`;
-    wrap.style.height = (1080 * scale) + 'px';
-  }
-  window.addEventListener('resize', scaleIframe);
-  // Run after iframe loads
-  const iframe = document.getElementById('install-demo-iframe');
-  if (iframe) iframe.addEventListener('load', scaleIframe);
-  setTimeout(scaleIframe, 300);
+    function scaleIframe() {
+      var iframe = document.getElementById('install-demo-iframe');
+      if (!iframe) return;
+      var wrap = iframe.closest('.demo-iframe-zoom');
+      if (!wrap) return;
+      var scale = wrap.offsetWidth / 1920;
+      iframe.style.transform = 'scale(' + scale + ')';
+      wrap.style.height = (1080 * scale) + 'px';
+    }
+    window.addEventListener('resize', scaleIframe);
+    var iframeEl = document.getElementById('install-demo-iframe');
+    if (iframeEl) iframeEl.addEventListener('load', scaleIframe);
+    setTimeout(scaleIframe, 300);
 
+    if (window.nk) nk.download(skillSlug, orderId, null);
 
-    if (window.nk) {
-      nk.download(skillSlug, orderId, null);
+    if (email) {
+      document.getElementById('email-display').textContent = email;
+      fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ to: email, skillName: skillName, skillSlug: skillSlug, fileUrls: fileUrls, isBundle: isBundle, bundleKey: bundleKey, orderId: orderId }),
+      }).then(function(r) {
+        if (r.ok) document.getElementById('email-confirm').style.display = 'flex';
+      }).catch(function() {});
     }
 
-    // 5. Send email
-    document.getElementById('email-display').textContent = email;
-    fetch('/api/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        to: email,
-        skillName,
-        skillSlug,
-        fileUrls,
-        isBundle,
-        bundleKey,
-        orderId,
-      }),
-    }).then(r => {
-      if (r.ok) {
-        document.getElementById('email-confirm').style.display = 'flex';
-      }
-    }).catch(() => {}); // silent fail — download still works
-
   } catch (err) {
-    showError('Something went wrong. Please contact hello@novakit.tech with your order ID: ' + orderId);
+    showError('Something went wrong. Please contact support@novakit.tech with payment ID: ' + paymentId);
   }
 })();
 </script>
