@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your skill is ready — NovaKit</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/jpeg" href="/assets/faviconnk.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.08);--green-text:#34d399;
+  --shadow:0 1px 3px rgba(0,0,0,0.3),0 8px 32px rgba(0,0,0,0.2);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;}
+a{color:inherit;text-decoration:none;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block!important;}
+.logo-light{display:none!important;}
+
+/* PAGE */
+.page{max-width:600px;margin:0 auto;padding:56px 24px 100px;}
+
+/* LOADING STATE */
+.loading-state{text-align:center;padding:80px 0;}
+.spinner{width:40px;height:40px;border:3px solid var(--faint);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 24px;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{color:var(--muted);font-size:15px;}
+
+/* ERROR STATE */
+.error-state{text-align:center;padding:80px 0;display:none;}
+.error-icon{font-size:48px;margin-bottom:16px;}
+.error-title{font-size:22px;font-weight:700;margin-bottom:8px;}
+.error-msg{color:var(--muted);font-size:15px;margin-bottom:32px;}
+.error-btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;border-radius:8px;font-weight:600;font-size:14px;}
+
+/* SUCCESS STATE */
+.success-state{display:none;}
+
+/* HERO */
+.hero{text-align:center;margin-bottom:40px;animation:fadeUp .5s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.check-ring{width:72px;height:72px;border-radius:50%;background:var(--green-bg);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;animation:popIn .5s cubic-bezier(0.175,0.885,0.32,1.275) both;}
+@keyframes popIn{from{transform:scale(0.5);opacity:0}to{transform:scale(1);opacity:1}}
+.check-mark{font-size:30px;}
+.hero-label{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:8px;}
+.hero-title{font-size:28px;font-weight:800;letter-spacing:-0.02em;margin-bottom:8px;}
+.hero-sub{font-size:15px;color:var(--muted);}
+
+/* SKILL CARD */
+.skill-card{background:var(--surface);border:1px solid var(--border-s);border-radius:14px;padding:24px;margin-bottom:28px;animation:fadeUp .5s .1s ease both;}
+.skill-card-top{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
+.skill-icon{width:48px;height:48px;border-radius:10px;background:rgba(222,115,86,0.1);border:1px solid rgba(222,115,86,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.skill-info{}
+.skill-type{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:600;margin-bottom:4px;}
+.skill-name{font-size:18px;font-weight:700;letter-spacing:-0.01em;}
+
+/* DOWNLOAD BUTTONS */
+.download-section{margin-bottom:20px;}
+.download-label{font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);font-weight:600;margin-bottom:12px;}
+.download-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:14px 18px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;margin-bottom:8px;font-family:'Geist',sans-serif;text-decoration:none;}
+.download-btn:hover{background:var(--accent-h);transform:translateY(-1px);}
+.download-btn:active{transform:none;}
+.download-btn-name{display:flex;align-items:center;gap:10px;}
+.download-btn-arrow{font-size:18px;}
+.download-btn.secondary{background:var(--surface);border:1px solid var(--border-s);color:var(--text);}
+.download-btn.secondary:hover{border-color:var(--accent);color:var(--accent);}
+
+/* EMAIL CONFIRMATION */
+.email-confirm{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--green-bg);border:1px solid rgba(52,211,153,0.2);border-radius:10px;margin-bottom:28px;animation:fadeUp .5s .2s ease both;}
+.email-confirm-icon{font-size:18px;flex-shrink:0;}
+.email-confirm-text{font-size:13px;color:var(--green-text);line-height:1.4;}
+.email-confirm-text strong{font-weight:600;}
+
+/* HOW TO USE */
+.how-to{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:28px;animation:fadeUp .5s .3s ease both;}
+.how-to-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:16px;}
+.how-to-steps{list-style:none;padding:0;}
+.how-to-step{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--border);}
+.how-to-step:last-child{border-bottom:none;padding-bottom:0;}
+.step-num{width:24px;height:24px;border-radius:50%;background:rgba(222,115,86,0.12);border:1px solid rgba(222,115,86,0.25);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--accent);flex-shrink:0;margin-top:2px;}
+.step-text{font-size:14px;color:var(--muted);line-height:1.5;}
+.step-text strong{color:var(--text);font-weight:600;}
+code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;}
+
+/* DEMO IFRAME */
+.demo-iframe-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.dic-header{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--bg2);border-bottom:1px solid var(--border);}
+.dic-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.dic-dot:nth-child(1){background:#ff5f57;}
+.dic-dot:nth-child(2){background:#febc2e;}
+.dic-dot:nth-child(3){background:#28c840;}
+.dic-label{font-size:12px;color:var(--muted);font-weight:500;margin-left:6px;}
+.demo-iframe-zoom{width:100%;min-height:300px;overflow:hidden;position:relative;}
+.demo-iframe-zoom iframe{width:1920px;height:1080px;border:none;display:block;position:absolute;top:0;left:0;transform-origin:top left;}
+.footer-links{text-align:center;animation:fadeUp .5s .4s ease both;}
+.footer-links a{font-size:13px;color:var(--muted);margin:0 12px;transition:color .15s;}
+.footer-links a:hover{color:var(--accent);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/">
+    <img class="logo-img logo-dark" src="https://assets.novakit.tech/nkwhite.jpg" alt="NovaKit">
+  </a>
+</nav>
+
+<div class="page">
+
+  <!-- LOADING -->
+  <div class="loading-state" id="loading">
+    <div class="spinner"></div>
+    <div class="loading-text">Verifying your order…</div>
+  </div>
+
+  <!-- ERROR -->
+  <div class="error-state" id="error">
+    <div class="error-icon">⚠️</div>
+    <div class="error-title">Something went wrong</div>
+    <div class="error-msg" id="error-msg">We couldn't verify your order. Please contact support.</div>
+    <a href="mailto:hello@novakit.tech" class="error-btn">Contact support</a>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="success-state" id="success">
+
+    <div class="hero">
+      <div class="check-ring"><div class="check-mark">✓</div></div>
+      <div class="hero-label">Payment confirmed</div>
+      <h1 class="hero-title" id="hero-title">Your skill is ready</h1>
+      <p class="hero-sub">Download below and add it to Claude to get started.</p>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-top">
+        <div class="skill-icon" id="skill-icon">⚡</div>
+        <div class="skill-info">
+          <div class="skill-type" id="skill-type">Individual skill</div>
+          <div class="skill-name" id="skill-name">Loading…</div>
+        </div>
+      </div>
+
+      <!-- Download buttons injected here -->
+      <div class="download-section">
+        <div class="download-label">Download your skill file</div>
+        <div id="download-buttons"></div>
+      </div>
+    </div>
+
+    <!-- Email confirmation -->
+    <div class="email-confirm" id="email-confirm" style="display:none;">
+      <div class="email-confirm-icon">📬</div>
+      <div class="email-confirm-text">
+        We've also sent a download link to <strong id="email-display"></strong> — check your inbox.
+      </div>
+    </div>
+
+    <!-- How to install -->
+    <div class="how-to">
+      <div class="how-to-title">How to install — 3 steps</div>
+      <ul class="how-to-steps">
+        <li class="how-to-step">
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>Open Claude → Customize → Skills → <span style="color:var(--accent)">+</span></strong><br>In Claude's sidebar click <code>Customize</code>, then <code>Skills</code>, then the <code>+</code> button and choose <code>Upload a skill</code>.</div>
+        </li>
+        <li class="how-to-step">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Drop in your .skill file</strong><br>Drag the downloaded <code>.skill</code> file into the upload area. Wait a moment for validation — you'll see it appear in your skills list.</div>
+        </li>
+        <li class="how-to-step">
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>Type <code>/</code> in any chat to use it</strong><br>Start any new chat, type <code>/</code> and select your skill from the menu. Done.</div>
+        </li>
+      </ul>
+
+      <!-- Demo iframe -->
+      <div class="demo-iframe-card" style="margin-top:24px;">
+        <div class="dic-header">
+          <div class="dic-dot"></div><div class="dic-dot"></div><div class="dic-dot"></div>
+          <span class="dic-label">Installation guide</span>
+        </div>
+        <div class="demo-iframe-zoom">
+          <iframe id="install-demo-iframe" src="/assets/novakit_Add_a_Skill_Demo.html" title="How to install a NovaKit skill" frameborder="0" allow="autoplay"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <a href="/">← All Skills</a>
+      <a href="/legal/refund.html">Refunds</a>
+      <a href="mailto:support@novakit.tech">Support</a>
+    </div>
+
+  </div><!-- /success -->
+
+</div><!-- /page -->
+
+<script src="/js/products.js"></script>
+<script>
+(async function() {
+  const params = new URLSearchParams(location.search);
+
+  const paymentId       = params.get('razorpay_payment_id');
+  const paymentLinkId   = params.get('razorpay_payment_link_id');
+  const paymentLinkRef  = params.get('razorpay_payment_link_reference_id') || '';
+  const paymentStatus   = params.get('razorpay_payment_link_status') || 'paid';
+  const signature       = params.get('razorpay_signature');
+  const sku             = params.get('sku');
+
+  const $loading = document.getElementById('loading');
+  const $error   = document.getElementById('error');
+  const $success = document.getElementById('success');
+
+  function showError(msg) {
+    $loading.style.display = 'none';
+    $error.style.display = 'block';
+    document.getElementById('error-msg').textContent = msg;
+  }
+
+  if (!paymentId || !sku) {
+    showError('Missing payment information. If you just purchased, check your email or contact support@novakit.tech.');
+    return;
+  }
+
+  try {
+    const verifyRes = await fetch('/api/verify-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ paymentId, sku, signature, paymentLinkId, paymentLinkRefId: paymentLinkRef, paymentLinkStatus: paymentStatus }),
+    });
+
+    if (!verifyRes.ok) {
+      const err = await verifyRes.json();
+      showError(err.error || 'Payment verification failed. Contact support@novakit.tech with payment ID: ' + paymentId);
+      return;
+    }
+
+    const { skillName, skillSlug, isBundle, bundleKey, fileUrls, email, orderId } = await verifyRes.json();
+
+    const product = window.NK_PRODUCTS?.[skillSlug] || window.NK_PRODUCTS?.[bundleKey] || {};
+    const icon    = product.icon || '⚡';
+    const type    = product.type || (isBundle ? 'Bundle' : 'Individual skill');
+
+    $loading.style.display = 'none';
+    $success.style.display = 'block';
+
+    document.getElementById('hero-title').textContent = skillName;
+    document.getElementById('skill-name').textContent = skillName;
+    document.getElementById('skill-type').textContent = type;
+    document.getElementById('skill-icon').textContent = icon;
+
+    if (email) {
+      document.getElementById('hero-sub').textContent = 'Download below and follow the 3-step install. A copy has also been sent to ' + email + '.';
+    }
+
+    const btns = document.getElementById('download-buttons');
+    if (fileUrls.length === 1) {
+      const fname = skillName.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+      btns.innerHTML = '<a href="' + fileUrls[0] + '" download="' + fname + '.skill" class="download-btn"><span class="download-btn-name">⬇ Download ' + skillName + '.skill</span><span class="download-btn-arrow">↓</span></a>';
+    } else {
+      btns.innerHTML = fileUrls.map(function(url, i) {
+        var fname = url.split('/').pop().replace('nk-','').replace(/-[a-f0-9]+\.skill$/,'.skill');
+        return '<a href="' + url + '" download class="download-btn ' + (i > 0 ? 'secondary' : '') + '"><span class="download-btn-name">⬇ ' + fname + '</span><span class="download-btn-arrow">↓</span></a>';
+      }).join('');
+    }
+
+    function scaleIframe() {
+      var iframe = document.getElementById('install-demo-iframe');
+      if (!iframe) return;
+      var wrap = iframe.closest('.demo-iframe-zoom');
+      if (!wrap) return;
+      var scale = wrap.offsetWidth / 1920;
+      iframe.style.transform = 'scale(' + scale + ')';
+      wrap.style.height = (1080 * scale) + 'px';
+    }
+    window.addEventListener('resize', scaleIframe);
+    var iframeEl = document.getElementById('install-demo-iframe');
+    if (iframeEl) iframeEl.addEventListener('load', scaleIframe);
+    setTimeout(scaleIframe, 300);
+
+    if (window.nk) nk.download(skillSlug, orderId, null);
+
+    if (email) {
+      document.getElementById('email-display').textContent = email;
+      fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ to: email, skillName: skillName, skillSlug: skillSlug, fileUrls: fileUrls, isBundle: isBundle, bundleKey: bundleKey, orderId: orderId }),
+      }).then(function(r) {
+        if (r.ok) document.getElementById('email-confirm').style.display = 'flex';
+      }).catch(function() {});
+    }
+
+  } catch (err) {
+    showError('Something went wrong. Please contact support@novakit.tech with payment ID: ' + paymentId);
+  }
+})();
+</script>
+
+</body>
+</html>
