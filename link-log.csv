@@ -1,217 +1,265 @@
 file,type,skill,actions
-The-Holiday-Greeting-Written-for-Everyone-and-Why-It-Lands-with-No-One.html,blog,festival-holiday-greeting-prompt,L1 injected on 'Holiday Greeting' | fallback para appended
+The-Holiday-Greeting-Written-for-Everyone-and-Why-It-Lands-with-No-One.html,blog,festival-holiday-greeting-prompt,L1 already present | L2b already present
 festival-holiday-greeting-prompt.html,skill-page,festival-holiday-greeting-prompt,L3 back-link added
-The-LinkedIn-Post-That-Actually-Gets-Read-and-Why-Format-Is-Everything.html,blog,linkedin-post-engine,L1 injected on 'LinkedIn post' | L2 injected on 'Content Creation' | fallback para appended
+The-LinkedIn-Post-That-Actually-Gets-Read-and-Why-Format-Is-Everything.html,blog,linkedin-post-engine,L1 already present | L2 already present | L2b already present
 linkedin-post-engine.html,skill-page,linkedin-post-engine,L3 back-link added
-The-Screenplay-AI-Gets-Wrong-and-What-a-Trained-Script-Skill-Fixes.html,blog,screenplay-script,L1 injected on 'screenplay' | fallback para appended
+The-Screenplay-AI-Gets-Wrong-and-What-a-Trained-Script-Skill-Fixes.html,blog,screenplay-script,L1 already present | L2 already present | L2b already present
 screenplay-script.html,skill-page,screenplay-script,L3 back-link added
-The-Short-Story-AI-Gets-Right-When-It-Knows-Your-Genre.html,blog,short-story-prompt,L1 injected on 'short story' | L2b bundle injected on 'Creative Writing' | fallback para appended
+The-Short-Story-AI-Gets-Right-When-It-Knows-Your-Genre.html,blog,short-story-prompt,L1 already present | L2 already present | L2b already present
 short-story-prompt.html,skill-page,short-story-prompt,L3 back-link added
-Why-AI-Poetry-Reads-Like-a-Greeting-Card-and-How-to-Fix-It.html,blog,poetry-verse-prompt,L1 injected on 'Poetry' | L2b bundle injected on 'Creative Writing' | fallback para appended
+Why-AI-Poetry-Reads-Like-a-Greeting-Card-and-How-to-Fix-It.html,blog,poetry-verse-prompt,L1 already present | L2 already present | L2b already present
 poetry-verse-prompt.html,skill-page,poetry-verse-prompt,L3 back-link added
-Why-your-second-childrens-book-doesnt-sound-like-your-first.html,blog,children-book-prompt,L1 injected on 'children's book' | fallback para appended
-Your-Brand-Voice-Is-the-One-Thing-AI-cant-fake.html,blog,brand-voice-guide,L1 injected on 'Brand Voice' | L2 injected on 'LinkedIn post' | fallback para appended
+Why-your-second-childrens-book-doesnt-sound-like-your-first.html,blog,children-book-prompt,L1 already present | L2 already present | L2b already present
+childrens-book-prompt.html,skill-page,children-book-prompt,L3 back-link added
+Your-Brand-Voice-Is-the-One-Thing-AI-cant-fake.html,blog,brand-voice-guide,L1 already present | L2 already present | L2b already present
 brand-voice-guide.html,skill-page,brand-voice-guide,L3 back-link added
-Your-Social-Posts-Arent-Underperforming-Your-Brief-Is..html,blog,social-content-engine,L1 injected on 'social content' | fallback para appended
+Your-Social-Posts-Arent-Underperforming-Your-Brief-Is..html,blog,social-content-engine,L1 already present | L2 already present | L2b already present
 social-content-engine.html,skill-page,social-content-engine,L3 back-link added
-ai-animation-film-prompt-why-descriptions-fail.html,blog,ai-animation-film-prompt,L1 injected on 'AI Animation' | fallback para appended
+ai-animation-film-prompt-why-descriptions-fail.html,blog,ai-animation-film-prompt,L1 already present | L2 already present | L2b already present
 ai-animation-film-prompt.html,skill-page,ai-animation-film-prompt,L3 back-link added
-ai-animation-film-prompt.html,blog,ai-animation-film-prompt,L1 injected on 'AI Animation' | fallback para appended
+ai-animation-film-prompt.html,blog,ai-animation-film-prompt,L1 already present | L2 already present | L2b already present
 ai-animation-film-prompt.html,skill-page,ai-animation-film-prompt,L3 back-link added
-airbnb-listing-copy-you-vs-ai-vs-calibrated-skill.html,blog,hotel-airbnb-listing-copy,L1 injected on 'Airbnb listing' | L2 injected on 'Listing Copy' | fallback para appended
+airbnb-listing-copy-you-vs-ai-vs-calibrated-skill.html,blog,hotel-airbnb-listing-copy,L1 already present | L2 already present | L2b already present
 hotel-airbnb-listing-copy.html,skill-page,hotel-airbnb-listing-copy,L3 back-link added
-brand-ad-copy-why-your-ads-dont-convert.html,blog,brand-ad-copy,L1 injected on 'ad copy' | L2b bundle injected on 'marketing team' | fallback para appended
+architecture-diagram-prompt.html,blog,architecture-diagram-prompt,L1 injected on 'architecture diagram' | fallback para appended
+architecture-diagram-prompt.html,skill-page,architecture-diagram-prompt,L3 back-link added
+brand-ad-copy-why-your-ads-dont-convert.html,blog,brand-ad-copy,L1 already present | L2 already present | L2b already present
 brand-ad-copy.html,skill-page,brand-ad-copy,L3 back-link added
-brand-ad-copy.html,blog,brand-ad-copy,L1 injected on 'ad copy' | fallback para appended
+brand-ad-copy.html,blog,brand-ad-copy,L1 already present | L2 already present | L2b already present
 brand-ad-copy.html,skill-page,brand-ad-copy,L3 back-link added
-brand-voice-guide.html,blog,brand-voice-guide,L1 injected on 'brand voice' | L2 injected on 'LinkedIn post' | fallback para appended
+brand-voice-guide.html,blog,brand-voice-guide,L1 already present | L2 already present | L2b already present
 brand-voice-guide.html,skill-page,brand-voice-guide,L3 back-link added
-business-plan.html,blog,business-plan,L1 injected on 'business plan' | L2 injected on 'narrative arc' | L2b bundle injected on 'Pre-seed'
+business-plan.html,blog,business-plan,L1 already present | L2 already present | L2b already present
 business-plan.html,skill-page,business-plan,L3 back-link added
-childrens-book-prompt.html,blog,children-book-prompt,L1 injected on 'children's book' | L2b bundle injected on 'Creative Writing' | fallback para appended
-cold-outreach-email.html,blog,cold-outreach-email,L1 injected on 'cold email' | fallback para appended
+childrens-book-prompt.html,blog,children-book-prompt,L1 already present | L2 already present | L2b already present
+childrens-book-prompt.html,skill-page,children-book-prompt,L3 back-link added
+cold-outreach-email.html,blog,cold-outreach-email,L1 already present | L2 already present | L2b already present
 cold-outreach-email.html,skill-page,cold-outreach-email,L3 back-link added
-conference-abstract-why-yours-gets-rejected.html,blog,conference-abstract,L1 injected on 'Conference Abstract' | fallback para appended
+conference-abstract-why-yours-gets-rejected.html,blog,conference-abstract,L1 already present | L2 already present | L2b already present
 conference-abstract.html,skill-page,conference-abstract,L3 back-link added
-conference-abstract.html,blog,conference-abstract,L1 injected on 'conference abstract' | fallback para appended
+conference-abstract.html,blog,conference-abstract,L1 already present | L2 already present | L2b already present
 conference-abstract.html,skill-page,conference-abstract,L3 back-link added
-content-calendar-why-planning-ahead-fails.html,blog,content-calendar,L1 injected on 'Content Calendar' | fallback para appended
+content-calendar-why-planning-ahead-fails.html,blog,content-calendar,L1 already present | L2 already present | L2b already present
 content-calendar.html,skill-page,content-calendar,L3 back-link added
-content-calendar.html,blog,content-calendar,L1 injected on 'Content Calendar' | L2b bundle injected on 'personal brand' | fallback para appended
+content-calendar.html,blog,content-calendar,L1 already present | L2 already present | L2b already present
 content-calendar.html,skill-page,content-calendar,L3 back-link added
-course-curriculum-builder-ai.html,blog,course-curriculum-builder,L1 injected on 'curriculum design' | L2 injected on 'Lesson structure' | L2b bundle injected on 'Course Creation'
+course-curriculum-builder-ai.html,blog,course-curriculum-builder,L1 already present | L2 already present | L2b already present
 course-curriculum-builder.html,skill-page,course-curriculum-builder,L3 back-link added
-cover-letter-writer-why-yours-gets-skipped.html,blog,cover-letter-writer,L1 injected on 'cover letter' | fallback para appended
+cover-letter-writer-why-yours-gets-skipped.html,blog,cover-letter-writer,L1 already present | L2 already present | L2b already present
 cover-letter-writer.html,skill-page,cover-letter-writer,L3 back-link added
-cover-letter-writer.html,blog,cover-letter-writer,L1 injected on 'cover letter' | fallback para appended
+cover-letter-writer.html,blog,cover-letter-writer,L1 already present | L2 already present | L2b already present
 cover-letter-writer.html,skill-page,cover-letter-writer,L3 back-link added
-ecommerce-product-listing-why-generic-fails.html,blog,ecommerce-product-listing,L1 injected on 'product listing' | fallback para appended
-ecommerce-product-listing.html,skill-page,ecommerce-product-listing,L3 back-link added
-ecommerce-product-listing.html,blog,ecommerce-product-listing,L1 injected on 'product listing' | fallback para appended
-ecommerce-product-listing.html,skill-page,ecommerce-product-listing,L3 back-link added
-email-newsletter-engine.html,blog,email-newsletter-engine,L1 injected on 'Email Newsletter' | fallback para appended
-email-newsletter-engine.html,skill-page,email-newsletter-engine,L3 back-link added
-email-newsletter-subject-lines.html,blog,email-newsletter-engine,L1 injected on 'Email Newsletter' | fallback para appended
-email-newsletter-engine.html,skill-page,email-newsletter-engine,L3 back-link added
-exam-paper-generator-why-generic-fails.html,blog,exam-paper-generator,L1 injected on 'exam paper' | fallback para appended
-exam-paper-generator.html,skill-page,exam-paper-generator,L3 back-link added
-exam-paper-generator.html,blog,exam-paper-generator,L1 injected on 'Exam Paper' | fallback para appended
-exam-paper-generator.html,skill-page,exam-paper-generator,L3 back-link added
-festival-holiday-greeting-prompt.html,blog,festival-holiday-greeting-prompt,L1 injected on 'holiday greeting' | fallback para appended
-festival-holiday-greeting-prompt.html,skill-page,festival-holiday-greeting-prompt,L3 back-link added
-financial-model-why-spreadsheets-arent-the-problem.html,blog,financial-model-prompt,L1 injected on 'financial model' | fallback para appended
-financial-model-prompt.html,skill-page,financial-model-prompt,L3 back-link added
-financial-model.html,blog,financial-model-prompt,L1 injected on 'financial model' | fallback para appended
-financial-model-prompt.html,skill-page,financial-model-prompt,L3 back-link added
-grant-proposal-writing-why-generic-fails.html,blog,grant-proposal-writing,L1 injected on 'Grant Writing' | fallback para appended
-grant-proposal-writing.html,skill-page,grant-proposal-writing,L3 back-link added
-grant-proposal-writing.html,blog,grant-proposal-writing,L1 injected on 'grant proposal' | fallback para appended
-grant-proposal-writing.html,skill-page,grant-proposal-writing,L3 back-link added
-hotel-airbnb-listing-copy.html,blog,hotel-airbnb-listing-copy,L1 injected on 'Airbnb listing' | L2 injected on 'Listing Copy' | fallback para appended
-hotel-airbnb-listing-copy.html,skill-page,hotel-airbnb-listing-copy,L3 back-link added
-how-to-write-ai-film-prompts-that-actually-work.html,blog,ai-animation-film-prompt,L1 injected on 'AI film' | fallback para appended
-ai-animation-film-prompt.html,skill-page,ai-animation-film-prompt,L3 back-link added
-how-to-write-real-estate-listing.html,blog,real-estate-listing-copy,L1 injected on 'property listing' | fallback para appended
-real-estate-listing-copy.html,skill-page,real-estate-listing-copy,L3 back-link added
-how-to-write-wedding-vows-with-ai-that-actually-sound-like-you.html,blog,wedding-vows-writer,L1 injected on 'wedding vows' | L2b bundle injected on 'Wedding Planning' | fallback para appended
-wedding-vows-writer.html,skill-page,wedding-vows-writer,L3 back-link added
-investor-update-email-what-weak-updates-cost.html,blog,investor-update-email,L1 injected on 'investor update' | L2b bundle injected on 'fundraising' | fallback para appended
-investor-update-email.html,skill-page,investor-update-email,L3 back-link added
-investor-update-email.html,blog,investor-update-email,L1 injected on 'investor update' | L2b bundle injected on 'pre-seed' | fallback para appended
-investor-update-email.html,skill-page,investor-update-email,L3 back-link added
-job-description-writer-why-jds-filter-wrong-people.html,blog,job-description-writer,L1 injected on 'Job Description' | fallback para appended
-job-description-writer.html,skill-page,job-description-writer,L3 back-link added
-job-description-writer.html,blog,job-description-writer,L1 injected on 'job description' | L2b bundle injected on 'pre-seed' | fallback para appended
-job-description-writer.html,skill-page,job-description-writer,L3 back-link added
-lesson-plan-builder-ai.html,blog,lesson-plan-builder,L1 injected on 'lesson plan' | fallback para appended
-lesson-plan-builder.html,skill-page,lesson-plan-builder,L3 back-link added
-linkedin-post-engine.html,blog,linkedin-post-engine,L1 injected on 'LinkedIn post' | L2 injected on 'Content Strategy' | fallback para appended
-linkedin-post-engine.html,skill-page,linkedin-post-engine,L3 back-link added
-menu-description-copy-ai.html,blog,menu-description-copy,L1 injected on 'Menu copy' | fallback para appended
-menu-description-copy.html,skill-page,menu-description-copy,L3 back-link added
-nda-contract-draft-free-template-problem.html,blog,nda-contract-draft,L1 injected on 'NDA' | fallback para appended
-nda-contract-draft.html,skill-page,nda-contract-draft,L3 back-link added
-nda-contract-draft.html,blog,nda-contract-draft,L1 injected on 'NDA' | fallback para appended
-nda-contract-draft.html,skill-page,nda-contract-draft,L3 back-link added
-online-course-curriculum-completion.html,blog,course-curriculum-builder,L1 injected on 'course outline' | L2b bundle injected on 'Course creation' | fallback para appended
-course-curriculum-builder.html,skill-page,course-curriculum-builder,L3 back-link added
-pitch-deck-narrative-stage-calibration.html,blog,pitch-deck-narrative,L1 injected on 'Pitch Deck' | L2b bundle injected on 'pre-seed' | fallback para appended
-pitch-deck-narrative.html,skill-page,pitch-deck-narrative,L3 back-link added
-pitch-deck-narrative.html,blog,pitch-deck-narrative,L1 injected on 'pitch deck' | L2b bundle injected on 'pre-seed' | fallback para appended
-pitch-deck-narrative.html,skill-page,pitch-deck-narrative,L3 back-link added
-podcast-scripted-vs-outlined-vs-improvised.html,blog,podcast-episode-script,L1 injected on 'Podcast Episode' | L2 injected on 'show notes' | fallback para appended
-podcast-episode-script.html,skill-page,podcast-episode-script,L3 back-link added
-podcast-show-notes-why-generic-fails.html,blog,podcast-show-notes,L1 injected on 'show notes' | fallback para appended
-podcast-show-notes.html,skill-page,podcast-show-notes,L3 back-link added
-podcast-show-notes.html,blog,podcast-show-notes,L1 injected on 'Show notes' | L2 injected on 'social content' | L2b bundle injected on 'production workflow'
-podcast-show-notes.html,skill-page,podcast-show-notes,L3 back-link added
-poetry-verse-prompt.html,blog,poetry-verse-prompt,L1 injected on 'poetry' | L2b bundle injected on 'Creative Writing' | fallback para appended
-poetry-verse-prompt.html,skill-page,poetry-verse-prompt,L3 back-link added
-pr-press-release-why-journalists-ignore-you.html,blog,pr-press-release,L1 injected on 'press release' | fallback para appended
-pr-press-release.html,skill-page,pr-press-release,L3 back-link added
-pr-press-release.html,blog,pr-press-release,L1 injected on 'press release' | fallback para appended
-pr-press-release.html,skill-page,pr-press-release,L3 back-link added
-product-ad-film-prompt-render-vs-ad.html,blog,product-ad-film-prompt,L1 injected on 'product ad' | L2 injected on 'AI Video' | fallback para appended
-product-ad-film-prompt.html,skill-page,product-ad-film-prompt,L3 back-link added
-product-ad-film-prompt.html,blog,product-ad-film-prompt,L1 injected on 'product ad' | L2 injected on 'AI video' | fallback para appended
-product-ad-film-prompt.html,skill-page,product-ad-film-prompt,L3 back-link added
-product-photography-prompt-why-photos-dont-convert.html,blog,product-photography-prompt,L1 injected on 'product photography' | fallback para appended
-product-photography-prompt.html,skill-page,product-photography-prompt,L3 back-link added
-product-photography-prompt.html,blog,product-photography-prompt,L1 injected on 'product photo' | fallback para appended
-product-photography-prompt.html,skill-page,product-photography-prompt,L3 back-link added
-real-estate-listing-copy.html,blog,real-estate-listing-copy,L1 injected on 'property listing' | fallback para appended
-real-estate-listing-copy.html,skill-page,real-estate-listing-copy,L3 back-link added
-real-estate-photo-prompt-why-generic-fails.html,blog,real-estate-photo-prompt,L1 injected on 'real estate photo' | fallback para appended
-real-estate-photo-prompt.html,skill-page,real-estate-photo-prompt,L3 back-link added
-real-estate-photo-prompt.html,blog,real-estate-photo-prompt,L1 injected on 'real estate photo' | L2b bundle injected on 'property market' | fallback para appended
-real-estate-photo-prompt.html,skill-page,real-estate-photo-prompt,L3 back-link added
-research-paper-outline-ai.html,blog,research-paper-outline,L1 injected on 'research paper' | L2 injected on 'conference paper' | fallback para appended
-research-paper-outline.html,skill-page,research-paper-outline,L3 back-link added
-resume-cv-builder-ats-mistakes.html,blog,resume-cv-builder,L1 injected on 'Resume' | fallback para appended
-resume-cv-builder.html,skill-page,resume-cv-builder,L3 back-link added
-resume-cv-builder.html,blog,resume-cv-builder,L1 injected on 'Resume' | fallback para appended
-resume-cv-builder.html,skill-page,resume-cv-builder,L3 back-link added
-sales-page-skill.html,blog,sales-page,L1 injected on 'sales page' | fallback para appended
-sales-page.html,skill-page,sales-page,L3 back-link added
-screenplay-script-that-describes-what-happens.html,blog,screenplay-script,L1 injected on 'screenplay' | L2b bundle injected on 'Creative Writing' | fallback para appended
-screenplay-script.html,skill-page,screenplay-script,L3 back-link added
-screenplay-script-why-yours-reads-like-a-summary.html,blog,screenplay-script,L1 injected on 'screenplay' | L2b bundle injected on 'Creative Writing' | fallback para appended
-screenplay-script.html,skill-page,screenplay-script,L3 back-link added
-screenplay-script.html,blog,screenplay-script,L1 injected on 'Screenplay' | fallback para appended
-screenplay-script.html,skill-page,screenplay-script,L3 back-link added
-seo-blog-post-brief.html,blog,seo-blog-post-brief,L1 injected on 'SEO Blog' | fallback para appended
-seo-blog-post-brief.html,skill-page,seo-blog-post-brief,L3 back-link added
-seo-brief-for-freelancers.html,blog,seo-blog-post-brief,L1 injected on 'SEO Blog' | fallback para appended
-seo-blog-post-brief.html,skill-page,seo-blog-post-brief,L3 back-link added
-short-form-ai-video-script.html,blog,short-form-ai-video,L1 injected on 'Short-form video' | fallback para appended
-short-form-ai-video.html,skill-page,short-form-ai-video,L3 back-link added
-short-story-prompt.html,blog,short-story-prompt,L1 injected on 'short story' | L2b bundle injected on 'Creative Writing' | fallback para appended
-short-story-prompt.html,skill-page,short-story-prompt,L3 back-link added
-social-content-engine-skill.html,blog,social-content-engine,L1 injected on 'social content' | fallback para appended
-social-content-engine.html,skill-page,social-content-engine,L3 back-link added
-terms-of-service-privacy-policy-what-copied-tos-misses.html,blog,terms-of-service-privacy-policy,L1 injected on 'Terms of Service' | L2b bundle injected on 'Legal Documents' | fallback para appended
-terms-of-service-privacy-policy.html,skill-page,terms-of-service-privacy-policy,L3 back-link added
-terms-of-service-privacy-policy.html,blog,terms-of-service-privacy-policy,L1 injected on 'Terms of Service' | L2b bundle injected on 'legal documents' | fallback para appended
-terms-of-service-privacy-policy.html,skill-page,terms-of-service-privacy-policy,L3 back-link added
-the-ai-film-prompt-that-gives-sora-a-character-not-just-a-scene.html,blog,dialogue-character-film-prompt,L1 injected on 'scene prompt' | fallback para appended
+dialogue-character-film-prompt.html,blog,dialogue-character-film-prompt,L1 injected on 'Film Dialogue' | fallback para appended
 dialogue-character-film-prompt.html,skill-page,dialogue-character-film-prompt,L3 back-link added
-the-airbnb-listing-that-gets-booked-before-anyone-asks-about-parking.html,blog,hotel-airbnb-listing-copy,L1 injected on 'Airbnb Listing' | L2 injected on 'Listing Copy' | fallback para appended
+ecommerce-product-listing-why-generic-fails.html,blog,ecommerce-product-listing,L1 already present | L2 already present | L2b already present
+ecommerce-product-listing.html,skill-page,ecommerce-product-listing,L3 back-link added
+ecommerce-product-listing.html,blog,ecommerce-product-listing,L1 already present | L2 already present | L2b already present
+ecommerce-product-listing.html,skill-page,ecommerce-product-listing,L3 back-link added
+email-newsletter-engine.html,blog,email-newsletter-engine,L1 already present | L2 already present | L2b already present
+email-newsletter-engine.html,skill-page,email-newsletter-engine,L3 back-link added
+email-newsletter-subject-lines.html,blog,email-newsletter-engine,L1 already present | L2 already present | L2b already present
+email-newsletter-engine.html,skill-page,email-newsletter-engine,L3 back-link added
+eulogy-writer.html,blog,eulogy-writer,L1 injected on 'eulogy' | fallback para appended
+eulogy-writer.html,skill-page,eulogy-writer,L3 back-link added
+exam-paper-generator-why-generic-fails.html,blog,exam-paper-generator,L1 already present | L2 already present | L2b already present
+exam-paper-generator.html,skill-page,exam-paper-generator,L3 back-link added
+exam-paper-generator.html,blog,exam-paper-generator,L1 already present | L2 already present | L2b already present
+exam-paper-generator.html,skill-page,exam-paper-generator,L3 back-link added
+festival-holiday-greeting-prompt.html,blog,festival-holiday-greeting-prompt,L1 already present | L2b already present
+festival-holiday-greeting-prompt.html,skill-page,festival-holiday-greeting-prompt,L3 back-link added
+financial-model-why-spreadsheets-arent-the-problem.html,blog,financial-model-prompt,L1 already present | L2 already present | L2b already present
+financial-model-prompt.html,skill-page,financial-model-prompt,L3 back-link added
+financial-model.html,blog,financial-model-prompt,L1 already present | L2 already present | L2b already present
+financial-model-prompt.html,skill-page,financial-model-prompt,L3 back-link added
+grant-proposal-writing-why-generic-fails.html,blog,grant-proposal-writing,L1 already present | L2 already present | L2b already present
+grant-proposal-writing.html,skill-page,grant-proposal-writing,L3 back-link added
+grant-proposal-writing.html,blog,grant-proposal-writing,L1 already present | L2 already present | L2b already present
+grant-proposal-writing.html,skill-page,grant-proposal-writing,L3 back-link added
+health-wellness-plan-why-generic-fails.html,blog,health-wellness-plan,L1 injected on 'wellness plan' | fallback para appended
+health-wellness-plan.html,skill-page,health-wellness-plan,L3 back-link added
+health-wellness-plan.html,blog,health-wellness-plan,L1 injected on 'wellness plan' | fallback para appended
+health-wellness-plan.html,skill-page,health-wellness-plan,L3 back-link added
+home-renovation-brief-why-generic-ai-fails-contractors.html,blog,home-renovation-brief,L1 injected on 'renovation brief' | fallback para appended
+home-renovation-brief.html,skill-page,home-renovation-brief,L3 back-link added
+home-renovation-brief.html,blog,home-renovation-brief,L1 injected on 'Renovation Brief' | fallback para appended
+home-renovation-brief.html,skill-page,home-renovation-brief,L3 back-link added
+hotel-airbnb-listing-copy.html,blog,hotel-airbnb-listing-copy,L1 already present | L2 already present | L2b already present
 hotel-airbnb-listing-copy.html,skill-page,hotel-airbnb-listing-copy,L3 back-link added
-the-book-cover-brief-your-designer-actually-needs.html,blog,book-cover-prompt,L1 injected on 'Book Cover' | fallback para appended
-book-cover-prompt.html,skill-page,book-cover-prompt,L3 back-link added
-the-podcast-script-that-sounds-like-you-wrote-it-not-like-youre-reading-it.html,blog,podcast-episode-script,L1 injected on 'podcast script' | L2 injected on 'show notes' | fallback para appended
-podcast-episode-script.html,skill-page,podcast-episode-script,L3 back-link added
-the-sales-page-that-sounds-like-it-was-written-about-your-product.html,blog,sales-page,L1 injected on 'sales page' | fallback para appended
-sales-page.html,skill-page,sales-page,L3 back-link added
-the-vows-that-sound-like-you-wrote-them-because-you-did.html,blog,wedding-vows-writer,L1 injected on 'Wedding Vows' | L2b bundle injected on 'Wedding Planning' | fallback para appended
+how-to-write-ai-film-prompts-that-actually-work.html,blog,ai-animation-film-prompt,L1 already present | L2 already present | L2b already present
+ai-animation-film-prompt.html,skill-page,ai-animation-film-prompt,L3 back-link added
+how-to-write-real-estate-listing.html,blog,real-estate-listing-copy,L1 already present | L2 already present | L2b already present
+real-estate-listing-copy.html,skill-page,real-estate-listing-copy,L3 back-link added
+how-to-write-wedding-vows-with-ai-that-actually-sound-like-you.html,blog,wedding-vows-writer,L1 already present | L2 already present | L2b already present
 wedding-vows-writer.html,skill-page,wedding-vows-writer,L3 back-link added
-the-wedding-speech-that-sounds-like-you-not-like-a-template.html,blog,event-speech-writer,L1 injected on 'wedding speech' | fallback para appended
-event-speech-writer.html,skill-page,event-speech-writer,L3 back-link added
-twitter-x-thread-engine-why-your-threads-get-ignored.html,blog,twitter-x-thread-engine,L1 injected on 'X Thread' | L2b bundle injected on 'building an audience' | fallback para appended
-twitter-x-thread-engine.html,skill-page,twitter-x-thread-engine,L3 back-link added
-twitter-x-thread-engine.html,blog,twitter-x-thread-engine,L1 injected on 'X Thread' | L2b bundle injected on 'building an audience' | fallback para appended
-twitter-x-thread-engine.html,skill-page,twitter-x-thread-engine,L3 back-link added
-ugc-ad-creator-why-ugc-fails.html,blog,ugc-ad-creator,L1 injected on 'UGC ad' | fallback para appended
-ugc-ad-creator.html,skill-page,ugc-ad-creator,L3 back-link added
-ugc-ad-creator.html,blog,ugc-ad-creator,L1 injected on 'UGC Ad' | fallback para appended
-ugc-ad-creator.html,skill-page,ugc-ad-creator,L3 back-link added
-university-application-sop-why-ai-sops-fail.html,blog,university-application-sop,L1 injected on 'University Application' | L2 injected on 'CV' | fallback para appended
-university-application-sop.html,skill-page,university-application-sop,L3 back-link added
-university-application-sop.html,blog,university-application-sop,L1 injected on 'University Application' | fallback para appended
-university-application-sop.html,skill-page,university-application-sop,L3 back-link added
-video-script-engine-why-ai-scripts-fail.html,blog,video-script,L1 injected on 'video script' | fallback para appended
-video-script-engine.html,blog,video-script,L1 injected on 'video script' | fallback para appended
-visa-application-cover-letter.html,blog,visa-application-cover-letter,L1 injected on 'Visa Application' | fallback para appended
-visa-application-cover-letter.html,skill-page,visa-application-cover-letter,L3 back-link added
-visa-cover-letter-questions-answered.html,blog,visa-application-cover-letter,L1 injected on 'visa application' | fallback para appended
-visa-application-cover-letter.html,skill-page,visa-application-cover-letter,L3 back-link added
-webinar-online-event-script-why-audiences-drop-off.html,blog,webinar-online-event-script,L1 injected on 'Online Event Script' | fallback para appended
-webinar-online-event-script.html,skill-page,webinar-online-event-script,L3 back-link added
-webinar-online-event-script.html,blog,webinar-online-event-script,L1 injected on 'webinar script' | fallback para appended
-webinar-online-event-script.html,skill-page,webinar-online-event-script,L3 back-link added
-wedding-invitation-your-invitation-sets-the-tone.html,blog,wedding-invitation-prompt,L1 injected on 'wedding invitation' | L2b bundle injected on 'Wedding Planning' | fallback para appended
-wedding-invitation-prompt.html,skill-page,wedding-invitation-prompt,L3 back-link added
-wedding-invitation.html,blog,wedding-invitation-prompt,L1 injected on 'Wedding Invitation' | L2b bundle injected on 'Wedding Planning' | fallback para appended
-wedding-invitation-prompt.html,skill-page,wedding-invitation-prompt,L3 back-link added
-wedding-vows-writer-ai.html,blog,wedding-vows-writer,L1 injected on 'Wedding Vows' | L2b bundle injected on 'Wedding Planning' | fallback para appended
-wedding-vows-writer.html,skill-page,wedding-vows-writer,L3 back-link added
-what-investors-want-in-a-business-plan.html,blog,business-plan,L1 injected on 'business plan' | L2b bundle injected on 'Fundraising' | fallback para appended
-business-plan.html,skill-page,business-plan,L3 back-link added
-why-ai-lesson-plans-fail-the-learning-objective-test.html,blog,lesson-plan-builder,L1 injected on 'lesson plan' | fallback para appended
+investor-update-email-what-weak-updates-cost.html,blog,investor-update-email,L1 already present | L2 already present | L2b already present
+investor-update-email.html,skill-page,investor-update-email,L3 back-link added
+investor-update-email.html,blog,investor-update-email,L1 already present | L2 already present | L2b already present
+investor-update-email.html,skill-page,investor-update-email,L3 back-link added
+job-description-writer-why-jds-filter-wrong-people.html,blog,job-description-writer,L1 already present | L2 already present | L2b already present
+job-description-writer.html,skill-page,job-description-writer,L3 back-link added
+job-description-writer.html,blog,job-description-writer,L1 already present | L2 already present | L2b already present
+job-description-writer.html,skill-page,job-description-writer,L3 back-link added
+lesson-plan-builder-ai.html,blog,lesson-plan-builder,L1 already present | L2 already present | L2b already present
 lesson-plan-builder.html,skill-page,lesson-plan-builder,L3 back-link added
-why-cold-emails-get-deleted.html,blog,cold-outreach-email,L1 injected on 'Cold email' | fallback para appended
-cold-outreach-email.html,skill-page,cold-outreach-email,L3 back-link added
-why-menu-copy-fails-to-sell-food.html,blog,menu-description-copy,L1 injected on 'Menu copy' | fallback para appended
+linkedin-post-engine.html,blog,linkedin-post-engine,L1 already present | L2 already present | L2b already present
+linkedin-post-engine.html,skill-page,linkedin-post-engine,L3 back-link added
+logo-brand-identity-why-generic-ai-fails.html,blog,logo-brand-identity,L1 injected on 'brand identity' | fallback para appended
+logo-brand-identity.html,skill-page,logo-brand-identity,L3 back-link added
+logo-brand-identity.html,blog,logo-brand-identity,L1 injected on 'brand identity' | fallback para appended
+logo-brand-identity.html,skill-page,logo-brand-identity,L3 back-link added
+menu-description-copy-ai.html,blog,menu-description-copy,L1 already present | L2 already present | L2b already present
 menu-description-copy.html,skill-page,menu-description-copy,L3 back-link added
-why-short-form-ai-video-scripts-miss-the-algorithm.html,blog,short-form-ai-video,L1 injected on 'short-form video' | fallback para appended
-short-form-ai-video.html,skill-page,short-form-ai-video,L3 back-link added
-why-your-book-cover-looks-wrong.html,blog,book-cover-prompt,L1 injected on 'book cover' | fallback para appended
-book-cover-prompt.html,skill-page,book-cover-prompt,L3 back-link added
-why-your-research-paper-structure-fails-peer-review.html,blog,research-paper-outline,L1 injected on 'research paper' | fallback para appended
+nda-contract-draft-free-template-problem.html,blog,nda-contract-draft,L1 already present | L2 already present | L2b already present
+nda-contract-draft.html,skill-page,nda-contract-draft,L3 back-link added
+nda-contract-draft.html,blog,nda-contract-draft,L1 already present | L2 already present | L2b already present
+nda-contract-draft.html,skill-page,nda-contract-draft,L3 back-link added
+online-course-curriculum-completion.html,blog,course-curriculum-builder,L1 already present | L2 already present | L2b already present
+course-curriculum-builder.html,skill-page,course-curriculum-builder,L3 back-link added
+performance-review-writer-why-generic-reviews-backfire.html,blog,performance-review-writer,L1 injected on 'performance review' | fallback para appended
+performance-review-writer.html,skill-page,performance-review-writer,L3 back-link added
+performance-review-writer.html,blog,performance-review-writer,L1 injected on 'performance review' | fallback para appended
+performance-review-writer.html,skill-page,performance-review-writer,L3 back-link added
+pitch-deck-narrative-stage-calibration.html,blog,pitch-deck-narrative,L1 already present | L2 already present | L2b already present
+pitch-deck-narrative.html,skill-page,pitch-deck-narrative,L3 back-link added
+pitch-deck-narrative.html,blog,pitch-deck-narrative,L1 already present | L2 already present | L2b already present
+pitch-deck-narrative.html,skill-page,pitch-deck-narrative,L3 back-link added
+podcast-scripted-vs-outlined-vs-improvised.html,blog,podcast-episode-script,L1 already present | L2 already present | L2b already present
+podcast-episode-script.html,skill-page,podcast-episode-script,L3 back-link added
+podcast-show-notes-why-generic-fails.html,blog,podcast-show-notes,L1 already present | L2 already present | L2b already present
+podcast-show-notes.html,skill-page,podcast-show-notes,L3 back-link added
+podcast-show-notes.html,blog,podcast-show-notes,L1 already present | L2 already present | L2b already present
+podcast-show-notes.html,skill-page,podcast-show-notes,L3 back-link added
+poetry-verse-prompt.html,blog,poetry-verse-prompt,L1 already present | L2 already present | L2b already present
+poetry-verse-prompt.html,skill-page,poetry-verse-prompt,L3 back-link added
+pr-press-release-why-journalists-ignore-you.html,blog,pr-press-release,L1 already present | L2 already present | L2b already present
+pr-press-release.html,skill-page,pr-press-release,L3 back-link added
+pr-press-release.html,blog,pr-press-release,L1 already present | L2 already present | L2b already present
+pr-press-release.html,skill-page,pr-press-release,L3 back-link added
+prd-writer-what-engineers-see.html,blog,prd-writer,L1 injected on 'PRD' | fallback para appended
+prd-writer.html,skill-page,prd-writer,L3 back-link added
+prd-writer.html,blog,prd-writer,L1 injected on 'PRD' | fallback para appended
+prd-writer.html,skill-page,prd-writer,L3 back-link added
+product-ad-film-prompt-render-vs-ad.html,blog,product-ad-film-prompt,L1 already present | L2 already present | L2b already present
+product-ad-film-prompt.html,skill-page,product-ad-film-prompt,L3 back-link added
+product-ad-film-prompt.html,blog,product-ad-film-prompt,L1 already present | L2 already present | L2b already present
+product-ad-film-prompt.html,skill-page,product-ad-film-prompt,L3 back-link added
+product-photography-prompt-why-photos-dont-convert.html,blog,product-photography-prompt,L1 already present | L2 already present | L2b already present
+product-photography-prompt.html,skill-page,product-photography-prompt,L3 back-link added
+product-photography-prompt.html,blog,product-photography-prompt,L1 already present | L2 already present | L2b already present
+product-photography-prompt.html,skill-page,product-photography-prompt,L3 back-link added
+real-estate-listing-copy.html,blog,real-estate-listing-copy,L1 already present | L2 already present | L2b already present
+real-estate-listing-copy.html,skill-page,real-estate-listing-copy,L3 back-link added
+real-estate-photo-prompt-why-generic-fails.html,blog,real-estate-photo-prompt,L1 already present | L2 already present | L2b already present
+real-estate-photo-prompt.html,skill-page,real-estate-photo-prompt,L3 back-link added
+real-estate-photo-prompt.html,blog,real-estate-photo-prompt,L1 already present | L2 already present | L2b already present
+real-estate-photo-prompt.html,skill-page,real-estate-photo-prompt,L3 back-link added
+recipe-development-prompt-why-generic-ai-recipes-fail.html,blog,recipe-development-prompt,L1 injected on 'recipe development' | fallback para appended
+recipe-development-prompt.html,skill-page,recipe-development-prompt,L3 back-link added
+recipe-development-prompt.html,blog,recipe-development-prompt,L1 injected on 'recipe development' | fallback para appended
+recipe-development-prompt.html,skill-page,recipe-development-prompt,L3 back-link added
+research-paper-outline-ai.html,blog,research-paper-outline,L1 already present | L2 already present | L2b already present
 research-paper-outline.html,skill-page,research-paper-outline,L3 back-link added
-youtube-thumbnail-prompt-blog-test.html,blog,youtube-thumbnail-prompt,L1 injected on 'thumbnail design' | fallback para appended
+resume-cv-builder-ats-mistakes.html,blog,resume-cv-builder,L1 already present | L2 already present | L2b already present
+resume-cv-builder.html,skill-page,resume-cv-builder,L3 back-link added
+resume-cv-builder.html,blog,resume-cv-builder,L1 already present | L2 already present | L2b already present
+resume-cv-builder.html,skill-page,resume-cv-builder,L3 back-link added
+sales-page-skill.html,blog,sales-page,L1 already present | L2 already present | L2b already present
+sales-page.html,skill-page,sales-page,L3 back-link added
+screenplay-script-that-describes-what-happens.html,blog,screenplay-script,L1 already present | L2 already present | L2b already present
+screenplay-script.html,skill-page,screenplay-script,L3 back-link added
+screenplay-script-why-yours-reads-like-a-summary.html,blog,screenplay-script,L1 already present | L2 already present | L2b already present
+screenplay-script.html,skill-page,screenplay-script,L3 back-link added
+screenplay-script.html,blog,screenplay-script,L1 already present | L2 already present | L2b already present
+screenplay-script.html,skill-page,screenplay-script,L3 back-link added
+seo-blog-post-brief.html,blog,seo-blog-post-brief,L1 already present | L2 already present | L2b already present
+seo-blog-post-brief.html,skill-page,seo-blog-post-brief,L3 back-link added
+seo-brief-for-freelancers.html,blog,seo-blog-post-brief,L1 already present | L2 already present | L2b already present
+seo-blog-post-brief.html,skill-page,seo-blog-post-brief,L3 back-link added
+short-form-ai-video-script.html,blog,short-form-ai-video,L1 already present | L2 already present | L2b already present
+short-form-ai-video.html,skill-page,short-form-ai-video,L3 back-link added
+short-story-prompt.html,blog,short-story-prompt,L1 already present | L2 already present | L2b already present
+short-story-prompt.html,skill-page,short-story-prompt,L3 back-link added
+social-content-engine-skill.html,blog,social-content-engine,L1 already present | L2 already present | L2b already present
+social-content-engine.html,skill-page,social-content-engine,L3 back-link added
+social-media-carousel-prompt.html,blog,social-media-carousel-prompt,L2 injected on 'Content Creation' | fallback para appended
+social-media-carousel-prompt.html,skill-page,social-media-carousel-prompt,L3 back-link added
+terms-of-service-privacy-policy-what-copied-tos-misses.html,blog,terms-of-service-privacy-policy,L1 already present | L2 already present | L2b already present
+terms-of-service-privacy-policy.html,skill-page,terms-of-service-privacy-policy,L3 back-link added
+terms-of-service-privacy-policy.html,blog,terms-of-service-privacy-policy,L1 already present | L2 already present | L2b already present
+terms-of-service-privacy-policy.html,skill-page,terms-of-service-privacy-policy,L3 back-link added
+the-ai-film-prompt-that-gives-sora-a-character-not-just-a-scene.html,blog,dialogue-character-film-prompt,L1 already present | L2 already present | L2b already present
+dialogue-character-film-prompt.html,skill-page,dialogue-character-film-prompt,L3 back-link added
+the-airbnb-listing-that-gets-booked-before-anyone-asks-about-parking.html,blog,hotel-airbnb-listing-copy,L1 already present | L2 already present | L2b already present
+hotel-airbnb-listing-copy.html,skill-page,hotel-airbnb-listing-copy,L3 back-link added
+the-book-cover-brief-your-designer-actually-needs.html,blog,book-cover-prompt,L1 already present | L2 already present | L2b already present
+book-cover-prompt.html,skill-page,book-cover-prompt,L3 back-link added
+the-podcast-script-that-sounds-like-you-wrote-it-not-like-youre-reading-it.html,blog,podcast-episode-script,L1 already present | L2 already present | L2b already present
+podcast-episode-script.html,skill-page,podcast-episode-script,L3 back-link added
+the-sales-page-that-sounds-like-it-was-written-about-your-product.html,blog,sales-page,L1 already present | L2 already present | L2b already present
+sales-page.html,skill-page,sales-page,L3 back-link added
+the-vows-that-sound-like-you-wrote-them-because-you-did.html,blog,wedding-vows-writer,L1 already present | L2 already present | L2b already present
+wedding-vows-writer.html,skill-page,wedding-vows-writer,L3 back-link added
+the-wedding-speech-that-sounds-like-you-not-like-a-template.html,blog,event-speech-writer,L1 already present | L2 already present | L2b already present
+event-speech-writer.html,skill-page,event-speech-writer,L3 back-link added
+travel-itinerary-planner.html,blog,travel-itinerary-planner,L1 injected on 'Travel Itinerary' | fallback para appended
+travel-itinerary-planner.html,skill-page,travel-itinerary-planner,L3 back-link added
+twitter-x-thread-engine-why-your-threads-get-ignored.html,blog,twitter-x-thread-engine,L1 already present | L2 already present | L2b already present
+twitter-x-thread-engine.html,skill-page,twitter-x-thread-engine,L3 back-link added
+twitter-x-thread-engine.html,blog,twitter-x-thread-engine,L1 already present | L2 already present | L2b already present
+twitter-x-thread-engine.html,skill-page,twitter-x-thread-engine,L3 back-link added
+ugc-ad-creator-why-ugc-fails.html,blog,ugc-ad-creator,L1 already present | L2 already present | L2b already present
+ugc-ad-creator.html,skill-page,ugc-ad-creator,L3 back-link added
+ugc-ad-creator.html,blog,ugc-ad-creator,L1 already present | L2 already present | L2b already present
+ugc-ad-creator.html,skill-page,ugc-ad-creator,L3 back-link added
+university-application-sop-why-ai-sops-fail.html,blog,university-application-sop,L1 already present | L2 already present | L2b already present
+university-application-sop.html,skill-page,university-application-sop,L3 back-link added
+university-application-sop.html,blog,university-application-sop,L1 already present | L2 already present | L2b already present
+university-application-sop.html,skill-page,university-application-sop,L3 back-link added
+video-script-engine-why-ai-scripts-fail.html,blog,video-script,L1 already present | L2 already present | L2b already present
+video-script-engine.html,skill-page,video-script,L3 back-link added
+video-script-engine.html,blog,video-script,L1 already present | L2 already present | L2b already present
+video-script-engine.html,skill-page,video-script,L3 back-link added
+visa-application-cover-letter.html,blog,visa-application-cover-letter,L1 already present | L2 already present | L2b already present
+visa-application-cover-letter.html,skill-page,visa-application-cover-letter,L3 back-link added
+visa-cover-letter-questions-answered.html,blog,visa-application-cover-letter,L1 already present | L2 already present | L2b already present
+visa-application-cover-letter.html,skill-page,visa-application-cover-letter,L3 back-link added
+webinar-online-event-script-why-audiences-drop-off.html,blog,webinar-online-event-script,L1 already present | L2 already present | L2b already present
+webinar-online-event-script.html,skill-page,webinar-online-event-script,L3 back-link added
+webinar-online-event-script.html,blog,webinar-online-event-script,L1 already present | L2 already present | L2b already present
+webinar-online-event-script.html,skill-page,webinar-online-event-script,L3 back-link added
+wedding-invitation-your-invitation-sets-the-tone.html,blog,wedding-invitation-prompt,L1 already present | L2 already present | L2b already present
+wedding-invitation-prompt.html,skill-page,wedding-invitation-prompt,L3 back-link added
+wedding-invitation.html,blog,wedding-invitation-prompt,L1 already present | L2 already present | L2b already present
+wedding-invitation-prompt.html,skill-page,wedding-invitation-prompt,L3 back-link added
+wedding-vows-writer-ai.html,blog,wedding-vows-writer,L1 already present | L2 already present | L2b already present
+wedding-vows-writer.html,skill-page,wedding-vows-writer,L3 back-link added
+what-a-generic-ai-eulogy-sounds-like.html,blog,eulogy-writer,L1 injected on 'eulogy' | fallback para appended
+eulogy-writer.html,skill-page,eulogy-writer,L3 back-link added
+what-investors-want-in-a-business-plan.html,blog,business-plan,L1 already present | L2 already present | L2b already present
+business-plan.html,skill-page,business-plan,L3 back-link added
+why-ai-dialogue-sounds-flat.html,blog,dialogue-character-film-prompt,L1 injected on 'Character Voice' | fallback para appended
+dialogue-character-film-prompt.html,skill-page,dialogue-character-film-prompt,L3 back-link added
+why-ai-lesson-plans-fail-the-learning-objective-test.html,blog,lesson-plan-builder,L1 already present | L2 already present | L2b already present
+lesson-plan-builder.html,skill-page,lesson-plan-builder,L3 back-link added
+why-ai-travel-itineraries-feel-generic.html,blog,travel-itinerary-planner,L1 injected on 'Travel Itinerary' | fallback para appended
+travel-itinerary-planner.html,skill-page,travel-itinerary-planner,L3 back-link added
+why-cold-emails-get-deleted.html,blog,cold-outreach-email,L1 already present | L2 already present | L2b already present
+cold-outreach-email.html,skill-page,cold-outreach-email,L3 back-link added
+why-menu-copy-fails-to-sell-food.html,blog,menu-description-copy,L1 already present | L2 already present | L2b already present
+menu-description-copy.html,skill-page,menu-description-copy,L3 back-link added
+why-short-form-ai-video-scripts-miss-the-algorithm.html,blog,short-form-ai-video,L1 already present | L2 already present | L2b already present
+short-form-ai-video.html,skill-page,short-form-ai-video,L3 back-link added
+why-your-architecture-diagram-confuses-everyone.html,blog,architecture-diagram-prompt,L1 injected on 'architecture diagram' | fallback para appended
+architecture-diagram-prompt.html,skill-page,architecture-diagram-prompt,L3 back-link added
+why-your-book-cover-looks-wrong.html,blog,book-cover-prompt,L1 already present | L2 already present | L2b already present
+book-cover-prompt.html,skill-page,book-cover-prompt,L3 back-link added
+why-your-carousel-slides-get-scrolled-past.html,blog,social-media-carousel-prompt,L2 injected on 'Content Strategy' | fallback para appended
+social-media-carousel-prompt.html,skill-page,social-media-carousel-prompt,L3 back-link added
+why-your-research-paper-structure-fails-peer-review.html,blog,research-paper-outline,L1 already present | L2 already present | L2b already present
+research-paper-outline.html,skill-page,research-paper-outline,L3 back-link added
+youtube-thumbnail-prompt-blog-test.html,blog,youtube-thumbnail-prompt,L1 already present | L2 already present | L2b already present
 youtube-thumbnail-prompt.html,skill-page,youtube-thumbnail-prompt,L3 back-link added
-youtube-thumbnail-prompt-why-generic-fails.html,blog,youtube-thumbnail-prompt,L1 injected on 'YouTube Thumbnail' | fallback para appended
+youtube-thumbnail-prompt-why-generic-fails.html,blog,youtube-thumbnail-prompt,L1 already present | L2 already present | L2b already present
 youtube-thumbnail-prompt.html,skill-page,youtube-thumbnail-prompt,L3 back-link added
-youtube-thumbnail-prompt.html,blog,youtube-thumbnail-prompt,L1 injected on 'YouTube thumbnail' | fallback para appended
+youtube-thumbnail-prompt.html,blog,youtube-thumbnail-prompt,L1 already present | L2 already present | L2b already present
 youtube-thumbnail-prompt.html,skill-page,youtube-thumbnail-prompt,L3 back-link added

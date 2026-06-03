@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Brand Voice Guide — Claude AI Skill | NovaKit · Voice Your Brand Never Loses</title>
+<meta name="description" content="Claude AI skill that produces a complete brand voice guide — personality, pillars, vocabulary, banned phrases, channel dial, before/after rewrites, and an AI prompt block. For brands, agencies, and consultants. $15.">
+<meta name="keywords" content="brand voice guide Claude skill, Claude AI brand voice generator, AI brand voice tool, brand voice guide AI, brand consultant AI writing tool, NovaKit brand voice guide, brand voice guide tool, best AI brand voice generator, tone of voice guide AI, Claude tone of voice skill, AI brand identity guide, brand voice document generator, agency brand voice AI, brand style guide Claude">
+<link rel="canonical" href="https://novakit.tech/skills/brand-voice-guide">
+<meta property="og:type" content="product">
+<meta property="og:url" content="https://novakit.tech/skills/brand-voice-guide">
+<meta property="og:title" content="Brand Voice Guide Claude Skill — NovaKit">
+<meta property="og:description" content="Complete brand voice guide: archetype, pillars, vocabulary, banned phrases, channel dial, rewrites, AI prompt block. $15.">
+<meta property="og:image" content="https://novakit.tech/og-skill-brand-voice-guide.png">
+<meta property="og:site_name" content="NovaKit">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brand Voice Guide Claude Skill — NovaKit">
+<meta name="twitter:description" content="Archetype-grounded. AI-ready. Operational on day one. $15.">
+<meta name="twitter:image" content="https://novakit.tech/og-skill-brand-voice-guide.png">
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="../assets/faviconnk.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Brand Voice Guide Claude Skill",
+  "description": "Claude AI skill that produces a complete brand voice guide: strategic archetype, voice pillars, vocabulary system, banned phrase list, channel tone dial, before/after rewrites, and a copy-paste AI prompt block. Built for new brands, rebrands, and agencies.",
+  "brand": {"@type": "Brand", "name": "NovaKit"},
+  "url": "https://novakit.tech/skills/brand-voice-guide",
+  "offers": {
+    "@type": "Offer",
+    "price": "15.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {"@type": "Organization", "name": "NovaKit"}
+  },
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "41"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://novakit.tech/#skills"},
+    {"@type": "ListItem", "position": 3, "name": "Brand Voice Guide", "item": "https://novakit.tech/skills/brand-voice-guide"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;} .logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;} [data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:transparent;border:1px solid var(--border-s);color:var(--text);}
+.btn-ghost:hover{background:var(--bg2);}
+.btn-lg{font-size:16px;padding:13px 22px;border-radius:10px;}
+
+/* SECTION BASE */
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+[data-theme="light"] .section-eyebrow{color:#b5451e;}
+.section-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,4.5vw,56px);line-height:1.08;letter-spacing:-0.02em;margin-bottom:16px;}
+.section-title em{font-style:italic;color:var(--accent);}
+.inner{max-width:1160px;margin:0 auto;}
+
+/* ── HERO ── */
+.skill-hero{padding:70px 40px 60px;}
+.sh-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;max-width:1160px;margin:0 auto;}
+.sh-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--pill-bg);color:var(--pill-text);padding:6px 16px;border-radius:99px;font-size:13px;font-weight:600;letter-spacing:0.02em;margin-bottom:20px;}
+[data-theme="light"] .sh-eyebrow{color:#8f3718;}
+.sh-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.sh-eyebrow-dot{animation:pulse 2s infinite;}
+.sh-title{font-family:'Instrument Serif',serif;font-size:clamp(42px,5vw,68px);line-height:1.05;letter-spacing:-0.03em;margin-bottom:18px;}
+.sh-title em{font-style:italic;color:var(--accent);}
+.sh-tagline{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.4;}
+.sh-sub{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:28px;}
+
+/* Output preview card */
+.output-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.oc-header{background:var(--surface2);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;gap:8px;}
+.oc-dot{width:10px;height:10px;border-radius:50%;}
+.oc-label{font-size:12px;color:var(--muted);font-weight:500;margin-left:4px;}
+.oc-body{padding:0;position:relative;height:350px;overflow:hidden;flex-shrink:0;}
+.oc-slide{display:none;position:absolute;inset:0;padding:22px 24px;overflow-y:auto;}
+.oc-slide.active{display:block;}
+.oc-chip{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);font-size:10px;font-weight:700;letter-spacing:0.08em;padding:3px 10px;border-radius:6px;text-transform:uppercase;margin-bottom:12px;}
+[data-theme="light"] .oc-chip{color:#8f3718;}
+.oc-slide-title{font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text);}
+.oc-content{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 16px;font-size:14px;line-height:1.75;color:var(--text);}
+.oc-content strong{color:var(--accent);}
+.oc-content .oc-note{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5;}
+.oc-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--border);}
+.oc-dots{display:flex;gap:5px;}
+.oc-dot-btn{width:6px;height:6px;border-radius:50%;background:var(--border-s);cursor:pointer;border:none;transition:all .25s;}
+.oc-dot-btn.active{background:var(--accent);width:16px;border-radius:3px;}
+.oc-arrows{display:flex;gap:6px;}
+.oc-arrow{width:28px;height:28px;border-radius:7px;border:1px solid var(--border-s);background:transparent;cursor:pointer;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.oc-arrow:hover{border-color:var(--accent);color:var(--accent);}
+.oc-counter{font-size:11px;color:var(--faint);}
+
+/* ── WHAT YOU GET ── */
+.wug-section{padding:70px 40px;background:var(--bg2);}
+.wug-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:36px;}
+.wug-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px;}
+.wug-icon{font-size:26px;margin-bottom:14px;}
+.wug-title{font-size:19px;font-weight:800;line-height:1.3;margin-bottom:0;letter-spacing:-0.01em;}
+.wug-tag{display:inline-flex;margin-top:12px;font-size:10px;font-weight:700;letter-spacing:0.07em;padding:3px 10px;border-radius:99px;text-transform:uppercase;}
+
+/* ── WHO IT'S FOR ── */
+.for-section{padding:70px 40px;}
+.for-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px;align-items:start;}
+.for-list{display:flex;flex-direction:column;gap:0;}
+.for-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}
+.for-item:last-child{border-bottom:none;}
+.for-check{width:24px;height:24px;border-radius:7px;background:var(--green-bg);color:var(--green-text);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.for-title{font-size:17px;font-weight:700;line-height:1.4;}
+.notfor{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;}
+.notfor-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:16px;}
+.notfor-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:16px;color:var(--muted);}
+.notfor-item:last-child{margin-bottom:0;}
+.notfor-x{color:var(--faint);flex-shrink:0;}
+
+/* ── PROOF ── */
+.proof-section{padding:70px 40px;background:var(--bg2);}
+.pq-inner{max-width:720px;margin:0 auto;text-align:center;}
+.pullquote{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(22px,2.8vw,30px);line-height:1.5;color:var(--text);margin-bottom:24px;}
+.pullquote em{font-style:normal;color:var(--accent);}
+.pq-author{display:flex;align-items:center;gap:12px;justify-content:center;}
+.pq-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;}
+.pq-name{font-size:14px;font-weight:600;text-align:left;}
+.pq-role{font-size:12px;color:var(--muted);text-align:left;}
+
+/* ── BUY — single panel ── */
+.buy-section{padding:70px 40px;text-align:center;}
+.buy-inner{max-width:640px;margin:0 auto;}
+.buy-kicker{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+[data-theme="light"] .buy-kicker{color:#b5451e;}
+.buy-price-display{font-family:'Instrument Serif',serif;font-size:clamp(52px,8vw,88px);line-height:1;letter-spacing:-0.03em;margin-bottom:8px;}
+.buy-price-display em{font-style:italic;color:var(--accent);}
+.buy-sub{font-size:17px;color:var(--muted);margin-bottom:32px;line-height:1.6;}
+.buy-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+.bundle-includes{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:22px 28px;margin-bottom:20px;
+  text-align:left;
+}
+.bi-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
+.bi-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.bi-item{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;}
+.bi-item.highlight{color:var(--accent);}
+[data-theme="light"] .bi-item.highlight{color:#b5451e;}
+.bi-item.dim{color:var(--muted);}
+.bi-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;}
+.bi-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border);flex-wrap:wrap;gap:8px;}
+.bi-save{font-size:13px;font-weight:700;color:var(--green-text);}
+.bi-price{font-size:18px;font-weight:800;}
+.guarantee-strip{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);border-radius:10px;padding:12px 20px;}
+.guarantee-strip span{font-size:14px;color:var(--green-text);font-weight:600;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.footer-left{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+
+@media(max-width:768px){
+  nav{padding:0 16px;}
+  .nav-links{display:none;}
+  .sh-grid,.for-grid{grid-template-columns:1fr;}
+  .skill-hero,.wug-section,.for-section,.proof-section,.buy-section{padding:50px 16px;}
+  footer{padding:24px 16px;}
+  .bi-grid{grid-template-columns:1fr;}
+  .buy-ctas{flex-direction:column;align-items:center;}
+}
+.sh-time-save{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green-text);font-size:14px;font-weight:600;padding:10px 16px;border-radius:8px;margin-bottom:24px;}
+.bh-time-save{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green-text);font-size:14px;font-weight:600;padding:10px 16px;border-radius:8px;margin-bottom:20px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="../index.html">
+    <img src="../assets/nkwhite.jpg" alt="NovaKit" class="logo-img logo-dark"/>
+    <img src="../assets/nkblack.jpg" alt="NovaKit" class="logo-img logo-light"/>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#install">Install</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#for-who">Who it's for</a>
+    <a href="../index.html#proof">Reviews</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../blog/index.html">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀️</span></button>
+    <a href="#buy" class="btn btn-primary">Get this skill — $15</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="skill-hero">
+  <div class="sh-grid">
+    <div>
+      <div class="sh-eyebrow"><div class="sh-eyebrow-dot"></div>Brand Voice Guide — Claude Skill</div>
+      <h1 class="sh-title">A brand voice<br>your whole team<br><em>actually uses.</em></h1>
+      <p class="sh-tagline">Archetype-grounded. Channel-calibrated. AI-ready.</p>
+      <p class="sh-sub">Most voice guides collect dust. This one ships with a banned-phrase list, before/after rewrites, and a copy-paste AI prompt block.</p>
+      <div class="sh-time-save">⚡ Replaces 4–6 hours of brand workshops — runs in under 5 minutes.</div>
+      <a href="#buy" class="btn btn-primary btn-lg">Get this skill — $15</a>
+    </div>
+
+    <div>
+      <div class="output-card">
+        <div class="oc-header">
+          <div class="oc-dot" style="background:#ff5f57"></div>
+          <div class="oc-dot" style="background:#febc2e"></div>
+          <div class="oc-dot" style="background:#28c840"></div>
+          <span class="oc-label">Output preview — Brand Voice Guide</span>
+        </div>
+        <div class="oc-body">
+
+          <!-- SLIDE 1 — Voice in One Sentence + Archetype -->
+          <div class="oc-slide active" id="ocs0">
+            <div class="oc-chip">Voice Portrait · Archetype</div>
+            <div class="oc-slide-title">The brand character in one sentence — then grounded in archetype.</div>
+            <div class="oc-content">
+              <strong>Voice in one sentence:</strong><br>
+              Helix sounds like a calm, credible expert who simplifies the complex — never like a consultant who bills by the syllable or a startup trying too hard to seem approachable.<br><br>
+              <strong>Archetype: The Sage</strong><br>
+              Confident, educational, direct. Earns trust through clarity, not credentials. Never name-drops, never hedges, never over-explains.
+              <div class="oc-note">The north-star statement every writer holds in mind. All pillars, vocabulary, and rewrites flow from this archetype definition.</div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 — Voice Pillars -->
+          <div class="oc-slide" id="ocs1">
+            <div class="oc-chip">Voice Pillars · 3 Defined</div>
+            <div class="oc-slide-title">Each pillar is named, defined, and proved with a before/after pair.</div>
+            <div class="oc-content">
+              <strong>PILLAR 1 — Direct</strong><br>
+              Says the thing. No preamble, no hedge, no passive voice.<br>
+              ✓ <em>In voice:</em> "Your data is exposed. Here's how to close it."<br>
+              ✗ <em>Out of voice:</em> "Many organisations may find themselves in a situation where data security could be a concern."<br><br>
+              <strong>PILLAR 2 — Warm Without Trying</strong><br>
+              Human because it treats the reader as intelligent — not because it uses exclamation points.<br>
+              ✓ "We won't pretend this is easy. Here's what to do first."
+              <div class="oc-note">All 3–4 pillars delivered with this level of specificity — each includes: name, meaning, examples, what-it-doesn't-mean, and the before/after pair.</div>
+            </div>
+          </div>
+
+          <!-- SLIDE 3 — Vocabulary System + Banned Phrases -->
+          <div class="oc-slide" id="ocs2">
+            <div class="oc-chip">Vocabulary · Banned Phrases</div>
+            <div class="oc-slide-title">Words we use — and the 15+ phrases that are banned with reasons.</div>
+            <div class="oc-content" style="font-family:'Geist Mono',monospace;font-size:13px;line-height:1.9;">
+              <div><strong style="font-family:'Geist',sans-serif;font-size:13px;">Words we use</strong></div>
+              <div>→ precise · grounded · built for · honest · exactly</div>
+              <div>→ what this means · in practice · the short version</div>
+              <div style="margin-top:8px;"><strong style="font-family:'Geist',sans-serif;font-size:13px;">Banned — with reasons</strong></div>
+              <div>✕ "leverage" — sounds like a consultant, not a person</div>
+              <div>✕ "innovative" — the category default; means nothing</div>
+              <div>✕ "Excited to announce" — leads with us, not the reader</div>
+              <div>✕ "We exist to..." — mission statement masquerading as copy</div>
+              <div class="oc-note">Minimum 15 banned entries, each with a one-line reason. The banned list is the most operationally useful section of every guide.</div>
+            </div>
+          </div>
+
+          <!-- SLIDE 4 — Channel Dial + AI Prompt Block -->
+          <div class="oc-slide" id="ocs3">
+            <div class="oc-chip">Channel Dial · AI Prompt Block</div>
+            <div class="oc-slide-title">How tone shifts by channel — and a block to paste straight into any AI tool.</div>
+            <div class="oc-content" style="font-family:'Geist Mono',monospace;font-size:13px;line-height:1.9;">
+              <div>LinkedIn  → professional human · "Here's what we learned."</div>
+              <div>Email     → personal human  · "One thing before you go:"</div>
+              <div>Website   → clear human     · "Fix X. Done in 10 minutes."</div>
+              <div>Support   → calm human      · "That's frustrating. Here's the fix."</div>
+              <div style="margin-top:8px;">── AI PROMPT BLOCK (copy-paste ready) ──</div>
+              <div>Personality: Direct · Warm · Credible</div>
+              <div>We avoid: leverage, innovative, excited to announce</div>
+              <div>Reader assumption: intelligent, time-constrained, skeptical</div>
+              <div class="oc-note">The AI prompt block is usable as-is in Claude, ChatGPT, or Jasper — no editing needed before pasting.</div>
+            </div>
+          </div>
+
+          <!-- SLIDE 5 — Full deliverables -->
+          <div class="oc-slide" id="ocs4">
+            <div class="oc-chip">Full Output</div>
+            <div class="oc-slide-title">What you receive</div>
+            <div class="oc-content" style="font-family:'Geist Mono',monospace;font-size:13px;line-height:2;">
+              <div>✓ Voice-in-one-sentence north-star statement</div>
+              <div>✓ Strategic archetype definition (Sage, Rebel, etc.)</div>
+              <div>✓ 3–4 voice pillars with before/after sentence pairs</div>
+              <div>✓ Tone dial — register by channel (website, email, social, support)</div>
+              <div>✓ Vocabulary system: words we use + words we avoid</div>
+              <div>✓ Banned phrase list — 15+ entries with reasons</div>
+              <div>✓ 4 before/after sample rewrites with "what changed" notes</div>
+              <div>✓ Competitive contrast map (vs. named category competitors)</div>
+              <div>✓ Copy-paste AI prompt block for Claude, ChatGPT, Jasper</div>
+              <div>✓ Review cadence + voice drift warning signals</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="oc-nav">
+          <span class="oc-counter" id="oc-counter">1 / 5</span>
+          <div class="oc-dots" id="oc-dots"></div>
+          <div class="oc-arrows">
+            <button class="oc-arrow" onclick="ocMove(-1)">←</button>
+            <button class="oc-arrow" onclick="ocMove(1)">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHAT YOU GET ══ -->
+<section class="wug-section">
+  <div class="inner">
+    <div class="section-eyebrow">What you get</div>
+    <h2 class="section-title">Why this guide<br><em>gets followed.</em></h2>
+    <div class="wug-grid">
+      <div class="wug-card">
+        <div class="wug-icon">🎭</div>
+        <div class="wug-title">Archetype-first voice that outlasts every trend cycle.</div>
+        <span class="wug-tag" style="background:var(--pill-bg);color:var(--pill-text)">Strategically grounded</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">🤖</div>
+        <div class="wug-title">AI prompt block included. Paste into Claude, ChatGPT, or Jasper — done.</div>
+        <span class="wug-tag" style="background:var(--green-bg);color:var(--green-text)">AI-ready out of the box</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">🚫</div>
+        <div class="wug-title">Banned-phrase list with reasons. No "leverage." No "innovative." No excuses.</div>
+        <span class="wug-tag" style="background:var(--blue-bg);color:var(--blue-text)">15+ entries · with reasons</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">✏️</div>
+        <div class="wug-title">Before/after rewrites in 4 content types. New writers onboard in an hour.</div>
+        <span class="wug-tag" style="background:var(--pill-bg);color:var(--pill-text)">Proof of concept included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHO IT'S FOR ══ -->
+<section class="for-section">
+  <div class="inner">
+    <div class="section-eyebrow">Who it's for</div>
+    <h2 class="section-title">Built for anyone<br>defining <em>how a brand sounds.</em></h2>
+    <div class="for-grid">
+      <div class="for-list">
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Brand consultants building voice systems for clients from scratch.</div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Founders whose copy sounds generic because there's no guide yet.</div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Marketing managers standardising voice across a growing content team.</div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Agencies onboarding freelance writers who've never touched the brand.</div>
+        </div>
+      </div>
+      <div>
+        <div class="notfor">
+          <div class="notfor-label">Not what this is for</div>
+          <div class="notfor-item"><span class="notfor-x">✕</span>Brand strategy or positioning — this is a writing guide, not a mission document.</div>
+          <div class="notfor-item"><span class="notfor-x">✕</span>Visual identity — logo, colour, and typography are outside scope.</div>
+          <div class="notfor-item"><span class="notfor-x">✕</span>Content creation — the guide tells you how to write; it doesn't write your content for you.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROOF ══ -->
+<section class="proof-section">
+  <div class="pq-inner">
+    <div class="pullquote">"I've bought brand voice templates before — this was different. The banned-phrase list alone <em>saved us three rounds of edits</em> on every piece of content our agency produced that month."</div>
+    <div class="pq-author">
+      <div class="pq-av" style="background:var(--pill-bg);color:var(--accent)">IF</div>
+      <div>
+        <div class="pq-name">Isabelle F.</div>
+        <div class="pq-role">Brand consultant, Paris · Creator Bundle</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BUY — single panel, index page style ══ -->
+<section class="buy-section" id="buy">
+  <div class="buy-inner">
+    <div class="buy-kicker">Get it now</div>
+    <div class="buy-price-display">A voice that<br>writes itself.<br><em>$15.</em></div>
+    <p class="buy-sub">Instant download. Works with your free Claude account. 7-day refund if it's not what you expected.</p>
+    <div class="buy-ctas">
+      <a href="/checkout.html?sku=brand-voice-guide" class="btn btn-primary btn-lg">Buy Brand Voice Guide — $15</a>
+      <a href="/checkout.html?sku=creator-bundle" class="btn btn-ghost btn-lg">Creator Bundle — $45</a>
+    </div>
+    <div class="bundle-includes">
+  <div class="bi-label">Creator Bundle includes</div>
+  <div class="bi-grid">
+    <div class="bi-item dim"><div class="bi-dot"></div>LinkedIn Post Engine</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>SEO Blog Post Brief</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>Email Newsletter Engine</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>Social Content Engine</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>Twitter/X Thread Engine</div>
+    <div class="bi-item highlight"><div class="bi-dot"></div>Brand Voice Guide</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>Content Calendar</div>
+  </div>
+  <div class="bi-footer">
+    <div class="bi-save">Save 34% vs buying individually</div>
+    <div class="bi-price">$45 <span style="font-size:13px;color:var(--muted);font-weight:400;">for all 7 skills</span></div>
+  </div>
+</div>
+  <div class="guarantee-strip">
+      <span>🛡️ 7-day money back guarantee · no questions asked</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="../index.html#install">Install</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#for-who">Who it's for</a>
+    <a href="../index.html#proof">Reviews</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../blog/index.html">Blog</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+
+let ocCur=0;
+const OC_TOTAL=5;
+function ocInit(){
+  const dotsEl=document.getElementById('oc-dots');
+  for(let i=0;i<OC_TOTAL;i++){
+    const d=document.createElement('button');
+    d.className='oc-dot-btn'+(i===0?' active':'');
+    d.onclick=()=>ocGo(i);
+    dotsEl.appendChild(d);
+  }
+}
+function ocGo(n){
+  document.getElementById('ocs'+ocCur).classList.remove('active');
+  document.querySelectorAll('.oc-dot-btn')[ocCur].classList.remove('active');
+  ocCur=(n+OC_TOTAL)%OC_TOTAL;
+  document.getElementById('ocs'+ocCur).classList.add('active');
+  document.querySelectorAll('.oc-dot-btn')[ocCur].classList.add('active');
+  document.getElementById('oc-counter').textContent=(ocCur+1)+' / '+OC_TOTAL;
+}
+function ocMove(dir){ocGo(ocCur+dir);}
+ocInit();
+setInterval(()=>ocMove(1),3800);
+</script>
+  <script src="/novakit-tracker.js" data-skill="brand-voice-guide" defer></script>
+</body>
+</html>

@@ -335,9 +335,34 @@ BLOG_SLUG_OVERRIDES = {
     "online-course-curriculum-completion":                                     "course-curriculum-builder",
     "why-ai-lesson-plans-fail-the-learning-objective-test":                   "lesson-plan-builder",
     "why-your-research-paper-structure-fails-peer-review":                    "research-paper-outline",
+    # Standalone skill blogs with descriptive filenames
+    "what-a-generic-ai-eulogy-sounds-like":              "eulogy-writer",
+    "why-ai-dialogue-sounds-flat":                       "dialogue-character-film-prompt",
+    "why-ai-travel-itineraries-feel-generic":            "travel-itinerary-planner",
+    "why-your-architecture-diagram-confuses-everyone":   "architecture-diagram-prompt",
+    "why-your-carousel-slides-get-scrolled-past":        "social-media-carousel-prompt",
     # Excluded — not skill blogs
     "index":   None,
     "index 2": None,
+}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SKILL PAGE FILENAME OVERRIDES
+# Some skill .html files don't match their slug exactly.
+# Key: skill slug  Value: actual filename stem (without .html)
+# ─────────────────────────────────────────────────────────────────────────────
+
+SKILL_FILE_OVERRIDES = {
+    # slug used in linker scripts → actual skill page filename stem (products.js key)
+    "short-form-ai-video":           "ai-video-prompt",
+    "grant-proposal-writing":        "grant-and-proposal-writing",
+    "logo-brand-identity":           "logo-brand-identity-prompt",
+    "sales-page":                    "sales-landing-page-copy",
+    "terms-of-service-privacy-policy":"tos-privacy-policy",
+    "university-application-sop":    "university-sop",
+    "visa-application-cover-letter": "visa-cover-letter",
+    "video-script":                  "video-script-engine",
+    "children-book-prompt":          "childrens-book-prompt",
 }
 
 
@@ -797,7 +822,7 @@ def main():
             write_output(mod_soup, blog_path, output_dir, "blog")
 
         # Skill page Layer 3
-        skill_page = skill_files.get(skill_slug)
+        skill_page = skill_files.get(SKILL_FILE_OVERRIDES.get(skill_slug, skill_slug))
         if not skill_page:
             skipped.append(f"[SKILL] {skill_slug}.html not found")
             continue

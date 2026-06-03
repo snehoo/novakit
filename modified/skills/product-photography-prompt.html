@@ -213,6 +213,8 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
   .bi-grid{grid-template-columns:1fr;}
   .buy-ctas{flex-direction:column;align-items:center;}
 }
+.sh-time-save{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green-text);font-size:14px;font-weight:600;padding:10px 16px;border-radius:8px;margin-bottom:24px;}
+.bh-time-save{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green-text);font-size:14px;font-weight:600;padding:10px 16px;border-radius:8px;margin-bottom:20px;}
 </style>
 </head>
 <body>
@@ -243,6 +245,7 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
 <h1 class="sh-title">Studio shots,<br/>no studio needed,<br/><em>any platform.</em></h1>
 <p class="sh-tagline">Paste-ready. Platform-spec'd. Hero to flat lay.</p>
 <p class="sh-sub">Generic prompts produce generic images. This skill writes prompts that convert — by platform, by shot type, by product.</p>
+<div class="sh-time-save">⚡ Replaces 60–90 minutes of photography briefing — runs in under 3 minutes.</div>
 <a class="btn btn-primary btn-lg" href="#buy">Get this skill — $9</a>
 </div>
 <div>
@@ -486,5 +489,6 @@ function ocMove(dir){ocGo(ocCur+dir);}
 ocInit();
 setInterval(()=>ocMove(1),3800);
 </script>
+<script data-skill="product-photography-prompt" defer="" src="/novakit-tracker.js"></script>
 </body>
 </html>

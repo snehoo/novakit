@@ -1,0 +1,14 @@
+NOVAKIT BLOG STALE PRICE REPORT
+======================================================================
+
+financial-model.html
+  [line 353] INVALID PRICE $2 — not in any current tier
+  Year 3: $2,160,000 (180 customers, 3x growth)<br/><br/>
+
+the-sales-page-that-sounds-like-it-was-written-about-your-product.html
+  [in content] WRONG PRICE — 'Sales Page' should be $9, found $15 nearby
+  'Sales Page' mentioned near $15
+
+university-application-sop-why-ai-sops-fail.html
+  [in content] WRONG PRICE — 'Student Bundle' should be $29, found $15 nearby
+  'Student Bundle' mentioned near $15

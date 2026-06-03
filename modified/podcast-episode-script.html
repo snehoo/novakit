@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Podcast Episode Script — Claude AI Skill | NovaKit · Production-Ready Scripts That Retain</title>
+<meta name="description" content="A Claude AI skill that writes a full podcast episode script — scripted intro hook, timestamped segments, guest questions, sponsor slots, CTA, and repurposing asset map. For podcasters and producers. $9.">
+<meta name="keywords" content="podcast episode script Claude skill, Claude AI podcast script, AI podcast script generator, podcast script AI tool, podcast producer AI tool, podcaster AI script writer, NovaKit podcast script, podcast episode planner AI, best AI podcast script tool, solo podcast AI writer, guest interview script AI, podcast outline generator AI, podcast script Claude AI">
+<link rel="canonical" href="https://novakit.tech/skills/podcast-episode-script">
+<meta property="og:type" content="product">
+<meta property="og:url" content="https://novakit.tech/skills/podcast-episode-script">
+<meta property="og:title" content="Podcast Episode Script Claude Skill — NovaKit">
+<meta property="og:description" content="Full episode script: intro hook, timestamped segments, guest questions, CTA, repurposing map. $9.">
+<meta property="og:image" content="https://novakit.tech/og-skill-podcast-episode-script.png">
+<meta property="og:site_name" content="NovaKit">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Podcast Episode Script Claude Skill — NovaKit">
+<meta name="twitter:description" content="Production-ready podcast scripts. Hook, segments, CTA, repurposing map. $9.">
+<meta name="twitter:image" content="https://novakit.tech/og-skill-podcast-episode-script.png">
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="../assets/faviconnk.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Podcast Episode Script Claude Skill",
+  "description": "Claude AI skill that writes a complete podcast episode script with scripted intro hook, timestamped talking points, guest question sequences, sponsor slot placement, CTA, and a repurposing asset map. For solo and interview formats.",
+  "brand": {"@type": "Brand", "name": "NovaKit"},
+  "url": "https://novakit.tech/skills/podcast-episode-script",
+  "offers": {
+    "@type": "Offer",
+    "price": "9.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {"@type": "Organization", "name": "NovaKit"}
+  },
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "41"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://novakit.tech/#skills"},
+    {"@type": "ListItem", "position": 3, "name": "Podcast Episode Script", "item": "https://novakit.tech/skills/podcast-episode-script"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;} .logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;} [data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:transparent;border:1px solid var(--border-s);color:var(--text);}
+.btn-ghost:hover{background:var(--bg2);}
+.btn-lg{font-size:16px;padding:13px 22px;border-radius:10px;}
+
+/* SECTION BASE */
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+[data-theme="light"] .section-eyebrow{color:#b5451e;}
+.section-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,4.5vw,56px);line-height:1.08;letter-spacing:-0.02em;margin-bottom:16px;}
+.section-title em{font-style:italic;color:var(--accent);}
+.inner{max-width:1160px;margin:0 auto;}
+
+/* ── HERO ── */
+.skill-hero{padding:70px 40px 60px;}
+.sh-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;max-width:1160px;margin:0 auto;}
+.sh-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--pill-bg);color:var(--pill-text);padding:6px 16px;border-radius:99px;font-size:13px;font-weight:600;letter-spacing:0.02em;margin-bottom:20px;}
+[data-theme="light"] .sh-eyebrow{color:#8f3718;}
+.sh-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.sh-eyebrow-dot{animation:pulse 2s infinite;}
+.sh-title{font-family:'Instrument Serif',serif;font-size:clamp(42px,5vw,68px);line-height:1.05;letter-spacing:-0.03em;margin-bottom:18px;}
+.sh-title em{font-style:italic;color:var(--accent);}
+.sh-tagline{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.4;}
+.sh-sub{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:28px;}
+
+/* Output preview card */
+.output-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.oc-header{background:var(--surface2);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;gap:8px;}
+.oc-dot{width:10px;height:10px;border-radius:50%;}
+.oc-label{font-size:12px;color:var(--muted);font-weight:500;margin-left:4px;}
+.oc-body{padding:0;position:relative;height:350px;overflow:hidden;flex-shrink:0;}
+.oc-slide{display:none;position:absolute;inset:0;padding:22px 24px;overflow-y:auto;}
+.oc-slide.active{display:block;}
+.oc-chip{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);font-size:10px;font-weight:700;letter-spacing:0.08em;padding:3px 10px;border-radius:6px;text-transform:uppercase;margin-bottom:12px;}
+[data-theme="light"] .oc-chip{color:#8f3718;}
+.oc-slide-title{font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text);}
+.oc-content{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 16px;font-size:14px;line-height:1.75;color:var(--text);}
+.oc-content strong{color:var(--accent);}
+.oc-content .oc-note{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5;}
+.oc-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--border);}
+.oc-dots{display:flex;gap:5px;}
+.oc-dot-btn{width:6px;height:6px;border-radius:50%;background:var(--border-s);cursor:pointer;border:none;transition:all .25s;}
+.oc-dot-btn.active{background:var(--accent);width:16px;border-radius:3px;}
+.oc-arrows{display:flex;gap:6px;}
+.oc-arrow{width:28px;height:28px;border-radius:7px;border:1px solid var(--border-s);background:transparent;cursor:pointer;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.oc-arrow:hover{border-color:var(--accent);color:var(--accent);}
+.oc-counter{font-size:11px;color:var(--faint);}
+
+/* ── WHAT YOU GET ── */
+.wug-section{padding:70px 40px;background:var(--bg2);}
+.wug-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:36px;}
+.wug-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px;}
+.wug-icon{font-size:26px;margin-bottom:14px;}
+.wug-title{font-size:19px;font-weight:800;line-height:1.3;margin-bottom:0;letter-spacing:-0.01em;}
+.wug-tag{display:inline-flex;margin-top:12px;font-size:10px;font-weight:700;letter-spacing:0.07em;padding:3px 10px;border-radius:99px;text-transform:uppercase;}
+
+/* ── WHO IT'S FOR ── */
+.for-section{padding:70px 40px;}
+.for-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px;align-items:start;}
+.for-list{display:flex;flex-direction:column;gap:0;}
+.for-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}
+.for-item:last-child{border-bottom:none;}
+.for-check{width:24px;height:24px;border-radius:7px;background:var(--green-bg);color:var(--green-text);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.for-title{font-size:17px;font-weight:700;line-height:1.4;}
+.notfor{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;}
+.notfor-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:16px;}
+.notfor-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:16px;color:var(--muted);}
+.notfor-item:last-child{margin-bottom:0;}
+.notfor-x{color:var(--faint);flex-shrink:0;}
+
+/* ── PROOF ── */
+.proof-section{padding:70px 40px;background:var(--bg2);}
+.pq-inner{max-width:720px;margin:0 auto;text-align:center;}
+.pullquote{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(22px,2.8vw,30px);line-height:1.5;color:var(--text);margin-bottom:24px;}
+.pullquote em{font-style:normal;color:var(--accent);}
+.pq-author{display:flex;align-items:center;gap:12px;justify-content:center;}
+.pq-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;}
+.pq-name{font-size:14px;font-weight:600;text-align:left;}
+.pq-role{font-size:12px;color:var(--muted);text-align:left;}
+
+/* ── BUY — single panel ── */
+.buy-section{padding:70px 40px;text-align:center;}
+.buy-inner{max-width:640px;margin:0 auto;}
+.buy-kicker{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+[data-theme="light"] .buy-kicker{color:#b5451e;}
+.buy-price-display{font-family:'Instrument Serif',serif;font-size:clamp(52px,8vw,88px);line-height:1;letter-spacing:-0.03em;margin-bottom:8px;}
+.buy-price-display em{font-style:italic;color:var(--accent);}
+.buy-sub{font-size:17px;color:var(--muted);margin-bottom:32px;line-height:1.6;}
+.buy-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+.bundle-includes{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:22px 28px;margin-bottom:20px;
+  text-align:left;
+}
+.bi-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
+.bi-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.bi-item{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;}
+.bi-item.highlight{color:var(--accent);}
+[data-theme="light"] .bi-item.highlight{color:#b5451e;}
+.bi-item.dim{color:var(--muted);}
+.bi-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;}
+.bi-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border);flex-wrap:wrap;gap:8px;}
+.bi-save{font-size:13px;font-weight:700;color:var(--green-text);}
+.bi-price{font-size:18px;font-weight:800;}
+.guarantee-strip{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);border-radius:10px;padding:12px 20px;}
+.guarantee-strip span{font-size:14px;color:var(--green-text);font-weight:600;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.footer-left{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+
+@media(max-width:768px){
+  nav{padding:0 16px;}
+  .nav-links{display:none;}
+  .sh-grid,.for-grid{grid-template-columns:1fr;}
+  .skill-hero,.wug-section,.for-section,.proof-section,.buy-section{padding:50px 16px;}
+  footer{padding:24px 16px;}
+  .bi-grid{grid-template-columns:1fr;}
+  .buy-ctas{flex-direction:column;align-items:center;}
+}
+.sh-time-save{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green-text);font-size:14px;font-weight:600;padding:10px 16px;border-radius:8px;margin-bottom:24px;}
+.bh-time-save{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green-text);font-size:14px;font-weight:600;padding:10px 16px;border-radius:8px;margin-bottom:20px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" alt="NovaKit" class="logo-img logo-dark"/>
+    <img src="../assets/nkblack.jpg" alt="NovaKit" class="logo-img logo-light"/>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#install">Install</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#for-who">Who it's for</a>
+    <a href="../index.html#proof">Reviews</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../blog/index.html">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀️</span></button>
+    <a href="#buy" class="btn btn-primary">Get this skill — $9</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="skill-hero">
+  <div class="sh-grid">
+    <div>
+      <div class="sh-eyebrow"><div class="sh-eyebrow-dot"></div>Podcast Episode Script — Claude Skill</div>
+      <h1 class="sh-title">Episodes that<br>listeners finish<br><em>and share.</em></h1>
+      <p class="sh-tagline">Full script. Timestamped. Solo or guest. Repurposing map included.</p>
+      <p class="sh-sub">Most episodes lose listeners in the first 90 seconds. This skill scripts the hook that keeps them in.</p>
+      <div class="sh-time-save">⚡ Replaces 2–3 hours of episode scripting — runs in under 3 minutes.</div>
+      <a href="#buy" class="btn btn-primary btn-lg">Get this skill — $9</a>
+    </div>
+
+    <div>
+      <div class="output-card">
+        <div class="oc-header">
+          <div class="oc-dot" style="background:#ff5f57"></div>
+          <div class="oc-dot" style="background:#febc2e"></div>
+          <div class="oc-dot" style="background:#28c840"></div>
+          <span class="oc-label">Output preview — Podcast Episode Script</span>
+        </div>
+        <div class="oc-body">
+
+          <!-- Slide 1: Scripted Intro Hook -->
+          <div class="oc-slide active" id="ocs0">
+            <div class="oc-chip">Intro Hook · Scripted</div>
+            <div class="oc-slide-title">Hook delivers the value promise in under 30 seconds.</div>
+            <div class="oc-content">
+              <strong>[0:00–0:28] INTRO HOOK — SCRIPTED</strong><br><br>
+              Most founders think they should start with their origin story. Wrong. In this episode, you'll find out the three things investors actually check before they ever read your deck — and none of them are in the pitch.<br><br>
+              I'm [Host Name], this is [Show Name], and this episode will change how you prepare for your next raise.
+              <div class="oc-note">🎙️ Host note: Pause after "Wrong." Energy up on "three things." Keep it under 30 seconds — listeners skip longer intros.</div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Timestamped Segment -->
+          <div class="oc-slide" id="ocs1">
+            <div class="oc-chip">Talking Points · Timestamped</div>
+            <div class="oc-slide-title">Structured segments with host notes and sub-beats.</div>
+            <div class="oc-content">
+              <strong>[4:30–12:00] SEGMENT 2 — The three pre-pitch signals</strong><br><br>
+              <strong>Talking Points:</strong><br>
+              • Signal 1: Your LinkedIn activity in the 90 days before outreach — what it says about conviction<br>
+              • Signal 2: The "warm intro audit" — investors check who introduced you and why<br>
+              • Signal 3: Traction trajectory, not traction level — growth rate over absolute numbers<br><br>
+              Sub-beat: Use a real example — a founder who fixed this before their Series A.
+              <div class="oc-note">🎙️ Host note: Slow down on Signal 3 — this is the counterintuitive one. Pause before the example.</div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Guest Question Sequence -->
+          <div class="oc-slide" id="ocs2">
+            <div class="oc-chip">Guest Interview · Questions</div>
+            <div class="oc-slide-title">Questions angled for answers the guest hasn't given elsewhere.</div>
+            <div class="oc-content">
+              <strong>GUEST QUESTION SEQUENCE — [Guest Name]</strong><br><br>
+              Q1 (opener): "Before we talk about what worked — what's the version of this story you haven't told publicly yet?"<br><br>
+              Q2 (insight): "You've said before that [X] is overrated. What are people misreading about why you succeeded without it?"<br><br>
+              Q3 (challenge): "A lot of founders listening would push back and say [counterargument]. What would you say to them?"<br><br>
+              Q4 (closer): "What's the one thing you wish someone had said to you when you were at the stage most of our listeners are at right now?"
+              <div class="oc-note">All four questions invite a novel angle. Avoid questions the guest has answered in other interviews.</div>
+            </div>
+          </div>
+
+          <!-- Slide 4: CTA + Sponsor Slot -->
+          <div class="oc-slide" id="ocs3">
+            <div class="oc-chip">CTA + Sponsor Placement</div>
+            <div class="oc-slide-title">CTA timed at 70% mark. Sponsor slot native to show voice.</div>
+            <div class="oc-content">
+              <strong>[~70% MARK] MID-ROLL CTA — SCRIPTED</strong><br><br>
+              If this is useful, the best thing you can do is share it with one founder who's heading into a raise. One forward is worth more than any subscribe button.<br><br>
+              <strong>SPONSOR SLOT — [~68% mark, before CTA]</strong><br><br>
+              This episode is brought to you by [Sponsor]. I've been using [Product] for [specific use] — [one genuine sentence in host voice]. [Sponsor offer link.] Go to [URL] — I'll have it in the show notes.
+              <div class="oc-note">Mid-roll CTA converts significantly better than outro-only. Sponsor read is host-voice native, not pre-scripted ad copy.</div>
+            </div>
+          </div>
+
+          <!-- Slide 5: Full deliverables summary -->
+          <div class="oc-slide" id="ocs4">
+            <div class="oc-chip">Full output</div>
+            <div class="oc-slide-title">What you receive</div>
+            <div class="oc-content" style="font-family:'Geist Mono',monospace;font-size:13px;line-height:2;">
+              <div>✓ Scripted intro hook (30s value promise)</div>
+              <div>✓ Timestamped outline with all talking points</div>
+              <div>✓ Guest question sequence (interview format)</div>
+              <div>✓ Transition cues between every segment</div>
+              <div>✓ Sponsor slot placement + native host-read template</div>
+              <div>✓ Mid-roll CTA (70% mark) + outro CTA</div>
+              <div>✓ Key takeaway summary (shareable)</div>
+              <div>✓ Repurposing asset map (clips, quotes, social posts)</div>
+              <div>✓ Producer notes for post-production</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="oc-nav">
+          <span class="oc-counter" id="oc-counter">1 / 5</span>
+          <div class="oc-dots" id="oc-dots"></div>
+          <div class="oc-arrows">
+            <button class="oc-arrow" onclick="ocMove(-1)">←</button>
+            <button class="oc-arrow" onclick="ocMove(1)">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHAT YOU GET ══ -->
+<section class="wug-section">
+  <div class="inner">
+    <div class="section-eyebrow">What you get</div>
+    <h2 class="section-title">Why this episode<br><em>holds listeners.</em></h2>
+    <div class="wug-grid">
+      <div class="wug-card">
+        <div class="wug-icon">🎙️</div>
+        <div class="wug-title">Hook in the first 30 seconds. Listeners decide to stay or skip in that window.</div>
+        <span class="wug-tag" style="background:var(--pill-bg);color:var(--pill-text)">Retention-first</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">⏱️</div>
+        <div class="wug-title">Every segment timestamped. Solo monologue, interview, or co-host formats all covered.</div>
+        <span class="wug-tag" style="background:var(--green-bg);color:var(--green-text)">Solo + interview</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">📲</div>
+        <div class="wug-title">Repurposing asset map turns one episode into a week of clips, quotes, and posts.</div>
+        <span class="wug-tag" style="background:var(--blue-bg);color:var(--blue-text)">Content multiplier</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">📣</div>
+        <div class="wug-title">One CTA, placed at the 70% mark. Where it converts — not at the end when listeners tune out.</div>
+        <span class="wug-tag" style="background:rgba(147,51,234,0.1);color:#7c3aed">CTA-optimised</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHO IT'S FOR ══ -->
+<section class="for-section">
+  <div class="inner">
+    <div class="section-eyebrow">Who it's for</div>
+    <h2 class="section-title">Built for anyone<br>doing <em>podcasting.</em></h2>
+    <div class="for-grid">
+      <div class="for-list">
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Independent podcasters who prep solo without a producer.</div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Podcast producers scripting episodes for multiple shows.</div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Media brands launching new shows with a consistent format.</div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Founders using a podcast as a B2B content and pipeline channel.</div>
+        </div>
+      </div>
+      <div>
+        <div class="notfor">
+          <div class="notfor-label">Not what this is for</div>
+          <div class="notfor-item"><span class="notfor-x">✕</span>Fully scripted word-for-word reads only — best results come from outlined segments used as a guide, not a teleprompter.</div>
+          <div class="notfor-item"><span class="notfor-x">✕</span>Automated episode production — this writes the script; recording, editing, and distribution are yours.</div>
+          <div class="notfor-item"><span class="notfor-x">✕</span>Serialised narrative/documentary formats — those require multi-episode arc planning beyond a single script.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROOF ══ -->
+<section class="proof-section">
+  <div class="pq-inner">
+    <div class="pullquote">"I used to spend three hours prepping each episode. Now it's under 30 minutes and my <em>listener retention went up by 40%</em> the first week I used the structured hook."</div>
+    <div class="pq-author">
+      <div class="pq-av" style="background:var(--green-bg);color:var(--green-text)">AP</div>
+      <div>
+        <div class="pq-name">Anika P.</div>
+        <div class="pq-role">Podcast host &amp; producer, Cape Town · Video/Pod Bundle</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BUY — single panel ══ -->
+<section class="buy-section" id="buy">
+  <div class="buy-inner">
+    <div class="buy-kicker">Get it now</div>
+    <div class="buy-price-display">Episodes that<br>get replayed.<br><em>$9.</em></div>
+    <p class="buy-sub">Instant download. Works with your free Claude account. 7-day refund if it's not what you expected.</p>
+    <div class="buy-ctas">
+      <a href="/checkout.html?sku=podcast-episode-script" class="btn btn-primary btn-lg">Buy Podcast Episode Script — $9</a>
+      <a href="/checkout.html?sku=video-pod-bundle" class="btn btn-ghost btn-lg">Video/Pod Bundle — $69</a>
+    </div>
+
+    </div>
+    <div class="bundle-includes">
+  <div class="bi-label">Video/Pod Bundle includes</div>
+  <div class="bi-grid">
+    <div class="bi-item dim"><div class="bi-dot"></div>Video Script Engine</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>AI Animation Film Prompt</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>Product Ad Film Prompt</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>Dialogue / Character Film Prompt</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>Short-Form AI Video</div>
+    <div class="bi-item highlight"><div class="bi-dot"></div>Podcast Episode Script</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>Webinar / Online Event Script</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>Podcast Show Notes</div>
+    <div class="bi-item dim"><div class="bi-dot"></div>YouTube Thumbnail Prompt</div>
+  </div>
+  <div class="bi-footer">
+    <div class="bi-save">Save 39% vs buying individually</div>
+    <div class="bi-price">$69 <span style="font-size:13px;color:var(--muted);font-weight:400;">for all 9 skills</span></div>
+  </div>
+</div>
+  <div class="guarantee-strip">
+      <span>🛡️ 7-day money back guarantee · no questions asked</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="../index.html#install">Install</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#for-who">Who it's for</a>
+    <a href="../index.html#proof">Reviews</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../blog/index.html">Blog</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+
+let ocCur=0;
+const OC_TOTAL=5;
+function ocInit(){
+  const dotsEl=document.getElementById('oc-dots');
+  for(let i=0;i<OC_TOTAL;i++){
+    const d=document.createElement('button');
+    d.className='oc-dot-btn'+(i===0?' active':'');
+    d.onclick=()=>ocGo(i);
+    dotsEl.appendChild(d);
+  }
+}
+function ocGo(n){
+  document.getElementById('ocs'+ocCur).classList.remove('active');
+  document.querySelectorAll('.oc-dot-btn')[ocCur].classList.remove('active');
+  ocCur=(n+OC_TOTAL)%OC_TOTAL;
+  document.getElementById('ocs'+ocCur).classList.add('active');
+  document.querySelectorAll('.oc-dot-btn')[ocCur].classList.add('active');
+  document.getElementById('oc-counter').textContent=(ocCur+1)+' / '+OC_TOTAL;
+}
+function ocMove(dir){ocGo(ocCur+dir);}
+ocInit();
+setInterval(()=>ocMove(1),3800);
+</script>
+  <script src="/novakit-tracker.js" data-skill="podcast-episode-script" defer></script>
+</body>
+</html>

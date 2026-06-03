@@ -96,6 +96,12 @@ KNOWN_OVERRIDES = {
     "online-course-curriculum-completion":                                     "course-curriculum-builder",
     "why-ai-lesson-plans-fail-the-learning-objective-test":                   "lesson-plan-builder",
     "why-your-research-paper-structure-fails-peer-review":                    "research-paper-outline",
+    # Standalone blogs with descriptive filenames
+    "what-a-generic-ai-eulogy-sounds-like":              "eulogy-writer",
+    "why-ai-dialogue-sounds-flat":                       "dialogue-character-film-prompt",
+    "why-ai-travel-itineraries-feel-generic":            "travel-itinerary-planner",
+    "why-your-architecture-diagram-confuses-everyone":   "architecture-diagram-prompt",
+    "why-your-carousel-slides-get-scrolled-past":        "social-media-carousel-prompt",
     # Excluded non-skill pages
     "index":   None,
     "index 2": None,

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Architecture Diagram Prompt — Claude AI Skill | NovaKit · Mermaid Diagrams That Ship</title>
+<meta name="description" content="A Claude AI skill that generates Mermaid diagram code (C4, Sequence, Flowchart), a written architecture brief, trade-off notes, and ADR stubs — built for software architects and tech leads. $15.">
+<meta name="keywords" content="architecture diagram prompt Claude skill, Claude AI architecture diagram, AI Mermaid diagram generator, software architecture AI tool, solutions architect AI tool, tech lead diagram generator, NovaKit architecture diagram, architecture diagram tool, best AI architecture diagram, C4 diagram AI, system design AI generator, Mermaid diagram AI Claude, dev tools AI skill, AI architecture brief generator">
+<link rel="canonical" href="https://novakit.tech/skills/architecture-diagram-prompt">
+<meta property="og:type" content="product">
+<meta property="og:url" content="https://novakit.tech/skills/architecture-diagram-prompt">
+<meta property="og:title" content="Architecture Diagram Prompt Claude Skill — NovaKit">
+<meta property="og:description" content="Mermaid diagram code, architecture brief, trade-off notes, ADR stubs. Built for architects and tech leads. $15.">
+<meta property="og:image" content="https://novakit.tech/og-skill-architecture-diagram-prompt.png">
+<meta property="og:site_name" content="NovaKit">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Architecture Diagram Prompt Claude Skill — NovaKit">
+<meta name="twitter:description" content="Mermaid diagrams + architecture brief + ADR stubs. Built for architects. $15.">
+<meta name="twitter:image" content="https://novakit.tech/og-skill-architecture-diagram-prompt.png">
+<link rel="icon" type="image/jpeg" href="../assets/faviconnk.jpg">
+<link rel="apple-touch-icon" href="../assets/faviconnk.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Architecture Diagram Prompt Claude Skill",
+  "description": "Claude AI skill that generates Mermaid diagram code (C4 Context, Container, Sequence, Flowchart), a written architecture brief with component rationale, trade-off notes, and ADR stubs for software architects and tech leads.",
+  "brand": {"@type": "Brand", "name": "NovaKit"},
+  "url": "https://novakit.tech/skills/architecture-diagram-prompt",
+  "offers": {
+    "@type": "Offer",
+    "price": "15.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "seller": {"@type": "Organization", "name": "NovaKit"}
+  },
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "41"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Skills", "item": "https://novakit.tech/#skills"},
+    {"@type": "ListItem", "position": 3, "name": "Architecture Diagram Prompt", "item": "https://novakit.tech/skills/architecture-diagram-prompt"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;} .logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;} [data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:transparent;border:1px solid var(--border-s);color:var(--text);}
+.btn-ghost:hover{background:var(--bg2);}
+.btn-lg{font-size:16px;padding:13px 22px;border-radius:10px;}
+
+/* SECTION BASE */
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+[data-theme="light"] .section-eyebrow{color:#b5451e;}
+.section-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,4.5vw,56px);line-height:1.08;letter-spacing:-0.02em;margin-bottom:16px;}
+.section-title em{font-style:italic;color:var(--accent);}
+.inner{max-width:1160px;margin:0 auto;}
+
+/* ── HERO ── */
+.skill-hero{padding:70px 40px 60px;}
+.sh-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;max-width:1160px;margin:0 auto;}
+.sh-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--pill-bg);color:var(--pill-text);padding:6px 16px;border-radius:99px;font-size:13px;font-weight:600;letter-spacing:0.02em;margin-bottom:20px;}
+[data-theme="light"] .sh-eyebrow{color:#8f3718;}
+.sh-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.sh-eyebrow-dot{animation:pulse 2s infinite;}
+.sh-title{font-family:'Instrument Serif',serif;font-size:clamp(42px,5vw,68px);line-height:1.05;letter-spacing:-0.03em;margin-bottom:18px;}
+.sh-title em{font-style:italic;color:var(--accent);}
+.sh-tagline{font-size:20px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.4;}
+.sh-sub{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:28px;}
+
+/* Output preview card */
+.output-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.oc-header{background:var(--surface2);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;gap:8px;}
+.oc-dot{width:10px;height:10px;border-radius:50%;}
+.oc-label{font-size:12px;color:var(--muted);font-weight:500;margin-left:4px;}
+.oc-body{padding:0;position:relative;height:350px;overflow:hidden;flex-shrink:0;}
+.oc-slide{display:none;position:absolute;inset:0;padding:22px 24px;overflow-y:auto;}
+.oc-slide.active{display:block;}
+.oc-chip{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);font-size:10px;font-weight:700;letter-spacing:0.08em;padding:3px 10px;border-radius:6px;text-transform:uppercase;margin-bottom:12px;}
+[data-theme="light"] .oc-chip{color:#8f3718;}
+.oc-slide-title{font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text);}
+.oc-content{background:var(--surface2);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 16px;font-size:14px;line-height:1.75;color:var(--text);}
+.oc-content strong{color:var(--accent);}
+.oc-content .oc-note{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5;}
+.oc-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--border);}
+.oc-dots{display:flex;gap:5px;}
+.oc-dot-btn{width:6px;height:6px;border-radius:50%;background:var(--border-s);cursor:pointer;border:none;transition:all .25s;}
+.oc-dot-btn.active{background:var(--accent);width:16px;border-radius:3px;}
+.oc-arrows{display:flex;gap:6px;}
+.oc-arrow{width:28px;height:28px;border-radius:7px;border:1px solid var(--border-s);background:transparent;cursor:pointer;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.oc-arrow:hover{border-color:var(--accent);color:var(--accent);}
+.oc-counter{font-size:11px;color:var(--faint);}
+
+/* ── WHAT YOU GET ── */
+.wug-section{padding:70px 40px;background:var(--bg2);}
+.wug-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:36px;}
+.wug-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px;}
+.wug-icon{font-size:26px;margin-bottom:14px;}
+.wug-title{font-size:19px;font-weight:800;line-height:1.3;margin-bottom:0;letter-spacing:-0.01em;}
+.wug-tag{display:inline-flex;margin-top:12px;font-size:10px;font-weight:700;letter-spacing:0.07em;padding:3px 10px;border-radius:99px;text-transform:uppercase;}
+
+/* ── WHO IT'S FOR ── */
+.for-section{padding:70px 40px;}
+.for-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px;align-items:start;}
+.for-list{display:flex;flex-direction:column;gap:0;}
+.for-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}
+.for-item:last-child{border-bottom:none;}
+.for-check{width:24px;height:24px;border-radius:7px;background:var(--green-bg);color:var(--green-text);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.for-title{font-size:17px;font-weight:700;line-height:1.4;}
+.notfor{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;}
+.notfor-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:16px;}
+.notfor-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:16px;color:var(--muted);}
+.notfor-item:last-child{margin-bottom:0;}
+.notfor-x{color:var(--faint);flex-shrink:0;}
+
+/* ── PROOF ── */
+.proof-section{padding:70px 40px;background:var(--bg2);}
+.pq-inner{max-width:720px;margin:0 auto;text-align:center;}
+.pullquote{font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(22px,2.8vw,30px);line-height:1.5;color:var(--text);margin-bottom:24px;}
+.pullquote em{font-style:normal;color:var(--accent);}
+.pq-author{display:flex;align-items:center;gap:12px;justify-content:center;}
+.pq-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;}
+.pq-name{font-size:14px;font-weight:600;text-align:left;}
+.pq-role{font-size:12px;color:var(--muted);text-align:left;}
+
+/* ── BUY — single panel ── */
+.buy-section{padding:70px 40px;text-align:center;}
+.buy-inner{max-width:640px;margin:0 auto;}
+.buy-kicker{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+[data-theme="light"] .buy-kicker{color:#b5451e;}
+.buy-price-display{font-family:'Instrument Serif',serif;font-size:clamp(52px,8vw,88px);line-height:1;letter-spacing:-0.03em;margin-bottom:8px;}
+.buy-price-display em{font-style:italic;color:var(--accent);}
+.buy-sub{font-size:17px;color:var(--muted);margin-bottom:32px;line-height:1.6;}
+.buy-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+.bundle-includes{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;padding:22px 28px;margin-bottom:20px;
+  text-align:left;
+}
+.bi-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
+.bi-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;}
+.bi-item{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;}
+.bi-item.highlight{color:var(--accent);}
+[data-theme="light"] .bi-item.highlight{color:#b5451e;}
+.bi-item.dim{color:var(--muted);}
+.bi-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;}
+.bi-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border);flex-wrap:wrap;gap:8px;}
+.bi-save{font-size:13px;font-weight:700;color:var(--green-text);}
+.bi-price{font-size:18px;font-weight:800;}
+.guarantee-strip{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);border-radius:10px;padding:12px 20px;}
+.guarantee-strip span{font-size:14px;color:var(--green-text);font-weight:600;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.footer-left{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+
+@media(max-width:768px){
+  nav{padding:0 16px;}
+  .nav-links{display:none;}
+  .sh-grid,.for-grid{grid-template-columns:1fr;}
+  .skill-hero,.wug-section,.for-section,.proof-section,.buy-section{padding:50px 16px;}
+  footer{padding:24px 16px;}
+  .bi-grid{grid-template-columns:1fr;}
+  .buy-ctas{flex-direction:column;align-items:center;}
+}
+.sh-time-save{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green-text);font-size:14px;font-weight:600;padding:10px 16px;border-radius:8px;margin-bottom:24px;}
+.bh-time-save{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green-text);font-size:14px;font-weight:600;padding:10px 16px;border-radius:8px;margin-bottom:20px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" alt="NovaKit" class="logo-img logo-dark"/>
+    <img src="../assets/nkblack.jpg" alt="NovaKit" class="logo-img logo-light"/>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#install">Install</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#for-who">Who it's for</a>
+    <a href="../index.html#proof">Reviews</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../blog/index.html">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀️</span></button>
+    <a href="#buy" class="btn btn-primary">Get this skill — $15</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="skill-hero">
+  <div class="sh-grid">
+    <div>
+      <div class="sh-eyebrow"><div class="sh-eyebrow-dot"></div>Architecture Diagram Prompt — Claude Skill</div>
+      <h1 class="sh-title">System diagrams<br>your team can<br><em>actually use.</em></h1>
+      <p class="sh-tagline">Mermaid code. Architecture brief. Trade-offs. ADR stubs.</p>
+      <p class="sh-sub">Describe your system and get working C4 or Sequence diagram code, a written brief, and decision records ready to commit.</p>
+      <div class="sh-time-save">⚡ Replaces 3–5 hours of diagram drafting — runs in under 5 minutes.</div>
+      <a href="#buy" class="btn btn-primary btn-lg">Get this skill — $15</a>
+    </div>
+
+    <div>
+      <div class="output-card">
+        <div class="oc-header">
+          <div class="oc-dot" style="background:#ff5f57"></div>
+          <div class="oc-dot" style="background:#febc2e"></div>
+          <div class="oc-dot" style="background:#28c840"></div>
+          <span class="oc-label">Output preview — Architecture Diagram Prompt</span>
+        </div>
+        <div class="oc-body">
+
+          <div class="oc-slide active" id="ocs0">
+            <div class="oc-chip">C4 Context · Mermaid</div>
+            <div class="oc-slide-title">Stakeholder-level diagram — what the system is and who touches it.</div>
+            <div class="oc-content" style="font-family:'Geist Mono',monospace;font-size:13px;line-height:1.9;">
+              <strong>```mermaid</strong><br>
+              C4Context<br>
+              &nbsp;&nbsp;title "Order Processing System — Context"<br>
+              &nbsp;&nbsp;Person(customer, "Customer", "Places and tracks orders")<br>
+              &nbsp;&nbsp;Person(ops, "Ops Team", "Manages fulfilment and disputes")<br>
+              &nbsp;&nbsp;System(ops_sys, "Order Processing System", "Handles order intake, routing, and status")<br>
+              &nbsp;&nbsp;System_Ext(payment, "Stripe", "Payment authorisation")<br>
+              &nbsp;&nbsp;System_Ext(wms, "Warehouse WMS", "Inventory and pick-pack")<br>
+              &nbsp;&nbsp;Rel(customer, ops_sys, "Places order", "HTTPS")<br>
+              &nbsp;&nbsp;Rel(ops_sys, payment, "Charges card", "REST/TLS")<br>
+              &nbsp;&nbsp;Rel(ops_sys, wms, "Sends pick list", "Webhook")<br>
+              <strong>```</strong>
+              <div class="oc-note">Renders natively in GitHub, GitLab, Notion, Confluence. Scope note included in the brief.</div>
+            </div>
+          </div>
+
+          <div class="oc-slide" id="ocs1">
+            <div class="oc-chip">Architecture Brief · Component Rationale</div>
+            <div class="oc-slide-title">Written narrative paired with every diagram.</div>
+            <div class="oc-content" style="font-size:13px;line-height:1.8;">
+              <strong>What this diagram shows</strong><br>
+              C4 Context level — the system boundary and its external actors. Deliberately excludes internal services and databases; those belong in a Container diagram.<br><br>
+              <strong>Key components</strong><br>
+              <strong>Order Processing System</strong> — central coordinator. Owns order state; delegates payment and fulfilment to external systems. Stateless horizontally scalable.<br><br>
+              <strong>Stripe</strong> — external payment authority. Chosen over in-house processing to avoid PCI scope. Trade-off: dependency on third-party uptime SLA.
+              <div class="oc-note">Every component gets a "why this, not that" rationale. No black boxes.</div>
+            </div>
+          </div>
+
+          <div class="oc-slide" id="ocs2">
+            <div class="oc-chip">Sequence Diagram · Auth Flow</div>
+            <div class="oc-slide-title">Critical path flows — async vs sync, auth handshakes.</div>
+            <div class="oc-content" style="font-family:'Geist Mono',monospace;font-size:13px;line-height:1.9;">
+              <strong>```mermaid</strong><br>
+              sequenceDiagram<br>
+              &nbsp;&nbsp;actor C as Customer<br>
+              &nbsp;&nbsp;participant API as Order API<br>
+              &nbsp;&nbsp;participant Auth as Auth Service<br>
+              &nbsp;&nbsp;participant Pay as Stripe<br>
+              &nbsp;&nbsp;C->>API: POST /orders (JWT)<br>
+              &nbsp;&nbsp;API->>Auth: Verify token<br>
+              &nbsp;&nbsp;Auth-->>API: 200 OK + claims<br>
+              &nbsp;&nbsp;API->>Pay: Create payment intent<br>
+              &nbsp;&nbsp;Pay-->>API: client_secret<br>
+              &nbsp;&nbsp;API-->>C: 201 + client_secret<br>
+              <strong>```</strong>
+              <div class="oc-note">Auth boundaries and trust zones shown explicitly — not as an afterthought.</div>
+            </div>
+          </div>
+
+          <div class="oc-slide" id="ocs3">
+            <div class="oc-chip">Trade-off Notes · ADR Stubs</div>
+            <div class="oc-slide-title">Decision records your team can commit to the repo.</div>
+            <div class="oc-content" style="font-size:13px;line-height:1.8;">
+              <strong>ADR-001: Stateless Order Service</strong><br>
+              <strong>Status:</strong> Proposed<br>
+              <strong>Context:</strong> Order volume forecast 10× in 18 months. Team wants horizontal scale without sticky sessions.<br>
+              <strong>Decision:</strong> Order service holds no session state. All state in PostgreSQL with row-level locking.<br>
+              <strong>Consequences:</strong> Simpler scaling. Trade-off: DB becomes the bottleneck; mitigated by read replicas and connection pooling.<br><br>
+              <strong>ADR-002: Stripe over in-house payments</strong><br>
+              <strong>Status:</strong> Accepted<br>
+              <strong>Context:</strong> PCI DSS scope, 3-engineer team, 6-month runway.
+              <div class="oc-note">ADR stubs use the Nygard format — ready to drop into /docs/decisions/.</div>
+            </div>
+          </div>
+
+          <div class="oc-slide" id="ocs4">
+            <div class="oc-chip">Full output</div>
+            <div class="oc-slide-title">What you receive</div>
+            <div class="oc-content" style="font-family:'Geist Mono',monospace;font-size:13px;line-height:2;">
+              <div>✓ Mermaid diagram code — C4 Context, Container, Sequence, or Flowchart</div>
+              <div>✓ Written architecture brief with component rationale</div>
+              <div>✓ Trade-off notes for every key decision</div>
+              <div>✓ ADR stubs (Nygard format) ready to commit</div>
+              <div>✓ Scope note — what the diagram shows and deliberately omits</div>
+              <div>✓ AI-native pattern support (LLM gateway, vector store, agent boundaries)</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="oc-nav">
+          <span class="oc-counter" id="oc-counter">1 / 5</span>
+          <div class="oc-dots" id="oc-dots"></div>
+          <div class="oc-arrows">
+            <button class="oc-arrow" onclick="ocMove(-1)">←</button>
+            <button class="oc-arrow" onclick="ocMove(1)">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHAT YOU GET ══ -->
+<section class="wug-section">
+  <div class="inner">
+    <div class="section-eyebrow">What you get</div>
+    <h2 class="section-title">Why this diagram<br><em>gets committed.</em></h2>
+    <div class="wug-grid">
+      <div class="wug-card">
+        <div class="wug-icon">🗺️</div>
+        <div class="wug-title">C4-model diagrams — right level for every audience, every time.</div>
+        <span class="wug-tag" style="background:var(--pill-bg);color:var(--pill-text)">C4 · Mermaid · Sequence</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">📝</div>
+        <div class="wug-title">Written brief paired with every diagram — no more misread boxes.</div>
+        <span class="wug-tag" style="background:var(--green-bg);color:var(--green-text)">Architecture brief</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">⚖️</div>
+        <div class="wug-title">Trade-off notes included — the "why" your team won't have to rediscover.</div>
+        <span class="wug-tag" style="background:var(--blue-bg);color:var(--blue-text)">Decision rationale</span>
+      </div>
+      <div class="wug-card">
+        <div class="wug-icon">📂</div>
+        <div class="wug-title">ADR stubs in Nygard format — drop into /docs/decisions and ship.</div>
+        <span class="wug-tag" style="background:rgba(147,51,234,0.1);color:#7c3aed">Repo-ready ADRs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHO IT'S FOR ══ -->
+<section class="for-section">
+  <div class="inner">
+    <div class="section-eyebrow">Who it's for</div>
+    <h2 class="section-title">Built for anyone<br>doing <em>systems design.</em></h2>
+    <div class="for-grid">
+      <div class="for-list">
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Software architects documenting systems for engineering teams.</div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Tech leads who need diagrams before a sprint starts.</div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Solutions architects scoping proposals for new clients.</div>
+        </div>
+        <div class="for-item">
+          <div class="for-check">✓</div>
+          <div class="for-title">Senior engineers writing ADRs for a team without an architect.</div>
+        </div>
+      </div>
+      <div>
+        <div class="notfor">
+          <div class="notfor-label">Not what this is for</div>
+          <div class="notfor-item"><span class="notfor-x">✕</span>Business process or org-chart diagrams — this is software architecture only.</div>
+          <div class="notfor-item"><span class="notfor-x">✕</span>Pixel-perfect visual diagrams — output is Mermaid code for rendering in tools your team already uses.</div>
+          <div class="notfor-item"><span class="notfor-x">✕</span>Full design documents or RFCs — it produces briefs and ADR stubs, not complete spec docs.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROOF ══ -->
+<section class="proof-section">
+  <div class="pq-inner">
+    <div class="pullquote">"Dropped the Mermaid output straight into our GitHub wiki. <em>First diagram we've had that the whole team actually reads.</em> The ADR stubs saved us two hours of back-and-forth."</div>
+    <div class="pq-author">
+      <div class="pq-av" style="background:var(--blue-bg);color:var(--blue-text)">NB</div>
+      <div>
+        <div class="pq-name">Nikhil B.</div>
+        <div class="pq-role">Solutions architect · Bengaluru</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BUY — single panel ══ -->
+<section class="buy-section" id="buy">
+  <div class="buy-inner">
+    <div class="buy-kicker">Get it now</div>
+    <div class="buy-price-display">Diagrams<br>your team ships.<br><em>$15.</em></div>
+    <p class="buy-sub">Instant download. Works with your free Claude account. 7-day refund if it's not what you expected.</p>
+    <div class="buy-ctas">
+      <a href="/checkout.html?sku=architecture-diagram-prompt" class="btn btn-primary btn-lg">Buy Architecture Diagram Skill — $15</a>
+      <div class="standalone-section">
+      <a href="../index.html#skills" class="btn btn-primary btn-lg">Browse all 63 skills</a>
+    </div>
+    </div>
+    
+    <div class="guarantee-strip">
+      <span>🛡️ 7-day money back guarantee · no questions asked</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+  <div class="footer-links">
+    <a href="../index.html#install">Install</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#for-who">Who it's for</a>
+    <a href="../index.html#proof">Reviews</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="../blog/index.html">Blog</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const dark=h.getAttribute('data-theme')==='dark';
+  h.setAttribute('data-theme',dark?'light':'dark');
+  document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';
+}
+
+let ocCur=0;
+const OC_TOTAL=5;
+function ocInit(){
+  const dotsEl=document.getElementById('oc-dots');
+  for(let i=0;i<OC_TOTAL;i++){
+    const d=document.createElement('button');
+    d.className='oc-dot-btn'+(i===0?' active':'');
+    d.onclick=()=>ocGo(i);
+    dotsEl.appendChild(d);
+  }
+}
+function ocGo(n){
+  document.getElementById('ocs'+ocCur).classList.remove('active');
+  document.querySelectorAll('.oc-dot-btn')[ocCur].classList.remove('active');
+  ocCur=(n+OC_TOTAL)%OC_TOTAL;
+  document.getElementById('ocs'+ocCur).classList.add('active');
+  document.querySelectorAll('.oc-dot-btn')[ocCur].classList.add('active');
+  document.getElementById('oc-counter').textContent=(ocCur+1)+' / '+OC_TOTAL;
+}
+function ocMove(dir){ocGo(ocCur+dir);}
+ocInit();
+setInterval(()=>ocMove(1),3800);
+</script>
+  <script src="/novakit-tracker.js" data-skill="architecture-diagram-prompt" defer></script>
+</body>
+</html>

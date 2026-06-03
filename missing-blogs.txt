@@ -1,13 +1,4 @@
 MISSING BLOGS
 ============================================================
-prd-writer                                       
-dialogue-character-film-prompt    
-architecture-diagram-prompt                     
-logo-brand-identity                                
-performance-review-writer                       
-social-media-carousel-prompt                     
-health-wellness-plan                           
-travel-itinerary-planner                       
-recipe-development-prompt                       
-home-renovation-brief                           
-eulogy-writer                                   
+executive-bio                                    [Founder]
+one-pager-investor-brief                         [Founder]

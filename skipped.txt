@@ -1,4 +1,11 @@
 [SKILL] children-book-prompt.html not found
 [SKILL] children-book-prompt.html not found
+[SKILL] short-form-ai-video.html not found
 [SKILL] video-script.html not found
 [SKILL] video-script.html not found
+[BLOG] what-a-generic-ai-eulogy-sounds-like.html — no skill match
+[BLOG] why-ai-dialogue-sounds-flat.html — no skill match
+[BLOG] why-ai-travel-itineraries-feel-generic.html — no skill match
+[SKILL] short-form-ai-video.html not found
+[BLOG] why-your-architecture-diagram-confuses-everyone.html — no skill match
+[BLOG] why-your-carousel-slides-get-scrolled-past.html — no skill match
