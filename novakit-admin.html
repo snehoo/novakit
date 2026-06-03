@@ -267,6 +267,7 @@ body { min-height: 100vh; }
     <div class="nav-item active" onclick="showTab('overview')"><div class="nav-dot"></div> Dashboard</div>
     <div class="nav-item" onclick="showTab('skills')"><div class="nav-dot"></div> Skills</div>
     <div class="nav-item" onclick="showTab('buyers')"><div class="nav-dot"></div> Buyers</div>
+    <div class="nav-item" onclick="showTab('orders')"><div class="nav-dot"></div> Orders</div>
     <div class="nav-item" onclick="showTab('funnel')"><div class="nav-dot"></div> Funnel</div>
   </div>
 
@@ -277,8 +278,8 @@ body { min-height: 100vh; }
   </div>
 
   <div class="sidebar-footer">
-    <div class="live-pill"><div class="live-dot"></div> DEMO DATA</div>
-    <div style="font-size:11px; color:var(--faint); line-height:1.6">Replace seed data with Razorpay webhook output once live.</div>
+    <div class="live-pill"><div class="live-dot"></div> LIVE</div>
+    <div style="font-size:11px; color:var(--faint); line-height:1.6">Connected to Neon DB · Razorpay live</div>
   </div>
 </nav>
 
@@ -291,7 +292,7 @@ body { min-height: 100vh; }
     <div class="page-header">
       <div>
         <div class="page-title">Dashboard</div>
-        <div class="page-sub">All metrics — seed data. Wire to Razorpay webhooks to go live.</div>
+        <div class="page-sub">Live data from Neon DB and Razorpay.</div>
       </div>
       <div class="date-filter">
         <button class="df-btn" onclick="setRange('7d',this)">7d</button>
@@ -300,16 +301,10 @@ body { min-height: 100vh; }
         <button class="df-btn" onclick="setRange('all',this)">All</button>
       </div>
     </div>
-
-    <div class="alert-bar">
-      <span class="alert-icon">&#9679;</span>
-      Razorpay integration pending — once live, replace <code style="font-family:var(--mono);font-size:11px">SEED_DATA</code> at the top of this file with webhook payloads.
-    </div>
-
     <div class="kpi-row">
       <div class="kpi-card">
         <div class="kpi-label">Total Revenue</div>
-        <div class="kpi-value green" id="kpi-rev">₹0</div>
+        <div class="kpi-value green" id="kpi-rev">$0</div>
         <div class="kpi-delta up" id="kpi-rev-delta">— awaiting data</div>
       </div>
       <div class="kpi-card">
@@ -425,6 +420,34 @@ body { min-height: 100vh; }
         <div class="card-header"><div class="card-title">Buyer location (top 8)</div></div>
         <div class="chart-wrap" style="height:200px"><canvas id="geoChart" role="img" aria-label="Buyer location horizontal bar chart">Buyer geography</canvas></div>
       </div>
+    </div>
+  </div>
+
+
+  <!-- ORDERS TAB -->
+  <div id="tab-orders" class="tab-panel">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Orders</div>
+        <div class="page-sub">All paid orders from Razorpay — most recent first.</div>
+      </div>
+    </div>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table id="orders-table" style="width:100%;border-collapse:collapse;font-size:12px;">
+        <thead>
+          <tr style="background:var(--surface2);border-bottom:1px solid var(--border);">
+            <th style="padding:10px 16px;text-align:left;font-weight:600;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:0.04em;">TIME</th>
+            <th style="padding:10px 16px;text-align:left;font-weight:600;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:0.04em;">SKILL</th>
+            <th style="padding:10px 16px;text-align:left;font-weight:600;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:0.04em;">TYPE</th>
+            <th style="padding:10px 16px;text-align:right;font-weight:600;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:0.04em;">AMOUNT</th>
+            <th style="padding:10px 16px;text-align:left;font-weight:600;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:0.04em;">PAYMENT ID</th>
+            <th style="padding:10px 16px;text-align:left;font-weight:600;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:0.04em;">STATUS</th>
+          </tr>
+        </thead>
+        <tbody id="orders-tbody">
+          <tr><td colspan="6" style="padding:32px 16px;text-align:center;color:var(--muted);font-size:13px;">Loading orders…</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -574,7 +597,7 @@ function renderAll(d, range) {
   const n = range === '7d' ? 7 : range === '90d' ? 90 : range === 'all' ? 365 : 30;
 
   // KPIs
-  document.getElementById('kpi-rev').textContent    = fmt(d.kpi.totalPaise);
+  document.getElementById('kpi-rev').textContent    = fmt(d.kpi.totalCents||d.kpi.totalPaise||0);
   document.getElementById('kpi-dl').textContent     = d.kpi.totalDownloads.toLocaleString();
   document.getElementById('kpi-buyers').textContent = d.kpi.uniqueBuyers.toLocaleString();
   document.getElementById('kpi-repeat').textContent = d.kpi.repeatRate + '%';
@@ -595,15 +618,15 @@ function renderAll(d, range) {
   // Category chart
   if (catChart && d.categoryRevenue.length) {
     catChart.data.labels = d.categoryRevenue.map(c=>c.category);
-    catChart.data.datasets[0].data = d.categoryRevenue.map(c=>parseInt(c.paise,10)/100);
+    catChart.data.datasets[0].data = d.categoryRevenue.map(c=>parseInt(c.cents||c.paise||0,10)/100);
     catChart.update();
   }
 
   // Individual vs bundle donut
   const indiv = d.revenueByType.find(r=>r.type==='individual');
   const bundl = d.revenueByType.find(r=>r.type==='bundle');
-  const total = (parseInt(indiv?.paise||0,10) + parseInt(bundl?.paise||0,10)) || 1;
-  const indPct = Math.round(parseInt(indiv?.paise||0,10)/total*100);
+  const total = (parseInt(indiv?.cents||indiv?.paise||0,10) + parseInt(bundl?.cents||bundl?.paise||0,10)) || 1;
+  const indPct = Math.round(parseInt(indiv?.cents||indiv?.paise||0,10)/total*100);
   if (typeChart) { typeChart.data.datasets[0].data = [indPct, 100-indPct]; typeChart.update(); }
 
   // Geo chart
@@ -614,6 +637,7 @@ function renderAll(d, range) {
   }
 
   buildActivity(d.recentActivity);
+  buildOrders(d.recentOrders||d.orders||[]);
   buildSkills(d.topSkills);
   buildBuyers(d.entrySkills);
   buildFunnel(d.funnel, d.kpi);
@@ -682,6 +706,30 @@ function buildCharts() {
   });
 }
 
+
+function buildOrders(orders) {
+  const tbody = document.getElementById('orders-tbody');
+  if (!tbody) return;
+  if (!orders || !orders.length) {
+    tbody.innerHTML = '<tr><td colspan="6" style="padding:32px 16px;text-align:center;color:var(--muted);font-size:13px;">No orders yet — first purchase will appear here.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = orders.map((o,i) => {
+    const isBundle = o.bundle_key && o.bundle_key !== o.skill_slug;
+    const type = isBundle ? '📦 Bundle' : '⚡ Skill';
+    const statusColor = o.status === 'paid' ? 'var(--accent)' : 'var(--muted)';
+    const bg = i % 2 === 0 ? '' : 'background:rgba(255,255,255,0.015);';
+    return `<tr style="${bg}border-bottom:1px solid var(--border);">
+      <td style="padding:10px 16px;color:var(--muted);font-family:var(--mono);font-size:11px;white-space:nowrap;">${timeAgo(o.paid_at||o.created_at)}</td>
+      <td style="padding:10px 16px;font-weight:600;color:var(--text);">${o.skill_name||o.skill_slug||'—'}</td>
+      <td style="padding:10px 16px;color:var(--muted);font-size:11px;">${type}</td>
+      <td style="padding:10px 16px;text-align:right;font-weight:700;color:var(--accent2);font-family:var(--mono);">${fmt(parseInt(o.amount_cents||o.amount_paise||0,10))}</td>
+      <td style="padding:10px 16px;font-family:var(--mono);font-size:10px;color:var(--faint);">${(o.razorpay_payment_id||'').slice(0,24)}</td>
+      <td style="padding:10px 16px;"><span style="font-size:10px;font-weight:600;color:${statusColor};text-transform:uppercase;letter-spacing:0.06em;">${o.status||'—'}</span></td>
+    </tr>`;
+  }).join('');
+}
+
 function buildActivity(activity) {
   const feed = document.getElementById('activity-feed');
   if (!activity || !activity.length) {
@@ -694,8 +742,8 @@ function buildActivity(activity) {
       <div class="activity-body">
         <div class="activity-text">
           ${a.type==='order'
-            ? `Anonymous buyer purchased <strong>${a.skill_name||a.skill_slug}</strong> · ${fmt(parseInt(a.amount_paise||0,10))}`
-            : `Anonymous user downloaded <strong>${a.skill_name||a.skill_slug}</strong>`
+            ? `<strong>${a.skill_name||a.skill_slug}</strong> purchased · ${fmt(parseInt(a.amount_cents||a.amount_paise||0,10))}`
+            : `<strong>${a.skill_name||a.skill_slug}</strong> downloaded`
           }
         </div>
         <div class="activity-time">${timeAgo(a.ts)}</div>
@@ -711,7 +759,7 @@ function buildSkills(topSkills) {
     document.getElementById('pairs-list').innerHTML        = '<div style="color:var(--muted);font-size:12px;padding:12px 0">No data yet.</div>';
     return;
   }
-  const maxRev = parseInt(topSkills[0].total_paise||0,10);
+  const maxRev = parseInt(topSkills[0].total_cents||topSkills[0].total_paise||0,10);
   document.getElementById('skill-leaderboard').innerHTML = topSkills.map((s,i)=>`
     <div class="skill-row">
       <span class="skill-rank">${i+1}</span>
@@ -719,8 +767,8 @@ function buildSkills(topSkills) {
         <div class="skill-name">${s.name||s.skill_slug}</div>
         <div class="skill-cat">${s.category||''}</div>
       </div>
-      <div class="skill-bar-wrap"><div class="skill-bar" style="width:${maxRev?Math.round(parseInt(s.total_paise,10)/maxRev*100):0}%"></div></div>
-      <span class="skill-rev">${fmt(parseInt(s.total_paise||0,10))}</span>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:${maxRev?Math.round(parseInt(s.total_cents||s.total_paise||0,10)/maxRev*100):0}%"></div></div>
+      <span class="skill-rev">${fmt(parseInt(s.total_cents||s.total_paise||0,10))}</span>
       <span class="skill-dl">${s.download_count||0}</span>
     </div>
   `).join('');
@@ -735,7 +783,7 @@ function buildBuyers(entrySkills) {
     const totalBuyers  = kpi.uniqueBuyers || 0;
     const repeatRate   = kpi.repeatRate || 0;
     const totalOrders  = kpi.totalOrders || 0;
-    const totalPaise   = kpi.totalPaise || 0;
+    const totalPaise   = kpi.totalCents || kpi.totalPaise || 0;
     const aov          = totalOrders ? Math.round(totalPaise / totalOrders / 100) : 0;
     const singlePct    = 100 - repeatRate;
 

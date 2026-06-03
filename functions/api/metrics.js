@@ -8,10 +8,10 @@
 import { getClient } from '../_db.js';
 
 const RANGES = {
-  '7d':  7,
-  '30d': 30,
-  '90d': 90,
-  'all': 36500,
+  '7d':  '7 days',
+  '30d': '30 days',
+  '90d': '90 days',
+  'all': '100 years',  // effectively all-time
 };
 
 export async function onRequestGet({ request, env }) {
@@ -35,6 +35,7 @@ export async function onRequestGet({ request, env }) {
       revenueByType,
       categoryRevenue,
       recentActivity,
+      recentOrders,
       topSearches,
       missedSearches,
       funnelData,
@@ -45,24 +46,24 @@ export async function onRequestGet({ request, env }) {
       // KPIs
       client.query(`
         SELECT
-          COALESCE(SUM(amount_cents),0)                          AS total_cents,
+          COALESCE(SUM(amount_paise),0)                          AS total_paise,
           COUNT(*)                                               AS total_orders,
           COUNT(DISTINCT buyer_hash)                             AS unique_buyers,
           (SELECT COUNT(*) FROM downloads
-           WHERE downloaded_at > NOW() - ($1 * INTERVAL '1 day'))          AS total_downloads
+           WHERE downloaded_at > NOW() - $1::interval)          AS total_downloads
         FROM orders
         WHERE status = 'paid'
-          AND created_at > NOW() - ($1 * INTERVAL '1 day')
+          AND created_at > NOW() - $1::interval
       `, [interval]),
 
       // Revenue per day (last N days)
       client.query(`
         SELECT
           DATE_TRUNC('day', paid_at) AS day,
-          SUM(amount_cents)          AS paise
+          SUM(amount_paise)          AS paise
         FROM orders
         WHERE status = 'paid'
-          AND paid_at > NOW() - ($1 * INTERVAL '1 day')
+          AND paid_at > NOW() - $1::interval
         GROUP BY 1
         ORDER BY 1
       `, [interval]),
@@ -73,7 +74,7 @@ export async function onRequestGet({ request, env }) {
           DATE_TRUNC('day', downloaded_at) AS day,
           COUNT(*)                          AS count
         FROM downloads
-        WHERE downloaded_at > NOW() - ($1 * INTERVAL '1 day')
+        WHERE downloaded_at > NOW() - $1::interval
         GROUP BY 1
         ORDER BY 1
       `, [interval]),
@@ -84,15 +85,15 @@ export async function onRequestGet({ request, env }) {
           o.skill_slug,
           s.name,
           s.category,
-          SUM(o.amount_cents)                                  AS total_cents,
+          SUM(o.amount_paise)                                  AS total_paise,
           COUNT(*)                                             AS order_count,
           (SELECT COUNT(*) FROM downloads d WHERE d.skill_slug = o.skill_slug) AS download_count
         FROM orders o
         JOIN skills s ON s.slug = o.skill_slug
         WHERE o.status = 'paid'
-          AND o.created_at > NOW() - ($1 * INTERVAL '1 day')
+          AND o.created_at > NOW() - $1::interval
         GROUP BY o.skill_slug, s.name, s.category
-        ORDER BY total_cents DESC
+        ORDER BY total_paise DESC
         LIMIT 15
       `, [interval]),
 
@@ -100,10 +101,10 @@ export async function onRequestGet({ request, env }) {
       client.query(`
         SELECT
           CASE WHEN bundle_key IS NULL THEN 'individual' ELSE 'bundle' END AS type,
-          SUM(amount_cents) AS paise
+          SUM(amount_paise) AS paise
         FROM orders
         WHERE status = 'paid'
-          AND created_at > NOW() - ($1 * INTERVAL '1 day')
+          AND created_at > NOW() - $1::interval
         GROUP BY 1
       `, [interval]),
 
@@ -111,11 +112,11 @@ export async function onRequestGet({ request, env }) {
       client.query(`
         SELECT
           s.category,
-          SUM(o.amount_cents) AS paise
+          SUM(o.amount_paise) AS paise
         FROM orders o
         JOIN skills s ON s.slug = o.skill_slug
         WHERE o.status = 'paid'
-          AND o.created_at > NOW() - ($1 * INTERVAL '1 day')
+          AND o.created_at > NOW() - $1::interval
         GROUP BY s.category
         ORDER BY paise DESC
         LIMIT 8
@@ -135,6 +136,24 @@ export async function onRequestGet({ request, env }) {
         ORDER BY ts DESC LIMIT 20
       `),
 
+      // Recent orders (for Orders tab)
+      client.query(`
+        SELECT
+          o.razorpay_payment_id,
+          o.skill_slug,
+          o.bundle_key,
+          o.amount_cents,
+          o.status,
+          o.paid_at,
+          o.created_at,
+          s.name AS skill_name
+        FROM orders o
+        LEFT JOIN skills s ON s.slug = o.skill_slug
+        WHERE o.status = 'paid'
+        ORDER BY o.paid_at DESC NULLS LAST
+        LIMIT 50
+      `),
+
       // Top search terms
       client.query(`
         SELECT
@@ -143,7 +162,7 @@ export async function onRequestGet({ request, env }) {
           SUM(CASE WHEN result_count = 0 THEN 1 ELSE 0 END) AS misses,
           AVG(result_count)             AS avg_results
         FROM search_queries
-        WHERE searched_at > NOW() - ($1 * INTERVAL '1 day')
+        WHERE searched_at > NOW() - $1::interval
         GROUP BY query
         ORDER BY searches DESC
         LIMIT 20
@@ -154,7 +173,7 @@ export async function onRequestGet({ request, env }) {
         SELECT query, COUNT(*) AS searches
         FROM search_queries
         WHERE result_count = 0
-          AND searched_at > NOW() - ($1 * INTERVAL '1 day')
+          AND searched_at > NOW() - $1::interval
         GROUP BY query
         ORDER BY searches DESC
         LIMIT 10
@@ -162,13 +181,13 @@ export async function onRequestGet({ request, env }) {
 
       // Funnel (page views → orders in same period)
       client.query(`
-  SELECT
-    COUNT(DISTINCT session_id)                          AS visitors,
-    COUNT(DISTINCT CASE WHEN skill_slug IS NOT NULL
-                   THEN session_id END)                 AS skill_page_views
-  FROM page_views
-  WHERE viewed_at > NOW() - INTERVAL '30 days'
-`),
+        SELECT
+          COUNT(DISTINCT session_id)                          AS visitors,
+          COUNT(DISTINCT CASE WHEN skill_slug IS NOT NULL
+                         THEN session_id END)                 AS skill_page_views
+        FROM page_views
+        WHERE viewed_at > NOW() - $1::interval
+      `, [interval]),
 
       // Buyer geography
       client.query(`
@@ -212,7 +231,8 @@ export async function onRequestGet({ request, env }) {
     const data = {
       range,
       kpi: {
-        totalPaise:    parseInt(kpi.rows[0].total_cents, 10),
+        totalCents:    parseInt(kpi.rows[0].total_paise, 10),
+        totalPaise:    parseInt(kpi.rows[0].total_paise, 10),
         totalOrders:   parseInt(kpi.rows[0].total_orders, 10),
         uniqueBuyers:  parseInt(kpi.rows[0].unique_buyers, 10),
         totalDownloads:parseInt(kpi.rows[0].total_downloads, 10),
@@ -224,6 +244,7 @@ export async function onRequestGet({ request, env }) {
       revenueByType:   revenueByType.rows,
       categoryRevenue: categoryRevenue.rows,
       recentActivity:  recentActivity.rows,
+      recentOrders:    recentOrders.rows,
       topSearches:     topSearches.rows,
       missedSearches:  missedSearches.rows,
       funnel: {
