@@ -124,8 +124,7 @@ function buildDay7Html({ skillName, skillSlug, bundle, orderId }) {
 
           <!-- Sign off -->
           <p style="margin:0 0 28px;font-size:15px;color:#545249;line-height:1.6;">
-            Thanks for trying NovaKit.<br>
-            — Snehal
+            Thanks for trying NovaKit.
           </p>
 
           <!-- Support note -->
