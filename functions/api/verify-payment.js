@@ -84,6 +84,7 @@ export async function onRequestPost({ request, env }) {
   }
 
   const buyerEmail = payment.email || payment.notes?.buyer_email || '';
+  const buyerCountry = payment.international ? 'International' : (payment.notes?.country || payment.bank ? 'IN' : null);
   const buyerHash  = buyerEmail ? await sha256(buyerEmail) : null;
   const amountCents = payment.amount; // Razorpay stores in paise/cents
   const isBundle = sku.endsWith('-bundle');
@@ -107,12 +108,13 @@ export async function onRequestPost({ request, env }) {
     // 4. Upsert buyer
     if (buyerHash) {
       await client.query(
-        `INSERT INTO buyers (buyer_hash)
-         VALUES ($1)
+        `INSERT INTO buyers (buyer_hash, country)
+         VALUES ($1, $2)
          ON CONFLICT (buyer_hash) DO UPDATE
            SET order_count = buyers.order_count + 1,
-               total_cents = buyers.total_cents + $2`,
-        [buyerHash, amountCents]
+               total_cents = buyers.total_cents + $3,
+               country = COALESCE(buyers.country, EXCLUDED.country)`,
+        [buyerHash, buyerCountry, amountCents]
       );
     }
 
