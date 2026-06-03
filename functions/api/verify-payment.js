@@ -138,14 +138,34 @@ export async function onRequestPost({ request, env }) {
       );
     }
 
-    // 6. Get order ID for download tracking
+    
+    // 7. Push buyer email to Beehiiv (only on new orders, fire-and-forget)
+    if (isNewOrder && buyerEmail && env.BEEHIIV_API_KEY && env.BEEHIIV_PUB_ID) {
+      fetch(`https://api.beehiiv.com/v2/publications/${env.BEEHIIV_PUB_ID}/subscriptions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${env.BEEHIIV_API_KEY}`,
+        },
+        body: JSON.stringify({
+          email: buyerEmail,
+          reactivate_existing: false,
+          send_welcome_email: false,
+          utm_source: 'novakit_purchase',
+          utm_medium: 'organic',
+          utm_campaign: sku,
+        }),
+      }).catch(err => console.warn('[beehiiv] subscribe failed:', err.message));
+    }
+
+    // 8. Get order ID for download tracking
     const { rows: orderRows } = await client.query(
       `SELECT id FROM orders WHERE razorpay_payment_id = $1`,
       [paymentId]
     );
     const orderId = orderRows[0]?.id;
 
-    // 7. Get file URLs for this skill/bundle
+    // 9. Get file URLs for this skill/bundle
     let fileUrls = [];
 
     if (isBundle) {
