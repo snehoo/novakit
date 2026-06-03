@@ -139,18 +139,21 @@ export async function onRequestGet({ request, env }) {
       // Recent orders (for Orders tab)
       client.query(`
         SELECT
+          o.id,
+          o.razorpay_order_id,
           o.razorpay_payment_id,
+          o.buyer_email,
           o.skill_slug,
           o.bundle_key,
           o.amount_cents,
           o.status,
-          o.paid_at,
+          COALESCE(o.paid_at, o.created_at) AS paid_at,
           o.created_at,
           s.name AS skill_name
         FROM orders o
         LEFT JOIN skills s ON s.slug = o.skill_slug
         WHERE o.status = 'paid'
-        ORDER BY o.paid_at DESC NULLS LAST
+        ORDER BY COALESCE(o.paid_at, o.created_at) DESC NULLS LAST
         LIMIT 50
       `),
 

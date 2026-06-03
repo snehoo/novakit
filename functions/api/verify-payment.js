@@ -119,17 +119,19 @@ export async function onRequestPost({ request, env }) {
     // 5. Upsert order (use payment ID as unique key since no order ID from payment links)
     await client.query(
       `INSERT INTO orders
-         (razorpay_order_id, razorpay_payment_id, buyer_hash,
+         (razorpay_order_id, razorpay_payment_id, buyer_hash, buyer_email,
           skill_slug, bundle_key, amount_cents, currency, status, paid_at)
-       VALUES ($1, $2, $3, $4, $5, $6, 'USD', 'paid', NOW())
+       VALUES ($1, $2, $3, $4, $5, $6, $7, 'USD', 'paid', NOW())
        ON CONFLICT (razorpay_order_id) DO UPDATE
          SET razorpay_payment_id = EXCLUDED.razorpay_payment_id,
+             buyer_email = EXCLUDED.buyer_email,
              status = 'paid',
              paid_at = NOW()`,
       [
         paymentId,       // use payment ID as order ID for payment links
         paymentId,
         buyerHash,
+        buyerEmail,
         sku,
         skill.bundle_key,
         amountCents,
