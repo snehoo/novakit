@@ -105,20 +105,14 @@ export async function onRequestPost({ request, env }) {
 
     const skill = skillRows[0];
 
-    // 4. Upsert buyer
-    if (buyerHash) {
-      await client.query(
-        `INSERT INTO buyers (buyer_hash, country)
-         VALUES ($1, $2)
-         ON CONFLICT (buyer_hash) DO UPDATE
-           SET order_count = buyers.order_count + 1,
-               total_cents = buyers.total_cents + $3,
-               country = COALESCE(buyers.country, EXCLUDED.country)`,
-        [buyerHash, buyerCountry, amountCents]
-      );
-    }
+    // 4. Check if order already exists (re-visit of delivery page)
+    const { rows: existingOrder } = await client.query(
+      `SELECT id FROM orders WHERE razorpay_payment_id = $1`,
+      [paymentId]
+    );
+    const isNewOrder = existingOrder.length === 0;
 
-    // 5. Upsert order (use payment ID as unique key since no order ID from payment links)
+    // 5. Upsert order
     await client.query(
       `INSERT INTO orders
          (razorpay_order_id, razorpay_payment_id, buyer_hash, buyer_email,
@@ -127,18 +121,22 @@ export async function onRequestPost({ request, env }) {
        ON CONFLICT (razorpay_order_id) DO UPDATE
          SET razorpay_payment_id = EXCLUDED.razorpay_payment_id,
              buyer_email = EXCLUDED.buyer_email,
-             status = 'paid',
-             paid_at = NOW()`,
-      [
-        paymentId,       // use payment ID as order ID for payment links
-        paymentId,
-        buyerHash,
-        buyerEmail,
-        sku,
-        skill.bundle_key,
-        amountCents,
-      ]
+             status = 'paid'`,
+      [paymentId, paymentId, buyerHash, buyerEmail, sku, skill.bundle_key, amountCents]
     );
+
+    // 6. Only update buyer stats for new orders
+    if (isNewOrder && buyerHash) {
+      await client.query(
+        `INSERT INTO buyers (buyer_hash, country, order_count, total_cents)
+         VALUES ($1, $2, 1, $3)
+         ON CONFLICT (buyer_hash) DO UPDATE
+           SET order_count = buyers.order_count + 1,
+               total_cents = buyers.total_cents + $3,
+               country = COALESCE(buyers.country, EXCLUDED.country)`,
+        [buyerHash, buyerCountry, amountCents]
+      );
+    }
 
     // 6. Get order ID for download tracking
     const { rows: orderRows } = await client.query(

@@ -787,13 +787,13 @@ function buildBuyers(entrySkills) {
     const repeatRate   = kpi.repeatRate || 0;
     const totalOrders  = kpi.totalOrders || 0;
     const totalPaise   = kpi.totalCents || kpi.totalPaise || 0;
-    const aov          = totalOrders ? Math.round(totalPaise / totalOrders / 100) : 0;
+    const aov          = totalOrders ? Math.round(totalPaise / totalOrders) : 0;
     const singlePct    = 100 - repeatRate;
 
     document.getElementById('cohort-total').textContent      = totalBuyers.toLocaleString();
     document.getElementById('cohort-repeat').textContent     = repeatRate + '%';
     document.getElementById('cohort-avg-skills').textContent = totalBuyers ? (totalOrders/totalBuyers).toFixed(1) : '—';
-    document.getElementById('cohort-aov').textContent = aov ? '$' + (aov/100).toFixed(2) : '—';
+    document.getElementById('cohort-aov').textContent = aov ? fmt(aov) : '—';
     document.getElementById('cohort-ltv').textContent        = '—';
     document.getElementById('cohort-single').textContent     = singlePct + '%';
   }
