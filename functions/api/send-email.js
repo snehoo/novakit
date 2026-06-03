@@ -44,8 +44,8 @@ export async function onRequestPost({ request, env }) {
       <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.08);">
 
         <!-- Header -->
-        <tr><td style="background:#0d0d0b;padding:28px 40px;text-align:left;">
-          <span style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:20px;font-weight:800;color:#f0efe8;letter-spacing:-0.02em;">Nova<span style="color:#DE7356;">Kit</span></span>
+        <tr><td style="background:#0d0d0b;padding:24px 40px;text-align:left;">
+          <img src="https://novakit.tech/assets/nkwhite.jpg" alt="NovaKit" height="28" style="display:block;border:0;outline:none;text-decoration:none;">
         </td></tr>
 
         <!-- Body -->
@@ -70,7 +70,7 @@ export async function onRequestPost({ request, env }) {
               <tr>
                 <td style="padding:14px 0;border-bottom:1px solid #eeecea;vertical-align:top;">
                   <table cellpadding="0" cellspacing="0"><tr>
-                    <td style="width:28px;height:28px;background:#DE7356;border-radius:50%;text-align:center;vertical-align:middle;font-size:12px;font-weight:700;color:#fff;padding:0 0 0 0;" width="28">1</td>
+                    <td width="28" height="28" style="width:28px;height:28px;min-width:28px;background:#DE7356;border-radius:14px;text-align:center;vertical-align:middle;font-size:12px;font-weight:700;color:#fff;padding:0;line-height:28px;">1</td>
                     <td style="padding-left:14px;vertical-align:top;">
                       <div style="font-size:14px;font-weight:700;color:#111110;margin-bottom:4px;">Open Claude → Customize → Skills → <span style="color:#DE7356;">+</span></div>
                       <div style="font-size:13px;color:#545249;line-height:1.5;">In Claude's sidebar click <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">Customize</span>, then <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">Skills</span>, then the <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">+</span> button and choose <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">Upload a skill</span>.</div>
@@ -81,7 +81,7 @@ export async function onRequestPost({ request, env }) {
               <tr>
                 <td style="padding:14px 0;border-bottom:1px solid #eeecea;vertical-align:top;">
                   <table cellpadding="0" cellspacing="0"><tr>
-                    <td style="width:28px;height:28px;background:#DE7356;border-radius:50%;text-align:center;vertical-align:middle;font-size:12px;font-weight:700;color:#fff;" width="28">2</td>
+                    <td width="28" height="28" style="width:28px;height:28px;min-width:28px;background:#DE7356;border-radius:14px;text-align:center;vertical-align:middle;font-size:12px;font-weight:700;color:#fff;padding:0;line-height:28px;">2</td>
                     <td style="padding-left:14px;vertical-align:top;">
                       <div style="font-size:14px;font-weight:700;color:#111110;margin-bottom:4px;">Drop in your .skill file</div>
                       <div style="font-size:13px;color:#545249;line-height:1.5;">Drag the downloaded <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">.skill</span> file into the upload area. Wait a moment for validation — you'll see it appear in your skills list.</div>
@@ -92,7 +92,7 @@ export async function onRequestPost({ request, env }) {
               <tr>
                 <td style="padding:14px 0 0;vertical-align:top;">
                   <table cellpadding="0" cellspacing="0"><tr>
-                    <td style="width:28px;height:28px;background:#DE7356;border-radius:50%;text-align:center;vertical-align:middle;font-size:12px;font-weight:700;color:#fff;" width="28">3</td>
+                    <td width="28" height="28" style="width:28px;height:28px;min-width:28px;background:#DE7356;border-radius:14px;text-align:center;vertical-align:middle;font-size:12px;font-weight:700;color:#fff;padding:0;line-height:28px;">3</td>
                     <td style="padding-left:14px;vertical-align:top;">
                       <div style="font-size:14px;font-weight:700;color:#111110;margin-bottom:4px;">Type / in any chat to use it</div>
                       <div style="font-size:13px;color:#545249;line-height:1.5;">Start any new chat, type <span style="background:#eeecea;padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;">/</span> and select your skill from the menu. Done.</div>
