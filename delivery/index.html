@@ -93,14 +93,14 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-size:12px;font-family:monospace;}
 
 /* DEMO IFRAME */
-.demo-iframe-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.demo-iframe-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;}
 .dic-header{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--bg2);border-bottom:1px solid var(--border);}
 .dic-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
 .dic-dot:nth-child(1){background:#ff5f57;}
 .dic-dot:nth-child(2){background:#febc2e;}
 .dic-dot:nth-child(3){background:#28c840;}
 .dic-label{font-size:12px;color:var(--muted);font-weight:500;margin-left:6px;}
-.demo-iframe-zoom{width:100%;min-height:300px;overflow:hidden;position:relative;}
+.demo-iframe-zoom{width:100%;flex:1;min-height:200px;overflow:hidden;position:relative;}
 .demo-iframe-zoom iframe{width:1920px;height:1080px;border:none;display:block;position:absolute;top:0;left:0;transform-origin:top left;}
 .footer-links{text-align:center;animation:fadeUp .5s .4s ease both;}
 .footer-links a{font-size:13px;color:var(--muted);margin:0 12px;transition:color .15s;}
@@ -111,7 +111,8 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
 
 <nav>
   <a href="/">
-    <img class="logo-img logo-dark" src="https://assets.novakit.tech/nkwhite.jpg" alt="NovaKit">
+    <img class="logo-img logo-dark" src="/assets/nkwhite.jpg" alt="NovaKit">
+    <img class="logo-img logo-light" src="/assets/nkblack.jpg" alt="NovaKit" style="display:none;">
   </a>
 </nav>
 
@@ -138,7 +139,7 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
       <div class="check-ring"><div class="check-mark">✓</div></div>
       <div class="hero-label">Payment confirmed</div>
       <h1 class="hero-title" id="hero-title">Your skill is ready</h1>
-      <p class="hero-sub">Download below and add it to Claude to get started.</p>
+      <p class="hero-sub" id="hero-sub">Download below and follow the 3-step install. A copy has also been sent to your email.</p>
     </div>
 
     <div class="skill-card">
@@ -208,18 +209,17 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
 <script src="/js/products.js"></script>
 <script>
 (async function() {
-  const params = new URLSearchParams(location.search);
+  var params = new URLSearchParams(location.search);
+  var paymentId     = params.get('razorpay_payment_id');
+  var paymentLinkId = params.get('razorpay_payment_link_id');
+  var paymentRef    = params.get('razorpay_payment_link_reference_id') || '';
+  var paymentStatus = params.get('razorpay_payment_link_status') || 'paid';
+  var signature     = params.get('razorpay_signature');
+  var sku           = params.get('sku');
 
-  const paymentId       = params.get('razorpay_payment_id');
-  const paymentLinkId   = params.get('razorpay_payment_link_id');
-  const paymentLinkRef  = params.get('razorpay_payment_link_reference_id') || '';
-  const paymentStatus   = params.get('razorpay_payment_link_status') || 'paid';
-  const signature       = params.get('razorpay_signature');
-  const sku             = params.get('sku');
-
-  const $loading = document.getElementById('loading');
-  const $error   = document.getElementById('error');
-  const $success = document.getElementById('success');
+  var $loading = document.getElementById('loading');
+  var $error   = document.getElementById('error');
+  var $success = document.getElementById('success');
 
   function showError(msg) {
     $loading.style.display = 'none';
@@ -233,23 +233,39 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
   }
 
   try {
-    const verifyRes = await fetch('/api/verify-payment', {
+    var verifyRes = await fetch('/api/verify-payment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ paymentId, sku, signature, paymentLinkId, paymentLinkRefId: paymentLinkRef, paymentLinkStatus: paymentStatus }),
+      body: JSON.stringify({ paymentId: paymentId, sku: sku, signature: signature, paymentLinkId: paymentLinkId, paymentLinkRefId: paymentRef, paymentLinkStatus: paymentStatus }),
     });
 
     if (!verifyRes.ok) {
-      const err = await verifyRes.json();
-      showError(err.error || 'Payment verification failed. Contact support@novakit.tech with payment ID: ' + paymentId);
+      var errData = await verifyRes.json();
+      showError(errData.error || 'Payment verification failed. Contact support@novakit.tech with payment ID: ' + paymentId);
       return;
     }
 
-    const { skillName, skillSlug, isBundle, bundleKey, fileUrls, email, orderId } = await verifyRes.json();
+    var data = await verifyRes.json();
+    var skillName = data.skillName;
+    var skillSlug = data.skillSlug;
+    var isBundle  = data.isBundle;
+    var bundleKey = data.bundleKey;
+    var email     = data.email;
+    var orderId   = data.orderId;
 
-    const product = window.NK_PRODUCTS?.[skillSlug] || window.NK_PRODUCTS?.[bundleKey] || {};
-    const icon    = product.icon || '⚡';
-    const type    = product.type || (isBundle ? 'Bundle' : 'Individual skill');
+    var product = (window.NK_PRODUCTS && (window.NK_PRODUCTS[skillSlug] || window.NK_PRODUCTS[bundleKey])) || {};
+    var icon = product.icon || '\u26a1';
+    var type = product.type || (isBundle ? 'Bundle' : 'Individual skill');
+
+    // File URLs: use from API first, fall back to products.js
+    var resolvedUrls = data.fileUrls || [];
+    if (!resolvedUrls.length) {
+      if (isBundle && product.fileUrls && product.fileUrls.length) {
+        resolvedUrls = product.fileUrls;
+      } else if (product.fileUrl) {
+        resolvedUrls = [product.fileUrl];
+      }
+    }
 
     $loading.style.display = 'none';
     $success.style.display = 'block';
@@ -263,30 +279,32 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
       document.getElementById('hero-sub').textContent = 'Download below and follow the 3-step install. A copy has also been sent to ' + email + '.';
     }
 
-    const btns = document.getElementById('download-buttons');
-    if (fileUrls.length === 1) {
-      const fname = skillName.toLowerCase().replace(/[^a-z0-9]+/g,'-');
-      btns.innerHTML = '<a href="' + fileUrls[0] + '" download="' + fname + '.skill" class="download-btn"><span class="download-btn-name">⬇ Download ' + skillName + '.skill</span><span class="download-btn-arrow">↓</span></a>';
+    var btns = document.getElementById('download-buttons');
+    if (!resolvedUrls.length) {
+      btns.innerHTML = '<div style="color:var(--muted);font-size:14px;">Download link unavailable — check your email or contact support@novakit.tech</div>';
+    } else if (resolvedUrls.length === 1) {
+      var fname = skillName.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+      btns.innerHTML = '<a href="' + resolvedUrls[0] + '" download="' + fname + '.skill" class="download-btn"><span class="download-btn-name">⬇ Download ' + skillName + '.skill</span><span class="download-btn-arrow">↓</span></a>';
     } else {
-      btns.innerHTML = fileUrls.map(function(url, i) {
-        var fname = url.split('/').pop().replace('nk-','').replace(/-[a-f0-9]+\.skill$/,'.skill');
-        return '<a href="' + url + '" download class="download-btn ' + (i > 0 ? 'secondary' : '') + '"><span class="download-btn-name">⬇ ' + fname + '</span><span class="download-btn-arrow">↓</span></a>';
+      btns.innerHTML = resolvedUrls.map(function(url, i) {
+        var fn = url.split('/').pop().replace('nk-','').replace(/-[a-f0-9]+\.skill$/,'.skill');
+        return '<a href="' + url + '" download class="download-btn ' + (i > 0 ? 'secondary' : '') + '"><span class="download-btn-name">⬇ ' + fn + '</span><span class="download-btn-arrow">↓</span></a>';
       }).join('');
     }
 
-    function scaleIframe() {
+    // Scale iframe — exactly like index.html
+    function scaleInstallDemo() {
+      var wrap   = document.querySelector('.demo-iframe-zoom');
       var iframe = document.getElementById('install-demo-iframe');
-      if (!iframe) return;
-      var wrap = iframe.closest('.demo-iframe-zoom');
-      if (!wrap) return;
+      if (!wrap || !iframe) return;
       var scale = wrap.offsetWidth / 1920;
       iframe.style.transform = 'scale(' + scale + ')';
+      iframe.style.transformOrigin = 'top left';
       wrap.style.height = (1080 * scale) + 'px';
     }
-    window.addEventListener('resize', scaleIframe);
-    var iframeEl = document.getElementById('install-demo-iframe');
-    if (iframeEl) iframeEl.addEventListener('load', scaleIframe);
-    setTimeout(scaleIframe, 300);
+    window.addEventListener('load', scaleInstallDemo);
+    window.addEventListener('resize', scaleInstallDemo);
+    setTimeout(scaleInstallDemo, 300);
 
     if (window.nk) nk.download(skillSlug, orderId, null);
 
@@ -295,7 +313,7 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
       fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ to: email, skillName: skillName, skillSlug: skillSlug, fileUrls: fileUrls, isBundle: isBundle, bundleKey: bundleKey, orderId: orderId }),
+        body: JSON.stringify({ to: email, skillName: skillName, skillSlug: skillSlug, fileUrls: resolvedUrls, isBundle: isBundle, bundleKey: bundleKey, orderId: orderId }),
       }).then(function(r) {
         if (r.ok) document.getElementById('email-confirm').style.display = 'flex';
       }).catch(function() {});
