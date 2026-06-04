@@ -3,13 +3,13 @@
   RewriteEngine On
   RewriteBase /
 
-  # Remove www from URL
-  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-  RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-
-  # Ensure HTTPS
+  # Ensure HTTPS first
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Remove www from URL (now with HTTPS)
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 </IfModule>
 
 # Set correct MIME types
