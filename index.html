@@ -1146,9 +1146,16 @@ function skillNameToFileName(skillName) {
 
   // Handle special cases where filename doesn't follow the pattern
   const specialCases = {
-    'children-book-prompt': 'childrens-book-prompt',
-    'e-commerce-product-listing': 'ecommerce-product-listing'
-  };
+    'children-book-prompt':           'childrens-book-prompt',
+    'e-commerce-product-listing':     'ecommerce-product-listing',
+    'university-application-sop':     'university-sop',
+    'grant-proposal-writing':         'grant-and-proposal-writing',
+    'terms-of-service-privacy-policy':'tos-privacy-policy',
+    'visa-application-cover-letter':  'visa-cover-letter',
+    'logo-brand-identity':            'logo-brand-identity-prompt',
+    'sales-page':                     'sales-landing-page-copy',
+    'short-form-ai-video':            'ai-video-prompt',
+};
 
   return specialCases[fileName] || fileName;
 }

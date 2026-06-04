@@ -3,7 +3,7 @@
 
   <!-- Core pages -->
   <url><loc>https://novakit.tech/</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://novakit.tech/blog/</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://novakit.tech/blog/index.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 
   <!-- Legal -->
   <url><loc>https://novakit.tech/legal/terms.html</loc><lastmod>2026-06-04</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
@@ -181,12 +181,12 @@
   <url><loc>https://novakit.tech/blog/the-airbnb-listing-that-gets-booked-before-anyone-asks-about-parking.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/the-book-cover-brief-your-designer-actually-needs.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/the-event-speech-that-lands.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://novakit.tech/blog/The-Holiday-Greeting-Written-for-Everyone-and-Why-It-Lands-with-No-One.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://novakit.tech/blog/The-LinkedIn-Post-That-Actually-Gets-Read-and-Why-Format-Is-Everything.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://novakit.tech/blog/the-holiday-greeting-written-for-everyone-and-why-it-lands-with-no-one.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://novakit.tech/blog/the-linkedin-post-that-actually-gets-read-and-why-format-is-everything.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/the-podcast-script-that-sounds-like-you-wrote-it-not-like-youre-reading-it.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/the-sales-page-that-sounds-like-it-was-written-about-your-product.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://novakit.tech/blog/The-Screenplay-AI-Gets-Wrong-and-What-a-Trained-Script-Skill-Fixes.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://novakit.tech/blog/The-Short-Story-AI-Gets-Right-When-It-Knows-Your-Genre.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://novakit.tech/blog/the-screenplay-ai-gets-wrong-and-what-a-trained-script-skill-fixes.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://novakit.tech/blog/the-short-story-ai-gets-right-when-it-knows-your-genre.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/the-vows-that-sound-like-you-wrote-them-because-you-did.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/the-wedding-speech-that-sounds-like-you-not-like-a-template.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/travel-itinerary-planner.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -209,7 +209,7 @@
   <url><loc>https://novakit.tech/blog/what-investors-want-in-a-business-plan.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/why-ai-dialogue-sounds-flat.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/why-ai-lesson-plans-fail-the-learning-objective-test.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://novakit.tech/blog/Why-AI-Poetry-Reads-Like-a-Greeting-Card-and-How-to-Fix-It.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://novakit.tech/blog/why-ai-poetry-reads-like-a-greeting-card-and-how-to-fix-it.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/why-ai-travel-itineraries-feel-generic.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/why-cold-emails-get-deleted.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/why-menu-copy-fails-to-sell-food.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -218,9 +218,9 @@
   <url><loc>https://novakit.tech/blog/why-your-book-cover-looks-wrong.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/why-your-carousel-slides-get-scrolled-past.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/why-your-research-paper-structure-fails-peer-review.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://novakit.tech/blog/Why-your-second-childrens-book-doesnt-sound-like-your-first.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://novakit.tech/blog/Your-Brand-Voice-Is-the-One-Thing-AI-cant-fake.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://novakit.tech/blog/Your-Social-Posts-Arent-Underperforming-Your-Brief-Is..html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://novakit.tech/blog/why-your-second-childrens-book-doesnt-sound-like-your-first.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://novakit.tech/blog/your-brand-voice-is-the-one-thing-ai-cant-fake.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://novakit.tech/blog/your-social-posts-arent-underperforming-your-brief-is.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/youtube-thumbnail-prompt-blog-test.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/youtube-thumbnail-prompt-why-generic-fails.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://novakit.tech/blog/youtube-thumbnail-prompt.html</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>

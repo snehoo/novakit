@@ -1,14 +1,1 @@
-[SKILL] grant-proposal-writing.html not found
-[SKILL] grant-proposal-writing.html not found
-[SKILL] logo-brand-identity.html not found
-[SKILL] logo-brand-identity.html not found
-[SKILL] sales-page.html not found
-[SKILL] short-form-ai-video.html not found
-[SKILL] terms-of-service-privacy-policy.html not found
-[SKILL] terms-of-service-privacy-policy.html not found
-[SKILL] sales-page.html not found
-[SKILL] university-application-sop.html not found
-[SKILL] university-application-sop.html not found
-[SKILL] visa-application-cover-letter.html not found
-[SKILL] visa-application-cover-letter.html not found
-[SKILL] short-form-ai-video.html not found
+[BLOG] index-old1.html — no skill match

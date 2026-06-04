@@ -297,66 +297,75 @@ BUNDLE_KEYWORDS = {
 # ─────────────────────────────────────────────────────────────────────────────
 
 BLOG_SLUG_OVERRIDES = {
-    # Creative
-    "The-Holiday-Greeting-Written-for-Everyone-and-Why-It-Lands-with-No-One": "festival-holiday-greeting-prompt",
-    "The-Screenplay-AI-Gets-Wrong-and-What-a-Trained-Script-Skill-Fixes":     "screenplay-script",
-    "The-Short-Story-AI-Gets-Right-When-It-Knows-Your-Genre":                 "short-story-prompt",
-    "Why-AI-Poetry-Reads-Like-a-Greeting-Card-and-How-to-Fix-It":             "poetry-verse-prompt",
-    "Why-your-second-childrens-book-doesnt-sound-like-your-first":            "children-book-prompt",
-    "childrens-book-prompt":                                                   "children-book-prompt",
-    "the-book-cover-brief-your-designer-actually-needs":                       "book-cover-prompt",
-    "why-your-book-cover-looks-wrong":                                         "book-cover-prompt",
-    # Creator / Social
-    "The-LinkedIn-Post-That-Actually-Gets-Read-and-Why-Format-Is-Everything": "linkedin-post-engine",
-    "Your-Brand-Voice-Is-the-One-Thing-AI-cant-fake":                         "brand-voice-guide",
-    "Your-Social-Posts-Arent-Underperforming-Your-Brief-Is.":                 "social-content-engine",
+    # ── Creative ──────────────────────────────────────────────────────────
+    "the-holiday-greeting-written-for-everyone-and-why-it-lands-with-no-one": "festival-holiday-greeting-prompt",
+    "the-screenplay-ai-gets-wrong-and-what-a-trained-script-skill-fixes":     "screenplay-script",
+    "the-short-story-ai-gets-right-when-it-knows-your-genre":                 "short-story-prompt",
+    "why-ai-poetry-reads-like-a-greeting-card-and-how-to-fix-it":             "poetry-verse-prompt",
+    "why-your-second-childrens-book-doesnt-sound-like-your-first":            "childrens-book-prompt",   # fixed typo
+    "childrens-book-prompt":                                                   "childrens-book-prompt",   # fixed typo
+    "the-book-cover-brief-your-designer-actually-needs":                      "book-cover-prompt",
+    "why-your-book-cover-looks-wrong":                                        "book-cover-prompt",
+ 
+    # ── Creator / Social ──────────────────────────────────────────────────
+    "the-linkedin-post-that-actually-gets-read-and-why-format-is-everything": "linkedin-post-engine",
+    "your-brand-voice-is-the-one-thing-ai-cant-fake":                         "brand-voice-guide",
+    "your-social-posts-arent-underperforming-your-brief-is":                 "social-content-engine",
     "seo-brief-for-freelancers":                                               "seo-blog-post-brief",
     "email-newsletter-subject-lines":                                          "email-newsletter-engine",
-    # Founder / Biz
+ 
+    # ── Founder / Biz ─────────────────────────────────────────────────────
     "why-cold-emails-get-deleted":                                             "cold-outreach-email",
     "financial-model-why-spreadsheets-arent-the-problem":                     "financial-model-prompt",
-    "visa-cover-letter-questions-answered":                                    "visa-application-cover-letter",
-    # Video / Podcast / Film
+    "visa-cover-letter-questions-answered":                                    "visa-cover-letter",       # fixed: was visa-application-cover-letter
+ 
+    # ── Video / Podcast / Film ────────────────────────────────────────────
     "how-to-write-ai-film-prompts-that-actually-work":                        "ai-animation-film-prompt",
     "the-ai-film-prompt-that-gives-sora-a-character-not-just-a-scene":        "dialogue-character-film-prompt",
     "podcast-scripted-vs-outlined-vs-improvised":                             "podcast-episode-script",
     "the-podcast-script-that-sounds-like-you-wrote-it-not-like-youre-reading-it": "podcast-episode-script",
-    # Real Estate / Listings
+ 
+    # ── Real Estate / Listings ────────────────────────────────────────────
     "how-to-write-real-estate-listing":                                        "real-estate-listing-copy",
     "airbnb-listing-copy-you-vs-ai-vs-calibrated-skill":                      "hotel-airbnb-listing-copy",
     "the-airbnb-listing-that-gets-booked-before-anyone-asks-about-parking":   "hotel-airbnb-listing-copy",
-    # Wedding
+ 
+    # ── Wedding ───────────────────────────────────────────────────────────
     "how-to-write-wedding-vows-with-ai-that-actually-sound-like-you":         "wedding-vows-writer",
     "the-vows-that-sound-like-you-wrote-them-because-you-did":                "wedding-vows-writer",
     "the-wedding-speech-that-sounds-like-you-not-like-a-template":            "event-speech-writer",
     "wedding-invitation-your-invitation-sets-the-tone":                       "wedding-invitation-prompt",
     "why-menu-copy-fails-to-sell-food":                                       "menu-description-copy",
-    # Education
+ 
+    # ── Education ─────────────────────────────────────────────────────────
     "online-course-curriculum-completion":                                     "course-curriculum-builder",
     "why-ai-lesson-plans-fail-the-learning-objective-test":                   "lesson-plan-builder",
     "why-your-research-paper-structure-fails-peer-review":                    "research-paper-outline",
-    # Standalone skill blogs with descriptive filenames
-    "what-a-generic-ai-eulogy-sounds-like":              "eulogy-writer",
-    "why-ai-dialogue-sounds-flat":                       "dialogue-character-film-prompt",
-    "why-ai-travel-itineraries-feel-generic":            "travel-itinerary-planner",
-    "why-your-architecture-diagram-confuses-everyone":   "architecture-diagram-prompt",
-    "why-your-carousel-slides-get-scrolled-past":        "social-media-carousel-prompt",
-    # ── New entries from full blog folder scan ────────────────────────────
-    "financial-model":                                            "financial-model-prompt",
-    "the-event-speech-that-lands":                               "event-speech-writer",
-    "wedding-invitation":                                        "wedding-invitation-prompt",
-    "what-investors-want-in-a-business-plan":                    "business-plan",
-    "sales-page-skill":                                          "sales-page",
-    "social-content-engine-skill":                               "social-content-engine",
-    "course-curriculum-builder-ai":                              "course-curriculum-builder",
-    "lesson-plan-builder-ai":                                    "lesson-plan-builder",
-    "menu-description-copy-ai":                                  "menu-description-copy",
-    "research-paper-outline-ai":                                 "research-paper-outline",
-    "wedding-vows-writer-ai":                                    "wedding-vows-writer",
-    "short-form-ai-video-script":                                "short-form-ai-video",
-    "why-short-form-ai-video-scripts-miss-the-algorithm":        "short-form-ai-video",
-    "logo-brand-identity":                                       "logo-brand-identity",
-    "logo-brand-identity-why-generic-ai-fails":                  "logo-brand-identity",
+ 
+    # ── Standalone descriptive-filename blogs ─────────────────────────────
+    "what-a-generic-ai-eulogy-sounds-like":            "eulogy-writer",
+    "why-ai-dialogue-sounds-flat":                     "dialogue-character-film-prompt",
+    "why-ai-travel-itineraries-feel-generic":          "travel-itinerary-planner",
+    "why-your-architecture-diagram-confuses-everyone": "architecture-diagram-prompt",
+    "why-your-carousel-slides-get-scrolled-past":      "social-media-carousel-prompt",
+ 
+    # ── Descriptive-filename blogs (full blog folder scan) ────────────────
+    "financial-model":                            "financial-model-prompt",
+    "the-event-speech-that-lands":                "event-speech-writer",
+    "wedding-invitation":                         "wedding-invitation-prompt",
+    "what-investors-want-in-a-business-plan":     "business-plan",
+    "sales-page-skill":                           "sales-landing-page-copy",   # fixed: was sales-page
+    "social-content-engine-skill":                "social-content-engine",
+    "course-curriculum-builder-ai":               "course-curriculum-builder",
+    "lesson-plan-builder-ai":                     "lesson-plan-builder",
+    "menu-description-copy-ai":                   "menu-description-copy",
+    "research-paper-outline-ai":                  "research-paper-outline",
+    "wedding-vows-writer-ai":                     "wedding-vows-writer",
+    "short-form-ai-video-script":                 "ai-video-prompt",           # fixed: was short-form-ai-video
+    "why-short-form-ai-video-scripts-miss-the-algorithm": "ai-video-prompt",  # fixed: was short-form-ai-video
+    "logo-brand-identity":                        "logo-brand-identity-prompt", # fixed: was logo-brand-identity
+    "logo-brand-identity-why-generic-ai-fails":   "logo-brand-identity-prompt", # fixed: was logo-brand-identity
+ 
     # ── Secondary blogs (two blogs per skill) ─────────────────────────────
     "book-cover-prompt-why-generic-ai-descriptions-fail":        "book-cover-prompt",
     "conference-abstract-why-yours-gets-rejected":               "conference-abstract",
@@ -364,8 +373,8 @@ BLOG_SLUG_OVERRIDES = {
     "cover-letter-writer-why-yours-gets-skipped":                "cover-letter-writer",
     "ecommerce-product-listing-why-generic-fails":               "ecommerce-product-listing",
     "exam-paper-generator-why-generic-fails":                    "exam-paper-generator",
-    "grant-proposal-writing":                                    "grant-proposal-writing",
-    "grant-proposal-writing-why-generic-fails":                  "grant-proposal-writing",
+    "grant-proposal-writing":                                    "grant-and-proposal-writing",  # fixed: was grant-proposal-writing
+    "grant-proposal-writing-why-generic-fails":                  "grant-and-proposal-writing",  # fixed: was grant-proposal-writing
     "health-wellness-plan-why-generic-fails":                    "health-wellness-plan",
     "home-renovation-brief-why-generic-ai-fails-contractors":    "home-renovation-brief",
     "investor-update-email-what-weak-updates-cost":              "investor-update-email",
@@ -385,18 +394,29 @@ BLOG_SLUG_OVERRIDES = {
     "screenplay-script-why-yours-reads-like-a-summary":          "screenplay-script",
     "twitter-x-thread-engine-why-your-threads-get-ignored":      "twitter-x-thread-engine",
     "ugc-ad-creator-why-ugc-fails":                              "ugc-ad-creator",
-    "video-script-engine-why-ai-scripts-fail":                   "video-script",
+    "video-script-engine-why-ai-scripts-fail":                   "video-script-engine",  # fixed: was "video-script"
     "webinar-online-event-script-why-audiences-drop-off":        "webinar-online-event-script",
     "brand-ad-copy-why-your-ads-dont-convert":                   "brand-ad-copy",
     "ai-animation-film-prompt-why-descriptions-fail":            "ai-animation-film-prompt",
     "youtube-thumbnail-prompt-why-generic-fails":                "youtube-thumbnail-prompt",
     "youtube-thumbnail-prompt-blog-test":                        "youtube-thumbnail-prompt",
-    # Excluded — not skill blogs
-    "index":   None,
-    "index 2": None,
-    "index copy":  None,
-    "index-old":   None,
+ 
+    # ── Renamed skill slugs (new sitemap slug → self) ─────────────────────
+    "grant-and-proposal-writing":  "grant-and-proposal-writing",  # fixed: was grant-proposal-writing
+    "logo-brand-identity-prompt":  "logo-brand-identity-prompt",  # fixed: was logo-brand-identity
+    "sales-landing-page-copy":     "sales-landing-page-copy",     # fixed: was sales-page
+    "tos-privacy-policy":          "tos-privacy-policy",           # fixed: was terms-of-service-privacy-policy
+    "university-sop":              "university-sop",               # fixed: was university-application-sop
+    "visa-cover-letter":           "visa-cover-letter",            # fixed: was visa-application-cover-letter
+    "ai-video-prompt":             "ai-video-prompt",              # fixed: was short-form-ai-video
+ 
+    # ── Excluded pages ────────────────────────────────────────────────────
+    "index":        None,
+    "index 2":      None,
+    "index copy":   None,
+    "index-old":    None,
 }
+ 
 
 # ─────────────────────────────────────────────────────────────────────────────
 # SKILL PAGE FILENAME OVERRIDES
