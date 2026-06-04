@@ -468,16 +468,10 @@ async function subscribe(){
   }
 
   try {
-    await fetch('https://api.beehiiv.com/v2/publications/pub_a92ba9b8-53d3-43b0-9363-81d966e31131/subscriptions', {
+    await fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email,
-        reactivate_existing: false,
-        send_welcome_email: false,
-        utm_source: 'blog_subscribe',
-        utm_medium: 'organic',
-      })
+      body: JSON.stringify({ email, source: 'blog_subscribe' })
     });
   } catch(e) {}
 
