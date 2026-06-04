@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E9HFQ33F0Y');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — NovaKit</title>
+<meta name="description" content="Guides, tips, and deep-dives on getting the most out of Claude AI Skills. Written for creators, founders, and marketers.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#9a9890;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.10);--pill-text:#8f3718;
+  --surface2:#f0ede6;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --surface2:#141412;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;} .logo-light{display:none;}
+[data-theme="dark"] .logo-dark{display:block;} [data-theme="dark"] .logo-light{display:none;}
+.logo-dark{display:none;} .logo-light{display:block;}
+[data-theme="dark"] .logo-dark{display:block!important;} [data-theme="dark"] .logo-light{display:none!important;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--text);font-weight:600;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff!important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+
+/* ── HERO ── */
+.blog-hero{padding:72px 40px 56px;max-width:1200px;margin:0 auto;}
+.blog-hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:8px;}
+[data-theme="dark"] .blog-hero-eyebrow{color:var(--accent);}
+.blog-hero h1{font-family:'Instrument Serif',serif;font-size:clamp(42px,5.5vw,68px);line-height:1.06;letter-spacing:-0.02em;margin-bottom:18px;max-width:640px;}
+.blog-hero h1 em{font-style:italic;color:var(--accent);}
+.blog-hero p{font-size:18px;color:var(--muted);max-width:480px;line-height:1.65;}
+
+/* ── FILTER BAR ── */
+.filter-bar{padding:0 40px 40px;max-width:1200px;margin:0 auto;}
+.filter-inner{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.filter-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:100px;font-size:13px;font-weight:600;border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--muted);font-family:'Geist',sans-serif;transition:all .18s;}
+.filter-btn:hover{border-color:var(--border-s);color:var(--text);}
+.filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+[data-theme="dark"] .filter-btn{background:transparent;}
+[data-theme="dark"] .filter-btn.active{background:var(--accent);}
+
+/* ── POSTS GRID ── */
+.posts-section{padding:0 40px 100px;max-width:1200px;margin:0 auto;}
+
+/* Featured post — full-width */
+.post-featured{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:40px;background:var(--surface);transition:border-color .2s,transform .25s;}
+.post-featured:hover{border-color:var(--border-s);transform:translateY(-2px);}
+.pf-visual{background:var(--surface2);position:relative;min-height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.pf-pattern{position:absolute;inset:0;opacity:0.35;}
+.pf-icon{font-size:72px;position:relative;z-index:1;}
+.pf-body{padding:40px 44px;display:flex;flex-direction:column;justify-content:center;}
+.post-cat{display:inline-flex;align-items:center;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;width:fit-content;}
+.cat-guide{background:var(--blue-bg);color:var(--blue-text);}
+.cat-tips{background:var(--pill-bg);color:var(--pill-text);}
+.cat-deepdive{background:var(--green-bg);color:var(--green-text);}
+.cat-case{background:rgba(139,92,246,0.1);color:#7c3aed;}
+[data-theme="dark"] .cat-case{color:#a78bfa;}
+.pf-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,2.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px;}
+.pf-body h2 em{font-style:italic;color:var(--accent);}
+.pf-body p{font-size:16px;color:var(--muted);line-height:1.65;margin-bottom:24px;}
+.post-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:var(--faint);}
+.post-meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.read-more{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--accent);margin-top:4px;}
+.read-more svg{transition:transform .2s;}
+.post-featured:hover .read-more svg{transform:translateX(3px);}
+
+/* Regular grid */
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+
+.post-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface);transition:border-color .2s,transform .25s;cursor:pointer;display:flex;flex-direction:column;}
+.post-card:hover{border-color:var(--border-s);transform:translateY(-3px);}
+.pc-visual{background:var(--surface2);height:180px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0;}
+.pc-pattern{position:absolute;inset:0;opacity:0.25;}
+.pc-icon{font-size:44px;position:relative;z-index:1;}
+.pc-body{padding:24px;display:flex;flex-direction:column;flex:1;}
+.pc-body h3{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.2;letter-spacing:-0.01em;margin-bottom:10px;margin-top:6px;}
+.pc-body p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px;flex:1;}
+.pc-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border);margin-top:auto;}
+.pc-meta{font-size:12px;color:var(--faint);}
+.pc-arrow{color:var(--accent);font-size:16px;transition:transform .2s;}
+.post-card:hover .pc-arrow{transform:translateX(3px);}
+
+/* ── NEWSLETTER STRIP ── */
+.newsletter-wrap{padding:0 40px 0;max-width:1280px;margin:0 auto;}
+.footer-spacer{height:80px;}
+.newsletter-strip{border:1px solid var(--border);border-radius:16px;padding:40px 48px;background:var(--surface);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.ns-left h3{font-family:'Instrument Serif',serif;font-size:28px;line-height:1.2;letter-spacing:-0.02em;margin-bottom:6px;}
+.ns-left h3 em{font-style:italic;color:var(--accent);}
+.ns-left p{font-size:15px;color:var(--muted);}
+.ns-form{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.ns-input{padding:11px 18px;border-radius:9px;border:1px solid var(--border-s);background:var(--bg);color:var(--text);font-size:15px;font-family:'Geist',sans-serif;width:260px;outline:none;transition:border-color .2s;}
+.ns-input::placeholder{color:var(--faint);}
+.ns-input:focus{border-color:var(--accent);}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:32px 40px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.footer-left{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+
+/* ── SVG PATTERNS ── */
+.pat-dots{background-image:radial-gradient(var(--accent) 1px, transparent 1px);background-size:20px 20px;}
+.pat-lines{background-image:repeating-linear-gradient(45deg, var(--accent) 0, var(--accent) 1px, transparent 0, transparent 50%);background-size:16px 16px;}
+.pat-grid{background-image:linear-gradient(var(--border-s) 1px, transparent 1px),linear-gradient(90deg, var(--border-s) 1px, transparent 1px);background-size:24px 24px;}
+.pat-rings{background:radial-gradient(circle at 50% 50%, transparent 30%, var(--accent) 31%, var(--accent) 32%, transparent 33%, transparent 50%, var(--accent) 51%, var(--accent) 52%, transparent 53%);}
+.pat-wave{background-image:repeating-linear-gradient(0deg, transparent, transparent 14px, var(--border-s) 14px, var(--border-s) 15px);}
+.pat-checker{background-image:linear-gradient(45deg, var(--accent) 25%, transparent 25%, transparent 75%, var(--accent) 75%),linear-gradient(45deg, var(--accent) 25%, transparent 25%, transparent 75%, var(--accent) 75%);background-size:20px 20px;background-position:0 0, 10px 10px;}
+
+/* ── READING TIME TAG ── */
+.read-time{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--faint);background:var(--bg2);padding:3px 10px;border-radius:100px;border:1px solid var(--border);}
+
+/* ── FADE IN ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.post-featured{animation:fadeUp .5s ease both;}
+.post-card:nth-child(1){animation:fadeUp .5s .1s ease both;}
+.post-card:nth-child(2){animation:fadeUp .5s .18s ease both;}
+.post-card:nth-child(3){animation:fadeUp .5s .26s ease both;}
+.post-card:nth-child(4){animation:fadeUp .5s .1s ease both;}
+.post-card:nth-child(5){animation:fadeUp .5s .18s ease both;}
+.post-card:nth-child(6){animation:fadeUp .5s .26s ease both;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:0 16px;}
+  .nav-links{display:none;}
+  .blog-hero{padding:48px 16px 36px;}
+  .filter-bar{padding:0 16px 28px;}
+  .posts-section{padding:0 16px 60px;}
+  .posts-grid{grid-template-columns:1fr;}
+  .post-featured{grid-template-columns:1fr;}
+  .pf-visual{min-height:200px;}
+  .pf-body{padding:28px 24px;}
+  .newsletter-wrap{padding:0 16px 0;}
+  .footer-spacer{height:48px;}
+  .newsletter-strip{padding:28px 24px;flex-direction:column;align-items:flex-start;}
+  .ns-form{width:100%;}
+  .ns-input{width:100%;}
+  footer{padding:24px 16px;}
+}
+@media(min-width:901px) and (max-width:1100px){
+  .posts-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../assets/nkwhite.jpg" alt="NovaKit" class="logo-img logo-dark"/>
+    <img src="../assets/nkblack.jpg" alt="NovaKit" class="logo-img logo-light"/>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html#install">Install</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#for-who">Who it's for</a>
+    <a href="../index.html#proof">Reviews</a>
+    <a href="../index.html#faq">FAQ</a>
+    <a href="index.html" class="active">Blog</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><span id="theme-icon">🌙</span></button>
+    <a href="../index.html#skills" class="btn btn-primary">Browse Skills</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="blog-hero-eyebrow">
+    <svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#DE7356"/></svg>
+    NovaKit Blog
+  </div>
+  <h1>Guides, tips &<br><em>real workflows</em><br>for Claude users.</h1>
+  <p>Deep-dives on AI skills, prompt craft, and how to get 10× output from the tools you already have.</p>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="filter-btn active" onclick="filterPosts('all', this)">All posts</button>
+    <button class="filter-btn" onclick="filterPosts('guide', this)">Guides</button>
+    <button class="filter-btn" onclick="filterPosts('tips', this)">Tips & Tricks</button>
+    <button class="filter-btn" onclick="filterPosts('deepdive', this)">Deep Dives</button>
+    <button class="filter-btn" onclick="filterPosts('case', this)">Case Studies</button>
+  </div>
+</div>
+
+<!-- POSTS -->
+<div class="posts-section">
+
+  <!-- Featured -->
+  <a href="#" class="post-featured" data-cat="guide">
+    <div class="pf-visual">
+      <div class="pf-pattern pat-dots"></div>
+      <div class="pf-icon">✍️</div>
+    </div>
+    <div class="pf-body">
+      <div class="post-cat cat-guide">Guide</div>
+      <h2>How to write a cold email that<br>actually <em>gets a reply</em></h2>
+      <p>Most cold emails get deleted in under 2 seconds. We break down the anatomy of high-reply-rate outreach — and how the Cold Outreach Email skill builds all of it automatically.</p>
+      <div class="post-meta">
+        <span>May 22, 2025</span>
+        <span class="post-meta-dot"></span>
+        <span class="read-time">8 min read</span>
+      </div>
+      <div class="read-more" style="margin-top:18px;">
+        Read post
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </a>
+
+  <!-- Grid -->
+  <div class="posts-grid" id="posts-grid">
+
+    <a href="#" class="post-card" data-cat="tips">
+      <div class="pc-visual">
+        <div class="pc-pattern pat-grid"></div>
+        <div class="pc-icon">⚡</div>
+      </div>
+      <div class="pc-body">
+        <div class="post-cat cat-tips">Tips & Tricks</div>
+        <h3>5 Claude prompt habits that 10× your output quality</h3>
+        <p>Small changes in how you frame a prompt can double the usefulness of every response. Here are the five habits that make the biggest difference.</p>
+        <div class="pc-footer">
+          <div class="pc-meta">May 15, 2025 · <span class="read-time">5 min</span></div>
+          <span class="pc-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="post-card" data-cat="deepdive">
+      <div class="pc-visual">
+        <div class="pc-pattern pat-lines"></div>
+        <div class="pc-icon">🎬</div>
+      </div>
+      <div class="pc-body">
+        <div class="post-cat cat-deepdive">Deep Dive</div>
+        <h3>AI video prompts: why most fail and how to fix them</h3>
+        <p>Sora and Runway promise stunning video. But most prompts produce disappointing results. We dissect what separates a weak prompt from a cinematic one.</p>
+        <div class="pc-footer">
+          <div class="pc-meta">May 10, 2025 · <span class="read-time">11 min</span></div>
+          <span class="pc-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="post-card" data-cat="case">
+      <div class="pc-visual">
+        <div class="pc-pattern pat-wave"></div>
+        <div class="pc-icon">📈</div>
+      </div>
+      <div class="pc-body">
+        <div class="post-cat cat-case">Case Study</div>
+        <h3>How a solo founder landed 3 clients using the pitch deck skill</h3>
+        <p>Priya built her consulting pitch in 22 minutes. We break down the exact skill run, the output, and what she changed before sending it.</p>
+        <div class="pc-footer">
+          <div class="pc-meta">May 5, 2025 · <span class="read-time">6 min</span></div>
+          <span class="pc-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="post-card" data-cat="guide">
+      <div class="pc-visual">
+        <div class="pc-pattern pat-rings"></div>
+        <div class="pc-icon">🗞️</div>
+      </div>
+      <div class="pc-body">
+        <div class="post-cat cat-guide">Guide</div>
+        <h3>The complete guide to AI-assisted SEO blog content</h3>
+        <p>Claude can write a blog post. But can it write one that ranks? We walk through the exact workflow: research, structure, SEO layers, and human edits.</p>
+        <div class="pc-footer">
+          <div class="pc-meta">Apr 28, 2025 · <span class="read-time">9 min</span></div>
+          <span class="pc-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="post-card" data-cat="tips">
+      <div class="pc-visual">
+        <div class="pc-pattern pat-dots"></div>
+        <div class="pc-icon">🧠</div>
+      </div>
+      <div class="pc-body">
+        <div class="post-cat cat-tips">Tips & Tricks</div>
+        <h3>Using Claude for research: 7 things most people miss</h3>
+        <p>Claude's web search is powerful — but only when you know how to direct it. These seven patterns get you primary sources instead of summaries of summaries.</p>
+        <div class="pc-footer">
+          <div class="pc-meta">Apr 20, 2025 · <span class="read-time">7 min</span></div>
+          <span class="pc-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="#" class="post-card" data-cat="deepdive">
+      <div class="pc-visual">
+        <div class="pc-pattern pat-checker" style="opacity:0.12;"></div>
+        <div class="pc-icon">📝</div>
+      </div>
+      <div class="pc-body">
+        <div class="post-cat cat-deepdive">Deep Dive</div>
+        <h3>What makes a great AI skill? Anatomy of the best performers</h3>
+        <p>Not all AI skills are built the same. We reverse-engineer what separates a $9 skill that saves hours from a prompt that just sounds clever on paper.</p>
+        <div class="pc-footer">
+          <div class="pc-meta">Apr 12, 2025 · <span class="read-time">12 min</span></div>
+          <span class="pc-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-wrap">
+<div class="newsletter-strip">
+  <div class="ns-left">
+    <h3>New posts, <em>every week.</em></h3>
+    <p>No fluff. Just actionable guides for Claude users who want better output.</p>
+  </div>
+  <div class="ns-form">
+    <input type="email" class="ns-input" placeholder="you@email.com">
+    <button class="btn btn-primary">Subscribe</button>
+  </div>
+</div>
+
+<div class="footer-spacer"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">© 2026 NovaKit · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+    <div class="footer-links">
+      <a href="../index.html#install">Install</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#for-who">Who it's for</a>
+      <a href="../index.html#proof">Reviews</a>
+      <a href="../index.html#faq">FAQ</a>
+      <a href="index.html">Blog</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Theme
+const savedTheme = localStorage.getItem('nk-theme') || 'dark';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.getElementById('theme-icon').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+function toggleTheme(){
+  const curr = document.documentElement.getAttribute('data-theme');
+  const next = curr === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('nk-theme', next);
+  document.getElementById('theme-icon').textContent = next === 'dark' ? '☀️' : '🌙';
+}
+
+// Filter
+function filterPosts(cat, btn){
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const featured = document.querySelector('.post-featured');
+  const cards = document.querySelectorAll('.post-card');
+
+  if(cat === 'all'){
+    featured.style.display = '';
+    cards.forEach(c => c.style.display = '');
+    return;
+  }
+
+  // Featured
+  featured.style.display = featured.dataset.cat === cat ? '' : 'none';
+
+  // Cards
+  cards.forEach(c => {
+    c.style.display = c.dataset.cat === cat ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
