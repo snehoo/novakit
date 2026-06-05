@@ -279,22 +279,22 @@ body { min-height: 100vh; }
 
   <div class="nav-group">
     <div class="nav-label">Overview</div>
-    <div class="nav-item active" onclick="showTab('overview')"><div class="nav-dot"></div> Dashboard</div>
-    <div class="nav-item" onclick="showTab('skills')"><div class="nav-dot"></div> Skills</div>
-    <div class="nav-item" onclick="showTab('buyers')"><div class="nav-dot"></div> Buyers</div>
-    <div class="nav-item" onclick="showTab('orders')"><div class="nav-dot"></div> Orders</div>
-    <div class="nav-item" onclick="showTab('funnel')"><div class="nav-dot"></div> Funnel</div>
+    <div class="nav-item active" onclick="showTab('overview',this)"><div class="nav-dot"></div> Dashboard</div>
+    <div class="nav-item" onclick="showTab('skills',this)"><div class="nav-dot"></div> Skills</div>
+    <div class="nav-item" onclick="showTab('buyers',this)"><div class="nav-dot"></div> Buyers</div>
+    <div class="nav-item" onclick="showTab('orders',this)"><div class="nav-dot"></div> Orders</div>
+    <div class="nav-item" onclick="showTab('funnel',this)"><div class="nav-dot"></div> Funnel</div>
   </div>
 
   <div class="nav-group">
     <div class="nav-label">Voice of buyer</div>
-    <div class="nav-item" onclick="showTab('feedback')"><div class="nav-dot"></div> Feedback</div>
+    <div class="nav-item" onclick="showTab('feedback',this)"><div class="nav-dot"></div> Feedback</div>
   </div>
 
   <div class="nav-group">
     <div class="nav-label">Data</div>
-    <div class="nav-item" onclick="showTab('schema')"><div class="nav-dot"></div> DB schema</div>
-    <div class="nav-item" onclick="showTab('search')"><div class="nav-dot"></div> Search queries</div>
+    <div class="nav-item" onclick="showTab('schema',this)"><div class="nav-dot"></div> DB schema</div>
+    <div class="nav-item" onclick="showTab('search',this)"><div class="nav-dot"></div> Search queries</div>
   </div>
 
   <div class="sidebar-footer">
@@ -646,7 +646,7 @@ function timeAgo(ts) {
 
 function fillDays(rows, field, n) {
   const map = {};
-  rows.forEach(r => { map[r.day?.slice(0,10)] = parseInt(r[field]||0,10); });
+  rows.forEach(r => { map[(r.day && r.day.slice(0,10))] = parseInt(r[field]||0,10); });
   return Array.from({length:n},(_,i)=>{
     const d = new Date(); d.setDate(d.getDate()-n+1+i);
     return map[d.toISOString().slice(0,10)] || 0;
@@ -710,8 +710,10 @@ function renderAll(d, range) {
   // Individual vs bundle donut
   const indiv = d.revenueByType.find(r=>r.type==='individual');
   const bundl = d.revenueByType.find(r=>r.type==='bundle');
-  const total = (parseInt(indiv?.cents||indiv?.paise||0,10) + parseInt(bundl?.cents||bundl?.paise||0,10)) || 1;
-  const indPct = Math.round(parseInt(indiv?.cents||indiv?.paise||0,10)/total*100);
+  const indivVal = parseInt((indiv && (indiv.cents || indiv.paise)) || 0, 10);
+  const bundlVal = parseInt((bundl && (bundl.cents || bundl.paise)) || 0, 10);
+  const total = (indivVal + bundlVal) || 1;
+  const indPct = Math.round(indivVal / total * 100);
   if (typeChart) { typeChart.data.datasets[0].data = [indPct, 100-indPct]; typeChart.update(); }
 
   // Geo chart
@@ -742,11 +744,11 @@ function setDeltaClass(id, up) {
   el.className = 'kpi-delta ' + (up ? 'up' : 'down');
 }
 
-function showTab(name) {
+function showTab(name, el) {
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
-  event.currentTarget.classList.add('active');
+  if (el) el.classList.add('active');
 }
 
 function buildCharts() {
@@ -898,9 +900,9 @@ function buildBuyers(entrySkills) {
 }
 
 function buildFunnel(funnel, kpi) {
-  const visitors  = funnel?.visitors || 0;
-  const skillViews= funnel?.skillPageViews || 0;
-  const orders    = kpi?.totalOrders || 0;
+  const visitors  = (funnel && funnel.visitors)      || 0;
+  const skillViews= (funnel && funnel.skillPageViews) || 0;
+  const orders    = (kpi   && kpi.totalOrders)        || 0;
   const steps = [
     {label:'Unique visitors',   val:visitors,   pct:100,                                          cls:'f1'},
     {label:'Skill page views',  val:skillViews, pct:visitors?Math.round(skillViews/visitors*100):0, cls:'f2'},
@@ -1030,7 +1032,9 @@ function buildSchema() {
         {name:'updated_at', type:'TIMESTAMP', note:'UPSERT updates this'},
       ]
     },
-  ];.innerHTML = tables.map(t=>`
+  ];
+
+  document.getElementById('schema-content').innerHTML = tables.map(t=>`
     <div class="card">
       <div class="schema-title">table: ${t.name}</div>
       <table class="schema-table">
@@ -1081,12 +1085,12 @@ async function loadFeedback(range) {
     const d = await res.json();
 
     // ── KPIs
-    document.getElementById('fb-total').textContent  = (d.summary.total  ?? 0).toLocaleString();
+    document.getElementById('fb-total').textContent  = ((d.summary.total  || 0)).toLocaleString();
     document.getElementById('fb-avg').textContent    = d.summary.avg_rating != null
       ? d.summary.avg_rating.toFixed(2) + ' ★' : '—';
     document.getElementById('fb-worked').textContent = d.summary.worked_yes_pct != null
       ? d.summary.worked_yes_pct + '%' : '—';
-    document.getElementById('fb-7d').textContent     = (d.summary.last_7d ?? 0).toLocaleString();
+    document.getElementById('fb-7d').textContent     = ((d.summary.last_7d || 0)).toLocaleString();
 
     // ── By skill
     const skillEl = document.getElementById('fb-by-skill');
