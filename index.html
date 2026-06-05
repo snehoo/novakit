@@ -1184,7 +1184,15 @@ function clearSearch(){
 function renderSkills(){
   const activeGroups = groupFilter==='all' ? groups : groups.filter(g=>g.key===groupFilter);
   document.getElementById('skills-list').innerHTML = activeGroups.map(g => {
-    const ss = skills.filter(s => s && s.cat && g.cats.includes(s.cat));
+    const ss = skills.filter(s => {
+      if(!s || !s.cat || !g.cats.includes(s.cat)) return false;
+      if(!searchQuery) return true;
+      return s.name.toLowerCase().includes(searchQuery)
+          || s.cat.toLowerCase().includes(searchQuery)
+          || s.pattern.toLowerCase().includes(searchQuery)
+          || s.buyer.toLowerCase().includes(searchQuery)
+          || (s.bundle && s.bundle.toLowerCase().includes(searchQuery));
+    });
     if(!ss.length) return '';
     return `<div class="tier-section">
       <div class="tier-head">
@@ -1194,7 +1202,7 @@ function renderSkills(){
       <div class="skill-grid">${ss.map(s=>`
         <div class="skill-card" onclick="openSkill(${skills.indexOf(s)})">
           <div class="sc-top">
-            <div><div class="sc-name">${s.name}</div><div class="sc-buyer">${s.buyer}</div></div>
+            <div><div class="sc-name">${highlightText(s.name, searchQuery)}</div><div class="sc-buyer">${s.buyer}</div></div>
             ${s.bundle?`<div class="sc-bdot" style="background:${(bundles[s.bundle]||{}).color||'#888'}"></div>`:''}
           </div>
           <div class="sc-foot"><div class="sc-price">${s.price}</div><div class="sc-cat">${s.cat}</div></div>
