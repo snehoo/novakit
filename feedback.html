@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Share feedback — NovaKit</title>
+<link rel="icon" href="/assets/favicon.ico">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:#f7f6f2;color:#111110;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;line-height:1.5}
+  .card{background:#fff;border-radius:16px;box-shadow:0 2px 24px rgba(0,0,0,.06);max-width:520px;width:100%;padding:40px;border:1px solid #eeecea}
+  .header{margin-bottom:28px}
+  .eyebrow{font-size:11px;font-weight:700;color:#8a8980;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+  h1{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:8px}
+  .sub{font-size:14px;color:#545249}
+  .group{margin-top:24px}
+  label.q{display:block;font-size:13px;font-weight:700;color:#111110;margin-bottom:10px}
+  .stars{display:flex;gap:6px}
+  .star{font-size:32px;cursor:pointer;color:#e6e2dc;transition:color .12s;user-select:none;line-height:1}
+  .star.on,.star:hover,.star:hover ~ .star{}
+  .stars.s1 .star:nth-child(-n+1),
+  .stars.s2 .star:nth-child(-n+2),
+  .stars.s3 .star:nth-child(-n+3),
+  .stars.s4 .star:nth-child(-n+4),
+  .stars.s5 .star:nth-child(-n+5){color:#DE7356}
+  .pills{display:flex;gap:8px}
+  .pill{padding:9px 18px;border:1px solid #d8d4cc;background:#fff;border-radius:999px;font-size:13px;font-weight:600;color:#545249;cursor:pointer;transition:all .12s}
+  .pill:hover{border-color:#111110;color:#111110}
+  .pill.on{background:#111110;border-color:#111110;color:#fff}
+  textarea{width:100%;border:1px solid #d8d4cc;border-radius:10px;padding:12px 14px;font:inherit;font-size:14px;color:#111110;resize:vertical;min-height:96px;background:#fff;transition:border-color .12s}
+  textarea:focus{outline:none;border-color:#111110}
+  .hint{font-size:12px;color:#8a8980;margin-top:6px}
+  button.submit{margin-top:28px;width:100%;padding:14px;background:#DE7356;color:#fff;border:0;border-radius:10px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:background .12s}
+  button.submit:hover{background:#c75e42}
+  button.submit:disabled{background:#d8d4cc;cursor:not-allowed}
+  .status{margin-top:16px;font-size:13px;text-align:center;color:#545249}
+  .status.err{color:#b14b3a}
+  .footer{margin-top:24px;padding-top:20px;border-top:1px solid #eeecea;font-size:12px;color:#8a8980;text-align:center}
+  .footer a{color:#8a8980}
+  .done{text-align:center;padding:24px 0}
+  .done .check{font-size:48px;color:#DE7356;margin-bottom:12px}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+
+  <!-- LOADING -->
+  <div id="loading" class="done">
+    <div class="sub">Loading…</div>
+  </div>
+
+  <!-- ERROR -->
+  <div id="error" class="done hidden">
+    <div class="eyebrow" style="color:#b14b3a;margin-bottom:12px">Link expired or invalid</div>
+    <div class="sub">This feedback link is no longer valid. If you meant to share feedback, just reply to your order email — we read every response.</div>
+  </div>
+
+  <!-- FORM -->
+  <form id="form" class="hidden" autocomplete="off">
+    <div class="header">
+      <div class="eyebrow">Quick feedback · 30 seconds</div>
+      <h1 id="title">How was the skill?</h1>
+      <div class="sub" id="subtitle">Your answer goes straight to Snehal. No marketing follow-ups.</div>
+    </div>
+
+    <div class="group">
+      <label class="q">Overall rating</label>
+      <div class="stars" id="stars">
+        <span class="star" data-v="1">★</span>
+        <span class="star" data-v="2">★</span>
+        <span class="star" data-v="3">★</span>
+        <span class="star" data-v="4">★</span>
+        <span class="star" data-v="5">★</span>
+      </div>
+    </div>
+
+    <div class="group">
+      <label class="q">Did it save you time?</label>
+      <div class="pills" id="worked">
+        <button type="button" class="pill" data-v="yes">Yes</button>
+        <button type="button" class="pill" data-v="no">Not really</button>
+      </div>
+    </div>
+
+    <div class="group">
+      <label class="q" for="comment">What would make it better? <span style="font-weight:400;color:#8a8980">(optional)</span></label>
+      <textarea id="comment" placeholder="Anything that didn't work, missing features, a skill you wish existed…" maxlength="2000"></textarea>
+      <div class="hint">Honest criticism is more useful than praise.</div>
+    </div>
+
+    <button type="submit" class="submit" id="submit">Send feedback</button>
+    <div class="status" id="status"></div>
+  </form>
+
+  <!-- THANKS -->
+  <div id="thanks" class="done hidden">
+    <div class="check">✓</div>
+    <h1 style="margin-bottom:8px">Thanks — got it.</h1>
+    <div class="sub">Your feedback shapes what we build next. If you want to add more later, just reply to any NovaKit email.</div>
+  </div>
+
+  <div class="footer">
+    NovaKit · <a href="https://novakit.tech">novakit.tech</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  const qs = new URLSearchParams(location.search);
+  const orderId = qs.get('o');
+  const token   = qs.get('t');
+  const source  = qs.get('s') === 'day7' ? 'day7' : 'day2'; // default day2
+
+  const $ = id => document.getElementById(id);
+  const show = (id) => { ['loading','error','form','thanks'].forEach(x => $(x).classList.add('hidden')); $(id).classList.remove('hidden'); };
+
+  if (!orderId || !token) { show('error'); return; }
+
+  let rating = 0;
+  let worked = null;
+
+  // Star handling
+  const starsEl = $('stars');
+  starsEl.querySelectorAll('.star').forEach(s => {
+    s.addEventListener('click', () => {
+      rating = parseInt(s.dataset.v, 10);
+      starsEl.className = 'stars s' + rating;
+    });
+  });
+
+  // Worked pills
+  $('worked').querySelectorAll('.pill').forEach(p => {
+    p.addEventListener('click', () => {
+      $('worked').querySelectorAll('.pill').forEach(x => x.classList.remove('on'));
+      p.classList.add('on');
+      worked = p.dataset.v;
+    });
+  });
+
+  // Validate token + load skill name
+  fetch(`/api/feedback?o=${encodeURIComponent(orderId)}&t=${encodeURIComponent(token)}`)
+    .then(r => r.json().then(j => ({ ok: r.ok, j })))
+    .then(({ ok, j }) => {
+      if (!ok || !j.ok) { show('error'); return; }
+      $('title').textContent = `How was ${j.skillName}?`;
+      if (j.alreadySubmitted) {
+        $('subtitle').textContent = "You've shared feedback on this already — feel free to update it below.";
+      }
+      show('form');
+    })
+    .catch(() => show('error'));
+
+  // Submit
+  $('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!rating) { $('status').textContent = 'Please pick a star rating.'; $('status').className='status err'; return; }
+    $('submit').disabled = true;
+    $('status').textContent = 'Sending…'; $('status').className='status';
+    try {
+      const res = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          orderId, token, rating, worked,
+          comment: $('comment').value,
+          source,
+        }),
+      });
+      const j = await res.json();
+      if (!res.ok || !j.ok) throw new Error(j.error || 'Failed');
+      show('thanks');
+    } catch (err) {
+      $('submit').disabled = false;
+      $('status').textContent = err.message || 'Something went wrong — try again?';
+      $('status').className = 'status err';
+    }
+  });
+})();
+</script>
+</body>
+</html>

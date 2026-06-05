@@ -1,10 +1,7 @@
 // functions/api/email-sequence-cron.js
-// Cloudflare Cron Trigger — runs twice daily
-// Queries Neon for orders due Day 2 and Day 7 emails, fires them via Resend workers
-//
-// Setup in wrangler.toml:
-// [triggers]
-// crons = ["0 6,18 * * *"]   ← runs at 6am and 6pm UTC daily
+// CHANGES vs previous version:
+//   - SELECT also pulls orders.id (UUID) — needed for feedback token
+//   - Passes `orderUuid` to send-email-day2 + send-email-day7
 
 import { getClient } from '../_db.js';
 
@@ -12,8 +9,6 @@ export async function scheduled(event, env, ctx) {
   ctx.waitUntil(runSequence(env));
 }
 
-// Also callable as HTTP GET for manual testing:
-// GET /api/email-sequence-cron
 export async function onRequestGet({ env }) {
   try {
     const result = await runSequence(env);
@@ -36,7 +31,7 @@ async function runSequence(env) {
   try {
     const baseUrl = 'https://novakit.tech';
 
-    // ── Day 2 — orders paid ~48 hours ago, sequence_step = 0 ────────────────
+    // ── Day 2 ───────────────────────────────────────────────────────────────
     const { rows: day2Orders } = await client.query(`
       SELECT id, buyer_email, skill_slug, razorpay_payment_id
       FROM orders
@@ -50,10 +45,8 @@ async function runSequence(env) {
 
     for (const order of day2Orders) {
       try {
-        // Get skill name from DB
         const { rows: skillRows } = await client.query(
-          `SELECT name FROM skills WHERE slug = $1`,
-          [order.skill_slug]
+          `SELECT name FROM skills WHERE slug = $1`, [order.skill_slug]
         );
         const skillName = skillRows[0]?.name || order.skill_slug;
 
@@ -65,26 +58,22 @@ async function runSequence(env) {
             skillName,
             skillSlug: order.skill_slug,
             orderId: order.razorpay_payment_id,
+            orderUuid: order.id,                 // ← NEW
           }),
         });
 
         if (res.ok) {
-          // Mark as Day 2 sent
-          await client.query(
-            `UPDATE orders SET sequence_step = 1 WHERE id = $1`,
-            [order.id]
-          );
+          await client.query(`UPDATE orders SET sequence_step = 1 WHERE id = $1`, [order.id]);
           log.day2.push({ id: order.id, email: order.buyer_email, skill: order.skill_slug, status: 'sent' });
         } else {
-          const err = await res.text();
-          log.errors.push({ id: order.id, step: 'day2', error: err });
+          log.errors.push({ id: order.id, step: 'day2', error: await res.text() });
         }
       } catch (err) {
         log.errors.push({ id: order.id, step: 'day2', error: err.message });
       }
     }
 
-    // ── Day 7 — orders paid ~7 days ago, sequence_step = 1 ──────────────────
+    // ── Day 7 ───────────────────────────────────────────────────────────────
     const { rows: day7Orders } = await client.query(`
       SELECT id, buyer_email, skill_slug, bundle_key, razorpay_payment_id
       FROM orders
@@ -99,8 +88,7 @@ async function runSequence(env) {
     for (const order of day7Orders) {
       try {
         const { rows: skillRows } = await client.query(
-          `SELECT name FROM skills WHERE slug = $1`,
-          [order.skill_slug]
+          `SELECT name FROM skills WHERE slug = $1`, [order.skill_slug]
         );
         const skillName = skillRows[0]?.name || order.skill_slug;
 
@@ -113,19 +101,15 @@ async function runSequence(env) {
             skillSlug: order.skill_slug,
             bundleKey: order.bundle_key,
             orderId: order.razorpay_payment_id,
+            orderUuid: order.id,                 // ← NEW
           }),
         });
 
         if (res.ok) {
-          // Mark as Day 7 sent
-          await client.query(
-            `UPDATE orders SET sequence_step = 2 WHERE id = $1`,
-            [order.id]
-          );
+          await client.query(`UPDATE orders SET sequence_step = 2 WHERE id = $1`, [order.id]);
           log.day7.push({ id: order.id, email: order.buyer_email, skill: order.skill_slug, status: 'sent' });
         } else {
-          const err = await res.text();
-          log.errors.push({ id: order.id, step: 'day7', error: err });
+          log.errors.push({ id: order.id, step: 'day7', error: await res.text() });
         }
       } catch (err) {
         log.errors.push({ id: order.id, step: 'day7', error: err.message });

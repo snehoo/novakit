@@ -1,7 +1,10 @@
 // functions/api/send-email-day7.js
-// Called by email-sequence-cron.js for Day 7 emails.
-// POST /api/send-email-day7
-// Body: { to, skillName, skillSlug, bundleKey, orderId }
+// CHANGES vs previous version:
+//   - Accepts `orderUuid` in body
+//   - Generates feedback token via HMAC(FEEDBACK_SECRET, orderUuid)
+//   - Adds a feedback CTA block between the headline and the bundle upsell
+//
+// Required env: RESEND_API_KEY, FEEDBACK_SECRET
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
@@ -13,7 +16,20 @@ export async function onRequestOptions() {
   return new Response(null, { status: 204, headers: CORS });
 }
 
-// ── Bundle upsell per skill slug ─────────────────────────────────────────────
+// ── feedback token ──────────────────────────────────────────────────────────
+async function makeFeedbackToken(secret, orderUuid) {
+  const key = await crypto.subtle.importKey(
+    'raw', new TextEncoder().encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
+  );
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(orderUuid));
+  return Array.from(new Uint8Array(sig))
+    .slice(0, 16)
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+// ── Bundle upsell per skill slug (UNCHANGED) ────────────────────────────────
 const BUNDLE_UPSELL = {
   'pitch-deck-narrative':             { name: 'Founder Bundle',   slug: 'founder',   price: '$39', count: 6,  saving: '39%' },
   'cold-outreach-email':              { name: 'Founder Bundle',   slug: 'founder',   price: '$39', count: 6,  saving: '39%' },
@@ -80,7 +96,16 @@ const BUNDLE_UPSELL = {
   'recipe-development-prompt':        { name: 'Wedding Bundle',   slug: 'wedding',   price: '$15', count: 4,  saving: '25%' },
 };
 
-function buildDay7Html({ skillName, skillSlug, bundle, orderId }) {
+function buildDay7Html({ skillName, skillSlug, bundle, orderId, feedbackUrl }) {
+  const feedbackHtml = feedbackUrl ? `
+          <!-- Feedback CTA -->
+          <div style="background:#fff7f3;border:1px solid #f3d8cb;border-radius:12px;padding:22px 26px;margin:0 0 28px;">
+            <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#DE7356;text-transform:uppercase;letter-spacing:0.08em;">30-second favor</p>
+            <p style="margin:0 0 14px;font-size:15px;color:#111110;font-weight:700;line-height:1.4;">Tell us how ${skillName} actually performed.</p>
+            <p style="margin:0 0 16px;font-size:14px;color:#545249;line-height:1.6;">Star rating, one yes/no, and (if you have a minute) what would make it better. Goes straight to me — shapes what we build next.</p>
+            <a href="${feedbackUrl}" style="display:inline-block;padding:12px 22px;background:#DE7356;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">Share quick feedback →</a>
+          </div>` : '';
+
   const bundleHtml = bundle ? `
           <!-- Bundle upsell -->
           <div style="background:#f7f6f2;border-radius:12px;padding:24px 28px;margin:0 0 28px;">
@@ -109,8 +134,10 @@ function buildDay7Html({ skillName, skillSlug, bundle, orderId }) {
           <h1 style="margin:0 0 20px;font-size:26px;font-weight:800;color:#111110;letter-spacing:-0.02em;">Did ${skillName} save you time?</h1>
 
           <p style="margin:0 0 28px;font-size:15px;color:#545249;line-height:1.6;">
-            It has been a week — did it do what you needed? Reply and let us know. We read every response.
+            It has been a week — did it do what you needed? Reply and let us know, or use the quick form below.
           </p>
+
+          ${feedbackHtml}
 
           ${bundleHtml}
 
@@ -122,12 +149,8 @@ function buildDay7Html({ skillName, skillSlug, bundle, orderId }) {
             </p>
           </div>
 
-          <!-- Sign off -->
-          <p style="margin:0 0 28px;font-size:15px;color:#545249;line-height:1.6;">
-            Thanks for trying NovaKit.
-          </p>
+          <p style="margin:0 0 28px;font-size:15px;color:#545249;line-height:1.6;">Thanks for trying NovaKit.</p>
 
-          <!-- Support note -->
           <p style="margin:0;font-size:13px;color:#8a8980;line-height:1.7;">
             Questions? Reply to this email or write to <a href="mailto:support@novakit.tech" style="color:#DE7356;">support@novakit.tech</a>.<br>
             Order ID: <span style="font-family:monospace;font-size:12px;">${orderId}</span>
@@ -154,13 +177,20 @@ export async function onRequestPost({ request, env }) {
     return new Response('Bad JSON', { status: 400, headers: CORS });
   }
 
-  const { to, skillName, skillSlug, orderId } = body;
+  const { to, skillName, skillSlug, orderId, orderUuid } = body;
   if (!to || !skillName || !skillSlug) {
     return new Response('Missing required fields', { status: 400, headers: CORS });
   }
 
+  // Build feedback URL if we have the UUID + secret
+  let feedbackUrl = null;
+  if (orderUuid && env.FEEDBACK_SECRET) {
+    const tok = await makeFeedbackToken(env.FEEDBACK_SECRET, orderUuid);
+    feedbackUrl = `https://novakit.tech/feedback.html?o=${orderUuid}&t=${tok}&s=day7`;
+  }
+
   const bundle = BUNDLE_UPSELL[skillSlug] || null;
-  const emailHtml = buildDay7Html({ skillName, skillSlug, bundle, orderId });
+  const emailHtml = buildDay7Html({ skillName, skillSlug, bundle, orderId, feedbackUrl });
 
   try {
     const res = await fetch('https://api.resend.com/emails', {

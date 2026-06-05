@@ -239,7 +239,22 @@ body { min-height: 100vh; }
 .schema-title { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 8px; font-family: var(--font); }
 .schema-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
-/* ── TABS ── */
+/* ── FEEDBACK ── */
+.fb-kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+.star-display { color: var(--accent3); font-size: 13px; letter-spacing: 1px; }
+.star-dim { color: var(--faint); }
+.worked-yes  { display: inline-block; font-size: 11px; font-family: var(--mono); padding: 2px 8px; border-radius: 4px; background: rgba(200,245,101,0.1); color: var(--accent); }
+.worked-no   { display: inline-block; font-size: 11px; font-family: var(--mono); padding: 2px 8px; border-radius: 4px; background: rgba(240,128,128,0.1); color: #f08080; }
+.worked-null { display: inline-block; font-size: 11px; font-family: var(--mono); padding: 2px 8px; border-radius: 4px; color: var(--faint); }
+.source-badge { font-size: 10px; font-family: var(--mono); padding: 2px 7px; border-radius: 4px; background: var(--bg3); color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.fb-comment { margin-top: 8px; font-size: 12px; color: var(--muted); line-height: 1.5; white-space: pre-wrap; border-left: 2px solid var(--border2); padding-left: 10px; }
+.fb-skill-row { display: flex; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+.fb-skill-row:last-child { border-bottom: none; }
+.fb-skill-name { flex: 1; font-size: 13px; }
+.fb-avg { font-size: 13px; font-family: var(--mono); color: var(--accent3); width: 48px; text-align: right; flex-shrink: 0; }
+.fb-count { font-size: 12px; font-family: var(--mono); color: var(--muted); width: 56px; text-align: right; flex-shrink: 0; }
+.fb-worked-pct { font-size: 12px; font-family: var(--mono); color: var(--accent); width: 44px; text-align: right; flex-shrink: 0; }
+
 .tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
 .tab-btn {
   font-family: var(--font); font-size: 13px; padding: 8px 16px;
@@ -269,6 +284,11 @@ body { min-height: 100vh; }
     <div class="nav-item" onclick="showTab('buyers')"><div class="nav-dot"></div> Buyers</div>
     <div class="nav-item" onclick="showTab('orders')"><div class="nav-dot"></div> Orders</div>
     <div class="nav-item" onclick="showTab('funnel')"><div class="nav-dot"></div> Funnel</div>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-label">Voice of buyer</div>
+    <div class="nav-item" onclick="showTab('feedback')"><div class="nav-dot"></div> Feedback</div>
   </div>
 
   <div class="nav-group">
@@ -506,6 +526,71 @@ body { min-height: 100vh; }
     </div>
   </div>
 
+  <!-- FEEDBACK TAB -->
+  <div id="tab-feedback" class="tab-panel">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Feedback</div>
+        <div class="page-sub">Collected from day-2 and day-7 emails. Range mirrors the global filter.</div>
+      </div>
+      <div class="date-filter">
+        <button class="df-btn" onclick="setFbRange('7d',this)">7d</button>
+        <button class="df-btn fb-active active" onclick="setFbRange('30d',this)">30d</button>
+        <button class="df-btn" onclick="setFbRange('90d',this)">90d</button>
+        <button class="df-btn" onclick="setFbRange('all',this)">All</button>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="fb-kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-label">Total responses</div>
+        <div class="kpi-value" id="fb-total">…</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Avg rating</div>
+        <div class="kpi-value amber" id="fb-avg">…</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">"Saved time" yes</div>
+        <div class="kpi-value green" id="fb-worked">…</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Last 7 days</div>
+        <div class="kpi-value teal" id="fb-7d">…</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:20px">
+      <!-- By skill -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">By skill</div>
+          <div class="card-badge">sorted by responses</div>
+        </div>
+        <div id="fb-by-skill">
+          <div style="color:var(--muted);font-size:12px;padding:12px 0">Loading…</div>
+        </div>
+      </div>
+
+      <!-- Rating distribution -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Rating distribution</div>
+        </div>
+        <div id="fb-rating-dist" style="padding-top:4px">
+          <div style="color:var(--muted);font-size:12px;padding:12px 0">Loading…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent comments -->
+    <div class="section-label">Recent responses (latest 100)</div>
+    <div id="fb-recent">
+      <div class="card"><div style="color:var(--muted);font-size:12px;padding:12px 0">Loading…</div></div>
+    </div>
+  </div>
+
 </main>
 </div>
 
@@ -536,7 +621,7 @@ body { min-height: 100vh; }
 // ───────────────────────────────────────────────────────
 
 // ── CONFIG ─────────────────────────────────────────────
-const METRICS_SECRET = 'YOUR_METRICS_SECRET_HERE';
+const METRICS_SECRET = '0c5de093e611ecdec9ac0bc4e4c7e41a2116196f777b918dccbeb388579deeb7';
 const API_BASE = '/api/metrics';
 // ───────────────────────────────────────────────────────
 
@@ -649,6 +734,7 @@ function setRange(range, btn) {
   btn.classList.add('active');
   currentRange = range;
   loadData(range);
+  loadFeedback(range);
 }
 
 function setDeltaClass(id, up) {
@@ -929,9 +1015,22 @@ function buildSchema() {
         {name:'country',      type:'TEXT',      note:'From Razorpay / IP'},
       ]
     },
-  ];
-
-  document.getElementById('schema-content').innerHTML = tables.map(t=>`
+    {
+      name:'feedback',
+      cols:[
+        {name:'id',         type:'UUID',      note:'PK', pk:true},
+        {name:'order_id',   type:'UUID',      note:'FK → orders.id (UNIQUE)'},
+        {name:'skill_slug', type:'TEXT',      note:'FK → skills.slug'},
+        {name:'buyer_hash', type:'TEXT',      note:'Anonymised buyer id'},
+        {name:'rating',     type:'SMALLINT',  note:'1–5 stars'},
+        {name:'worked',     type:'BOOLEAN',   note:'Did it save time?'},
+        {name:'comment',    type:'TEXT',      note:'Optional, max 2000 chars'},
+        {name:'source',     type:'TEXT',      note:'day2 or day7'},
+        {name:'created_at', type:'TIMESTAMP', note:''},
+        {name:'updated_at', type:'TIMESTAMP', note:'UPSERT updates this'},
+      ]
+    },
+  ];.innerHTML = tables.map(t=>`
     <div class="card">
       <div class="schema-title">table: ${t.name}</div>
       <table class="schema-table">
@@ -953,6 +1052,117 @@ function buildSchema() {
 buildCharts();
 buildSchema();
 loadData('30d');
+
+// ── FEEDBACK ────────────────────────────────────────────
+function escapeHtml(s) {
+  return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+let currentFbRange = '30d';
+
+function setFbRange(range, btn) {
+  // Only update the feedback tab's own range buttons
+  document.querySelectorAll('#tab-feedback .df-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentFbRange = range;
+  loadFeedback(range);
+}
+
+async function loadFeedback(range) {
+  document.getElementById('fb-total').textContent  = '…';
+  document.getElementById('fb-avg').textContent    = '…';
+  document.getElementById('fb-worked').textContent = '…';
+  document.getElementById('fb-7d').textContent     = '…';
+  try {
+    const res = await fetch(`/api/admin-feedback?range=${range}`, {
+      headers: { 'x-metrics-secret': METRICS_SECRET }
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const d = await res.json();
+
+    // ── KPIs
+    document.getElementById('fb-total').textContent  = (d.summary.total  ?? 0).toLocaleString();
+    document.getElementById('fb-avg').textContent    = d.summary.avg_rating != null
+      ? d.summary.avg_rating.toFixed(2) + ' ★' : '—';
+    document.getElementById('fb-worked').textContent = d.summary.worked_yes_pct != null
+      ? d.summary.worked_yes_pct + '%' : '—';
+    document.getElementById('fb-7d').textContent     = (d.summary.last_7d ?? 0).toLocaleString();
+
+    // ── By skill
+    const skillEl = document.getElementById('fb-by-skill');
+    if (!d.bySkill.length) {
+      skillEl.innerHTML = '<div style="color:var(--muted);font-size:12px;padding:12px 0">No feedback in this range yet.</div>';
+    } else {
+      const maxCount = d.bySkill[0].count || 1;
+      skillEl.innerHTML = d.bySkill.map(r => `
+        <div class="fb-skill-row">
+          <div class="skill-bar-wrap"><div class="skill-bar" style="width:${Math.round(r.count/maxCount*100)}%"></div></div>
+          <div class="fb-skill-name">${escapeHtml(r.skill_name)}</div>
+          <div class="fb-avg">${r.avg_rating != null ? r.avg_rating.toFixed(1) + '★' : '—'}</div>
+          <div class="fb-worked-pct">${r.worked_yes != null ? r.worked_yes + '/' + r.count : '—'}</div>
+          <div class="fb-count">${r.count} resp.</div>
+        </div>
+      `).join('');
+    }
+
+    // ── Rating distribution (1–5 bars)
+    const counts = [0,0,0,0,0];
+    d.recent.forEach(r => { if (r.rating >= 1 && r.rating <= 5) counts[r.rating-1]++; });
+    // Recompute from summary if we have more than 100 (recent is capped)
+    const distEl = document.getElementById('fb-rating-dist');
+    const maxBar = Math.max(...counts, 1);
+    distEl.innerHTML = [5,4,3,2,1].map(star => {
+      const n = counts[star-1];
+      const pct = Math.round(n/maxBar*100);
+      return `
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="font-size:12px;font-family:var(--mono);color:var(--accent3);width:18px;text-align:right">${star}★</div>
+          <div class="funnel-track" style="flex:1;height:6px"><div class="funnel-fill f1" style="width:${pct}%;background:var(--accent3)"></div></div>
+          <div style="font-size:11px;font-family:var(--mono);color:var(--muted);width:28px;text-align:right">${n}</div>
+        </div>
+      `;
+    }).join('');
+
+    // ── Recent responses
+    const recentEl = document.getElementById('fb-recent');
+    if (!d.recent.length) {
+      recentEl.innerHTML = '<div class="card"><div style="color:var(--muted);font-size:12px;padding:12px 0">No recent feedback in this range.</div></div>';
+    } else {
+      recentEl.innerHTML = d.recent.map(r => {
+        const filledStars = '★'.repeat(r.rating);
+        const emptyStars  = '★'.repeat(5 - r.rating);
+        const workedBadge = r.worked === true  ? '<span class="worked-yes">✓ saved time</span>'
+                          : r.worked === false ? '<span class="worked-no">✗ not really</span>'
+                          :                     '<span class="worked-null">— no answer</span>';
+        const commentHtml = r.comment
+          ? `<div class="fb-comment">${escapeHtml(r.comment)}</div>` : '';
+        const srcBadge = r.source
+          ? `<span class="source-badge">${r.source}</span>` : '';
+        return `
+          <div class="card" style="margin-bottom:10px;padding:16px 18px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+              <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+                <span class="star-display">${filledStars}<span class="star-dim">${emptyStars}</span></span>
+                <span style="font-size:13px;font-weight:600">${escapeHtml(r.skill_name)}</span>
+                ${workedBadge}
+                ${srcBadge}
+              </div>
+              <div style="font-size:11px;font-family:var(--mono);color:var(--faint)">${timeAgo(r.created_at)}</div>
+            </div>
+            ${commentHtml}
+          </div>
+        `;
+      }).join('');
+    }
+
+  } catch(e) {
+    document.getElementById('fb-total').textContent = 'Err';
+    console.error('Feedback fetch failed:', e);
+  }
+}
+
+loadFeedback('30d');
+// ── END FEEDBACK ─────────────────────────────────────────
 </script>
 </body>
 </html>
