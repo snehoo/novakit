@@ -1,7 +1,7 @@
 // functions/api/search.js
 // GET /api/search?q=cold+email&session=abc123
-// Searches skills by name, category, bundle_key.
-// Logs query + result count to search_queries table.
+// Logs search queries to search_queries table.
+// Actual filtering happens client-side — this is analytics only.
 
 import { getClient } from '../_db.js';
 
@@ -21,52 +21,28 @@ export async function onRequestGet({ request, env }) {
   const session = url.searchParams.get('session') || null;
 
   if (!q || q.length < 2) {
-    return new Response(JSON.stringify({ results: [], query: q, count: 0 }), {
+    return new Response(JSON.stringify({ ok: true }), {
       status: 200, headers: { 'Content-Type': 'application/json', ...CORS }
     });
   }
 
   const client = await getClient(env);
   try {
-    const { rows } = await client.query(`
-      SELECT slug, name, category, price_cents, bundle_key
-      FROM skills
-      WHERE category != 'Bundle'
-        AND (
-          LOWER(name)       ILIKE $1
-          OR LOWER(category) ILIKE $1
-          OR LOWER(bundle_key) ILIKE $1
-        )
-      ORDER BY
-        CASE WHEN LOWER(name) ILIKE $1 THEN 0 ELSE 1 END,
-        price_cents DESC
-      LIMIT 20
-    `, [`%${q}%`]);
-
-    const resultCount = rows.length;
-
-    // Log — upsert on query text (unique index)
+    // Simple insert — no conflict handling since query has no unique constraint
     await client.query(`
       INSERT INTO search_queries (query, result_count, session_id, searched_at)
-      VALUES ($1, $2, $3, NOW())
-      ON CONFLICT (query) DO UPDATE
-        SET result_count = EXCLUDED.result_count,
-            searched_at  = NOW()
-    `, [q, resultCount, session]);
+      VALUES ($1, 0, $2, NOW())
+    `, [q, session]);
 
-    return new Response(JSON.stringify({
-      results: rows,
-      query: q,
-      count: resultCount,
-    }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json', ...CORS }
+    return new Response(JSON.stringify({ ok: true }), {
+      status: 200, headers: { 'Content-Type': 'application/json', ...CORS }
     });
 
   } catch (err) {
     console.error('[search]', err);
-    return new Response(JSON.stringify({ error: err.message }), {
-      status: 500, headers: { 'Content-Type': 'application/json', ...CORS }
+    // Never surface a logging failure to the user
+    return new Response(JSON.stringify({ ok: true }), {
+      status: 200, headers: { 'Content-Type': 'application/json', ...CORS }
     });
   } finally {
     await client.end();
