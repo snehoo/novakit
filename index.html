@@ -224,6 +224,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .tab-search-clear:hover{color:var(--text);}
 .search-result-count{font-size:13px;color:var(--muted);margin-bottom:16px;min-height:18px;}
 .no-search-results{padding:48px 0;text-align:center;color:var(--muted);font-size:15px;}
+.search-highlight{background:rgba(222,115,86,0.18);color:var(--accent);border-radius:3px;padding:0 2px;}
 .nav-search-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s;}
 .nav-search-btn:hover{color:var(--text);border-color:var(--border-s);}
 .tab-btn{padding:10px 26px;border-radius:9px;font-size:17px;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--muted);font-family:'Geist',sans-serif;transition:all .18s;}
@@ -1168,6 +1169,12 @@ function handleSearch(val){
       fetch('/api/search?q=' + encodeURIComponent(searchQuery) + '&session=' + searchSession).catch(()=>{});
     }, 600);
   }
+}
+
+function highlightText(text, query){
+  if(!query) return text;
+  const re = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
+  return text.replace(re, '<mark class="search-highlight">$1</mark>');
 }
 
 function clearSearch(){
