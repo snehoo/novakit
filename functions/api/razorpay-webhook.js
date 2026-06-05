@@ -31,6 +31,10 @@ function hexToBytes(hex) {
   return arr;
 }
 
+export async function onRequestGet() {
+  return new Response('OK', { status: 200 });
+}
+
 export async function onRequestPost({ request, env }) {
   const rawBody = await request.text();
   const signature = request.headers.get('x-razorpay-signature') ?? '';
