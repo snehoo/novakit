@@ -215,17 +215,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 /* ── SKILLS / BUNDLES ── */
 .skills-section{padding:80px 40px;background:var(--bg2);}
 .skills-inner{max-width:1200px;margin:0 auto;}
-.tab-bar{display:flex;align-items:center;gap:4px;padding:4px;background:var(--bg);border-radius:10px;width:fit-content;margin-bottom:36px;flex-wrap:wrap;}
-.tab-search-wrap{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 14px;margin-left:8px;transition:border-color .2s;min-width:220px;}
-.tab-search-wrap:focus-within{border-color:var(--accent);}
-.tab-search-input{background:transparent;border:none;outline:none;font-size:15px;color:var(--text);font-family:'Geist',sans-serif;width:100%;}
-.tab-search-input::placeholder{color:var(--muted);}
-.tab-search-clear{background:none;border:none;cursor:pointer;color:var(--muted);font-size:13px;padding:0;line-height:1;flex-shrink:0;}
-.tab-search-clear:hover{color:var(--text);}
-.search-result-count{font-size:13px;color:var(--muted);margin-bottom:16px;min-height:18px;}
-.no-search-results{padding:48px 0;text-align:center;color:var(--muted);font-size:15px;}
-.nav-search-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s;}
-.nav-search-btn:hover{color:var(--text);border-color:var(--border-s);}
+.tab-bar{display:flex;gap:4px;padding:4px;background:var(--bg);border-radius:10px;width:fit-content;margin-bottom:36px;}
 .tab-btn{padding:10px 26px;border-radius:9px;font-size:17px;font-weight:600;cursor:pointer;border:none;background:transparent;color:var(--muted);font-family:'Geist',sans-serif;transition:all .18s;}
 .tab-btn.active{background:var(--surface);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,0.1);}
 .tab-btn:hover:not(.active){color:var(--text);}
@@ -404,9 +394,6 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
     <a href="blog/index.html">Blog</a>
   </div>
   <div class="nav-right">
-    <button class="nav-search-btn" onclick="navSearch()" aria-label="Search skills" title="Search skills">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M10 10l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    </button>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><span id="theme-icon">☀️</span></button>
     <a href="#skills" class="btn btn-primary">Browse Skills</a>
   </div>
@@ -540,13 +527,7 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
     <div class="tab-bar anim">
       <button class="tab-btn active" onclick="showTab('bundles',this)">Bundles</button>
       <button class="tab-btn" onclick="showTab('individual',this)">Individual Skills</button>
-      <div class="tab-search-wrap">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="flex-shrink:0;color:var(--muted)"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M10 10l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <input type="text" id="skill-search" class="tab-search-input" placeholder="Search skills…" oninput="handleSearch(this.value)" autocomplete="off">
-        <button class="tab-search-clear" id="search-clear" onclick="clearSearch()" style="display:none">✕</button>
-      </div>
     </div>
-    <div id="search-result-count" class="search-result-count"></div>
     <div id="tab-bundles"><div class="bundles-grid anim" id="bundles-grid"></div></div>
     <div id="tab-individual" style="display:none">
       <div class="filter-bar anim">
@@ -1125,62 +1106,6 @@ const groups = [
 ];
 let groupFilter='all';
 
-// ── Search ──
-let searchQuery = '';
-let searchDebounceTimer = null;
-const searchSession = Math.random().toString(36).slice(2);
-
-function navSearch(){
-  document.getElementById('skills').scrollIntoView({behavior:'smooth'});
-  setTimeout(()=>{
-    const input = document.getElementById('skill-search');
-    if(input){ input.focus(); }
-    // Switch to individual tab
-    const indTab = document.getElementById('tab-individual');
-    const bndTab = document.getElementById('tab-bundles');
-    if(indTab && indTab.style.display === 'none'){
-      bndTab.style.display = 'none';
-      indTab.style.display = 'block';
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.textContent.includes('Individual')));
-      renderSkills();
-    }
-  }, 400);
-}
-
-function handleSearch(val){
-  searchQuery = val.trim().toLowerCase();
-  const clearBtn = document.getElementById('search-clear');
-  if(clearBtn) clearBtn.style.display = searchQuery ? '' : 'none';
-  // Auto-switch to individual tab
-  if(searchQuery){
-    const indTab = document.getElementById('tab-individual');
-    const bndTab = document.getElementById('tab-bundles');
-    if(indTab && indTab.style.display === 'none'){
-      bndTab.style.display = 'none';
-      indTab.style.display = 'block';
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.textContent.includes('Individual')));
-    }
-  }
-  renderSkills();
-  clearTimeout(searchDebounceTimer);
-  if(searchQuery.length >= 2){
-    searchDebounceTimer = setTimeout(()=>{
-      fetch('/api/search?q=' + encodeURIComponent(searchQuery) + '&session=' + searchSession).catch(()=>{});
-    }, 600);
-  }
-}
-
-function clearSearch(){
-  searchQuery = '';
-  const input = document.getElementById('skill-search');
-  const clearBtn = document.getElementById('search-clear');
-  if(input) input.value = '';
-  if(clearBtn) clearBtn.style.display = 'none';
-  const countEl = document.getElementById('search-result-count');
-  if(countEl) countEl.textContent = '';
-  renderSkills();
-}
-
 function renderSkills(){
   const activeGroups = groupFilter==='all' ? groups : groups.filter(g=>g.key===groupFilter);
   document.getElementById('skills-list').innerHTML = activeGroups.map(g => {
@@ -1202,25 +1127,6 @@ function renderSkills(){
       </div>
     </div>`;
   }).join('');
-
-  // Result count
-  const countEl = document.getElementById('search-result-count');
-  if(countEl && searchQuery){
-    const total = skills.filter(s =>
-      s.name.toLowerCase().includes(searchQuery)
-      || s.cat.toLowerCase().includes(searchQuery)
-      || s.pattern.toLowerCase().includes(searchQuery)
-      || s.buyer.toLowerCase().includes(searchQuery)
-      || (s.bundle && s.bundle.toLowerCase().includes(searchQuery))
-    ).length;
-    countEl.textContent = total ? total + ' skill' + (total !== 1 ? 's' : '') + ' found' : '';
-    if(!total){
-      document.getElementById('skills-list').innerHTML =
-        '<div class="no-search-results">No skills found for "' + searchQuery + '" — try a different term.</div>';
-    }
-  } else if(countEl){
-    countEl.textContent = '';
-  }
 }
 
 function filterTier(t,el){
