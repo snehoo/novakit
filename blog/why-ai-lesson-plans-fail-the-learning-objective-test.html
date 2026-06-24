@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -315,11 +316,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Lesson Plan Builder is a Claude AI skill — backward-designed plans where every activity points at the same defined outcome.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#forward-design-vs-backward-design-what-actually-differs" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Forward Design vs Backward Design — What Actually Differs</a></li><li><a href="#what-makes-a-learning-objective-actually-usable" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Makes a Learning Objective Actually Usable</a></li><li><a href="#the-misconception-problem-generic-plans-don-t-address" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Misconception Problem Generic Plans Don't Address</a></li><li><a href="#what-specified-differentiation-actually-looks-like" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Specified Differentiation Actually Looks Like</a></li><li><a href="#questions-about-ai-lesson-planning" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Questions About AI Lesson Planning</a></li></ol></div>
 <p>Run a simple test on any AI-generated <a href="https://novakit.tech/skills/lesson-plan-builder.html">lesson plan</a>. Read the learning objective. Then read each activity in the plan. For each one, ask: is this activity specifically designed to produce the learning the objective describes? In most AI lesson plans, the honest answer is: not really. The starter is a reasonable starter. The main activity covers the topic. The plenary asks students to reflect. All of that could have been planned without ever reading the objective — and in most cases, it was.</p>
 <p>This is the lesson objective test, and generic AI lesson plans fail it almost universally. They produce plans where the objective is stated correctly and then treated as a heading rather than a constraint. The plan is assembled from appropriate-looking parts, but those parts aren't coordinated toward a specific destination because the planning process didn't work backward from one.</p>
 <p>The consequence is felt in the classroom rather than on paper. The plan reads well in a review. The lesson proceeds through its stages. Students do the activities. And at the end, the teacher assesses and finds that some students understood and some didn't — but can't trace the gap to a specific planning decision, because the plan didn't make specific enough claims about how the learning would happen. That lack of traceability is a structural feature of forward-designed plans, not a failure of execution.</p>
-<h2>Forward Design vs <em>Backward Design</em> — What Actually Differs</h2>
+<h2 id="forward-design-vs-backward-design-what-actually-differs">Forward Design vs <em>Backward Design</em> — What Actually Differs</h2>
 <p>Most AI lesson plans are forward-designed: topic first, then activities that cover the topic, then an objective added at the top to describe what was covered. Backward design reverses this sequence. It starts with the specific outcome — what students will be able to do, demonstrably, at the end of the lesson — and works back to design activities that produce exactly that outcome.</p>
 <p>The difference isn't philosophical. It shows up in every component of the plan.</p>
 <table class="data-table">
@@ -359,7 +360,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </tbody>
 </table>
 <p>The forward-designed plan produces a lesson. The backward-designed plan produces the specific learning it names — or at minimum, gives the teacher clear information about where the gaps are. That's the difference a well-designed objective actually makes when it drives the plan rather than labels it.</p>
-<h2>What Makes a Learning Objective <em>Actually Usable</em></h2>
+<h2 id="what-makes-a-learning-objective-actually-usable">What Makes a Learning Objective <em>Actually Usable</em></h2>
 <p>The learning objective is the plan's most load-bearing component and the most frequently underwritten one. A vague objective doesn't just fail to guide the planning — it actively conceals whether the lesson worked. "Students will understand the causes of World War One" cannot be assessed at the end of a lesson. There is no observable student behaviour that confirms or refutes "understanding" without further specification. A teacher who writes this objective has given themselves no test to apply to their own lesson.</p>
 <p>A usable objective names a specific, observable action students will be able to perform. Bloom's Taxonomy provides the practical vocabulary: recall, explain, compare, apply, analyse, construct, evaluate. Each describes a cognitive operation that can be demonstrated and assessed. "Students can explain two economic causes of World War One using evidence from the July Crisis" is assessable — you can write an exit ticket for it in two minutes. You know what a successful answer looks like. You know what activity produces that kind of explanation. You can design backward from it.</p>
 <div class="callout callout-blue">
@@ -370,7 +371,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>Generic AI lesson plans fail the usability test because they're trained on a large sample of lesson plans that collectively include a high proportion of poorly written objectives. "Students will learn about" and "Students will understand" are statistically common in the training data, so they appear frequently in the output. The Lesson Plan Builder skill pushes back on this: if the objective you provide isn't specific enough to design backward from, the skill asks you to sharpen it before proceeding. The objective is the brief. It has to be clear before the plan can be useful.</p>
-<h2>The Misconception Problem <em>Generic Plans Don't Address</em></h2>
+<h2 id="the-misconception-problem-generic-plans-don-t-address">The Misconception Problem <em>Generic Plans Don't Address</em></h2>
 <p>Every well-researched topic at every age group has a set of predictable misconceptions — beliefs students reliably arrive with that will interfere with the new learning if they aren't surfaced and addressed. These are documented in subject-specific pedagogical literature for most mainstream curriculum topics. They're also invisible to generic AI lesson plans, which plan activities that deliver correct information but don't account for the incorrect information already in students' heads.</p>
 <p>The misconception that light is a raw material consumed by photosynthesis rather than an energy source that drives it affects a significant proportion of students approaching this topic at Key Stage 3. A lesson that explains the photosynthesis equation without first surfacing and addressing this misconception will find that some students leave the lesson with a revised version of the misconception rather than a corrected understanding — because new information gets assimilated to existing beliefs when the existing beliefs aren't made explicit and challenged first.</p>
 <div class="pull-quote">
@@ -388,13 +389,13 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$8 · instant download</span>
 </div>
 </div>
-<h2>What <em>Specified Differentiation</em> Actually Looks Like</h2>
+<h2 id="what-specified-differentiation-actually-looks-like">What <em>Specified Differentiation</em> Actually Looks Like</h2>
 <p>Differentiation is the section of the generic AI lesson plan that does the least work for the most words. "Provide visual aids for lower-ability students; challenge higher-ability students with extension tasks" appears in some form in nearly every AI-generated lesson plan. It's not wrong. It's just not a plan — it's a reminder that differentiation should exist, which every teacher already knows.</p>
 <p>Usable differentiation specifies what different learners will do differently at the activity level. Tiered activity cards are one practical structure that works across most subjects and age groups. A scaffolded tier provides the cognitive support that allows students working below the target level to access the core activity — this might be a sentence frame, a partially completed diagram, a word bank, or a simplified version of the central task. A core tier is the main activity as designed. An extension tier adds complexity that requires students to apply, analyse, or evaluate rather than just recall or explain.</p>
 <p>The skill produces differentiation at this level of specification because it knows the specific concept and the specific year group — and can therefore name what "scaffolded," "core," and "extension" mean for this lesson, rather than describing the categories in the abstract. A teacher picking up the plan knows exactly what to prepare and when to deploy each version. No additional invention required.</p>
 <hr class="post-divider"/>
 <div class="faq-block">
-<h2>Questions About <em>AI Lesson Planning</em></h2>
+<h2 id="questions-about-ai-lesson-planning">Questions About <em>AI Lesson Planning</em></h2>
 <div class="faq-item">
 <div class="faq-q">Why do AI-generated lesson plans feel hollow in the classroom?</div>
 <div class="faq-a">AI lesson plans feel hollow because they're structured correctly but not designed toward anything specific. The sections are present — starter, main activity, plenary, differentiation — but they're not coordinated around a specific learning objective for a specific group of students. The result is a schedule with educational vocabulary rather than a plan that moves learners from prior knowledge to a defined outcome.</div>

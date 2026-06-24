@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -263,11 +264,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Business Plan is a Claude AI skill — stage-calibrated, investor-aware plans that address what your specific audience actually evaluates.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-every-business-plan-looks-the-same-and-why-that-s-a-problem" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Every Business Plan Looks the Same — And Why That's a Problem</a></li><li><a href="#what-stage-calibration-changes-about-the-plan" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Stage Calibration Changes About the Plan</a></li><li><a href="#what-the-business-plan-skill-actually-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Business Plan Skill Actually Produces</a></li><li><a href="#generic-plan-vs-stage-calibrated-plan" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic Plan vs Stage-Calibrated Plan</a></li><li><a href="#who-gets-the-most-from-business-plan" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from Business Plan</a></li></ol></div>
 <p>The <a href="https://novakit.tech/skills/business-plan.html">business plan</a> that comes back from vanilla Claude is complete in every technical sense. It has an executive summary, a market analysis, a competitive landscape section, a financial model with projections, an operations plan, and a team section. It covers all the things a business plan is supposed to cover. It reads like a document produced by someone who studied what business plans contain rather than someone who understood what this particular investor, at this particular stage, with this particular thesis, is actually trying to evaluate.</p>
 <p>That distinction is the entire gap between a plan that gets a follow-up meeting and one that gets a polite pass. Investors reading a seed-stage plan from a pre-revenue founder are not evaluating the same things as investors reading a Series A plan from a company with eighteen months of ARR data. The questions they're asking, the sections they weight, the signals they're looking for — all of it shifts. A plan built without accounting for that shift answers questions the reader isn't asking and buries answers to questions they are, under sections they've already stopped reading.</p>
 <p>The Business Plan skill is built around one premise: stage and audience calibration happen before the first section is written, not after.</p>
-<h2>Why <em>Every Business Plan Looks the Same</em> — And Why That's a Problem</h2>
+<h2 id="why-every-business-plan-looks-the-same-and-why-that-s-a-problem">Why <em>Every Business Plan Looks the Same</em> — And Why That's a Problem</h2>
 <p>Ask any AI for a business plan and you'll get the same architecture: executive summary, company overview, market analysis, product description, competitive analysis, marketing and sales strategy, operations plan, financial projections, team and management, appendix. This is the canonical structure taught in MBA programmes and business planning courses. It is also the structure that investors at every stage have learned to skim efficiently — which means it's a structure optimised for being read quickly by someone looking for a reason to pass.</p>
 <p>The canonical structure makes no distinction between a pre-revenue founder raising a £150k friends-and-family round and a post-product founder raising a $3M seed from institutional investors. Both get the same document architecture, the same section weighting, the same emphasis on market size calculations that early-stage investors discount heavily and later-stage investors rely on entirely. A plan that's right for one context is actively wrong for the other — and because the structure looks the same from the outside, neither the founder nor the AI generating it has any way to know the difference without stage awareness built into the generation process.</p>
 <div class="callout callout-blue">
@@ -278,7 +279,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The financial projections section illustrates this cleanly. A pre-revenue founder producing a five-year financial model with month-by-month revenue forecasts is spending significant time building something an early-stage investor will treat as almost entirely fictional — because without revenue history, every assumption in the model is a guess and experienced investors know it. The same founder would be far better served by a plan that spends that section explaining the unit economics logic, the pricing rationale, and the key assumptions that would have to hold true for the business to work — and acknowledges directly that the projections are illustrative rather than predictive. That's a plan that demonstrates understanding of how early-stage investing works. The five-year model demonstrates the opposite.</p>
-<h2>What <em>Stage Calibration</em> Changes About the Plan</h2>
+<h2 id="what-stage-calibration-changes-about-the-plan">What <em>Stage Calibration</em> Changes About the Plan</h2>
 <p>Before the Business Plan skill writes a single section heading, it establishes three things: funding stage and target raise amount, investor type (angel, seed fund, bank, strategic, grant body), and whether the business is pre-revenue, early-revenue, or scaling. From those three inputs, the entire architecture of the plan changes — not just the tone, but which sections exist, how much space each section occupies, what the financial model looks like, and what questions each section is designed to answer.</p>
 <div class="stage-grid">
 <div class="stage-card">
@@ -306,7 +307,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>The investor reads to find the answer to one question first: <em>does this founder understand the business they're building</em>? The plan's structure either answers that question immediately or delays it long enough that the investor stops looking.</p>
 </div>
 <p>Stage calibration also changes how the plan handles risk. A canonical business plan tends to either ignore risks or list them in a late-section appendix that signals the founder hasn't thought hard about them. An investor-aware plan addresses the three most significant risks to the business model directly, in the body of the plan, with a clear-eyed account of how the business mitigates each one. Naming your risks before the investor names them for you is one of the clearest signals that a founder understands their business — and most AI-generated plans never do it.</p>
-<h2>What the Business Plan Skill <em>Actually Produces</em></h2>
+<h2 id="what-the-business-plan-skill-actually-produces">What the Business Plan Skill <em>Actually Produces</em></h2>
 <p>The skill runs a calibration interview before generating anything — stage, investor type, and current revenue status, plus the core business description. From that, it determines the appropriate architecture and section weighting before the first word is written.</p>
 <div class="step-list">
 <div class="step-item">
@@ -349,7 +350,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $9 · instant download</span>
 </div>
 </div>
-<h2>Generic Plan vs <em>Stage-Calibrated Plan</em></h2>
+<h2 id="generic-plan-vs-stage-calibrated-plan">Generic Plan vs <em>Stage-Calibrated Plan</em></h2>
 <p>Same business — a pre-revenue SaaS founder raising a £200k angel round. The financial section, handled two ways.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -374,7 +375,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The canonical projection table looks like a financial model. It isn't — it's a guess formatted to look like a model, and any angel investor with deal experience recognises it immediately. The stage-calibrated version does something riskier and more effective: it names the assumptions, shows the unit economics logic, and explicitly acknowledges that pre-revenue projections are directional. That honesty, combined with the specificity of twelve beta conversations and a £420 CAC figure from actual outbound work, signals something far more valuable than a three-year projection table — it signals a founder who understands their numbers and knows how to talk about uncertainty without hiding behind it.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>Business Plan</em></h2>
+<h2 id="who-gets-the-most-from-business-plan">Who Gets the Most from <em>Business Plan</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">

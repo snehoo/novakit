@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -305,11 +306,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Home Renovation Brief is a Claude AI skill — produces a contractor-ready project scope document with material specs, trade sequencing, and budget framework.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-vague-briefs-cost-real-money" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Vague Briefs Cost Real Money</a></li><li><a href="#what-live-research-changes-for-renovation-planning" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Live Research Changes for Renovation Planning</a></li><li><a href="#what-the-home-renovation-brief-skill-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Home Renovation Brief Skill Produces</a></li><li><a href="#what-generic-ai-actually-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic AI Actually Produces</a></li><li><a href="#who-gets-the-most-from-the-renovation-brief-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from the Renovation Brief Skill</a></li><li><a href="#what-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What You Walk Away With</a></li></ol></div>
 <p>You've spent weeks on Pinterest. You know roughly what you want — open up the kitchen, replace the flooring, maybe add a bathroom downstairs. You sit down with Claude, describe the project, and get back three beautifully written paragraphs about your vision. Then you hand it to a contractor and they look at you blankly. That's not a brief. That's a mood board in prose.</p>
 <p>Contractors need to know which trades are involved, in what order, what materials they're specifying against, and what the structural or permit implications might be. Without that, they can't give you an accurate quote. They guess. You get a number that either blows your budget or comes in suspiciously low — and you find out why three weeks into the project.</p>
 <p>The Home <a href="https://novakit.tech/skills/home-renovation-brief.html">Renovation Brief</a> skill was built to produce the document a contractor actually needs, not the one that feels satisfying to write. It researches before it writes: current material specifications, typical trade sequencing for the scope you've described, permit considerations by project type, and the dependency chain that determines what has to happen before what.</p>
-<h2>Why <em>Vague Briefs</em> Cost Real Money</h2>
+<h2 id="why-vague-briefs-cost-real-money">Why <em>Vague Briefs</em> Cost Real Money</h2>
 <p>The most common renovation mistake isn't choosing the wrong tile. It's entering the contractor conversation without a document that defines scope. When scope isn't defined, it shifts. And every time scope shifts after work starts, you're paying for it — either directly in variation orders or indirectly in delays while trades wait on decisions that should have been made before anyone picked up a tool.</p>
 <p>A kitchen renovation that involves removing a wall requires a structural engineer's report before a builder can quote accurately. A bathroom addition on a ground floor might require new drainage runs depending on the existing fall. These aren't obscure edge cases — they're the things contractors discover on day one when the brief they received said "add a downstairs bathroom." The variation order lands on your desk. You had no idea it was coming.</p>
 <div class="callout callout-blue">
@@ -320,14 +321,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>Generic AI output doesn't know any of this. It produces aspirational descriptions of finished spaces, not the scaffolding a contractor uses to plan, quote, and sequence work. The Home Renovation Brief skill knows the difference — because it researches the project type before it writes the document.</p>
-<h2>What <em>Live Research</em> Changes for Renovation Planning</h2>
+<h2 id="what-live-research-changes-for-renovation-planning">What <em>Live Research</em> Changes for Renovation Planning</h2>
 <p>When you describe your renovation to the skill — scope, rough budget, property type, what stays and what goes — it doesn't start writing. It starts researching. Current material specifications for what you're describing. The trade sequence for that scope: does tiling come before or after the plumber's second fix? Which elements require a structural assessment before a builder can price? What permits are typically required for works of this type?</p>
 <p>That research shapes the structure of the document it produces. A loft conversion brief looks different from a kitchen remodel brief. A brief for a period property flags different structural considerations than a new-build extension. Generic prompting produces one template for everything. This skill calibrates the document to the actual project.</p>
 <div class="pull-quote">
 <p>A contractor who receives a scoped brief with material specs and a trade sequence can quote in an afternoon. A contractor who receives a vision statement is just guessing — and <em>you're paying for the guess</em>.</p>
 </div>
 <p>The practical result: the brief you hand over contains enough information for multiple contractors to quote against the same document. Apples-to-apples comparison. You can see where quotes differ and ask specific questions, rather than trying to reconcile wildly different assumptions about scope.</p>
-<h2>What the <em>Home Renovation Brief</em> Skill Produces</h2>
+<h2 id="what-the-home-renovation-brief-skill-produces">What the <em>Home Renovation Brief</em> Skill Produces</h2>
 <p>Three calibrating questions before anything is written: what's the scope, what's the property context, and what constraints matter (budget ceiling, timeline, whether the space needs to remain partially usable during works). Then the skill builds the document.</p>
 <div class="step-list">
 <div class="step-item">
@@ -377,7 +378,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$5 · instant download</span>
 </div>
 </div>
-<h2>What Generic AI <em>Actually Produces</em></h2>
+<h2 id="what-generic-ai-actually-produces">What Generic AI <em>Actually Produces</em></h2>
 <p>The difference isn't subtle. Here's what you get when you ask vanilla Claude to "write a home renovation brief for a kitchen extension and open plan remodel" versus what the skill produces.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -401,7 +402,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The generic version is a wish list. The skill version is a working document. The structural pre-requisites section alone — flagging the need for a structural engineer's sign-off and a party wall notice — can save weeks of delay that would otherwise hit after a contractor has mobilised on site.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>the Renovation Brief Skill</em></h2>
+<h2 id="who-gets-the-most-from-the-renovation-brief-skill">Who Gets the Most from <em>the Renovation Brief Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -411,7 +412,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill is particularly valuable at the stage just before you start approaching contractors — when you know what you want to achieve but haven't translated that into a document anyone can quote against. That translation step is where most homeowners lose weeks and money. A well-structured brief cuts the back-and-forth, gives contractors what they need to quote accurately, and gives you a baseline to compare quotes against.</p>
 <p>It's also useful if you're coordinating multiple trades yourself rather than using a main contractor. When each trade has the same brief, you're not repeating information five times or discovering that your tiler assumes the plumber has already completed first fix when he hasn't.</p>
-<h2>What You <em>Walk Away With</em></h2>
+<h2 id="what-you-walk-away-with">What You <em>Walk Away With</em></h2>
 <p>A single brief document covering: project scope and exclusions, material specifications at the level contractors quote against, trade sequence with dependencies noted, a line-item budget framework with contingency guidance, and permit and structural flags as named action items. Ready to send to contractors. Ready to use as the basis for a contract once you've selected who you're working with.</p>
 <p>The path is straightforward: answer three questions about your project, receive the document, send it to two or three contractors. Same scope. Same specs. Comparable quotes you can actually evaluate.</p>
 <p>Most renovation problems aren't discovered on site. They're created in the brief — or in the absence of one. A contractor working from a complete scope document makes better decisions, flags issues earlier, and gives you fewer surprises. The brief is the project. Everything else is just executing it.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/real-estate-listing-copy.html">listing copy that sells the lifestyle, not just the specs</a>.</p>

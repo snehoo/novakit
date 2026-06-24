@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -256,11 +257,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Cold Outreach Email is a Claude AI skill — signal-researched, role-calibrated cold emails that open with something real, not a template.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-signal-blind-outreach-gets-deleted-in-under-two-seconds" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Signal-Blind Outreach Gets Deleted in Under Two Seconds</a></li><li><a href="#what-live-signal-research-changes-about-the-email" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Live Signal Research Changes About the Email</a></li><li><a href="#what-the-cold-outreach-email-skill-actually-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Cold Outreach Email Skill Actually Produces</a></li><li><a href="#template-email-vs-signal-email" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Template Email vs Signal Email</a></li><li><a href="#who-gets-the-most-from-cold-outreach-email" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from Cold Outreach Email</a></li><li><a href="#three-variants-one-conversation-opener" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Three Variants, One Conversation Opener</a></li></ol></div>
 <p>There's a specific kind of <a href="https://novakit.tech/skills/cold-outreach-email.html">cold email</a> that gets deleted before the second sentence. You've received hundreds of them, and you've probably sent some too. It starts with your name used in a way that feels automated rather than familiar. The opening line references something generic about your industry or role. The value proposition arrives in the third sentence and could apply to approximately four thousand other people at companies of roughly your size. The CTA asks for thirty minutes of your time. The whole thing reads like someone filled in the blanks of a template and called it personalisation.</p>
 <p>The uncomfortable truth for anyone who has tried to fix this with AI is that vanilla Claude produces exactly this kind of email by default. Not because the model can't write — it can write clean, grammatical, well-structured prose. But because it's writing without signal. It doesn't know that your prospect just raised a Series B three weeks ago and is actively building out their sales infrastructure. It doesn't know they posted on LinkedIn last Tuesday about a specific hiring challenge that your product directly addresses. It doesn't know the company recently expanded into a new market where your solution has a track record they can't claim yet. Without that context, the model produces the template — because the template is all it has to work with.</p>
 <p>The Cold Outreach Email skill is built around a different starting point: research the signal first, then write the email from it.</p>
-<h2>Why <em>Signal-Blind Outreach</em> Gets Deleted in Under Two Seconds</h2>
+<h2 id="why-signal-blind-outreach-gets-deleted-in-under-two-seconds">Why <em>Signal-Blind Outreach</em> Gets Deleted in Under Two Seconds</h2>
 <p>Recipients of cold email have become extraordinarily fast at identifying effort level. They can read the first line of an email and know within a sentence whether the sender has looked at anything about them specifically — a recent post, a company announcement, a job opening that signals a strategic priority, a product launch — or whether they've taken a keyword from your job title and called it research. The latter gets deleted. Not because people are rude, but because their attention is worth more than the five seconds it takes to confirm there's nothing there for them.</p>
 <p>The failure of AI-generated cold email isn't that it sounds like AI. It's that it sounds like no one. It sounds like an email that could have been sent to anyone in the same role at any company of the same size. That fungibility is the tell. Genuine outreach is specific in a way that only happens when the sender has actually looked — and the recipient knows in approximately one sentence whether that's true.</p>
 <div class="callout callout-blue">
@@ -271,14 +272,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The other failure is role miscalibration. An email written for a generic "Head of Marketing" reads differently to an actual Head of Marketing at a 40-person SaaS company who is one of three people on the marketing team and does their own paid acquisition than it does to a Head of Marketing at a 400-person company managing a team of twelve. Same title, completely different context, completely different concerns. An email that doesn't account for that distinction is making a guess about the recipient's actual situation — and guesses read as indifference.</p>
-<h2>What <em>Live Signal Research</em> Changes About the Email</h2>
+<h2 id="what-live-signal-research-changes-about-the-email">What <em>Live Signal Research</em> Changes About the Email</h2>
 <p>Before the Cold Outreach Email skill writes a single word, it researches what's happening with the target company and role right now. That research feeds directly into what the email opens with — not a compliment, not a generic industry observation, but a specific, datable thing that happened in the prospect's world that gives the email a reason to exist today. A funding announcement that implies a specific operational challenge. A job posting that reveals a strategic gap. A LinkedIn post where the prospect named a problem out loud. A product update that created a new integration need.</p>
 <p>This is the structural difference between an email that gets read and one that gets deleted. The opening line is not "I came across your profile and was impressed by your work at Acme." It's "Saw the Series B announcement last month — scaling the revenue org that fast usually surfaces the same three operational gaps. We help companies like yours close two of them before they become hiring problems." That email has a timestamp. It has a reason to arrive now. It costs the prospect almost nothing to keep reading, because the first line already demonstrated that the sender had looked.</p>
 <div class="pull-quote">
 <p>The email that gets a reply is the one the prospect <em>was already expecting someone to send</em> — they just didn't know it until it arrived.</p>
 </div>
 <p>The skill also calibrates to role and seniority before generating the copy. A VP-level email is written differently than an ops-manager email — shorter, more direct, with the value framing aimed at strategic outcomes rather than workflow specifics. A founder email at a 15-person company gets different copy than the same title at a 200-person company, because the concern structure and the decision-making context are completely different. Same skill, genuinely different output — because the calibration happens before the writing, not as an afterthought.</p>
-<h2>What the Cold Outreach Email Skill <em>Actually Produces</em></h2>
+<h2 id="what-the-cold-outreach-email-skill-actually-produces">What the Cold Outreach Email Skill <em>Actually Produces</em></h2>
 <p>Three questions before generation: the target company and role, the trigger or signal you've identified (or, if you haven't identified one, the skill researches for one), and your core offer in plain language. From those inputs, the skill produces three complete email variants — each with a distinct opening angle, a different value framing, and a matching subject line — plus a compliance note confirming CAN-SPAM, GDPR, and CASL requirements are met for your target region.</p>
 <div class="feature-grid">
 <div class="feature-card">
@@ -313,7 +314,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $9 · instant download</span>
 </div>
 </div>
-<h2>Template Email vs <em>Signal Email</em></h2>
+<h2 id="template-email-vs-signal-email">Template Email vs <em>Signal Email</em></h2>
 <p>Same sender, same offer, same prospect — a Head of Revenue at a 60-person B2B SaaS company. The only difference is whether the email was written from a template or from a live signal.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -341,7 +342,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The template email is grammatically identical to ten thousand others Sarah has received. It references her role, implies a problem she might have, and asks for time. The signal email opens with something that happened — three specific job postings in six weeks — and draws a precise inference from it that demonstrates the sender understood what that signal means operationally. Sarah doesn't have to wonder whether this email is relevant to her situation right now. The first sentence answers that question.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>Cold Outreach Email</em></h2>
+<h2 id="who-gets-the-most-from-cold-outreach-email">Who Gets the Most from <em>Cold Outreach Email</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -351,7 +352,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill is not built for high-volume automated sequences where personalisation tokens replace genuine research. If you're sending five hundred emails a week with a first-name merge field and calling it personalised outreach, this isn't the tool for that. It's built for the targeted end of outreach — where each email goes to a specific person for a specific reason, and the difference between a reply and a delete is whether the first sentence is true.</p>
 <p>That specificity is also what makes it most useful for founders in the early stages of building a pipeline. When you're reaching out to twenty prospects a week rather than two hundred, the economics of spending time on research change completely — except the research still takes time that would otherwise go into everything else. The skill compresses the research and writing into something that produces a genuinely targeted email in the time it would previously take to write a mediocre template.</p>
-<h2>Three Variants, <em>One Conversation Opener</em></h2>
+<h2 id="three-variants-one-conversation-opener">Three Variants, <em>One Conversation Opener</em></h2>
 <p>What you walk away with is three complete emails, each taking a different angle on the same signal, with a matched subject line for each. The problem-led variant opens the gap the signal implies and names it precisely. The outcome-led variant leads with what resolves on the other side of that gap. The curiosity-led variant asks a question sharp enough that not answering it feels like leaving something unexamined. You choose based on what you know about the prospect's communication style and which angle the signal supports most naturally.</p>
 <p>Cold email that works doesn't feel like cold email to the person receiving it. It feels like someone who was paying attention sent them something at the right moment. That's not a tone you can write your way into from a template. It's a function of knowing something real about the person's situation — and building the email outward from that knowledge rather than inward from your offer. The skill handles the research. The targeting is still yours.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/sales-landing-page-copy.html">a sales page that closes without feeling pushy</a>. If you're working across the full Founder workflow, the <a href="https://novakit.tech/skills/bundles/founder-bundle.html">Founder bundle</a> covers everything in one place.</p>
 <div class="soft-cta">

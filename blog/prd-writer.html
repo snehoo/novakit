@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -278,11 +279,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">PRD Writer is a Claude AI skill — A complete, structured product requirements document calibrated to your stage, stack, and team.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-generic-ai-fails-at-prds-specifically" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Generic AI Fails at PRDs Specifically</a></li><li><a href="#what-live-research-changes-in-a-prd-context" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Live Research Changes in a PRD Context</a></li><li><a href="#what-the-prd-writer-skill-actually-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the PRD Writer Skill Actually Produces</a></li><li><a href="#generic-prd-vs-context-calibrated-output" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic PRD vs Context-Calibrated Output</a></li><li><a href="#who-gets-the-most-from-prd-writer" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from PRD Writer</a></li><li><a href="#what-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What You Walk Away With</a></li></ol></div>
 <p>You write the <a href="https://novakit.tech/skills/prd-writer.html">PRD</a>. Engineers read it. Three days later, the Slack messages start: "What happens if the user is already logged in?" "Does this cover mobile?" "Who owns the error state?" You answer each one. Another arrives. By the end of the sprint, you've spent more time in 1:1 clarification threads than you did writing the document itself.</p>
 <p>The document wasn't wrong, exactly. It described the feature well. It just didn't define the edges — what's out of scope, which states aren't covered, where the ambiguity lives. And those edges are exactly where engineers spend most of their time.</p>
 <p>This isn't a skill gap. It's a research gap. A well-structured PRD requires you to know — before you write a single line — what your current tech stack implies for implementation, what your team's working conventions look like, and what the adjacent systems are that this feature touches. Generic AI output doesn't know any of that. It writes the feature as if it exists in a vacuum.</p>
-<h2>Why <em>Generic AI</em> Fails at PRDs Specifically</h2>
+<h2 id="why-generic-ai-fails-at-prds-specifically">Why <em>Generic AI</em> Fails at PRDs Specifically</h2>
 <p>Ask vanilla Claude to write a PRD for a user notification system and you'll get something that looks correct: user stories, functional requirements, a rough acceptance criteria list. The structure is there. What's missing is specificity of context — the fact that your app already has a push notification channel that behaves differently on iOS vs Android, that your team uses a specific definition of "done" that includes accessibility testing, that the notification preferences page is owned by a different squad and anything touching it requires a cross-team sign-off.</p>
 <p>The AI wrote for a generic notification system. You needed a document for yours. The difference isn't style — it's that every assumption the AI made about your environment was a guess, and some of those guesses are wrong. Engineers, trained to read specs literally, will find every one of them.</p>
 <div class="callout callout-blue">
@@ -293,14 +294,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The question-and-answer loop that follows isn't a sign of a thorough engineering team. It's the cost of a document that transferred ambiguity instead of resolving it. Every Slack thread is time you're paying to fix the PRD after the fact.</p>
-<h2>What <em>Live Research</em> Changes in a PRD Context</h2>
+<h2 id="what-live-research-changes-in-a-prd-context">What <em>Live Research</em> Changes in a PRD Context</h2>
 <p>The PRD Writer skill researches before it writes. That means before generating a single section, it looks at what makes a PRD actually usable for an engineering team in 2026 — current conventions around user story formatting, how modern product teams structure acceptance criteria, what edge-case handling looks like in documents that don't generate follow-up questions. The output is shaped by what's working now, not by patterns from three years ago when "agile PRD" meant something different.</p>
 <p>More importantly, it calibrates to you. The three questions the skill asks upfront aren't preamble — they're the mechanism. A pre-seed startup with a two-person engineering team needs a fundamentally different PRD than a Series B company shipping to a 20-person eng org. One needs ruthless simplicity and obvious prioritisation. The other needs interface contracts, dependency mapping, and rollback criteria. The skill distinguishes between those contexts and writes accordingly. You don't get a generic document that you then have to strip down or bulk out.</p>
 <div class="pull-quote">
 <p>A PRD that <em>resolves ambiguity</em> before it reaches an engineer is worth a week of sprint capacity.</p>
 </div>
 <p>The quality gate runs before delivery. That means vague acceptance criteria, undefined edge cases, and missing out-of-scope statements get flagged and rewritten before you see them. The document that reaches you has already been checked for the gaps that generate follow-up questions.</p>
-<h2>What the <em>PRD Writer Skill</em> Actually Produces</h2>
+<h2 id="what-the-prd-writer-skill-actually-produces">What the <em>PRD Writer Skill</em> Actually Produces</h2>
 <p>The skill generates a complete, structured PRD structured around five core components. Here's how each one earns its place in a document that doesn't generate questions.</p>
 <div class="step-list">
 <div class="step-item">
@@ -350,7 +351,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$15 · instant download</span>
 </div>
 </div>
-<h2>Generic PRD vs <em>Context-Calibrated</em> Output</h2>
+<h2 id="generic-prd-vs-context-calibrated-output">Generic PRD vs <em>Context-Calibrated</em> Output</h2>
 <p>The same feature request — a user notification preferences screen — produces very different documents depending on whether the AI knows anything about your context.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -381,7 +382,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>Both documents describe the same feature. Only one of them answers the questions an engineer will have before they ask them. The difference is specificity of context — the second version knows what it owns, what it doesn't, and where the ambiguity needs a decision rather than an assumption.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>PRD Writer</em></h2>
+<h2 id="who-gets-the-most-from-prd-writer">Who Gets the Most from <em>PRD Writer</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -391,7 +392,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill is most valuable in the gap between "we know what we want to build" and "the engineers know exactly what to build." That gap is where misaligned assumptions live. For a solo founder or a first-time PM, it's also where most of the accidental scope creep originates — not from bad decisions, but from under-specified documents that leave too much to interpretation at build time.</p>
 <p>If you already have a strong PRD process and a dedicated PM with templates refined over years, this skill augments that process rather than replacing it — it's a strong first draft that you then adapt, not a document you ship without review. Your product judgment drives the decisions. The skill handles the structure.</p>
-<h2>What You <em>Walk Away With</em></h2>
+<h2 id="what-you-walk-away-with">What You <em>Walk Away With</em></h2>
 <p>A single run of the PRD Writer skill produces a complete requirements document: problem statement, success metrics, full functional requirements with scope boundaries, user stories calibrated to your team size, acceptance criteria with named edge cases, and a dependencies and sign-off map. The document is formatted to paste directly into Notion, Linear, Confluence, or any tool your team uses — no reformatting required.</p>
 <p>From download to first draft is under five minutes. The calibration questions take ninety seconds to answer. What comes out the other side is a document shaped around your product, your team, and your current stage — not a reusable template that any engineer could tell was generated without knowing anything about the system it's specifying.</p>
 <p>The questions you avoid because the PRD answered them in advance aren't small. Each one is fifteen minutes of interrupted focus for an engineer, a context switch for you, and a decision made in a Slack thread instead of in the document where it belongs. A PRD that doesn't generate clarification questions is a compounding investment. Every sprint it saves is a sprint where the team builds instead of aligns.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/pitch-deck-narrative.html">a pitch narrative investors actually follow</a>.</p>

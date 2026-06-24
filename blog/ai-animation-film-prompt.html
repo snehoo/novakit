@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -263,11 +264,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">AI Animation Film Prompt is a Claude AI skill — model-aware scene descriptions built for current AI video generators, calibrated to your style, mood, and output format.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-generic-ai-produces-when-you-ask-for-animation-descriptions" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic AI Produces When You Ask for Animation Descriptions</a></li><li><a href="#why-model-specific-research-changes-the-output" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Model-Specific Research Changes the Output</a></li><li><a href="#what-the-ai-animation-film-prompt-skill-actually-does" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the AI Animation Film Prompt Skill Actually Does</a></li><li><a href="#generic-description-vs-model-aware-description" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic Description vs Model-Aware Description</a></li><li><a href="#who-gets-the-most-from-the-ai-animation-film-prompt-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from the AI Animation Film Prompt Skill</a></li><li><a href="#the-output-you-actually-paste-into-your-tool" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Actually Paste Into Your Tool</a></li></ol></div>
 <p>You spent twenty minutes writing a scene description for your brand's product launch animation. A misty mountain dawn, the product emerging from fog, warm light breaking through as the camera pulls back to reveal scale. You fed it to Runway. The model rendered a competent-looking stock footage loop with a floating object and some fog effects. Nothing like what you saw in your head. You tried again with more detail. Same category of wrong.</p>
 <p>The problem isn't the model's capability. Current AI video generation tools can produce genuinely cinematic results — but only when the description is written in the grammar those models understand. That grammar is not the same as how a person describes a scene to another person. It's not even the same from one model to the next. Runway interprets camera motion instructions differently from Sora. Kling handles character consistency through different language cues than Pika does. Writing a description without knowing those specifics is writing in the dark, then being surprised when the output doesn't match the vision.</p>
 <p>What makes the gap so frustrating is that it's entirely in the description — not in the model, not in the concept. The same visual idea, described two different ways, produces completely different results. One gets you what you meant. The other gets you something the model confidently assembled from your words but clearly never understood.</p>
-<h2>What Generic AI Produces When You Ask for <em>Animation Descriptions</em></h2>
+<h2 id="what-generic-ai-produces-when-you-ask-for-animation-descriptions">What Generic AI Produces When You Ask for <em>Animation Descriptions</em></h2>
 <p>Ask vanilla Claude to write an AI video generation description and it produces something that reads like a film treatment. Evocative language. Mood-setting adjectives. A sense of the scene's emotional texture. All of it completely useless for a generative video model, which doesn't process emotional texture — it processes spatial relationships, motion vectors, lighting conditions, camera behaviour, and physical material properties.</p>
 <p>A description like "a golden sunrise over a misty valley, with the camera gently pulling back to reveal the vast landscape" is excellent English. As instructions to a video model, it leaves almost everything that determines the output undefined. Which direction is the camera moving — vertically, horizontally, diagonally? What is the fog's density and how does it interact with the light source? What is the pace of the camera motion — imperceptible drift or deliberate pull? How long is the clip? What aspect ratio? What is the colour temperature of the light at the moment of sunrise versus three seconds later? The model will guess all of these. Usually incorrectly.</p>
 <div class="callout callout-blue">
@@ -278,14 +279,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The result is output that's technically responsive to your description but aesthetically generic — the visual equivalent of a stock photo that matches your search terms without matching your vision. You can feel the gap between what you wrote and what rendered. The model didn't fail. Your description failed to give it what it needed to succeed.</p>
-<h2>Why <em>Model-Specific Research</em> Changes the Output</h2>
+<h2 id="why-model-specific-research-changes-the-output">Why <em>Model-Specific Research</em> Changes the Output</h2>
 <p>Before writing a single line of your animation description, the <a href="https://novakit.tech/skills/ai-animation-film-prompt.html">AI Animation</a> Film Prompt skill checks what the current generation of video models actually responds to. It looks at how each model handles motion language — the specific vocabulary that produces smooth camera behaviour versus jittery artefacts. It checks which lighting descriptors are currently producing the atmospheric results creators want from each tool, and which have been overused to the point that the model interprets them generically. It identifies the structural order that each model parses most reliably, because the sequence of information in a description affects what gets weighted heavily in the render.</p>
 <p>This matters because the models update. Runway's behaviour in early 2026 is different from its behaviour eighteen months ago — new training runs shift which descriptions produce which results. Sora's handling of physics-heavy scenes has changed as the model has been refined. A description that was producing excellent results six months ago may now produce something flatter, because the model's internal weighting has shifted. Generic AI, working from training data with a cutoff, can't know this. The skill checks before every run.</p>
 <div class="pull-quote">
 <p>The same visual idea, described in the language the model actually responds to, produces work that looks like it was <em>directed</em> — not generated.</p>
 </div>
 <p>When the skill understands the current behaviour of your target model, it writes the description as a set of rendereable instructions rather than a scene summary. Camera motion is named precisely. Lighting is described in terms of source, direction, and intensity rather than mood. Temporal pacing is explicit. Material properties — the way fabric moves, the way water catches light, the way smoke behaves in relation to wind — are described with the specificity those rendering engines need to make consistent choices rather than averaging across possibilities. The mood and vision you started with are still there. They're just expressed in the language that makes the model produce them rather than approximate them.</p>
-<h2>What the AI Animation Film Prompt Skill <em>Actually Does</em></h2>
+<h2 id="what-the-ai-animation-film-prompt-skill-actually-does">What the AI Animation Film Prompt Skill <em>Actually Does</em></h2>
 <p>The skill asks three calibrating questions before generating anything: your target model and output format, the visual style and mood you're working toward, and the specific scene or sequence you need described. Those answers determine everything — a six-second Runway clip for a product ad is built completely differently from a thirty-second Sora cinematic sequence for a brand film, even if the underlying visual idea is similar.</p>
 <div class="step-list">
 <div class="step-item">
@@ -335,7 +336,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $15 · instant download</span>
 </div>
 </div>
-<h2>Generic Description vs <em>Model-Aware</em> Description</h2>
+<h2 id="generic-description-vs-model-aware-description">Generic Description vs <em>Model-Aware</em> Description</h2>
 <p>Both of these describe the same scene — a product emerging from fog at dawn for a brand launch film. One was written to communicate the vision to a human. The other was written to instruct a video model.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -349,7 +350,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The first description communicates the vision clearly. A human creative director would understand it completely. A video model reads it and has to guess the camera motion path, the fog opacity, the colour temperature arc, the subject's behaviour, the aspect ratio, and the duration — and it will guess all of them based on what "inspiring cinematic sunrise product reveal" most commonly looked like in its training data. The second description eliminates those guesses. The model renders what's specified rather than what's probable.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from the <em>AI Animation Film Prompt Skill</em></h2>
+<h2 id="who-gets-the-most-from-the-ai-animation-film-prompt-skill">Who Gets the Most from the <em>AI Animation Film Prompt Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -359,7 +360,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill is sharpest for anyone who has a clear visual concept and is consistently frustrated by the gap between that concept and what renders. If you can articulate what you want in terms of mood, style, and subject — but the model keeps giving you something adjacent rather than accurate — the problem is almost always in the description structure, not in the ambition of the concept. The skill handles the translation from vision to instruction.</p>
 <p>It's also strong for creators working across multiple tools. Runway, Sora, Kling, and Pika each have distinct model personalities — different strengths, different weaknesses, different languages they respond to. Maintaining separate description approaches for each tool by hand is a significant overhead. The skill carries that knowledge and applies it automatically based on your target model, so you're not rebuilding your description vocabulary every time a new tool enters your workflow.</p>
-<h2>The Output You <em>Actually Paste</em> Into Your Tool</h2>
+<h2 id="the-output-you-actually-paste-into-your-tool">The Output You <em>Actually Paste</em> Into Your Tool</h2>
 <p>The skill produces a complete, model-specific scene description ready to paste directly into your AI video generator — no reformatting, no translation step, no interpretation required. For multi-scene projects, it produces descriptions for each scene with consistent character and environment anchors built in, so the model maintains visual coherence across cuts rather than drifting between scenes as if each one were generated independently.</p>
 <p>The path from download to render is: answer three questions, receive the description, paste it into your tool, generate. Iteration from there is faster too — because the description is structured around rendereable parameters, adjusting one element doesn't require rewriting the whole description from scratch. Change the camera motion, keep everything else. Shift the lighting temperature, keep the spatial relationships. The structure holds.</p>
 <p>AI video generation is still young enough that most of the difference between mediocre output and genuinely cinematic output comes down to description quality, not model capability. The models are good. Most descriptions aren't written for them. That gap is where this skill operates.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/dialogue-character-film-prompt.html">character dialogue prompts that hold a consistent voice</a>. If you're working across the full Video &amp; Pod workflow, the <a href="https://novakit.tech/skills/bundles/video-pod-bundle.html">Video &amp; Pod bundle</a> covers everything in one place.</p>

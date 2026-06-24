@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -276,11 +277,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Short Story Prompt is a Claude AI skill — genre-calibrated fiction inside Claude, research-first, quality-gated before delivery.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-most-ai-fiction-fails-the-craft-test" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Most AI Fiction Fails the Craft Test</a></li><li><a href="#the-workflow-that-actually-changes-the-output" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Workflow That Actually Changes the Output</a></li><li><a href="#what-good-revision-looks-like-on-an-ai-draft" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Good Revision Looks Like on an AI Draft</a></li><li><a href="#a-note-on-what-ai-can-and-can-t-do-in-short-fiction" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">A Note on What AI Can and Can't Do in Short Fiction</a></li></ol></div>
 <p>Most writers who've tried to get a usable <a href="https://novakit.tech/skills/short-story-prompt.html">short story</a> from Claude have hit the same wall. The story comes back structurally intact — a beginning, a middle, an end — but something is missing that's very hard to name. The prose is clean. The premise is handled. And yet reading it feels like watching someone perform an emotion rather than feel it. You know immediately that no amount of further requesting is going to fix what's fundamentally wrong, and you close the tab.</p>
 <p>The instinct is to blame the request. To add more detail, specify the tone more precisely, paste in a reference paragraph, describe the exact feeling you want the ending to land on. Some of this helps at the margins. None of it solves the underlying problem, which isn't about instruction quality at all. It's about the order of operations — specifically, that Claude is generating prose before it has done the research that would allow it to write with genre intelligence.</p>
 <p>This guide is about fixing that. Not with prompt engineering tricks, but with a workflow that changes what the model does before it writes the first word of fiction.</p>
-<h2>Why <em>Most AI Fiction</em> Fails the Craft Test</h2>
+<h2 id="why-most-ai-fiction-fails-the-craft-test">Why <em>Most AI Fiction</em> Fails the Craft Test</h2>
 <p>Short fiction is unforgiving in a specific way. Unlike a blog post or a business email, where competence reads as success, a short story that is merely competent has already failed. Readers — and editors, and competition judges — feel the difference between a story that arrives at its ending and a story that earns it. The gap between those two things is almost entirely craft: sentence rhythm, the strategic placement of white space, what the story refuses to explain, where it cuts instead of resolves.</p>
 <p>When Claude writes fiction cold — no genre context, no research on current form, just your premise and whatever the model already knows — it defaults to the statistical centre of all the fiction it was trained on. That centre is competent. It is not interesting. It gives you a protagonist with a clear want, an obstacle, a moment of realisation, and a resolution that ties back to the opening. Three acts, correct pacing, no real surprise. The output that results is the kind of story you would accept from a student learning the basics — not the kind you'd submit anywhere that matters.</p>
 <div class="callout callout-blue">
@@ -291,7 +292,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The craft problems cluster around three failures that appear in almost every cold-generated story: the explained emotion (the story tells you a character felt something rather than producing that feeling in the reader), the announced structure (you can see the gears turning — here comes the turn, here comes the revelation), and the safe ending (the story resolves rather than lands, ties off rather than cuts). These are not random failures. They're what you get when the model is optimising for narrative correctness rather than narrative effect.</p>
-<h2>The Workflow That <em>Actually Changes the Output</em></h2>
+<h2 id="the-workflow-that-actually-changes-the-output">The Workflow That <em>Actually Changes the Output</em></h2>
 <p>The fix is not a longer request. It's a different sequence. Here's how to approach Claude for short fiction in a way that consistently produces drafts worth working with — and where a research-first skill file does the heavy lifting automatically.</p>
 <div class="step-list">
 <div class="step-item">
@@ -346,7 +347,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $5 · instant download</span>
 </div>
 </div>
-<h2>What <em>Good Revision</em> Looks Like on an AI Draft</h2>
+<h2 id="what-good-revision-looks-like-on-an-ai-draft">What <em>Good Revision</em> Looks Like on an AI Draft</h2>
 <p>A well-generated short story draft — one produced with the workflow above, or with a genre-calibrated skill — needs revision, not reconstruction. The distinction matters. Reconstruction is what you do when the draft has the wrong bones: wrong structure, wrong register, wrong relationship between the story's surface and what it's actually about. That's a sign the generation phase failed. Revision is what you do when the bones are right and you're shaping the flesh — tightening sentences, cutting the explained emotions, making the detail more specific, fixing the ending.</p>
 <p>The fastest way to tell which situation you're in: read the first paragraph and the last paragraph back to back, ignoring everything in between. If they feel like they belong to the same story — same register, same implicit subject, same level of restraint — the draft has good bones. If they feel like two different writers trying to tell two different stories, the generation phase produced something that needs to be started again, not revised.</p>
 <div class="pull-quote">
@@ -354,7 +355,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>When the bones are right, concentrate revision effort in this order: explained emotions first (every instance of "felt," "realised," "knew"), then the opening sentence (it almost always needs to be cut or replaced — the real opening is usually the second or third sentence), then the ending. The middle largely takes care of itself once the opening and ending are right, because the story's spine becomes clear and the loose material finds its own place.</p>
 <hr class="post-divider"/>
-<h2>A Note on <em>What AI Can and Can't Do</em> in Short Fiction</h2>
+<h2 id="a-note-on-what-ai-can-and-can-t-do-in-short-fiction">A Note on <em>What AI Can and Can't Do</em> in Short Fiction</h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">

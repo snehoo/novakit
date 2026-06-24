@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -291,14 +292,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">NDA / Contract Draft is a Claude AI skill — Produces a deal-specific draft framework covering confidentiality scope, term, jurisdiction flags, and mutual vs. unilateral structure. Starting point for review, not a DIY replacement for legal counsel.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-generic-templates-leave-you-exposed" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Generic Templates Leave You Exposed</a></li><li><a href="#what-deal-specific-calibration-actually-changes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Deal-Specific Calibration Actually Changes</a></li><li><a href="#what-the-nda-contract-draft-skill-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the NDA / Contract Draft Skill Produces</a></li><li><a href="#template-output-vs-calibrated-draft-output" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Template Output vs Calibrated Draft Output</a></li><li><a href="#who-gets-the-most-from-this-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from This Skill</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <div class="disclaimer">
 <strong>Note:</strong> The <a href="https://novakit.tech/skills/nda-contract-draft.html">NDA</a> / Contract Draft skill accelerates and structures your drafting process. It is not legal advice, and the output is a starting point for review — not a substitute for a qualified solicitor or attorney where your situation warrants one. If your deal involves significant IP, employment terms, or cross-border complexity, professional review is the right call.
   </div>
 <p>A founder takes a partnership meeting. The other party asks for an NDA before sharing their roadmap. The founder downloads the first free template that appears in a search, swaps the company names, sends it over. Everyone signs. Six months later, when the relationship breaks down and information ends up somewhere it shouldn't, the founder discovers that the template's definition of "confidential information" was so broad it was unenforceable — and the jurisdiction clause defaulted to a state neither party operates in.</p>
 <p>The document looked right. It had the structure, the whereas clauses, the signature block. What it didn't have was the specific language that would have made it usable in an actual dispute. Generic templates are written to look complete. A draft built from your deal's actual parameters is written to work.</p>
 <p>Most founders, freelancers, and small business operators don't need a lawyer for every NDA or simple service contract. They need a well-structured starting point that covers the right provisions for their specific situation — something they can review, adjust, and sign with confidence rather than hope.</p>
-<h2>Why <em>Generic Templates</em> Leave You Exposed</h2>
+<h2 id="why-generic-templates-leave-you-exposed">Why <em>Generic Templates</em> Leave You Exposed</h2>
 <p>The problem with free NDA templates isn't that they're fraudulent — it's that they're written for nobody in particular, which means they're not quite right for anybody. A mutual NDA for a two-way vendor relationship needs different language than a unilateral NDA for a job candidate receiving proprietary information. An NDA protecting software architecture needs a different confidential information definition than one protecting a client list. Generic templates can't know which of these you need, so they pick a middle path that often serves neither.</p>
 <p>Three provisions account for the majority of NDA disputes: the definition of confidential information (too narrow and it doesn't cover what you care about; too broad and it's unenforceable), the term clause (how long confidentiality obligations last after the agreement ends), and the jurisdiction clause (which law governs and where disputes are heard). Free templates routinely leave all three as boilerplate — which means they're technically present but practically useless.</p>
 <div class="callout callout-blue">
@@ -309,14 +310,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>Vanilla Claude has the same limitation. Ask it to draft an NDA and it will produce something structurally sound, written in appropriate legal register, and missing the deal-specific calibration that determines whether the document does the job. It doesn't know whether the relationship is mutual or unilateral, what the confidential information actually is, how long the term should run, or which jurisdiction flags apply to your parties. Without those inputs, it defaults to generic — same as the free template, just formatted more nicely.</p>
-<h2>What <em>Deal-Specific Calibration</em> Actually Changes</h2>
+<h2 id="what-deal-specific-calibration-actually-changes">What <em>Deal-Specific Calibration</em> Actually Changes</h2>
 <p>Before the NovaKit NDA / Contract Draft skill produces a single clause, it interviews you on the parameters that determine what the document needs to do. Mutual or unilateral agreement. The nature of the confidential information — IP, client data, financial projections, technical architecture, or a combination. The relationship type: potential partnership, contractor engagement, employment, investor conversation, or vendor due diligence. The intended duration of confidentiality obligations. And the jurisdiction of both parties, which determines which law governs and whether specific statutory language applies.</p>
 <p>Those five inputs produce a draft that is structurally different from a generic template — not cosmetically different. The confidential information definition is scoped to what you're actually protecting. The term is appropriate to the relationship type. The jurisdiction clause reflects the actual parties rather than a legal fiction. The mutual vs. unilateral structure matches the deal.</p>
 <div class="pull-quote">
 <p>The difference between a template and a <em>calibrated draft</em> isn't formatting. It's whether the provisions reflect the deal you're actually doing.</p>
 </div>
 <p>The skill also flags jurisdiction-specific considerations — areas where the law governing your parties may require specific language or where a generic clause is likely to create ambiguity. These are surfaced as review notes in the output, not buried in boilerplate, so you know exactly where to focus attention before signing.</p>
-<h2>What the <em>NDA / Contract Draft</em> Skill Produces</h2>
+<h2 id="what-the-nda-contract-draft-skill-produces">What the <em>NDA / Contract Draft</em> Skill Produces</h2>
 <p>The skill's three-question interview covers relationship type, confidential information scope, and jurisdiction of both parties. From those inputs:</p>
 <div class="step-list">
 <div class="step-item">
@@ -366,7 +367,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $15 · instant download</span>
 </div>
 </div>
-<h2>Template Output vs <em>Calibrated Draft</em> Output</h2>
+<h2 id="template-output-vs-calibrated-draft-output">Template Output vs <em>Calibrated Draft</em> Output</h2>
 <p>Same scenario — a founder sharing technical architecture with a prospective integration partner — run through a standard free NDA template versus the NDA / Contract Draft skill. The difference shows up most clearly in the confidential information definition, which is where most template NDAs quietly fail.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -386,7 +387,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The template definition is technically present and will survive a quick read. The calibrated draft defines exactly what's being protected, builds in the standard carve-outs that prevent overreach, and surfaces the two decisions — governing law and term length — that a founder in this situation actually needs to think about. One gets signed without being read closely. The other gets reviewed and understood before execution.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>This Skill</em></h2>
+<h2 id="who-gets-the-most-from-this-skill">Who Gets the Most from <em>This Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -396,7 +397,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill is not the right tool for high-stakes agreements where the cost of getting it wrong significantly exceeds the cost of professional review — an M&amp;A NDA, a co-founder agreement, or a contract with cross-border employment implications. For those, it can still accelerate the drafting process and reduce the time a lawyer spends on structure rather than substance. But the final document warrants qualified review.</p>
 <p>For everything in the middle — the NDAs that need to exist and be taken seriously, but don't warrant $800 in legal fees — it gives you a document that reflects your actual deal rather than a hypothetical average one.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>A complete NDA or simple contract draft: parties and recitals, a scoped confidential information definition, obligations of the receiving party, standard exclusions, term and survival clause, jurisdiction and governing law with flags, and a signature block — all calibrated to your five inputs. Inline review annotations on the provisions most likely to need adjustment. The full document is ready to paste into a Word file, share with the other party, or bring to a lawyer for a targeted review of the flagged sections rather than a full-document redraft.</p>
 <p>Most people use it to move faster on agreements that have been sitting in a "need to sort this out" folder for two weeks, because starting from a structured calibrated draft is a different task — and a shorter one — than trying to adapt a generic template that wasn't written for your situation in the first place.</p>
 <p>The NDA that holds is the one whose provisions actually match the deal. Everything else is a document that looks right until the moment it needs to work.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/tos-privacy-policy.html">terms and privacy policy that reflect your actual data practices</a>. If you're working across the full Legal &amp; Biz workflow, the <a href="https://novakit.tech/skills/bundles/legal-biz-bundle.html">Legal &amp; Biz bundle</a> covers everything in one place.</p>

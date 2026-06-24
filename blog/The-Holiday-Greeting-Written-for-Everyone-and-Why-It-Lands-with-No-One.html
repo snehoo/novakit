@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -280,11 +281,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Festival &amp; Holiday Greeting Prompt is a Claude AI skill — occasion-calibrated greetings for any festival, recipient, or relationship. One-time download. Works inside Claude.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-generic-greeting-output-actually-looks-like" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic Greeting Output Actually Looks Like</a></li><li><a href="#why-context-first-changes-every-line" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Context First Changes Every Line</a></li><li><a href="#how-the-greeting-skill-works" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How the Greeting Skill Works</a></li><li><a href="#generic-vs-calibrated-same-occasion-different-output" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic vs Calibrated — Same Occasion, Different Output</a></li><li><a href="#who-gets-the-most-from-this-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from This Skill</a></li><li><a href="#what-you-actually-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What You Actually Walk Away With</a></li></ol></div>
 <p>Somewhere in your sent folder there's a holiday message you wrote with AI help and immediately felt nothing about. It went out. It was fine. Nobody replied saying it felt hollow — but nobody replied much at all. The words were warm in the way that a hotel lobby is warm: deliberately inoffensive, clearly designed for a large number of strangers, memorable to none of them.</p>
 <p>That's the specific failure mode of AI-assisted greetings, and it's worth naming precisely because it's so easy to miss. The message wasn't wrong. It wasn't rude. It hit every beat — warmth, occasion acknowledgement, good wishes, sign-off. It just had the texture of something assembled rather than written. The recipient could tell, even if they couldn't say why. They've received fifty versions of the same message from fifty other people who also asked AI to write their holiday greetings this year.</p>
 <p>The problem isn't that AI can't write greetings. It's that a greeting without context is just a template with different words. What makes a greeting land — what makes someone actually pause instead of scrolling past — is that it was written for them, on this occasion, from someone who knew something about the relationship. Generic AI has no access to any of that.</p>
-<h2>What Generic <em>Greeting Output</em> Actually Looks Like</h2>
+<h2 id="what-generic-greeting-output-actually-looks-like">What Generic <em>Greeting Output</em> Actually Looks Like</h2>
 <p>Ask vanilla Claude to write a Diwali greeting for a business client and it will produce something structurally correct: a mention of the festival, a line about light and new beginnings, good wishes for the year ahead, your name. It reads like a greeting card from a major stationery brand — the kind that covers the widest possible ground without landing anywhere specific. Which is exactly what it is, because Claude had no idea whether this client is a long-term partner or someone you met three months ago, whether the relationship is formal or easy, whether they'd appreciate warmth or prefer brevity.</p>
 <p>The gap between a greeting that resonates and one that doesn't isn't vocabulary. It's not even structure. It's whether the person writing it knew anything about the situation before they started. A message that references a shared milestone — a project that wrapped well, a deal that finally closed, a year that was genuinely hard — carries weight that no amount of eloquent generic prose can replicate.</p>
 <div class="callout callout-blue">
@@ -295,14 +296,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>For individuals sending one or two greetings, the stakes are low enough that a generic message gets away with it. But for small business owners sending seasonal messages to a client list, creators sending holiday notes to their community, or anyone for whom the greeting is a touchpoint in an ongoing relationship — the accumulated effect of generic output is real. After two or three seasons of identical warmth-and-good-wishes messages, the greeting stops being communication and becomes noise.</p>
-<h2>Why <em>Context First</em> Changes Every Line</h2>
+<h2 id="why-context-first-changes-every-line">Why <em>Context First</em> Changes Every Line</h2>
 <p>The Festival &amp; <a href="https://novakit.tech/skills/festival-holiday-greeting-prompt.html">Holiday Greeting</a> skill doesn't start from a blank page and reach for warmth. It starts from three questions: who is this for, what is your relationship with them, and what occasion or festival are you marking. Those three answers are not decoration. They change the structural logic of what gets written.</p>
 <p>A Diwali message to a client you've worked with for four years, sent in the week you wrapped a big project together, is a different piece of writing than a Diwali message to a new contact you want to keep warm. Same occasion. Different context. The skill knows the difference because you told it, and it uses that information to write something that couldn't have been sent to a different recipient without editing.</p>
 <div class="pull-quote">
 <p>The skill earns the right to write a greeting by <em>understanding the relationship first</em> — not by guessing at it from the occasion alone.</p>
 </div>
 <p>The live research component matters here in a way that's easy to underestimate. What's working in greeting copy right now — which tones are resonating across different festivals, what structures feel current versus formulaic, how the register of professional warmth has shifted — feeds into the output before a word is written. The skill isn't drawing on a fixed idea of what a holiday greeting should look like. It's working from what's actually connecting with people right now, calibrated to your specific relationship and occasion.</p>
-<h2>How the <em>Greeting Skill</em> Works</h2>
+<h2 id="how-the-greeting-skill-works">How the <em>Greeting Skill</em> Works</h2>
 <p>Here's what happens when you run the skill inside Claude:</p>
 <div class="step-list">
 <div class="step-item">
@@ -345,7 +346,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$5 · instant download</span>
 </div>
 </div>
-<h2>Generic vs <em>Calibrated</em> — Same Occasion, Different Output</h2>
+<h2 id="generic-vs-calibrated-same-occasion-different-output">Generic vs <em>Calibrated</em> — Same Occasion, Different Output</h2>
 <p>Here's what each approach produces for the same brief: a Diwali greeting to a client you've worked with closely this year, where a major project just concluded successfully.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -370,7 +371,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The calibrated version is shorter and carries more weight because it references something real — the project, the effort it took, the specific kind of rest that follows a hard year. It couldn't be copied and sent to a different client without it reading as strange. That's the point. A greeting that only works for one person is a greeting that person will actually remember.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>This Skill</em></h2>
+<h2 id="who-gets-the-most-from-this-skill">Who Gets the Most from <em>This Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -380,7 +381,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill is particularly useful for anyone managing a client list across a year's worth of occasions. The trap with high-volume greeting sending is that efficiency pushes toward uniformity — same message, swapped name, done. But clients who receive the same warmth-and-good-wishes message for Diwali, Christmas, and the New Year stop reading them after the first one. Calibrated greetings that reference the actual relationship take more input upfront, but the output is a message worth the inbox space it takes.</p>
 <p>For solopreneurs and freelancers specifically, a well-written festival message is one of the lowest-effort, highest-return touchpoints in a client relationship. It arrives when the recipient is in a reflective frame of mind, it requires nothing from them, and a good one lands as a reminder that the relationship matters. A generic one is easily forgotten. A specific one isn't.</p>
-<h2>What You <em>Actually Walk Away With</em></h2>
+<h2 id="what-you-actually-walk-away-with">What You <em>Actually Walk Away With</em></h2>
 <p>A single run produces multiple greeting variants for the same recipient and occasion — typically a shorter message-length version, a fuller email-length version, and at least one alternative tone. You choose the one that fits and copy it directly. No structural rework, no editing pass to remove generic phrases — the quality gate handles that before delivery.</p>
 <p>Because the skill calibrates to the occasion as well as the recipient, it covers the full range of festivals without you adapting the approach between runs. A Lunar New Year greeting for a business partner, a Hanukkah message for a colleague, an Eid card for a long-term client — each run asks the same three questions and produces output calibrated to that specific combination of occasion, relationship, and tone. The tenth greeting you write with it will be as considered as the first. That's what the auto-improve loop does: the skill sharpens its calibration with every run, without any configuration changes on your end.</p>
 <p>There's a version of sending holiday greetings where you draft them in twenty minutes, send them at volume, and tell yourself the gesture was what mattered. And there's a version where the message itself does the work — where the recipient reads it, slows down slightly, and thinks: they actually wrote this for me. The first version is efficient. The second version is what greetings are for.</p><p>If you're working across the full Creative workflow, the <a href="https://novakit.tech/skills/bundles/creative-bundle.html">Creative bundle</a> covers everything in one place.</p>

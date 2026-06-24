@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -267,11 +268,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Recipe Development Prompt is a Claude AI skill — context-calibrated recipes with full method, scaling options, and flavour notes built for your actual kitchen.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-generic-recipe-ai-actually-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic Recipe AI Actually Produces</a></li><li><a href="#what-live-research-changes-about-recipe-output" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Live Research Changes About Recipe Output</a></li><li><a href="#what-the-recipe-development-prompt-skill-actually-does" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Recipe Development Prompt Skill Actually Does</a></li><li><a href="#generic-vs-calibrated-the-real-difference" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic vs Calibrated — The Real Difference</a></li><li><a href="#who-gets-the-most-from-recipe-development-prompt" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from Recipe Development Prompt</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>Ask Claude to write a chicken recipe and it'll give you one. Chicken, garlic, olive oil, salt, pepper, 375°F for 35 minutes. It's edible. It works. It also works for someone who has a convection oven, a cast iron skillet, is cooking for six, hates garlic, wants the skin crispy, and spent three months eating their way through Oaxaca. But Claude doesn't know any of that, so what you get is the recipe Claude wrote for everyone — which means it was written for no one in particular.</p>
 <p>This is the structural problem with using AI for <a href="https://novakit.tech/skills/recipe-development-prompt.html">recipe development</a>. The model has enormous culinary knowledge. It knows classical French technique, the Maillard reaction, when to use a beurre blanc versus a pan sauce, how salt migration affects texture. None of that knowledge gets applied to your situation because you never told it your situation. You typed "chicken recipe" and it filled the rest in with defaults.</p>
 <p>The Recipe Development Prompt skill for Claude works differently. Before generating a single ingredient line, it asks what it needs to know — your skill level, your equipment, dietary constraints, the flavour profile you're after, how many people you're feeding. Then it writes a recipe that fits those answers. It also researches current culinary formats: the way dishes are being constructed and presented right now, not a static database of templates from training data. What you get is specific, usable, and doesn't require twenty minutes of manual correction before it earns a place in your kitchen.</p>
-<h2>What <em>Generic Recipe AI</em> Actually Produces</h2>
+<h2 id="what-generic-recipe-ai-actually-produces">What <em>Generic Recipe AI</em> Actually Produces</h2>
 <p>The failure mode is consistent. You ask for a dish and get something technically correct but contextually useless. The recipe assumes a standard Western kitchen: a conventional oven that holds temperature reliably, a full set of pans, ingredients available at any large supermarket. It assumes intermediate skill — confident enough to julienne, not confident enough to fabricate. It gives you one version: serves four, 45 minutes, no substitutions.</p>
 <p>If you're a food blogger developing recipes for an audience that cooks on gas hobs in Mumbai, or a meal prep coach building a week of lunches for a client who keeps halal, or a culinary student working through a Pacific-fusion brief — none of those defaults fit. You edit the recipe to fit your context. And then you edit the technique notes. And the serving size. And the flavour profile. By the time you're done, the AI saved you nothing. It just gave you a first draft you had to completely rewrite.</p>
 <div class="callout callout-blue">
@@ -282,14 +283,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The editing isn't the problem per se. The problem is that you're doing the work the AI should have done before it wrote anything. Context-gathering isn't post-processing — it's the prerequisite for a recipe that actually works for a specific person in a specific kitchen producing a specific dish.</p>
-<h2>What <em>Live Research</em> Changes About Recipe Output</h2>
+<h2 id="what-live-research-changes-about-recipe-output">What <em>Live Research</em> Changes About Recipe Output</h2>
 <p>The Recipe Development Prompt skill researches before it writes. That means it pulls in what's current in culinary formats — how flavour combinations are being composed right now, which techniques are appearing in professional and home-cooking contexts for the type of dish you're developing, and how dishes like yours are typically structured and presented. This matters because food writing has conventions that evolve, and a recipe produced without that awareness reads like it came out of a 2018 cookbook template regardless of how technically sound the instructions are.</p>
 <p>It also means the skill doesn't fall back on defaults. The three-question interview at the start establishes your skill level, your equipment and constraints, and the specific outcome you're working toward. A beginner who wants a weeknight dinner that impresses a date gets a different recipe than a home baker developing a signature dessert for a pop-up menu — even if both ask for something with caramelised pears.</p>
 <div class="pull-quote">
 <p>The gap between a recipe that works in theory and one that works in <em>your kitchen</em> is almost entirely a context problem.</p>
 </div>
 <p>That research also catches format mismatches. If you're developing a recipe for a food blog, the skill knows how instructional prose, headings, and callouts typically read in that context. If you're developing for a printed recipe card, the structure is different — concise, scannable, no narrative. The output is shaped to where it's actually going, not formatted for some imagined universal use case.</p>
-<h2>What the Recipe Development Prompt Skill <em>Actually Does</em></h2>
+<h2 id="what-the-recipe-development-prompt-skill-actually-does">What the Recipe Development Prompt Skill <em>Actually Does</em></h2>
 <p>The skill runs through five stages, each feeding the next. Nothing is generated until the context is established.</p>
 <div class="step-list">
 <div class="step-item">
@@ -339,7 +340,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$5 · instant download</span>
 </div>
 </div>
-<h2>Generic vs <em>Calibrated</em> — The Real Difference</h2>
+<h2 id="generic-vs-calibrated-the-real-difference">Generic vs <em>Calibrated</em> — The Real Difference</h2>
 <p>Here's the same brief — "a weeknight pasta dish, something impressive but fast" — handled two ways. The left is what vanilla Claude produces without context. The right is what the Recipe Development Prompt skill produces after its interview establishes the cook is intermediate, cooking for two, has a gas hob, and wants something that reads as restaurant-quality without restaurant technique.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -364,7 +365,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The left version is accurate. The right version is actually useful — the technique notes are at the right level for an intermediate cook, the scaling guidance accounts for where the recipe doesn't simply double, and the flavour profile (brighter, restaurant-leaning) matches the brief. That difference comes entirely from the context interview. The AI had the knowledge to produce either version. It needed the brief to produce the right one.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>Recipe Development Prompt</em></h2>
+<h2 id="who-gets-the-most-from-recipe-development-prompt">Who Gets the Most from <em>Recipe Development Prompt</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -374,7 +375,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>Food bloggers will find the format research particularly useful. The skill produces output shaped for how culinary content actually reads and performs now — the structure of the method, where and how technique notes appear, the way flavour intent is framed. Writing recipes that feel current without hand-tuning every post is the work the skill handles automatically.</p>
 <p>For home cooks, the skill level calibration is what changes the experience. Recipes written for you — not for some median cook — don't need translation. The technique notes meet you where you are. The substitution section covers the actual constraints in your kitchen, not every possible dietary variation in the abstract.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>A single run of the Recipe Development Prompt skill produces a complete recipe: full ingredient list with quantities, method with timing and technique notes calibrated to your skill level, scaling guidance for the adjustments that don't simply multiply, and substitution notes specific to the dietary context you flagged. The format is ready to use — no further editing required before it goes on a blog post, into a document, or onto a recipe card.</p>
 <p>From download to result: load the skill file into Claude, answer the three context questions, and the recipe is generated in a single pass. It runs on a free Claude account. There's no technical configuration. The skill handles the research, the calibration, and the quality check internally — you receive the finished version.</p>
 <p>The culinary knowledge to write a great recipe has been in Claude since the beginning. What was missing was the context to aim it correctly. A recipe generated for everyone is a recipe adjusted by you. A recipe generated for your kitchen, your skill level, and your specific dish is one you can use immediately — which is the only kind worth generating.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/menu-description-copy.html">menu copy that makes every dish sound worth ordering</a>.</p>

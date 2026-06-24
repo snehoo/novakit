@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -279,11 +280,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Research Paper Outline is a Claude AI skill — argument-aware structure calibrated to your field, methodology, and citation conventions.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-generic-prompting-actually-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic Prompting Actually Produces</a></li><li><a href="#what-field-calibrated-structure-changes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Field-Calibrated Structure Changes</a></li><li><a href="#how-the-research-paper-outline-skill-works" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How the Research Paper Outline Skill Works</a></li><li><a href="#generic-outline-vs-calibrated-outline" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic Outline vs Calibrated Outline</a></li><li><a href="#who-gets-the-most-from-this-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from This Skill</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>You asked Claude to outline your <a href="https://novakit.tech/skills/research-paper-outline.html">research paper</a>. What came back had an Introduction, a Literature Review, a Methodology, Results, Discussion, and Conclusion. Exactly six sections. The same six sections you'd get if you'd typed in literally any topic — climate change, supply chain disruption, childhood language acquisition, it doesn't matter. The headings are there. The structure is empty.</p>
 <p>That's not an outline. That's a table of contents for a paper that doesn't exist yet. A real research paper outline does something harder: it maps your specific argument through those sections, tells you what each section needs to accomplish for the one after it to land, and flags the subsections where your methodology needs to be defended before you can present findings. Without that, you're filling in blanks — and filling in blanks with AI output is how you end up with a paper that technically follows the structure but reads like it was assembled rather than argued.</p>
 <p>The Research Paper Outline Claude skill is built around that distinction. Before it produces anything, it asks three questions about your work — your research question, your methodology type, and your field. Those answers change everything about what gets generated.</p>
-<h2>What <em>Generic Prompting</em> Actually Produces</h2>
+<h2 id="what-generic-prompting-actually-produces">What <em>Generic Prompting</em> Actually Produces</h2>
 <p>The problem isn't that Claude doesn't know what a research paper looks like. It knows exactly what one looks like — averaged across every academic paper format it encountered during training. And that's precisely the problem. What you get back is the statistical centre of all research papers: safe, structurally correct, and entirely disconnected from your argument.</p>
 <p>A qualitative ethnographic study and a quantitative randomised control trial have fundamentally different section logic. In qualitative work, positionality often belongs before the methodology — not in a footnote, but as a substantive section, because reviewers in that tradition will treat its absence as a methodological flaw. In quantitative work, the order of your hypotheses relative to your theoretical framework matters because it signals whether you're testing theory or discovering it. Generic AI doesn't know which you're doing. It gives you the same outline regardless, and that outline will need rewriting before it functions as an actual planning document.</p>
 <div class="callout callout-blue">
@@ -294,14 +295,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The practical consequence: you start writing from a generic outline, get three sections in, and realise the structure doesn't support what you're actually trying to prove. The Discussion section you were building toward requires grounding in the Literature Review that you didn't signal properly at the start. Now you're restructuring mid-draft — which is far more expensive than getting the architecture right before writing begins.</p>
-<h2>What <em>Field-Calibrated Structure</em> Changes</h2>
+<h2 id="what-field-calibrated-structure-changes">What <em>Field-Calibrated Structure</em> Changes</h2>
 <p>When the Research Paper Outline skill runs, it's not retrieving a template for "academic paper." It's working from your research question to trace the argumentative path specific to your study type. A systematic review has a different sectional logic than an empirical study, which has a different logic than a theoretical contribution. The skill distinguishes between these because the three-question interview at the start establishes which you're doing.</p>
 <p>That calibration surfaces in places you wouldn't expect. If your methodology is mixed-methods, the outline doesn't just add a "Mixed Methods" subsection — it adjusts how the findings section is sequenced so the quantitative and qualitative threads are woven together rather than stacked. If you're writing in a humanities discipline that uses endnotes and a different citation argument style, the outline reflects that convention, not Chicago vs. APA as a metadata tag but as a structural assumption about how your evidence is integrated.</p>
 <div class="pull-quote">
 <p>A research paper outline that doesn't know your methodology is just <em>headings dressed up as architecture.</em></p>
 </div>
 <p>The other thing that changes is subsection depth. Generic outlines give you top-level sections. The skill's output goes two levels deeper in the sections where your argument is most at risk — typically the methodology defense and the discussion of limitations. Those are where reviewers look hardest, and an outline that treats them as single headings will produce papers that feel thin at exactly the wrong moments.</p>
-<h2>How the <em>Research Paper Outline</em> Skill Works</h2>
+<h2 id="how-the-research-paper-outline-skill-works">How the <em>Research Paper Outline</em> Skill Works</h2>
 <p>Three inputs shape everything that follows. The skill asks them before producing a single section.</p>
 <div class="step-list">
 <div class="step-item">
@@ -344,7 +345,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$7 · instant download</span>
 </div>
 </div>
-<h2>Generic Outline vs <em>Calibrated Outline</em></h2>
+<h2 id="generic-outline-vs-calibrated-outline">Generic Outline vs <em>Calibrated Outline</em></h2>
 <p>Same topic, same word count target. The difference is what the outline actually tells you to do with each section.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -377,7 +378,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The right-hand outline doesn't just have more sections. It tells you that your theoretical framework needs to precede the literature review because of how reviewers in your tradition read the relationship between theory and evidence selection. It flags "transferability" instead of "generalisability" — because using the wrong term in qualitative psychology signals to reviewers that the author didn't understand their own methodological tradition. That's not formatting advice. That's argument architecture.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>This Skill</em></h2>
+<h2 id="who-gets-the-most-from-this-skill">Who Gets the Most from <em>This Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -387,7 +388,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>This skill is most valuable at the planning stage — before you've committed a draft to a structure that turns out not to support your argument. It's also useful mid-project when a paper isn't working and you need to diagnose whether the problem is the writing or the architecture. Most papers that read as weak are structurally weak first: the argument is there, but the sections aren't doing the right jobs in the right order.</p>
 <p>It's less useful if you're writing a short coursework essay with a fixed structure your institution dictates, or if you already have a complete draft and need editing rather than outlining. The skill is a planning tool. What it produces is a map — and maps are most valuable before you've started walking.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>The skill produces a complete two-level outline: all major sections and their subsections, each with a purpose note explaining what that section needs to accomplish for the paper's argument to hold. For a standard empirical paper, that's typically seven to nine major sections with two to four subsections each, depending on your methodology type. Qualitative studies often get a positionality section the generic outline omits. Systematic reviews get a PRISMA-informed search strategy subsection. Theoretical papers get an explicit contribution-positioning section that most authors bury in the introduction and reviewers have to hunt for.</p>
 <p>You also receive a note on the three most structurally vulnerable points in your paper — the places where the argument is most likely to break down under review — and what each section needs to do to defend them. From download to working outline: run the skill inside Claude, answer the three questions, and you have a planning document you can hand to a supervisor, use as a writing checklist, or turn directly into a document structure. No reformatting required.</p>
 <p>A research paper that isn't argued well at the structural level can't be fixed by better sentences. The sections have to be doing the right jobs, in the right order, for the right reasons — and that logic is specific to your field, your methodology, and your contribution. Generic AI doesn't know those things. The skill does, because it asks before it writes. That's the difference between an outline you have to rewrite before you can use it and one that's already doing the work.</p><p>If you're working across the full Student workflow, the <a href="https://novakit.tech/skills/bundles/student-bundle.html">Student bundle</a> covers everything in one place.</p>

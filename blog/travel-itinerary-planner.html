@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -285,11 +286,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Travel Itinerary Planner is a Claude AI skill — a day-by-day trip plan calibrated to your pace, group, and destination, built on live research.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-vanilla-ai-gets-wrong-about-travel-planning" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Vanilla AI Gets Wrong About Travel Planning</a></li><li><a href="#what-live-research-actually-changes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Live Research Actually Changes</a></li><li><a href="#how-the-travel-itinerary-planner-skill-works" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How the Travel Itinerary Planner Skill Works</a></li><li><a href="#what-a-generic-plan-looks-like-vs-what-this-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What a Generic Plan Looks Like vs. What This Produces</a></li><li><a href="#who-gets-the-most-from-this-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most From This Skill</a></li><li><a href="#what-you-actually-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What You Actually Walk Away With</a></li></ol></div>
 <p>You've landed in Lisbon. You open the AI-generated itinerary you spent 45 minutes prompting last week. Day 1 starts with the Museu Nacional do Azulejo — closed Mondays, which today is. The first café on the list closed permanently in early 2025. And the "quick walk" between attractions turns out to be a 35-minute uphill climb that your 68-year-old travelling companion is not going to enjoy.</p>
 <p>This is what happens when AI plans from memory instead of from the current state of a place. The facts aren't wrong, exactly — the museum does exist, the walk is technically possible — they're just not useful for the trip you're actually on.</p>
 <p>The <a href="https://novakit.tech/skills/travel-itinerary-planner.html">Travel Itinerary</a> Planner skill works differently. Before it produces a single hour-by-hour block, it researches your specific destination — current seasonal conditions, what's open, what's worth the trip right now versus what shows up in every round-up because it ranked well in 2021. The result isn't a template with your city's name dropped in. It's a plan built for where you're going, when you're going, and who's going with you.</p>
-<h2>What Vanilla AI Gets Wrong About <em>Travel Planning</em></h2>
+<h2 id="what-vanilla-ai-gets-wrong-about-travel-planning">What Vanilla AI Gets Wrong About <em>Travel Planning</em></h2>
 <p>Ask any AI assistant to plan a 4-day trip to Tokyo and you'll get the same itinerary that thousands of other people are looking at right now. Tsukiji Market at 7am. Senso-ji before the crowds. Shibuya crossing at dusk. Ramen somewhere in Shinjuku.</p>
 <p>None of that is bad advice. It's just not advice — it's a greatest-hits compilation compiled from training data that doesn't know your pace, your interests, whether you're travelling with kids, or that the sakura finished blooming two weeks ago so the timing everyone told you to plan around isn't actually relevant this trip.</p>
 <div class="callout callout-blue">
@@ -300,14 +301,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The real failure shows up in the logistics. An itinerary that puts the Uffizi Gallery and the Accademia on the same morning in Florence sounds efficient. In practice, both require advance booking, both are 45-minute waits even with bookings, and the walk between them is through the city's most congested tourist corridor. A plan that looks reasonable on paper produces a terrible first day.</p>
-<h2>What Live Research <em>Actually Changes</em></h2>
+<h2 id="what-live-research-actually-changes">What Live Research <em>Actually Changes</em></h2>
 <p>The Travel Itinerary Planner skill runs live research before it writes. That means it's working from current information about your destination — not from what was true about it when the model was trained.</p>
 <p>For travel planning, that distinction matters more than in almost any other domain. Restaurants open and close. Seasonal conditions shift the entire character of a place. New exhibitions open. Popular sites become overcrowded to the point of being pointless. The "hidden gem" everyone was writing about in 2023 now has a two-hour queue and a merchandise stand outside.</p>
 <div class="pull-quote">
 <p>A plan that knows your destination is in its rainy season, that the top museum requires tickets booked three days out, and that your hotel neighbourhood is <em>genuinely walkable</em> to the places you care about — that's a different product than a list of famous things near a city name.</p>
 </div>
 <p>What that live context unlocks is an itinerary that's actually paced for a real trip: the right number of things per day for the pace you've specified, in a sequence that makes geographic sense, with the logistics flagged before they become problems on the ground.</p>
-<h2>How the Travel Itinerary Planner Skill <em>Works</em></h2>
+<h2 id="how-the-travel-itinerary-planner-skill-works">How the Travel Itinerary Planner Skill <em>Works</em></h2>
 <p>The skill opens with three calibrating questions before it touches your itinerary. Your answers are what determine whether it builds a plan for two slow-paced retirees exploring a city's food scene or a family with two young kids who need afternoon nap windows baked in. Same destination, fundamentally different outputs.</p>
 <div class="step-list">
 <div class="step-item">
@@ -350,7 +351,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$5 · instant download</span>
 </div>
 </div>
-<h2>What a Generic Plan Looks Like vs. <em>What This Produces</em></h2>
+<h2 id="what-a-generic-plan-looks-like-vs-what-this-produces">What a Generic Plan Looks Like vs. <em>What This Produces</em></h2>
 <p>The difference isn't subtle. Here's the same request — four days in Kyoto in November — run through vanilla Claude and through the Travel Itinerary Planner skill.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -364,7 +365,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The generic plan is recognisably Kyoto. The NovaKit output is recognisably <em>November</em> in Kyoto — the foliage timing shapes the sequencing, the advance booking requirement surfaces before it becomes a problem, and the geographic logic removes a transit mistake that would have cost 90 minutes on day one.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most From <em>This Skill</em></h2>
+<h2 id="who-gets-the-most-from-this-skill">Who Gets the Most From <em>This Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -374,7 +375,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>This skill is especially useful for trips where getting the logistics wrong has real consequences: a honeymoon where you don't want to be improvising on the day, a multi-city European trip where sequencing one city in the wrong order means unnecessary backtracking, or a bucket-list destination you're unlikely to revisit and want to get right the first time.</p>
 <p>It's less useful if you're the type who prefers to arrive without a plan and see what happens. That's a legitimate travel style — this skill isn't built for it. It's built for people who want the structure of a well-researched plan and the confidence to deviate from it when something better presents itself.</p>
-<h2>What You Actually <em>Walk Away With</em></h2>
+<h2 id="what-you-actually-walk-away-with">What You Actually <em>Walk Away With</em></h2>
 <p>The output is a complete day-by-day itinerary with morning, afternoon, and evening blocks — each with a time allocation, a geographic rationale, and the logistics flagged where they matter. Advance booking requirements are noted in the plan, not discovered on arrival. The pace is calibrated to what you told the skill about how you travel, not to what's theoretically possible if you sprint between attractions for eight hours.</p>
 <p>You get one plan, not three variations to choose from. The skill produces its best recommendation given your specific inputs. You can adjust it — the structure makes it easy to swap out a day or shift the sequencing — but the starting point is a considered plan, not a menu.</p>
 <p>Most people who use it stop re-prompting the same destination three times trying to get something usable. The calibration questions at the start do the work that would otherwise take four rounds of corrections.</p>

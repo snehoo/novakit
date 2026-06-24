@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -259,11 +260,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Pitch Deck Narrative is a Claude AI skill — stage-calibrated investor narrative built for your funding round, inside Claude.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-generic-ai-gets-wrong-about-pitch-narratives" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic AI Gets Wrong About Pitch Narratives</a></li><li><a href="#why-stage-calibration-changes-the-entire-argument" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Stage Calibration Changes the Entire Argument</a></li><li><a href="#what-the-pitch-deck-narrative-skill-actually-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Pitch Deck Narrative Skill Actually Produces</a></li><li><a href="#the-deck-that-gets-skimmed-vs-the-deck-that-gets-read" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Deck That Gets Skimmed vs The Deck That Gets Read</a></li><li><a href="#who-gets-the-most-from-the-pitch-deck-narrative-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from the Pitch Deck Narrative Skill</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>The deck looked sharp. The design was clean. The founder had spent three weeks on it, and by the time it landed in an investor's inbox it contained everything — the problem, the solution, the market size, the team, the roadmap, the competitive moat. Every slide answered a question. And the investor passed after two minutes.</p>
 <p>The deck wasn't missing information. It had too much of it, in the wrong order, framed around what the founder found most compelling rather than the specific question a seed-stage investor is actually trying to answer. That question isn't "is this a good product?" It's "is this the right team, in the right market, at the right moment — and is there a return here worth the risk?" A deck that doesn't answer that question in its first four slides has already lost the room, regardless of what comes after.</p>
 <p>The structural failure is almost always the same. Founders write pitch decks the way they'd explain their company — starting with what it is, moving to why it exists, then to how it works, then to why it's big. Investors read pitch decks looking for a specific signal sequence: market urgency, founder credibility, traction proof, return logic. When the order doesn't match the signal sequence, the investor does one of two things: they skim to find what they need, or they stop reading. Most stop reading.</p>
-<h2>What Generic AI <em>Gets Wrong</em> About Pitch Narratives</h2>
+<h2 id="what-generic-ai-gets-wrong-about-pitch-narratives">What Generic AI <em>Gets Wrong</em> About Pitch Narratives</h2>
 <p>Ask vanilla Claude to write a <a href="https://novakit.tech/skills/pitch-deck-narrative.html">pitch deck</a> narrative and it produces something that looks structurally correct — problem, solution, market, business model, team, ask. The slides are logically ordered. The language is clean. And every sentence is written from the inside out: here's our problem, here's our solution, here's why our solution is different. It's the founder's explanation of the company, transcribed into slides.</p>
 <p>This is the exact failure mode. The narrative is built around what the founder knows, not what the investor weights. A generic AI doesn't know whether you're raising a <a href="https://novakit.tech/skills/bundles/founder-bundle.html">pre-seed</a> round where the entire bet is on founder-market fit and vision, or a Series A where investors expect to see defensible unit economics and a repeatable acquisition channel. It doesn't know whether your traction slide should lead the deck or follow the market slide. It doesn't know that a $4M seed round pitched to a sector-specialist VC requires different framing than the same amount pitched to a generalist fund. So it produces a neutral template — and neutral templates don't move investors.</p>
 <div class="callout callout-blue">
@@ -274,14 +275,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The deeper failure is that investor expectations shift significantly between funding stages. The narrative structure that gets you through a pre-seed round — heavy on vision and founder story, light on metrics — actively undermines you at Series A, where investors expect the opposite weighting. Generic AI produces one version of a pitch deck. Investors read a different deck depending on the stage signal. When those two don't match, the deck reads as either premature or underprepared, regardless of what the business actually looks like.</p>
-<h2>Why <em>Stage Calibration</em> Changes the Entire Argument</h2>
+<h2 id="why-stage-calibration-changes-the-entire-argument">Why <em>Stage Calibration</em> Changes the Entire Argument</h2>
 <p>The Pitch Deck Narrative skill asks three questions before it writes a single slide: what stage you're raising at, what your primary traction signal is, and who the target investor type is — sector specialist, generalist, corporate VC, or angel. These three inputs don't just adjust the tone. They restructure the entire narrative logic of the deck.</p>
 <p>At pre-seed, the skill builds the narrative around founder-market fit and problem urgency — because that's the only bet a pre-seed investor can make. There's no defensible unit economics yet, no repeatable channel, often no product-market fit evidence beyond early signal. The deck's job is to make the investor believe that this founder, this market, and this moment form a combination that won't be available again. That requires a completely different opening sequence than a Series A deck, which needs to open with the traction evidence that proves the hypothesis, then build backward to explain why the numbers look the way they do.</p>
 <div class="pull-quote">
 <p>The deck that wins a pre-seed round would get you <em>passed on at Series A</em> — not because the company got worse, but because the investor's question changed.</p>
 </div>
 <p>This is what live context gives the skill that a static structure can't replicate. The skill doesn't apply a fixed template and fill in your company's details. It builds a narrative sequence calibrated to what your specific investor is weighting at your specific stage — so the opening slide answers their first question, the second slide answers their follow-up, and the ask arrives after the return logic is already established. That sequence is different for every combination of stage, investor type, and primary traction signal. The skill generates it fresh each time.</p>
-<h2>What the Pitch Deck Narrative Skill <em>Actually Produces</em></h2>
+<h2 id="what-the-pitch-deck-narrative-skill-actually-produces">What the Pitch Deck Narrative Skill <em>Actually Produces</em></h2>
 <p>The skill runs a structured intake before generating anything — four questions that replace the guesswork with context.</p>
 <div class="step-list">
 <div class="step-item">
@@ -324,7 +325,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $19 · instant download</span>
 </div>
 </div>
-<h2>The Deck That Gets Skimmed vs <em>The Deck That Gets Read</em></h2>
+<h2 id="the-deck-that-gets-skimmed-vs-the-deck-that-gets-read">The Deck That Gets Skimmed vs <em>The Deck That Gets Read</em></h2>
 <p>Both examples below are for the same company — a B2B SaaS tool for logistics ops teams — raising a seed round. The difference is entirely in narrative structure and what each opening sequence signals to a seed investor.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -348,7 +349,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The left version isn't wrong — every claim is reasonable and the structure is logical. But it opens by educating the investor on a problem they already understand, then explains the product, then mentions the market. The traction lives somewhere further back. A seed investor who sees twelve decks a week closes that tab on slide three. The right version opens with the traction signal — because that's what a seed investor is trying to find — then builds the context that explains why those numbers are credible and defensible. The first version answers "what is this?" The second answers "should I take a meeting?" Those are different conversations, and only one of them leads to a wire.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from the <em>Pitch Deck Narrative Skill</em></h2>
+<h2 id="who-gets-the-most-from-the-pitch-deck-narrative-skill">Who Gets the Most from the <em>Pitch Deck Narrative Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -358,7 +359,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>First-time founders get the most out of this skill because they don't yet have the pattern recognition that comes from sitting in enough investor meetings to understand how the other side of the table reads a deck. The skill doesn't just produce slides — it explains the logic behind the sequence, so the founder understands why the traction slide comes before the market slide in a seed deck, not just that it does. That understanding changes how they present live, not just how the document looks.</p>
 <p>Repeat founders use it differently. They typically have strong instincts about narrative but benefit from the stage-calibration when they're moving from one funding tier to another. A founder who raised a $1.5M pre-seed on vision has usually internalised a story structure that will actively hurt them at Series A. The skill surfaces that gap and rebuilds the narrative from the investor's perspective at the new stage, rather than just adding traction slides to the old story.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>A complete slide-by-slide narrative: opening hook, problem framing, solution positioning, traction evidence structure, market sizing logic, competitive moat articulation, business model clarity, team credibility framing, and ask with return logic — in the sequence calibrated to your stage and investor type. Each slide gets both the headline copy and the supporting narrative for the notes or verbal pitch. The output isn't a slide deck file — it's the story that goes inside whatever design tool you use, structured so that a designer can work from it directly without guessing at the intended meaning of each slide.</p>
 <p>The path from download to usable narrative takes one focused session. Run the skill in Claude, answer the four calibration questions with your actual numbers and context, and the output arrives as a structured document you can walk into a design session with. The editing stage is founder judgment — checking the claims against your real data, adjusting any framing that doesn't match your company's voice, adding the specific customer names or metrics the skill didn't have access to. That's a review, not a rebuild.</p>
 <p>Most founders expect to spend a week on a pitch deck and still feel uncertain about whether the narrative is right. The question the skill answers — is this structured the way an investor at this stage actually reads? — is the one founders can't easily answer themselves, because they're inside the company. Getting the structure right first means the time spent on design and refinement is working on something that already holds together argumentatively. That's the difference between a deck that's been polished and one that's been built.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/investor-update-email.html">investor updates that keep momentum between rounds</a>.</p>

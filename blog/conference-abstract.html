@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -275,11 +276,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Conference Abstract is a Claude AI skill — researches the conference's current thematic focus and field discourse, then frames your research as a contribution to the specific conversation the programme committee is curating.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-programme-committees-actually-evaluate" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Programme Committees Actually Evaluate</a></li><li><a href="#what-field-research-changes-about-an-abstract" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Field Research Changes About an Abstract</a></li><li><a href="#what-the-conference-abstract-skill-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Conference Abstract Skill Produces</a></li><li><a href="#summary-abstract-vs-contribution-abstract" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Summary Abstract vs Contribution Abstract</a></li><li><a href="#who-gets-the-most-from-this-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from This Skill</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>A programme committee reviewing abstract submissions isn't asking "is this research good?" That question is for the full paper review. The abstract review asks a narrower question: does this work contribute something to the conversation this conference is trying to have? An abstract that accurately describes excellent research but fails to connect it to that conversation doesn't get accepted — not because the research is wrong, but because the abstract didn't make the case for its relevance.</p>
 <p>This is the distinction most researchers miss when writing their first conference abstracts, and that many researchers keep missing long after. The abstract is not a summary of the paper. It's an argument for why the paper matters to this audience, at this conference, in this year's programme. Those are different documents, and writing one when you need the other is why solid research gets rejected at submission stage.</p>
 <p>Generic AI makes the problem worse in a specific way. It's very good at summarising. Ask it to write a <a href="https://novakit.tech/skills/conference-abstract.html">conference abstract</a> and it produces an accurate, well-structured summary of the research you describe to it. That summary will clear the quality bar on every dimension except the one that actually determines acceptance: it won't be positioned within the ongoing debates and live questions the conference is organised around, because generic AI doesn't know what those are.</p>
-<h2>What Programme Committees <em>Actually Evaluate</em></h2>
+<h2 id="what-programme-committees-actually-evaluate">What Programme Committees <em>Actually Evaluate</em></h2>
 <p>Conference acceptance decisions are made by researchers who have been immersed in their field's current debates for years. They read abstracts fast — 200 to 300 words in under two minutes — and they're pattern-matching against a mental model of what the field needs right now. An abstract that opens by positioning the work within a live theoretical debate, identifying a genuine gap in current approaches, or addressing a methodological limitation that the field has been wrestling with signals immediately that the author is in the conversation. An abstract that opens with a description of the research topic, however accurate, signals that the author may be doing good work in isolation from the conversation.</p>
 <p>The committee is building a programme, not a catalogue. They're selecting presentations that will speak to each other — that advance a shared inquiry rather than presenting parallel monologues. An abstract that demonstrates awareness of where the field currently stands, and argues that this research moves it somewhere it needs to go, is doing the committee's curation work for them. That's the abstract that gets accepted.</p>
 <div class="callout callout-blue">
@@ -290,14 +291,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The challenge for any researcher — and for any AI writing tool — is that making this argument requires knowing what the current conversation actually is. Which debates are live in this subfield right now. Which methodological questions are unresolved. Which theoretical frameworks are being challenged, extended, or replaced. That knowledge is dynamic, discipline-specific, and conference-specific. It's not in the paper. It has to come from somewhere else.</p>
-<h2>What <em>Field Research</em> Changes About an Abstract</h2>
+<h2 id="what-field-research-changes-about-an-abstract">What <em>Field Research</em> Changes About an Abstract</h2>
 <p>Before the NovaKit Conference Abstract skill writes a sentence, it researches the conference's current thematic focus and the field's live debates: recent publications in the relevant journals, the conference's own call for papers and recent programme themes, the methodological and theoretical tensions that are currently generating the most scholarly discussion, and how the work being submitted sits relative to that landscape.</p>
 <p>That research changes two things in the abstract that determine acceptance. The opening — which needs to establish the live gap or debate the work addresses, not just introduce the topic. And the significance statement — which needs to explain what the work contributes to the ongoing conversation, not just what it finds. Both require knowing what's currently happening in the field, which is what live research provides and training data from 18 months ago cannot.</p>
 <div class="pull-quote">
 <p>The accepted abstract doesn't summarise research. It <em>argues for a contribution</em> to a conversation the committee is already invested in — and that argument requires knowing what the conversation currently is.</p>
 </div>
 <p>The skill also calibrates to discipline convention. Abstract norms differ meaningfully between the sciences, social sciences, and humanities — in structure, in how findings are reported, in whether a clear conclusion is expected or whether the abstract is permitted to frame an open question. A conference abstract for an empirical psychology paper is structured differently from one for a literary studies paper, which is structured differently from one for an engineering conference. The skill applies the right conventions before writing, not after.</p>
-<h2>What the <em>Conference Abstract</em> Skill Produces</h2>
+<h2 id="what-the-conference-abstract-skill-produces">What the <em>Conference Abstract</em> Skill Produces</h2>
 <p>The skill's interview covers four inputs: the research being submitted, the target conference name and discipline, the researcher's career stage, and any specific angle or finding they want centred. From those:</p>
 <div class="step-list">
 <div class="step-item">
@@ -347,7 +348,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $7 · instant download</span>
 </div>
 </div>
-<h2>Summary Abstract vs <em>Contribution Abstract</em></h2>
+<h2 id="summary-abstract-vs-contribution-abstract">Summary Abstract vs <em>Contribution Abstract</em></h2>
 <p>Same research — a mixed-methods study on remote work's effect on junior employee mentorship in technology companies — submitted to an organisational behaviour conference. The difference between a summary abstract and a contribution abstract is visible from the first sentence.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -367,7 +368,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The summary abstract describes the research accurately and gives a programme committee nothing to evaluate beyond topic relevance. The contribution abstract opens by naming the structural tension current literature has missed, establishes the study's empirical basis, identifies the specific finding that challenges the dominant policy framing, and closes by explicitly connecting the contribution to the conference's programme theme. A reviewer reading it knows immediately what the paper argues, why it matters to the current debate, and why it belongs in this programme.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>This Skill</em></h2>
+<h2 id="who-gets-the-most-from-this-skill">Who Gets the Most from <em>This Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -376,7 +377,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The skill is also useful for researchers who know their field deeply but find the abstract format uncomfortable — the compression required to make a contribution argument in 200 to 300 words is a specific skill that doesn't transfer automatically from the ability to write the full paper. Having a well-structured starting point that's already positioned correctly makes the editing task faster and more focused than building from a blank page or a research summary that needs to be fundamentally reframed.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>Two complete abstract variants within the conference's word limit — contribution-forward and findings-forward — both positioned within the live field debate, calibrated to discipline convention and career stage, with the opening sentence doing the work of establishing the live gap rather than introducing the topic. Ready to submit, lightly personalise with field-specific terminology you know and the skill may have approximated, or use as a basis for discussion with your supervisor or collaborators.</p>
 <p>Most researchers use the skill when the submission deadline is close, the paper is written, and the abstract is the last thing — the task that feels like it should take an hour and somehow takes three, because recompressing a full argument into 250 words while repositioning it for a specific audience is harder than it looks. Four inputs and one run, and you have two solid starting points instead of a blank document and a timer.</p>
 <p>Research that doesn't get presented doesn't enter the conversation. The abstract is the application for the right to be heard — and writing it as a summary rather than a contribution argument is why good work sometimes doesn't make it into the room.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/linkedin-post-engine.html">LinkedIn posts that earn reach without paid promotion</a>. If you're working across the full Student workflow, the <a href="https://novakit.tech/skills/bundles/student-bundle.html">Student bundle</a> covers everything in one place.</p>

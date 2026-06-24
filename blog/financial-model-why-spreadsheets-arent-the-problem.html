@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -269,11 +270,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Financial Model is a Claude AI skill — stage-calibrated projections built around the assumptions your investor type actually interrogates.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#the-assumption-layer-is-the-whole-model" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Assumption Layer Is the Whole Model</a></li><li><a href="#what-different-investor-types-actually-ask" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Different Investor Types Actually Ask</a></li><li><a href="#how-the-financial-model-skill-fixes-the-assumption-layer" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How the Financial Model Skill Fixes the Assumption Layer</a></li><li><a href="#the-same-model-wrong-audience-vs-right-audience" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Same Model, Wrong Audience vs Right Audience</a></li><li><a href="#who-gets-the-most-from-the-financial-model-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from the Financial Model Skill</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>There's a pattern that shows up consistently in early-stage fundraising. A founder sends a <a href="https://novakit.tech/skills/financial-model-prompt.html">financial model</a>. An investor opens it, skips to the assumptions tab, and asks one question: "How did you get to a 4% monthly growth rate?" The founder says something reasonable. The investor asks a follow-up: "And what's that assumption based on?" At this point, the model stops being a financial model and becomes a negotiation about whether the numbers were made up.</p>
 <p>The model looked right. Three-year projection, monthly detail, neat charts. The math was fine. What wasn't there was the reasoning behind the inputs — why <em>that</em> churn rate, why <em>that</em> CAC, why headcount scales at <em>that</em> ratio. When an investor can't see the logic, they supply their own. And their version is usually more conservative than yours.</p>
 <p>This is the specific failure mode of AI-generated financial models built without business model research. The output is formatted correctly and reasoned generically. It answers the question "what does a financial model look like?" rather than "what does this business's financial model look like?" The NovaKit Financial Model skill treats those as completely different questions — because they are.</p>
-<h2>The <em>Assumption Layer</em> Is the Whole Model</h2>
+<h2 id="the-assumption-layer-is-the-whole-model">The <em>Assumption Layer</em> Is the Whole Model</h2>
 <p>Investors don't invest in your revenue projections. They invest in your assumptions — because the projections are just the assumptions multiplied through time. If they believe your CAC will stay at $400 as you scale, the model works. If they think it'll double once you exhaust your warm network, it doesn't. The numbers on the page are downstream of that conversation.</p>
 <p>Which assumptions get challenged depends entirely on the investor type and the business model. A marketplace investor will stress-test your liquidity assumptions and your take rate trajectory. A SaaS investor will immediately go to net revenue retention and CAC payback. A generalist angel will probe growth rate and burn pace. None of those are the same interrogation, and a model that doesn't know which one it's going to face has to hope for the best.</p>
 <div class="callout callout-blue">
@@ -284,7 +285,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>This is where the format-first approach to financial modelling falls apart. Spending four hours on Excel formatting is preparation for the wrong test. The test is: can you defend each assumption with a number, a benchmark, or a logical mechanism? If not, the model is a visual aid, not an argument.</p>
-<h2>What Different Investor Types <em>Actually Ask</em></h2>
+<h2 id="what-different-investor-types-actually-ask">What Different Investor Types <em>Actually Ask</em></h2>
 <p>The questions change by stage and investor type. Here's what the assumption layer needs to answer for each:</p>
 <table class="compare-table">
 <thead>
@@ -326,7 +327,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <div class="pull-quote">
 <p>The investor isn't evaluating your model. They're evaluating <em>your judgment</em> — and the model is the evidence.</p>
 </div>
-<h2>How the Financial Model Skill <em>Fixes the Assumption Layer</em></h2>
+<h2 id="how-the-financial-model-skill-fixes-the-assumption-layer">How the Financial Model Skill <em>Fixes the Assumption Layer</em></h2>
 <p>Before the NovaKit Financial Model skill generates a single projection, it asks three questions: what stage are you at, what's your business model, and who is the model for. Those answers change what gets built — not cosmetically, but structurally. A pre-seed founder building for an angel gets a different model than a Series A founder building for a fund, even if the business is the same.</p>
 <p>The skill then researches current benchmarks for your business type and stage. What's a defensible CAC payback for B2B SaaS at Series A right now? What gross margin range is expected for a marketplace at this GMV level? What NRR benchmarks are funds using to filter? That research runs before the model is built, so the assumption ranges in the output are grounded in what your specific reader considers normal rather than in what a generic template assumes.</p>
 <p>The result is a model where the assumption table is the first thing in the document, not an afterthought. Each assumption is named, benchmarked, and supported by a one-line rationale. When the investor asks "how did you get to that churn number?", the answer is already in the model — because the skill built the model around the question rather than hoping the question wouldn't come up.</p>
@@ -341,7 +342,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $19 · instant download</span>
 </div>
 </div>
-<h2>The Same Model, <em>Wrong Audience vs Right Audience</em></h2>
+<h2 id="the-same-model-wrong-audience-vs-right-audience">The Same Model, <em>Wrong Audience vs Right Audience</em></h2>
 <p>Here's the same B2B SaaS business, modelled for a generic investor versus for a Series A fund specifically:</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -369,7 +370,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>Both models cover the same business over the same period. The second one speaks the language of the reader — ARR bridge, NRR, LTV:CAC, Rule of 40, benchmarked against what that specific investor type actually uses as a filter. The first one forces the investor to translate your numbers into their framework. The second one does the translation for them. That gap is the difference between a model that moves the conversation forward and one that generates three weeks of back-and-forth.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from the <em>Financial Model Skill</em></h2>
+<h2 id="who-gets-the-most-from-the-financial-model-skill">Who Gets the Most from the <em>Financial Model Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -378,7 +379,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The founders who get the most from this skill are the ones who already know their model is technically correct but suspect the assumptions are the weak point. That suspicion is usually right. The skill doesn't fix math — it fixes the layer underneath the math, where the real interrogation happens.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>The skill produces a three-year model with monthly granularity in year one and quarterly thereafter, a named assumptions table with benchmarks for every key variable, a scenario analysis covering base, upside, and downside cases with the primary driver of each, and a one-page summary formatted for the reader you specified. The assumption table is designed to be the first thing an investor reads — not an appendix they have to hunt for.</p>
 <p>Most founders fix their financial models after the first investor meeting, when the questions reveal which assumptions weren't defensible. The skill builds the model as if those questions have already been asked. That's not a small difference in output — it's the difference between a document that starts a conversation and one that survives it.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/nda-contract-draft.html">an NDA drafted around your specific terms</a>. If you're working across the full Legal &amp; Biz workflow, the <a href="https://novakit.tech/skills/bundles/legal-biz-bundle.html">Legal &amp; Biz bundle</a> covers everything in one place.</p>
 <div class="soft-cta">

@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -296,11 +297,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Architecture Diagram Prompt is a Claude AI skill — produces calibrated system architecture docs for the specific reader, stack, and purpose you define.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-generic-ai-actually-produces-for-architecture-diagrams" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic AI Actually Produces for Architecture Diagrams</a></li><li><a href="#why-audience-calibration-changes-the-diagram" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Audience Calibration Changes the Diagram</a></li><li><a href="#what-the-architecture-diagram-prompt-skill-actually-does" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Architecture Diagram Prompt Skill Actually Does</a></li><li><a href="#the-same-system-two-different-outputs" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Same System — Two Different Outputs</a></li><li><a href="#who-gets-the-most-from-the-architecture-diagram-prompt" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from the Architecture Diagram Prompt</a></li><li><a href="#the-output-you-actually-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Actually Walk Away With</a></li></ol></div>
 <p>You've described your system to Claude. You've asked for an <a href="https://novakit.tech/skills/architecture-diagram-prompt.html">architecture diagram</a>. Claude has given you something that covers every layer — frontend, backend, database, cache, CDN, queues, third-party integrations. It's all there. It's also completely impossible to share with a Series A investor, a new backend hire, or a non-technical stakeholder without spending 20 minutes editing it down to something usable.</p>
 <p>The problem isn't that Claude doesn't understand your system. The problem is that Claude drew a diagram for an imaginary universal reader who doesn't exist. Every component got equal weight. Every connection got an arrow. The result is accurate in the same way that a dictionary definition of "love" is accurate — technically correct, practically useless for the conversation you're actually trying to have.</p>
 <p>Architecture diagrams only work when they're tuned to a specific reader's level of context and a specific conversation's goal. The same system described to an infrastructure engineer and to a seed-stage investor should produce fundamentally different diagrams — and that calibration is exactly what generic Claude can't do on its own.</p>
-<h2>What Generic AI <em>Actually Produces</em> for Architecture Diagrams</h2>
+<h2 id="what-generic-ai-actually-produces-for-architecture-diagrams">What Generic AI <em>Actually Produces</em> for Architecture Diagrams</h2>
 <p>Ask vanilla Claude to diagram a SaaS application and you'll get a complete picture. Every service, every integration, every data flow. The layout will be clean. The component labels will be accurate. You'll look at it and think: this is right, but it doesn't work for what I need it for.</p>
 <p>The failure mode is subtler than outright errors. It's that generic AI architecture output treats diagramming as a documentation task when it's actually a communication task. Documentation wants completeness. Communication wants relevance. A deck for investors doesn't need to show your Redis caching layer. An onboarding doc for a new engineer does. A security review needs to show data flow across trust boundaries. A product roadmap discussion needs to show where new features plug in, not how the existing plumbing works.</p>
 <div class="callout callout-blue">
@@ -311,14 +312,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The result is diagrams that get opened, assessed as "too detailed" or "not detailed enough," and then either cut down manually or abandoned in favour of something drawn by hand in ten minutes. You spent time generating something that still required the same editorial judgment you were hoping to skip.</p>
-<h2>Why <em>Audience Calibration</em> Changes the Diagram</h2>
+<h2 id="why-audience-calibration-changes-the-diagram">Why <em>Audience Calibration</em> Changes the Diagram</h2>
 <p>The Architecture Diagram Prompt skill researches current diagramming conventions before it generates anything. That means it understands what a C4 model diagram looks like versus a deployment diagram versus a sequence diagram — and, critically, which format matches the purpose you've described. An investor deck has different visual conventions than an RFC doc. A technical handoff to an engineering team reads differently than an API overview for an integration partner. These aren't just tone differences; they're structural differences in what gets included and what gets hidden.</p>
 <p>A generic approach to architecture diagramming treats your system description as the only input it needs. The skill treats your system description as one input among several — the others being who's reading, what decision or understanding you want them to reach, what technical depth is appropriate, and what format will actually travel in the context you're working in.</p>
 <div class="pull-quote">
 <p>The diagram that gets used is the one <em>built for a specific reader</em> — not the one that documents everything correctly.</p>
 </div>
 <p>That research changes what the skill generates in concrete ways: the level of abstraction shifts, the component labels shift to match the reader's vocabulary, the layout prioritises the components most relevant to the conversation, and supporting context — a brief legend, a one-paragraph system summary, notes on key design decisions — gets included where it serves understanding and omitted where it's noise.</p>
-<h2>What the Architecture Diagram Prompt Skill <em>Actually Does</em></h2>
+<h2 id="what-the-architecture-diagram-prompt-skill-actually-does">What the Architecture Diagram Prompt Skill <em>Actually Does</em></h2>
 <p>The skill runs a three-question calibration before producing anything. Those questions determine the entire shape of the output — not just the aesthetics, but the architecture of the diagram itself.</p>
 <div class="step-list">
 <div class="step-item">
@@ -361,7 +362,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $15 · instant download</span>
 </div>
 </div>
-<h2>The Same System — <em>Two Different Outputs</em></h2>
+<h2 id="the-same-system-two-different-outputs">The Same System — <em>Two Different Outputs</em></h2>
 <p>Here's what the calibration difference looks like in practice. Same system description, different audience declarations.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -386,7 +387,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The difference isn't that the NovaKit output is more accurate — it's that it knows what to surface and what to hide. The investor version strips infra detail and leads with the architectural decisions that signal engineering maturity: stateless design, domain-driven service boundaries, independent scaling. A new backend hire would get a different diagram from the same skill run — one that shows the actual services, their APIs, and how data moves between them.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from the <em>Architecture Diagram Prompt</em></h2>
+<h2 id="who-gets-the-most-from-the-architecture-diagram-prompt">Who Gets the Most from the <em>Architecture Diagram Prompt</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -396,7 +397,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill is most valuable for anyone who has to translate the same system into multiple contexts. A founder might need the same SaaS architecture presented to investors (strategic, high-level), to a new technical co-founder (detailed, component-level), to an integration partner (API surface only), and to a compliance reviewer (data flow and trust boundaries). Without calibration, that's four separate diagramming sessions. With the skill, it's four runs of the same skill file, each producing output shaped for a different reader.</p>
 <p>It's also useful for technical writers and DevRel professionals producing public-facing API documentation, where the architecture narrative needs to match the assumed knowledge level of the developer audience — not the internal team's mental model of the system.</p>
-<h2>The Output You <em>Actually Walk Away With</em></h2>
+<h2 id="the-output-you-actually-walk-away-with">The Output You <em>Actually Walk Away With</em></h2>
 <p>Each run of the Architecture Diagram Prompt skill produces a Mermaid diagram block (ready to paste into Notion, GitHub READMEs, Confluence, or any Markdown-based doc tool), a plain-text structured description as an alternative, a one-paragraph system summary calibrated to the declared audience, and — for technical audiences — a bulleted section of key design decisions and their rationale. The whole package is ready to drop into a document without editing the vocabulary or restructuring for your reader.</p>
 <p>You paste the skill file into Claude, answer three questions about your system and who's reading, and get a complete diagramming package back in a single response. No redrawing, no translating technical accuracy into readable narrative, no stripping back a 14-component diagram to the 5 components your investor actually needs to see.</p>
 <p>Architecture diagrams are one of the few technical documents that get judged as much on what they leave out as on what they include. The instinct to show everything — to prove you've thought of everything — is exactly what makes most AI-generated diagrams fail their audience. The skill's value isn't that it draws a better diagram. It's that it draws the right diagram, for the right person, the first time.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/prd-writer.html">a PRD that engineering can build from without a meeting</a>.</p>

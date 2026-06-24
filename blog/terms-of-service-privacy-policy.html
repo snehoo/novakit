@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -289,14 +290,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Terms of Service &amp; Privacy Policy is a Claude AI skill — drafts both documents from your product type, data handling, user relationship, and jurisdiction. Starting point for review, not a substitute for legal counsel on complex products.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-you-actually-inherit-when-you-copy-a-tos" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What You Actually Inherit When You Copy a ToS</a></li><li><a href="#what-drafting-from-your-product-actually-changes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Drafting from Your Product Actually Changes</a></li><li><a href="#what-the-tos-amp-privacy-policy-skill-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the ToS &amp; Privacy Policy Skill Produces</a></li><li><a href="#copied-tos-vs-calibrated-draft-privacy-policy-data-section" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Copied ToS vs Calibrated Draft — Privacy Policy Data Section</a></li><li><a href="#who-gets-the-most-from-this-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from This Skill</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <div class="disclaimer">
 <strong>Note:</strong> The <a href="https://novakit.tech/skills/tos-privacy-policy.html">Terms of Service</a> &amp; Privacy Policy skill produces a structured draft starting point calibrated to your product and jurisdiction. It is not legal advice. Products handling sensitive data categories, operating under regulated industries, or serving users in multiple jurisdictions should have their documents reviewed by a qualified solicitor or attorney before publishing.
   </div>
 <p>A SaaS founder launches their product. They need a ToS and a Privacy Policy before they can go live. They find a well-designed competitor in their space, inspect the source, copy the <a href="https://novakit.tech/skills/bundles/legal-biz-bundle.html">legal documents</a>, swap the company name, update the product name in a few places, and ship. It takes 25 minutes. The documents look professional. The product launches.</p>
 <p>Eighteen months later, a user complaint surfaces about how their data was used during a product trial. The founder pulls up the Privacy Policy to check what it says. It describes a data retention model the product doesn't actually use. It references a third-party analytics tool the competitor uses but this product doesn't. It's missing the disclosure about the AI processing pipeline that this product runs every user submission through — because the competitor's product doesn't have one.</p>
 <p>The documents weren't fraudulent. They were accurate for a different product. The founder had been publishing legal commitments about a product that didn't exist, in a company that wasn't theirs.</p>
-<h2>What You Actually Inherit When You <em>Copy a ToS</em></h2>
+<h2 id="what-you-actually-inherit-when-you-copy-a-tos">What You Actually Inherit When You <em>Copy a ToS</em></h2>
 <p>A Terms of Service and Privacy Policy are descriptions of your product's relationship with users. They specify what you can do with user data, what liability you accept and disclaim, what happens when things go wrong, and what recourse users have. Copied from another product, they describe that product's relationship with its users — which may resemble yours in some ways and differ from it in others that matter considerably.</p>
 <p>The differences that matter most aren't visible without knowing both products in detail. A B2B SaaS that processes client data on behalf of enterprise customers operates as a data processor under GDPR — which requires specific contractual language about processing, sub-processors, and data subject rights that a B2C consumer app has no reason to include. An AI-powered product that runs user inputs through a large language model has data handling obligations around training data use, automated decision-making, and output ownership that a static software product doesn't face. A subscription product with auto-renewal has specific disclosure requirements in several US states and the EU that a one-time purchase product can ignore.</p>
 <div class="callout callout-blue">
@@ -307,14 +308,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The Privacy Policy problem is often more acute than the ToS problem, because privacy regulations — GDPR, UK GDPR, CCPA, Australia's Privacy Act — specify what disclosures must appear, what they must say, and what they must be accurate about. A Privacy Policy that describes a data flow you don't have, or omits one you do, isn't a minor oversight. In jurisdictions where data protection authorities have enforcement powers, it's a compliance gap with real consequences.</p>
-<h2>What <em>Drafting from Your Product</em> Actually Changes</h2>
+<h2 id="what-drafting-from-your-product-actually-changes">What <em>Drafting from Your Product</em> Actually Changes</h2>
 <p>Before the NovaKit Terms of Service &amp; Privacy Policy skill writes a single clause, it maps your product's actual parameters: what type of product it is and how users interact with it, what data is collected and how it's processed, whether you're operating as a controller or processor under applicable privacy law, which jurisdictions your users are in, and whether the product includes subscription billing, user-generated content, AI processing, or other feature categories that carry specific disclosure requirements.</p>
 <p>Those inputs produce documents that describe your product rather than a hypothetical average product. The data collected section of the Privacy Policy lists what you actually collect. The third-party services section names the processors you actually use. The liability disclaimers in the ToS reflect the actual risk profile of your product type. The subscription and billing terms, if present, match your billing model.</p>
 <div class="pull-quote">
 <p>A ToS that describes your product is protection. A ToS that describes <em>someone else's</em> product is paperwork that creates its own compliance exposure.</p>
 </div>
 <p>The skill also surfaces jurisdiction-specific requirements as flagged review notes — GDPR controller vs. processor classification, CCPA opt-out requirements, UK ICO registration obligations — so you know exactly where the documents need verification rather than discovering it through a complaint or regulatory query.</p>
-<h2>What the <em>ToS &amp; Privacy Policy Skill</em> Produces</h2>
+<h2 id="what-the-tos-amp-privacy-policy-skill-produces">What the <em>ToS &amp; Privacy Policy Skill</em> Produces</h2>
 <p>The skill's interview covers six inputs: product type, data collected and how it's processed, user relationship (B2C consumer, B2B business, marketplace, or platform), billing model if any, AI or automated processing if present, and primary jurisdiction of the operator and users. From those:</p>
 <div class="step-list">
 <div class="step-item">
@@ -357,7 +358,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $15 · instant download</span>
 </div>
 </div>
-<h2>Copied ToS vs <em>Calibrated Draft</em> — Privacy Policy Data Section</h2>
+<h2 id="copied-tos-vs-calibrated-draft-privacy-policy-data-section">Copied ToS vs <em>Calibrated Draft</em> — Privacy Policy Data Section</h2>
 <p>Same product type — a B2B SaaS that processes client documents through an AI pipeline — with a copied Privacy Policy versus one produced by the skill. The difference is most visible in the data collection and processing section, where a copied document describes whatever the source product does.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -382,7 +383,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The copied version covers account data and analytics in language suitable for a consumer app. The calibrated draft describes what this product actually does — document ingestion, AI processing, output generation, and the controller/processor distinction that determines GDPR obligations — and flags the downstream requirement (a customer-facing DPA) that the Privacy Policy alone can't address. One is accurate for a different product. The other is accurate for this one.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>This Skill</em></h2>
+<h2 id="who-gets-the-most-from-this-skill">Who Gets the Most from <em>This Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -391,7 +392,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The skill produces a starting point, not a finished document. For products operating in regulated industries (fintech, healthtech, edtech serving minors), handling sensitive data categories, or serving enterprise customers who will scrutinise the documents as part of their vendor assessment, professional legal review of the output is the right next step. The skill's value there is arriving at that review with a well-structured, product-accurate draft rather than a blank page or a document that describes a different company's product entirely.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>Both documents in one run: a complete Terms of Service and a complete Privacy Policy, each calibrated to your six inputs, with an AI processing addendum where applicable, inline jurisdiction flags on the provisions that carry regulatory requirements, and review annotations on the clauses most likely to need attention for your specific product type. Formatted and ready to paste directly into your website CMS, legal page, or a document for lawyer review.</p>
 <p>The path from download to result is straightforward: run the skill with your product's actual parameters, review the flagged annotations, update the bracketed placeholders (retention periods, contact details, specific processor names), and publish. If a lawyer is in the loop, hand them the flagged sections rather than asking them to review everything from scratch.</p>
 <p>Legal documents that accurately describe your product aren't just a compliance requirement. They're the version of your company's commitments you can actually stand behind when a user or a regulator reads them carefully. The copied ToS gets you through launch. The calibrated draft gets you through everything that comes after.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/grant-and-proposal-writing.html">a grant proposal structured around what reviewers score</a>.</p>

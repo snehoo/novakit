@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -278,11 +279,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Social Media Carousel Prompt is a Claude AI skill — diagnoses format issues before writing, building platform-calibrated slide architecture inside Claude.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#the-four-patterns-killing-your-carousel-before-slide-three" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Four Patterns Killing Your Carousel Before Slide Three</a></li><li><a href="#what-platform-aware-structure-changes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Platform-Aware Structure Changes</a></li></ol></div>
 <p>Here's the frustrating part: most carousel posts that underperform aren't badly written. The ideas are coherent. The copy is clear. Someone spent real time on it. And it still gets ignored — 80 impressions, no saves, three people who opened it and swiped to slide two before dropping off. Meanwhile, an account with a fifth of your following posts something that structurally looks similar and it runs to 400 saves and a few hundred new followers over the next week.</p>
 <p>The gap is almost never about the quality of the writing. It's about slide architecture — specifically, whether the deck is built on a format that matches how people navigate carousel content on that platform right now. Carousel format patterns shift. What earned saves on LinkedIn 18 months ago reads as stale today. What works on Instagram educational content is structurally different from what works on a thought-leadership carousel targeting the same demographic. And what vanilla AI generates when you ask for a carousel is built from training data that doesn't reflect any of that.</p>
 <p>This is a diagnostic post. Each section below names one structural failure pattern, shows you what it looks like in practice, and explains what actually fixes it.</p>
-<h2>The Four Patterns <em>Killing Your Carousel</em> Before Slide Three</h2>
+<h2 id="the-four-patterns-killing-your-carousel-before-slide-three">The Four Patterns <em>Killing Your Carousel</em> Before Slide Three</h2>
 <h3>Pattern 1: The Overused Hook Format</h3>
 <p>Hook formats have a lifespan. A carousel that opens with "X things I wish I knew about Y" worked at scale on LinkedIn until it got replicated so widely that the format itself became the signal to scroll. The same happened with the "hot take + numbered list" structure on Instagram educational content. When enough accounts use the same hook architecture, the format stops reading as content and starts reading as template — and the algorithm treats it accordingly, because dwell time drops immediately.</p>
 <div class="callout callout-blue">
@@ -389,7 +390,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $8 · instant download</span>
 </div>
 </div>
-<h2>What <em>Platform-Aware Structure</em> Changes</h2>
+<h2 id="what-platform-aware-structure-changes">What <em>Platform-Aware Structure</em> Changes</h2>
 <p>The four patterns above share a root cause: they're all the result of building a carousel deck without current platform intelligence. A generic AI approach to carousel writing applies the same slide structure regardless of platform, audience, or what's currently performing in the feed. It can't do otherwise — the training data doesn't contain this week's format norms.</p>
 <p>The NovaKit <a href="../skills/social-media-carousel-prompt.html">Social Media Carousel Prompt skill</a> addresses this at the structural level by researching current format patterns on your specified platform before building the slide architecture. The hook format, information density, structural arc, and final-slide mechanic are all calibrated to what's working right now — not to a template derived from content that was performing 18 months ago.</p>
 <p>The three-question calibration (platform, niche, core idea) means the output is also built for your specific content category, not just your platform. A B2B software LinkedIn carousel and a personal brand thought-leadership LinkedIn carousel call for different structural logic. The skill distinguishes between them because it asks before it builds.</p>

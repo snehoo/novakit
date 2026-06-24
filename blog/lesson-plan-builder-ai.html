@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -256,11 +257,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Lesson Plan Builder is a Claude AI skill — objective-driven lesson plans calibrated to your year group, subject, and current pedagogical approaches.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-generic-ai-gets-wrong-about-lesson-planning" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic AI Gets Wrong About Lesson Planning</a></li><li><a href="#what-calibrated-planning-changes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Calibrated Planning Changes</a></li><li><a href="#how-the-lesson-plan-builder-skill-works" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How the Lesson Plan Builder Skill Works</a></li><li><a href="#generic-plan-vs-calibrated-plan" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic Plan vs Calibrated Plan</a></li><li><a href="#who-gets-the-most-from-this-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from This Skill</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>Every teacher who has tried using AI for lesson planning has had the same moment. The plan comes back looking exactly like a <a href="https://novakit.tech/skills/lesson-plan-builder.html">lesson plan</a> should look. Learning objective: check. Starter activity: check. Main activity: check. Plenary: check. It even uses the right vocabulary — "differentiation," "success criteria," "formative assessment." You read it through and something is wrong, but it takes a second to name what.</p>
 <p>What's wrong is that it could have been written for any class, any teacher, any school. The Year 8 science lesson on covalent bonding reads like it was assembled by someone who knows what Year 8 science lessons look like but has never taught one. The activities are plausible. The timing is reasonable. The objective is correctly formatted. And not one part of it reflects anything specific about the concept you're teaching, the prior knowledge your class has, the misconceptions they reliably arrive with, or the approach that actually works for this age group and this topic.</p>
 <p>That's not a lesson plan. That's a lesson plan template with content inserted. The difference matters the moment you're standing in front of thirty students and the activity doesn't land because it assumed the wrong starting point.</p>
-<h2>What Generic AI <em>Gets Wrong About Lesson Planning</em></h2>
+<h2 id="what-generic-ai-gets-wrong-about-lesson-planning">What Generic AI <em>Gets Wrong About Lesson Planning</em></h2>
 <p>The failure isn't structural — generic AI knows what sections a lesson plan needs. The failure is pedagogical. A lesson plan exists to get a specific group of learners from where they are to where the learning objective says they should be, by the end of a specific amount of time. Every element of the plan — the hook, the activities, the differentiation, the assessment — should be in service of that movement. Generic AI produces plans where the elements are present but not coordinated toward a specific destination.</p>
 <p>Take differentiation. A generic AI lesson plan will include a differentiation section. It will say something like "provide additional support for lower-ability students through visual aids; challenge higher-ability students with extension tasks." That sentence is simultaneously correct and useless. It describes a category of action without specifying any action. What visual aids? Which extension tasks? At what point in the lesson? Triggered by what student response? A teacher reading that note has to generate all of the actual content themselves — which means the AI saved them nothing on the hardest part and only wrote the easy parts for them.</p>
 <div class="callout callout-blue">
@@ -271,14 +272,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The same failure appears in starter activities. Generic AI produces starters that are generically appropriate — a retrieval quiz, a think-pair-share, a stimulus image. What it can't produce without context is a starter designed specifically to activate the prior knowledge this lesson depends on, or to surface the exact misconception that most students in this age group carry into this topic. Those are the starters that make the rest of the lesson work. They're also the ones that require knowing something about the subject, the concept, and the learner.</p>
-<h2>What <em>Calibrated Planning</em> Changes</h2>
+<h2 id="what-calibrated-planning-changes">What <em>Calibrated Planning</em> Changes</h2>
 <p>The Lesson Plan Builder skill runs a three-question interview before producing anything. Year group and subject, the specific learning objective for this lesson, and the prior knowledge students are coming in with. Those three inputs change every structural decision that follows — not as aesthetic preferences, but as pedagogical requirements.</p>
 <p>Year group calibration isn't just about vocabulary level. The pedagogical approaches that work for Key Stage 2 students engaging with a new concept are structurally different from those that work for A-level students consolidating existing knowledge. The optimal balance of teacher-led instruction versus student-led activity shifts with age and subject. The formative assessment techniques that generate useful information about learning vary by developmental stage. A lesson plan that doesn't know the year group can't make these decisions correctly — it averages across all of them and produces something that fits none of them precisely.</p>
 <div class="pull-quote">
 <p>A starter that surfaces the right misconception <em>at the right moment</em> does more pedagogical work than three well-designed main activities that assume the misconception doesn't exist.</p>
 </div>
 <p>The learning objective input is where the biggest change happens. The skill doesn't just note the objective and move on — it uses it to design the lesson backward. The plenary is designed to assess specifically whether the objective was met. The main activity is designed to produce the learning the objective describes. The starter is designed to build the cognitive bridge between prior knowledge and the new concept. Every element points at the same destination because the skill knows what that destination is before it plans the route.</p>
-<h2>How the <em>Lesson Plan Builder</em> Skill Works</h2>
+<h2 id="how-the-lesson-plan-builder-skill-works">How the <em>Lesson Plan Builder</em> Skill Works</h2>
 <p>Three questions, then a research pass for current approaches to this concept at this level, then a complete lesson plan — with differentiation that actually specifies the activities, not just the category.</p>
 <div class="step-list">
 <div class="step-item">
@@ -321,7 +322,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$8 · instant download</span>
 </div>
 </div>
-<h2>Generic Plan vs <em>Calibrated Plan</em></h2>
+<h2 id="generic-plan-vs-calibrated-plan">Generic Plan vs <em>Calibrated Plan</em></h2>
 <p>Same topic, same year group. One produced by vanilla AI, one by the skill. The difference is whether a teacher can pick it up and teach from it without rewriting half of it first.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -349,7 +350,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The left plan lists activities in the right order. The right plan has a starter that's specifically designed to surface a named misconception before the lesson proceeds — because that misconception will silently undermine everything that follows if it isn't addressed first. The differentiation on the right isn't a category ("visual aids"); it's three specific, tiered activity cards with defined tasks at each level. The plenary on the right directly assesses the objective — not "did students participate" but "can students do the specific thing this lesson was supposed to teach." A teacher can pick the right plan up and teach from it. The left one needs another forty minutes of work before it's ready for a classroom.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>This Skill</em></h2>
+<h2 id="who-gets-the-most-from-this-skill">Who Gets the Most from <em>This Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -359,7 +360,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill is most valuable when you know what you want students to learn but don't have the time to design every activity from scratch. It's also useful as a planning model — the output demonstrates what backward design looks like in practice for your subject, which builds planning instinct over time rather than creating dependency on external tools.</p>
 <p>It's less useful if you work from a highly prescriptive scheme of work that specifies exactly what activity to use at each stage, or if your school has a specific lesson plan format that requires fields the skill's output doesn't map to. The plan it produces is pedagogically complete but may need reformatting for certain institutional templates. What it won't need is pedagogical redesign — the teaching logic is already there.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>A complete lesson plan with timed sections from starter through plenary, a backward-designed activity sequence tied to the specific learning objective, tiered differentiation that names the actual tasks at each level, a set of observable success criteria the plenary assesses directly, and a note on the primary misconception for this concept at this age group and how the lesson addresses it. For most secondary lessons, that's a document you can carry into the classroom as-is. For primary, the output also includes specific language scaffolds appropriate to the age group.</p>
 <p>From download to lesson ready: open the skill in Claude, answer three questions, receive a complete plan. The editing left to do is adaptation to your specific students — your knowledge of who struggles with what, which examples land better in your context, which activities your class engages with. That part was always yours. The skill handles everything that can be researched and structured before you walk in the room.</p>
 <p>Teachers don't struggle to teach well. They struggle to find the hours to plan well. Those aren't the same problem, and the solution to one isn't automatically the solution to the other. A tool that produces structurally correct lesson plans faster doesn't solve the planning problem — it just moves where the work gets done. A skill that produces pedagogically complete plans that are immediately usable solves a different problem entirely. That's the one worth solving.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/exam-paper-generator.html">exam questions calibrated to the right level and format</a>. If you're working across the full Educator workflow, the <a href="https://novakit.tech/skills/bundles/educator-bundle.html">Educator bundle</a> covers everything in one place.</p>

@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -256,11 +257,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Four structural reasons AI product ads look professional but don't convert is a Claude AI skill — and what changes when commercial intent drives the description.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#the-four-places-commercial-intent-goes-missing" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Four Places Commercial Intent Goes Missing</a></li><li><a href="#visual-quality-vs-commercial-intent-the-difference-at-each-decision-point" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Visual Quality vs Commercial Intent: The Difference at Each Decision Point</a></li><li><a href="#what-happens-when-the-description-is-built-for-conversion-first" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Happens When the Description Is Built for Conversion First</a></li></ol></div>
 <p>The analytics told you what you didn't want to hear. The video had a strong view rate. People watched it. They just didn't click, didn't tap the product tag, didn't move further into the funnel. The creative team said it looked great. The numbers said it didn't work. Both of those things were true simultaneously — and the gap between them is the entire problem with how most AI <a href="https://novakit.tech/skills/product-ad-film-prompt.html">product ad</a> content gets made.</p>
 <p>A product film that performs well visually and a product film that drives commercial action are measured by different metrics because they are, structurally, different films. One is built to be appreciated. The other is built to trigger a specific decision in a specific type of buyer at a specific stage of consideration. The visual quality of both can be identical. The description that produced each one cannot be, because one was written with commercial intent built into the structure and the other was written to look like what a product ad looks like.</p>
 <p>There are four places in a product ad description where that commercial intent either gets built in or goes missing. Understanding them makes it concrete — and correctable.</p>
-<h2>The Four Places Commercial Intent <em>Goes Missing</em></h2>
+<h2 id="the-four-places-commercial-intent-goes-missing">The Four Places Commercial Intent <em>Goes Missing</em></h2>
 <h3>1. The opening frame is chosen for aesthetics, not for stopping power</h3>
 <p>The first frame of a paid social ad is doing a specific job: stopping the scroll. That job has nothing to do with looking beautiful and everything to do with pattern-interrupting the viewer's passive consumption state. On a platform where the feed is predominantly warm-toned lifestyle content, a cold-toned product close-up stops more thumbs. Where the feed is dominated by static images, motion in the first frame wins. Where text overlays are the norm, a clean non-text frame stands out.</p>
 <p><strong>Generic AI descriptions almost never specify the first frame with this logic.</strong> They describe a product opening sequence — typically the product revealed, or a slow hero shot establishing the visual — which is how a brand film opens, not how a paid ad opens. A brand film can afford to establish atmosphere because the viewer chose to watch it. A paid ad has roughly 1.5 seconds before the viewer decides whether to keep scrolling. The first frame has to earn that decision, and earning it requires knowing what the rest of the feed looks like right now — which changes constantly and which generic AI doesn't track.</p>
@@ -280,7 +281,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>Every failure mode above has the same root: the description was optimised for how a product ad should look, not for what a product ad needs to do. Visual quality and commercial effectiveness are not the same objective — and descriptions written for one rarely produce the other.</p>
 </div>
 </div>
-<h2>Visual Quality vs Commercial Intent: <em>The Difference at Each Decision Point</em></h2>
+<h2 id="visual-quality-vs-commercial-intent-the-difference-at-each-decision-point">Visual Quality vs Commercial Intent: <em>The Difference at Each Decision Point</em></h2>
 <p>This table maps the same ad decision — opening frame, material shot, use context, pacing — as made by a description optimised for aesthetics versus one optimised for conversion. Same product category throughout: a mid-range supplement on Instagram Reels.</p>
 <table class="compare-table">
 <thead>
@@ -320,7 +321,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $15 · instant download</span>
 </div>
 </div>
-<h2>What Happens When the Description Is Built <em>for Conversion First</em></h2>
+<h2 id="what-happens-when-the-description-is-built-for-conversion-first">What Happens When the Description Is Built <em>for Conversion First</em></h2>
 <p>The four failure modes above are all correctable at the description level — before a single frame is generated. Fixing the opening frame requires knowing what stops scrolls in your specific feed context right now. Fixing material legibility requires specifying the exact lighting conditions that make your product's quality properties visible on screen. Fixing use-context requires knowing your buyer's actual environment and building the scene description around that. Fixing pacing requires knowing your price point, your platform, and your buyer's consideration time.</p>
 <p>The <a href="product-ad-film-prompt.html">Product Ad Film Prompt skill</a> handles all four. Before generating the description, it researches what's converting in your product category on your target platform at your price tier — the first-frame approaches, the material close-up conventions, the use-context signals, and the cut pacing that are driving purchase action right now. It then structures the description around those signals rather than around the category's general aesthetic conventions.</p>
 <p>The output isn't just a better-looking render. It's a description that gives the model the commercial context to make every visual decision — lighting angle, environment, cut pace, opening frame — in service of a buyer making a purchase decision rather than a viewer having an aesthetic experience. Those are different films, made from different descriptions, producing different results in the analytics.</p>

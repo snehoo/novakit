@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -256,11 +257,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Eulogy Writer is a Claude AI skill — Context-first, so the tribute sounds like the person it's for.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#the-specific-way-generic-ai-fails-here" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Specific Way Generic AI Fails Here</a></li><li><a href="#the-phrases-that-drain-a-room" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Phrases That Drain a Room</a></li><li><a href="#what-changes-when-you-start-with-the-right-questions" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Changes When You Start With the Right Questions</a></li><li><a href="#the-same-starting-point-two-different-outputs" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Same Starting Point, Two Different Outputs</a></li><li><a href="#why-this-matters-beyond-writing-quality" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why This Matters Beyond Writing Quality</a></li></ol></div>
 <p>Read this aloud and see if it sounds familiar: <em>"We gather today to celebrate the life of a remarkable person. She touched so many lives with her warmth, her generosity, and her unwavering love for her family. Though she is no longer with us, her memory will live on in the hearts of all who knew her."</em></p>
 <p>You've heard that. Maybe at a service last year, maybe three years ago. Maybe it was your aunt, your colleague's mother, a neighbour. The words are appropriate. The structure is correct. And none of it sounds like anyone specific.</p>
 <p>That's what happens when you open a standard AI session and ask for a <a href="https://novakit.tech/skills/eulogy-writer.html">eulogy</a>. It gives you the eulogy — the platonic ideal of tribute writing, assembled from every memorial speech, condolence page, and funeral template the model has encountered. It's technically right and emotionally hollow. The people in those chairs will know within the first fifteen seconds that whoever is speaking had help — not because AI was used, but because the words describe nobody.</p>
-<h2>The Specific Way <em>Generic AI Fails</em> Here</h2>
+<h2 id="the-specific-way-generic-ai-fails-here">The Specific Way <em>Generic AI Fails</em> Here</h2>
 <p>Most AI writing failures are recoverable. A cold email that's a bit stiff can be edited. A LinkedIn post that's too formal can be punched up. The cost of generic output in those cases is time — you spend twenty minutes fixing what should have taken five.</p>
 <p>A eulogy is different. The delivery is live. You're standing in front of people who loved the same person you did, who are already holding grief in their bodies, and who will know immediately whether the words you're speaking capture the person they knew or describe a stranger. There's no editing in that moment. There's no second pass. The output either lands or it doesn't, and the room feels the difference physically.</p>
 <div class="callout callout-blue">
@@ -271,14 +272,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The reason generic output fails here isn't a limitation of the model. It's a limitation of the input. When you type "write a eulogy for my grandmother, she was kind and loved gardening," you've given the AI almost nothing. Kind is true of almost every person being eulogised. Loved gardening is a hobby, not a person. What the AI produces from those inputs is the best tribute it can write for a concept — a kind grandmother who gardened — not for the actual person who had a specific sense of humour, a way of arguing, a phrase she'd repeat, a gesture that made her instantly recognisable to anyone who knew her.</p>
-<h2>The Phrases That <em>Drain a Room</em></h2>
+<h2 id="the-phrases-that-drain-a-room">The Phrases That <em>Drain a Room</em></h2>
 <p>There's a specific vocabulary of generic eulogy writing that has been used so many times it has lost almost all emotional weight. Standard AI sessions reach for this vocabulary because it appears constantly across memorial writing — it's the high-frequency language of tribute. That makes it the statistically likely output. It makes it completely ineffective in a room of people who are grieving a real person.</p>
 <p>The phrases show up in clusters. "A life well-lived." "Those who knew him best." "Gone too soon." "Her memory lives on in all of us." "He would have wanted us to remember the good times." "She lit up every room she entered." Each of these was probably true and moving the first time it was used. By the ten-thousandth appearance across funeral programmes and memorial websites, they've become the verbal equivalent of a sympathy card. Recognisable. Appropriate. Absent of anything that makes a person specific.</p>
 <div class="pull-quote">
 <p>The room doesn't need a description of their loss. They're already feeling it. They need <em>recognition</em> — a sentence that makes them think: yes, that was exactly her.</p>
 </div>
 <p>That recognition requires input that a blank AI session never receives. It requires knowing what the person said, how they moved through the world, what made them distinct from every other kind grandmother or devoted father or beloved colleague. Without that, the output is structurally correct and emotionally empty — which is, in its way, worse than saying nothing.</p>
-<h2>What Changes When You Start With <em>the Right Questions</em></h2>
+<h2 id="what-changes-when-you-start-with-the-right-questions">What Changes When You Start With <em>the Right Questions</em></h2>
 <p>The NovaKit <a href="../skills/eulogy-writer.html">Eulogy Writer skill</a> is built around a different starting point. Instead of generating immediately from a brief description, it runs a calibrating interview before writing anything. Three questions, designed to draw out the specific details that turn a generic tribute into a real one.</p>
 <p>Those questions ask things a blank session never asks: What did this person say that you still hear? What would people who knew them recognise immediately? What's the thing about them that's hard to explain to someone who never met them? The answers to those questions are the raw material of a eulogy that actually sounds like the person. The skill knows what to ask for and then knows what to do with what you share.</p>
 <p>The difference isn't stylistic. It's structural. The skill produces output that could only exist for this specific person — because it was built from details that could only exist for this specific person.</p>
@@ -293,7 +294,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$5 · instant download</span>
 </div>
 </div>
-<h2>The Same Starting Point, <em>Two Different Outputs</em></h2>
+<h2 id="the-same-starting-point-two-different-outputs">The Same Starting Point, <em>Two Different Outputs</em></h2>
 <p>Here's what those two approaches produce from an identical brief — a tribute for someone's grandmother who loved her garden and her family:</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -308,7 +309,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>The left side is a tribute to a concept. The right side is a tribute to a person — one with a specific coat, a specific hour she kept, a specific habit of deflecting credit. Anyone who knew this woman would hear that second version and feel it. The first could be read at any service in any country about any grandmother, and everyone would nod because it doesn't get anything wrong. It just gets nothing right, either.</p>
 <p>That's the precise failure mode of generic output for eulogy writing: not wrong, just absent. And at a service, absent is the thing you can't afford to be.</p>
 <hr class="post-divider"/>
-<h2>Why This Matters Beyond <em>Writing Quality</em></h2>
+<h2 id="why-this-matters-beyond-writing-quality">Why This Matters Beyond <em>Writing Quality</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">

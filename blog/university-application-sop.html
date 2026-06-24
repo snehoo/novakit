@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -269,11 +270,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">University Application SOP is a Claude AI skill — a calibrated statement of purpose written for your program, your profile, and your actual reasons for applying.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-vanilla-ai-produces-for-high-stakes-applications" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Vanilla AI Produces for High-Stakes Applications</a></li><li><a href="#why-live-research-changes-what-the-statement-says" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Live Research Changes What the Statement Says</a></li><li><a href="#what-the-university-application-sop-skill-actually-does" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the University Application SOP Skill Actually Does</a></li><li><a href="#generic-draft-vs-program-aware-draft" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic Draft vs Program-Aware Draft</a></li><li><a href="#who-gets-the-most-from-the-university-application-sop-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from the University Application SOP Skill</a></li><li><a href="#the-output-you-actually-receive" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Actually Receive</a></li></ol></div>
 <p>You asked Claude to write your statement of purpose. It gave you four paragraphs about your childhood curiosity, your undergraduate journey, and why this program's "world-class faculty and interdisciplinary approach" aligns with your goals. You changed a few words. You submitted it. So did eleven other applicants — because that's the draft Claude gives everyone who asks the same way you did.</p>
 <p>The problem isn't that you used AI. It's that you gave it nothing to work with. No program-specific signal. No understanding of what the department is actually looking for this cycle. No sense of the particular framing that separates a compelling SOP from a competent one. Generic input produces generic output, and nowhere is that more expensive than a graduate school application.</p>
 <p>A statement of purpose is a different kind of writing task. It's not about demonstrating prose quality — it's about demonstrating fit. Fit with the faculty, fit with the department's current research direction, fit with the specific program structure. That requires knowing things about the program that don't live inside Claude's training data.</p>
-<h2>What Vanilla AI Produces for <em>High-Stakes Applications</em></h2>
+<h2 id="what-vanilla-ai-produces-for-high-stakes-applications">What Vanilla AI Produces for <em>High-Stakes Applications</em></h2>
 <p>Ask Claude to write an SOP with a basic brief and it will produce something structurally sound and deeply forgettable. The opening will establish passion. The middle will walk through your academic history. The closing will express enthusiasm for the program's strengths — strengths named at a level of generality that applies to fifty other schools. It will read like a well-edited version of a template you found on Reddit in 2019.</p>
 <p>This isn't a flaw in Claude. It's a consequence of how generic inputs work. Claude can't know that the MIT Media Lab just launched a new initiative in human-AI collaboration that directly connects to your thesis work unless that information is part of what you give it. It can't know that Professor Chen's recent paper on participatory design methods is the actual reason you want to attend this program specifically, not the program's general reputation. It defaults to what sounds like an SOP, which is different from what reads like your SOP.</p>
 <div class="callout callout-blue">
@@ -284,14 +285,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>Admissions readers aren't grading your writing. They're trying to figure out whether you understand what you're walking into. A statement that demonstrates genuine knowledge of the program — its current research directions, its faculty's recent work, its particular approach to the field — signals something different than one that demonstrates only enthusiasm. That signal is what the <a href="https://novakit.tech/skills/university-sop.html">University Application</a> SOP skill is built to produce.</p>
-<h2>Why <em>Live Research</em> Changes What the Statement Says</h2>
+<h2 id="why-live-research-changes-what-the-statement-says">Why <em>Live Research</em> Changes What the Statement Says</h2>
 <p>Before writing a single word of your SOP, the University Application SOP skill goes and looks at the program you're applying to. It checks what the department is currently focused on, who the faculty are and what they've published recently, what the program's stated priorities are, and how the cohort model or curriculum structure shapes what they're looking for in applicants. This isn't generic background reading — it's targeted research into the specific signals your statement needs to reflect.</p>
 <p>Compare this to how most applicants use AI: they describe themselves and their goals, and the AI writes from that description alone. The output is accurate about the applicant and completely uninformed about the program. The mismatch is visible to anyone who reads SOPs for a living, even if they can't articulate exactly why a statement feels thin.</p>
 <div class="pull-quote">
 <p>The difference between an SOP that gets you an interview and one that doesn't is rarely the quality of your prose — it's whether the reader believes <em>you actually know this program.</em></p>
 </div>
 <p>When the skill understands what the program is prioritising right now, it can frame your background against that context rather than in isolation. Your research experience stops being a chronological list and becomes a direct answer to what the department needs. Your reasons for choosing this program stop sounding like flattery and start sounding like evidence. The same facts about you, organised around what actually matters to this reader, produce a completely different statement.</p>
-<h2>What the University Application SOP Skill <em>Actually Does</em></h2>
+<h2 id="what-the-university-application-sop-skill-actually-does">What the University Application SOP Skill <em>Actually Does</em></h2>
 <p>The skill asks three calibrating questions before generating anything. Your answers determine everything about the output — the framing, the emphasis, the specific faculty and research threads the statement weaves in. The same skill produces a fundamentally different SOP for a biology PhD applicant at Johns Hopkins than for an HCI master's applicant at Carnegie Mellon, because those programs are looking for different things and the skill researches each one before writing.</p>
 <div class="step-list">
 <div class="step-item">
@@ -334,7 +335,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $15 · instant download</span>
 </div>
 </div>
-<h2>Generic Draft vs <em>Program-Aware</em> Draft</h2>
+<h2 id="generic-draft-vs-program-aware-draft">Generic Draft vs <em>Program-Aware</em> Draft</h2>
 <p>The difference between these two opening paragraphs isn't writing ability — it's whether the writer understood what they were actually being asked to demonstrate.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -348,7 +349,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The first draft tells the committee that the applicant knows what HCI is. The second tells them the applicant knows what this specific lab is working on, why the program's structure matters for the kind of researcher they're becoming, and what question they're bringing with them. That's the difference between an SOP that clears the first round of review and one that gets set aside — not because the writing is bad, but because there's nothing in it that only you could have written.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from the <em>University Application SOP Skill</em></h2>
+<h2 id="who-gets-the-most-from-the-university-application-sop-skill">Who Gets the Most from the <em>University Application SOP Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -358,7 +359,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill does its best work for applicants who genuinely know what they want but haven't cracked how to articulate it in the format the committee expects. If you have real research experience, a clear intellectual interest, or a specific reason for choosing this program beyond its ranking — the skill gives that material the structure it needs to land. It's particularly strong for PhD applications, where demonstrating awareness of faculty research is not optional.</p>
 <p>It also serves applicants who are reapplying after a rejection and need to understand what changed — whether their profile is stronger, whether the program's priorities have shifted, or whether the original statement simply wasn't specific enough. Starting from live research rather than a recycled draft produces something that can actually compete in a new cycle.</p>
-<h2>The Output You <em>Actually Receive</em></h2>
+<h2 id="the-output-you-actually-receive">The Output You <em>Actually Receive</em></h2>
 <p>The skill produces a complete SOP draft structured around your specific program, with faculty references grounded in current research, a narrative architecture that builds from your past work toward a clear research or professional direction, and an opening that doesn't begin with how long you've been interested in the field. The draft is calibrated to the word count and tone conventions of your program type — a PhD statement in the sciences reads differently from an MBA essay, and the skill accounts for that.</p>
 <p>From there, the path is straightforward: read the draft against your own knowledge of your experience, add the specific details only you can supply (a particular project outcome, a conversation with a mentor that shifted your thinking, a result from your thesis work), and refine. The skill gives you a structurally sound, program-specific foundation — your job is to make it undeniably yours. That's a different editing task than trying to salvage a generic draft, and it takes a fraction of the time.</p>
 <p>The strongest SOPs are always collaborative — the applicant supplies the raw material of their experience, and the structure makes that material legible to the committee. What the skill eliminates is the version where you spent three hours editing AI output back toward something that sounds like a person wrote it, only to end up with something that still doesn't quite. A statement that already knows what program it's for is a much better place to start.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/resume-cv-builder.html">a CV structured around what recruiters actually scan for</a>. If you're working across the full Student workflow, the <a href="https://novakit.tech/skills/bundles/student-bundle.html">Student bundle</a> covers everything in one place.</p>

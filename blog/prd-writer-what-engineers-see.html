@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -269,11 +270,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">PRD Writer is a Claude AI skill — Context-calibrated product requirements for engineering teams that build from documents, not from Slack threads.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#the-four-things-that-signal-this-was-generic" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Four Things That Signal "This Was Generic"</a></li><li><a href="#why-the-output-looks-right-but-reads-wrong" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why the Output Looks Right but Reads Wrong</a></li><li><a href="#the-same-prd-written-with-context" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Same PRD, Written With Context</a></li><li><a href="#who-actually-benefits-here" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Actually Benefits Here</a></li><li><a href="#what-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What You Walk Away With</a></li></ol></div>
 <p>There's a moment most engineers know — you open a new <a href="https://novakit.tech/skills/prd-writer.html">PRD</a>, scan the first three sections, and quietly decide how much of it you can actually trust. Not because it's wrong, exactly. Because it reads like it was written without knowing what system it's describing.</p>
 <p>The acceptance criteria are technically correct but cover only the happy path. The scope section says what's included but not what's explicitly out. The user stories are formatted correctly and describe a feature that doesn't quite map to how your auth layer works. You make a note to ask. You move on. Two days later, the Slack thread starts.</p>
 <p>If you've used AI to write PRDs already, you may have produced this document. Not because the output was bad — it was structured, readable, covered the right headings. But it was written for a generic product by an AI that didn't know your product. The structure was right. The context was absent. And engineers read context, not just structure.</p>
-<h2>The Four Things That Signal <em>"This Was Generic"</em></h2>
+<h2 id="the-four-things-that-signal-this-was-generic">The Four Things That Signal <em>"This Was Generic"</em></h2>
 <p>Engineers pattern-match quickly on product documents. Here are the specific signals that communicate — without anyone saying it — that a PRD was generated rather than researched.</p>
 <h3>Acceptance criteria that stop at the happy path</h3>
 <p>A generic PRD will tell you: "User can update their profile information. Changes are saved successfully." It won't tell you what happens when the save fails. It won't specify whether the error is shown inline or in a toast. It won't address what happens if the user navigates away mid-edit. An engineer reads the absence of these edge cases as deferred scope — which means they have to make those decisions themselves, mid-build, without product alignment.</p>
@@ -291,7 +292,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>The canonical user story format — "As a [user], I want to [action] so that [benefit]" — is fine. It's also applied identically by AI to a two-person startup shipping fast and to a 40-person product team with a formal Jira workflow. Those are different contexts. A pre-seed team needs stories tight enough to fit in a daily standup conversation. An enterprise team needs stories with enough specificity to survive a handoff to a developer who never met the person who wrote the PRD. Generic output doesn't distinguish. Every story comes out the same depth regardless of who's going to act on it.</p>
 <h3>Dependencies stated as assumptions, not as owners</h3>
 <p>"This feature depends on the notification service" is an assumption. "This feature requires a schema change to the <code>user_preferences</code> table, owned by the Platform squad. Sign-off required from Platform lead before development begins" is a dependency. The difference is whether an engineer knows what to do with the information. Generic AI doesn't know who owns what in your organisation. It can't name the table, the squad, or the sign-off process. So it writes in the passive voice about systems that exist in the abstract — and engineers either guess at the rest or escalate to you.</p>
-<h2>Why the Output Looks Right but <em>Reads Wrong</em></h2>
+<h2 id="why-the-output-looks-right-but-reads-wrong">Why the Output Looks Right but <em>Reads Wrong</em></h2>
 <p>The structural elements are all present. Section headings match what a PRD is supposed to contain. The problem statement is coherent. The user stories parse. So why does an experienced engineer immediately sense that something is off?</p>
 <p>Because they're reading for specificity, not structure. A document written by someone who knows the system contains proper nouns — actual table names, actual team names, actual service names. It contains specific failure states that only make sense in the context of this product's existing behaviour. It makes explicit decisions about edge cases rather than leaving them open. Structure without specificity is a template. Engineers have seen a lot of templates.</p>
 <div class="pull-quote">
@@ -309,7 +310,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$15 · instant download</span>
 </div>
 </div>
-<h2>The Same PRD, Written <em>With Context</em></h2>
+<h2 id="the-same-prd-written-with-context">The Same PRD, Written <em>With Context</em></h2>
 <p>Take a straightforward feature: a user can delete their account. Here's what that looks like from vanilla AI output versus output calibrated to an actual product context.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -340,7 +341,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The first version is correct for an abstract product. The second version is written for a product that has subscriptions, team workspaces, an auth system, and a billing team. Every specific element came from the calibration questions the skill asked before generating — not from guesses. The engineer reading the second version knows exactly what to build and exactly what to ask for sign-off on before they start.</p>
 <hr class="post-divider"/>
-<h2>Who <em>Actually</em> Benefits Here</h2>
+<h2 id="who-actually-benefits-here">Who <em>Actually</em> Benefits Here</h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -350,7 +351,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The problem isn't that people who've tried vanilla AI for PRDs did something wrong. The structure it produces is genuinely useful as a starting scaffold. The issue is that the scaffold is all it produces — because it has no way to ask about the system, the team boundaries, the failure modes, or the adjacent ownership. Those elements have to come from somewhere, and a skill designed around PRD writing specifically asks for them before the document is written.</p>
 <p>That's not a technical distinction. It's the difference between a document a PM would write having done their homework and a document a PM would write having just been handed the feature request ten minutes ago. Engineers know the difference before they reach the second heading.</p>
-<h2>What You <em>Walk Away With</em></h2>
+<h2 id="what-you-walk-away-with">What You <em>Walk Away With</em></h2>
 <p>A complete, calibrated PRD — problem statement, functional requirements with scope boundaries, user stories sized to your team, acceptance criteria with named edge cases, and a dependency and sign-off map. Ready to paste into Notion, Linear, or Confluence. The calibration questions that precede it take under two minutes to answer and are the mechanism by which every generic assumption gets replaced with a specific one.</p>
 <p>The goal of a PRD isn't to describe a feature. It's to make enough decisions in advance that the people implementing it can do so without interrupting the person who wrote it. A document that achieves that isn't longer or more formally structured than the one that doesn't — it's just more specific about the things engineers actually need answered. That specificity is the whole job.</p>
 <p>The Slack thread that doesn't happen is invisible. Nobody tracks the questions that weren't asked or the decisions that were made in the document instead of in a meeting. But the engineers reading your next PRD will know, within the first three sections, whether this one was written for them.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/pitch-deck-narrative.html">a pitch narrative investors actually follow</a>.</p>

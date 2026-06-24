@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -360,11 +361,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Poetry &amp; Verse Prompt is a Claude AI skill — form-aware, occasion-calibrated verse that starts with three questions, not a blank page.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-generic-ai-actually-produces-and-why" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic AI Actually Produces — and Why</a></li><li><a href="#what-form-aware-generation-changes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Form-Aware Generation Changes</a></li><li><a href="#how-the-skill-works-in-practice" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How the Skill Works in Practice</a></li><li><a href="#vanilla-claude-vs-calibrated-output-side-by-side" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Vanilla Claude vs Calibrated Output — Side by Side</a></li><li><a href="#is-this-skill-for-you" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Is This Skill for You?</a></li><li><a href="#frequently-asked-questions" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Frequently Asked Questions</a></li></ol></div>
 <p>Your colleague is retiring after fourteen years. You've been asked to say something. You open Claude, type "write a retirement poem for a colleague who's been here fourteen years," and thirty seconds later you have eight lines about journeys and chapters, something rhyming "way" with "day," a mention of "legacy." It is not offensive. It is not wrong. It is the poem that could have been written for anyone who has ever retired, which means it was written for no one in particular — and your colleague will know that the moment they hear it.</p>
 <p>That specific failure — technically competent, emotionally blank — is what uncalibrated AI verse produces every time. The problem isn't Claude's vocabulary or its grasp of metre. It's that it had no information about the actual person, the actual occasion, or the emotional note you were trying to hit. It defaulted to the statistical centre of what retirement poems look like across the training data, which is exactly as generic as that sounds.</p>
 <p>The <a href="../skills/poetry-verse-prompt.html">Poetry &amp; Verse Prompt skill</a> doesn't start by writing. It starts by asking what it needs to know.</p>
-<h2>What Generic AI <em>Actually Produces</em> — and Why</h2>
+<h2 id="what-generic-ai-actually-produces-and-why">What Generic AI <em>Actually Produces</em> — and Why</h2>
 <p>Uncalibrated verse has a recognisable signature. Abstract nouns — journey, light, path, chapter, legacy. Seasonal metaphors that apply to any transition. ABAB or ABCB rhyme schemes because they're the most statistically common. A sentiment that is broadly appropriate, which is another way of saying it fits every situation equally poorly.</p>
 <p>The deeper problem is occasion-blindness. A wedding poem and a retirement poem and a poem for a child's first day of school are not variations on a single template — they're fundamentally different emotional tasks. A wedding poem is read aloud in front of everyone the couple loves; it needs weight, ceremony, something that earns the moment. A child's first-day poem needs to be brave and light and honest about the morning being hard. A retirement poem after fourteen years in the same building should know something about those fourteen years, or it's just applause in verse form.</p>
 <div class="callout callout-blue">
@@ -375,14 +376,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The tell, when you read generic AI verse, is that you could swap the recipient's name for anyone else's and the poem would still scan. That's the exact opposite of what makes a poem land.</p>
-<h2>What <em>Form-Aware Generation</em> Changes</h2>
+<h2 id="what-form-aware-generation-changes">What <em>Form-Aware Generation</em> Changes</h2>
 <p>Poetry is a compression format. Every line carries more weight than prose because there are fewer of them — which means every structural choice matters. Whether a poem rhymes or doesn't. Whether it uses a fixed form or free verse. Whether the tone is dry and fond or quiet and tender. These aren't aesthetic preferences; they're decisions that determine whether the poem fits the room it's read in.</p>
 <p>The Poetry &amp; Verse Prompt skill researches current form conventions and what kinds of verse are resonating for different occasion types before it drafts anything. That's not pulling from cached training patterns — it's active research into what's actually landing: which wedding poem structures feel fresh versus tired, which imagery has been used so often it no longer carries weight, which approaches to grief are moving people right now versus which ones feel formulaic.</p>
 <div class="pull-quote">
 <p>The difference between a poem that makes someone cry and one they politely thank you for is almost never the vocabulary — it's whether the <em>form and register were chosen for them</em>.</p>
 </div>
 <p>Then come the calibration questions. Before a single line is drafted, the skill asks three things: who this is for, what the occasion is, and what emotional register it should hit. Warm and funny, or quiet and reflective? Should it rhyme — or would rhyme make it feel forced for this particular person? Those answers route the skill to an entirely different output than any other combination would produce. The same skill writes completely differently for a retirement poem read at a pub lunch versus one read at a formal dinner.</p>
-<h2>How the Skill <em>Works in Practice</em></h2>
+<h2 id="how-the-skill-works-in-practice">How the Skill <em>Works in Practice</em></h2>
 <p>The skill is built around one principle: earn the right to write by understanding the situation first. Here's the sequence.</p>
 <div class="step-list">
 <div class="step-item">
@@ -425,7 +426,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$5 · instant download</span>
 </div>
 </div>
-<h2>Vanilla Claude vs <em>Calibrated Output</em> — Side by Side</h2>
+<h2 id="vanilla-claude-vs-calibrated-output-side-by-side">Vanilla Claude vs <em>Calibrated Output</em> — Side by Side</h2>
 <p>The same brief: a poem for a colleague leaving after fourteen years, read at their leaving lunch — warm, a little dry, not too formal. Here's the gap.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -461,7 +462,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>The left version is technically fine. The rhymes land, the sentiment is appropriate, the form is conventional. But there's nothing in it that could only have been written about this person, this workplace, this leaving. The right version earns its emotional landing — "the next room gets the version of you we made together" — through specificity, not sentiment. That shift comes entirely from the calibration questions answered before a word was drafted.</p>
 <p>Notice also what the calibrated version doesn't do: it doesn't force a rhyme where one would feel strained. The brief said "a little dry" — and the form reflects that. Free verse with conversational line breaks reads dryer than ABAB. The skill chose the form because the brief called for it, not because it was the default.</p>
 <hr class="post-divider"/>
-<h2>Is This Skill <em>for You?</em></h2>
+<h2 id="is-this-skill-for-you">Is This Skill <em>for You?</em></h2>
 <p>The Poetry &amp; Verse Prompt works best for people who care about getting it right but don't write verse habitually. It's not a replacement for a poet's judgment — it's the research and structure layer that gets you from "I have no idea where to start" to "I have two strong versions and I understand the trade-offs between them."</p>
 <div class="audience-filter">
 <div class="af-card af-for">
@@ -519,7 +520,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </tr>
 </tbody>
 </table>
-<h2>Frequently Asked Questions</h2>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <div class="faq-block">
 <div class="faq-item">
 <div class="faq-q">Can AI actually write good poetry?</div>

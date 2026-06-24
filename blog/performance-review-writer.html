@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -263,11 +264,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Performance Review Writer is a Claude AI skill — calibrated, role-specific feedback that reads like a thoughtful manager wrote it.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-generic-feedback-fails-the-person-receiving-it" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Generic Feedback Fails the Person Receiving It</a></li><li><a href="#what-role-calibration-changes-in-the-output" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Role Calibration Changes in the Output</a></li><li><a href="#how-the-performance-review-writer-skill-works" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How the Performance Review Writer Skill Works</a></li><li><a href="#what-the-output-actually-looks-like" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Output Actually Looks Like</a></li><li><a href="#who-gets-the-most-from-this-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from This Skill</a></li><li><a href="#what-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What You Walk Away With</a></li></ol></div>
 <p>You have six direct reports. Each one needs a review that reflects their actual year — their growth, their gaps, the moment in Q3 when they stepped up or the pattern in Q1 when they kept missing the mark. You know all of this. You've been managing these people for twelve months. The problem isn't information. The problem is that sitting down to write six calibrated, professionally worded performance reviews is the kind of task that takes a full day and leaves you sounding like an HR policy document by the end of it.</p>
 <p>So you open Claude and ask it to write a <a href="https://novakit.tech/skills/performance-review-writer.html">performance review</a>. And what comes back is competent-sounding, grammatically correct, and completely interchangeable with every performance review written for every role at every company. "Jordan consistently demonstrates strong communication skills and a commitment to team goals." It says nothing. It signals nothing. And your direct report — who just had a real year, with real wins and real struggles — gets back a document that reads like it was written about someone else.</p>
 <p>The failure isn't Claude's fault. It's a calibration problem. A review written without knowing the role, the level, the specific performance context, and what good looks like for this particular person at this particular stage is not a review. It's a placeholder dressed up as feedback.</p>
-<h2>Why Generic Feedback <em>Fails the Person Receiving It</em></h2>
+<h2 id="why-generic-feedback-fails-the-person-receiving-it">Why Generic Feedback <em>Fails the Person Receiving It</em></h2>
 <p>Performance reviews have two jobs simultaneously. They're documentation — legal, formal, part of the record. And they're communication — a message from a manager to a person about where they stand, what's valued, and what needs to change. Generic output handles the first job poorly and the second job not at all.</p>
 <p>When a high-performing engineer reads a review that could have been written for anyone on a ten-person team, the message received is that their manager didn't see them closely enough to say anything specific. That erodes trust faster than a difficult conversation ever would. When a struggling sales rep gets feedback so diplomatically hedged it doesn't actually name the problem, nothing changes — because the person reading it doesn't fully grasp what the problem is.</p>
 <div class="callout callout-blue">
@@ -278,14 +279,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The challenge is that writing truly specific feedback at scale — across multiple direct reports, different roles, different performance levels — requires the kind of sustained focus that review season rarely allows for. This is exactly where a calibrated skill file changes what's possible.</p>
-<h2>What <em>Role Calibration</em> Changes in the Output</h2>
+<h2 id="what-role-calibration-changes-in-the-output">What <em>Role Calibration</em> Changes in the Output</h2>
 <p>Before the NovaKit Performance Review Writer skill generates a single sentence of feedback, it researches what good performance looks like for the specific role and level being reviewed. Not in the abstract. Not based on training data from three years ago. Based on what is currently expected of, say, a mid-level product manager at a growth-stage company versus a senior customer success manager at an enterprise SaaS business. The vocabulary, the expectations, the framing of growth areas — these are fundamentally different, and the output reflects that.</p>
 <p>This is the key distinction from asking vanilla Claude to write a review. Vanilla Claude writes about "communication skills" and "teamwork." A calibrated skill writes about whether the product manager demonstrated customer-centric thinking during roadmap prioritisation, or whether the customer success manager expanded their account portfolio while maintaining retention metrics. The difference isn't cosmetic. It's whether the review demonstrates that the manager actually understands the job they're evaluating.</p>
 <div class="pull-quote">
 <p>The review that lands isn't the one with the best sentences — it's the one that proves the manager <em>paid attention</em> all year.</p>
 </div>
 <p>The skill also calibrates the tone to the performance level. A top-performer's review should feel different from a review for someone on a performance improvement path — not just in content but in register. The skill handles this automatically, so the manager doesn't have to consciously switch modes six times across six different documents.</p>
-<h2>How the <em>Performance Review Writer</em> Skill Works</h2>
+<h2 id="how-the-performance-review-writer-skill-works">How the <em>Performance Review Writer</em> Skill Works</h2>
 <p>The skill opens with three calibrating questions before generating anything. Your answers to those questions determine everything about the output.</p>
 <div class="step-list">
 <div class="step-item">
@@ -328,7 +329,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$9 · instant download</span>
 </div>
 </div>
-<h2>What the Output Actually <em>Looks Like</em></h2>
+<h2 id="what-the-output-actually-looks-like">What the Output Actually <em>Looks Like</em></h2>
 <p>Here's the difference in practice. The scenario: a mid-level marketing manager, strong year overall, but needs to develop more independent strategic thinking rather than waiting for direction.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -342,7 +343,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The difference isn't just that the second version is longer. It's that it names something specific — the Q4 product launch — and it names a precise behaviour to change, not a vague aspiration. The person reading this knows exactly what happened and exactly what's being asked of them next. The manager reading it back in six months will remember writing it, because it reflects an actual conversation they had, not a template they filled in.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>This Skill</em></h2>
+<h2 id="who-gets-the-most-from-this-skill">Who Gets the Most from <em>This Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -352,7 +353,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill is most valuable at the moment review season creates a time crunch — when you're looking at six or eight people to review and two weeks to do it. It accelerates the drafting process without removing the manager's judgment from the equation. You still decide what happened and what it means. The skill handles the translation from your notes into language that holds up in a formal document.</p>
 <p>It's also useful for managers who struggle with the "development areas" section specifically — the part that requires being honest about gaps without being harsh or legally careless. The skill handles calibrated critical feedback well, framing it in terms of observable behaviour and future expectation rather than personality assessment.</p>
-<h2>What You Walk Away With</h2>
+<h2 id="what-you-walk-away-with">What You Walk Away With</h2>
 <p>For each employee you review, the skill produces a complete performance review covering demonstrated strengths with specific framing, development areas written as behaviours rather than character traits, and a forward-looking section tied to their actual role trajectory. You get the full draft in one pass — no need to iterate through multiple rounds of generic output trying to get something usable.</p>
 <p>The path from skill download to finished review is: install in Claude, supply your notes on the employee, answer three questions, receive the draft. Most managers complete the first review in under fifteen minutes. By the fourth or fifth, it's closer to ten — because the questions become familiar and the note-gathering gets easier once you know exactly what the skill needs from you.</p>
 <p>Performance reviews are one of the few documents a manager creates that employees actually read closely, remember for years, and reference in their own career narratives. A review that reflects genuine observation and honest assessment is a form of professional respect. Giving someone a document that sounds like it was generated for them specifically — because it was — isn't just a time-saver for you. It's something they deserve.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/resume-cv-builder.html">a CV structured around what recruiters actually scan for</a>.</p>

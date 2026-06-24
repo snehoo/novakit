@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -268,11 +269,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Performance reviews are the one document that can't afford to be interchangeable is a Claude AI skill — and most AI output is exactly that.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#problem-one-vague-reviews-become-legal-liability" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Problem One: Vague Reviews Become Legal Liability</a></li><li><a href="#the-trust-problem-that-never-gets-fixed" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Trust Problem That Never Gets Fixed</a></li><li><a href="#why-generic-output-fails-this-task-specifically" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Generic Output Fails This Task Specifically</a></li><li><a href="#what-calibrated-feedback-actually-requires" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Calibrated Feedback Actually Requires</a></li><li><a href="#the-standard-that-actually-protects-everyone" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Standard That Actually Protects Everyone</a></li></ol></div>
 <p>There's a specific feeling that comes with reading your own <a href="https://novakit.tech/skills/performance-review-writer.html">performance review</a> and realising it could have been written about anyone on your team. Not because the manager didn't care — they might care a great deal — but because something in the writing process produced output that never quite landed on you specifically. It named general qualities. It referenced "contributions to team goals." It mentioned "strong communication." And reading it, you understood: this document is not really about me.</p>
 <p>That feeling is becoming more common as managers use generic AI output to speed through review season. The problem isn't AI-assisted writing. The problem is what generic AI assistance produces when it's given a task — write a performance review for a senior marketing manager — with no calibrating context about the actual person, the actual role expectations, or the actual year they had. What comes back is plausible. It's grammatically solid. And it signals, clearly, that the person writing it didn't look closely.</p>
 <p>The risk here isn't just that the feedback is unhelpful. It's that a vague performance review creates three concrete problems that a blunt conversation, or even no review at all, would have avoided.</p>
-<h2>Problem One: <em>Vague Reviews Become Legal Liability</em></h2>
+<h2 id="problem-one-vague-reviews-become-legal-liability">Problem One: <em>Vague Reviews Become Legal Liability</em></h2>
 <p>Performance reviews are employment documents. They form part of the record that HR and legal counsel will reference if a compensation dispute, a promotion denial, or a termination decision is ever challenged. A review that says "Marcus has performed well this year and demonstrates commitment to his role" is worse than useless in that context — it's actively contradictory if Marcus was later managed out for missed targets, because the written record doesn't reflect what the manager actually observed.</p>
 <p>The inverse is equally dangerous. If a review for someone who was genuinely underperforming reads as a mild collection of softened compliments with a vague note about "continued development areas," that document will not support a subsequent performance improvement process. The person can legitimately point to their review and say: at no point was I told this was a serious problem.</p>
 <div class="callout callout-blue">
@@ -283,14 +284,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>Generic AI output tends toward exactly this kind of diplomatic hedge. It's trained to produce text that sounds reasonable and balanced, which means it softens problems and qualifies positives. For most writing tasks, that's fine. For performance documentation, it's the kind of fine that becomes expensive.</p>
-<h2>The Trust Problem That <em>Never Gets Fixed</em></h2>
+<h2 id="the-trust-problem-that-never-gets-fixed">The Trust Problem That <em>Never Gets Fixed</em></h2>
 <p>Beyond the legal dimension, there's a simpler human problem. Your direct reports read their performance reviews carefully. Most of them read them multiple times. Some of them keep copies. They're looking for evidence of whether their manager actually saw them — saw the late nights before the product launch, the difficult stakeholder they managed without escalating, the moment they stepped into a gap that wasn't their job description.</p>
 <p>A review that mentions none of this specific context and instead describes them as "a reliable team member who consistently meets expectations" tells them something definitive about the manager's attention. Not necessarily that the manager was negligent — but that the written output didn't reflect the observation. That gap, once noticed, is hard to close. The next year, the direct report brings a little less to their manager. They rely on them a little less. The review did the opposite of what feedback is supposed to do.</p>
 <div class="pull-quote">
 <p>Your direct reports can tell the difference between a review that was written about them and one that was written <em>near them</em>.</p>
 </div>
 <p>This is the trust problem that generic AI writing creates and that no subsequent conversation fully repairs. Because the document exists. It's on record. And it says, in writing, that the year was adequately observed but not specifically seen.</p>
-<h2>Why Generic Output Fails This Task <em>Specifically</em></h2>
+<h2 id="why-generic-output-fails-this-task-specifically">Why Generic Output Fails This Task <em>Specifically</em></h2>
 <p>Not all writing benefits equally from live context. A cold email written with knowledge of the recipient's recent company news is more likely to get a reply than a generic template — but the consequence of a generic template is just that it gets ignored. A marketing post written with awareness of current platform trends will perform better than one built on assumptions from last year — but a poorly performing post doesn't damage anything beyond its own metrics.</p>
 <p>Performance reviews are different. They're not a quantity game. There's no opportunity to A/B test versions or optimise over time. You write one review per person per cycle, and it either reflects what actually happened or it doesn't. There is no recovery loop.</p>
 <table class="compare-table">
@@ -324,7 +325,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </tbody>
 </table>
 <p>The table above isn't just a quality difference. Each right-side item requires knowing the person's actual role, their actual year, the specific context they operated in. That's calibration. And calibration is what vanilla prompting cannot provide — because you never gave it the information it would need.</p>
-<h2>What <em>Calibrated Feedback</em> Actually Requires</h2>
+<h2 id="what-calibrated-feedback-actually-requires">What <em>Calibrated Feedback</em> Actually Requires</h2>
 <p>The reason review season is hard isn't that managers don't have opinions about their reports. Most managers have very clear views — they just struggle to translate those views into formal, professionally appropriate documentation at scale. Writing one review carefully is doable. Writing six in two weeks, each one reflecting genuine observation and role-specific framing, is where the quality degrades.</p>
 <p>The solution isn't to avoid using AI assistance. It's to use the kind of assistance that takes calibrating context seriously — that asks about the role and level before generating anything, that requires you to supply the actual performance signals, and that checks its own output for the generic phrases that signal to a reader that this document wasn't really about them.</p>
 <div class="soft-cta">
@@ -351,7 +352,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The generic version tells Daniel he's good and should work on leadership. It's not wrong exactly — it just says nothing he didn't already know and provides no guidance he can act on. The calibrated version names the specific project, names the specific behaviour, and tells him precisely what the next level of performance looks like. That's the version he can do something with.</p>
 <hr class="post-divider"/>
-<h2>The Standard That <em>Actually Protects Everyone</em></h2>
+<h2 id="the-standard-that-actually-protects-everyone">The Standard That <em>Actually Protects Everyone</em></h2>
 <p>There's a version of this argument that makes it about legal risk, and that's real. But the more compelling reason to write specific, calibrated performance reviews isn't protective — it's that your direct reports deserve to be seen clearly, in writing, by the person responsible for their development. A generic review isn't a neutral act. It's a statement about how much attention was paid.</p>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>

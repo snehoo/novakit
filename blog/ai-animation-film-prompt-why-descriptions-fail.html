@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -256,11 +257,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Four structural reasons AI video descriptions produce stock-footage output is a Claude AI skill — and the specific parameters that close the gap between vision and render.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#the-four-ways-scene-descriptions-fail-ai-video-models" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Four Ways Scene Descriptions Fail AI Video Models</a></li><li><a href="#scene-summary-vs-rendering-instructions-the-difference-in-practice" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Scene Summary vs Rendering Instructions: The Difference in Practice</a></li><li><a href="#what-changes-when-the-description-is-built-for-the-model" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Changes When the Description Is Built for the Model</a></li></ol></div>
 <p>The concept was sharp. A product dissolving into liquid metal, reforming as a new version, camera circling slowly as the transformation completes. You described it clearly and fed it to Sora. It gave you something with vaguely liquid properties and circular camera movement. Technically it answered your description. Visually it looked like every other AI product reveal you've seen this year. You generated four more variants. Same category of generic.</p>
 <p>This is the central frustration of AI video generation at the current moment: the models are capable of genuinely distinctive output, but they default to the aesthetic average of their training data whenever the description leaves parameters unspecified. And most descriptions — including well-written, detailed ones — leave most parameters unspecified, because they're written as scene summaries rather than as rendering instructions. Those are structurally different documents, and the gap between them determines almost everything about what comes out.</p>
 <p>Understanding exactly where scene descriptions fail AI video generators makes the fix concrete. There are four specific failure modes, each operating at a different level of the description.</p>
-<h2>The Four Ways Scene Descriptions <em>Fail AI Video Models</em></h2>
+<h2 id="the-four-ways-scene-descriptions-fail-ai-video-models">The Four Ways Scene Descriptions <em>Fail AI Video Models</em></h2>
 <h3>Failure 1: Motion described as impression rather than instruction</h3>
 <p>Motion is the parameter AI video models handle most inconsistently — and it's the parameter most descriptions specify least precisely. "The camera slowly pulls back" tells the model a direction and a general pace. It leaves undefined the axis of movement, the start and end focal length, whether the motion is linear or eased, the precise speed in degrees or millimetres per second, and whether there's any simultaneous rotation. The model fills all of these from its training distribution for "slow pull back," which produces the average of how that motion appeared across the video it trained on.</p>
 <p><strong>That average is always slightly wrong for any specific vision.</strong> It's close enough that the output looks intentional. It's different enough from what you meant that the result feels generic. The fix is to describe motion the way a cinematographer describes it: axis, distance, duration, easing. "Slow dolly back" becomes "dolly back on Z-axis, 12mm to 35mm equivalent, 6 seconds, ease-in over first 2 seconds, linear remainder." The model now has specific parameters to execute rather than a probability distribution to sample from.</p>
@@ -280,7 +281,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>Every underspecified parameter in a description is a decision the model makes by sampling from its training distribution. That distribution was shaped by the average of everything it trained on — not by your specific vision. More parameters specified means fewer decisions delegated to that average.</p>
 </div>
 </div>
-<h2>Scene Summary vs Rendering Instructions: <em>The Difference in Practice</em></h2>
+<h2 id="scene-summary-vs-rendering-instructions-the-difference-in-practice">Scene Summary vs Rendering Instructions: <em>The Difference in Practice</em></h2>
 <p>Both of these describe the same product reveal sequence. One communicates the concept. The other gives the model the parameters it needs to render that concept specifically rather than generically.</p>
 <table class="compare-table">
 <thead>
@@ -320,7 +321,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $15 · instant download</span>
 </div>
 </div>
-<h2>What Changes When the Description Is <em>Built for the Model</em></h2>
+<h2 id="what-changes-when-the-description-is-built-for-the-model">What Changes When the Description Is <em>Built for the Model</em></h2>
 <p>The four failure modes above all share the same root cause: the description was written for a human reader and then handed to a model that doesn't read the way humans do. A human creative director fills in underspecified parameters using taste, experience, and contextual inference. A video model fills them using statistical frequency. The results look different because the filling mechanism is different — and the filling mechanism is invisible in the description itself, which is why the failure always feels surprising.</p>
 <p>The <a href="ai-animation-film-prompt.html">AI Animation Film Prompt skill</a> handles the translation from concept to rendereable instruction. It checks current behaviour patterns for your target model — Sora, Runway, Kling, or Pika each interpret parameter specifications differently — and writes the description using the vocabulary and structure those models parse most reliably right now. Motion is specified as a temporal arc with named axes and durations. Lighting is specified as physical source properties rather than emotional descriptors. Subject behaviour is written as a sequence from start state to end state. Style is expressed in measurable visual properties rather than abstract labels.</p>
 <p>You bring the concept. The skill handles the translation. What generates on the other side is what you described — not the model's approximation of it. That gap between approximation and execution is where most AI video time currently goes: generating, reviewing, adjusting, regenerating. Close the gap at the description level and the iteration loop gets much shorter.</p>

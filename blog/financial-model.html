@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -284,11 +285,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Financial Model is a Claude AI skill — investor-ready financial projections, calibrated to your stage, business model, and audience.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-generic-projections-don-t-survive-scrutiny" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Generic Projections Don't Survive Scrutiny</a></li><li><a href="#what-stage-calibrated-research-changes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Stage-Calibrated Research Changes</a></li><li><a href="#what-the-financial-model-skill-actually-does" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Financial Model Skill Actually Does</a></li><li><a href="#generic-output-vs-novakit-output" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic Output vs NovaKit Output</a></li><li><a href="#who-gets-the-most-from-financial-model" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from Financial Model</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>Most founders who ask Claude to build a <a href="https://novakit.tech/skills/financial-model-prompt.html">financial model</a> get a clean-looking table. Revenue grows by a reasonable percentage each year. Costs are categorised neatly. The math checks out. Then an investor asks one question — "what's your month 18 burn at 70% of plan?" — and the whole thing falls apart because the model wasn't built to answer that.</p>
 <p>The problem isn't the output. It's the starting point. Vanilla Claude builds a financial model the way a textbook describes one: tidy, technically correct, and completely indifferent to what the person reading it actually needs to see. It doesn't know if you're pitching a pre-seed angel, a Series A fund, or a bank for a loan. It doesn't know whether your business is subscription-based or transactional. It doesn't know which assumptions will get challenged first.</p>
 <p>The NovaKit Financial Model skill starts by finding out. Before it touches a single projection, it researches what investors at your stage scrutinise, what assumptions matter for your business model, and what your specific reader will stress-test. The model it builds is shaped by that research — not by a generic financial template.</p>
-<h2>Why <em>Generic Projections</em> Don't Survive Scrutiny</h2>
+<h2 id="why-generic-projections-don-t-survive-scrutiny">Why <em>Generic Projections</em> Don't Survive Scrutiny</h2>
 <p>There's a specific kind of financial model that experienced investors can spot in thirty seconds. The revenue line grows at a clean 20% quarter-over-quarter. The cost structure expands proportionally. The path to profitability looks like a textbook example of operating leverage. Everything is plausible, and nothing is defensible.</p>
 <p>When asked "why does CAC drop in Q3?", the founder doesn't have an answer, because the model wasn't built around their actual acquisition mechanics — it was built around the generic shape of a growing company. When asked "what are your cohort retention assumptions?", there's no cohort analysis, because nobody told the AI that this SaaS business lives or dies by net revenue retention.</p>
 <div class="callout callout-blue">
@@ -299,14 +300,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The structural failure is that generic financial models don't know which variables are load-bearing for a specific business type. For a marketplace, it's take rate, GMV, and liquidity. For a SaaS, it's ARR, churn, and expansion revenue. For a services firm, it's utilisation rate, blended rate, and headcount. The NovaKit Financial Model skill has researched which assumptions matter for your model type before it generates a single row.</p>
-<h2>What <em>Stage-Calibrated Research</em> Changes</h2>
+<h2 id="what-stage-calibrated-research-changes">What <em>Stage-Calibrated Research</em> Changes</h2>
 <p>The skill asks three questions before building: what stage you're at, what your business model is, and who the model is for. Those three answers change everything. A pre-seed deck needs a narrative model that shows the path to product-market fit and what the funding buys. A Series A model needs to demonstrate unit economics, scalable CAC, and a credible path to the next milestone. A model for a bank needs asset coverage, debt service ratios, and conservative downside scenarios.</p>
 <p>Before writing a single projection, the skill researches current investor expectations for your stage and sector, standard assumption ranges for your business type, and the specific questions your target reader will ask. Static financial templates don't know that the bar for LTV:CAC has shifted, or that enterprise SaaS investors in 2026 are far more interested in Rule of 40 than they were three years ago. Live research does.</p>
 <div class="pull-quote">
 <p>A financial model that doesn't know who's reading it is <em>built for no one in particular</em> — which means it convinces no one in particular.</p>
 </div>
 <p>The result is a model where the assumptions are grounded in what's actually defensible for your stage and business type, and the structure surfaces the numbers your reader cares about most — in the order they care about them.</p>
-<h2>What the Financial Model Skill <em>Actually Does</em></h2>
+<h2 id="what-the-financial-model-skill-actually-does">What the Financial Model Skill <em>Actually Does</em></h2>
 <p>The skill works through a structured research-then-build process. Here's what happens between your three answers and the final output:</p>
 <div class="step-list">
 <div class="step-item">
@@ -349,7 +350,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $19 · instant download</span>
 </div>
 </div>
-<h2>Generic Output vs <em>NovaKit</em> Output</h2>
+<h2 id="generic-output-vs-novakit-output">Generic Output vs <em>NovaKit</em> Output</h2>
 <p>This is what the difference looks like in practice. Both use Claude. Only one has done the research first.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -375,7 +376,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The first model uses the right categories. The second uses the right language — ARR bridge, NRR, LTV:CAC, Rule of 40 — because those are the metrics a Series A investor will evaluate, and the skill researched that before writing a single line. The structure is different because the audience is different. The assumptions are benchmarked because the skill knew to benchmark them.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>Financial Model</em></h2>
+<h2 id="who-gets-the-most-from-financial-model">Who Gets the Most from <em>Financial Model</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -385,7 +386,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The highest-value use case is fundraising. Investors see hundreds of financial models and can tell in minutes whether the person who built it understands their own business mechanics. A model that uses the right framework for your business type — ARR bridge for SaaS, GMV waterfall for marketplaces, utilisation-based build for services — signals that fluency even before the numbers are debated.</p>
 <p>The second-highest is internal planning. A model calibrated to your actual cost structure, hiring plan, and revenue mechanics is a planning tool you can actually run the business against. One built from a generic template gets abandoned after the first month because the actuals don't map to anything in it.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>The skill produces a complete financial model structured for your stated use case: a three-year projection with monthly granularity in year one, quarterly in years two and three. Included alongside the core model are a named assumptions table (every key variable listed, with ranges and the research basis for each), a scenario analysis (base, upside, and downside cases with the primary driver of each), and a summary page formatted for the reader you specified — investor, bank, or internal use.</p>
 <p>The path from download to a model you can actually put in front of someone is: open Claude, load the skill, answer three questions about your stage, business model, and audience, and the model builds from there. You can take the output directly into a spreadsheet or pitch deck, or use it as the backbone of a more detailed build. Either way, the assumptions are documented, the benchmarks are grounded, and the structure matches the logic your reader will use to evaluate it.</p>
 <p>Most financial models built in Claude look like they were made by someone who has read about financial models. This one looks like it was made by someone who has sat on the other side of the table — because the research it runs before writing comes from that perspective. The numbers you put in are still yours. The structure that frames them is built to survive the questions those numbers will face.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/nda-contract-draft.html">an NDA drafted around your specific terms</a>. If you're working across the full Legal &amp; Biz workflow, the <a href="https://novakit.tech/skills/bundles/legal-biz-bundle.html">Legal &amp; Biz bundle</a> covers everything in one place.</p>

@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -269,11 +270,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Hotel / Airbnb Listing Copy is a Claude AI skill — trip-type-calibrated descriptions that attract the guests most likely to leave five-star reviews.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-every-airbnb-description-sounds-the-same" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Every Airbnb Description Sounds the Same</a></li><li><a href="#what-trip-type-calibration-changes-about-the-listing" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Trip-Type Calibration Changes About the Listing</a></li><li><a href="#your-reviews-are-telling-you-who-to-write-for" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Your Reviews Are Telling You Who to Write For</a></li><li><a href="#what-the-hotel-airbnb-listing-copy-skill-actually-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Hotel / Airbnb Listing Copy Skill Actually Produces</a></li><li><a href="#amenity-listing-vs-trip-type-listing" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Amenity Listing vs Trip-Type Listing</a></li><li><a href="#who-gets-the-most-from-hotel-airbnb-listing-copy" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from Hotel / Airbnb Listing Copy</a></li></ol></div>
 <p>Read your current <a href="https://novakit.tech/skills/hotel-airbnb-listing-copy.html">Airbnb listing</a> description out loud, slowly, as if you'd never seen the property. Count how many sentences describe what is there — the fully equipped kitchen, the fast WiFi, the comfortable beds, the central location — versus how many describe what it feels like to stay there, what kind of trip it suits perfectly, or why a specific type of guest would choose this property over the eight others in the same price bracket on the same street. If the first number is significantly larger than the second, you have an amenity list, not a listing.</p>
 <p>Amenity lists get bookings. They are not the problem. The problem is the review that comes after the booking from the guest who expected something your listing implied but didn't specify — the couple who wanted a romantic weekend and got a family-configured flat, the remote worker who needed quiet and got a property next to a pub that does live music on Fridays. The listing was accurate. The guest wasn't wrong. The copy just failed to filter for fit, which means every booking is a gamble on whether the guest's expectations match the property's reality.</p>
 <p>Trip-type calibration is what changes that. Not better writing — different targeting. Copy that makes the right guest immediately certain this is their booking, and makes the wrong guest immediately clear this isn't.</p>
-<h2>Why <em>Every Airbnb Description Sounds the Same</em></h2>
+<h2 id="why-every-airbnb-description-sounds-the-same">Why <em>Every Airbnb Description Sounds the Same</em></h2>
 <p>Airbnb's own platform design pushes hosts toward amenity enumeration. The structured sections — bedrooms, bathrooms, amenities checkboxes — train hosts to think about their property as a list of features rather than an experience. When the free-text description section arrives, most hosts continue in the same register: "The apartment features a fully equipped kitchen with a dishwasher and washing machine, high-speed WiFi throughout, and a Smart TV with Netflix. The bedroom has a king-sized bed with hotel-quality linen."</p>
 <p>This is accurate. It's also identical to approximately forty thousand other listings. The guest searching for a city break reads it and moves on to compare the photos and price, because the description gave them nothing to feel. No sense of who stays here and has a great time. No image of what the property is actually like at eight in the morning with coffee, or on a rainy afternoon, or when the neighbourhood comes to life on a Saturday night. The amenity list told them what the property has. It told them nothing about what staying there is like.</p>
 <div class="callout callout-blue">
@@ -284,7 +285,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>Ask vanilla Claude to write an Airbnb listing and the amenity-enumeration problem compounds. The model has learned from hundreds of thousands of existing Airbnb descriptions, which are overwhelmingly written in the same feature-inventory style. What it produces is a clean, grammatical, well-organised version of exactly what's already getting scrolled past. The writing quality improves. The conversion to the right guest doesn't.</p>
-<h2>What <em>Trip-Type Calibration</em> Changes About the Listing</h2>
+<h2 id="what-trip-type-calibration-changes-about-the-listing">What <em>Trip-Type Calibration</em> Changes About the Listing</h2>
 <p>Before the Hotel / Airbnb <a href="https://novakit.tech/blog/ecommerce-product-listing.html">Listing Copy</a> skill writes a single sentence, it identifies the trip type this property most naturally suits — and builds the entire description around what that guest is optimising for. A city-break couple and a solo remote worker arriving at the same studio flat are not looking for the same things. The couple wants atmosphere, walkability, and a setting that feels like a treat. The remote worker wants reliable WiFi, a proper desk, and enough separation from the living area to take calls without background noise. The studio has both — but the listing can only lead with one, and the one it leads with determines who books.</p>
 <div class="trip-grid">
 <div class="trip-card">
@@ -316,7 +317,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>The best Airbnb listings don't try to appeal to everyone. They make <em>one type of guest</em> immediately certain this is their booking — and let the others self-select out.</p>
 </div>
 <p>Trip-type calibration also changes how the listing handles the things that would otherwise surface as pre-booking questions. A remote worker who books without asking about the WiFi speed is a guest who read it in the description. A family who books without asking about the cot is a guest who found the answer before they needed to ask. Fewer pre-booking questions means fewer decision delays, which translates directly to fewer abandoned enquiries and a higher conversion from view to booking.</p>
-<h2>Your Reviews Are Telling You Who to Write For</h2>
+<h2 id="your-reviews-are-telling-you-who-to-write-for">Your Reviews Are Telling You Who to Write For</h2>
 <p>Most hosts have a clearer picture of their ideal guest than they realise — it's in the five-star reviews. The guests who leave those reviews are the ones for whom the property was exactly right. They name the things that made it right: the neighbourhood, the specific amenity that mattered to their trip, the aspect of the flat that made their particular stay work. Those reviews are a brief. The listing should be written to attract more of whoever wrote them.</p>
 <div class="review-signal">
 <div class="review-header">What your reviews are actually telling you</div>
@@ -342,7 +343,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The skill reads this pattern before it writes — identifying which trip type the property's features and location best serve, cross-referencing what the platform's current top-performing listings in the same category are leading with, and building the description around the guest most likely to arrive, stay well, and leave the review that attracts the next one. The reviews compound when the listing attracts the right guest consistently. The listing is where that cycle starts.</p>
-<h2>What the Hotel / Airbnb Listing Copy Skill <em>Actually Produces</em></h2>
+<h2 id="what-the-hotel-airbnb-listing-copy-skill-actually-produces">What the Hotel / Airbnb Listing Copy Skill <em>Actually Produces</em></h2>
 <div class="feature-grid">
 <div class="feature-card">
 <div class="fc-icon">🎯</div>
@@ -376,7 +377,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $7 · instant download</span>
 </div>
 </div>
-<h2>Amenity Listing vs <em>Trip-Type Listing</em></h2>
+<h2 id="amenity-listing-vs-trip-type-listing">Amenity Listing vs <em>Trip-Type Listing</em></h2>
 <p>Same property — a one-bedroom flat in Bermondsey, south London, well-suited to city-break couples. Two approaches to the opening paragraph.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -395,7 +396,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The amenity version tells the guest what exists. The trip-type version tells a couple what their weekend looks like — the specific Saturday morning rhythm, the neighbourhood's particular quality, the detail about the bathroom that signals it's been thought about. It answers the question the couple is actually asking — "will this feel like a treat?" — before they have to ask it. The first version competes on features. The second competes on fit. Fit wins.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>Hotel / Airbnb Listing Copy</em></h2>
+<h2 id="who-gets-the-most-from-hotel-airbnb-listing-copy">Who Gets the Most from <em>Hotel / Airbnb Listing Copy</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">

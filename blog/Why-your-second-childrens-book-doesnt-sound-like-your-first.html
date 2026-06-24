@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -280,11 +281,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Children's Book Prompt is a Claude AI skill — full story draft with page-by-page text and illustration notes. Age-calibrated. Works inside Claude.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-voice-consistency-actually-requires" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Voice Consistency Actually Requires</a></li><li><a href="#what-the-skill-does-that-a-fresh-session-can-t" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Skill Does That a Fresh Session Can't</a></li><li><a href="#what-the-children-s-book-skill-produces-and-how-to-use-it-across-a-series" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Children's Book Skill Produces — and How to Use It Across a Series</a></li><li><a href="#the-difference-a-consistent-voice-makes-in-the-draft" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Difference a Consistent Voice Makes in the Draft</a></li><li><a href="#who-this-approach-is-built-for" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who This Approach Is Built For</a></li><li><a href="#what-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What You Walk Away With</a></li></ol></div>
 <p>The first book went well. You had a clear idea, a specific character, a tone you could hear in your head. You edited heavily, but the bones were good. Then you sat down to write the second one — different theme, same character — and something was off. The sentences were shorter where they should have been longer. The humour landed differently. The voice that felt natural in book one felt borrowed in book two. A reader who loved the first would notice.</p>
 <p>This is the problem nobody talks about when self-publishing authors start using AI for children's books. The conversation is always about whether the output is good enough. The harder question is whether it's consistent enough — whether book three sounds like it came from the same author as book one, or whether it sounds like a fresh AI session that had no memory of what came before.</p>
 <p>Generic output is always fresh. That's not a feature. For a series, it's the central problem.</p>
-<h2>What <em>Voice Consistency</em> Actually Requires</h2>
+<h2 id="what-voice-consistency-actually-requires">What <em>Voice Consistency</em> Actually Requires</h2>
 <p>When a self-publishing author builds a <a href="https://novakit.tech/skills/childrens-book-prompt.html">children's book</a> series, readers — and the parents who buy for them — develop an expectation. They learn the rhythm. They learn how the main character talks, how humour is deployed, how tension is introduced and released. That pattern is what makes a series feel like a series rather than a stack of unrelated titles with the same character name on the cover.</p>
 <p>Achieving that consistency manually means keeping detailed notes about your own stylistic choices, re-reading previous books before drafting new ones, and editing with an ear for drift. It's genuinely hard work. When AI is in the process, it gets harder, not easier — because every new session starts from zero. The model has no memory of what the last book sounded like. It recalibrates to its defaults. The resulting draft is perfectly competent children's book prose that happens to be written by a different invisible author.</p>
 <div class="callout callout-blue">
@@ -295,14 +296,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The failure isn't obvious in any single book. It accumulates. By book four or five, the tonal drift is visible. The character who was wry and understated in the first title is enthusiastic and expressive in the fifth. The sentence rhythms that made the series feel distinctive have averaged out into something that feels serviceable but anonymous. At that point, you're not building a catalogue — you're publishing a series of first drafts by different ghost-writers who never met each other.</p>
-<h2>What the Skill Does That a Fresh Session <em>Can't</em></h2>
+<h2 id="what-the-skill-does-that-a-fresh-session-can-t">What the Skill Does That a Fresh Session <em>Can't</em></h2>
 <p>The Children's Book skill is built for each specific use case — which means it asks the right questions before writing, not after. For series work, those questions matter in a particular way. The three-question calibration at the start of each run isn't just about the child this book is for. It captures the defining characteristics of the world this book lives in: the age range, the established tone, the emotional register the series operates in.</p>
 <p>That input creates the calibration layer that a fresh session lacks. The skill isn't pulling defaults. It's writing from a stated set of constraints that the author controls and can reproduce identically on the next run. Same inputs, same tonal parameters, same structural logic. The result is that book four opens with the same rhythm and dry wit as book one — not because the AI remembered, but because the author gave it the same map.</p>
 <div class="pull-quote">
 <p>Consistency across a series isn't what the AI does on its own — it's what <em>a well-calibrated skill</em> lets you enforce every single time.</p>
 </div>
 <p>The auto-improve loop matters here too. The skill scores its own output each run and sharpens its calibration over time. By the third or fourth book you create with it, the outputs are crisper — not because the world changed, but because the skill has refined its understanding of what this particular kind of book requires. That compounds. A series of ten books built with the same calibrated skill will hold its voice more reliably than one assembled from separate sessions, separate approaches, and separate quality standards.</p>
-<h2>What the <em>Children's Book Skill</em> Produces — and How to Use It Across a Series</h2>
+<h2 id="what-the-children-s-book-skill-produces-and-how-to-use-it-across-a-series">What the <em>Children's Book Skill</em> Produces — and How to Use It Across a Series</h2>
 <p>Each run of the skill delivers a complete draft: full page-by-page story text written at the correct age level, with illustration notes for each spread. The output is structured so it's immediately usable — whether you're sending it to an illustrator, formatting for KDP, or reading it aloud before deciding what needs editing.</p>
 <div class="feature-grid">
 <div class="feature-card">
@@ -338,7 +339,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$6 · instant download</span>
 </div>
 </div>
-<h2>The Difference a <em>Consistent Voice</em> Makes in the Draft</h2>
+<h2 id="the-difference-a-consistent-voice-makes-in-the-draft">The Difference a <em>Consistent Voice</em> Makes in the Draft</h2>
 <p>Here's what the same character — a cautious but quietly adventurous rabbit named Ned — sounds like across two approaches. Same brief. Different starting point.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -366,7 +367,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The calibrated output has a specific comic rhythm — the numbered system, the self-aware repetition of "quite a while" — that belongs to a character with a history. A reader who met Ned in book one would recognise it immediately. That's not a question of the AI being smarter. It's a question of the skill having been given something to work from, and of that foundation being consistent across runs.</p>
 <hr class="post-divider"/>
-<h2>Who This Approach Is <em>Built For</em></h2>
+<h2 id="who-this-approach-is-built-for">Who This Approach Is <em>Built For</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -376,7 +377,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The compounding benefit matters most for anyone publishing more than two or three titles. A single personalised book is a one-time project. A series is a brand — and brands require consistency that generic AI output actively undermines. The skill's calibration layer is the mechanism that makes that consistency reproducible without spending an hour re-reading previous books before every new draft.</p>
 <p>It also matters for authors who are moving fast. Self-publishing timelines are short. The ability to produce a well-calibrated draft in a single session — one that already sounds like it belongs in the series — cuts the editing load significantly. The goal isn't to remove the author's voice from the process. It's to make sure the skill is working with that voice rather than overwriting it with its defaults.</p>
-<h2>What You <em>Walk Away With</em></h2>
+<h2 id="what-you-walk-away-with">What You <em>Walk Away With</em></h2>
 <p>Each run produces a complete children's book draft: full story text broken into pages, written at the age level you specified, with an illustration note for every spread. The structure is publication-ready — formatted for handoff to an illustrator or straight into a KDP layout without a restructuring pass.</p>
 <p>The path from download to draft is three steps: install the skill in Claude, answer the three calibration questions, receive the draft. No additional setup. No session configuration. The skill handles the age calibration, the structural logic, and the quality gate before delivery. What you edit is a draft that already knows what it is — which is a different starting point than a blank page, and a different starting point than a generic AI response that needs to be rebuilt from scratch.</p>
 <p>There's a version of self-publishing children's books where every title is effectively a first book — fresh session, fresh defaults, fresh voice, no continuity. And there's a version where each new title starts from the same calibrated foundation, sounds like it belongs to the same series, and gets sharper with each run. Those two paths produce different catalogues. After five books, they produce completely different author brands.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/festival-holiday-greeting-prompt.html">seasonal copy that avoids sounding like a template</a>. If you're working across the full Creative workflow, the <a href="https://novakit.tech/skills/bundles/creative-bundle.html">Creative bundle</a> covers everything in one place.</p><p>If you're doing this manually, <a href="https://novakit.tech/skills/childrens-book-prompt.html">the childrens book prompt skill</a> is the faster path.</p>

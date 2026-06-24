@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -288,11 +289,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Short Story Prompt is a Claude AI skill — genre-aware fiction that reads like fiction, not like AI filling a template.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-genre-blind-writing-actually-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Genre-Blind Writing Actually Produces</a></li><li><a href="#why-research-before-writing-changes-the-story" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Research Before Writing Changes the Story</a></li><li><a href="#what-the-short-story-prompt-skill-actually-does" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Short Story Prompt Skill Actually Does</a></li><li><a href="#generic-draft-vs-calibrated-story" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic Draft vs Calibrated Story</a></li><li><a href="#who-gets-the-most-from-short-story-prompt" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from Short Story Prompt</a></li><li><a href="#the-draft-you-actually-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Draft You Actually Walk Away With</a></li></ol></div>
 <p>You've typed "write me a <a href="https://novakit.tech/skills/short-story-prompt.html">short story</a> about a detective in 1920s Chicago" into Claude. What you got back had the right furniture — the rain-slicked streets, the whiskey, a dame with a problem. But something was off. The sentences moved like a checklist. The tension peaked exactly where tension is supposed to peak. The ending tied itself up with the mechanical satisfaction of a task completed rather than a story told. You read it, thought "this is technically correct," and closed the tab.</p>
 <p>That experience is not a prompt-writing failure. It's an architecture problem. Vanilla Claude has absorbed an enormous amount of fiction, but when you ask it to write a story cold, it averages everything it knows about that genre into a kind of consensus draft — the median noir story, the statistically likely ghost story, the most expected version of whatever you asked for. The edges are gone. The idiosyncrasies that make genre fiction memorable are gone. What remains is recognisable but hollow.</p>
 <p>The fix isn't writing a longer, more detailed request. It's changing what the model does before it writes the first sentence.</p>
-<h2>What <em>Genre-Blind</em> Writing Actually Produces</h2>
+<h2 id="what-genre-blind-writing-actually-produces">What <em>Genre-Blind</em> Writing Actually Produces</h2>
 <p>When you ask a general-purpose AI for a short story, it reaches for structure before it reaches for voice. It will default to a three-act shape compressed into however many paragraphs you asked for, with a protagonist who has one clear want, an obstacle, and a resolution. That's not wrong — it's just not enough. Genre fiction lives in the specifics of how a story moves, not just whether it moves. A contemporary literary short story and a horror flash piece can share the same structural bones and feel completely different because of sentence rhythm, where the white space falls, what goes unsaid, what the ending refuses to resolve.</p>
 <p>The consensus draft also picks the safest version of your premise. A detective story gets the tropes. A romance gets the beats. A sci-fi piece gets the familiar register of hard science dressed in sentiment. The output is competent enough that you can't immediately articulate what's wrong with it — which is actually the most frustrating kind of failure. You know it needs heavy editing, but you can't name the wound.</p>
 <div class="callout callout-blue">
@@ -303,14 +304,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>This matters most for writers who aren't just experimenting — people who write for publications, competitions, Substack audiences, or who are developing their craft with a real sense of where they want to land. For them, "technically correct" is the same as "useless." The editing work required to get from a consensus draft to something with genuine voice is often more than it would have taken to write from scratch.</p>
-<h2>Why <em>Research Before Writing</em> Changes the Story</h2>
+<h2 id="why-research-before-writing-changes-the-story">Why <em>Research Before Writing</em> Changes the Story</h2>
 <p>The NovaKit Short Story Prompt skill doesn't start by generating prose. Before it writes a word of fiction, it researches what's working in short-form storytelling right now — which narrative structures are landing in contemporary literary fiction, which tonal registers are resonating in the genre you've specified, what the current moment in short story craft looks like for your target form. It treats genre not as a costume but as a living set of conventions that shift, that have current practitioners pushing against them, that have recent anthologies and magazines shaping what readers expect.</p>
 <p>A static skill file — the kind that's just instructions pasted into Claude — skips this entirely. It relies on what the model already knows, which is substantial but frozen. It can't account for the craft discussions happening now, the emerging story shapes being championed in literary spaces this year, the specific ways a genre is being subverted or deepened by writers working at this moment. The result is fiction that feels like it was written with a map from several years ago.</p>
 <div class="pull-quote">
 <p>Genre fiction isn't a template. It's a <em>conversation with readers</em> who know exactly what they're expecting — and the best stories know how to use that expectation as a tool.</p>
 </div>
 <p>What that research unlocks is specificity. The skill knows whether your horror piece should lean into dread and restraint or into full-throttle visceral pacing, because it's looked at what horror readers are responding to right now. It knows whether your literary story should let the ending breathe or cut hard. It knows the difference between what worked in short fiction five years ago and what's finding an audience today — and it writes from that current position, not from a generalised archive.</p>
-<h2>What the Short Story Prompt Skill <em>Actually Does</em></h2>
+<h2 id="what-the-short-story-prompt-skill-actually-does">What the Short Story Prompt Skill <em>Actually Does</em></h2>
 <p>The skill runs a calibration interview before generating anything. Three targeted questions that do the structural work a long, complicated request tries and fails to do: establishing your genre and intended audience, your narrative voice preferences, and the core situation or image you're starting from. Then it writes — not to a template, but to a research-informed understanding of what your specific kind of story needs.</p>
 <div class="step-list">
 <div class="step-item">
@@ -353,7 +354,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $5 · instant download</span>
 </div>
 </div>
-<h2>Generic Draft vs <em>Calibrated Story</em></h2>
+<h2 id="generic-draft-vs-calibrated-story">Generic Draft vs <em>Calibrated Story</em></h2>
 <p>The difference is easier to see than to describe. Here's the same starting premise — a woman finds a letter that wasn't meant for her — handled both ways.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -367,7 +368,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The first draft explains what the story means at every turn — "she felt a connection," "she realised," "feeling strangely at peace." It announces its emotions instead of producing them. The second draft trusts the reader: the detail of the unsealed envelope, the specific date, the act of making coffee instead of reacting. The difference isn't length or vocabulary — it's that the second version knows how contemporary literary short fiction handles interiority, restraint, and the unsaid. That knowledge comes from research, not from the premise alone.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>Short Story Prompt</em></h2>
+<h2 id="who-gets-the-most-from-short-story-prompt">Who Gets the Most from <em>Short Story Prompt</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -377,7 +378,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The primary user is someone who already has a working relationship with Claude and already knows the frustration of getting output that requires more editorial work than the draft itself warranted. They're not looking for AI to write their stories for them — they're looking for a starting draft that's genuinely usable rather than a blank page dressed up in their premise's clothes. The skill gives them that: a complete draft that holds together structurally, sounds like someone with a point of view wrote it, and needs revision rather than reconstruction.</p>
 <p>It's also useful for writers who are developing their craft and want to see how their premise behaves when handled by a genre-informed structure. The output functions as a working model of the story's possibilities — not the final version, but a draft that shows what the premise can do when it's given the right shape.</p>
-<h2>The Draft You <em>Actually Walk Away With</em></h2>
+<h2 id="the-draft-you-actually-walk-away-with">The Draft You <em>Actually Walk Away With</em></h2>
 <p>What the skill produces is a complete short story draft — typically 600 to 1,200 words, calibrated to the length conventions of your specified genre and form. It includes a structurally sound opening that doesn't waste the reader's time, a middle that earns its tension rather than announcing it, and an ending that lands at the right register for the kind of story you asked for — resolved, unresolved, or deliberately ambiguous depending on what genre conventions and your starting material called for. The draft is formatted as clean prose, ready to paste into your writing tool of choice.</p>
 <p>From there, the path is revision rather than reconstruction. You're not sanding down generic language or adding specificity the model skipped — you're shaping a story that already has the right bones. The skill gives you something to work with, not something to work around.</p>
 <p>The writers who get the most out of it treat the draft the way they'd treat a first draft from a writing partner who understood the genre deeply but doesn't know their specific voice yet. The research and structure are there. The idiosyncratic detail, the particular word choices, the moments only they would notice — that's the revision. That's still the writer's job. The skill just means they're not starting from a place that requires tearing everything down to get there.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/screenplay-script.html">a screenplay structure that holds across three acts</a>.</p>

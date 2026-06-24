@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -275,11 +276,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Webinar / Online Event Script is a Claude AI skill — researches current engagement patterns for your topic and format, then produces a full script with attention re-anchors, interaction beats, and a goal-calibrated close.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-slide-narration-is-the-default-and-why-it-fails" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Slide Narration Is the Default — and Why It Fails</a></li><li><a href="#what-live-research-changes-about-a-webinar-script" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Live Research Changes About a Webinar Script</a></li><li><a href="#what-the-webinar-script-skill-produces" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Webinar Script Skill Produces</a></li><li><a href="#slide-narration-script-vs-attention-engineered-script" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Slide Narration Script vs Attention-Engineered Script</a></li><li><a href="#who-gets-the-most-from-this-skill" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from This Skill</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>Someone registers for your webinar. They show up. They have two other browser tabs open, their phone on the desk, and a Slack notification they're half-watching. They gave you their attention in principle when they registered, and they're giving you the minimum viable version of it now that the event has started. You have roughly four minutes to make the case that staying present is worth more than the alternative — after which, if you haven't, you've lost them to the tabs and the phone even though they're technically still on the call.</p>
 <p>This is the attention environment every webinar runs in, and most webinar scripts are not written for it. They're written for a room — a physical space where leaving requires social effort and distraction requires hiding a phone under the table. The pacing, the information density, the re-engagement mechanics, the interaction design: all of it assumes an audience that's physically captive and politely attentive. Online audiences are neither. They're voluntary, distraction-adjacent, and a single boring minute away from full multitask mode.</p>
 <p>Generic AI produces scripts for the imaginary room. It knows what a webinar looks like — intro, agenda, sections, Q&amp;A, close — and it produces that structure with competent writing throughout. What it doesn't know is what's currently generating sustained attention in your topic area online, where the drop-off points typically occur in your format, or how to build re-anchoring mechanics into the script's architecture so that attention that drifts gets pulled back before it's gone for good.</p>
-<h2>Why <em>Slide Narration</em> Is the Default — and Why It Fails</h2>
+<h2 id="why-slide-narration-is-the-default-and-why-it-fails">Why <em>Slide Narration</em> Is the Default — and Why It Fails</h2>
 <p>The slide narration problem starts in the preparation process. Most presenters build their slides first, then write what they're going to say about each one. The script becomes a sequence of explanations: here's what's on this slide, here's the next thing, here's what this chart means. The presenter is moving through their material. The audience is receiving information at a pace set by slide transitions rather than by attention curve management.</p>
 <p>The result is a presentation that's informationally complete and experientially flat. Every section receives the same pacing and the same register. There are no moments of deliberate pattern interruption — a direct question to the audience, a counterintuitive claim, a short story that resets the attention baseline before the next dense section. The script doesn't work with the grain of how online attention actually behaves: it assumes sustained focus that online audiences don't provide and isn't structured to recapture the attention that inevitably wanders.</p>
 <div class="callout callout-blue">
@@ -290,14 +291,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>There's a second failure specific to scripted webinars: the transition between sections. In a room, a presenter moves physically, changes slide, uses body language to signal a shift. Online, the only signal is the audio. Scripts that don't write explicit transitions — verbal re-anchors that tell the audience where they are, where they're going, and why the next section matters — produce a continuous monotony that's difficult to follow even for attentive listeners and impossible to re-enter for anyone who drifted.</p>
-<h2>What <em>Live Research</em> Changes About a Webinar Script</h2>
+<h2 id="what-live-research-changes-about-a-webinar-script">What <em>Live Research</em> Changes About a Webinar Script</h2>
 <p>Before the NovaKit Webinar Script skill writes a single segment, it researches current engagement patterns for your topic and format: what formats are currently sustaining attention in your topic area (workshop-style with application moments, case-study-led, debate-format, demo-anchored), where audiences typically drop off in online events of your duration, what interaction mechanics are currently generating above-average chat and Q&amp;A engagement, and how the highest-retention events in your category are structurally different from the average ones.</p>
 <p>That research changes three things in the script that determine whether your audience stays present. The opening — which needs to create a specific commitment in the first four minutes that makes leaving costly rather than easy. The architecture — how the content sections are sequenced and interrupted to work with the natural attention curve rather than against it. And the interaction beats — the specific moments where the script directs the presenter to stop broadcasting and start engaging, and what that engagement is designed to accomplish.</p>
 <div class="pull-quote">
 <p>A script built for online attention isn't just well-written content delivered sequentially. It's an <em>attention management system</em> that anticipates drift and pulls the audience back before they're gone.</p>
 </div>
 <p>The skill also calibrates to goal. A lead-generation webinar has a different structural architecture than a customer education session, which is different from a thought leadership event or a product launch. The pacing, the CTA placement, the interaction design, and the close all serve different outcomes — and a script built for the wrong goal produces the right content in the wrong shape.</p>
-<h2>What the <em>Webinar Script Skill</em> Produces</h2>
+<h2 id="what-the-webinar-script-skill-produces">What the <em>Webinar Script Skill</em> Produces</h2>
 <p>The skill's interview covers five inputs: the webinar topic and core content, the target audience, the primary goal (lead gen, customer education, thought leadership, or product launch), the format duration, and the presenter's style (solo presenter, panel, or interview-format). From those:</p>
 <div class="step-list">
 <div class="step-item">
@@ -347,7 +348,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $9 · instant download</span>
 </div>
 </div>
-<h2>Slide Narration Script vs <em>Attention-Engineered Script</em></h2>
+<h2 id="slide-narration-script-vs-attention-engineered-script">Slide Narration Script vs <em>Attention-Engineered Script</em></h2>
 <p>Same webinar — a 45-minute B2B session on scaling customer success for SaaS companies — with the opening four minutes scripted two ways. The opening is where the audience decides whether to stay present or partially check out, so it's where the structural difference is most consequential.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -371,7 +372,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The generic opening is warm, professional, and gives every attendee permission to half-leave immediately — nothing in it requires their active attention. The skill-produced opening asks the audience to do something in the first 30 seconds, reads their responses aloud (creating social presence), introduces a counterintuitive reframe of the topic, and closes with two specific reasons to stay present depending on which situation the attendee is in. The audience hasn't been told what they're going to learn. They've been pulled into a conversation that's already started — which is a fundamentally different relationship to maintain for 40 more minutes.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>This Skill</em></h2>
+<h2 id="who-gets-the-most-from-this-skill">Who Gets the Most from <em>This Skill</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -380,7 +381,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The skill is most useful for presenters who know their content well but find the script uncomfortable to write — the translation from "things I know" to "things I'll say out loud to hold 200 people's attention for 45 minutes" is not a natural extension of subject matter expertise. Having a fully structured, architecturally sound script to work from changes the preparation task from composition to rehearsal, which is considerably faster and more likely to produce a good result.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>A complete webinar script: opening with a commitment hook and chat activation, content sections with explicit verbal transitions, re-anchor moments every 8 to 12 minutes, full interaction beat copy (poll questions, chat prompts, Q&amp;A seeds), and a close calibrated to your goal. Presenter direction throughout — pacing notes, emphasis cues, interaction management guidance — so the script is a rehearsal document, not just a content outline. Formatted and ready to paste into a teleprompter, a speaker notes field, or a shared doc for co-presenters.</p>
 <p>The path from download to live event: run the skill, work through the script once for timing and personalisation, add your specific examples and company context where the brackets indicate, rehearse the opening until it's conversational rather than read. Most presenters who've done this report the opening as the part that changed most — because they stopped announcing their content and started having a conversation.</p>
 <p>A webinar that holds its audience is a different commercial asset than one that loses half the room by minute 20. The script is where that difference is made — before anyone joins the call.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/video-script-engine.html">a video script structured around viewer retention</a>. If you're working across the full Video &amp; Pod workflow, the <a href="https://novakit.tech/skills/bundles/video-pod-bundle.html">Video &amp; Pod bundle</a> covers everything in one place.</p>

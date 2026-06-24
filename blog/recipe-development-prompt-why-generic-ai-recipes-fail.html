@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -257,10 +258,10 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Recipe Development Prompt is a Claude AI skill — context-calibrated recipes researched and written for your kitchen, skill level, and flavour brief.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#the-four-failure-modes-of-generic-recipe-ai" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Four Failure Modes of Generic Recipe AI</a></li><li><a href="#the-pattern-that-runs-through-all-four-failures" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Pattern That Runs Through All Four Failures</a></li></ol></div>
 <p>Every person who has used AI for <a href="https://novakit.tech/skills/recipe-development-prompt.html">recipe development</a> reaches the same moment: the recipe is technically correct and practically useless. The quantities assume a kitchen that isn't yours. The technique notes are either obvious or missing. The flavour profile is inoffensive to everyone, which means it's exciting to no one. You spend the next fifteen minutes adjusting it into something that actually fits your context — which is precisely the work the AI was supposed to save you.</p>
 <p>This isn't a failure of culinary knowledge. AI has enormous culinary knowledge. The failure is architectural: a model asked to write a recipe without knowing your skill level, equipment, dietary constraints, or intended outcome defaults to a median that serves no one particularly well. The following sections name each failure mode precisely, show what the broken output looks like, and explain what context-calibrated recipe generation fixes in each case.</p>
-<h2>The Four <em>Failure Modes</em> of Generic Recipe AI</h2>
+<h2 id="the-four-failure-modes-of-generic-recipe-ai">The Four <em>Failure Modes</em> of Generic Recipe AI</h2>
 <h3>Failure Mode 1: Skill-Level Mismatch</h3>
 <p>Generic AI recipe output defaults to intermediate. The instructions assume you're comfortable with basic technique — you can julienne, you know what "fold" means, you understand the difference between simmering and boiling. They also assume you don't need to know why any step works: just follow the sequence and it'll be fine.</p>
 <p>This misses both ends of the real audience. A beginner who doesn't know what "deglaze" means will skip the step and wonder why their sauce is flat. An experienced home cook developing a restaurant-quality dish for a dinner party doesn't need to be told to "cook the onions until soft" — they need the technique note that tells them whether the onions should be sweated low-and-slow for sweetness or cooked fast over high heat for caramelised depth.</p>
@@ -334,7 +335,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$5 · instant download</span>
 </div>
 </div>
-<h2>The Pattern That Runs Through <em>All Four Failures</em></h2>
+<h2 id="the-pattern-that-runs-through-all-four-failures">The Pattern That Runs Through <em>All Four Failures</em></h2>
 <p>Each failure mode has a different surface symptom — wrong skill level, wrong equipment, no flavour direction, dated format. But they share one root cause: the model was asked to generate output without being given the context that makes output specific. The recipe knowledge is there. What's missing is the brief.</p>
 <p>This is what the three-question interview solves. It's not pre-processing or post-generation editing — it's the information the skill needs before it can generate anything worth generating. Skill level. Equipment and constraints. Flavour profile and occasion. Three questions that close all four failure modes simultaneously, because all four failures are versions of the same problem: writing for no one in particular.</p>
 <table class="compare-table">

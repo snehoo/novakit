@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -284,11 +285,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Travel Itinerary Planner is a Claude AI skill — live-researched, calibrated to your travel style, day-by-day.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#the-actual-problem-optimised-for-completeness-not-for-logistics" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Actual Problem: Optimised for Completeness, Not for Logistics</a></li><li><a href="#why-more-prompting-doesn-t-actually-fix-this" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why More Prompting Doesn't Actually Fix This</a></li><li><a href="#what-a-skill-that-researches-first-changes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What a Skill That Researches First Changes</a></li><li><a href="#the-calibration-that-changes-everything" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Calibration That Changes Everything</a></li></ol></div>
 <p>Ask five different people to use generic AI to plan a trip to Barcelona. Give them all different prompting styles — one who writes detailed briefs, one who types three words, one who specifies food preferences, one who mentions they're travelling with a toddler. The resulting itineraries will be recognisably similar: La Sagrada Família, Gothic Quarter, La Boqueria, Barceloneta beach, Montjuïc. Maybe Park Güell if they're thorough.</p>
 <p>This is the failure mode — and it's not the user's fault for prompting badly. It's what happens when AI plans from the median of everything it's read about a place rather than from an understanding of the trip you're actually taking.</p>
 <p>Most people try to fix this with more detailed instructions. Add more constraints. Specify the neighbourhood. Tell it your pace. The output improves marginally. You're still essentially receiving a remix of the same canonical list, sequenced differently.</p>
-<h2>The Actual Problem: <em>Optimised for Completeness, Not for Logistics</em></h2>
+<h2 id="the-actual-problem-optimised-for-completeness-not-for-logistics">The Actual Problem: <em>Optimised for Completeness, Not for Logistics</em></h2>
 <p>Generic AI produces itineraries that look thorough. Every major attraction is accounted for. The days are full. The structure is there — morning, afternoon, evening. When you read it on a laptop, it feels like a plan.</p>
 <p>The problems emerge on the ground, and they're almost always the same category of problem: logistics that were never verified, timing that was never calibrated, and geography that was optimised for coverage rather than for actual movement through a city.</p>
 <div class="callout callout-blue">
@@ -330,14 +331,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </tbody>
 </table>
 <p>None of these failures are about the plan being factually wrong — the market does exist, the museum is real, the walk is technically possible. They're about the plan being built from static knowledge rather than from current, verified information about a real trip.</p>
-<h2>Why More Prompting Doesn't <em>Actually Fix This</em></h2>
+<h2 id="why-more-prompting-doesn-t-actually-fix-this">Why More Prompting Doesn't <em>Actually Fix This</em></h2>
 <p>The instinct when generic AI disappoints is to add more detail to the instruction. More context about your preferences, more constraints, more specificity about what you want. And this does improve output — up to a point.</p>
 <div class="pull-quote">
 <p>Better prompting is trying to fix a <em>knowledge problem</em> with an instruction problem — and those aren't the same thing.</p>
 </div>
 <p>The issue isn't that the AI needs better instructions about your preferences. It's that no instruction you can write will tell it whether a specific restaurant is still open, whether the temple requires a ticket booked three days in advance, or whether November is when the city's main annual event crowds every accommodation within 5km of the centre.</p>
 <p>That information isn't in the training data — or if it is, it's out of date. The model can produce a confident, well-formatted itinerary without knowing any of it. Confident formatting is not the same as accurate planning.</p>
-<h2>What a Skill That Researches First <em>Changes</em></h2>
+<h2 id="what-a-skill-that-researches-first-changes">What a Skill That Researches First <em>Changes</em></h2>
 <p>The <a href="../skills/travel-itinerary-planner.html">Travel Itinerary Planner skill</a> approaches the problem from the other direction. Before it writes a single day of your itinerary, it runs live research on your destination — current conditions, what's actually open, what's worth the trip at the time of year you're going, and where the known friction points are.</p>
 <p>That research shapes what goes into the plan. Not just the attractions, but the sequencing, the timing, the logistics flags, and the advance booking notes that surface before they become a problem in the city.</p>
 <div class="before-after">
@@ -352,7 +353,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The generic version lists everything. The NovaKit version plans for arrival-day tiredness, surfaces the specific booking windows that are realistic in October, sequences attractions by location rather than by fame, and flags the timing mistakes that people consistently make on the Colosseum visit.</p>
 <hr class="post-divider"/>
-<h2>The Calibration That Changes <em>Everything</em></h2>
+<h2 id="the-calibration-that-changes-everything">The Calibration That Changes <em>Everything</em></h2>
 <p>Beyond the research, the skill asks three questions before it starts — questions about your pace, your group, and what you actually care about. These aren't optional. They're the difference between a plan built for a fast-moving solo traveller who wants to cover ground and a plan built for two people who want to sit in cafés and wander without an agenda.</p>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>

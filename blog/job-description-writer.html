@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -263,11 +264,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Job Description Writer is a Claude AI skill — stage-calibrated JDs that signal the right culture and attract candidates who actually want to do this work.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-a-job-description-is-employer-brand-not-a-checklist" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why a Job Description Is Employer Brand, Not a Checklist</a></li><li><a href="#what-stage-calibrated-output-changes-for-hiring" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Stage-Calibrated Output Changes for Hiring</a></li><li><a href="#what-the-job-description-writer-skill-does" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Job Description Writer Skill Does</a></li><li><a href="#generic-jd-vs-calibrated-jd" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic JD vs Calibrated JD</a></li><li><a href="#who-gets-the-most-from-job-description-writer" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from Job Description Writer</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>You're hiring your first head of growth. You know exactly who you need — someone who's built acquisition from scratch before, comfortable with ambiguity, doesn't need a playbook because they're the one who writes it. You open Claude and describe the role. It comes back with a <a href="https://novakit.tech/skills/job-description-writer.html">job description</a> that lists eight years of experience, a degree requirement, proficiency in four specific tools, and a benefits section that mentions "competitive salary" and "collaborative culture."</p>
 <p>The person you're trying to hire reads that JD and moves on. Not because they're underqualified — they have everything you actually need. But because the JD signals a company that thinks in checklists, and the person you want has already learned to skip those. The candidate who applies is the one who meets all eight requirements and is comfortable in a structured environment with an established playbook. Which is precisely not the person you described.</p>
 <p>This is the specific failure of generic AI for job descriptions: it produces the JD that sounds complete and attracts the wrong room. The requirements list, the responsibilities list, the benefits bullet points — all assembled from the accumulated pattern of job descriptions it was trained on, with no understanding of the stage you're at, the culture you're building, or the specific kind of ambiguity tolerance you need from this particular hire.</p>
-<h2>Why a Job Description Is <em>Employer Brand</em>, Not a Checklist</h2>
+<h2 id="why-a-job-description-is-employer-brand-not-a-checklist">Why a Job Description Is <em>Employer Brand</em>, Not a Checklist</h2>
 <p>The candidate you most want to hire is not scrolling job boards out of desperation. They're evaluating whether your company is worth their time before they apply. The job description is the first piece of writing they read from you — the first signal about how you think, what you value, and whether working there would be interesting. A generic JD with a requirements list and a boilerplate culture section tells them everything they need to know: this company hasn't thought carefully about who they want, which probably means they haven't thought carefully about a lot of other things either.</p>
 <p>Experienced operators and strong individual contributors read job descriptions the way a founder reads a term sheet — looking for what it reveals about the other party as much as what it explicitly says. A JD that requires eight years of experience for a role that genuinely needs three is not protecting you from under-qualified applicants. It's signalling that nobody inside the company has thought carefully about what this job actually is. A JD that mentions "fast-paced environment" and "wear many hats" without saying anything specific about the actual work is signalling that the company doesn't know how to talk about what they do. Both filter out the people you want.</p>
 <div class="callout callout-blue">
@@ -278,14 +279,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The stage problem compounds this. A <a href="https://novakit.tech/skills/bundles/founder-bundle.html">pre-seed</a> company hiring its first sales person needs a radically different JD from a Series B company filling an SDR role. The former needs someone who will build the motion from nothing, is energised by the ambiguity of that, and understands they're joining before product-market fit is confirmed. The latter needs someone who can execute a defined playbook at volume. These are different jobs and different people — but generic AI, given the same role title, produces something that could describe either. The candidate reads it and can't tell what they're actually walking into.</p>
-<h2>What <em>Stage-Calibrated</em> Output Changes for Hiring</h2>
+<h2 id="what-stage-calibrated-output-changes-for-hiring">What <em>Stage-Calibrated</em> Output Changes for Hiring</h2>
 <p>The Job Description Writer skill asks about your company stage, team size, the specific outcomes this role owns in the first 90 days, and what kind of working environment you're being honest about — not what you aspire to be, but what it's actually like to work there right now. Those answers don't just change individual phrases. They change the architecture of the whole document.</p>
 <p>A seed-stage JD written by this skill leads with the problem the role solves and the specific opportunity it represents — because the candidate you want at seed is evaluating whether the problem is interesting, not whether the benefits package is competitive. A Series A JD calibrates to a candidate who wants to know that there's enough structure to be effective but enough autonomy to grow. The skill researches what's working in JD formats right now — what language is cutting through, what phrasing signals the kind of culture that attracts strong operators, what requirements language actively repels the people you need.</p>
 <div class="pull-quote">
 <p>The right candidate isn't reading your JD to decide if they qualify. They're reading it to decide if <em>you're worth their time</em>.</p>
 </div>
 <p>The requirements calibration is where the practical difference is clearest. Generic AI defaults to the requirements it has seen most often for a given role title — which skews heavily toward large-company JDs because those companies post the most jobs. A startup hiring its first product manager does not need five years of experience, a CS degree, and proficiency in Jira, Confluence, and Figma. It needs someone who has shipped product before, is comfortable making decisions with incomplete data, and can write clearly enough to align a small engineering team. Those are different requirements, and the JD that lists them attracts a different and better-suited candidate pool.</p>
-<h2>What the <em>Job Description Writer</em> Skill Does</h2>
+<h2 id="what-the-job-description-writer-skill-does">What the <em>Job Description Writer</em> Skill Does</h2>
 <p>The skill runs a four-question calibration before writing anything, then produces a complete JD structured around what actually makes the right candidate apply:</p>
 <div class="step-list">
 <div class="step-item">
@@ -335,7 +336,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $9 · instant download</span>
 </div>
 </div>
-<h2>Generic JD vs <em>Calibrated</em> JD</h2>
+<h2 id="generic-jd-vs-calibrated-jd">Generic JD vs <em>Calibrated</em> JD</h2>
 <p>Same role: first marketing hire at a 15-person seed-stage B2B SaaS company, no prior marketing infrastructure, reporting directly to the founder. Here's how the opening and requirements section reads with and without calibration:</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -364,7 +365,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The right side tells the candidate exactly what they're walking into and what matters. Someone who has built marketing from scratch at a small company reads the first two sentences and knows immediately whether this is the kind of problem they want. Someone who has only worked inside established marketing teams at larger companies reads it and self-selects out — which is precisely what should happen. The left side attracts everyone who meets the checklist, which is not the same thing as attracting the person who wants this particular job.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>Job Description Writer</em></h2>
+<h2 id="who-gets-the-most-from-job-description-writer">Who Gets the Most from <em>Job Description Writer</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -374,7 +375,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The highest-value use is for the early, critical hires — the first engineer, the first sales person, the first marketer — where the JD is doing the work of defining what the role actually is before the company has fully figured that out. At that stage, a generic JD doesn't just attract the wrong candidates. It also forces the hiring manager to think less rigorously about what success in the role looks like, because the checklist format never asks that question. The skill's outcome-led structure forces the right thinking first, which produces a better hiring process long before the first application arrives.</p>
 <p>It also matters for companies that have noticed a fit problem in their pipeline: high application volume, low signal, too much time spent screening people who technically qualify but clearly aren't right. That's almost always a JD problem — the requirements are attracting everyone who can claim them rather than everyone who genuinely wants this specific job at this specific stage. Rewriting the JD with calibrated requirements and an honest stage description changes the composition of the pipeline more reliably than any sourcing strategy.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>The skill produces a complete, post-ready job description: a stage-honest opening that tells the candidate what they're actually walking into, an outcome-led role description that shows what success looks like in the first 90 days, a requirements section calibrated to what the role genuinely needs rather than what sounds comprehensive, and a culture section that describes the actual working environment rather than aspirational HR copy. The whole document runs to 400–550 words — long enough to give a serious candidate the context they need, short enough that they read it fully rather than scanning the requirements and leaving.</p>
 <p>The path from output to post is light editing: adjust the specific numbers and context details, add the compensation range if you're including it, post. The structure, the framing, and the calibration to your stage are already handled. What's left is the judgment about what to reveal and the honesty about what it's actually like to work there — the parts that make the difference between a JD that sounds good and one that finds the person.</p>
 <p>The first thing your ideal hire sees from your company is the job description. If it reads like every other JD they've scrolled past this week, they'll treat it like every other JD they've scrolled past this week. The person you need is evaluating you. Give them something worth reading.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/financial-model-prompt.html">a financial model built around your actual assumptions</a>.</p>

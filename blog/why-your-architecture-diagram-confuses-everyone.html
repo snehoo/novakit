@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -282,11 +283,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Architecture Diagram Prompt is a Claude AI skill — calibrated system diagrams built around who's reading, not just what the system does.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#the-assumption-every-generic-ai-makes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Assumption Every Generic AI Makes</a></li><li><a href="#what-four-different-readers-actually-need" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Four Different Readers Actually Need</a></li><li><a href="#why-better-prompting-doesn-t-fully-solve-this" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Better Prompting Doesn't Fully Solve This</a></li><li><a href="#what-happens-when-the-diagram-knows-its-reader" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Happens When the Diagram Knows Its Reader</a></li><li><a href="#the-fix-isn-t-a-better-diagram-it-s-the-right-diagram" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Fix Isn't a Better Diagram — It's the Right Diagram</a></li></ol></div>
 <p>A founder sends an <a href="https://novakit.tech/skills/architecture-diagram-prompt.html">architecture diagram</a> to a Series A lead. The investor opens it, sees eighteen boxes connected by arrows, and asks: "Can you walk me through this?" The founder spends ten minutes in the follow-up call explaining what to ignore. The diagram wasn't wrong. It just wasn't built for that conversation.</p>
 <p>The same diagram gets sent to the new backend engineer joining next month. She opens it, sees the same eighteen boxes, and asks: "Where do I find the actual service boundaries and the API contracts?" The diagram wasn't wrong for her either. It just wasn't built for what she needed to get started.</p>
 <p>This is the failure mode that AI-generated architecture diagrams have baked into them by default. They're built for completeness, not communication. They include everything that's true about the system and nothing that's tuned to the reader who's actually going to use the output. The result is a diagram that's technically accurate and practically useless — and one that creates more work for the person who made it, because every recipient needs a guided tour.</p>
-<h2>The Assumption <em>Every Generic AI Makes</em></h2>
+<h2 id="the-assumption-every-generic-ai-makes">The Assumption <em>Every Generic AI Makes</em></h2>
 <p>When you ask vanilla Claude to produce an architecture diagram, it makes one silent assumption before it draws a single component: that the reader has moderate technical familiarity, cares about completeness, and has no specific decision to make. That assumption produces a certain kind of output — one that lists components rather than telling a story, shows connections without hierarchy, and labels everything with technical accuracy regardless of whether the reader needs that vocabulary.</p>
 <p>The output is recognisable. You've seen it. Everything is there. The frontend, the backend services, the database, the cache layer, the third-party integrations, the CDN, the queue. Each component gets equal visual weight. Each arrow gets drawn. The description reads like an inventory rather than an explanation. It's the architecture equivalent of answering "How does your product work?" by reading the entire codebase aloud.</p>
 <div class="callout callout-blue">
@@ -297,7 +298,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The problem compounds because the people most likely to generate architecture diagrams with AI — founders, technical PMs, CTOs at early-stage companies — are also the people who need to share those diagrams across wildly different audiences in a single week. Investors, engineers, integration partners, compliance reviewers. Each of those audiences has a different vocabulary, a different level of assumed context, and a different specific question they're trying to answer when they look at your diagram. A single generic output serves none of them well.</p>
-<h2>What Four Different Readers Actually Need</h2>
+<h2 id="what-four-different-readers-actually-need">What Four Different Readers Actually Need</h2>
 <p>Take a mid-stage SaaS company with a standard three-tier web application: React frontend, a set of microservices handling authentication, core product logic, and billing, a PostgreSQL primary with read replicas, a Redis cache, and infrastructure running on AWS. Here's what each of the four most common architecture diagram readers actually needs to see.</p>
 <table class="compare-table">
 <thead>
@@ -326,14 +327,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </tbody>
 </table>
 <p>These aren't variations on the same diagram. They're four different documents, each making a different argument with the same underlying system as source material. Generic AI produces one of them — a document that tries to be all four and succeeds at none.</p>
-<h2>Why <em>Better Prompting</em> Doesn't Fully Solve This</h2>
+<h2 id="why-better-prompting-doesn-t-fully-solve-this">Why <em>Better Prompting</em> Doesn't Fully Solve This</h2>
 <p>The instinct when AI output is wrong is to write a better instruction. Add more detail to the request. Specify the audience explicitly. Describe the format you want. And that does help — partially. A more detailed request produces a more useful output than "generate an architecture diagram for my SaaS."</p>
 <p>But it doesn't solve the underlying structural problem, which is that the AI still doesn't know what current diagramming conventions look like for investor decks versus technical RFCs versus developer documentation. It doesn't know that a C4 model context diagram is the appropriate abstraction for an executive audience. It doesn't know that Mermaid is the practical output format for something that needs to live in Notion or a GitHub README rather than a PDF. It doesn't know to separate the diagram from the supporting narrative that explains the decisions the diagram can't visually represent.</p>
 <div class="pull-quote">
 <p>The gap isn't in the instruction — it's that <em>no generic tool researches current diagramming conventions</em> before it generates output for your specific context.</p>
 </div>
 <p>The Architecture Diagram Prompt skill addresses this differently. Before generating anything, it researches current conventions for the diagram type appropriate to the declared audience and purpose. That means the output format, abstraction level, component labelling, and supporting narrative are all calibrated to what actually works in the context you're operating in — not to a general model of what architecture diagrams should look like.</p>
-<h2>What Happens When the Diagram <em>Knows Its Reader</em></h2>
+<h2 id="what-happens-when-the-diagram-knows-its-reader">What Happens When the Diagram <em>Knows Its Reader</em></h2>
 <p>Here's the same system description run twice — once with a generic approach, once with audience calibration declared upfront.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -369,7 +370,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The uncalibrated version is accurate. Every component is correctly listed. An engineer who already knows the system would recognise it. But no investor reads it and thinks "this team knows how to build for scale" — they read it and think "I need someone to explain this to me." The calibrated version makes the architectural decisions the story, because that's what the investor is actually evaluating. The Redis cache doesn't appear — not because it doesn't exist, but because it's not part of the argument being made.</p>
 <hr class="post-divider"/>
-<h2>The Fix Isn't a Better Diagram — It's <em>the Right Diagram</em></h2>
+<h2 id="the-fix-isn-t-a-better-diagram-it-s-the-right-diagram">The Fix Isn't a Better Diagram — It's <em>the Right Diagram</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">

@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -305,11 +306,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">LinkedIn Post Engine is a Claude AI skill — writes algorithm-aware posts calibrated to your voice, role, and what's currently performing in the feed.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-generic-ai-output-vanishes-in-the-feed" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Generic AI Output Vanishes in the Feed</a></li><li><a href="#what-live-research-actually-changes" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Live Research Actually Changes</a></li><li><a href="#how-the-linkedin-post-engine-works" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">How the LinkedIn Post Engine Works</a></li><li><a href="#generic-output-vs-novakit-output-a-real-comparison" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic Output vs NovaKit Output — a Real Comparison</a></li><li><a href="#who-gets-the-most-from-linkedin-post-engine" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from LinkedIn Post Engine</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>You've used AI to write a <a href="https://novakit.tech/skills/linkedin-post-engine.html">LinkedIn post</a>. It came back polished, well-structured, three tight paragraphs or a clean hook-and-list. You posted it. It got twelve likes — half of them from people you know — and then disappeared. If that's happened more than twice, the issue isn't your writing. It's that the AI you used had no idea what LinkedIn's feed actually rewards right now.</p>
 <p>LinkedIn's algorithm scores posts based on signals that shift constantly: how quickly engagement arrives, what format the post uses, whether the opening line earns the "see more" click, how your specific audience tends to interact with content. None of that is in Claude's training data. Claude was trained on text from the internet at a fixed point in time. It writes competent LinkedIn posts the way a strong copywriter who hasn't used LinkedIn in two years would write them — confident in the fundamentals, completely blind to what's changed.</p>
 <p>The LinkedIn Post Engine skill was built to close that gap. Before it writes anything, it researches what's currently working — formats, hook structures, post lengths, engagement patterns — and uses that live context to calibrate the output. The result is a post that fits the platform as it exists this week, not as it existed when the model was trained.</p>
-<h2>Why <em>Generic AI Output</em> Vanishes in the Feed</h2>
+<h2 id="why-generic-ai-output-vanishes-in-the-feed">Why <em>Generic AI Output</em> Vanishes in the Feed</h2>
 <p>The specific failure mode of vanilla AI on LinkedIn isn't bad writing. The writing is usually fine. The problem is structural irrelevance — posts written to conventions the algorithm has moved past.</p>
 <p>A classic example: the five-line hook with each sentence on its own line. That format dominated LinkedIn from roughly 2020 to 2023. It worked because it drove "see more" clicks, which were a strong early signal to the algorithm. Enough people copied it that LinkedIn's feed eventually started deprioritising it — not because LinkedIn explicitly penalised it, but because mass adoption eroded the engagement advantage. AI tools trained before or during that shift will still default to it, because it represents a reliable pattern in their training data. It looks right. It just doesn't perform.</p>
 <p>The same happens with post length, with CTA placement, with whether a question at the end helps or hurts reach, with whether a hook built on a contrarian claim gets amplified or ignored. Each of these has a current answer that differs from the 2022 answer. A skill that only knows the 2022 answer will keep producing the 2022 post.</p>
@@ -321,14 +322,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>This is compounded by the calibration problem. A post that works for a B2B founder in SaaS is structurally different from one that works for a career coach writing to mid-career professionals. Not just in tone — in format, in hook type, in how personal to go, in where to place the insight vs. the story. Generic AI produces generic output because it has no way to know which of those you are. It writes to the average.</p>
-<h2>What <em>Live Research</em> Actually Changes</h2>
+<h2 id="what-live-research-actually-changes">What <em>Live Research</em> Actually Changes</h2>
 <p>The LinkedIn Post Engine skill researches the current feed before producing a single line of copy. That means format patterns that are actually earning reach right now, not patterns that were strong eighteen months ago. It means hook structures that are driving the "see more" click in your specific content category. It means post length calibrated to what's getting seen in full rather than scrolled past.</p>
 <p>This matters more on LinkedIn than almost any other platform because LinkedIn's algorithm is unusually sensitive to format signals relative to content quality. A well-written post in a dead format will underperform a merely decent post in a working one. The research isn't about following trends for the sake of it — it's about not wasting a genuinely good idea on a delivery mechanism the algorithm has stopped rewarding.</p>
 <div class="pull-quote">
 <p>The skill doesn't write what sounds good. It writes what <em>the feed will actually show.</em></p>
 </div>
 <p>Beyond format, the live research informs hook strategy. Different audience segments respond to different opening moves — a direct counter-intuitive claim works well with operators and practitioners, while a specific personal scenario tends to perform better with early-career professionals. The skill identifies which category your post sits in and writes the hook accordingly. That's not something you get from "write me a LinkedIn post about X."</p>
-<h2>How the <em>LinkedIn Post Engine</em> Works</h2>
+<h2 id="how-the-linkedin-post-engine-works">How the <em>LinkedIn Post Engine</em> Works</h2>
 <p>The skill runs a three-question interview before writing anything. Those questions establish context that changes the output in material ways — your role, your audience, and the specific idea you want to post about. Same skill, fundamentally different results for a founder writing about fundraising vs. a consultant writing about client management.</p>
 <div class="step-list">
 <div class="step-item">
@@ -378,7 +379,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $9 · instant download</span>
 </div>
 </div>
-<h2>Generic Output vs <em>NovaKit Output</em> — a Real Comparison</h2>
+<h2 id="generic-output-vs-novakit-output-a-real-comparison">Generic Output vs <em>NovaKit Output</em> — a Real Comparison</h2>
 <p>The difference isn't subtle. Here's the same brief — "a founder sharing a lesson about scaling too fast" — run through vanilla Claude versus the LinkedIn Post Engine skill.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -407,7 +408,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The left post is recognisable — it's the LinkedIn post that gets written a thousand times a day. The five-arrow list. The open question at the end. The "quality over quantity, always" kicker that says nothing. The right post is specific enough that it could only have been written by someone who was actually there. It has a concrete mechanism (scale the system before you scale headcount), a counterintuitive structure (the boring approach described in detail), and an ending that lands rather than solicits. That difference comes from the research — knowing that specificity and narrative density are what's currently earning reach, not aspirational bullet points.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>LinkedIn Post Engine</em></h2>
+<h2 id="who-gets-the-most-from-linkedin-post-engine">Who Gets the Most from <em>LinkedIn Post Engine</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -417,7 +418,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The sharpest use case is the professional who knows what they want to say but can't get it to land. You have a real perspective — something earned from actual experience. The problem is translating it into a post format that the feed will surface and an audience will read past the third line. That translation layer is what the skill handles. Your thinking stays yours; the skill ensures the delivery mechanism isn't working against you.</p>
 <p>It's also useful for anyone posting at volume who has hit the wall where every post starts to sound the same. The three-variant output and the live format research mean each run produces structurally different options. Over time, that variety compounds — the skill's auto-improve loop means the tenth post it writes for you reflects patterns from the first nine, calibrating further to what's working in your specific feed.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>Each run produces three fully written LinkedIn posts from a single idea. Each variant uses a different hook type and a different structural approach — so you're choosing between genuinely different ways to make the same point, not three versions of the same post with different first sentences. The skill also notes which format it chose and why, so you start to understand the reasoning rather than just consuming the output.</p>
 <p>The path from download to published post is short. Load the skill file in Claude, answer the three context questions, get three variants back, pick one or blend elements. Most people are done in under ten minutes. There's nothing to install and nothing to subscribe to — it runs inside the Claude account you already have.</p>
 <p>LinkedIn has always rewarded people who understood the mechanics of the feed better than their peers. That advantage used to belong to whoever spent the most time studying it manually. The LinkedIn Post Engine skill makes that research the starting point for every post — not something you do once a quarter and then forget. The feed changes. The skill changes with it. Your posts don't have to be caught off guard by the update they didn't see coming.</p><p>If you're working across the full Creator workflow, the <a href="https://novakit.tech/skills/bundles/creator-bundle.html">Creator bundle</a> covers everything in one place.</p>

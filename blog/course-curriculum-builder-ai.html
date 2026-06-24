@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -299,11 +300,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Course &amp; Curriculum Builder is a Claude AI skill — full course architecture, module-by-module structure, and lesson outlines calibrated to your audience's starting point and your format.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-generic-prompting-produces-when-you-ask-for-a-course" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic Prompting Produces When You Ask for a Course</a></li><li><a href="#why-live-research-changes-what-a-curriculum-can-do" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Live Research Changes What a Curriculum Can Do</a></li><li><a href="#what-the-course-amp-curriculum-builder-skill-actually-does" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Course &amp; Curriculum Builder Skill Actually Does</a></li><li><a href="#generic-output-vs-skill-built-curriculum" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic Output vs Skill-Built Curriculum</a></li><li><a href="#who-gets-the-most-from-course-amp-curriculum-builder" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from Course &amp; Curriculum Builder</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>You asked Claude to build you a course. It gave you ten modules, each with four lessons, each with a learning objective. It looks thorough. It has headers and sub-headers and a tidy logical flow. You copy it into Notion. Then you start filling in the actual content — and something is wrong. You can't explain what, exactly. The structure is fine. But it doesn't feel like a course. It feels like a Wikipedia article someone reorganised into a table of contents.</p>
 <p>The problem isn't the module count. It's that generic AI doesn't know who your student is when they arrive. It doesn't know whether they've tried this before and failed, or whether they've never heard of the concept. It doesn't know if they're watching on their phone during a commute or sitting at a desk with 90 minutes of focused time. It doesn't know whether your delivery is video-first or text-heavy or cohort-based. So it structures a course for an abstract learner — which is to say, for nobody.</p>
 <p>A course outline built for nobody teaches nobody. That's the thing to fix.</p>
-<h2>What <em>Generic Prompting</em> Produces When You Ask for a Course</h2>
+<h2 id="what-generic-prompting-produces-when-you-ask-for-a-course">What <em>Generic Prompting</em> Produces When You Ask for a Course</h2>
 <p>Ask Claude — without calibration, without context — to build a curriculum on, say, freelance copywriting, and you'll get something structurally convincing. Module 1: Introduction to Copywriting. Module 2: Understanding Your Audience. Module 3: Writing Headlines. Module 4: The Art of the Body Copy. Module 12: Building Your Freelance Business. It's all there. The logical sequence is defensible. The topics are correct.</p>
 <p>What it isn't is a learning design. There's no sense of where the student is emotionally stuck, which concepts they'll resist, which exercises will produce the breakthrough moment that makes the price feel worth it. The module on "understanding your audience" appears in the same form whether the student is a seasoned marketer pivoting to freelance or a complete beginner who has never written professionally. The progression feels linear because it is — not because that's how people actually learn this particular skill, in this particular context, with this particular set of fears.</p>
 <div class="callout callout-blue">
@@ -314,14 +315,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The output gets used, because it saves time, and because it looks like a course. But students hit Module 4 and slow down. They hit Module 7 and don't complete it. The refund requests come in. The reviews say "good content, but..." — and the "but" is always about flow, about pacing, about feeling like the course didn't quite meet them where they were. That's not a content problem. That's a structure problem that was present from the first moment the outline was generated.</p>
-<h2>Why <em>Live Research</em> Changes What a Curriculum Can Do</h2>
+<h2 id="why-live-research-changes-what-a-curriculum-can-do">Why <em>Live Research</em> Changes What a Curriculum Can Do</h2>
 <p>The Course &amp; Curriculum Builder skill doesn't start by generating modules. It starts by researching what learners in your specific niche are currently struggling with — not what an AI trained two years ago believes they struggle with, but what's showing up right now in course reviews, forum threads, Reddit posts, and creator communities. The skill goes and looks before it builds.</p>
 <p>That matters because learner expectations shift. A freelance copywriting student in 2026 arrives with a completely different set of prior knowledge, anxieties, and alternatives than one in 2022. They've already tried AI tools. They've already watched five free YouTube courses. Their resistance isn't to the concept — it's to the parts that feel like repetition, or the parts that feel too slow when they want to start earning immediately. Generic AI doesn't know this. Its training data doesn't update. The skill's research does.</p>
 <div class="pull-quote">
 <p>A curriculum built on live learner signals structures around <em>where people actually get stuck</em> — not around where a textbook says they should get stuck.</p>
 </div>
 <p>What the research unlocks is pacing and sequencing that matches your actual audience. The quick-win lesson that belongs in Module 2, not Module 8. The resistance point that needs addressing directly before introducing the harder concept. The exercise that produces a tangible output — a piece of copy, a completed client brief, a real deliverable — rather than a reflection question that loses students. These decisions come from understanding the learner. The skill builds that understanding first.</p>
-<h2>What the Course &amp; Curriculum Builder Skill <em>Actually Does</em></h2>
+<h2 id="what-the-course-amp-curriculum-builder-skill-actually-does">What the Course &amp; Curriculum Builder Skill <em>Actually Does</em></h2>
 <p>Before generating a single module title, the skill asks three calibrating questions about your audience, your format, and the transformation you're promising. The answers determine everything — the module count, the pacing, the exercise types, the lesson length guidance. Two creators using the same skill for a course on "freelance pricing" get structurally different curricula if one is building an asynchronous video course for beginners and the other is running a live cohort for established freelancers who need to raise their rates.</p>
 <div class="step-list">
 <div class="step-item">
@@ -371,7 +372,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$15 · instant download</span>
 </div>
 </div>
-<h2>Generic Output vs <em>Skill-Built</em> Curriculum</h2>
+<h2 id="generic-output-vs-skill-built-curriculum">Generic Output vs <em>Skill-Built</em> Curriculum</h2>
 <p>The difference is most visible in how each one handles the moment where a learner is most likely to quit. Here's the same course topic — freelance pricing strategy — structured both ways.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -399,7 +400,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The generic version covers the right topics. The skill-built version knows that pricing is an emotional barrier before it's a mechanical one — and it structures the module to address that directly, with a lesson that names the resistance, a concrete exercise with a time boundary, and a module outcome that is a real action taken, not a concept understood. That's the difference between a curriculum that looks complete and one that produces the result you promised in your sales page.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from <em>Course &amp; Curriculum Builder</em></h2>
+<h2 id="who-gets-the-most-from-course-amp-curriculum-builder">Who Gets the Most from <em>Course &amp; Curriculum Builder</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -409,7 +410,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The skill is most valuable for people who are expert in their content but haven't thought carefully about learning design. You know everything about the topic. What you don't know — and what no amount of topic expertise tells you — is how to sequence the ideas so that a person who knows nothing arrives at the outcome you're promising within the time you've promised. That sequencing problem is exactly what the skill is built to solve, because it researches learner behaviour for your specific audience before it builds anything.</p>
 <p>It's also useful for creators who've launched a course before and got feedback that it felt disorganised or hard to follow. Not because the content was wrong, but because the structure didn't account for where real learners get lost. The skill's resistance point mapping is specifically designed to catch those moments at the outline stage — before you've recorded 40 videos and the fix is expensive.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>The skill delivers a complete course architecture: every module named and positioned with a clear purpose in the transformation arc, every lesson titled and matched with an objective, an exercise type, and a pacing note. For a six-module course, that's typically 24–30 individual lesson outlines, each with enough detail to brief a video production or write the lesson directly. The resistance points are flagged and addressed structurally. The quick-win moments — the lessons designed to produce visible progress early and mid-course, which drive completion rates — are explicitly placed.</p>
 <p>You take the output and either start producing directly from it, or hand it to whoever is helping you build. Either way, the structural decisions have been made for you — by something that researched your learner before making them. You're not starting from a topic list and hoping the flow works. You're starting from a finished architectural plan and filling in the details.</p>
 <p>Most course completion problems aren't engagement problems. They're structural problems that were locked in at the outline stage. Once you've recorded the videos, the structure is fixed — and if Module 6 asks students to do something they weren't prepared for in Module 5, no amount of email marketing fixes that. The time to get the structure right is before you build. The skill exists precisely for that moment — and it's a fifteen-dollar decision that's considerably cheaper than re-recording four modules because the original sequence didn't hold.</p>

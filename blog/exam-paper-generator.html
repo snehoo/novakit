@@ -2,6 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
+<!-- citability-v1 -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -265,11 +266,11 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 </div>
-<article class="post-body">
+<article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Exam Paper Generator is a Claude AI skill — curriculum-calibrated exam papers with full mark schemes, built for educators inside Claude.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#why-generic-exam-questions-feel-wrong-to-every-teacher" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Generic Exam Questions Feel Wrong to Every Teacher</a></li><li><a href="#what-context-calibration-changes-in-assessment-writing" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Context Calibration Changes in Assessment Writing</a></li><li><a href="#what-the-exam-paper-generator-skill-actually-does" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Exam Paper Generator Skill Actually Does</a></li><li><a href="#generic-questions-vs-calibrated-questions" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Generic Questions vs Calibrated Questions</a></li><li><a href="#who-gets-the-most-from-the-exam-paper-generator" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from the Exam Paper Generator</a></li><li><a href="#the-output-you-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Walk Away With</a></li></ol></div>
 <p>You typed "Generate a Year 10 biology exam on cell division" into Claude. You got ten questions. They were coherent, correctly spelled, and completely useless — asking students to "describe the stages of mitosis" and "explain the importance of cell division" when your class has spent three weeks on meiosis, crossing-over, and genetic variation. The questions tested the right subject in the wrong direction entirely.</p>
 <p>This is the most common frustration educators report when using generic AI for assessment writing. The output isn't wrong in an obvious way — it's wrong in the way that only someone who teaches the class would notice. Claude doesn't know which chapters you covered. It doesn't know that your Year 10s are sitting a higher-tier paper, or that you've already assessed recall-level questions this term and need application questions now. So it defaults to the middle: broad, safe, textbook-adjacent questions that could have come from any teacher at any school.</p>
 <p>What happens when the tool asks those questions before generating the paper — and calibrates every question to the answers?</p>
-<h2>Why Generic Exam Questions <em>Feel Wrong</em> to Every Teacher</h2>
+<h2 id="why-generic-exam-questions-feel-wrong-to-every-teacher">Why Generic Exam Questions <em>Feel Wrong</em> to Every Teacher</h2>
 <p>The gap isn't quality — it's alignment. A generic AI-written question about photosynthesis isn't badly written. It's just written for a hypothetical student rather than your actual class. It doesn't know whether your students have done limiting factors yet, whether you're assessing at GCSE or A-Level, or whether you want two-mark recall questions or six-mark extended answers. So it produces questions that are fine in the abstract and misaligned in practice.</p>
 <p>Teachers who try to fix this spend longer editing than they would have spent writing. They delete four questions, rewrite three, adjust the mark scheme, add the command words their exam board requires, and wonder why they bothered asking AI at all. The output became a starting point — a rough first draft that needed as much thought as the original task.</p>
 <div class="callout callout-blue">
@@ -280,14 +281,14 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <p>The deeper issue is that exam design isn't just about correct content — it's about cognitive demand. Bloom's taxonomy exists because "describe," "explain," and "evaluate" are not interchangeable. A question that asks students to describe a process tests entirely different knowledge than one asking them to evaluate its limitations. Generic AI doesn't make this distinction unless you push it hard, and even then it tends to cluster questions at the same cognitive level rather than distributing them across the range your assessment needs.</p>
-<h2>What <em>Context Calibration</em> Changes in Assessment Writing</h2>
+<h2 id="what-context-calibration-changes-in-assessment-writing">What <em>Context Calibration</em> Changes in Assessment Writing</h2>
 <p>The <a href="https://novakit.tech/skills/exam-paper-generator.html">Exam Paper</a> Generator skill doesn't open with a blank generation. Before writing a single question, it asks you three things: the subject and specific topic, the year group and tier, and the cognitive demand distribution you need — recall, application, analysis, evaluation. Those three answers are the difference between a paper that fits your class and one that could have been downloaded from any revision website.</p>
 <p>This mirrors how experienced teachers actually think about assessment design. You don't sit down and generate questions randomly — you map the topic first, decide how many marks to weight toward higher-order thinking, then write to those constraints. The skill replicates that process. It understands that a GCSE Chemistry paper on rates of reaction needs different questions than an A-Level one on the same topic — not because the chemistry is different, but because the expected depth of understanding, the required command words, and the mark allocation logic are completely different.</p>
 <div class="pull-quote">
 <p>An exam paper only works when every question is written for <em>your students' specific point in the curriculum</em> — not for a generalised version of the subject.</p>
 </div>
 <p>What that calibration produces concretely: questions that use the right command words for your exam board's expectations, a mark scheme with credit points that match the cognitive level of each question, and a paper structure that distributes marks across the topic rather than clustering everything in the obvious areas. You get something you can hand to a colleague for review, not something you need to rebuild from scratch.</p>
-<h2>What the Exam Paper Generator Skill <em>Actually Does</em></h2>
+<h2 id="what-the-exam-paper-generator-skill-actually-does">What the Exam Paper Generator Skill <em>Actually Does</em></h2>
 <p>The skill runs a defined sequence — not a single large request, but a structured process that earns the right to write by understanding your context first.</p>
 <div class="step-list">
 <div class="step-item">
@@ -330,7 +331,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">from $9 · instant download</span>
 </div>
 </div>
-<h2>Generic Questions vs <em>Calibrated</em> Questions</h2>
+<h2 id="generic-questions-vs-calibrated-questions">Generic Questions vs <em>Calibrated</em> Questions</h2>
 <p>The difference between these two outputs is the difference between a paper you have to edit and one you can use. Both are on the same topic. Only one is on <em>your</em> topic.</p>
 <div class="before-after">
 <div class="ba-card ba-before">
@@ -353,7 +354,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The left column produced a passable set of questions that any student who's opened a revision guide could answer. The right column is built for a class that has already covered the stages, understands the basic differences, and is now being assessed at the analytical level the topic demands. The mark scheme on the right uses level-descriptor language and credit-point logic — it's usable by any teacher marking the paper, not just the one who wrote it. That difference comes entirely from the calibration step.</p>
 <hr class="post-divider"/>
-<h2>Who Gets the Most from the <em>Exam Paper Generator</em></h2>
+<h2 id="who-gets-the-most-from-the-exam-paper-generator">Who Gets the Most from the <em>Exam Paper Generator</em></h2>
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -363,7 +364,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <p>The biggest gains come for teachers writing assessments across multiple year groups or classes — the calibration step means one skill run can produce a GCSE Foundation paper and a separate Higher paper on the same topic, properly differentiated rather than just shortened. For tutors, the value is even more specific: a student preparing for a resit needs questions that target the exact gaps in their understanding, not a generic paper that re-covers everything equally. The skill produces what you spec, not what it assumes you need.</p>
 <p>Online course creators benefit in a slightly different way. Their assessments need to test module-specific content without leaning on institutional exam board conventions — they can specify the cognitive level distribution that matches their course structure, and the skill builds to that rather than defaulting to a traditional exam format their students didn't sign up for.</p>
-<h2>The Output You <em>Walk Away With</em></h2>
+<h2 id="the-output-you-walk-away-with">The Output You <em>Walk Away With</em></h2>
 <p>A complete exam paper: questions numbered and formatted, mark allocation stated per question, command words consistent with your level and specification, and a full mark scheme with credit points specified per question. For higher-order questions, the mark scheme includes level-descriptor guidance so any teacher can apply it consistently. The paper is structured to your stated cognitive demand distribution — if you asked for 30% recall, 40% application, 30% evaluation, that's what the question mix reflects.</p>
 <p>The path from download to usable paper is short. Run the skill in your Claude session, answer the three calibration questions, and the output arrives formatted and complete. Copy it into your preferred document tool, adjust any formatting specifics for your school's template, and it's ready. The editing stage isn't "rewrite half the questions" — it's "check this against my lesson notes and add any topic-specific context the skill didn't have access to."</p>
 <p>Most teachers expect to spend the first five minutes after an AI-generated paper crossing out what doesn't fit. The calibration step is specifically designed to eliminate that. The skill doesn't know your students — but it does know your topic, your level, and the cognitive demand you asked for. That's usually enough to make the output usable rather than merely salvageable.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/university-sop.html">a personal statement that reads specific, not generic</a>. If you're working across the full Educator workflow, the <a href="https://novakit.tech/skills/bundles/educator-bundle.html">Educator bundle</a> covers everything in one place.</p>
