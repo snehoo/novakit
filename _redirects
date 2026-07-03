@@ -1,1 +1,10 @@
 /delivery /delivery/index.html 200
+# Remove .html extension from blog URLs
+/blog/*.html /blog/:splat 301
+# Remove .html extension from skill URLs
+/skills/*.html /skills/:splat 301
+/skills/bundles/*.html /skills/bundles/:splat 301
+# Remove .html extension from legal pages
+/legal/*.html /legal/:splat 301
+# Handle root HTML files
+/*.html /:splat 301
