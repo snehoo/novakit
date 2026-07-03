@@ -1,0 +1,14 @@
+You've run that Claude skill 50 times.
+
+Same hook. Same structure. Same everything — because a static prompt has no new information to work with.
+
+NovaKit skills research live trends before every single run. 3 narrowing questions so it's never generic. A quality gate that rewrites the weak draft before you ever see it.
+
+Run the same skill today and in six months. Different result — because what works changed, and the skill knew.
+
+novakit.tech — Claude Skills from $5.
+
+---
+
+Music: bensound.com
+Track: "By My Side" (Joyful Party) by Bensound

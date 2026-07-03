@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>NovaKit Brag — Epic/5yo</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: #0d0d0b;
+        color: #f0efe8;
+        font-family: "Inter", sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #0d0d0b;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .safe {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 140px 90px;
+      }
+      h1, h2, h3, p { margin: 0; }
+      .headline {
+        font-size: 72px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.15;
+        color: #f0efe8;
+        max-width: 880px;
+      }
+      .accent { color: #DE7356; }
+      .green { color: #34d399; }
+      .card {
+        background: #1a1a17;
+        border-radius: 28px;
+        border: 1px solid rgba(255,255,255,0.08);
+        padding: 36px;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(52,211,153,0.12);
+        color: #34d399;
+        border: 1px solid rgba(52,211,153,0.35);
+        border-radius: 999px;
+        padding: 10px 22px;
+        font-size: 28px;
+        font-weight: 600;
+      }
+      .dot {
+        width: 12px; height: 12px; border-radius: 50%;
+        background: #34d399;
+      }
+      .emoji-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+        width: 100%;
+        max-width: 820px;
+      }
+      .emoji-card {
+        background: #1a1a17;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.08);
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 56px;
+      }
+      .price-tag {
+        font-size: 130px;
+        font-weight: 700;
+        color: #DE7356;
+      }
+      .btn {
+        background: #DE7356;
+        color: #0d0d0b;
+        font-weight: 700;
+        font-size: 34px;
+        padding: 26px 56px;
+        border-radius: 18px;
+      }
+      .glow {
+        box-shadow: 0 0 0 rgba(222,115,86,0);
+      }
+      .skill-stack-row {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        max-width: 760px;
+        background: #1a1a17;
+        border-radius: 18px;
+        padding: 20px 26px;
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .checkmark {
+        width: 110px; height: 110px;
+        border-radius: 50%;
+        background: rgba(52,211,153,0.15);
+        border: 2px solid #34d399;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 64px;
+        color: #34d399;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-width="1080"
+      data-height="1920"
+      data-duration="18.08"
+      data-start="0"
+    >
+      <!-- SCENE 1: Hook 0 - 2.01s -->
+      <section id="scene-1" class="clip" data-start="0" data-duration="2.01" data-track-index="1" style="background:#0d0d0b">
+        <div class="safe">
+          <div id="s1-stale" class="card" style="position:absolute; top:420px; width:780px; opacity:0.35; filter:grayscale(1)">
+            <p style="font-size:30px; color:#9a9a92">"Streamline your workflow with our innovative solution..."</p>
+          </div>
+          <div id="s1-fresh" class="card" style="position:absolute; top:700px; width:780px; border-color:#DE7356">
+            <div class="badge" style="margin-bottom:18px"><span class="dot"></span> Trending now</div>
+            <p style="font-size:32px; font-weight:600">NovaKit researches today's news first.</p>
+          </div>
+          <h1 id="s1-text" class="headline" style="position:absolute; top:1180px">Your AI forgot what happened <span class="accent">yesterday.</span></h1>
+        </div>
+      </section>
+
+      <!-- SCENE 2: Reveal grid 2.01 - 3.90s -->
+      <section id="scene-2" class="clip" data-start="2.01" data-duration="1.89" data-track-index="1" style="background:#0d0d0b">
+        <div class="safe">
+          <div class="emoji-grid" id="s2-grid">
+            <div class="emoji-card">📋</div><div class="emoji-card">✉️</div><div class="emoji-card">🎨</div><div class="emoji-card">💼</div>
+            <div class="emoji-card">📈</div><div class="emoji-card">🎬</div><div class="emoji-card">🏠</div><div class="emoji-card">🎓</div>
+            <div class="emoji-card">💌</div><div class="emoji-card">🧾</div><div class="emoji-card">📣</div><div class="emoji-card">🤝</div>
+          </div>
+          <h2 id="s2-text" class="headline" style="font-size:54px; margin-top:60px">Meet NovaKit: <span class="accent">63 Claude Skills</span> that read the news first.</h2>
+        </div>
+      </section>
+
+      <!-- SCENE 3: Research first 3.90 - 8.16s -->
+      <section id="scene-3" class="clip" data-start="3.90" data-duration="4.26" data-track-index="1" style="background:#0d0d0b">
+        <div class="safe">
+          <div id="s3-badge" class="badge" style="margin-bottom:50px; font-size:34px">
+            <span class="dot"></span> Live research on every run
+          </div>
+          <div style="display:flex; gap:24px; width:100%; max-width:840px">
+            <div id="s3-stale" class="card" style="flex:1; filter:grayscale(1); opacity:0.4">
+              <p style="font-size:26px; color:#9a9a92">Generic, stale output</p>
+            </div>
+            <div id="s3-fresh" class="card" style="flex:1; border-color:#34d399">
+              <p style="font-size:26px; font-weight:600">Fresh, today's trends</p>
+            </div>
+          </div>
+          <h2 id="s3-text" class="headline" style="margin-top:60px; font-size:56px">Every skill researches live trends. <span class="green">Then</span> it writes.</h2>
+        </div>
+      </section>
+
+      <!-- SCENE 4: Bundle play 8.16 - 11.94s -->
+      <section id="scene-4" class="clip" data-start="8.16" data-duration="3.78" data-track-index="1" style="background:#0d0d0b">
+        <div class="safe">
+          <div class="card" style="width:100%; max-width:820px; border-color:#DE7356; margin-bottom:30px">
+            <h3 style="font-size:42px; font-weight:700">Founder Bundle</h3>
+            <p style="font-size:30px; color:#9a9a92; margin-top:8px">6 skills, one price</p>
+          </div>
+          <div id="s4-stack" style="display:flex; flex-direction:column; gap:14px; width:100%; max-width:760px">
+            <div class="skill-stack-row"><span style="font-size:32px">📋</span><p style="font-size:26px">Pitch Deck</p></div>
+            <div class="skill-stack-row"><span style="font-size:32px">✉️</span><p style="font-size:26px">Cold Email</p></div>
+            <div class="skill-stack-row"><span style="font-size:32px">📊</span><p style="font-size:26px">Business Plan</p></div>
+            <div class="skill-stack-row"><span style="font-size:32px">📈</span><p style="font-size:26px">Investor Update</p></div>
+            <div class="skill-stack-row"><span style="font-size:32px">💼</span><p style="font-size:26px">Job Description</p></div>
+            <div class="skill-stack-row"><span style="font-size:32px">📣</span><p style="font-size:26px">Sales Copy</p></div>
+          </div>
+          <p id="s4-price" style="font-size:44px; font-weight:700; margin-top:36px">
+            <span style="text-decoration:line-through; color:#9a9a92">$54</span> → <span class="accent">$39</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- SCENE 5: Pricing tier 11.94 - 13.83s -->
+      <section id="scene-5" class="clip" data-start="11.94" data-duration="1.89" data-track-index="1" style="background:#0d0d0b">
+        <div class="safe">
+          <p id="s5-price" class="price-tag">$5</p>
+          <h2 class="headline" style="font-size:50px; margin-top:30px">From $5 to $69. Pick your power level.</h2>
+        </div>
+      </section>
+
+      <!-- SCENE 6: Punchline & CTA 13.83 - 18.08s -->
+      <section id="scene-6" class="clip" data-start="13.83" data-duration="4.25" data-track-index="1" style="background:#0d0d0b">
+        <div class="safe">
+          <h1 id="s6-line1" class="headline">Never write stale again.</h1>
+          <button id="s6-btn" class="btn" style="margin-top:50px">Get Started</button>
+          <div id="s6-success" style="display:flex; flex-direction:column; align-items:center; gap:24px; margin-top:60px; opacity:0">
+            <div class="checkmark">✓</div>
+            <p style="font-size:30px; color:#9a9a92">⬇ Download Pitch-Deck-Engine.skill</p>
+          </div>
+          <h2 id="s6-line2" class="headline accent" style="margin-top:60px; font-size:60px; opacity:0">novakit.tech</h2>
+        </div>
+      </section>
+
+      <!-- AUDIO: music, track-index 10. Beat-locked cuts: 2.01, 3.90, 8.16, 11.94, 13.83, 18.08 -->
+      <audio
+        id="bg-music"
+        data-start="0"
+        data-duration="18.08"
+        data-track-index="10"
+        data-volume="0.38"
+        src="assets/music/les-prisonnieres.mp3"
+      ></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // ---- Scene 1: Hook (0 - 2.01s) ----
+      tl.set("#s1-fresh", { opacity: 0, y: 30 }, 0);
+      tl.set("#s1-text", { opacity: 0, y: 24 }, 0);
+      tl.to("#s1-stale", { opacity: 0.18, y: 14, duration: 0.9, ease: "power2.out" }, 0);
+      // beat-locked: 0.60s (first beat-grid value)
+      tl.to("#s1-fresh", { opacity: 1, y: 0, duration: 0.5, ease: "back.out(1.6)" }, 0.30);
+      tl.to("#s1-text", { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.55);
+
+      // ---- Scene 2: Reveal grid (2.01 - 3.90s) ----
+      tl.set("#s2-grid .emoji-card", { opacity: 0, scale: 0.6, y: 16 }, 2.01);
+      tl.set("#s2-text", { opacity: 0, y: 18 }, 2.01);
+      // beat-grid: emoji cards stagger across 2.48, 2.96, 3.44 beats
+      tl.to("#s2-grid .emoji-card", { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)", stagger: 0.045 }, 2.05);
+      tl.to("#s2-text", { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 2.55);
+
+      // ---- Scene 3: Research first (3.90 - 8.16s) ----
+      tl.set("#s3-badge", { opacity: 0, scale: 0.85 }, 3.90);
+      tl.set(["#s3-stale", "#s3-fresh"], { opacity: 0, y: 20 }, 3.90);
+      tl.set("#s3-text", { opacity: 0, y: 16 }, 3.90);
+      tl.to("#s3-badge", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.8)" }, 3.95);
+      tl.to("#s3-badge", { boxShadow: "0 0 28px rgba(52,211,153,0.55)", repeat: 3, yoyo: true, duration: 0.4 }, 4.4);
+      tl.to("#s3-stale", { opacity: 0.4, y: 0, duration: 0.4 }, 4.5);
+      // beat-locked: 7.21s (strongest onset near this scene's reveal moment)
+      tl.to("#s3-fresh", { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 7.21);
+      tl.to("#s3-text", { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 7.5);
+
+      // ---- Scene 4: Bundle play (8.16 - 11.94s) ----
+      tl.set("#s4-stack .skill-stack-row", { opacity: 0, x: -30 }, 8.16);
+      tl.set("#s4-price", { opacity: 0, scale: 0.85 }, 8.16);
+      // beat-grid: stack rows snap to 8.65, 9.03, 9.57, 10.04, 10.52, 10.99
+      tl.to(
+        "#s4-stack .skill-stack-row",
+        { opacity: 1, x: 0, duration: 0.35, ease: "power2.out", stagger: 0.45 },
+        8.65
+      );
+      tl.to("#s4-price", { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 11.46);
+
+      // ---- Scene 5: Pricing tier (11.94 - 13.83s) ----
+      const prices = ["$5", "$15", "$29", "$45", "$69"];
+      // beat-grid: price flashes at 11.94, 12.41, 12.88, 13.35
+      const priceBeats = [11.94, 12.41, 12.88, 13.35, 13.6];
+      priceBeats.forEach((t, i) => {
+        tl.set("#s5-price", { textContent: prices[i] }, t);
+        tl.fromTo("#s5-price", { scale: 0.82, opacity: 0.7 }, { scale: 1, opacity: 1, duration: 0.18, ease: "power2.out" }, t);
+      });
+
+      // ---- Scene 6: Punchline & CTA (13.83 - 18.08s) ----
+      tl.set(["#s6-btn", "#s6-success", "#s6-line2"], { opacity: 0 }, 13.83);
+      tl.set("#s6-line1", { opacity: 0, y: 20 }, 13.83);
+      tl.to("#s6-line1", { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 13.88);
+      // beat-locked: 14.77s (button emphasis)
+      tl.to("#s6-btn", { opacity: 1, duration: 0.3 }, 14.77);
+      tl.to("#s6-btn", { boxShadow: "0 0 32px rgba(222,115,86,0.6)", repeat: 1, yoyo: true, duration: 0.3 }, 14.9);
+      tl.to(["#s6-btn"], { opacity: 0, duration: 0.25 }, 15.71);
+      tl.to("#s6-success", { opacity: 1, duration: 0.35, ease: "back.out(1.6)" }, 15.71);
+      // beat-locked: 16.18s (success ding moment)
+      tl.to("#s6-line2", { opacity: 1, duration: 0.4, ease: "power3.out" }, 16.18);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

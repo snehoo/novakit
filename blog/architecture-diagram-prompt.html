@@ -50,7 +50,7 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://novakit.tech/blog/architecture-diagram-prompt.html"
+    "@id": "https://novakit.tech/blog/architecture-diagram-prompt"
   },
   "image": "https://novakit.tech/og-blog-architecture-diagram-prompt.png"
 }
@@ -62,7 +62,7 @@
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
     {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
-    {"@type": "ListItem", "position": 3, "name": "Architecture Diagram Prompt", "item": "https://novakit.tech/blog/architecture-diagram-prompt.html"}
+    {"@type": "ListItem", "position": 3, "name": "Architecture Diagram Prompt", "item": "https://novakit.tech/blog/architecture-diagram-prompt"}
   ]
 }
 </script>
@@ -309,7 +309,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </div>
 <article class="post-body"><div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:36px;"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;">In this guide</div><p style="font-size:15px;color:var(--text);line-height:1.6;margin-bottom:16px;">Architecture Diagram Prompt is a Claude AI skill — produces calibrated system architecture docs for the specific reader, stack, and purpose you define.</p><ol style="margin:0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.9;"><li><a href="#what-generic-ai-actually-produces-for-architecture-diagrams" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What Generic AI Actually Produces for Architecture Diagrams</a></li><li><a href="#why-audience-calibration-changes-the-diagram" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Why Audience Calibration Changes the Diagram</a></li><li><a href="#what-the-architecture-diagram-prompt-skill-actually-does" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">What the Architecture Diagram Prompt Skill Actually Does</a></li><li><a href="#the-same-system-two-different-outputs" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Same System — Two Different Outputs</a></li><li><a href="#who-gets-the-most-from-the-architecture-diagram-prompt" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">Who Gets the Most from the Architecture Diagram Prompt</a></li><li><a href="#the-output-you-actually-walk-away-with" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">The Output You Actually Walk Away With</a></li></ol></div>
-<p>You've described your system to Claude. You've asked for an <a href="https://novakit.tech/skills/architecture-diagram-prompt.html">architecture diagram</a>. Claude has given you something that covers every layer — frontend, backend, database, cache, CDN, queues, third-party integrations. It's all there. It's also completely impossible to share with a Series A investor, a new backend hire, or a non-technical stakeholder without spending 20 minutes editing it down to something usable.</p>
+<p>You've described your system to Claude. You've asked for an <a href="https://novakit.tech/skills/architecture-diagram-prompt">architecture diagram</a>. Claude has given you something that covers every layer — frontend, backend, database, cache, CDN, queues, third-party integrations. It's all there. It's also completely impossible to share with a Series A investor, a new backend hire, or a non-technical stakeholder without spending 20 minutes editing it down to something usable.</p>
 <p>The problem isn't that Claude doesn't understand your system. The problem is that Claude drew a diagram for an imaginary universal reader who doesn't exist. Every component got equal weight. Every connection got an arrow. The result is accurate in the same way that a dictionary definition of "love" is accurate — technically correct, practically useless for the conversation you're actually trying to have.</p>
 <p>Architecture diagrams only work when they're tuned to a specific reader's level of context and a specific conversation's goal. The same system described to an infrastructure engineer and to a seed-stage investor should produce fundamentally different diagrams — and that calibration is exactly what generic Claude can't do on its own.</p>
 <h2 id="what-generic-ai-actually-produces-for-architecture-diagrams">What Generic AI <em>Actually Produces</em> for Architecture Diagrams</h2>
@@ -411,7 +411,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <h2 id="the-output-you-actually-walk-away-with">The Output You <em>Actually Walk Away With</em></h2>
 <p>Each run of the Architecture Diagram Prompt skill produces a Mermaid diagram block (ready to paste into Notion, GitHub READMEs, Confluence, or any Markdown-based doc tool), a plain-text structured description as an alternative, a one-paragraph system summary calibrated to the declared audience, and — for technical audiences — a bulleted section of key design decisions and their rationale. The whole package is ready to drop into a document without editing the vocabulary or restructuring for your reader.</p>
 <p>You paste the skill file into Claude, answer three questions about your system and who's reading, and get a complete diagramming package back in a single response. No redrawing, no translating technical accuracy into readable narrative, no stripping back a 14-component diagram to the 5 components your investor actually needs to see.</p>
-<p>Architecture diagrams are one of the few technical documents that get judged as much on what they leave out as on what they include. The instinct to show everything — to prove you've thought of everything — is exactly what makes most AI-generated diagrams fail their audience. The skill's value isn't that it draws a better diagram. It's that it draws the right diagram, for the right person, the first time.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/prd-writer.html">a PRD that engineering can build from without a meeting</a>.</p>
+<p>Architecture diagrams are one of the few technical documents that get judged as much on what they leave out as on what they include. The instinct to show everything — to prove you've thought of everything — is exactly what makes most AI-generated diagrams fail their audience. The skill's value isn't that it draws a better diagram. It's that it draws the right diagram, for the right person, the first time.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/prd-writer">a PRD that engineering can build from without a meeting</a>.</p>
 <div class="soft-cta">
 <div class="soft-cta-left">
 <div class="soft-cta-kicker">Ready to try it?</div>
