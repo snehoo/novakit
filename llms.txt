@@ -1,0 +1,21 @@
+# NovaKit
+
+> NovaKit makes Claude AI skills — downloadable prompt tools that run inside Claude to produce professional-grade outputs in under 3 minutes.
+
+## Priority Pages
+
+- [Home](https://novakit.tech/): NovaKit — Claude AI skills for founders, sales, and business professionals
+- [All Skills](https://novakit.tech/#skills): Browse all available Claude skills
+- [Cold Outreach Email](https://novakit.tech/skills/cold-outreach-email): Claude skill that writes 3 role-calibrated cold email variants with 9 subject lines — $9
+- [Blog](https://novakit.tech/blog/): Guides and deep-dives on using Claude skills effectively
+
+## Key Topics
+
+- Cold outreach email: https://novakit.tech/skills/cold-outreach-email
+- Why cold emails get deleted: https://novakit.tech/blog/why-cold-emails-get-deleted
+- Cold email guide: https://novakit.tech/blog/cold-outreach-email
+- Founder Bundle (6 skills): https://novakit.tech/#skills
+
+## Contact
+
+- Email: hello@novakit.tech
