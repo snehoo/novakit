@@ -34,25 +34,25 @@
   "headline": "The Business Plan Investors Read Past the Executive Summary",
   "description": "Business plan AI Claude: why generic AI business plans get ignored and how a stage-calibrated Claude skill produces plans built to the spec investors actually evaluate.",
   "datePublished": "2026-05-26",
-  "dateModified": "2026-05-26",
+  "dateModified": "2026-07-06",
   "author": {
-    "@type": "Organization",
-    "name": "NovaKit",
-    "url": "https://novakit.tech"
+    "@type": "Person",
+    "@id": "https://novakit.tech/#author-novakit-team",
+    "name": "NovaKit Team",
+    "url": "https://novakit.tech/about",
+    "sameAs": [
+      "https://www.linkedin.com/company/novakit"
+    ]
   },
   "publisher": {
-    "@type": "Organization",
-    "name": "NovaKit",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://novakit.tech/og-image.png"
-    }
+    "@id": "https://novakit.tech/#organization"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://novakit.tech/blog/business-plan"
   },
-  "image": "https://novakit.tech/og-blog-business-plan.png"
+  "image": "https://novakit.tech/og-blog-business-plan.png",
+  "@id": "https://novakit.tech/blog/business-plan/#article"
 }
 </script>
 <script type="application/ld+json">
@@ -63,6 +63,45 @@
     {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
     {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
     {"@type": "ListItem", "position": 3, "name": "The Business Plan Investors Read Past the Executive Summary", "item": "https://novakit.tech/blog/business-plan"}
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "WhyEvery Business Plan Looks the Same— And Why That's a Problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask any AI for a business plan and you'll get the same architecture: executive summary, company overview, market analysis, product description, competitive analysis, marketing and sales strategy, operations plan, financial projections, team and management, appendix. This is the canonical structure taught in MBA programmes and business planning courses. It is also the structure that investors at every stage have learned to skim efficiently — which means it's a structure optimised for being read q"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WhatStage CalibrationChanges About the Plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Before the Business Plan skill writes a single section heading, it establishes three things: funding stage and target raise amount, investor type (angel, seed fund, bank, strategic, grant body), and whether the business is pre-revenue, early-revenue, or scaling. From those three inputs, the entire architecture of the plan changes — not just the tone, but which sections exist, how much space each section occupies, what the financial model looks like, and what questions each section is designed to"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What the Business Plan SkillActually Produces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The skill runs a calibration interview before generating anything — stage, investor type, and current revenue status, plus the core business description. From that, it determines the appropriate architecture and section weighting before the first word is written."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who Gets the Most fromBusiness Plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The skill augments founder judgment — it doesn't replace it. The facts about the business, the traction data, the team's specific credentials, the actual pricing conversations and beta customer feedback — those come from the founder. The skill provides the architecture that puts those facts in the right order, in the right sections, framed in the way a specific investor type at a specific stage is set up to receive them. It's the difference between knowing your business and knowing how to commun"
+      }
+    }
   ]
 }
 </script>

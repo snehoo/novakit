@@ -24,27 +24,27 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "The Book Cover Brief That Actually Briefs a Designer",
-  "description": "Book cover AI briefs fail because they describe scenes, not genre signals. Learn what a calibrated cover brief includes \u2014 and why it changes what you get back.",
+  "description": "Book cover AI briefs fail because they describe scenes, not genre signals. Learn what a calibrated cover brief includes — and why it changes what you get back.",
   "datePublished": "2026-06-04",
-  "dateModified": "2026-06-04",
+  "dateModified": "2026-07-06",
   "author": {
-    "@type": "Organization",
-    "name": "NovaKit",
-    "url": "https://novakit.tech"
+    "@type": "Person",
+    "@id": "https://novakit.tech/#author-novakit-team",
+    "name": "NovaKit Team",
+    "url": "https://novakit.tech/about",
+    "sameAs": [
+      "https://www.linkedin.com/company/novakit"
+    ]
   },
   "publisher": {
-    "@type": "Organization",
-    "name": "NovaKit",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://novakit.tech/og-image.png"
-    }
+    "@id": "https://novakit.tech/#organization"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://novakit.tech/blog/book-cover-prompt"
   },
-  "image": "https://novakit.tech/og-blog-book-cover-prompt.png"
+  "image": "https://novakit.tech/og-blog-book-cover-prompt.png",
+  "@id": "https://novakit.tech/blog/book-cover-prompt/#article"
 }
 </script>
 <script type="application/ld+json">
@@ -55,6 +55,45 @@
     {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
     {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
     {"@type": "ListItem", "position": 3, "name": "The Book Cover Brief That Actually Briefs a Designer", "item": "https://novakit.tech/blog/book-cover-prompt"}
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "WhatGenericAI Cover Briefs Actually Produce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask vanilla Claude for a cover brief and it will do what it's trained to do: summarise the content you gave it in visual terms. For a cosy mystery set in a Scottish bakery, you get a brief mentioning warm tones, rustic textures, perhaps a rolling pin. For a military sci-fi novel, you get metallic blues, a lone soldier, stars. The descriptions aren't wrong. They just describe the book without describing the market."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WhatLive ResearchChanges About a Cover Brief?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Book Cover Prompt skill does something a generic brief can't: it researches what's actually working in your genre before writing a single line of description. That means looking at current bestseller covers in your specific subgenre, identifying the visual conventions that readers in that category have learned to recognise as belonging there, and encoding those signals into the brief."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What the Book Cover Prompt SkillActually Does?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The skill runs a structured process before producing any output. Three calibrating questions establish the context that makes the brief useful: your genre and subgenre, your comp titles (the published books your cover needs to sit credibly next to), and the specific reader you're writing for. From there, the skill researches the current visual landscape for that subgenre and builds a brief that works at every level a designer actually needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who Gets the Most fromBook Cover Prompt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The skill is built specifically for authors who don't have a publishing house's art department behind them — and who can't afford to spend three rounds of revisions educating a designer about subgenre conventions they should have received in the brief. A freelance designer on a fixed-fee project will interpret what you give them. Give them genre signals, comp title anchoring, and typographic conventions, and they have what they need. Give them \"dark and atmospheric,\" and they'll make it dark and"
+      }
+    }
   ]
 }
 </script>

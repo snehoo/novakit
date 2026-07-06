@@ -34,25 +34,25 @@
   "headline": "The PRD That Makes Your Engineers Stop Asking Questions",
   "description": "PRD Writer Claude AI skill: why most AI-generated PRDs create more meetings than they prevent, and how context calibration changes that.",
   "datePublished": "2026-06-01",
-  "dateModified": "2026-06-01",
+  "dateModified": "2026-07-06",
   "author": {
-    "@type": "Organization",
-    "name": "NovaKit",
-    "url": "https://novakit.tech"
+    "@type": "Person",
+    "@id": "https://novakit.tech/#author-novakit-team",
+    "name": "NovaKit Team",
+    "url": "https://novakit.tech/about",
+    "sameAs": [
+      "https://www.linkedin.com/company/novakit"
+    ]
   },
   "publisher": {
-    "@type": "Organization",
-    "name": "NovaKit",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://novakit.tech/og-image.png"
-    }
+    "@id": "https://novakit.tech/#organization"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://novakit.tech/blog/prd-writer-that-stops-the-questions"
   },
-  "image": "https://novakit.tech/og-blog-prd-writer-that-stops-the-questions.png"
+  "image": "https://novakit.tech/og-blog-prd-writer-that-stops-the-questions.png",
+  "@id": "https://novakit.tech/blog/prd-writer/#article"
 }
 </script>
 <script type="application/ld+json">
@@ -63,6 +63,45 @@
     {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
     {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
     {"@type": "ListItem", "position": 3, "name": "The PRD That Makes Your Engineers Stop Asking Questions", "item": "https://novakit.tech/blog/prd-writer-that-stops-the-questions"}
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "WhyGeneric AIFails at PRDs Specifically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask vanilla Claude to write a PRD for a user notification system and you'll get something that looks correct: user stories, functional requirements, a rough acceptance criteria list. The structure is there. What's missing is specificity of context — the fact that your app already has a push notification channel that behaves differently on iOS vs Android, that your team uses a specific definition of \"done\" that includes accessibility testing, that the notification preferences page is owned by a d"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WhatLive ResearchChanges in a PRD Context?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The PRD Writer skill researches before it writes. That means before generating a single section, it looks at what makes a PRD actually usable for an engineering team in 2026 — current conventions around user story formatting, how modern product teams structure acceptance criteria, what edge-case handling looks like in documents that don't generate follow-up questions. The output is shaped by what's working now, not by patterns from three years ago when \"agile PRD\" meant something different."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What thePRD Writer SkillActually Produces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The skill generates a complete, structured PRD structured around five core components. Here's how each one earns its place in a document that doesn't generate questions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who Gets the Most fromPRD Writer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The skill is most valuable in the gap between \"we know what we want to build\" and \"the engineers know exactly what to build.\" That gap is where misaligned assumptions live. For a solo founder or a first-time PM, it's also where most of the accidental scope creep originates — not from bad decisions, but from under-specified documents that leave too much to interpretation at build time."
+      }
+    }
   ]
 }
 </script>

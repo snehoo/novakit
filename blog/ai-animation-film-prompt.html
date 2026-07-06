@@ -32,27 +32,27 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "The AI Animation Prompt That Renders What You Actually Meant",
-  "description": "AI Animation Film Prompt Claude skill researches current model behaviour before writing. Get descriptions built for how Sora, Runway, and Kling render motion and atmosphere \u2014 not how you'd describe a scene to a person.",
+  "description": "AI Animation Film Prompt Claude skill researches current model behaviour before writing. Get descriptions built for how Sora, Runway, and Kling render motion and atmosphere — not how you'd describe a scene to a person.",
   "datePublished": "2026-05-27",
-  "dateModified": "2026-05-27",
+  "dateModified": "2026-07-06",
   "author": {
-    "@type": "Organization",
-    "name": "NovaKit",
-    "url": "https://novakit.tech"
+    "@type": "Person",
+    "@id": "https://novakit.tech/#author-novakit-team",
+    "name": "NovaKit Team",
+    "url": "https://novakit.tech/about",
+    "sameAs": [
+      "https://www.linkedin.com/company/novakit"
+    ]
   },
   "publisher": {
-    "@type": "Organization",
-    "name": "NovaKit",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://novakit.tech/og-image.png"
-    }
+    "@id": "https://novakit.tech/#organization"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://novakit.tech/blog/ai-animation-film-prompt"
   },
-  "image": "https://novakit.tech/og-blog-ai-animation-film-prompt.png"
+  "image": "https://novakit.tech/og-blog-ai-animation-film-prompt.png",
+  "@id": "https://novakit.tech/blog/ai-animation-film-prompt/#article"
 }
 </script>
 <script type="application/ld+json">
@@ -63,6 +63,45 @@
     {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
     {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
     {"@type": "ListItem", "position": 3, "name": "AI Animation Film Prompt", "item": "https://novakit.tech/blog/ai-animation-film-prompt"}
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What Generic AI Produces When You Ask forAnimation Descriptions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask vanilla Claude to write an AI video generation description and it produces something that reads like a film treatment. Evocative language. Mood-setting adjectives. A sense of the scene's emotional texture. All of it completely useless for a generative video model, which doesn't process emotional texture — it processes spatial relationships, motion vectors, lighting conditions, camera behaviour, and physical material properties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "WhyModel-Specific ResearchChanges the Output?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Before writing a single line of your animation description, theAI AnimationFilm Prompt skill checks what the current generation of video models actually responds to. It looks at how each model handles motion language — the specific vocabulary that produces smooth camera behaviour versus jittery artefacts. It checks which lighting descriptors are currently producing the atmospheric results creators want from each tool, and which have been overused to the point that the model interprets them gener"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What the AI Animation Film Prompt SkillActually Does?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The skill asks three calibrating questions before generating anything: your target model and output format, the visual style and mood you're working toward, and the specific scene or sequence you need described. Those answers determine everything — a six-second Runway clip for a product ad is built completely differently from a thirty-second Sora cinematic sequence for a brand film, even if the underlying visual idea is similar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who Gets the Most from theAI Animation Film Prompt Skill?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The skill is sharpest for anyone who has a clear visual concept and is consistently frustrated by the gap between that concept and what renders. If you can articulate what you want in terms of mood, style, and subject — but the model keeps giving you something adjacent rather than accurate — the problem is almost always in the description structure, not in the ambition of the concept. The skill handles the translation from vision to instruction."
+      }
+    }
   ]
 }
 </script>
