@@ -16,6 +16,7 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" type="image/jpeg" href="/assets/favicon.jpg?v=2024">
 <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2024">
+<script src="/js/utm.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -243,10 +244,20 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
   }
 
   try {
+    // Read attribution that was mirrored to sessionStorage before Razorpay redirect
+    let attr = {};
+    try { attr = JSON.parse(sessionStorage.getItem('nk_attr') || localStorage.getItem('nk_attr') || '{}'); } catch (e) {}
+
     const verifyRes = await fetch('/api/verify-payment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ paymentId, sku, signature, paymentLinkId, paymentLinkRefId: paymentLinkRef, paymentLinkStatus: paymentStatus }),
+      body: JSON.stringify({
+        paymentId, sku, signature, paymentLinkId,
+        paymentLinkRefId: paymentLinkRef, paymentLinkStatus: paymentStatus,
+        utmSource: attr.src || '', utmMedium: attr.med || '',
+        utmCampaign: attr.cam || '', utmContent: attr.cnt || '',
+        referrer: attr.ref || '',
+      }),
     });
 
     if (!verifyRes.ok) {

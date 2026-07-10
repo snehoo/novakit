@@ -44,7 +44,8 @@ export async function onRequestPost({ request, env }) {
     return new Response('Bad JSON', { status: 400, headers: CORS });
   }
 
-  const { paymentId, sku, signature, paymentLinkId, paymentLinkRefId, paymentLinkStatus } = body;
+  const { paymentId, sku, signature, paymentLinkId, paymentLinkRefId, paymentLinkStatus,
+          utmSource, utmMedium, utmCampaign, utmContent, referrer } = body;
 
   if (!paymentId || !sku) {
     return new Response(JSON.stringify({ error: 'Missing paymentId or sku' }), {
@@ -139,23 +140,26 @@ export async function onRequestPost({ request, env }) {
     }
 
     
-    // 7. Push buyer email to Beehiiv (only on new orders, fire-and-forget)
-    if (isNewOrder && buyerEmail && env.BEEHIIV_API_KEY && env.BEEHIIV_PUB_ID) {
-      fetch(`https://api.beehiiv.com/v2/publications/${env.BEEHIIV_PUB_ID}/subscriptions`, {
+    // 7. Push buyer email to Brevo list 7 (NovaKit-Buyers), fire-and-forget
+    if (isNewOrder && buyerEmail && env.BREVO_API_KEY) {
+      fetch('https://api.brevo.com/v3/contacts', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${env.BEEHIIV_API_KEY}`,
-        },
+        headers: { 'Content-Type': 'application/json', 'api-key': env.BREVO_API_KEY },
         body: JSON.stringify({
           email: buyerEmail,
-          reactivate_existing: false,
-          send_welcome_email: false,
-          utm_source: 'novakit_purchase',
-          utm_medium: 'organic',
-          utm_campaign: sku,
+          listIds: [7],
+          updateEnabled: true,
+          attributes: {
+            SOURCE:       'novakit_purchase',
+            UTM_SOURCE:   utmSource || 'direct',
+            UTM_MEDIUM:   utmMedium || 'organic',
+            UTM_CAMPAIGN: utmCampaign || sku,
+            UTM_CONTENT:  utmContent || '',
+            REFERRER:     referrer || '',
+            SKU:          sku,
+          },
         }),
-      }).catch(err => console.warn('[beehiiv] subscribe failed:', err.message));
+      }).catch(err => console.warn('[brevo] buyer sync failed:', err.message));
     }
 
     // 8. Get order ID for download tracking

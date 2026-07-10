@@ -1,7 +1,8 @@
 // functions/api/subscribe.js
 // POST /api/subscribe
-// Body: { email, source }
-// Proxies subscription to Beehiiv — avoids CORS and keeps API key server-side.
+// Body: { email, source, utmSource, utmMedium, utmCampaign }
+// Adds contact to Brevo list 8 (NovaKit-Leads).
+// Env: BREVO_API_KEY
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
@@ -19,33 +20,42 @@ export async function onRequestPost({ request, env }) {
     return new Response('Bad JSON', { status: 400, headers: CORS });
   }
 
-  const { email, source } = body;
-  if (!email || !email.includes('@')) {
-    return new Response(JSON.stringify({ error: 'Invalid email' }), {
+  const { email, source = 'homepage', utmSource = '', utmMedium = '', utmCampaign = '' } = body;
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+    return new Response(JSON.stringify({ error: 'Valid email required' }), {
       status: 400, headers: { 'Content-Type': 'application/json', ...CORS }
     });
   }
 
+  if (!env.BREVO_API_KEY) {
+    return new Response(JSON.stringify({ error: 'Email service not configured' }), {
+      status: 503, headers: { 'Content-Type': 'application/json', ...CORS }
+    });
+  }
+
   try {
-    const res = await fetch(`https://api.beehiiv.com/v2/publications/${env.BEEHIIV_PUB_ID}/subscriptions`, {
+    const res = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${env.BEEHIIV_API_KEY}`,
-      },
+      headers: { 'Content-Type': 'application/json', 'api-key': env.BREVO_API_KEY },
       body: JSON.stringify({
-        email,
-        reactivate_existing: false,
-        send_welcome_email: false,
-        utm_source: source || 'blog_subscribe',
-        utm_medium: 'organic',
+        email: email.trim(),
+        listIds: [8],
+        updateEnabled: true,
+        attributes: {
+          SOURCE:       'novakit_' + source,
+          UTM_SOURCE:   utmSource,
+          UTM_MEDIUM:   utmMedium,
+          UTM_CAMPAIGN: utmCampaign,
+        },
       }),
     });
 
-    if (!res.ok) {
+    // 201 = created, 204 = already exists and updated — both are success
+    if (!res.ok && res.status !== 204) {
       const err = await res.text();
-      console.error('[subscribe] Beehiiv error:', err);
-      return new Response(JSON.stringify({ error: 'Subscribe failed', detail: err }), {
+      console.error('[subscribe] Brevo error:', err);
+      return new Response(JSON.stringify({ error: 'Subscribe failed' }), {
         status: 502, headers: { 'Content-Type': 'application/json', ...CORS }
       });
     }

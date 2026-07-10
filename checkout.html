@@ -17,6 +17,7 @@
 <link rel="canonical" href="https://novakit.tech/checkout">
 <link rel="icon" type="image/jpeg" href="/assets/favicon.jpg?v=2024">
 <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2024">
+<script src="/js/utm.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -393,6 +394,12 @@ function handlePay(){
   sessionStorage.setItem('nk_email', email);
   sessionStorage.setItem('nk_sku', sku);
   sessionStorage.setItem('nk_product_name', skill.name);
+
+  // Mirror attribution to sessionStorage so it survives the Razorpay cross-domain redirect
+  try {
+    var attr = localStorage.getItem('nk_attr');
+    if (attr) sessionStorage.setItem('nk_attr', attr);
+  } catch (e) {}
 
   const rzpUrl = skill.razorpayLink
     + '?prefill[email]=' + encodeURIComponent(email)

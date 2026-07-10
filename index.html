@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+<script src="/js/utm.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
 <script>
@@ -423,6 +424,33 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .vs-inner p{font-size:17px;color:var(--muted);line-height:1.8;}
 
 /* ── CTA FOOTER ── */
+/* ── LEAD CAPTURE ── */
+.lc-section{padding:80px 40px;background:var(--bg);}
+.lc-inner{max-width:720px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.lc-badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green-text);border-radius:99px;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;}
+.lc-heading{font-family:'Instrument Serif',serif;font-size:clamp(28px,3.5vw,40px);line-height:1.12;letter-spacing:-0.02em;margin-bottom:12px;}
+.lc-heading em{font-style:italic;color:var(--accent);}
+.lc-sub{font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:0;}
+.lc-form-wrap{}
+.lc-skill-preview{background:var(--surface2,var(--bg2));border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:20px;}
+.lc-skill-row{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.lc-skill-icon{width:40px;height:40px;border-radius:10px;background:rgba(222,115,86,0.1);border:1px solid rgba(222,115,86,0.2);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+.lc-skill-name{font-size:15px;font-weight:700;letter-spacing:-0.01em;}
+.lc-skill-meta{font-size:12px;color:var(--muted);margin-top:2px;}
+.lc-includes{display:flex;flex-direction:column;gap:7px;}
+.lc-inc{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+.lc-inc::before{content:"✓";color:var(--green-text);font-weight:700;font-size:12px;flex-shrink:0;}
+.lc-input-row{display:flex;gap:10px;}
+.lc-input{flex:1;padding:13px 16px;background:var(--surface,#fff);border:1px solid var(--border-s,rgba(0,0,0,0.15));border-radius:10px;font-size:15px;color:var(--text);font-family:'Geist',sans-serif;outline:none;transition:border-color .2s;}
+.lc-input:focus{border-color:var(--accent);}
+.lc-input::placeholder{color:var(--muted);}
+.lc-btn{padding:13px 22px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Geist',sans-serif;white-space:nowrap;transition:background .2s,transform .15s;}
+.lc-btn:hover{background:#c55f40;transform:translateY(-1px);}
+.lc-btn:disabled{opacity:0.6;cursor:default;transform:none;}
+.lc-fine{font-size:12px;color:var(--faint);margin-top:10px;}
+.lc-success{display:none;background:var(--green-bg);border:1px solid rgba(52,211,153,0.25);border-radius:12px;padding:18px 20px;font-size:14px;color:var(--green-text);font-weight:600;line-height:1.5;}
+.lc-success strong{display:block;font-size:15px;margin-bottom:4px;}
+@media(max-width:640px){.lc-inner{grid-template-columns:1fr;gap:28px;}.lc-input-row{flex-direction:column;}.lc-btn{width:100%;}}
 .cta-section{padding:100px 40px;text-align:center;}
 .cta-inner{max-width:640px;margin:0 auto;}
 .cta-kicker{font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
@@ -839,6 +867,42 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
         </tr>
       </tbody>
     </table>
+  </div>
+</section>
+
+<!-- ══ LEAD CAPTURE ══ -->
+<section class="lc-section" id="free-skill">
+  <div class="lc-inner">
+    <div class="lc-copy">
+      <div class="lc-badge">Free skill</div>
+      <h2 class="lc-heading">Try NovaKit before<br>you <em>spend a dollar.</em></h2>
+      <p class="lc-sub">Get the LinkedIn Post Engine free — the same skill that runs live trend research before every post. Drop your email and it lands in your inbox in seconds.</p>
+    </div>
+    <div class="lc-form-wrap">
+      <div class="lc-skill-preview">
+        <div class="lc-skill-row">
+          <div class="lc-skill-icon">💼</div>
+          <div>
+            <div class="lc-skill-name">LinkedIn Post Engine</div>
+            <div class="lc-skill-meta">Social · normally $9 · free today</div>
+          </div>
+        </div>
+        <div class="lc-includes">
+          <div class="lc-inc">Live trend research before every post</div>
+          <div class="lc-inc">Hook variants calibrated to what's converting this week</div>
+          <div class="lc-inc">Works on a free Claude account</div>
+        </div>
+      </div>
+      <div class="lc-input-row">
+        <input type="email" class="lc-input" id="lc-email" placeholder="you@company.com" autocomplete="email" inputmode="email">
+        <button class="lc-btn" id="lc-btn" onclick="lcSubmit()">Send it free →</button>
+      </div>
+      <div class="lc-fine">No spam. No account. Unsubscribe any time.</div>
+      <div class="lc-success" id="lc-success">
+        <strong>📬 Check your inbox</strong>
+        Your LinkedIn Post Engine skill is on its way. Install takes under 60 seconds.
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1565,6 +1629,46 @@ function closeModalDirect(){document.getElementById('skillModal').classList.remo
 try { renderBundles(); } catch(e){ console.error('renderBundles error:',e); }
 try { renderSkills(); } catch(e){ console.error('renderSkills error:',e); }
 try { applySkillMeta(0); } catch(e){ console.error('applySkillMeta error:',e); }
+
+// ── Lead capture ──────────────────────────────────────────────────────────
+async function lcSubmit() {
+  const input = document.getElementById('lc-email');
+  const btn   = document.getElementById('lc-btn');
+  const email = input.value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    input.style.borderColor = 'var(--accent)';
+    input.focus();
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  let attr = {};
+  try { attr = JSON.parse(localStorage.getItem('nk_attr') || '{}'); } catch(e) {}
+
+  try {
+    await fetch('/api/free-skill', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email,
+        utmSource:   attr.src || '',
+        utmMedium:   attr.med || '',
+        utmCampaign: attr.cam || '',
+      }),
+    });
+  } catch(e) { /* fire-and-forget — show success regardless */ }
+
+  document.getElementById('lc-success').style.display = 'block';
+  input.style.display  = 'none';
+  btn.style.display    = 'none';
+  document.querySelector('.lc-fine').style.display = 'none';
+}
+window.lcSubmit = lcSubmit;
+
+document.getElementById('lc-email')?.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') lcSubmit();
+});
 </script>
 <script src="/novakit-tracker.js" defer></script>
 </body>
