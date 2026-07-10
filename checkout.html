@@ -144,6 +144,17 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .rzp-footer{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:var(--muted);}
 .rzp-badge{font-weight:700;font-size:11px;background:var(--bg2);padding:3px 9px;border-radius:5px;letter-spacing:0.02em;}
 
+/* Order bump */
+.order-bump{display:none;border:2px solid var(--accent);border-radius:12px;padding:16px 18px;margin-bottom:18px;background:rgba(222,115,86,0.05);cursor:pointer;user-select:none;}
+.order-bump:hover{background:rgba(222,115,86,0.09);}
+.ob-header{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.ob-badge{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--accent);color:#fff;padding:3px 9px;border-radius:99px;white-space:nowrap;}
+.ob-check{width:22px;height:22px;border-radius:6px;border:2px solid var(--accent);background:var(--input-bg);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;margin-left:auto;}
+.ob-check.checked{background:var(--accent);}
+.ob-check.checked::after{content:'✓';color:#fff;font-size:13px;font-weight:700;}
+.ob-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.ob-sub{font-size:13px;color:var(--muted);line-height:1.5;}
+
 /* SUCCESS */
 .success-overlay{display:none;position:fixed;inset:0;background:var(--bg);z-index:999;align-items:center;justify-content:center;flex-direction:column;gap:16px;}
 .success-overlay.show{display:flex;}
@@ -264,6 +275,16 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
         </div>
       </div>
 
+      <!-- Order bump — shown for individual skills with a parent bundle -->
+      <div class="order-bump" id="order-bump" onclick="toggleBump()">
+        <div class="ob-header">
+          <span class="ob-badge">⚡ One-time offer</span>
+          <div class="ob-check" id="ob-check"></div>
+        </div>
+        <div class="ob-title" id="ob-title">Upgrade to the Creator Bundle</div>
+        <div class="ob-sub" id="ob-sub">Get 8 skills for $29 total — instead of $9 for just this one. Add it with one click.</div>
+      </div>
+
       <button class="pay-btn" id="pay-btn" onclick="handlePay()" disabled>
         <span id="btn-text">Pay</span>
         <span id="btn-price"></span>
@@ -306,9 +327,13 @@ skill.includes.forEach(item => {
   list.appendChild(el);
 });
 
-/* Bundle nudge — only for individual skills */
+/* Bundle nudge + order bump — only for individual skills */
 let bundleSlugForNudge = null;
-if(!sku.endsWith('-bundle')){
+let currentSku   = sku;
+let currentSkill = skill;
+let bumpChecked  = false;
+
+if(!sku.endsWith('-bundle') && sku !== 'all-access'){
   const bundleEntry = Object.entries(window.NK_PRODUCTS).find(([slug, p]) => {
     return slug.endsWith('-bundle') &&
            Array.isArray(p.fileUrls) &&
@@ -317,6 +342,8 @@ if(!sku.endsWith('-bundle')){
   if(bundleEntry){
     const [bSlug, bundle] = bundleEntry;
     bundleSlugForNudge = bSlug;
+
+    // Left panel nudge
     document.getElementById('bn-title').textContent = 'Get the ' + bundle.name;
     document.getElementById('bn-sub').textContent =
       bundle.includes.length + ' skills for $' + bundle.price +
@@ -324,8 +351,50 @@ if(!sku.endsWith('-bundle')){
     document.getElementById('bn-btn').textContent =
       'Switch to ' + bundle.name + ' — $' + bundle.price + ' →';
     document.getElementById('bundle-nudge').style.display = 'block';
+
+    // Right panel order bump
+    const savings = bundle.price - skill.price;
+    document.getElementById('ob-title').textContent =
+      'Yes — upgrade to the ' + bundle.name + ' ($' + bundle.price + ' total)';
+    document.getElementById('ob-sub').textContent =
+      'Get ' + (bundle.fileUrls ? bundle.fileUrls.length : 'all') + ' skills for $' + bundle.price +
+      ' — only $' + savings + ' more than you\'re paying now. One-time offer.';
+    document.getElementById('order-bump').style.display = 'block';
   }
 }
+
+function toggleBump(){
+  bumpChecked = !bumpChecked;
+  document.getElementById('ob-check').classList.toggle('checked', bumpChecked);
+
+  if(bumpChecked){
+    currentSku   = bundleSlugForNudge;
+    currentSkill = window.NK_PRODUCTS[bundleSlugForNudge];
+  } else {
+    currentSku   = sku;
+    currentSkill = skill;
+  }
+
+  // Update left panel
+  document.getElementById('oc-icon').textContent          = currentSkill.icon;
+  document.getElementById('oc-name').textContent          = currentSkill.name;
+  document.getElementById('oc-type').textContent          = currentSkill.type + ' · Instant download';
+  document.getElementById('oc-price-display').textContent = '$' + currentSkill.price;
+
+  // Update pay button
+  document.getElementById('btn-price').textContent = '· $' + currentSkill.price;
+
+  // Update includes list
+  const list = document.getElementById('includes-list');
+  list.innerHTML = '';
+  currentSkill.includes.forEach(item => {
+    const el = document.createElement('div');
+    el.className = 'inc-item';
+    el.innerHTML = '<span class="inc-check">✓</span>' + item;
+    list.appendChild(el);
+  });
+}
+window.toggleBump = toggleBump;
 
 function switchToBundle(){
   if(bundleSlugForNudge){
@@ -392,8 +461,8 @@ function handlePay(){
   document.getElementById('btn-spinner').style.display = 'block';
 
   sessionStorage.setItem('nk_email', email);
-  sessionStorage.setItem('nk_sku', sku);
-  sessionStorage.setItem('nk_product_name', skill.name);
+  sessionStorage.setItem('nk_sku', currentSku);
+  sessionStorage.setItem('nk_product_name', currentSkill.name);
 
   // Mirror attribution to sessionStorage so it survives the Razorpay cross-domain redirect
   try {
@@ -401,9 +470,9 @@ function handlePay(){
     if (attr) sessionStorage.setItem('nk_attr', attr);
   } catch (e) {}
 
-  const rzpUrl = skill.razorpayLink
+  const rzpUrl = currentSkill.razorpayLink
     + '?prefill[email]=' + encodeURIComponent(email)
-    + '&utm_source=novakit_checkout&utm_medium=web&utm_campaign=' + encodeURIComponent(sku);
+    + '&utm_source=novakit_checkout&utm_medium=web&utm_campaign=' + encodeURIComponent(currentSku);
 
   setTimeout(() => {
     document.getElementById('successOverlay').classList.add('show');
