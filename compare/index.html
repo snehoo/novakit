@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Tool Comparisons 2026 | NovaKit</title>
+<meta content="NovaKit comparison guides for the best AI tools in 2026 — cold email, LinkedIn, real estate, startup, content creation, video, legal, ecommerce, resume, education, and creative writing." name="description"/>
+<link href="https://novakit.tech/compare/" rel="canonical"/>
+<link href="../assets/faviconnk.jpg" rel="icon" type="image/jpeg"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --bg3:#e8e6e2;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --bg3:#1e1e1b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff!important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:transparent;border:1px solid var(--border-s);color:var(--text);}
+.btn-ghost:hover{background:var(--bg2);}
+.btn-lg{font-size:16px;padding:13px 22px;border-radius:10px;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+[data-theme="light"] .eyebrow{color:#b5451e;}
+.inner{max-width:1160px;margin:0 auto;}
+
+/* hero */
+.cmp-hero{padding:70px 40px 60px;}
+.cmp-h1{font-family:'Instrument Serif',serif;font-size:clamp(34px,4.5vw,56px);line-height:1.08;letter-spacing:-0.02em;margin-bottom:12px;}
+.cmp-h1 em{font-style:italic;color:var(--accent);}
+.cmp-byline{font-size:13px;color:var(--muted);margin-bottom:0;}
+.cmp-breadcrumb{font-size:13px;color:var(--muted);margin-bottom:24px;}
+.cmp-breadcrumb a{color:var(--accent);}
+[data-theme="light"] .cmp-breadcrumb a{color:#b5451e;}
+
+/* quick picks */
+.ql-section{padding:0 40px 60px;}
+.ql-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;}
+.ql-hdr{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
+.ql-list{list-style:none;}
+.ql-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;line-height:1.6;}
+.ql-item:last-child{border-bottom:none;}
+.ql-num{min-width:22px;height:22px;border-radius:50%;border:1px solid var(--border-s);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--faint);flex-shrink:0;margin-top:3px;}
+.ql-tool{font-weight:600;color:var(--text);}
+.ql-bf{color:var(--muted);}
+.ql-bf strong{color:var(--accent);}
+[data-theme="light"] .ql-bf strong{color:#b5451e;}
+
+/* methodology */
+.meth-section{padding:0 40px 60px;}
+.meth-hdr{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);margin-bottom:12px;}
+.meth-list{list-style:none;}
+.meth-list li{display:flex;gap:10px;font-size:14px;color:var(--muted);margin-bottom:7px;line-height:1.5;}
+.meth-list li::before{content:"—";color:var(--faint);flex-shrink:0;}
+
+/* table */
+.tbl-section{padding:0 40px 60px;}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:14px;}
+.cmp-tbl{width:100%;border-collapse:collapse;font-size:13px;}
+.cmp-tbl th{text-align:left;padding:11px 16px;font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--faint);background:var(--surface);border-bottom:1px solid var(--border);}
+.cmp-tbl td{padding:13px 16px;color:var(--muted);border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.cmp-tbl tr:last-child td{border-bottom:none;}
+.cmp-tbl .nk-row td{background:rgba(222,115,86,0.04);}
+.cmp-tn{font-weight:600;color:var(--text);}
+.price-tag{display:inline-block;background:var(--bg2);color:var(--text);font-size:11px;font-weight:600;padding:2px 8px;border-radius:5px;white-space:nowrap;}
+
+/* vendor cards */
+.vc-section{padding:0 40px 60px;}
+.vc-section-hdr{margin-bottom:20px;}
+.vc-section-hdr h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3vw,34px);line-height:1.1;letter-spacing:-0.02em;color:var(--text);}
+.vc-section-hdr h2 em{font-style:italic;color:var(--accent);}
+.vc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
+.vc{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px;}
+.vc.nk-card{border-color:var(--accent);}
+.vc-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.vc-tag{font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.5;}
+.vc-facts{list-style:none;margin-bottom:10px;}
+.vc-facts li{font-size:13px;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);line-height:1.5;}
+.vc-facts li:last-child{border-bottom:none;}
+.vc-facts strong{color:var(--text);}
+.vc-choose{font-size:12px;color:var(--green-text);font-weight:600;}
+
+/* decision */
+.dec-section{padding:0 40px 60px;}
+.dec-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;}
+.dec-card h2{font-family:'Instrument Serif',serif;font-size:22px;margin-bottom:16px;color:var(--text);}
+.dec-list{list-style:none;}
+.dec-item{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted);line-height:1.55;}
+.dec-item:last-child{border-bottom:none;}
+.dec-item strong{color:var(--text);}
+.pick,.skip{font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:3px 7px;border-radius:5px;flex-shrink:0;margin-top:2px;height:fit-content;}
+.pick{background:var(--green-bg);color:var(--green-text);}
+.skip{background:rgba(239,68,68,0.1);color:#dc2626;}
+[data-theme="dark"] .skip{color:#f87171;}
+
+/* FAQ */
+.faq-section{padding:0 40px 60px;}
+.faq-section h2{font-family:'Instrument Serif',serif;font-size:clamp(24px,3vw,32px);letter-spacing:-0.02em;margin-bottom:20px;color:var(--text);}
+details.faq{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden;}
+details.faq summary{padding:13px 18px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;background:var(--surface);}
+details.faq summary::-webkit-details-marker{display:none;}
+details.faq summary::after{content:"+";color:var(--faint);font-size:18px;font-weight:400;}
+details.faq[open] summary::after{content:"−";}
+.faq-a{padding:13px 18px;font-size:14px;color:var(--muted);border-top:1px solid var(--border);background:var(--surface);line-height:1.65;}
+.faq-a a{color:var(--accent);}
+
+/* NovaKit skill CTA section */
+.nk-section{padding:60px 40px;background:var(--bg2);}
+.nk-section h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3vw,34px);letter-spacing:-0.02em;margin-bottom:8px;color:var(--text);}
+.nk-section h2 em{font-style:italic;color:var(--accent);}
+.nk-section p{font-size:16px;color:var(--muted);margin-bottom:28px;line-height:1.7;max-width:640px;}
+.nk-skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:20px;}
+.nk-skill-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:6px;}
+.nk-skill-name{font-size:14px;font-weight:700;color:var(--text);}
+.nk-skill-desc{font-size:13px;color:var(--muted);line-height:1.5;flex:1;}
+.nk-skill-footer{display:flex;align-items:center;justify-content:space-between;margin-top:8px;}
+.nk-skill-price{font-size:14px;font-weight:800;color:var(--accent);}
+.nk-bundle-card{background:var(--surface);border:2px solid var(--accent);border-radius:14px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.nk-bundle-info{flex:1;}
+.nk-bundle-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.nk-bundle-desc{font-size:13px;color:var(--muted);line-height:1.5;}
+.nk-bundle-price{font-size:22px;font-weight:800;color:var(--accent);white-space:nowrap;}
+
+/* also compare */
+.also-section{padding:40px 40px 60px;}
+.also-section h3{font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--faint);margin-bottom:14px;}
+.also-links{display:flex;flex-wrap:wrap;gap:8px;}
+.also-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:7px 14px;border-radius:8px;transition:all .2s;}
+.also-link:hover{border-color:var(--accent);color:var(--accent);}
+
+footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.footer-left{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:22px;}
+.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-social{display:flex;gap:14px;align-items:center;}
+.footer-social a{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.footer-social a:hover{color:var(--text);}
+.footer-social svg{width:16px;height:16px;flex-shrink:0;}
+
+@media(max-width:768px){
+  nav{padding:0 16px;}
+  .nav-links{display:none;}
+  .cmp-hero,.ql-section,.meth-section,.tbl-section,.vc-section,.dec-section,.faq-section,.nk-section,.also-section{padding-left:16px;padding-right:16px;}
+  .vc-grid{grid-template-columns:1fr;}
+  .nk-skill-grid{grid-template-columns:1fr;}
+  footer{padding:24px 16px;}
+}
+
+.cmp-idx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:36px;}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo"><a href="../index.html"><img alt="NovaKit" class="logo-img logo-dark" src="../assets/nkwhite.jpg"/><img alt="NovaKit" class="logo-img logo-light" src="../assets/nkblack.jpg"/></a></div>
+<div class="nav-links">
+  <a href="../index.html#install">Install</a>
+  <a href="../index.html#skills">Skills</a>
+  <a href="../skills/bundles/">Bundles</a>
+  <a href="index.html">Compare</a>
+  <a href="../blog/index.html">Blog</a>
+</div>
+<div class="nav-right">
+  <button class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀️</span></button>
+  <a class="btn btn-primary" href="../index.html#skills">Browse skills</a>
+</div>
+</nav>
+<section class="cmp-hero">
+<div class="inner">
+  <div class="eyebrow">Comparison Guides · July 2026</div>
+  <h1 class="cmp-h1">Best AI tools by category <em>in 2026</em></h1>
+  <p style="font-size:17px;color:var(--muted);margin-top:12px;max-width:640px;line-height:1.7;">Independent comparisons of the top AI tools for professionals — cold email, LinkedIn, real estate, startups, content creation, video, legal, ecommerce, resumes, education, and creative writing.</p>
+  <div class="cmp-idx-grid">
+    <a href="best-cold-email-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Cold Email Tools for B2B Sales Reps in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs Reply.io, Lemlist, Apollo.io + more · 6 tools reviewed</div>
+    </a>
+    <a href="best-linkedin-social-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI LinkedIn and Social Writing Tools for Professionals in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs Taplio, AuthoredUp, Buffer + more · 6 tools reviewed</div>
+    </a>
+    <a href="best-real-estate-ai-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Tools for Real Estate Agents in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs ListingAI, Write.Homes, Canva + more · 6 tools reviewed</div>
+    </a>
+    <a href="best-startup-founder-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Tools for Startup Founders in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs Tome, Beautiful.ai, Gamma + more · 6 tools reviewed</div>
+    </a>
+    <a href="best-content-creator-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Content Creation Tools for Creators and Marketers in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs Jasper, Copy.ai, Buffer + more · 6 tools reviewed</div>
+    </a>
+    <a href="best-video-podcast-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Video Script and Podcast Tools for Content Creators in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs Descript, Opus, Castmagic + more · 6 tools reviewed</div>
+    </a>
+    <a href="best-legal-business-doc-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Legal and Business Document Tools for Freelancers in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs Harvey, Spellbook, Termly + more · 5 tools reviewed</div>
+    </a>
+    <a href="best-ecommerce-product-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Product Description and Ecommerce Tools for Sellers in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs Jasper, Copy.ai, Anyword + more · 5 tools reviewed</div>
+    </a>
+    <a href="best-resume-career-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Resume and Career Tools for Job Seekers in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs Teal, Kickresume, Rezi + more · 5 tools reviewed</div>
+    </a>
+    <a href="best-education-teaching-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Education and Lesson Planning Tools for Teachers in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs MagicSchool, Khanmigo, Diffit + more · 5 tools reviewed</div>
+    </a>
+    <a href="best-creative-writing-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Creative Writing Tools for Authors and Storytellers in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs Sudowrite, NovelAI, Reedsy + more · 5 tools reviewed</div>
+    </a>
+    <a href="best-event-speech-writing-tools-2026.html" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:border-color .2s;text-decoration:none;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Comparison</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4;">Best AI Speech and Event Writing Tools for Speakers and Planners in 2026</div>
+      <div style="font-size:13px;color:var(--muted);">vs Jasper, Copy.ai, Grammarly + more · 5 tools reviewed</div>
+    </a>
+  </div>
+</div>
+</section>
+<footer>
+<div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a></div>
+<div class="footer-links">
+  <a href="../index.html#skills">Skills</a>
+  <a href="../skills/bundles/">Bundles</a>
+  <a href="../blog/index.html">Blog</a>
+</div>
+</footer>
+<script>function toggleTheme(){const h=document.documentElement;const dark=h.getAttribute('data-theme')==='dark';h.setAttribute('data-theme',dark?'light':'dark');document.getElementById('theme-icon').textContent=dark?'🌙':'☀️';}</script>
+</body>
+</html>
