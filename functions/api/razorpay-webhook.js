@@ -224,7 +224,7 @@ export async function onRequestPost({ request, env }) {
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${env.RESEND_API_KEY}` },
             body: JSON.stringify({
               from: 'NovaKit <support@novakit.tech>',
-              to: ['snehalp@gmail.com', 'support@novakit.tech'],
+              to: ['support@novakit.tech'],
               subject: `💰 New sale — ${skillSlug || 'unknown'} (${amountDisplay})`,
               html: `<p>New NovaKit sale via webhook!</p>
                      <ul>
