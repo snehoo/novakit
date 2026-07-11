@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free LinkedIn Post Engine — Claude AI Skill | NovaKit</title>
+<link rel="canonical" href="https://novakit.tech/free">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Get the LinkedIn Post Engine free — a Claude AI skill that researches current platform trends and writes your post in under 3 minutes. No card needed.">
+<meta property="og:title" content="Free LinkedIn Post Engine — NovaKit Claude AI Skill">
+<meta property="og:description" content="Runs live research before every post. Writes hook, body, and CTA calibrated to what's earning reach this week. Free — enter your email.">
+<meta property="og:url" content="https://novakit.tech/free">
+<meta property="og:image" content="https://novakit.tech/assets/og-free.png">
+<link rel="icon" type="image/jpeg" href="/assets/favicon.jpg">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E9HFQ33F0Y');
+</script>
+<!-- Google Ads conversion tracking — replace AW-XXXXXXXXX with your ID -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script>gtag('config', 'AW-XXXXXXXXX');</script> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --border: rgba(0,0,0,0.08);
+  --border-s: rgba(0,0,0,0.14);
+  --text: #111110;
+  --muted: #545249;
+  --faint: #888580;
+  --accent: #DE7356;
+  --accent-h: #c55f40;
+  --green: #059669;
+  --green-bg: rgba(5,150,105,0.08);
+  --green-text: #076b4a;
+  --pill-bg: rgba(222,115,86,0.1);
+  --ink-dark: #111110;
+}
+[data-theme="dark"] {
+  --bg: #0d0d0b;
+  --surface: #1a1a17;
+  --border: rgba(255,255,255,0.07);
+  --border-s: rgba(255,255,255,0.13);
+  --text: #f0efe8;
+  --muted: #8a8980;
+  --faint: #55554e;
+  --accent: #DE7356;
+  --accent-h: #f08c72;
+  --green-bg: rgba(52,211,153,0.08);
+  --green-text: #34d399;
+  --pill-bg: rgba(222,115,86,0.12);
+  --ink-dark: #0d0d0b;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Geist', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 17px;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+
+/* Nav */
+.nav-outer {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.nav {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo img { height: 26px; width: auto; display: block; }
+.logo-dark { display: block; }
+.logo-light { display: none; }
+[data-theme="light"] .logo-dark { display: none; }
+[data-theme="light"] .logo-light { display: block; }
+.nav-back {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+  transition: color .15s;
+}
+.nav-back:hover { color: var(--text); }
+
+/* Page */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 24px 100px;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pill-bg);
+  color: var(--accent);
+  padding: 7px 16px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+}
+.badge-dot {
+  width: 7px; height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* Hero */
+.hero { margin-bottom: 44px; }
+.hero h1 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(32px, 5.5vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero .sub {
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 56ch;
+}
+
+/* What's inside card */
+.inside {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+}
+.inside-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 22px;
+}
+.inside-items { display: grid; gap: 18px; }
+.inside-item { display: flex; align-items: flex-start; gap: 14px; }
+.inside-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--pill-bg);
+  border: 1px solid rgba(222,115,86,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.inside-text strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  color: var(--text);
+}
+.inside-text span { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+/* Form block */
+.form-block {
+  background: var(--ink-dark);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px;
+  margin-bottom: 28px;
+}
+[data-theme="light"] .form-block { background: #111110; }
+.form-block h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #f0efe8;
+  margin-bottom: 8px;
+}
+.form-block p {
+  font-size: 15px;
+  color: rgba(240,239,232,0.55);
+  margin-bottom: 24px;
+  line-height: 1.65;
+}
+.form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.form-row input[type="email"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 13px 16px;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  font-size: 15px;
+  background: rgba(255,255,255,0.06);
+  color: #f0efe8;
+  outline: none;
+  font-family: 'Geist', system-ui, sans-serif;
+  transition: border-color .2s;
+}
+.form-row input[type="email"]::placeholder { color: rgba(240,239,232,0.35); }
+.form-row input[type="email"]:focus { border-color: var(--accent); }
+.form-row button {
+  padding: 13px 24px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Geist', system-ui, sans-serif;
+  white-space: nowrap;
+  transition: background .18s, transform .18s;
+}
+.form-row button:hover { background: #f08c72; transform: translateY(-1px); }
+.form-row button:disabled { opacity: 0.6; cursor: default; transform: none; }
+.form-ok {
+  display: none;
+  margin-top: 18px;
+  font-size: 15px;
+  color: #34d399;
+  font-weight: 600;
+}
+.form-note {
+  margin-top: 14px;
+  font-size: 12px;
+  color: rgba(240,239,232,0.35);
+}
+
+/* Trust bar */
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+  margin-bottom: 0;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.trust-item svg { color: var(--green); flex-shrink: 0; }
+
+/* Footer */
+footer {
+  margin-top: 64px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+
+@media(max-width: 600px) {
+  .page { padding: 40px 16px 80px; }
+  .inside { padding: 22px 20px; }
+  .form-block { padding: 28px 20px; }
+  .form-row { flex-direction: column; }
+  .form-row button { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav-outer">
+  <nav class="nav">
+    <a class="nav-logo" href="/">
+      <img class="logo-dark" src="/assets/nkwhite.jpg" alt="NovaKit">
+      <img class="logo-light" src="/assets/nkblack.jpg" alt="NovaKit">
+    </a>
+    <a class="nav-back" href="/">← All skills</a>
+  </nav>
+</div>
+
+<div class="page">
+
+  <div class="hero">
+    <div class="badge"><span class="badge-dot"></span> Free · No card needed</div>
+    <h1>Your LinkedIn posts deserve<br>better than <em>starting from scratch.</em></h1>
+    <p class="sub">The LinkedIn Post Engine is a Claude AI skill that runs live research before writing — checking what format, hook style, and length are earning reach this week. Get it free.</p>
+  </div>
+
+  <div class="inside">
+    <div class="inside-label">What you get</div>
+    <div class="inside-items">
+      <div class="inside-item">
+        <div class="inside-icon">🔍</div>
+        <div class="inside-text">
+          <strong>Live platform research before every post</strong>
+          <span>Claude checks current LinkedIn trends before writing — so your post is built around what's actually working this week, not six months ago.</span>
+        </div>
+      </div>
+      <div class="inside-item">
+        <div class="inside-icon">✍️</div>
+        <div class="inside-text">
+          <strong>Full post in under 3 minutes</strong>
+          <span>Hook, body, and CTA — structured for the format the algorithm is currently rewarding. You give it a topic and persona; it handles everything else.</span>
+        </div>
+      </div>
+      <div class="inside-item">
+        <div class="inside-icon">🔁</div>
+        <div class="inside-text">
+          <strong>Reusable — works with your free Claude account</strong>
+          <span>Upload the .skill file once to Claude. Use it every time you need a LinkedIn post — no prompt-crafting, no setup, just results.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-block">
+    <h2>Get it free — straight to your inbox</h2>
+    <p>Enter your email and we'll send the skill file instantly. Takes 30 seconds to set up in Claude.</p>
+    <div class="form-row">
+      <input type="email" id="free-email" placeholder="your@email.com" autocomplete="email">
+      <button id="free-btn" onclick="submitFree()">Send it free →</button>
+    </div>
+    <p class="form-ok" id="free-ok">✓ Check your inbox — it's on its way.</p>
+    <p class="form-note">No spam. Unsubscribe any time.</p>
+  </div>
+
+  <div class="trust">
+    <div class="trust-item">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Works with the free Claude plan
+    </div>
+    <div class="trust-item">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Instant delivery — no account needed
+    </div>
+    <div class="trust-item">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      One-time upload · use forever
+    </div>
+    <div class="trust-item">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      No spam · unsubscribe any time
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span>© 2026 NovaKit · <a href="/index.html#skills">All Skills</a> · <a href="mailto:support@novakit.tech">support@novakit.tech</a></span>
+  <span><a href="/index.html#faq">FAQ</a></span>
+</footer>
+
+<script>
+function submitFree() {
+  var email = document.getElementById('free-email').value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('free-email').focus();
+    return;
+  }
+  var btn = document.getElementById('free-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  var attr = {};
+  try { attr = JSON.parse(localStorage.getItem('nk_attr') || '{}'); } catch(e) {}
+
+  fetch('/api/free-skill', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: email,
+      utmSource: attr.src || '',
+      utmMedium: attr.med || '',
+      utmCampaign: attr.cam || ''
+    })
+  }).catch(function(){});
+
+  document.getElementById('free-ok').style.display = 'block';
+  btn.style.display = 'none';
+
+  // Fire Google Ads conversion — uncomment once you have your conversion ID
+  // if (typeof gtag === 'function') gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/YYYYYYY'});
+}
+
+document.getElementById('free-email').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') submitFree();
+});
+</script>
+
+</body>
+</html>
