@@ -68,6 +68,18 @@ export async function onRequestPost({ request, env }) {
         break;
       }
 
+      case 'lead': {
+        // Free skill signup — stored as a page_view with skill_slug='__free_lead__'
+        // so it's queryable without a schema change
+        const source = classifySource(body.referrer ?? '');
+        await client.query(
+          `INSERT INTO page_views (skill_slug, session_id, referrer, source)
+           VALUES ('__free_lead__', $1, $2, $3)`,
+          [body.sessionId, body.referrer ?? null, source]
+        );
+        break;
+      }
+
       default:
         return new Response('Unknown type', { status: 400, headers: CORS });
     }

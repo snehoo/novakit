@@ -902,11 +902,13 @@ function buildBuyers(entrySkills) {
 function buildFunnel(funnel, kpi) {
   const visitors  = (funnel && funnel.visitors)      || 0;
   const skillViews= (funnel && funnel.skillPageViews) || 0;
+  const freeLeads = (funnel && funnel.freeLeads)      || 0;
   const orders    = (kpi   && kpi.totalOrders)        || 0;
   const steps = [
-    {label:'Unique visitors',   val:visitors,   pct:100,                                          cls:'f1'},
-    {label:'Skill page views',  val:skillViews, pct:visitors?Math.round(skillViews/visitors*100):0, cls:'f2'},
-    {label:'Completed payment', val:orders,     pct:visitors?+(orders/visitors*100).toFixed(1):0,   cls:'f4'},
+    {label:'Unique visitors',      val:visitors,   pct:100,                                             cls:'f1'},
+    {label:'Skill page views',     val:skillViews, pct:visitors?Math.round(skillViews/visitors*100):0,  cls:'f2'},
+    {label:'Free skill sign-ups',  val:freeLeads,  pct:visitors?Math.round(freeLeads/visitors*100):0,   cls:'f3'},
+    {label:'Completed payment',    val:orders,     pct:visitors?+(orders/visitors*100).toFixed(1):0,    cls:'f4'},
   ];
   document.getElementById('funnel-bars').innerHTML = steps.map(s=>`
     <div class="funnel-row">

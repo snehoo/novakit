@@ -185,9 +185,12 @@ export async function onRequestGet({ request, env }) {
       // Funnel (page views → orders in same period)
       client.query(`
         SELECT
-          COUNT(DISTINCT session_id)                          AS visitors,
+          COUNT(DISTINCT session_id)                                              AS visitors,
           COUNT(DISTINCT CASE WHEN skill_slug IS NOT NULL
-                         THEN session_id END)                 AS skill_page_views
+                              AND skill_slug != '__free_lead__'
+                         THEN session_id END)                                     AS skill_page_views,
+          COUNT(DISTINCT CASE WHEN skill_slug = '__free_lead__'
+                         THEN session_id END)                                     AS free_leads
         FROM page_views
         WHERE viewed_at > NOW() - $1::interval
       `, [interval]),
@@ -253,6 +256,7 @@ export async function onRequestGet({ request, env }) {
       funnel: {
         visitors:       parseInt(funnelData.rows[0].visitors, 10),
         skillPageViews: parseInt(funnelData.rows[0].skill_page_views, 10),
+        freeLeads:      parseInt(funnelData.rows[0].free_leads, 10),
         orders:         parseInt(kpi.rows[0].total_orders, 10),
       },
       buyerGeo:    buyerGeo.rows,

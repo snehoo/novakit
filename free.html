@@ -384,6 +384,17 @@ footer a:hover { color: var(--text); }
 </footer>
 
 <script>
+// Session ID — persists for the browser session
+var _nkSid = sessionStorage.getItem('nk_sid') || crypto.randomUUID();
+sessionStorage.setItem('nk_sid', _nkSid);
+
+// Pageview on load
+fetch('/api/track', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ type: 'pageview', skillSlug: null, sessionId: _nkSid, referrer: document.referrer || '' })
+}).catch(function(){});
+
 function submitFree() {
   var email = document.getElementById('free-email').value.trim();
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -410,6 +421,13 @@ function submitFree() {
 
   document.getElementById('free-ok').style.display = 'block';
   btn.style.display = 'none';
+
+  // Track free lead
+  fetch('/api/track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type: 'lead', sessionId: _nkSid, referrer: document.referrer || '' })
+  }).catch(function(){});
 
   // Fire Google Ads conversion
   if (typeof gtag === 'function') gtag('event', 'conversion', {'send_to': 'AW-17160905849/naapCOXu4M4cEPnI-vY_'});
