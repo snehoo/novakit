@@ -156,7 +156,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .ob-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px;}
 .ob-sub{font-size:13px;color:var(--muted);line-height:1.5;}
 
-/* SUCCESS */
+/* SUCCESS overlay (pre-redirect) */
 .success-overlay{display:none;position:fixed;inset:0;background:var(--bg);z-index:999;align-items:center;justify-content:center;flex-direction:column;gap:16px;}
 .success-overlay.show{display:flex;}
 .success-icon{width:64px;height:64px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;font-size:28px;animation:popIn .4s cubic-bezier(0.175,0.885,0.32,1.275);}
@@ -164,6 +164,30 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .success-text{text-align:center;}
 .success-text h2{font-family:'Instrument Serif',serif;font-size:32px;margin-bottom:6px;}
 .success-text p{color:var(--muted);font-size:15px;}
+
+/* DELIVERY page (post-payment return) */
+.delivery-wrap{min-height:calc(100vh - 64px);display:flex;align-items:flex-start;justify-content:center;padding:56px 24px 80px;}
+.delivery-card{max-width:640px;width:100%;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:48px 40px;box-shadow:var(--shadow);}
+.delivery-check{width:72px;height:72px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 24px;animation:popIn .4s cubic-bezier(0.175,0.885,0.32,1.275);}
+.delivery-heading{font-family:'Instrument Serif',serif;font-size:clamp(28px,4vw,40px);line-height:1.1;letter-spacing:-0.02em;text-align:center;margin-bottom:8px;}
+.delivery-sub{font-size:15px;color:var(--muted);text-align:center;margin-bottom:32px;line-height:1.6;}
+.delivery-email-note{font-size:13px;color:var(--green-text);background:var(--green-bg);padding:10px 16px;border-radius:8px;text-align:center;margin-bottom:28px;}
+.dl-section-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.dl-btn{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:14px 18px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-family:'Geist',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .18s;text-decoration:none;margin-bottom:10px;}
+.dl-btn:hover{background:var(--accent-h);transform:translateY(-1px);}
+.dl-btn .dl-name{flex:1;text-align:left;}
+.dl-btn .dl-arrow{flex-shrink:0;font-size:18px;}
+.delivery-instructions{background:var(--bg2);border-radius:12px;padding:20px;margin-top:24px;}
+.delivery-instructions p{font-size:14px;color:var(--muted);line-height:1.6;}
+.delivery-instructions strong{color:var(--text);}
+.delivery-error{padding:40px;text-align:center;}
+.delivery-error h2{font-family:'Instrument Serif',serif;font-size:28px;margin-bottom:12px;color:#ef4444;}
+.delivery-error p{font-size:15px;color:var(--muted);margin-bottom:20px;}
+.delivery-error a{color:var(--accent);text-decoration:underline;}
+.delivery-verifying{padding:80px 40px;text-align:center;}
+.delivery-verifying .spin{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 20px;}
+.delivery-verifying p{font-size:15px;color:var(--muted);}
+@media(max-width:600px){.delivery-card{padding:32px 20px;}}
 
 @media(max-width:720px){
   nav{padding:0 20px;}
@@ -184,6 +208,18 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
   <div class="success-text">
     <h2>Redirecting to payment…</h2>
     <p>Taking you to Razorpay securely.</p>
+  </div>
+</div>
+
+<!-- Post-payment delivery screen (shown after Razorpay redirect back) -->
+<div id="delivery-screen" style="display:none;">
+  <div class="delivery-wrap">
+    <div class="delivery-card" id="delivery-card-content">
+      <div class="delivery-verifying">
+        <div class="spin"></div>
+        <p>Verifying your payment…</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -306,8 +342,94 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 <script defer>
 document.addEventListener('DOMContentLoaded', function() {
 
-const DEFAULT_SKU = 'cold-outreach-email';
 const params = new URLSearchParams(window.location.search);
+
+// ── POST-PAYMENT RETURN from Razorpay ────────────────────────────────────────
+// Razorpay appends these params to the callback URL after a successful payment.
+const rzpPaymentId    = params.get('razorpay_payment_id');
+const rzpSignature    = params.get('razorpay_signature');
+const rzpLinkId       = params.get('razorpay_payment_link_id');
+const rzpLinkRef      = params.get('razorpay_payment_link_reference_id');
+const rzpLinkStatus   = params.get('razorpay_payment_link_status');
+
+if (rzpPaymentId) {
+  // Hide checkout form, show delivery screen
+  document.getElementById('delivery-screen').style.display = 'block';
+  const card = document.getElementById('delivery-card-content');
+
+  const storedEmail = sessionStorage.getItem('nk_email') || '';
+  const storedSku   = sessionStorage.getItem('nk_sku')   || '';
+  var attr = {};
+  try { attr = JSON.parse(sessionStorage.getItem('nk_attr') || localStorage.getItem('nk_attr') || '{}'); } catch(e) {}
+
+  fetch('/api/verify-payment', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      paymentId:         rzpPaymentId,
+      sku:               storedSku,
+      signature:         rzpSignature || '',
+      paymentLinkId:     rzpLinkId    || '',
+      paymentLinkRefId:  rzpLinkRef   || '',
+      paymentLinkStatus: rzpLinkStatus || 'paid',
+      utmSource:   attr.src || '',
+      utmMedium:   attr.med || '',
+      utmCampaign: attr.cam || storedSku,
+    })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data) {
+    if (!data.ok) {
+      card.innerHTML = '<div class="delivery-error">' +
+        '<h2>Something went wrong</h2>' +
+        '<p>' + (data.error || 'Could not verify your payment.') + '</p>' +
+        '<p>Please email <a href="mailto:support@novakit.tech">support@novakit.tech</a> with your payment ID: <code>' + rzpPaymentId + '</code></p>' +
+        '</div>';
+      return;
+    }
+    // Build download buttons
+    var fileUrls = data.fileUrls || [];
+    var dlButtons = fileUrls.map(function(url) {
+      var fname = url.split('/').pop();
+      return '<a class="dl-btn" href="' + url + '" download="' + fname + '" target="_blank">' +
+        '<span class="dl-name">⬇ ' + fname + '</span>' +
+        '<span class="dl-arrow">↓</span></a>';
+    }).join('');
+
+    var emailNote = storedEmail
+      ? '<div class="delivery-email-note">✓ A download link has also been sent to <strong>' + storedEmail + '</strong></div>'
+      : '';
+
+    card.innerHTML =
+      '<div class="delivery-check">✓</div>' +
+      '<h1 class="delivery-heading">Your skill is ready</h1>' +
+      '<p class="delivery-sub">Payment confirmed. Download your file below — it works with the free Claude plan.</p>' +
+      emailNote +
+      '<div class="dl-section-label">Download your file</div>' +
+      dlButtons +
+      '<div class="delivery-instructions">' +
+        '<p><strong>How to use it:</strong> Go to <a href="https://claude.ai" target="_blank" style="color:var(--accent)">claude.ai</a>, ' +
+        'click the paperclip icon in any conversation, upload the <code>.skill</code> file, then start chatting. ' +
+        'The skill is reusable — upload once, use forever.</p>' +
+      '</div>';
+
+    // Clear sessionStorage so a page refresh doesn't re-trigger
+    sessionStorage.removeItem('nk_email');
+    sessionStorage.removeItem('nk_sku');
+    sessionStorage.removeItem('nk_product_name');
+  })
+  .catch(function(err) {
+    card.innerHTML = '<div class="delivery-error">' +
+      '<h2>Network error</h2>' +
+      '<p>Could not reach our servers. Please email <a href="mailto:support@novakit.tech">support@novakit.tech</a> with payment ID: <code>' + rzpPaymentId + '</code></p>' +
+      '</div>';
+  });
+
+  return; // Don't run the normal checkout form setup below
+}
+// ────────────────────────────────────────────────────────────────────────────
+
+const DEFAULT_SKU = 'cold-outreach-email';
 const sku    = params.get('sku') || DEFAULT_SKU;
 const skill  = (window.NK_PRODUCTS || {})[sku] || (window.NK_PRODUCTS || {})[DEFAULT_SKU];
 if(!skill){ console.error('NK_PRODUCTS not loaded or SKU not found:', sku); return; }

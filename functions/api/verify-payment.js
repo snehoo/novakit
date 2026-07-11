@@ -140,7 +140,29 @@ export async function onRequestPost({ request, env }) {
     }
 
     
-    // 7. Push buyer email to Brevo list 7 (NovaKit-Buyers), fire-and-forget
+    // 7. Notify seller of new sale, fire-and-forget
+    if (isNewOrder && env.RESEND_API_KEY) {
+      const amountDisplay = '$' + (amountCents / 100).toFixed(2);
+      fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${env.RESEND_API_KEY}` },
+        body: JSON.stringify({
+          from: 'NovaKit <support@novakit.tech>',
+          to: ['snehalp@gmail.com'],
+          subject: `💰 New sale — ${skill.name} (${amountDisplay})`,
+          html: `<p>New NovaKit sale!</p>
+                 <ul>
+                   <li><strong>Skill:</strong> ${skill.name} (${sku})</li>
+                   <li><strong>Amount:</strong> ${amountDisplay}</li>
+                   <li><strong>Buyer:</strong> ${buyerEmail || 'unknown'}</li>
+                   <li><strong>Payment ID:</strong> ${paymentId}</li>
+                   <li><strong>Time:</strong> ${new Date().toISOString()}</li>
+                 </ul>`,
+        }),
+      }).catch(err => console.warn('[notify-seller] failed:', err.message));
+    }
+
+    // 8. Push buyer email to Brevo list 7 (NovaKit-Buyers), fire-and-forget
     if (isNewOrder && buyerEmail && env.BREVO_API_KEY) {
       fetch('https://api.brevo.com/v3/contacts', {
         method: 'POST',
