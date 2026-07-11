@@ -148,7 +148,9 @@ export async function onRequestPost({ request, env }) {
       // Buyer email: Razorpay always captures it on payment links — use it directly
       const buyerEmail = payment.email || notes.buyer_email || null;
       const buyerHash  = buyerEmail ? await sha256(buyerEmail) : null;
-      const country    = payment.international ? 'international' : 'IN';
+      // Webhook comes from Razorpay's servers — no buyer IP available.
+      // verify-payment sets the real country via CF-IPCountry when the buyer lands on the page.
+      const country    = null;
 
       // Skill slug: look up from payment link's short URL, then fall back to notes
       let skillSlug = notes.skill_slug ?? null;

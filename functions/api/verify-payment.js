@@ -38,7 +38,7 @@ async function verifySignature(env, paymentLinkId, paymentLinkRefId, paymentLink
   return computed === signature;
 }
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost({ request, env, ctx }) {
   let body;
   try { body = await request.json(); } catch {
     return new Response('Bad JSON', { status: 400, headers: CORS });
@@ -85,7 +85,7 @@ export async function onRequestPost({ request, env }) {
   }
 
   const buyerEmail = payment.email || payment.notes?.buyer_email || '';
-  const buyerCountry = payment.international ? 'International' : (payment.notes?.country || payment.bank ? 'IN' : null);
+  const buyerCountry = request.headers.get('CF-IPCountry') || (payment.international ? 'international' : null);
   const buyerHash  = buyerEmail ? await sha256(buyerEmail) : null;
   const amountCents = payment.amount; // Razorpay stores in paise/cents
   const isBundle = sku.endsWith('-bundle');
