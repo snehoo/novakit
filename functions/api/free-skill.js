@@ -101,6 +101,24 @@ export async function onRequestPost({ request, env }) {
     });
   }
 
+  // Notify seller — fire-and-forget
+  fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${env.RESEND_API_KEY}` },
+    body: JSON.stringify({
+      from: 'NovaKit <support@novakit.tech>',
+      to: ['support@novakit.tech'],
+      subject: `📥 New free skill lead — ${cleanEmail}`,
+      html: `<p>Someone just grabbed the free LinkedIn Post Engine skill.</p>
+             <ul>
+               <li><strong>Email:</strong> ${cleanEmail}</li>
+               <li><strong>UTM Source:</strong> ${utmSource || 'direct'}</li>
+               <li><strong>UTM Campaign:</strong> ${utmCampaign || 'none'}</li>
+               <li><strong>Time:</strong> ${new Date().toISOString()}</li>
+             </ul>`,
+    }),
+  }).catch(err => console.warn('[notify-seller] free-skill alert failed:', err.message));
+
   return new Response(JSON.stringify({ ok: true }), {
     status: 200, headers: { 'Content-Type': 'application/json', ...CORS }
   });

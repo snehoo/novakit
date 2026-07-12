@@ -162,7 +162,50 @@ export async function onRequestPost({ request, env, ctx }) {
       }).catch(err => console.warn('[notify-seller] failed:', err.message));
     }
 
-    // 8. Push buyer email to Brevo list 7 (NovaKit-Buyers), fire-and-forget
+    // 8. Send delivery email to buyer, fire-and-forget
+    if (isNewOrder && buyerEmail && env.RESEND_API_KEY) {
+      const fileLinksHtml = fileUrls.map(u =>
+        `<li><a href="${u}" style="color:#DE7356;">${u.split('/').pop()}</a></li>`
+      ).join('');
+      fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${env.RESEND_API_KEY}` },
+        body: JSON.stringify({
+          from: 'NovaKit <support@novakit.tech>',
+          to: buyerEmail,
+          subject: `Your NovaKit skill — ${skill.name}`,
+          html: `<!DOCTYPE html><html><body style="margin:0;padding:0;background:#f7f6f2;font-family:'Helvetica Neue',Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f6f2;padding:40px 0;">
+  <tr><td align="center">
+    <table width="560" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.08);">
+      <tr><td style="background:#0d0d0b;padding:24px 40px;">
+        <img src="https://novakit.tech/assets/nkwhite.jpg" alt="NovaKit" height="28" style="display:block;border:0;">
+      </td></tr>
+      <tr><td style="padding:40px;">
+        <p style="margin:0 0 8px;font-size:12px;color:#8a8980;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;">Your purchase</p>
+        <h1 style="margin:0 0 16px;font-size:26px;font-weight:800;color:#111110;letter-spacing:-0.02em;">${skill.name}</h1>
+        <p style="margin:0 0 28px;font-size:15px;color:#545249;line-height:1.6;">Thanks for your purchase! Download your skill file below and upload it once to Claude — you can use it any time after that.</p>
+        <ul style="margin:0 0 32px;padding:0;list-style:none;">${fileLinksHtml}</ul>
+        <div style="background:#f7f6f2;border-radius:12px;padding:28px;margin:0 0 24px;">
+          <p style="margin:0 0 12px;font-size:12px;font-weight:700;color:#111110;text-transform:uppercase;letter-spacing:0.08em;">Install in 3 steps</p>
+          <p style="margin:0 0 8px;font-size:14px;color:#545249;">1. Open Claude → Customize → Skills → + → Upload a skill</p>
+          <p style="margin:0 0 8px;font-size:14px;color:#545249;">2. Drop in the .skill file you downloaded</p>
+          <p style="margin:0;font-size:14px;color:#545249;">3. Type / in any Claude chat and select the skill</p>
+        </div>
+        <p style="margin:0;font-size:13px;color:#8a8980;">Questions? Reply to this email or contact <a href="mailto:support@novakit.tech" style="color:#DE7356;">support@novakit.tech</a>. 7-day refund, no questions asked.</p>
+      </td></tr>
+      <tr><td style="padding:20px 40px;border-top:1px solid #eeecea;">
+        <p style="margin:0;font-size:12px;color:#9a9890;text-align:center;">© 2026 NovaKit · <a href="https://novakit.tech" style="color:#9a9890;">novakit.tech</a></p>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>
+</body></html>`,
+        }),
+      }).catch(err => console.warn('[deliver-email] failed:', err.message));
+    }
+
+    // 9. Push buyer email to Brevo list 7 (NovaKit-Buyers), fire-and-forget
     if (isNewOrder && buyerEmail && env.BREVO_API_KEY) {
       fetch('https://api.brevo.com/v3/contacts', {
         method: 'POST',
