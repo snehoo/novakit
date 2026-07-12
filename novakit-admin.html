@@ -325,6 +325,7 @@ body { min-height: 100vh; }
   <div class="sidebar-footer">
     <div class="live-pill"><div class="live-dot"></div> LIVE</div>
     <div style="font-size:11px; color:var(--faint); line-height:1.6">Connected to Neon DB · Razorpay live</div>
+    <button onclick="localStorage.removeItem('nk_admin_auth');location.reload();" style="margin-top:12px;background:none;border:none;color:var(--faint);font-size:11px;cursor:pointer;padding:0;text-decoration:underline;">Logout</button>
   </div>
 </nav>
 
@@ -649,14 +650,14 @@ body { min-height: 100vh; }
     return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
   }
   async function check() {
-    const stored = sessionStorage.getItem('nk_admin_auth');
+    const stored = localStorage.getItem('nk_admin_auth');
     if (stored === HASH) { document.body.style.display = ''; return; }
     document.body.style.display = 'none';
     const pwd = prompt('NovaKit Admin — enter password:');
     if (!pwd) { document.body.innerHTML = ''; return; }
     const h = await sha256(pwd);
     if (h === HASH) {
-      sessionStorage.setItem('nk_admin_auth', h);
+      localStorage.setItem('nk_admin_auth', h);
       document.body.style.display = '';
     } else {
       document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#0f0f11;color:#f08080;font-family:monospace">Incorrect password.</div>';
