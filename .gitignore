@@ -1,4 +1,7 @@
 node_modules/
+# GSC service account key — never commit
+*-seo-agent*.json
+gsc-key.json
 .dev.vars
 .wrangler/
 .agents/
