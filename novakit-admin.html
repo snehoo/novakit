@@ -321,6 +321,24 @@ body { min-height: 100vh; }
   .page-header { flex-direction: column; align-items: flex-start; gap: 10px; }
   .kpi-value { font-size: 22px; }
 }
+/* hide timestamp on narrow topbar */
+@media (max-width: 520px) {
+  .topbar-time { display: none; }
+}
+
+/* orders table — hide non-essential cols, remove enforced min-width */
+@media (max-width: 768px) {
+  #orders-table { min-width: 0 !important; font-size: 11px; }
+  /* hide BUYER EMAIL (col 2) and RAZORPAY PAYMENT ID (col 5) */
+  #orders-table th:nth-child(2),
+  #orders-table td:nth-child(2),
+  #orders-table th:nth-child(5),
+  #orders-table td:nth-child(5) { display: none; }
+  /* tighten remaining cells */
+  #orders-table th,
+  #orders-table td { padding: 8px 10px !important; }
+}
+
 @media (max-width: 420px) {
   .kpi-row { grid-template-columns: 1fr 1fr; }
   .cohort-grid { grid-template-columns: 1fr 1fr; }
