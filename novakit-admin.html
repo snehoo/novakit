@@ -290,6 +290,41 @@ body { min-height: 100vh; }
 .tab-btn:hover:not(.active) { color: var(--text); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none; align-items: center; justify-content: center;
+  background: none; border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 10px; cursor: pointer; color: var(--text); margin-right: auto; flex-shrink: 0;
+}
+.sidebar-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 99;
+}
+.sidebar-overlay.open { display: block; }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar {
+    position: fixed; left: -240px; top: 0; bottom: 0;
+    width: 220px; z-index: 100; transition: left 0.24s ease;
+  }
+  .sidebar.open { left: 0; }
+  .hamburger { display: flex; }
+  .main { width: 100%; overflow-x: hidden; }
+  .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  .fb-kpi-row { grid-template-columns: repeat(2, 1fr); }
+  .grid-2, .grid-3-1, .schema-grid { grid-template-columns: 1fr; }
+  .cohort-grid { grid-template-columns: repeat(2, 1fr); }
+  .main-inner { padding: 20px 16px; }
+  .topbar { padding: 10px 16px; gap: 10px; }
+  .page-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .kpi-value { font-size: 22px; }
+}
+@media (max-width: 420px) {
+  .kpi-row { grid-template-columns: 1fr 1fr; }
+  .cohort-grid { grid-template-columns: 1fr 1fr; }
+}
 </style>
 </head>
 <body>
@@ -334,6 +369,9 @@ body { min-height: 100vh; }
 
   <!-- PERSISTENT TOPBAR -->
   <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()" aria-label="Toggle menu">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect y="2" width="16" height="2" rx="1" fill="currentColor"/><rect y="7" width="16" height="2" rx="1" fill="currentColor"/><rect y="12" width="16" height="2" rx="1" fill="currentColor"/></svg>
+    </button>
     <span class="topbar-time" id="topbar-time">—</span>
     <button class="topbar-refresh" id="topbar-refresh-btn" onclick="refreshDashboard()">
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -419,9 +457,18 @@ body { min-height: 100vh; }
       </div>
     </div>
 
-    <div class="section-label">Recent activity</div>
-    <div class="card">
-      <div id="activity-feed"></div>
+    <div class="grid-2" style="margin-bottom:20px">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Conversion funnel</div>
+          <div class="card-badge">30d</div>
+        </div>
+        <div id="overview-funnel-bars"></div>
+      </div>
+      <div class="card">
+        <div class="section-label" style="margin-top:0;border-bottom:none;margin-bottom:10px">Recent activity</div>
+        <div id="activity-feed"></div>
+      </div>
     </div>
 
   </div>
@@ -639,6 +686,7 @@ body { min-height: 100vh; }
 
   </div><!-- /.main-inner -->
 </main>
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
 </div>
 
 <script>
@@ -809,6 +857,15 @@ function showTab(name, el) {
   document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   if (el) el.classList.add('active');
+  if (window.innerWidth <= 768) {
+    document.querySelector('.sidebar').classList.remove('open');
+    document.getElementById('sidebar-overlay').classList.remove('open');
+  }
+}
+
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.getElementById('sidebar-overlay').classList.toggle('open');
 }
 
 function buildCharts() {
@@ -996,7 +1053,7 @@ function buildFunnel(funnel, kpi) {
     {label:'Free skill sign-ups',  val:freeLeads,  pct:visitors?Math.round(freeLeads/visitors*100):0,   cls:'f3'},
     {label:'Completed payment',    val:orders,     pct:visitors?+(orders/visitors*100).toFixed(1):0,    cls:'f4'},
   ];
-  document.getElementById('funnel-bars').innerHTML = steps.map(s=>`
+  const funnelHtml = steps.map(s=>`
     <div class="funnel-row">
       <div class="funnel-label">
         <span>${s.label}</span>
@@ -1005,6 +1062,9 @@ function buildFunnel(funnel, kpi) {
       <div class="funnel-track"><div class="funnel-fill ${s.cls}" style="width:${s.pct}%"></div></div>
     </div>
   `).join('');
+  document.getElementById('funnel-bars').innerHTML = funnelHtml;
+  const overviewFunnel = document.getElementById('overview-funnel-bars');
+  if (overviewFunnel) overviewFunnel.innerHTML = funnelHtml;
   document.getElementById('payment-funnel').innerHTML = '<div style="color:var(--muted);font-size:12px;padding:12px 0">Razorpay payment funnel data will appear after purchases begin.</div>';
 }
 
