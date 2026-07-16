@@ -8,3 +8,6 @@
 /legal/*.html /legal/:splat 301
 # Handle root HTML files
 /*.html /:splat 301
+# Old test-slug blog post → proper URL
+/blog/youtube-thumbnail-prompt-blog-test /blog/youtube-thumbnail-ctr-guide 301
+/blog/youtube-thumbnail-prompt-blog-test.html /blog/youtube-thumbnail-ctr-guide 301
