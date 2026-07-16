@@ -433,7 +433,11 @@ function submitFree() {
   }).catch(function(){});
 
   // Fire Google Ads conversion
-  if (typeof gtag === 'function') gtag('event', 'conversion', {'send_to': 'AW-17160905849/naapCOXu4M4cEPnI-vY_'});
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {'send_to': 'AW-17160905849/naapCOXu4M4cEPnI-vY_'});
+    gtag('event', 'generate_lead', { method: 'email', content_id: 'linkedin-post-engine' });
+    gtag('event', 'sign_up', { method: 'email' });
+  }
 }
 
 document.getElementById('free-email').addEventListener('keydown', function(e) {

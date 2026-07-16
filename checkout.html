@@ -416,6 +416,17 @@ if (rzpPaymentId) {
         'The skill is reusable — upload once, use forever.</p>' +
       '</div>';
 
+    // GA4 purchase event
+    if (typeof gtag === 'function') {
+      const amountUsd = ((data.amountCents || 0) / 100).toFixed(2);
+      gtag('event', 'purchase', {
+        transaction_id: data.paymentId || rzpPaymentId,
+        value:          parseFloat(amountUsd),
+        currency:       'USD',
+        items: [{ item_id: data.skillSlug, item_name: data.skillName, price: parseFloat(amountUsd), quantity: 1 }]
+      });
+    }
+
     // Clear sessionStorage so a page refresh doesn't re-trigger
     sessionStorage.removeItem('nk_email');
     sessionStorage.removeItem('nk_sku');
