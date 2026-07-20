@@ -1,4 +1,7 @@
 /delivery /delivery/index.html 200
+# Duplicate content redirect — vows page 3 → canonical product page
+/blog/the-vows-that-sound-like-you-wrote-them-because-you-did.html /blog/wedding-vows-writer-ai 301
+/blog/the-vows-that-sound-like-you-wrote-them-because-you-did /blog/wedding-vows-writer-ai 301
 # Remove .html extension from blog URLs
 /blog/*.html /blog/:splat 301
 # Remove .html extension from skill URLs
