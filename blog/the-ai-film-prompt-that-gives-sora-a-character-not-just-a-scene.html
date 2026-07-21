@@ -542,22 +542,49 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 </section>
 <!-- nk-capture -->
-<div id="nk-capture-strip" style="background:var(--surface,#fff);border-top:1px solid var(--line,#e4e1d8);border-bottom:1px solid var(--line,#e4e1d8);padding:32px 24px;text-align:center;">
-  <p style="margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#DE7356;">Free skill</p>
-  <p style="margin:0 0 4px;font-size:20px;font-weight:700;color:var(--ink,#21201c);line-height:1.3;">Try NovaKit before you spend a dollar.</p>
-  <p style="margin:0 0 20px;font-size:14px;color:var(--muted,#6b6860);">Get the LinkedIn Post Engine free — runs live research before every post.</p>
-  <div id="nkc-form" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:440px;margin:0 auto 8px;">
-    <input id="nkc-email" type="email" placeholder="your@email.com" style="flex:1;min-width:180px;padding:11px 14px;border:1.5px solid var(--line,#e4e1d8);border-radius:8px;font-size:14px;background:var(--bg,#f7f6f2);color:var(--ink,#21201c);outline:none;">
-    <button onclick="nkcSubmit()" style="padding:11px 22px;background:#DE7356;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;">Send it free →</button>
+<style>
+@media(max-width:640px){
+  #nkc-inner{grid-template-columns:1fr!important;gap:28px!important;}
+  #nkc-form{flex-direction:column!important;}
+  #nkc-form input,#nkc-form button{width:100%;box-sizing:border-box;}
+}
+</style>
+<section style="padding:64px 40px;background:var(--bg);border-top:1px solid var(--border);">
+  <div id="nkc-inner" style="max-width:720px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <div>
+      <div style="display:inline-flex;align-items:center;background:var(--green-bg);color:var(--green-text);border-radius:99px;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:16px;">Free skill</div>
+      <div style="font-family:'Instrument Serif',serif;font-size:clamp(24px,3vw,36px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:12px;color:var(--text);">Try NovaKit before<br>you <em style="font-style:italic;color:var(--accent);">spend a dollar.</em></div>
+      <p style="font-size:15px;color:var(--muted);line-height:1.7;margin:0;">Get the LinkedIn Post Engine free — the same skill that runs live trend research before every post. Drop your email and it lands in your inbox in seconds.</p>
+    </div>
+    <div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <div style="width:36px;height:36px;background:var(--bg2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">💼</div>
+          <div>
+            <div style="font-size:15px;font-weight:700;color:var(--text);">LinkedIn Post Engine</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px;">Social · normally $9 · free today</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--muted);"><span style="color:var(--green-text);font-weight:700;flex-shrink:0;">✓</span>Live trend research before every post</div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--muted);"><span style="color:var(--green-text);font-weight:700;flex-shrink:0;">✓</span>Hook variants calibrated to what's converting this week</div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--muted);"><span style="color:var(--green-text);font-weight:700;flex-shrink:0;">✓</span>Works on a free Claude account</div>
+        </div>
+      </div>
+      <div id="nkc-form" style="display:flex;gap:8px;margin-bottom:8px;">
+        <input id="nkc-email" type="email" placeholder="you@company.com" autocomplete="email" style="flex:1;padding:12px 14px;background:var(--surface);border:1.5px solid var(--border-s,rgba(0,0,0,0.15));border-radius:8px;font-size:14px;color:var(--text);font-family:'Geist',sans-serif;outline:none;">
+        <button onclick="nkcSubmit()" style="padding:12px 20px;background:#DE7356;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;">Send it free →</button>
+      </div>
+      <p id="nkc-ok" style="display:none;margin:0 0 8px;font-size:14px;color:var(--green-text);font-weight:600;">📬 Check your inbox — it's on its way.</p>
+      <p style="font-size:12px;color:var(--muted);margin:0;">No spam. No account. Unsubscribe any time.</p>
+    </div>
   </div>
-  <p id="nkc-ok" style="display:none;margin:12px 0 0;font-size:15px;color:#4a7c59;font-weight:600;">✓ Check your inbox — it’s on its way.</p>
-  <p style="margin:10px 0 0;font-size:12px;color:var(--muted,#6b6860);">No spam. Unsubscribe any time.</p>
-</div>
+</section>
 <script>
 function nkcSubmit(){
   var e=document.getElementById('nkc-email').value.trim();
   if(!e||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){document.getElementById('nkc-email').focus();return;}
-  var attr={};try{attr=JSON.parse(localStorage.getItem('nk_attr')||'{}');}catch(x){}
+  var attr={};try{attr=JSON.parse(localStorage.getItem('nk_attr')||'{}')}catch(x){}
   document.getElementById('nkc-form').style.display='none';
   document.getElementById('nkc-ok').style.display='block';
   fetch('/api/free-skill',{method:'POST',headers:{'Content-Type':'application/json'},
