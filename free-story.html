@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free AI Short Story Generator — Claude AI Skill | NovaKit</title>
+<link rel="canonical" href="https://novakit.tech/free-story">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Free AI short story generator that runs inside Claude. Gets character, tension, and structure from you before writing — not a plot synopsis dressed up as fiction. No card needed.">
+<meta property="og:title" content="Free AI Short Story Generator — Claude AI Skill | NovaKit">
+<meta property="og:description" content="Free AI short story generator. Gets character, tension, and structure from you before writing — not a plot synopsis dressed up as fiction.">
+<meta property="og:url" content="https://novakit.tech/free-story">
+<meta property="og:image" content="https://novakit.tech/assets/og-free.png">
+<link rel="icon" type="image/jpeg" href="/assets/favicon.jpg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E9HFQ33F0Y');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+<style>
+:root{--bg:#f7f6f2;--surface:#ffffff;--border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.14);--text:#111110;--muted:#545249;--faint:#888580;--accent:#DE7356;--accent-h:#c55f40;--green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;--ink-dark:#111110;}
+[data-theme="dark"]{--bg:#0d0d0b;--surface:#1a1a17;--border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.13);--text:#f0efe8;--muted:#8a8980;--faint:#55554e;--accent:#DE7356;--accent-h:#f08c72;--green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;--ink-dark:#111110;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}a{color:inherit;text-decoration:none}
+.nav-outer{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);}
+.nav{max-width:680px;margin:0 auto;padding:0 24px;height:58px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo img{display:block;}.nav-back{font-size:14px;color:var(--muted);}.nav-back:hover{color:var(--text);}
+.page{max-width:680px;margin:0 auto;padding:52px 24px 100px;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-bg);color:var(--green-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:28px;}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green);}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(36px,6vw,52px);line-height:1.06;letter-spacing:-0.03em;margin-bottom:20px;}
+h1 em{font-style:italic;color:var(--accent);}
+.sub{font-size:18px;color:var(--muted);line-height:1.65;margin-bottom:36px;}
+.claude-explainer{font-size:15px;color:var(--muted);line-height:1.7;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:28px;}
+.claude-explainer strong{color:var(--text);}
+.inside{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:28px;}
+.inside-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+.inside-items{display:flex;flex-direction:column;gap:14px;}
+.inside-item{display:flex;gap:14px;align-items:flex-start;}
+.inside-icon{font-size:20px;flex-shrink:0;width:28px;text-align:center;}
+.inside-text strong{display:block;font-size:15px;font-weight:700;margin-bottom:3px;color:var(--text);}
+.inside-text span{font-size:14px;color:var(--muted);line-height:1.6;}
+.form-block{background:var(--ink-dark);border:1px solid var(--border);border-radius:16px;padding:36px 32px;margin-bottom:28px;}
+.form-block h2{font-family:'Instrument Serif',Georgia,serif;font-size:26px;font-weight:400;color:#f0efe8;margin-bottom:8px;}
+.form-block p{font-size:15px;color:rgba(240,239,232,0.55);margin-bottom:24px;line-height:1.65;}
+.form-row{display:flex;gap:10px;flex-wrap:wrap;}
+.form-row input[type="email"]{flex:1;min-width:200px;padding:13px 16px;border:1.5px solid rgba(255,255,255,0.12);border-radius:10px;font-size:15px;background:rgba(255,255,255,0.06);color:#f0efe8;outline:none;font-family:'Geist',system-ui,sans-serif;transition:border-color .2s;}
+.form-row input[type="email"]::placeholder{color:rgba(240,239,232,0.35);}
+.form-row input[type="email"]:focus{border-color:var(--accent);}
+.form-row button{padding:13px 24px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Geist',system-ui,sans-serif;white-space:nowrap;transition:background .18s,transform .18s;}
+.form-row button:hover{background:#f08c72;transform:translateY(-1px);}
+.form-row button:disabled{opacity:0.6;cursor:default;transform:none;}
+.form-ok{display:none;margin-top:18px;font-size:15px;color:#34d399;font-weight:600;}
+.form-note{margin-top:14px;font-size:12px;color:rgba(240,239,232,0.35);}
+.trust{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:22px 0;border-top:1px solid var(--border);}
+.trust-item{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);font-weight:500;}
+.trust-item svg{color:var(--green);flex-shrink:0;}
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--border);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+footer a{color:var(--muted);}footer a:hover{color:var(--text);}
+@media(max-width:600px){.page{padding:40px 16px 80px;}.inside{padding:22px 20px;}.form-block{padding:28px 20px;}.form-row{flex-direction:column;}.form-row button{width:100%;}}
+</style>
+</head>
+<body>
+<div class="nav-outer">
+  <nav class="nav">
+    <a class="nav-logo" href="/index.html">
+      <img src="https://novakit.tech/assets/nkwhite.jpg" alt="NovaKit" style="height:26px;width:auto;display:block;">
+    </a>
+    <a class="nav-back" href="/index.html">← All skills</a>
+  </nav>
+</div>
+
+<div class="page">
+  <div class="badge"><span class="badge-dot"></span> Free · No card needed</div>
+  <h1>AI short story generator that writes<br><em>fiction, not plot summaries.</em></h1>
+  <p class="sub">Most AI story generators produce a synopsis with some dialogue added. This Claude skill asks about character, tension, and voice first — so what comes out is an actual story, with scene, interiority, and structure.</p>
+
+  <div class="claude-explainer">
+    <p><strong>What is a Claude AI skill?</strong> A Claude AI skill is a pre-built prompt file you paste into your Claude conversation (free plan at claude.ai works). This skill runs a creative intake — gathering your character, conflict, genre, and tone — before Claude writes a single word of prose. The output has narrative structure, character interiority, and a real ending, not a plot outline wrapped in past tense.</p>
+  </div>
+
+  <div class="inside">
+    <div class="inside-label">What you get</div>
+    <div class="inside-items">
+      <div class="inside-item">
+        <div class="inside-icon">✍️</div>
+        <div class="inside-text">
+          <strong>Creative intake before prose</strong>
+          <span>Claude asks about your character, the central tension, the tone, and what you want the reader to feel — before generating any fiction.</span>
+        </div>
+      </div>
+      <div class="inside-item">
+        <div class="inside-icon">🎭</div>
+        <div class="inside-text">
+          <strong>Character interiority, not just action</strong>
+          <span>Stories written from inside the character's experience — what they notice, feel, and don't say — not a sequence of events.</span>
+        </div>
+      </div>
+      <div class="inside-item">
+        <div class="inside-icon">📖</div>
+        <div class="inside-text">
+          <strong>Real structure: scene, tension, resolution</strong>
+          <span>Not a summary. A short story with a proper beginning, turning point, and ending that earns it.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-block">
+    <h2>Send me the free story generator</h2>
+    <p>Enter your email — the skill arrives instantly. Works with the free Claude plan at claude.ai.</p>
+    <div class="form-row">
+      <input type="email" id="free-email" placeholder="you@email.com" autocomplete="email"/>
+      <button id="free-btn" onclick="submitFree()">Send it free →</button>
+    </div>
+    <div class="form-ok" id="free-ok">✓ Sent — check your inbox (and spam just in case)</div>
+    <div class="form-note">No spam · Unsubscribe any time · One-time upload, use forever</div>
+  </div>
+
+  <div class="trust">
+    <div class="trust-item"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Works with free Claude</div>
+    <div class="trust-item"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Instant delivery</div>
+    <div class="trust-item"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5L6.5 11.5L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>One-time upload · use forever</div>
+  </div>
+
+  <footer>
+    <span>© 2026 NovaKit · <a href="/index.html#skills">All Skills</a> · <a href="mailto:support@novakit.tech">support@novakit.tech</a></span>
+    <span><a href="/index.html#faq">FAQ</a></span>
+  </footer>
+</div>
+
+<script>
+var _nkSid = sessionStorage.getItem('nk_sid') || crypto.randomUUID();
+sessionStorage.setItem('nk_sid', _nkSid);
+fetch('/api/track', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'pageview',skillSlug:'short-story-free',sessionId:_nkSid,referrer:document.referrer||''})}).catch(function(){});
+
+function submitFree() {
+  var email = document.getElementById('free-email').value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.getElementById('free-email').focus(); return; }
+  var btn = document.getElementById('free-btn');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  var attr = {};
+  try { attr = JSON.parse(localStorage.getItem('nk_attr') || '{}'); } catch(e) {}
+  fetch('/api/free-skill', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,skillSlug:'short-story-free',utmSource:attr.src||'',utmMedium:attr.med||'',utmCampaign:attr.cam||''})}).catch(function(){});
+  document.getElementById('free-ok').style.display = 'block';
+  btn.style.display = 'none';
+  fetch('/api/track', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'lead',sessionId:_nkSid,referrer:document.referrer||''})}).catch(function(){});
+  if (typeof gtag === 'function') { gtag('event', 'generate_lead', {method:'email',content_id:'short-story-free'}); gtag('event', 'sign_up', {method:'email'}); }
+}
+document.getElementById('free-email').addEventListener('keydown', function(e) { if (e.key === 'Enter') submitFree(); });
+</script>
+</body>
+</html>
