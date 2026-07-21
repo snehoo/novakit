@@ -1,21 +1,83 @@
 # NovaKit
 
-> NovaKit makes Claude AI skills — downloadable prompt tools that run inside Claude to produce professional-grade outputs in under 3 minutes.
+> NovaKit makes Claude AI skills — downloadable prompt tools that run inside Claude to produce professional-grade outputs in under 3 minutes. Skills work with the free Claude plan.
+
+## What is a Claude AI skill?
+
+A Claude AI skill is a structured prompt file purchased from NovaKit and pasted into a Claude conversation. The skill asks 2–3 clarifying questions, runs live research, applies an anti-slop quality gate, and delivers a ready-to-use output — no coding or AI expertise required.
 
 ## Priority Pages
 
-- [Home](https://novakit.tech/): NovaKit — Claude AI skills for founders, sales, and business professionals
-- [All Skills](https://novakit.tech/#skills): Browse all available Claude skills
-- [Cold Outreach Email](https://novakit.tech/skills/cold-outreach-email): Claude skill that writes 3 role-calibrated cold email variants with 9 subject lines — $9
-- [Blog](https://novakit.tech/blog/): Guides and deep-dives on using Claude skills effectively
+- [Home](https://novakit.tech/): Claude AI skills for founders, sales, and business professionals
+- [All Skills](https://novakit.tech/#skills): Browse 70+ skills by category ($5–$25)
+- [Skills for Business](https://novakit.tech/skills/claude-ai-skills-for-business): 10 Claude AI business skills — pitch decks, business plans, NDAs, PRDs, cold outreach. From $9.
+- [Skills for Marketing](https://novakit.tech/skills/claude-ai-skills-for-marketing): Claude AI marketing skills — LinkedIn posts, UGC ads, brand voice, content calendar. From $9.
+- [Skills for Writing](https://novakit.tech/skills/claude-ai-writing-skills): Claude AI writing skills — blog posts, newsletters, short stories, video scripts, screenplays. From $9.
+- [Blog](https://novakit.tech/blog/): Guides and deep-dives on using Claude AI effectively
 
-## Key Topics
+## Top Skills
 
-- Cold outreach email: https://novakit.tech/skills/cold-outreach-email
-- Why cold emails get deleted: https://novakit.tech/blog/why-cold-emails-get-deleted
-- Cold email guide: https://novakit.tech/blog/cold-outreach-email
-- Founder Bundle (6 skills): https://novakit.tech/#skills
+### Business & Founders
+- [Cold Outreach Email](https://novakit.tech/skills/cold-outreach-email): 3 role-calibrated email variants + 9 subject lines — $9
+- [Pitch Deck Narrative](https://novakit.tech/skills/pitch-deck-narrative): Investor-stage narrative for seed to Series B — $15
+- [Business Plan](https://novakit.tech/skills/business-plan): Full business plan with financial model outline — $15
+- [PRD Writer](https://novakit.tech/skills/prd-writer): Product requirement doc calibrated to engineering team — $15
+- [NDA & Contract Draft](https://novakit.tech/skills/nda-contract-draft): NDA, MSA, SOW, or SLA — jurisdiction-aware — $12
+- [Investor Update Email](https://novakit.tech/skills/investor-update-email): Monthly/quarterly investor update — $9
+
+### Marketing & Content
+- [LinkedIn Post Engine](https://novakit.tech/skills/linkedin-post-engine): 3 LinkedIn post variants with hooks and first-comment strategy — $12
+- [UGC Ad Creator](https://novakit.tech/skills/ugc-ad-creator): UGC-style video ad script + 5 hook variants — $12
+- [Brand Voice Guide](https://novakit.tech/skills/brand-voice-guide): Brand voice system with tone rules and examples — $15
+- [Twitter/X Thread Engine](https://novakit.tech/skills/twitter-x-thread-engine): Hook-first thread built for algorithmic reach — $12
+- [Content Calendar](https://novakit.tech/skills/content-calendar): 30-day content calendar by channel and persona — $12
+- [Email Newsletter Engine](https://novakit.tech/skills/email-newsletter-engine): Newsletter with subject line variants and CTA — $9
+- [SEO Blog Post Brief](https://novakit.tech/skills/seo-blog-post-brief): Keyword-targeted blog brief with outline and angle — $12
+- [Brand Ad Copy](https://novakit.tech/skills/brand-ad-copy): Paid social ad copy — Facebook/Instagram/LinkedIn — $9
+
+### Video & Creative
+- [Video Script Engine](https://novakit.tech/skills/video-script-engine): Short-form video script with hook and CTA — $12
+- [Short-Form AI Video](https://novakit.tech/skills/short-form-ai-video): AI-native short video script optimized for TikTok/Reels — $9
+- [Podcast Episode Script](https://novakit.tech/skills/podcast-episode-script): Full podcast episode script + show notes — $15
+- [Short Story Prompt](https://novakit.tech/skills/short-story-prompt): Short fiction with character, tension, and structure — $12
+
+### Technical
+- [Architecture Diagram Prompt](https://novakit.tech/skills/architecture-diagram-prompt): Mermaid C4/sequence diagrams + architecture brief + ADR stubs — $15
+- [Financial Model Prompt](https://novakit.tech/skills/financial-model-prompt): 3-statement financial model structure with assumptions — $15
+
+### Image & Visuals
+- [Product Photography Prompt](https://novakit.tech/skills/product-photography-prompt): AI image prompts for product shots — Midjourney/Flux ready — $9
+- [Real Estate Photo Prompt](https://novakit.tech/skills/real-estate-photo-prompt): MLS-ready AI photo prompts for listings — $9
+- [Logo & Brand Identity](https://novakit.tech/skills/logo-brand-identity): Logo concept brief + brand identity direction — $12
+
+### Career & Education
+- [Resume & CV Builder](https://novakit.tech/skills/resume-cv-builder): ATS-optimised resume + cover letter — $12
+- [Cover Letter Writer](https://novakit.tech/skills/cover-letter-writer): Role-specific cover letter — $9
+- [Lesson Plan Builder](https://novakit.tech/skills/lesson-plan-builder): Full lesson plan with objectives and activities — $9
+
+## Key Blog Posts
+
+- [Why Cold Emails Get Deleted](https://novakit.tech/blog/why-cold-emails-get-deleted): The 6 structural failures that kill reply rates
+- [Claude vs ChatGPT: PRD Writing](https://novakit.tech/blog/claude-vs-chatgpt-prd-writing): Head-to-head comparison for product requirement docs
+- [Claude vs ChatGPT: LinkedIn Posts](https://novakit.tech/blog/claude-vs-chatgpt-linkedin-posts): Which AI writes better LinkedIn content
+- [Claude vs ChatGPT: Creative Writing](https://novakit.tech/blog/claude-vs-chatgpt-creative-writing): Fiction, voice, and structure compared
+- [AI Wedding Vows Writer](https://novakit.tech/blog/wedding-vows-writer-ai): Vows built around your partner, not a template
+- [How to Write Wedding Vows With AI](https://novakit.tech/blog/how-to-write-wedding-vows-with-ai-that-actually-sound-like-you): Step-by-step guide
+- [Why UGC Ads Fail](https://novakit.tech/blog/ugc-ad-creator-why-ugc-fails): The hook problems that kill UGC performance
+- [Why X Threads Get Ignored](https://novakit.tech/blog/twitter-x-thread-engine-why-your-threads-get-ignored): 6 algorithmic failures explained
+
+## Free Tools
+
+- [Free LinkedIn Post Generator](https://novakit.tech/free): Generate a LinkedIn post free — no account needed
+
+## Glossary
+
+- What is a Claude AI skill: https://novakit.tech/glossary/what-is-a-claude-skill
+- What is prompt engineering: https://novakit.tech/glossary/what-is-prompt-engineering
+- What is a UGC ad: https://novakit.tech/glossary/what-is-a-ugc-ad
+- What is an AI PRD: https://novakit.tech/glossary/what-is-an-ai-prd
 
 ## Contact
 
 - Email: hello@novakit.tech
+- GitHub: https://github.com/snehoo/novakit

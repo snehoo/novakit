@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<!-- citability-v1 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E9HFQ33F0Y');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>What Is an AI PRD? — Definition, Format &amp; What Engineers Actually Need | NovaKit</title>
+<meta name="description" content="An AI PRD is a product requirements document generated with AI assistance. Most AI PRDs fail engineers because they skip constraint intake — the 5 categories AI can't infer on its own."/>
+<meta content="what is an ai prd, ai prd definition, ai generated prd, ai product requirements document, prd writing ai" name="keywords"/>
+<link href="https://novakit.tech/glossary/what-is-an-ai-prd" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="https://novakit.tech/glossary/what-is-an-ai-prd" property="og:url"/>
+<meta content="What Is an AI PRD? — Definition, Format &amp; What Engineers Actually Need" property="og:title"/>
+<meta content="An AI PRD is a product requirements document generated with AI assistance. Most AI PRDs fail engineers because they skip constraint intake — the 5 categories AI can't infer on its own." property="og:description"/>
+<meta content="https://novakit.tech/og-image.png" property="og:image"/>
+<meta content="NovaKit" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="What Is an AI PRD? — Definition, Format &amp; What Engineers Actually Need" name="twitter:title"/>
+<meta content="An AI PRD is a product requirements document generated with AI assistance. Most fail engineers because they skip constraint intake." name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "AI PRD",
+  "description": "An AI PRD (AI-generated product requirements document) is a PRD produced with the assistance of a large language model such as Claude or ChatGPT. A well-produced AI PRD includes scope and out-of-scope definitions, acceptance criteria engineers can write tests against, edge cases specific to the existing system, and a decisions-needed section. Most AI-generated PRDs fail to include the last two because the AI lacks context about the existing system's architecture, team ownership, and technical constraints unless that context is explicitly provided.",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "NovaKit AI Glossary",
+    "url": "https://novakit.tech/glossary"
+  },
+  "url": "https://novakit.tech/glossary/what-is-an-ai-prd"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is an AI PRD?",
+  "description": "An AI PRD is a product requirements document generated with AI assistance. Most AI PRDs fail engineers because they skip constraint intake — the 5 categories AI can't infer on its own.",
+  "datePublished": "2026-07-21",
+  "dateModified": "2026-07-21",
+  "author": {"@type": "Person", "@id": "https://novakit.tech/#author-novakit-team", "name": "NovaKit Team", "url": "https://novakit.tech"},
+  "publisher": {"@id": "https://novakit.tech/#organization"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/glossary/what-is-an-ai-prd"},
+  "image": "https://novakit.tech/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://novakit.tech/glossary"},
+    {"@type": "ListItem", "position": 3, "name": "What Is an AI PRD?", "item": "https://novakit.tech/glossary/what-is-an-ai-prd"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an AI PRD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An AI PRD (AI-generated product requirements document) is a PRD produced with AI assistance — typically using Claude or ChatGPT to structure and write the document from a brief or set of inputs. A PRD describes what a software feature should do, the constraints it must satisfy, the acceptance criteria engineers will test against, and the open decisions that need resolution before implementation can begin. AI can produce the structure and language of a PRD quickly, but the quality depends entirely on how much constraint context the PM provides before the AI starts writing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a good AI PRD include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good AI PRD includes: (1) an explicit scope and out-of-scope section — what this feature does and does not do; (2) success metrics tied to measurable outcomes, not vague goals; (3) acceptance criteria engineers can write tests against — specific, unambiguous, not 'the system should handle edge cases'; (4) edge cases specific to the existing codebase and system, not generic; and (5) a decisions-needed section listing unresolved questions that will block implementation. Most AI PRDs include items 1–3 and miss items 4–5, which is where implementation questions come from."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do AI-generated PRDs often fail engineers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI-generated PRDs fail engineers because the AI writes for a greenfield system with no existing codebase, no team ownership structure, no performance constraints, and no adjacent features that might conflict. The requirements look right but are wrong for the actual system. Fixing this requires a constraint intake before the AI writes: describing the current architecture the feature must integrate with, which teams own adjacent code, what performance or compliance requirements apply, and which decisions are already locked."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best AI tool for writing a PRD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best AI tool for PRD writing is one that runs a structured constraint intake before generating any content. NovaKit's PRD Writer is a Claude skill that gathers five constraint categories — system context, team ownership, performance requirements, locked decisions, and scope boundaries — before writing a single requirement. The result is a PRD with acceptance criteria engineers can act on and a decisions-needed section that replaces the 40-thread Slack conversation. Works with free Claude at $15."
+      }
+    }
+  ]
+}
+</script>
+<link href="../assets/favicon.jpg?v=2024" rel="icon" type="image/jpeg"/>
+<link href="../assets/favicon.jpg?v=2024" rel="apple-touch-icon"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+<style>
+:root{--bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;--border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);--text:#111110;--muted:#545249;--faint:#636259;--accent:#DE7356;--accent-h:#c55f40;--green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;--pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;--page-width:740px;}
+[data-theme="dark"]{--bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;--border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);--text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;--accent:#DE7356;--accent-h:#f08c72;--green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;--pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}.logo-img{height:28px;width:auto;display:block;}.logo-dark{display:block;}.logo-light{display:none;}[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}.btn-primary{background:var(--accent);color:#fff !important;}.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--page-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}.breadcrumb a{color:var(--muted);}.breadcrumb a:hover{color:var(--text)}.breadcrumb-sep{color:var(--faint);}
+.page-wrap{max-width:var(--page-width);margin:0 auto;padding:48px 40px 80px;}
+.term-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,52px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:24px;}h1 em{font-style:italic;color:var(--accent);}
+.term-def{font-size:19px;line-height:1.7;color:var(--text);background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:24px 28px;margin-bottom:40px;}
+.term-def strong{font-weight:700;}
+h2{font-family:'Instrument Serif',serif;font-size:28px;line-height:1.2;letter-spacing:-0.015em;margin:44px 0 16px;}h2 em{font-style:italic;color:var(--accent);}
+p{margin-bottom:20px;line-height:1.75;color:var(--text);}
+.checklist{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:10px;}
+.checklist-item{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.check-icon{font-size:16px;flex-shrink:0;margin-top:2px;}
+.checklist-text{font-size:15px;line-height:1.6;color:var(--text);}
+.checklist-text strong{font-weight:700;}
+.warn-block{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);border-radius:12px;padding:20px 24px;margin:32px 0;}
+.warn-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.warn-text{font-size:15px;line-height:1.65;color:var(--text);}
+.related-terms{margin:36px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;}
+.related-terms-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:12px;}
+.term-links{display:flex;flex-wrap:wrap;gap:8px;}
+.term-link{padding:5px 14px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;}.term-link:hover{border-color:var(--accent);color:var(--accent);}
+.cta-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:44px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;margin-top:0;}
+.cta-sub{font-size:14px;color:var(--muted);line-height:1.5;margin:0;}
+.cta-right{flex-shrink:0;display:flex;flex-direction:column;gap:6px;align-items:flex-start;}
+.cta-price{font-size:13px;color:var(--muted);}
+.faq-section{margin:48px 0 0;}
+.faq-title{font-size:20px;font-weight:700;margin-bottom:20px;letter-spacing:-0.01em;}
+.faq-list{display:flex;flex-direction:column;gap:16px;}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;}
+.faq-q{font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);}
+.faq-a{font-size:15px;color:var(--muted);line-height:1.7;}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}.footer-left{font-size:14px;color:var(--muted);}.footer-links{display:flex;gap:24px;}.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}.footer-links a:hover{color:var(--text)}
+@media(max-width:768px){nav{padding:0 20px;}.page-wrap,.breadcrumb{padding-left:20px;padding-right:20px;}.cta-block{flex-direction:column;}footer{flex-direction:column;gap:16px;}}
+</style>
+</head>
+<body>
+<nav>
+<a class="logo" href="../index.html">
+<img alt="NovaKit" class="logo-img logo-dark" src="../assets/nkwhite.jpg"/>
+<img alt="NovaKit" class="logo-img logo-light" src="../assets/nkblack.jpg"/>
+</a>
+<div class="nav-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="../blog/index.html">Blog</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle theme" class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀️</span></button>
+<a class="btn btn-primary btn-sm" href="../free.html">Free Skill</a>
+</div>
+</nav>
+<div class="breadcrumb">
+<a href="../index.html">NovaKit</a>
+<span class="breadcrumb-sep">›</span>
+<a href="index.html">Glossary</a>
+<span class="breadcrumb-sep">›</span>
+<span>What Is an AI PRD?</span>
+</div>
+<main class="page-wrap">
+<div class="term-kicker">AI Glossary · Product</div>
+<h1>What Is an <em>AI PRD?</em></h1>
+
+<div class="term-def">
+<strong>Definition:</strong> An AI PRD (AI-generated product requirements document) is a PRD produced with the assistance of an AI language model such as Claude or ChatGPT. The AI drafts the structure and language of the requirements from inputs the PM provides. Quality depends entirely on how much constraint context is given before the AI writes — without it, the AI produces requirements for a greenfield system that don't map to the actual codebase.
+</div>
+
+<h2>What a PRD Is and What AI Gets Right</h2>
+
+<p>A product requirements document (PRD) describes what a software feature should do, the constraints it must satisfy, who it's for, how success will be measured, and what decisions are still open. It is the primary artifact that translates a product decision into something engineers can build from.</p>
+
+<p>AI is well-suited to the structural and language parts of a PRD: formatting sections, writing clear acceptance criteria from a brief, generating edge case lists, and producing clean stakeholder-readable prose. A PM with a 5-minute brief can have a structured draft in under 3 minutes using Claude.</p>
+
+<h2>What a Good AI PRD Includes</h2>
+
+<ul class="checklist">
+<li class="checklist-item"><span class="check-icon">✓</span><div class="checklist-text"><strong>Explicit scope and out-of-scope:</strong> What this feature does and specifically does not do. Prevents scope creep in both directions during implementation.</div></li>
+<li class="checklist-item"><span class="check-icon">✓</span><div class="checklist-text"><strong>Success metrics:</strong> Measurable outcomes tied to business goals, not vague statements like "improve user experience."</div></li>
+<li class="checklist-item"><span class="check-icon">✓</span><div class="checklist-text"><strong>Testable acceptance criteria:</strong> Specific, unambiguous conditions engineers can write automated tests against — not "the system should handle edge cases."</div></li>
+<li class="checklist-item"><span class="check-icon">✓</span><div class="checklist-text"><strong>System-specific edge cases:</strong> Failure modes specific to your existing architecture, not generic edge cases from a template.</div></li>
+<li class="checklist-item"><span class="check-icon">✓</span><div class="checklist-text"><strong>Decisions-needed section:</strong> Unresolved questions that will block implementation — so they're surfaced in the PRD review, not discovered three sprints in.</div></li>
+</ul>
+
+<div class="warn-block">
+<div class="warn-label">The most common AI PRD failure</div>
+<div class="warn-text">Most AI-generated PRDs include the first three and miss the last two — system-specific edge cases and a decisions-needed section. These two gaps are responsible for most of the implementation questions that follow a PRD review. The root cause is that the AI writes for a hypothetical greenfield system unless told otherwise.</div>
+</div>
+
+<h2>The Constraint Intake Problem</h2>
+
+<p>When you ask Claude or ChatGPT to "write a PRD for a notifications feature," neither model knows your system. They don't know which teams own adjacent code, whether your notification service has a 200ms latency constraint, which decisions are already locked by infrastructure, or what "opt-out" means in the context of your existing preference center.</p>
+
+<p>The AI fills these gaps with assumptions that are reasonable for a typical system — which is often not your system. The result is a PRD that looks correct but generates 40 Slack threads when engineers actually read it.</p>
+
+<p>The fix is a constraint intake before the AI writes: gathering current system context, team ownership, performance requirements, compliance constraints, and locked decisions from the PM before generating any content.</p>
+
+<div class="cta-block">
+<div>
+<div class="cta-kicker">Claude Skill</div>
+<p class="cta-title">PRD Writer — Constraint Intake Before Every Requirement</p>
+<p class="cta-sub">Gathers 5 constraint categories before writing a single requirement. Works with free Claude. PRDs engineers can actually build from.</p>
+</div>
+<div class="cta-right">
+<a class="btn btn-primary" href="../skills/prd-writer">Get the PRD Writer →</a>
+<div class="cta-price">$15 · Works with free Claude</div>
+</div>
+</div>
+
+<div class="related-terms">
+<div class="related-terms-label">Related Terms</div>
+<div class="term-links">
+<a class="term-link" href="what-is-a-claude-skill.html">What is a Claude AI skill?</a>
+<a class="term-link" href="what-is-prompt-engineering.html">What is prompt engineering?</a>
+</div>
+</div>
+
+<div class="faq-section">
+<div class="faq-title">Common Questions</div>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q">Can AI write a PRD from a one-paragraph brief?</div>
+<div class="faq-a">Yes, and it will produce a plausible-looking document. The question is whether that document is useful to the engineering team who has to implement it. A one-paragraph brief lacks the constraint context that makes requirements actionable — system architecture, team ownership, locked decisions, performance constraints. The AI will invent reasonable defaults for everything it's not told, and those defaults may be wrong for your system.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How do you improve the quality of an AI-generated PRD?</div>
+<div class="faq-a">Provide constraint context before the AI writes. Specifically: (1) describe the current system the feature must integrate with; (2) name the teams who own adjacent code; (3) state any performance, security, or compliance constraints; (4) identify which decisions are already locked vs. open; (5) define scope and out-of-scope explicitly. The more constraint context you provide upfront, the more your system-specific edge cases and decisions-needed section will reflect the real implementation environment.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Is Claude or ChatGPT better for writing a PRD?</div>
+<div class="faq-a">Claude is generally better for PRD writing because it follows multi-section formatting instructions more precisely, maintains structure across longer documents, and produces more granular acceptance criteria when explicitly instructed to. ChatGPT tends to compress technical sections into vague summaries under length pressure. Both require the same constraint intake to produce useful output — the model quality difference is secondary to the quality of the context you provide.</div>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+<div class="footer-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../blog/index.html">Blog</a>
+<a href="index.html">Glossary</a>
+</div>
+</footer>
+<script>
+function toggleTheme(){const h=document.documentElement;const t=h.getAttribute('data-theme');const n=t==='dark'?'light':'dark';h.setAttribute('data-theme',n);document.getElementById('theme-icon').textContent=n==='dark'?'☀️':'🌙';localStorage.setItem('nk-theme',n);}
+(function(){const s=localStorage.getItem('nk-theme');if(s){document.documentElement.setAttribute('data-theme',s);document.getElementById('theme-icon').textContent=s==='dark'?'☀️':'🌙';}})();
+</script>
+</body>
+</html>

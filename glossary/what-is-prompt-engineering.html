@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<!-- citability-v1 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E9HFQ33F0Y');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>What Is Prompt Engineering? — Definition, Techniques &amp; Practical Examples | NovaKit</title>
+<meta name="description" content="Prompt engineering is the practice of writing structured instructions to get consistent, high-quality outputs from AI models. The core skill is constraint specification, not phrasing."/>
+<meta content="what is prompt engineering, prompt engineering definition, prompt engineering examples, how to prompt engineer, prompt engineering techniques" name="keywords"/>
+<link href="https://novakit.tech/glossary/what-is-prompt-engineering" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="https://novakit.tech/glossary/what-is-prompt-engineering" property="og:url"/>
+<meta content="What Is Prompt Engineering? — Definition, Techniques &amp; Practical Examples" property="og:title"/>
+<meta content="Prompt engineering is the practice of writing structured instructions to get consistent, high-quality outputs from AI models. The core skill is constraint specification, not phrasing." property="og:description"/>
+<meta content="https://novakit.tech/og-image.png" property="og:image"/>
+<meta content="NovaKit" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="What Is Prompt Engineering? — Definition, Techniques &amp; Practical Examples" name="twitter:title"/>
+<meta content="Prompt engineering is the practice of writing structured instructions to get consistent, high-quality outputs from AI models." name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Prompt Engineering",
+  "description": "Prompt engineering is the practice of writing structured instructions that reliably elicit specific, high-quality outputs from large language models (LLMs). It involves specifying the task, context, format, constraints, and quality criteria in a way the model can follow consistently — rather than rephrasing requests until the output happens to be good.",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "name": "NovaKit AI Glossary",
+    "url": "https://novakit.tech/glossary"
+  },
+  "url": "https://novakit.tech/glossary/what-is-prompt-engineering"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is Prompt Engineering?",
+  "description": "Prompt engineering is the practice of writing structured instructions to get consistent, high-quality outputs from AI models. The core skill is constraint specification, not phrasing.",
+  "datePublished": "2026-07-21",
+  "dateModified": "2026-07-21",
+  "author": {"@type": "Person", "@id": "https://novakit.tech/#author-novakit-team", "name": "NovaKit Team", "url": "https://novakit.tech"},
+  "publisher": {"@id": "https://novakit.tech/#organization"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/glossary/what-is-prompt-engineering"},
+  "image": "https://novakit.tech/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://novakit.tech/glossary"},
+    {"@type": "ListItem", "position": 3, "name": "What Is Prompt Engineering?", "item": "https://novakit.tech/glossary/what-is-prompt-engineering"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is prompt engineering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prompt engineering is the practice of writing structured instructions that reliably elicit specific, high-quality outputs from AI language models like Claude or ChatGPT. Instead of rephrasing a request until the output happens to be good, prompt engineering specifies the task, context, format, constraints, and quality criteria upfront — so the model produces consistent results across multiple uses. It is a core skill for anyone building AI-powered workflows or tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a prompt engineer actually do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A prompt engineer designs, tests, and refines the instructions that go into AI systems. This includes writing system prompts for AI products, creating reusable prompt templates for specific business tasks, testing output consistency across variations, and building intake flows (the clarifying questions that gather context before the AI writes). At a practical level, prompt engineering is about removing ambiguity: every underspecified constraint in a prompt is a place where the model guesses, and it may guess wrong."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the main prompt engineering techniques?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most widely used prompt engineering techniques are: (1) Role prompting — assigning the model a specific expert role to activate domain-appropriate knowledge; (2) Chain-of-thought prompting — asking the model to reason step-by-step before producing output; (3) Few-shot prompting — providing 2–5 examples of good inputs and outputs so the model can match the pattern; (4) Constraint specification — explicitly listing what the output must include, exclude, and format; (5) Self-critique prompting — asking the model to evaluate its own output against criteria before finalizing it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is prompt engineering the same as writing a good ChatGPT prompt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Writing a good ChatGPT prompt is a form of prompt engineering, but prompt engineering as a discipline goes further. A single good prompt is a one-off. Prompt engineering produces a reusable structure — a template with defined intake questions, explicit constraints, and quality gates — that works reliably for anyone, not just the person who wrote it. NovaKit's Claude skills are examples of prompt engineering applied to specific professional tasks."
+      }
+    }
+  ]
+}
+</script>
+<link href="../assets/favicon.jpg?v=2024" rel="icon" type="image/jpeg"/>
+<link href="../assets/favicon.jpg?v=2024" rel="apple-touch-icon"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+<style>
+:root{--bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;--border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);--text:#111110;--muted:#545249;--faint:#636259;--accent:#DE7356;--accent-h:#c55f40;--green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;--pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;--page-width:740px;}
+[data-theme="dark"]{--bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;--border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);--text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;--accent:#DE7356;--accent-h:#f08c72;--green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;--pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}.logo-img{height:28px;width:auto;display:block;}.logo-dark{display:block;}.logo-light{display:none;}[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}.btn-primary{background:var(--accent);color:#fff !important;}.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--page-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}.breadcrumb a{color:var(--muted);}.breadcrumb a:hover{color:var(--text)}.breadcrumb-sep{color:var(--faint);}
+.page-wrap{max-width:var(--page-width);margin:0 auto;padding:48px 40px 80px;}
+.term-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,52px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:24px;}h1 em{font-style:italic;color:var(--accent);}
+.term-def{font-size:19px;line-height:1.7;color:var(--text);background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:24px 28px;margin-bottom:40px;}
+.term-def strong{font-weight:700;}
+h2{font-family:'Instrument Serif',serif;font-size:28px;line-height:1.2;letter-spacing:-0.015em;margin:44px 0 16px;}h2 em{font-style:italic;color:var(--accent);}
+p{margin-bottom:20px;line-height:1.75;color:var(--text);}
+.technique-list{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:10px;}
+.technique-item{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.technique-tag{background:var(--pill-bg);color:var(--accent);font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;flex-shrink:0;white-space:nowrap;margin-top:3px;}
+.technique-text{font-size:15px;line-height:1.6;color:var(--text);}
+.technique-text strong{font-weight:700;}
+.related-terms{margin:36px 0;padding:20px 24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;}
+.related-terms-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:12px;}
+.term-links{display:flex;flex-wrap:wrap;gap:8px;}
+.term-link{padding:5px 14px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);transition:all .18s;}.term-link:hover{border-color:var(--accent);color:var(--accent);}
+.cta-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:44px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;margin-top:0;}
+.cta-sub{font-size:14px;color:var(--muted);line-height:1.5;margin:0;}
+.cta-right{flex-shrink:0;display:flex;flex-direction:column;gap:6px;align-items:flex-start;}
+.cta-price{font-size:13px;color:var(--muted);}
+.faq-section{margin:48px 0 0;}
+.faq-title{font-size:20px;font-weight:700;margin-bottom:20px;letter-spacing:-0.01em;}
+.faq-list{display:flex;flex-direction:column;gap:16px;}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;}
+.faq-q{font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);}
+.faq-a{font-size:15px;color:var(--muted);line-height:1.7;}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}.footer-left{font-size:14px;color:var(--muted);}.footer-links{display:flex;gap:24px;}.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}.footer-links a:hover{color:var(--text)}
+@media(max-width:768px){nav{padding:0 20px;}.page-wrap,.breadcrumb{padding-left:20px;padding-right:20px;}.cta-block{flex-direction:column;}footer{flex-direction:column;gap:16px;}}
+</style>
+</head>
+<body>
+<nav>
+<a class="logo" href="../index.html">
+<img alt="NovaKit" class="logo-img logo-dark" src="../assets/nkwhite.jpg"/>
+<img alt="NovaKit" class="logo-img logo-light" src="../assets/nkblack.jpg"/>
+</a>
+<div class="nav-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="../blog/index.html">Blog</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle theme" class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀️</span></button>
+<a class="btn btn-primary btn-sm" href="../free.html">Free Skill</a>
+</div>
+</nav>
+<div class="breadcrumb">
+<a href="../index.html">NovaKit</a>
+<span class="breadcrumb-sep">›</span>
+<a href="index.html">Glossary</a>
+<span class="breadcrumb-sep">›</span>
+<span>What Is Prompt Engineering?</span>
+</div>
+<main class="page-wrap">
+<div class="term-kicker">AI Glossary · AI Fundamentals</div>
+<h1>What Is <em>Prompt Engineering?</em></h1>
+
+<div class="term-def">
+<strong>Definition:</strong> Prompt engineering is the practice of writing structured instructions that reliably elicit specific, high-quality outputs from AI language models. Instead of rephrasing requests until the output happens to be good, prompt engineering specifies the task, context, format, constraints, and quality criteria upfront — so the model produces consistent results across repeated use.
+</div>
+
+<h2>What Prompt Engineering Actually Involves</h2>
+
+<p>Most people who use AI models are already doing informal prompt engineering — adding context, specifying format, and adjusting phrasing when the output is wrong. Prompt engineering as a discipline formalizes this into a repeatable process.</p>
+
+<p>The core insight is that AI models are not search engines — they do not retrieve a single correct answer. They complete a sequence based on what the input signals is expected. Prompt engineering is about designing inputs that signal the right expectations clearly enough that the model's completion is consistently useful.</p>
+
+<p>The biggest source of bad AI output is underspecified constraints: the model is not told what to include, what to exclude, what format to use, or what the output will be judged against. It guesses — and guesses can be wrong. Prompt engineering removes guesswork by making constraints explicit.</p>
+
+<h2>Core Prompt Engineering Techniques</h2>
+
+<ul class="technique-list">
+<li class="technique-item">
+<span class="technique-tag">Role</span>
+<div class="technique-text"><strong>Role prompting:</strong> Assign the model a specific expert role — "Act as a senior product manager reviewing this PRD for implementation gaps." The role activates domain-appropriate vocabulary, priorities, and reasoning patterns.</div>
+</li>
+<li class="technique-item">
+<span class="technique-tag">Chain-of-thought</span>
+<div class="technique-text"><strong>Chain-of-thought prompting:</strong> Instruct the model to reason step-by-step before producing output. This significantly improves accuracy on tasks that require multi-step reasoning or planning.</div>
+</li>
+<li class="technique-item">
+<span class="technique-tag">Few-shot</span>
+<div class="technique-text"><strong>Few-shot prompting:</strong> Provide 2–5 examples of good inputs paired with good outputs. The model learns the expected pattern from the examples rather than from description alone.</div>
+</li>
+<li class="technique-item">
+<span class="technique-tag">Constraints</span>
+<div class="technique-text"><strong>Constraint specification:</strong> Explicitly list what the output must include, what it must exclude, what format it must follow, and what quality criteria it will be judged against. Each unspecified constraint is a place the model guesses.</div>
+</li>
+<li class="technique-item">
+<span class="technique-tag">Self-critique</span>
+<div class="technique-text"><strong>Self-critique prompting:</strong> After generating output, instruct the model to evaluate its own draft against the stated criteria and revise before delivering the final result — an "anti-slop gate."</div>
+</li>
+</ul>
+
+<div class="cta-block">
+<div>
+<div class="cta-kicker">Applied Prompt Engineering</div>
+<p class="cta-title">NovaKit Skills — Prompt Engineering Applied to Specific Professional Tasks</p>
+<p class="cta-sub">Each NovaKit skill is an engineered prompt for a real business task — cold email, PRD, pitch deck, UGC ad, and 70+ more. Works with free Claude.</p>
+</div>
+<div class="cta-right">
+<a class="btn btn-primary" href="../index.html#skills">Browse All Skills →</a>
+<div class="cta-price">From $5 · Works with free Claude</div>
+</div>
+</div>
+
+<div class="related-terms">
+<div class="related-terms-label">Related Terms</div>
+<div class="term-links">
+<a class="term-link" href="what-is-a-claude-skill.html">What is a Claude AI skill?</a>
+<a class="term-link" href="what-is-an-ai-prd.html">What is an AI PRD?</a>
+<a class="term-link" href="what-is-a-ugc-ad.html">What is a UGC ad?</a>
+</div>
+</div>
+
+<div class="faq-section">
+<div class="faq-title">Common Questions</div>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-q">Is prompt engineering a real skill or just a buzzword?</div>
+<div class="faq-a">It's a real, learnable skill — though the name is somewhat marketing-inflated. The core of prompt engineering is constraint specification: defining the task, context, format, and quality criteria precisely enough that an AI model produces consistent results. This is genuinely difficult to do well, and the difference between a mediocre and excellent prompt for the same task can be significant in output quality and reliability.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Do I need to know how to code to do prompt engineering?</div>
+<div class="faq-a">No. Prompt engineering for practical use cases — writing reusable templates, designing intake flows, testing output quality — does not require coding. It does require clear thinking about what you want and how to specify it unambiguously. Coding becomes relevant if you're building AI systems that call the model via API, but for conversational use in tools like Claude or ChatGPT, it's entirely text-based.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Will prompt engineering still matter as AI models improve?</div>
+<div class="faq-a">Yes, though the nature of the skill shifts. Better models handle ambiguity more gracefully, which raises the floor of output quality. But the ceiling — what a well-engineered prompt can produce versus an unstructured one — remains meaningful for specialized professional tasks. The skill shifts from fixing bad outputs to designing systems that produce excellent outputs reliably and at scale.</div>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+<div class="footer-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../blog/index.html">Blog</a>
+<a href="index.html">Glossary</a>
+</div>
+</footer>
+<script>
+function toggleTheme(){const h=document.documentElement;const t=h.getAttribute('data-theme');const n=t==='dark'?'light':'dark';h.setAttribute('data-theme',n);document.getElementById('theme-icon').textContent=n==='dark'?'☀️':'🌙';localStorage.setItem('nk-theme',n);}
+(function(){const s=localStorage.getItem('nk-theme');if(s){document.documentElement.setAttribute('data-theme',s);document.getElementById('theme-icon').textContent=s==='dark'?'☀️':'🌙';}})();
+</script>
+</body>
+</html>
