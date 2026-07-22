@@ -2,6 +2,22 @@
 User-agent: *
 Allow: /
 
+# Explicit allow for AI citation and search bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # Sitemap location
 Sitemap: https://novakit.tech/sitemap.xml
 
