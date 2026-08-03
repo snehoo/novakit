@@ -1,7 +1,50 @@
 /delivery /delivery/index.html 200
-# Duplicate content redirect — vows page 3 → canonical product page
+
+# ── SPECIFIC RULES — must come before wildcards (first match wins) ──────────
+
+# Vows page 3 → canonical product page
 /blog/the-vows-that-sound-like-you-wrote-them-because-you-did.html /blog/wedding-vows-writer-ai 301
 /blog/the-vows-that-sound-like-you-wrote-them-because-you-did /blog/wedding-vows-writer-ai 301
+
+# Old test-slug blog post → proper URL
+/blog/youtube-thumbnail-prompt-blog-test.html /blog/youtube-thumbnail-ctr-guide 301
+/blog/youtube-thumbnail-prompt-blog-test /blog/youtube-thumbnail-ctr-guide 301
+
+# Redirect error fixes — old/deleted URLs that 404 after wildcard redirect
+/blog/ai-animation-film-prompt.html /blog/how-to-write-ai-film-prompts-that-actually-work 301
+/blog/ai-animation-film-prompt /blog/how-to-write-ai-film-prompts-that-actually-work 301
+/blog/ai-animation-film-prompt-why-descriptions-fail.html /blog/how-to-write-ai-film-prompts-that-actually-work 301
+/blog/ai-animation-film-prompt-why-descriptions-fail /blog/how-to-write-ai-film-prompts-that-actually-work 301
+/blog/airbnb-listing-copy-you-vs-ai-vs-calibrated-skill.html /blog/hotel-airbnb-listing-copy 301
+/blog/airbnb-listing-copy-you-vs-ai-vs-calibrated-skill /blog/hotel-airbnb-listing-copy 301
+
+# Trailing slash fix — business-plan
+/blog/business-plan/ /blog/business-plan 301
+
+# Root-level canonical fixes — Google crawled these at wrong paths
+/linkedin-post-engine /skills/linkedin-post-engine 301
+/cold-outreach-email /skills/cold-outreach-email 301
+
+# Capital → lowercase redirects for all mixed-case blog filenames
+/blog/The-Short-Story-AI-Gets-Right-When-It-Knows-Your-Genre.html /blog/the-short-story-ai-gets-right-when-it-knows-your-genre 301
+/blog/The-Short-Story-AI-Gets-Right-When-It-Knows-Your-Genre /blog/the-short-story-ai-gets-right-when-it-knows-your-genre 301
+/blog/The-Screenplay-AI-Gets-Wrong-and-What-a-Trained-Script-Skill-Fixes.html /blog/the-screenplay-ai-gets-wrong-and-what-a-trained-script-skill-fixes 301
+/blog/The-Screenplay-AI-Gets-Wrong-and-What-a-Trained-Script-Skill-Fixes /blog/the-screenplay-ai-gets-wrong-and-what-a-trained-script-skill-fixes 301
+/blog/Why-AI-Poetry-Reads-Like-a-Greeting-Card-and-How-to-Fix-It.html /blog/why-ai-poetry-reads-like-a-greeting-card-and-how-to-fix-it 301
+/blog/Why-AI-Poetry-Reads-Like-a-Greeting-Card-and-How-to-Fix-It /blog/why-ai-poetry-reads-like-a-greeting-card-and-how-to-fix-it 301
+/blog/Your-Brand-Voice-Is-the-One-Thing-AI-cant-fake.html /blog/your-brand-voice-is-the-one-thing-ai-cant-fake 301
+/blog/Your-Brand-Voice-Is-the-One-Thing-AI-cant-fake /blog/your-brand-voice-is-the-one-thing-ai-cant-fake 301
+/blog/Why-your-second-childrens-book-doesnt-sound-like-your-first.html /blog/why-your-second-childrens-book-doesnt-sound-like-your-first 301
+/blog/Why-your-second-childrens-book-doesnt-sound-like-your-first /blog/why-your-second-childrens-book-doesnt-sound-like-your-first 301
+/blog/The-Holiday-Greeting-Written-for-Everyone-and-Why-It-Lands-with-No-One.html /blog/the-holiday-greeting-written-for-everyone-and-why-it-lands-with-no-one 301
+/blog/The-Holiday-Greeting-Written-for-Everyone-and-Why-It-Lands-with-No-One /blog/the-holiday-greeting-written-for-everyone-and-why-it-lands-with-no-one 301
+/blog/The-LinkedIn-Post-That-Actually-Gets-Read-and-Why-Format-Is-Everything.html /blog/the-linkedin-post-that-actually-gets-read-and-why-format-is-everything 301
+/blog/The-LinkedIn-Post-That-Actually-Gets-Read-and-Why-Format-Is-Everything /blog/the-linkedin-post-that-actually-gets-read-and-why-format-is-everything 301
+/blog/Your-Social-Posts-Arent-Underperforming-Your-Brief-Is..html /blog/your-social-posts-arent-underperforming-your-brief-is. 301
+/blog/Your-Social-Posts-Arent-Underperforming-Your-Brief-Is. /blog/your-social-posts-arent-underperforming-your-brief-is. 301
+
+# ── WILDCARD RULES — must come after specific rules ──────────────────────────
+
 # Remove .html extension from blog URLs
 /blog/*.html /blog/:splat 301
 # Remove .html extension from skill URLs
@@ -11,6 +54,3 @@
 /legal/*.html /legal/:splat 301
 # Handle root HTML files
 /*.html /:splat 301
-# Old test-slug blog post → proper URL
-/blog/youtube-thumbnail-prompt-blog-test /blog/youtube-thumbnail-ctr-guide 301
-/blog/youtube-thumbnail-prompt-blog-test.html /blog/youtube-thumbnail-ctr-guide 301

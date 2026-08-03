@@ -583,6 +583,7 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
       <div><div class="stat-num">60+</div><div class="stat-label">Claude Skills</div></div>
       <div><div class="stat-num" style="color:var(--accent)">$5</div><div class="stat-label">Individual skill</div></div>
       <div><div class="stat-num" style="color:var(--accent)">$15</div><div class="stat-label">Bundles from</div></div>
+      <div><div class="stat-num" style="font-size:28px;padding-top:12px;color:var(--green-text)">✓ Free plan</div><div class="stat-label">Claude account works</div></div>
     </div>
   </div>
 
@@ -882,37 +883,50 @@ Same Claude intelligence. Specialist framework on top.</div></div>
     <div class="vs-eyebrow">The honest answer</div>
     <h3>Yes, Claude is great.<br>But it starts from zero every time.</h3>
     <p>No trend awareness. No narrowing questions. No quality check. NovaKit skills add the professional layer Claude doesn't have by default — so you get Claude's intelligence with a specialist's structure, automatically, every single run.</p>
-    <table style="width:100%;margin-top:28px;border-collapse:collapse;font-size:15px;">
+    <div style="overflow-x:auto;margin-top:28px;">
+    <table style="width:100%;border-collapse:collapse;font-size:15px;min-width:520px;">
       <thead>
         <tr style="border-bottom:1px solid var(--border-s);">
-          <th style="text-align:left;padding:10px 12px 10px 0;color:var(--muted);font-weight:600;">&nbsp;</th>
-          <th style="text-align:left;padding:10px 12px;color:var(--muted);font-weight:600;">Plain Claude prompt</th>
-          <th style="text-align:left;padding:10px 0;color:var(--accent);font-weight:700;">NovaKit skill</th>
+          <th style="text-align:left;padding:10px 12px 10px 0;color:var(--muted);font-weight:600;width:28%;">&nbsp;</th>
+          <th style="text-align:left;padding:10px 12px;color:var(--muted);font-weight:600;width:24%;">Plain Claude prompt</th>
+          <th style="text-align:left;padding:10px 12px;color:var(--muted);font-weight:600;width:24%;">Free skill file</th>
+          <th style="text-align:left;padding:10px 0;color:var(--accent);font-weight:700;width:24%;">NovaKit skill</th>
         </tr>
       </thead>
       <tbody>
         <tr style="border-bottom:1px solid var(--border);">
           <td style="padding:10px 12px 10px 0;color:var(--text);font-weight:600;">Trend awareness</td>
-          <td style="padding:10px 12px;color:var(--muted);">None — relies on training data</td>
-          <td style="padding:10px 0;color:var(--text);">Live research before every run</td>
+          <td style="padding:10px 12px;color:var(--muted);">None — training data only</td>
+          <td style="padding:10px 12px;color:var(--muted);">None — static instructions</td>
+          <td style="padding:10px 0;color:var(--text);font-weight:500;">Live research every run</td>
         </tr>
         <tr style="border-bottom:1px solid var(--border);">
           <td style="padding:10px 12px 10px 0;color:var(--text);font-weight:600;">Narrowing questions</td>
-          <td style="padding:10px 12px;color:var(--muted);">None unless you think to ask</td>
-          <td style="padding:10px 0;color:var(--text);">3 built-in questions per run</td>
+          <td style="padding:10px 12px;color:var(--muted);">None unless you ask</td>
+          <td style="padding:10px 12px;color:var(--muted);">Rarely — fixed workflow</td>
+          <td style="padding:10px 0;color:var(--text);font-weight:500;">3 built-in per run</td>
         </tr>
         <tr style="border-bottom:1px solid var(--border);">
           <td style="padding:10px 12px 10px 0;color:var(--text);font-weight:600;">Quality check</td>
-          <td style="padding:10px 12px;color:var(--muted);">None — first draft is the output</td>
-          <td style="padding:10px 0;color:var(--text);">Anti-slop quality gate before delivery</td>
+          <td style="padding:10px 12px;color:var(--muted);">None — first draft is it</td>
+          <td style="padding:10px 12px;color:var(--muted);">None — first draft is it</td>
+          <td style="padding:10px 0;color:var(--text);font-weight:500;">Anti-slop gate before delivery</td>
         </tr>
-        <tr>
+        <tr style="border-bottom:1px solid var(--border);">
           <td style="padding:10px 12px 10px 0;color:var(--text);font-weight:600;">Consistency over time</td>
           <td style="padding:10px 12px;color:var(--muted);">Same prompt, same stale result</td>
-          <td style="padding:10px 0;color:var(--text);">Self-improves as what works changes</td>
+          <td style="padding:10px 12px;color:var(--muted);">Same static result</td>
+          <td style="padding:10px 0;color:var(--text);font-weight:500;">Self-improves as what works changes</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px 10px 0;color:var(--text);font-weight:600;">Cost</td>
+          <td style="padding:10px 12px;color:var(--muted);">Free</td>
+          <td style="padding:10px 12px;color:var(--muted);">Free — but 3–6 hrs to build well</td>
+          <td style="padding:10px 0;color:var(--text);font-weight:500;">From $5 · installs in 60 sec</td>
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </section>
 
@@ -979,6 +993,7 @@ Same Claude intelligence. Specialist framework on top.</div></div>
     <a href="blog/index.html">Blog</a>
     <a href="about">About</a>
     <a href="results">Results</a>
+    <a href="skills-vs-prompts">Skills vs Prompts</a>
     <a href="mailto:support@novakit.tech">support@novakit.tech</a>
   </div>
   <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
