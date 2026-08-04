@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html data-theme="dark" lang="en">
 <head>
 <!-- citability-v1 -->
@@ -12,7 +13,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>How to Write a PRD with AI: What Generic Tools Miss | NovaKit Blog</title>
-<meta name="description" content="AI PRD generators produce requirements lists. A real PRD shapes what engineers actually build. Here's what context a PRD needs that generic AI never asks for."/>
+<meta content="AI PRD generators produce requirements lists. A real PRD shapes what engineers actually build. Here's what context a PRD needs that generic AI never asks for." name="description"/>
 <meta content="how to write a prd with ai, prd writer ai, ai prd generator, prd template ai, product requirements document ai" name="keywords"/>
 <link href="https://novakit.tech/blog/how-to-write-a-prd-with-ai" rel="canonical"/>
 <meta content="article" property="og:type"/>
@@ -34,12 +35,16 @@
   "dateModified": "2026-07-16",
   "author": {
     "@type": "Person",
-    "@id": "https://novakit.tech/#author-novakit-team",
-    "name": "NovaKit Team",
+    "@id": "https://novakit.tech/#author-snehal-patel",
+    "name": "Snehal Patel",
     "url": "https://novakit.tech/about",
-    "sameAs": ["https://www.linkedin.com/in/snehalpateldev/"]
+    "sameAs": [
+      "https://www.linkedin.com/in/snehalpateldev/"
+    ]
   },
-  "publisher": {"@id": "https://novakit.tech/#organization"},
+  "publisher": {
+    "@id": "https://novakit.tech/#organization"
+  },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://novakit.tech/blog/how-to-write-a-prd-with-ai"
@@ -101,10 +106,10 @@
 </script>
 <link href="../assets/favicon.jpg?v=2024" rel="icon" type="image/jpeg"/>
 <link href="../assets/favicon.jpg?v=2024" rel="apple-touch-icon"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap"></noscript>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700;800;900&amp;family=Geist+Mono:wght@300;400;500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700;800;900&amp;family=Geist+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
 <style>
 :root{--bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;--border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);--text:#111110;--muted:#545249;--faint:#636259;--accent:#DE7356;--accent-h:#c55f40;--blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;--green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;--pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;--code-bg:#f0ede6;--surface2:#f7f6f2;--blog-width:720px;}
 [data-theme="dark"]{--bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;--border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);--text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;--accent:#DE7356;--accent-h:#f08c72;--blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;--green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;--pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;--code-bg:#111110;--surface2:#141412;}
@@ -207,27 +212,16 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <li><a href="#prd-writer-ai-tool" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px;">A PRD Writer AI Tool That Handles Intake First</a></li>
 </ol>
 </div>
-
 <p>When you ask a generic AI tool to write a product requirements document, it writes you a requirements list. It describes what the feature should do. It might even structure it with user stories and acceptance criteria.</p>
-
 <p>But a PRD isn't a requirements list. A PRD's job is to shape what engineers actually build — specifically, to make clear what's in scope, what isn't, what the system must not break, and what questions need to be answered before a single line of code gets written. A requirements list that doesn't tell engineers what they're allowed to skip, what counts as done, and what trade-offs have been pre-decided creates ambiguity that costs days in clarification rounds.</p>
-
 <p>Generic AI PRD generators produce the first kind of document. They describe an ideal version of the feature in isolation, without knowing anything about the system it has to fit into. The result looks like a PRD. Engineers can't work from it.</p>
-
 <h2 id="why-generic-prd-ai-fails">Why Generic AI PRD Tools Produce <em>Unusable Output</em></h2>
-
 <p>The core problem is that generic AI tools start writing before they know enough. They take your feature description and begin generating content. Any experienced PM knows the document should start with a conversation about constraints, not with writing.</p>
-
 <p>The specific failures are predictable:</p>
-
 <p><strong>1. Greenfield assumptions.</strong> A generic AI writes as if the feature is being built on a blank slate. In practice, every feature must fit inside an existing system — a specific database schema, an existing API contract, services owned by other teams, and performance envelopes that can't be violated. The AI doesn't know any of this, so the requirements it produces describe a feature that may be architecturally impossible to implement without a full rewrite.</p>
-
 <p><strong>2. No scope boundary.</strong> The most important line in any PRD isn't the requirements — it's the explicit out-of-scope list. Engineers will build to the requirements and stop. If the boundaries aren't explicit, they'll stop in the wrong place and ship something that satisfies the letter of the PRD but not the intent. Generic AI tools describe what the feature does. They rarely specify what it deliberately does not do.</p>
-
 <p><strong>3. Vague success metrics.</strong> "Users should be able to complete the flow easily" is not a success metric. A success metric is: "Task completion rate on mobile increases from 34% to 55% within 60 days of launch, measured by our existing funnel analytics." Generic AI tools produce the first kind. The second requires knowing what's already being measured and what the current baseline is.</p>
-
 <p><strong>4. Missing edge cases.</strong> Every feature has a set of states that are technically possible but weren't in the happy path when the PM described the feature. Empty states. Error states. Partial-failure states. Concurrent write conflicts. Generic AI tools generate requirements for the happy path only. Engineers discover the edge cases during implementation and either improvise or come back to ask — interrupting the PM at the worst possible time.</p>
-
 <div class="callout callout-accent">
 <div class="callout-icon">⚠️</div>
 <div class="callout-content">
@@ -235,29 +229,18 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>Missing edge cases and missing scope boundaries together account for the majority of scope-creep and mid-sprint clarification rounds. A PRD that gets these right cuts implementation back-and-forth by more than any other single improvement.</p>
 </div>
 </div>
-
 <h2 id="five-constraint-categories">The Five Constraint Categories AI Needs Before Writing</h2>
-
 <p>Before generating any content, a PRD writer AI needs answers across five constraint categories. Any tool that skips this intake step will produce document that looks right and performs poorly in practice.</p>
-
 <p><strong>1. System boundaries.</strong> Which services, databases, and APIs does this feature touch? Which ones are off-limits? Knowing the boundary prevents requirements that implicitly assume access to systems the team doesn't own.</p>
-
 <p><strong>2. Technical constraints.</strong> Performance envelope (latency, throughput, storage). Compliance requirements (what data can be stored, where, and for how long). Security model. These are non-negotiable constraints that must appear as explicit requirements, not assumptions.</p>
-
 <p><strong>3. Team ownership.</strong> Who owns each adjacent system? Which teams need to sign off? Where does the work stop and hand off to another team? Requirements that cross team boundaries without identifying the handoff point create blockers that surface during sprint planning, not during scoping.</p>
-
 <p><strong>4. Business constraints.</strong> What is the ship date? Is this date hard or soft? What are the downstream dependencies (marketing launch, contract commitments, partner integrations) that determine which trade-offs are acceptable? A PRD without business constraints produces requirements the team can't prioritize when reality diverges from plan.</p>
-
 <p><strong>5. Open questions.</strong> What does the PM not know yet? What decisions are unresolved? A PRD that hides uncertainty produces false confidence. The "decisions needed" section in a PRD is what engineers read first — it tells them where they're likely to hit ambiguity and need to come back before they get there.</p>
-
 <div class="pull-quote">
 <p>"A PRD that doesn't have an out-of-scope list and a decisions-needed section is a <em>feature description</em>, not a product requirements document."</p>
 </div>
-
 <h2 id="what-a-good-prd-output-looks-like">What a Good AI PRD Output Looks Like vs. a Bad One</h2>
-
 <p>Both documents below are for the same feature: adding a bulk-export function to an analytics dashboard.</p>
-
 <table class="compare-table">
 <thead><tr><th>Generic AI output</th><th>Constraint-aware output</th></tr></thead>
 <tbody>
@@ -267,7 +250,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </tr>
 <tr>
 <td><strong>Scope:</strong> The feature will allow users to export data in multiple formats including CSV, Excel, and PDF.</td>
-<td><strong>In scope:</strong> CSV and JSON exports. Async job queue for exports >10k rows. Email notification when job complete.<br/><br/><strong>Out of scope:</strong> Excel format (requires third-party library; legal review pending), PDF formatting, scheduled/recurring exports, API endpoint for programmatic access.</td>
+<td><strong>In scope:</strong> CSV and JSON exports. Async job queue for exports &gt;10k rows. Email notification when job complete.<br/><br/><strong>Out of scope:</strong> Excel format (requires third-party library; legal review pending), PDF formatting, scheduled/recurring exports, API endpoint for programmatic access.</td>
 </tr>
 <tr>
 <td><strong>Requirements:</strong> The system shall display progress to the user while the export is running.</td>
@@ -275,35 +258,22 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </tr>
 </tbody>
 </table>
-
 <p>The generic output isn't wrong. It's just not actionable. An engineer reading it has to invent the success metric, guess the out-of-scope boundary, and discover the failure mode during implementation. The constraint-aware output gives them enough to start.</p>
-
 <h2 id="edge-cases-and-decisions">Edge Cases and the Decisions-Needed Section</h2>
-
 <p>These two sections are what distinguish a PRD that reduces implementation uncertainty from one that transfers it to engineering. Most AI-generated PRDs omit both.</p>
-
 <h3>How to generate useful edge cases with AI</h3>
-
 <p>Generic AI tools, when asked to "generate edge cases," produce theoretical edge cases that often don't reflect how the specific system actually fails. A PRD writer that does this well needs to know: what states can the relevant data be in? What are the concurrent-write scenarios? What happens when a dependency is unavailable?</p>
-
 <p>Give the AI your data model and dependency list before asking for edge cases. The output will be three to five times more useful than edge cases generated from a feature description alone.</p>
-
 <h3>The decisions-needed section</h3>
-
 <p>Every PRD has decisions that weren't made when the doc was written — questions that need an answer before implementation can proceed. The decisions-needed section lists them explicitly, with a deadline and an owner for each decision.</p>
-
 <ul class="checklist">
 <li><span class="checklist-icon">→</span><span><strong>Format:</strong> "Decision: Should export jobs be visible to all users in the org or only to the creator? Owner: [PM name]. Needed by: [date]. Currently blocking: async job queue implementation."</span></li>
 <li><span class="checklist-icon">→</span><span>Every item needs an owner and a date. An undated decision is an ignored decision.</span></li>
 <li><span class="checklist-icon">→</span><span>Mark each decision as blocking or non-blocking. Blocking decisions should surface in the first sprint review before they become implementation blockers.</span></li>
 </ul>
-
 <p>A PRD with a complete decisions-needed section typically cuts mid-sprint PM interruptions in half. Engineers know which questions are coming and when they'll be answered. They plan around them instead of stopping when they hit them.</p>
-
 <h2 id="prd-writer-ai-tool">A PRD Writer AI Tool That Handles Intake First</h2>
-
 <p>NovaKit's <a href="../skills/prd-writer">PRD Writer</a> is a Claude AI skill built around the principle that the intake conversation is the product. Before writing anything, it asks about all five constraint categories: system boundaries, technical constraints, team ownership, business constraints, and open questions. It then generates a PRD structured around what engineers actually need — not a flat requirements list.</p>
-
 <div class="feature-grid">
 <div class="feature-card">
 <div class="fc-icon">🎯</div>
@@ -326,9 +296,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <div class="fc-desc">Every unresolved question listed with owner and deadline. Mid-sprint interruptions drop because engineers can plan around known blockers.</div>
 </div>
 </div>
-
 <p>For deeper background on how engineers read PRDs and what makes them trust a document, see <a href="prd-writer-what-engineers-see">What Engineers Actually See When They Read a PRD</a>.</p>
-
 <div class="callout callout-green">
 <div class="callout-icon">✓</div>
 <div class="callout-content">
@@ -336,11 +304,8 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>A complete PRD with: problem statement, scope/out-of-scope, success metrics tied to baselines, user stories with acceptance criteria, edge cases specific to your system, technical constraints, and a decisions-needed table. Works with Claude Pro or Team. The intake takes ~5 minutes; the full draft takes another 2–3 minutes for a typical mid-size feature.</p>
 </div>
 </div>
-
 <p>The alternative to good intake is a revision cycle — writing a first draft, sharing it with engineering, getting back a list of unanswered questions, and rewriting. For most teams, a single revision cycle costs more time than the structured intake would have taken. The intake isn't overhead. It's the work that makes the rest of the work go faster.</p>
-
 <hr class="post-divider"/>
-
 <div class="soft-cta">
 <div class="soft-cta-left">
 <div class="soft-cta-kicker">NovaKit Skill · Claude</div>
@@ -352,7 +317,6 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <div class="soft-cta-price">One-time purchase</div>
 </div>
 </div>
-
 <div class="post-tags">
 <span class="tags-label">Tags:</span>
 <span class="tag">Product Management</span>
@@ -362,7 +326,6 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="tag">Product Requirements</span>
 </div>
 </article>
-
 <section class="related-section">
 <div class="related-label">Related Reading</div>
 <div class="related-grid">
@@ -378,7 +341,6 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </a>
 </div>
 </section>
-
 <footer>
 <div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
 <div class="footer-links">

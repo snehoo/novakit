@@ -24,3 +24,15 @@ Sitemap: https://novakit.tech/sitemap.xml
 # Disallow private/admin paths (add as needed)
 # Disallow: /admin/
 # Disallow: /private/
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
