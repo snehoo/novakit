@@ -10,13 +10,7 @@
 /blog/youtube-thumbnail-prompt-blog-test.html /blog/youtube-thumbnail-ctr-guide 301
 /blog/youtube-thumbnail-prompt-blog-test /blog/youtube-thumbnail-ctr-guide 301
 
-# Redirect error fixes — old/deleted URLs that 404 after wildcard redirect
-/blog/ai-animation-film-prompt.html /blog/how-to-write-ai-film-prompts-that-actually-work 301
-/blog/ai-animation-film-prompt /blog/how-to-write-ai-film-prompts-that-actually-work 301
-/blog/ai-animation-film-prompt-why-descriptions-fail.html /blog/how-to-write-ai-film-prompts-that-actually-work 301
-/blog/ai-animation-film-prompt-why-descriptions-fail /blog/how-to-write-ai-film-prompts-that-actually-work 301
-/blog/airbnb-listing-copy-you-vs-ai-vs-calibrated-skill.html /blog/hotel-airbnb-listing-copy 301
-/blog/airbnb-listing-copy-you-vs-ai-vs-calibrated-skill /blog/hotel-airbnb-listing-copy 301
+# Redirect error fixes — removed redundant rules, use wildcard for .html removal
 
 # Trailing slash fix — business-plan
 /blog/business-plan/ /blog/business-plan 301
