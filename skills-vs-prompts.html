@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<script src="/js/utm.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Claude Skills vs Prompts — What's the Difference? | NovaKit</title>
+<link rel="canonical" href="https://novakit.tech/skills-vs-prompts">
+<meta name="description" content="A Claude skill file is a reusable methodology you install once — not a one-off prompt. Skills run live research, ask narrowing questions, and self-check output before delivery. Learn how skills differ from prompts, and when to buy instead of build.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novakit.tech/skills-vs-prompts">
+<meta property="og:title" content="Claude Skills vs Prompts — What's the Difference?">
+<meta property="og:description" content="A Claude skill file is a reusable methodology, not a one-off prompt. Live research, narrowing questions, quality gate. Learn the difference and when buying beats building.">
+<meta property="og:image" content="https://novakit.tech/og-image.png">
+<meta property="og:site_name" content="NovaKit">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2024">
+<link rel="icon" type="image/jpeg" href="/assets/favicon.jpg?v=2024">
+<link rel="apple-touch-icon" href="/assets/favicon.jpg?v=2024">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E9HFQ33F0Y');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://novakit.tech/skills-vs-prompts",
+  "url": "https://novakit.tech/skills-vs-prompts",
+  "headline": "Claude Skills vs Prompts — What's the Difference?",
+  "description": "A Claude skill file is a reusable methodology framework you install once into your Claude account. Unlike a one-off prompt, a skill runs live research before every output, asks 3 narrowing questions to avoid generic results, and applies a quality gate before delivery. NovaKit publishes pre-built Claude skill files for LinkedIn, cold email, pitch decks, PRDs, and 60+ more use cases.",
+  "datePublished": "2026-07-26",
+  "dateModified": "2026-07-26",
+  "inLanguage": "en",
+  "author": {"@type": "Person", "name": "Snehal Patel", "url": "https://novakit.tech/about"},
+  "publisher": {"@type": "Organization", "name": "NovaKit", "url": "https://novakit.tech"},
+  "isPartOf": {"@type": "WebSite", "url": "https://novakit.tech", "name": "NovaKit"},
+  "about": [
+    {"@type": "Thing", "name": "Claude AI skill files"},
+    {"@type": "Thing", "name": "Claude prompts"},
+    {"@type": "Thing", "name": "Generative AI productivity tools"}
+  ],
+  "mentions": [
+    {"@type": "SoftwareApplication", "name": "Claude", "url": "https://claude.ai", "applicationCategory": "AI assistant"},
+    {"@type": "Organization", "name": "Anthropic", "url": "https://anthropic.com"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Claude skill file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Claude skill file is a reusable methodology framework you install once into your Claude account via Settings → Skills. Unlike a one-off prompt, a skill persists as a slash command (e.g. /linkedin-post-engine) you can call on any conversation. Good skill files run live research before writing, ask narrowing questions to avoid generic output, and apply a quality check before delivering the result."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a Claude prompt and a Claude skill?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A prompt is a one-off instruction you type or paste into Claude each time. It is static: it relies on Claude's training data, asks no follow-up questions, and delivers a first draft with no self-checking. A Claude skill is a permanent methodology you install once. It appears as a slash command, runs the same structured process on every use, and can be designed to do research, ask narrowing questions, and check output quality automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I build my own Claude skill or buy one?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Building a high-quality Claude skill file for a professional use case — LinkedIn posts, cold outreach, pitch decks — takes 3 to 6 hours of iterative testing. You need to design the interview flow, write the research step, tune the quality gate, and validate across multiple inputs. Buying a pre-built skill from NovaKit costs $5 and installs in 60 seconds. If the use case is something you'll run repeatedly, buying is almost always the better time-to-value trade."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do Claude skill files work on the free Claude plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Claude skill files work on the free Claude plan. You can install and run any NovaKit skill on a free claude.ai account. A paid Claude Pro plan unlocks longer outputs and is worth considering if you are generating full pitch decks, business plans, or other long-form documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Claude skill files used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude skill files are used for any repeatable content or analysis workflow: writing LinkedIn posts, cold outreach emails, pitch decks, PRDs, SEO blog posts, job descriptions, investor updates, UGC ad scripts, and more. Each skill encodes a specialist methodology for a specific use case so Claude produces professional-grade output without the user needing to write a detailed prompt from scratch each time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I download Claude skill files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NovaKit (novakit.tech) is a library of pre-built Claude skill files for founders, marketers, and creators. Skills cover LinkedIn, cold email, pitch decks, PRDs, UGC ads, SEO articles, and 60+ other use cases. Individual skills start at $5. Bundles are available from $15. A free skill — the LinkedIn Post Engine — is available without purchase."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap"></noscript>
+<style>
+:root{
+  --bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;
+  --border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);
+  --text:#111110;--muted:#545249;--faint:#636259;
+  --accent:#DE7356;--accent-h:#c55f40;
+  --blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;
+  --green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;
+  --pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;
+  --code-bg:#f0ede6;--surface2:#f7f6f2;
+}
+[data-theme="dark"]{
+  --bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;
+  --border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);
+  --text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;
+  --accent:#DE7356;--accent-h:#f08c72;
+  --blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;
+  --green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;
+  --pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;
+  --code-bg:#111110;--surface2:#141412;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}
+.logo-img{height:28px;width:auto;display:block;}
+.logo-dark{display:block;}
+.logo-light{display:none;}
+[data-theme="light"] .logo-dark{display:none;}
+[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}
+.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff !important;}
+.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}
+.btn-ghost{background:transparent;border:1px solid var(--border-s);color:var(--text);}
+.btn-ghost:hover{background:var(--bg2);}
+.btn-lg{font-size:16px;padding:13px 22px;border-radius:10px;}
+
+/* PAGE */
+.page-wrap{max-width:780px;margin:0 auto;padding:64px 40px 100px;}
+.breadcrumb{font-size:13px;color:var(--muted);margin-bottom:32px;}
+.breadcrumb a{color:var(--accent);}
+[data-theme="light"] .breadcrumb a{color:#b5451e;}
+.breadcrumb span{margin:0 6px;color:var(--faint);}
+
+.article-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px;}
+[data-theme="light"] .article-eyebrow{color:#8f3718;}
+
+h1.article-title{font-family:'Instrument Serif',serif;font-size:clamp(38px,5vw,60px);line-height:1.06;letter-spacing:-0.025em;margin-bottom:20px;}
+h1.article-title em{font-style:italic;color:var(--accent);}
+
+.article-meta{font-size:14px;color:var(--muted);margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--border);}
+
+.article-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,36px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 16px;}
+.article-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;}
+.article-body p{font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:20px;}
+.article-body p strong{color:var(--text);}
+.article-body ul{margin:0 0 20px 0;padding-left:0;list-style:none;}
+.article-body ul li{font-size:17px;color:var(--muted);line-height:1.75;padding:4px 0 4px 24px;position:relative;}
+.article-body ul li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700;}
+
+/* Callout box */
+.callout{background:var(--surface);border:1px solid var(--border-s);border-left:3px solid var(--accent);border-radius:10px;padding:20px 24px;margin:28px 0;}
+.callout p{margin-bottom:0;font-size:16px;}
+.callout strong{color:var(--text);}
+
+/* Code / command */
+.skill-cmd{display:inline-block;font-family:'Geist Mono',monospace;font-size:14px;background:var(--code-bg);color:var(--accent);padding:3px 10px;border-radius:6px;font-weight:600;}
+[data-theme="light"] .skill-cmd{color:#b5451e;}
+
+/* Comparison table */
+.table-wrap{overflow-x:auto;margin:32px 0;}
+table.compare{width:100%;border-collapse:collapse;font-size:15px;min-width:480px;}
+table.compare thead tr{border-bottom:2px solid var(--border-s);}
+table.compare thead th{padding:12px 14px 12px 0;font-weight:700;font-size:13px;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);}
+table.compare thead th:first-child{width:26%;}
+table.compare thead th.nk-col{color:var(--accent);}
+table.compare tbody tr{border-bottom:1px solid var(--border);}
+table.compare tbody tr:last-child{border-bottom:none;}
+table.compare tbody td{padding:12px 14px 12px 0;vertical-align:top;line-height:1.5;}
+table.compare tbody td:first-child{font-weight:600;color:var(--text);font-size:14px;}
+table.compare tbody td.dim{color:var(--muted);font-size:14px;}
+table.compare tbody td.nk-val{color:var(--text);font-size:14px;font-weight:500;}
+
+/* Build vs buy callout */
+.bvb{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:36px 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.bvb-col h4{font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.bvb-col ul{margin:0;padding:0;}
+.bvb-col ul li{font-size:15px;color:var(--muted);padding:5px 0 5px 22px;position:relative;line-height:1.5;}
+.bvb-col ul li::before{content:"✗";position:absolute;left:0;color:var(--faint);font-weight:700;}
+.bvb-col.pro ul li::before{content:"✓";color:var(--green-text);}
+.bvb-col h4.pro-head{color:var(--green-text);}
+
+/* FAQ */
+.faq-section{margin-top:60px;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:20px 0;cursor:pointer;font-size:17px;font-weight:600;gap:16px;user-select:none;}
+.faq-q:hover{color:var(--accent);}
+[data-theme="light"] .faq-q:hover{color:#b5451e;}
+.faq-icon{font-size:20px;color:var(--muted);flex-shrink:0;transition:transform .3s;}
+.faq-icon.open{transform:rotate(45deg);color:var(--accent);}
+[data-theme="light"] .faq-icon.open{color:#b5451e;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a.open{max-height:600px;}
+.faq-a-inner{padding-bottom:20px;font-size:16px;color:var(--muted);line-height:1.8;}
+
+/* CTA block */
+.cta-block{margin-top:72px;background:var(--surface);border:1px solid var(--border-s);border-radius:16px;padding:40px 40px 36px;text-align:center;}
+.cta-block h3{font-family:'Instrument Serif',serif;font-size:clamp(28px,3.5vw,40px);line-height:1.12;letter-spacing:-0.02em;margin-bottom:12px;}
+.cta-block h3 em{font-style:italic;color:var(--accent);}
+.cta-block p{font-size:16px;color:var(--muted);margin-bottom:28px;line-height:1.7;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.free-note{font-size:13px;color:var(--faint);margin-top:14px;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-left{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+
+@media(max-width:640px){
+  .page-wrap{padding:40px 20px 80px;}
+  nav{padding:0 20px;}
+  .bvb{grid-template-columns:1fr;}
+  .cta-block{padding:28px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">
+    <img class="logo-img logo-dark" src="/assets/novakit-logo-dark.png" alt="NovaKit">
+    <img class="logo-img logo-light" src="/assets/novakit-logo-light.png" alt="NovaKit">
+  </a>
+  <div class="nav-links">
+    <a href="/#skills">Skills</a>
+    <a href="/about">About</a>
+    <a href="/results">Results</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"><span id="theme-icon">☀️</span></button>
+    <a href="/#skills" class="btn btn-primary">Browse Skills</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="breadcrumb">
+    <a href="/">NovaKit</a>
+    <span>/</span>
+    Claude Skills vs Prompts
+  </div>
+
+  <div class="article-eyebrow">Guide · Last updated 26 Jul 2026</div>
+
+  <h1 class="article-title">Claude Skills vs Prompts —<br>What's the <em>difference?</em></h1>
+
+  <div class="article-meta">
+    By <strong>Snehal Patel</strong> · Founder, NovaKit · 5 min read
+  </div>
+
+  <div class="article-body">
+
+    <p>If you use Claude regularly, you have probably typed a detailed prompt to get a decent result. Maybe you saved it somewhere to reuse it. That is a prompt. A Claude skill file is a different thing entirely — and understanding the difference explains why people pay $5 for a skill they could theoretically write themselves.</p>
+
+    <h2>What is a Claude prompt?</h2>
+
+    <p>A prompt is a one-off instruction you type or paste into a Claude conversation. It can be short ("write a LinkedIn post about our product launch") or long and detailed. Either way, it has three limitations that never go away:</p>
+
+    <ul>
+      <li><strong>Static knowledge.</strong> Claude answers from its training data. If you ask for a LinkedIn post, Claude does not check what is trending on LinkedIn this week. It uses what it learned during training, which may be months or years old.</li>
+      <li><strong>No structure.</strong> Claude does not ask clarifying questions unless you tell it to. The first draft is often generic because it had to guess your context, your tone, and your goal.</li>
+      <li><strong>No quality gate.</strong> The first draft is the only draft. Claude does not re-read and rewrite the output before showing it to you. You are the editor.</li>
+    </ul>
+
+    <p>These limitations are fine for one-off questions. They become a problem for repeatable professional work — writing LinkedIn posts every week, sending cold outreach every day, producing pitch decks for every investor conversation.</p>
+
+    <h2>What is a Claude skill file?</h2>
+
+    <p>A Claude skill file is a <strong>reusable methodology framework</strong> you install once into your Claude account. It appears as a slash command — for example, <span class="skill-cmd">/linkedin-post-engine</span> or <span class="skill-cmd">/cold-email</span> — that you can invoke in any Claude conversation.</p>
+
+    <p>The distinction is architectural. A skill is not just a saved prompt. A well-built skill file encodes a structured process that runs the same way on every invocation:</p>
+
+    <ul>
+      <li><strong>Research step.</strong> Before writing anything, the skill runs a live research phase — checking what is currently trending, what hooks are converting, what the current context is. This is the step a plain prompt cannot do.</li>
+      <li><strong>Interview step.</strong> The skill asks 3 narrowing questions calibrated to the specific use case. This replaces the guesswork and produces output that is specific to you, not a generic facsimile.</li>
+      <li><strong>Quality gate.</strong> Before delivering the output, the skill runs an internal self-check — comparing the draft against criteria for that use case (hook strength, specificity, slop patterns, length). Weak drafts are rewritten before you ever see them.</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>One-line definition:</strong> A prompt is what you type. A skill is a specialist methodology Claude follows automatically every time you call it — including steps you would never remember to add on your own.</p>
+    </div>
+
+    <h2>Skills vs prompts vs free skill files — at a glance</h2>
+
+    <p>Free Claude skill files exist — mostly on GitHub, targeting developer use cases. Here is how plain prompts, free skill files, and NovaKit skills compare on the dimensions that matter for content and business work:</p>
+
+    <div class="table-wrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Plain Claude prompt</th>
+            <th>Free skill file<br>(GitHub)</th>
+            <th class="nk-col">NovaKit skill</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Trend awareness</td>
+            <td class="dim">None — training data only</td>
+            <td class="dim">None — static instructions</td>
+            <td class="nk-val">Live research every run</td>
+          </tr>
+          <tr>
+            <td>Narrowing questions</td>
+            <td class="dim">None unless you ask</td>
+            <td class="dim">Rarely — fixed workflow</td>
+            <td class="nk-val">3 built-in per run</td>
+          </tr>
+          <tr>
+            <td>Quality gate</td>
+            <td class="dim">None — first draft is it</td>
+            <td class="dim">None — first draft is it</td>
+            <td class="nk-val">Anti-slop check before delivery</td>
+          </tr>
+          <tr>
+            <td>Use case focus</td>
+            <td class="dim">General purpose</td>
+            <td class="dim">Mostly developer / code</td>
+            <td class="nk-val">LinkedIn, cold email, founders, marketers</td>
+          </tr>
+          <tr>
+            <td>Consistency over time</td>
+            <td class="dim">Same stale result</td>
+            <td class="dim">Same static result</td>
+            <td class="nk-val">Self-improves as what works changes</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td class="dim">Free</td>
+            <td class="dim">Free</td>
+            <td class="nk-val">From $5 · installs in 60 seconds</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Should you build your own skill or buy one?</h2>
+
+    <p>If you want to learn how Claude skill files work, building one yourself is genuinely instructive. But if you want professional output for a use case you will run repeatedly, the build-vs-buy math is simple.</p>
+
+    <div class="bvb">
+      <div class="bvb-col">
+        <h4>Building your own skill</h4>
+        <ul>
+          <li>3–6 hours of design and iteration</li>
+          <li>Research step is hard to get right</li>
+          <li>Quality gate requires careful calibration</li>
+          <li>Needs repeated testing across varied inputs</li>
+          <li>You maintain and improve it yourself</li>
+        </ul>
+      </div>
+      <div class="bvb-col pro">
+        <h4 class="pro-head">Buying a NovaKit skill</h4>
+        <ul>
+          <li>$5 and 60 seconds to install</li>
+          <li>Research step already calibrated</li>
+          <li>Quality gate tuned across hundreds of runs</li>
+          <li>Works on your first run, not your twentieth</li>
+          <li>Updates included as what works changes</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>For reusable workflows — cold outreach, LinkedIn content, pitch decks, SEO articles — investing in a well-designed skill file produces dramatically more consistent results than repeatedly typing long prompts. The question is whether you want to spend 3–6 hours building that skill, or $5 buying it.</p>
+
+    <h2>How to install a Claude skill file</h2>
+
+    <p>Skill installation is the same whether you downloaded a free file or purchased one from NovaKit:</p>
+
+    <ul>
+      <li>Open Claude at claude.ai or the Claude desktop app</li>
+      <li>Click <strong>Customize</strong> in the left sidebar</li>
+      <li>Go to <strong>Skills → + → Create skill → Upload a skill</strong></li>
+      <li>Drag and drop your <span class="skill-cmd">.skill</span> file</li>
+    </ul>
+
+    <p>The skill appears immediately in your slash-command list. Type <span class="skill-cmd">/</span> in any Claude conversation to see all installed skills. Works on both claude.ai and the Claude desktop app. <strong>A free Claude account is all you need to get started.</strong></p>
+
+    <div class="callout">
+      <p><strong>Want to try a skill before buying?</strong> The LinkedIn Post Engine is free — drop your email at <a href="/#free-skill" style="color:var(--accent);">novakit.tech/#free-skill</a> and it arrives in your inbox in under a minute.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(0)">What exactly is a Claude skill file? <span class="faq-icon" id="fi0">+</span></div>
+        <div class="faq-a" id="fa0"><div class="faq-a-inner">A Claude skill file is a <code>.skill</code> file you install into your Claude account via Settings → Skills. Once installed, it appears as a slash command in any Claude conversation. Unlike a saved prompt, a skill encodes a structured process — research step, interview step, quality gate — that runs the same way on every invocation. You invoke it with a slash command like <code>/linkedin-post-engine</code> and the skill handles the rest.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(1)">Can I use Claude skill files for free? <span class="faq-icon" id="fi1">+</span></div>
+        <div class="faq-a" id="fa1"><div class="faq-a-inner">Yes. Installing and running Claude skill files works on a free Claude plan. NovaKit skills are designed to work on claude.ai Free and Pro. A Pro plan unlocks longer outputs and is worth it if you are generating full pitch decks, long-form business plans, or multi-section documents.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(2)">Are there free Claude skill files I can download? <span class="faq-icon" id="fi2">+</span></div>
+        <div class="faq-a" id="fa2"><div class="faq-a-inner">Yes. Anthropic publishes an official Claude skills repository on GitHub with examples and use-case starters. Community GitHub repos also exist. These are mostly developer-focused — code review, task automation, API integration. For content and marketing use cases (LinkedIn, cold email, pitch decks, PRDs), NovaKit offers pre-built skills that include live research and quality gates not typically found in free repos.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(3)">How long does it take to build a good Claude skill file? <span class="faq-icon" id="fi3">+</span></div>
+        <div class="faq-a" id="fa3"><div class="faq-a-inner">A useful but basic skill — essentially a saved prompt with a consistent structure — can be built in an hour. A professional-grade skill with a research step, calibrated interview flow, and reliable quality gate takes 3–6 hours of iterative testing across varied inputs. The research step in particular is difficult to get right: it needs to fetch relevant context, interpret it correctly, and feed it into the writing step in a way that actually changes the output quality.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(4)">What is the difference between a Claude skill and a Claude Project? <span class="faq-icon" id="fi4">+</span></div>
+        <div class="faq-a" id="fa4"><div class="faq-a-inner">A Claude Project stores persistent context — your company background, tone of voice, recurring documents — that Claude remembers across conversations. A Claude skill file encodes a repeatable process — a research step, an interview, a quality check — that runs the same way on each invocation. They complement each other: you can install a skill into a Project so Claude has both your stored context and the structured methodology from the skill.</div></div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <h3>Browse skills for <em>your</em> workflow</h3>
+      <p>60+ pre-built Claude skill files for LinkedIn, cold email, pitch decks, PRDs, SEO articles, and more. From $5. Installs in 60 seconds on a free Claude account.</p>
+      <div class="cta-btns">
+        <a href="/#skills" class="btn btn-primary btn-lg">Browse all skills</a>
+        <a href="/#free-skill" class="btn btn-ghost btn-lg">Get one free</a>
+      </div>
+      <div class="free-note">7-day refund, no questions. Works on free Claude account.</div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="mailto:support@novakit.tech" style="color:var(--accent);">support@novakit.tech</a></div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/results">Results</a>
+    <a href="/skills-vs-prompts">Skills vs Prompts</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const h=document.documentElement;
+  const t=h.getAttribute('data-theme')==='dark'?'light':'dark';
+  h.setAttribute('data-theme',t);
+  document.getElementById('theme-icon').textContent=t==='dark'?'☀️':'🌙';
+}
+function toggleFaq(i){
+  const a=document.getElementById('fa'+i);
+  const ic=document.getElementById('fi'+i);
+  const open=a.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(el=>el.classList.remove('open'));
+  document.querySelectorAll('.faq-icon').forEach(el=>el.classList.remove('open'));
+  if(!open){a.classList.add('open');ic.classList.add('open');}
+}
+</script>
+</body>
+</html>
