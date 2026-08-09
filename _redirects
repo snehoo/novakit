@@ -19,6 +19,9 @@
 /linkedin-post-engine /skills/linkedin-post-engine 301
 /cold-outreach-email /skills/cold-outreach-email 301
 
+# Duplicate skill page redirect
+/skills/university-application-sop /skills/university-sop 301
+
 # Capital → lowercase redirects for all mixed-case blog filenames
 /blog/The-Short-Story-AI-Gets-Right-When-It-Knows-Your-Genre.html /blog/the-short-story-ai-gets-right-when-it-knows-your-genre 301
 /blog/The-Short-Story-AI-Gets-Right-When-It-Knows-Your-Genre /blog/the-short-story-ai-gets-right-when-it-knows-your-genre 301
