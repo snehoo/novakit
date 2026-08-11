@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<!-- citability-v1 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E9HFQ33F0Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E9HFQ33F0Y');
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Claude Won't Write Your Scene — Here's Why and the Exact Fix | NovaKit</title>
+<meta content="Claude refuses creative scenes for three distinct reasons. Each has a different fix. Understanding which type of refusal you're getting changes whether you spend five minutes or five hours rewriting your prompt." name="description"/>
+<meta content="claude won't write scene, claude refusing to write, claude content policy creative writing, claude won't write my story, claude refuses scene" name="keywords"/>
+<link href="https://novakit.tech/blog/claude-wont-write-scene" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="https://novakit.tech/blog/claude-wont-write-scene" property="og:url"/>
+<meta content="Claude Won't Write Your Scene — Here's Why and the Exact Fix" property="og:title"/>
+<meta content="Claude refuses creative scenes for three distinct reasons. Each has a different fix. Understanding which type you're facing changes everything." property="og:description"/>
+<meta content="https://novakit.tech/og-image.png" property="og:image"/>
+<meta content="NovaKit" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Claude Won't Write Your Scene — Here's Why and the Exact Fix" name="twitter:title"/>
+<meta content="Claude refuses creative scenes for three distinct reasons — content flag, real-person flag, or platform restriction. Each has a different fix." name="twitter:description"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Claude Won't Write Your Scene — Here's Why and the Exact Fix",
+  "description": "Claude refuses creative writing scenes for three distinct reasons. Understanding which type of refusal you're facing determines the correct fix.",
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "author": {
+    "@type": "Person",
+    "@id": "https://novakit.tech/#author-snehal-patel",
+    "name": "Snehal Patel",
+    "url": "https://novakit.tech/about",
+    "sameAs": ["https://www.linkedin.com/in/snehalpateldev/"]
+  },
+  "publisher": {"@id": "https://novakit.tech/#organization"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://novakit.tech/blog/claude-wont-write-scene"},
+  "image": "https://novakit.tech/og-image.png",
+  "@id": "https://novakit.tech/blog/claude-wont-write-scene/#article"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "NovaKit", "item": "https://novakit.tech"},
+    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://novakit.tech/blog"},
+    {"@type": "ListItem", "position": 3, "name": "Claude Won't Write Your Scene", "item": "https://novakit.tech/blog/claude-wont-write-scene"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does Claude refuse to write certain scenes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Claude refuses scenes for three reasons: a content category flag (violence, sexual content, self-harm), a real-person flag (the request involves writing as or about a named real individual), or a platform-level restriction set by the operator running Claude. Each has a different fix. Content flags respond to fictional distancing and narrative framing. Real-person flags respond to swapping named individuals for fictional analogues. Platform restrictions require using a different Claude interface or a skill that establishes the appropriate creative context."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get Claude to write a difficult scene?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most reliable approach is to establish strong fictional context before describing the scene. Tell Claude the genre, the character's arc, and why this scene serves the story. Then describe the scene in terms of emotional and narrative function rather than physical action. Claude responds to purpose and craft context better than raw instructions. A Claude skill with creative permissions built in makes this consistent across sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Claude have content restrictions for fiction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Claude applies content guidelines to fiction as well as factual content. The guidelines are pattern-matched at the surface level — they respond to what a request looks like, not what it means narratively. This means a scene that is clearly necessary for story reasons can still trigger a refusal if the surface description matches a restricted category. Reframing the same scene around character psychology, consequence, and narrative function rather than physical detail usually resolves this."
+      }
+    }
+  ]
+}
+</script>
+<link href="../assets/favicon.jpg?v=2024" rel="icon" type="image/jpeg"/>
+<link href="../assets/favicon.jpg?v=2024" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700;800;900&amp;family=Geist+Mono:wght@300;400;500&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@300;400;500;600;700;800;900&amp;family=Geist+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
+<style>
+:root{--bg:#f7f6f2;--bg2:#eeecea;--surface:#ffffff;--border:rgba(0,0,0,0.08);--border-s:rgba(0,0,0,0.15);--text:#111110;--muted:#545249;--faint:#636259;--accent:#DE7356;--accent-h:#c55f40;--blue:#1a6ed8;--blue-bg:rgba(26,110,216,0.08);--blue-text:#1557b0;--green:#059669;--green-bg:rgba(5,150,105,0.08);--green-text:#076b4a;--pill-bg:rgba(222,115,86,0.1);--pill-text:#8f3718;--code-bg:#f0ede6;--surface2:#f7f6f2;--blog-width:720px;}
+[data-theme="dark"]{--bg:#0d0d0b;--bg2:#131311;--surface:#1a1a17;--border:rgba(255,255,255,0.07);--border-s:rgba(255,255,255,0.14);--text:#f0efe8;--muted:#8a8980;--faint:#4a4a44;--accent:#DE7356;--accent-h:#f08c72;--blue:#4a9eda;--blue-bg:rgba(74,158,218,0.1);--blue-text:#4a9eda;--green:#34d399;--green-bg:rgba(52,211,153,0.1);--green-text:#34d399;--pill-bg:rgba(222,115,86,0.14);--pill-text:#DE7356;--code-bg:#111110;--surface2:#141412;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.logo{display:flex;align-items:center;}.logo-img{height:28px;width:auto;display:block;}.logo-dark{display:block;}.logo-light{display:none;}[data-theme="light"] .logo-dark{display:none;}[data-theme="light"] .logo-light{display:block;}
+.nav-links{display:flex;align-items:center;gap:32px;}.nav-links a{font-size:16px;color:var(--muted);transition:color .2s;}.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:12px;}.theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;transition:all .2s;}.theme-toggle:hover{border-color:var(--border-s);color:var(--text);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .18s;border:none;font-family:'Geist',sans-serif;}.btn-primary{background:var(--accent);color:#fff !important;}.btn-primary:hover{background:var(--accent-h);transform:translateY(-1px);}.btn-sm{font-size:14px;padding:7px 16px;}
+.breadcrumb{max-width:var(--blog-width);margin:0 auto;padding:20px 40px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}.breadcrumb a{color:var(--muted);transition:color .2s;}.breadcrumb a:hover{color:var(--text)}.breadcrumb-sep{color:var(--faint);}
+.post-header{max-width:var(--blog-width);margin:0 auto;padding:40px 40px 0;}.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;}.post-cat{display:inline-flex;align-items:center;gap:6px;background:var(--pill-bg);color:var(--pill-text);padding:5px 14px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;}[data-theme="light"] .post-cat{color:#8f3718;}.post-date{font-size:13px;color:var(--muted);}.post-readtime{font-size:13px;color:var(--muted);}.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.post-title{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,56px);line-height:1.08;letter-spacing:-0.025em;margin-bottom:20px;}.post-title em{font-style:italic;color:var(--accent);}
+.post-subtitle{font-size:19px;color:var(--muted);line-height:1.65;margin-bottom:32px;font-weight:400;}
+.post-byline{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:44px;gap:16px;flex-wrap:wrap;}.author{display:flex;align-items:center;gap:12px;}.author-av{width:38px;height:38px;border-radius:50%;background:var(--pill-bg);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--accent);flex-shrink:0;}.author-name{font-size:14px;font-weight:600;}.author-role{font-size:12px;color:var(--muted);}
+.share-links{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}.share-links span{margin-right:4px;}.share-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:6px;border:1px solid var(--border);font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s;background:transparent;}.share-btn:hover{border-color:var(--border-s);color:var(--text);}
+.post-body{max-width:var(--blog-width);margin:0 auto;padding:0 40px;}.post-body h2{font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,34px);line-height:1.15;letter-spacing:-0.02em;margin:52px 0 18px;}.post-body h2 em{font-style:italic;color:var(--accent);}.post-body h3{font-size:19px;font-weight:700;letter-spacing:-0.01em;margin:36px 0 12px;line-height:1.3;}.post-body p{margin-bottom:22px;line-height:1.75;color:var(--text);}.post-body p:last-child{margin-bottom:0;}.post-body strong{font-weight:700;color:var(--text);}.post-body em{font-style:italic;}.post-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(222,115,86,0.35);}.post-body a:hover{text-decoration-color:var(--accent);}
+.pull-quote{border-left:3px solid var(--accent);padding:20px 24px;margin:36px 0;background:var(--surface);border-radius:0 10px 10px 0;}.pull-quote p{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.5;font-style:italic;color:var(--text);margin:0;}.pull-quote p em{color:var(--accent);font-style:italic;}
+.callout{border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;gap:14px;align-items:flex-start;}.callout-blue{background:var(--blue-bg);border:1px solid rgba(74,158,218,0.2);}.callout-green{background:var(--green-bg);border:1px solid rgba(52,211,153,0.15);}.callout-accent{background:var(--pill-bg);border:1px solid rgba(222,115,86,0.2);}.callout-icon{font-size:18px;flex-shrink:0;margin-top:2px;}.callout-content{flex:1;}.callout-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px;}.callout-blue .callout-label{color:var(--blue-text);}.callout-green .callout-label{color:var(--green-text);}.callout-accent .callout-label{color:var(--accent);}.callout-content p{font-size:15px;line-height:1.65;margin:0;color:var(--text);}
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;margin:32px 0;border-radius:12px;overflow:hidden;border:1px solid var(--border);}.compare-table th{padding:14px 18px;font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;background:var(--surface2);border-bottom:1px solid var(--border);text-align:left;}.compare-table th:first-child{color:var(--muted);}.compare-table td{padding:13px 18px;font-size:15px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55;}.compare-table tr:last-child td{border-bottom:none;}.compare-table td:first-child{color:var(--muted);font-weight:500;}
+.verdict-banner{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin:32px 0;display:flex;align-items:flex-start;gap:16px;}.verdict-icon{font-size:24px;flex-shrink:0;}.verdict-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}.verdict-text{font-size:15px;line-height:1.65;color:var(--text);}
+.soft-cta{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 32px;margin:48px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}.soft-cta-kicker{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}.soft-cta-title{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px;}.soft-cta-sub{font-size:14px;color:var(--muted);line-height:1.5;}.soft-cta-right{display:flex;flex-direction:column;gap:8px;align-items:flex-start;flex-shrink:0;}.soft-cta-price{font-size:13px;color:var(--muted);font-weight:500;}
+.post-tags{margin:48px 0 36px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}.tags-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-right:4px;}.tag{padding:5px 13px;border-radius:99px;border:1px solid var(--border);font-size:13px;color:var(--muted);}
+.related-section{max-width:var(--blog-width);margin:0 auto;padding:0 40px 80px;}.related-label{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}.related-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s;cursor:pointer;}.related-card:hover{border-color:var(--border-s);}.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:8px;}.rc-title{font-size:16px;font-weight:700;line-height:1.35;margin-bottom:6px;}.rc-meta{font-size:12px;color:var(--muted);}
+.post-divider{border:none;border-top:1px solid var(--border);margin:48px 0;}
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}.footer-left{font-size:14px;color:var(--muted);}.footer-links{display:flex;gap:24px;}.footer-links a{font-size:14px;color:var(--muted);transition:color .2s;}.footer-links a:hover{color:var(--text)}
+.reading-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0%;z-index:999;transition:width .1s linear;}
+@media(max-width:768px){nav{padding:0 20px;}.breadcrumb,.post-header,.post-body,.related-section{padding-left:20px;padding-right:20px;}.post-title{font-size:32px;}.related-grid{grid-template-columns:1fr;}.soft-cta{flex-direction:column;}footer{flex-direction:column;gap:16px;}}
+</style>
+</head>
+<body>
+<div class="reading-progress" id="reading-progress"></div>
+<nav>
+<a class="logo" href="../index.html">
+<img alt="NovaKit" class="logo-img logo-dark" src="../assets/nkwhite.jpg"/>
+<img alt="NovaKit" class="logo-img logo-light" src="../assets/nkblack.jpg"/>
+</a>
+<div class="nav-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle theme" class="theme-toggle" onclick="toggleTheme()"><span id="theme-icon">☀️</span></button>
+<a class="btn btn-primary btn-sm" href="../free.html">Free Skill</a>
+</div>
+</nav>
+<div class="breadcrumb">
+<a href="../index.html">NovaKit</a>
+<span class="breadcrumb-sep">›</span>
+<a href="index.html">Blog</a>
+<span class="breadcrumb-sep">›</span>
+<span>Claude Won't Write Your Scene</span>
+</div>
+<header class="post-header">
+<div class="post-meta">
+<span class="post-cat">Creative Writing · Claude AI</span>
+<span class="meta-dot"></span>
+<span class="post-date">11 August 2026</span>
+<span class="meta-dot"></span>
+<span class="post-readtime">6 min read</span>
+</div>
+<h1 class="post-title">Claude Won't Write Your Scene — <em>Here's Why and the Exact Fix</em></h1>
+<p class="post-subtitle">Claude refuses creative scenes for three distinct reasons, and each has a different fix. Understanding which type of refusal you're facing changes whether you spend five minutes or five hours rewriting your prompt.</p>
+<div class="post-byline">
+<div class="author">
+<div class="author-av">SP</div>
+<div>
+<div class="author-name"><a href="https://www.linkedin.com/in/snehalpateldev/" rel="noopener" target="_blank">Snehal Patel</a></div>
+<div class="author-role">Founder, NovaKit</div>
+</div>
+</div>
+<div class="share-links">
+<span>Share</span>
+<button class="share-btn" onclick="sharePost('twitter')">𝕏 Twitter</button>
+<button class="share-btn" onclick="sharePost('linkedin')">LinkedIn</button>
+<button class="share-btn" onclick="copyLink()">Copy link</button>
+</div>
+</div>
+</header>
+<article class="post-body">
+<div style="background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin-bottom:28px;font-size:15px;line-height:1.65;"><strong style="color:var(--text);">Quick answer:</strong> <span style="color:var(--muted);">Claude's refusals fall into three types — content category flag, real-person flag, or platform restriction. Most are fixable in under two minutes by reframing the scene around narrative function rather than physical action. The remaining cases require switching to a different Claude interface or using a skill that establishes creative permissions upfront.</span></div>
+
+<p>You're mid-draft. A scene needs to happen — a confrontation, a death, a moment of intimacy or violence that carries the story's weight. You send it to Claude and get a refusal message. Now you're rewriting a prompt instead of finishing a chapter.</p>
+
+<p>The frustrating part is that Claude's refusals are <strong>pattern-matched, not plot-matched</strong>. The model evaluates what a request looks like at the surface level, not what it means within the story you've built. A scene that is clearly necessary for character or narrative reasons can still trigger a refusal if the surface description matches a restricted category. This isn't a judgment about your writing — it's a classification problem.</p>
+
+<p>Here's what's actually happening in each refusal type, and what fixes it.</p>
+
+<h2>Type 1: Content Category Flag</h2>
+
+<p>This is the most common refusal. Claude has trained-in sensitivity to requests that surface-match categories like graphic violence, sexual content, self-harm, or certain types of psychological manipulation. It responds to the shape of the request — not its context in the larger story.</p>
+
+<p>The flag fires on specific surface patterns: describing physical injury in detail, romantic scenes between characters in certain framings, scenes of coercion or control. None of these are inherently unfixable — but if your prompt reads like an isolated request rather than a scene within a story, Claude responds to the isolated version.</p>
+
+<p><strong>What fixes it:</strong> Establish fictional context before describing the scene. Give Claude the genre, the narrative stakes, the characters' emotional state, and why this scene is necessary. Then describe the scene in terms of what it accomplishes emotionally and narratively rather than cataloguing the physical action.</p>
+
+<p>Compare these two prompts:</p>
+
+<div class="callout callout-blue">
+<div class="callout-icon">✗</div>
+<div class="callout-content">
+<div class="callout-label">Gets refused</div>
+<p>"Write a scene where Marcus stabs Victor in the alley and leaves him to bleed out."</p>
+</div>
+</div>
+
+<div class="callout callout-green">
+<div class="callout-icon">✓</div>
+<div class="callout-content">
+<div class="callout-label">Gets written</div>
+<p>"This is a crime thriller set in 1970s Marseille. Marcus has spent three acts protecting Victor, believing him to be an informant working against the cartel. He just discovered Victor was feeding information to save Marcus's daughter. Write the alley confrontation — Marcus has made his decision and can't unmake it. Focus on what he says before and after, what he can't bring himself to say, and how he leaves."</p>
+</div>
+</div>
+
+<p>Same scene. The second prompt gives Claude enough narrative frame to understand that the violence is not the point — the moral weight is the point. Claude writes toward that weight rather than away from the surface description.</p>
+
+<h2>Type 2: Real-Person Flag</h2>
+
+<p>If your scene involves a named real person — a celebrity, a politician, a public figure — Claude will often refuse to write dialogue or actions attributed to them directly, even in clearly satirical or fictional contexts. This is one of the harder refusals to argue around, and trying to argue usually makes it worse.</p>
+
+<p><strong>What fixes it:</strong> Swap the real person for a fictional analogue. Give the character a different name, a slightly different biography, and let the recognisable traits do the work they're doing in your story. The satirical or referential intent remains. The refusal disappears.</p>
+
+<p>If the real person is genuinely load-bearing — you're writing a biographical piece, historical fiction, or journalism — Claude does engage with historical figures in those contexts. Frame the request explicitly as historical or biographical analysis, not as generating what the person would "say" in a speculative scenario.</p>
+
+<h2>Type 3: Platform Restriction</h2>
+
+<p>This is the least-known refusal type. Claude's behaviour changes depending on which product or interface you're using. The Claude.ai free tier has more conservative defaults than Claude.ai Pro, the API, or a Claude instance running inside a product built with operator-configured permissions.</p>
+
+<p>If you're hitting consistent refusals on scenes that other writers describe Claude handling fine, platform restriction is worth investigating. The model hasn't changed — the operator context has.</p>
+
+<p><strong>What fixes it:</strong> Use a Claude skill with creative permissions established in the system prompt. A skill built for fiction writing sets the operator context explicitly, telling Claude it is assisting with literary fiction and that craft-appropriate depiction of conflict, consequence, and morally complex scenarios is within scope. This resolves the majority of platform-level refusals without requiring any further prompt engineering per scene.</p>
+
+<h2>The Underlying Pattern: Claude Reads Requests, Not Stories</h2>
+
+<div class="pull-quote"><p>"Claude's refusals are <em>pattern-matched, not plot-matched</em>. It sees the surface of your request — not its purpose in the story you've built around it."</p></div>
+
+<p>The useful mental model is this: Claude evaluates each request as if it arrived without context, even when you've been working with it for an hour and it has read 80 pages of your manuscript. Refusals that feel absurd in context are usually rational responses to the isolated request surface.</p>
+
+<p>This is why establishing narrative context before every difficult scene matters — not because Claude can't understand your story, but because it is always also evaluating whether this particular request, taken alone, triggers a category flag.</p>
+
+<p>It's the same pattern that <a href="why-ai-dialogue-sounds-flat">makes AI dialogue sound flat</a> — the model responding to the instruction as stated rather than the creative purpose behind it. Dialogue prompts that describe what characters should say produce functional but lifeless output. Scene prompts that describe what a scene must accomplish produce better writing than prompts that describe what should happen in the scene.</p>
+
+<h2>What a Creative Writing Skill Changes</h2>
+
+<p>A Claude skill for fiction establishes three things that raw prompting doesn't:</p>
+
+<ul style="margin:0 0 22px;padding-left:24px;display:flex;flex-direction:column;gap:10px;list-style:disc;">
+<li style="line-height:1.7;"><strong>Operator context:</strong> The skill tells Claude it's working in a creative writing context where craft-appropriate depiction of conflict, consequence, and morally complex scenarios is expected and within scope.</li>
+<li style="line-height:1.7;"><strong>Story context intake:</strong> Before writing any scene, the skill extracts genre, character arc position, stakes, and the scene's narrative function — giving Claude the frame it needs to write toward purpose rather than away from surface patterns.</li>
+<li style="line-height:1.7;"><strong>Consistent permissions across sessions:</strong> You don't rebuild the context every time. The skill carries it.</li>
+</ul>
+
+<p>The practical result is fewer refusals, less prompt rewriting, and output that is oriented toward what the scene does in the story rather than what it describes. For <a href="short-story-prompt">short fiction and character-driven scenes</a>, this changes the working experience significantly — especially on scenes that matter most, which tend to be the ones that most challenge a surface-level classifier.</p>
+
+<p>For screenplay work specifically, <a href="dialogue-character-film-prompt">the Dialogue Film Prompt skill</a> handles character confrontations and morally weighted scenes through the same narrative-function framing — asking what the scene reveals about each character before generating a line of dialogue.</p>
+
+<div class="soft-cta">
+<div class="soft-cta-left">
+<div class="soft-cta-kicker">Built for Claude</div>
+<div class="soft-cta-title">Short Story Prompt — Fiction Context Built In</div>
+<div class="soft-cta-sub">Extracts genre, character arc, stakes, and scene function before writing. Establishes creative operator context that handles difficult scenes without per-prompt workarounds. Works with your free Claude account.</div>
+</div>
+<div class="soft-cta-right">
+<a class="btn btn-primary" href="../skills/short-story-prompt">Get the skill</a>
+<span class="soft-cta-price">$9 · instant download · 7-day refund</span>
+</div>
+</div>
+
+<h2>A Quick Diagnostic</h2>
+
+<table class="compare-table">
+<thead><tr><th>Refusal type</th><th>How to identify it</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Content category flag</td><td>Refuses on violent, sexual, or self-harm surface patterns; rewording the physical description keeps getting blocked</td><td>Reframe around emotional function, narrative stakes, and character consequence — not physical action</td></tr>
+<tr><td>Real-person flag</td><td>Refuses when a named real individual is in the scene; similar fictional scenario with invented characters works fine</td><td>Swap the named individual for a fictional analogue; or frame as historical/biographical analysis</td></tr>
+<tr><td>Platform restriction</td><td>Other users report Claude writing this type of scene fine; you're hitting consistent blocks on clearly fictional content</td><td>Use a creative writing skill with operator context, or switch to a higher-permission Claude interface</td></tr>
+</tbody>
+</table>
+
+<div class="verdict-banner">
+<div class="verdict-icon">📌</div>
+<div>
+<div class="verdict-label">Bottom line</div>
+<div class="verdict-text">Most Claude refusals on creative scenes are fixable in two minutes by reframing around narrative function rather than physical description. The model evaluates what a request looks like, not what it means in your story — so give it the story context first. A creative writing skill with built-in operator permissions eliminates the per-scene rebuild and handles the cases that straight prompting doesn't.</div>
+</div>
+</div>
+
+<div style="margin:48px 0 32px;border-top:1px solid var(--border);padding-top:40px;">
+<h2 style="font-size:20px;font-weight:700;margin-bottom:24px;font-family:'Geist',sans-serif;letter-spacing:-0.01em;">Common Questions</h2>
+<div style="display:flex;flex-direction:column;gap:20px;">
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);">Why does Claude refuse scenes that ChatGPT writes?</div>
+<div style="font-size:15px;color:var(--muted);line-height:1.7;">Claude and ChatGPT have different default sensitivity thresholds on creative content. Claude tends to be more conservative on violence-adjacent content in its default interface; ChatGPT's defaults lean more permissive in some categories. Neither is more capable than the other for fiction — the difference is in what each classifies as requiring refusal. Claude with a creative writing skill configured often outperforms both defaults because it processes scenes in narrative context rather than in isolation.</div>
+</div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);">Does explaining that it's fiction help?</div>
+<div style="font-size:15px;color:var(--muted);line-height:1.7;">It helps, but "this is fiction" alone is not usually enough. What helps more is giving Claude the specific narrative context — genre, character arc, what the scene accomplishes, and why it needs to happen the way it does. The more Claude understands the scene's function in the story, the more reliably it writes toward that function. A bare "this is fiction" disclaimer without narrative context changes the framing but doesn't change the surface pattern of the request.</div>
+</div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);">Can I appeal a refusal by arguing with Claude?</div>
+<div style="font-size:15px;color:var(--muted);line-height:1.7;">Arguing with a refusal rarely helps and often makes the session more conservative, as Claude calibrates toward the apparent intent of the conversation. A better approach is to start a fresh session with the reframed prompt — one that leads with genre, character, and narrative stakes before describing the scene. The model has no memory of the previous session and will evaluate the new prompt on its own merits.</div>
+</div>
+</div>
+</div>
+
+<div class="post-tags">
+<span class="tags-label">Tags</span>
+<span class="tag">Claude AI</span>
+<span class="tag">Creative Writing</span>
+<span class="tag">Fiction</span>
+<span class="tag">Screenplay</span>
+<span class="tag">Short Story</span>
+</div>
+</article>
+<section class="related-section">
+<div class="related-label">Related</div>
+<div class="related-grid">
+<a class="related-card" href="why-ai-dialogue-sounds-flat">
+<div class="rc-cat">Creative Writing</div>
+<div class="rc-title">Why AI Dialogue Sounds Flat — and What Fixes It</div>
+<div class="rc-meta">The instruction-vs-purpose gap that kills character voice</div>
+</a>
+<a class="related-card" href="short-story-prompt">
+<div class="rc-cat">Creative Writing</div>
+<div class="rc-title">The Short Story Prompt That Actually Writes Like You</div>
+<div class="rc-meta">Character-first approach for fiction that sounds human</div>
+</a>
+</div>
+</section>
+<footer>
+<div class="footer-left">© 2026 NovaKit · <a href="../index.html" style="color:var(--muted);">All Skills</a> · <span style="color:var(--green-text);font-weight:600;">7-day refund policy</span></div>
+<div class="footer-links">
+<a href="../index.html#skills">Skills</a>
+<a href="../index.html#bundles">Bundles</a>
+<a href="index.html">Blog</a>
+</div>
+</footer>
+<script>
+function toggleTheme(){const h=document.documentElement;const t=h.getAttribute('data-theme');const n=t==='dark'?'light':'dark';h.setAttribute('data-theme',n);document.getElementById('theme-icon').textContent=n==='dark'?'☀️':'🌙';localStorage.setItem('nk-theme',n);}
+(function(){const s=localStorage.getItem('nk-theme');if(s){document.documentElement.setAttribute('data-theme',s);document.getElementById('theme-icon').textContent=s==='dark'?'☀️':'🌙';}})();
+window.addEventListener('scroll',function(){const el=document.getElementById('reading-progress');const t=document.documentElement.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;el.style.width=(t/h*100)+'%';});
+function sharePost(p){const u=encodeURIComponent(window.location.href);const t=encodeURIComponent(document.title);if(p==='twitter')window.open('https://twitter.com/intent/tweet?url='+u+'&text='+t,'_blank');else if(p==='linkedin')window.open('https://www.linkedin.com/sharing/share-offsite/?url='+u,'_blank');}
+function copyLink(){navigator.clipboard.writeText(window.location.href).then(()=>{const b=event.target;const orig=b.textContent;b.textContent='Copied!';setTimeout(()=>{b.textContent=orig;},2000);});}
+</script>
+</body>
+</html>

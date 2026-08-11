@@ -12,7 +12,7 @@
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Claude vs ChatGPT for PRD Writing — 2026 Head-to-Head Test | NovaKit</title>
+<title>Claude vs ChatGPT vs ChatPRD for PRD Writing — 2026 Head-to-Head Test | NovaKit</title>
 <meta content="Tested on real product requirements. Claude handles longer context and structured instructions better. ChatGPT is more familiar to most PMs. Which one actually produces a PRD you'd share with engineering?" name="description"/>
 <meta content="claude vs chatgpt prd writing, claude vs chatgpt product requirements document, best ai for prd writing, claude ai prd, chatgpt prd template" name="keywords"/>
 <link href="https://novakit.tech/blog/claude-vs-chatgpt-prd-writing" rel="canonical"/>
@@ -212,6 +212,21 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>ChatGPT has been used to write PRDs by far more product managers than Claude, which means there's more community knowledge about prompting patterns, more templates floating around, and more people to ask when something isn't working. If your team is already in the ChatGPT ecosystem and you're just starting with AI-assisted PRDs, the switching friction is real.</p>
 <p>ChatGPT is also slightly faster to iterate with on conversational refinement — asking follow-up questions and getting the document adjusted in natural back-and-forth. Claude handles this well too, but the ChatGPT interaction pattern is more familiar to most PMs.</p>
 <div class="pull-quote"><p>"Both models generate requirements for a <em>greenfield system</em> that doesn't exist. Your actual system has constraints, owners, and locked decisions. That context has to come from somewhere."</p></div>
+<h2>ChatPRD — When a Dedicated Tool Enters the Comparison</h2>
+<p>ChatPRD is a purpose-built PRD writing tool that sits between a raw AI model and a full product management platform. It is worth including in this comparison because it answers a real objection to Claude and ChatGPT: both are general-purpose models that require you to do the structural work. ChatPRD does some of that work for you by enforcing a guided workflow before generating any document.</p>
+<p>The practical difference is in how each tool handles the blank-page problem. Claude and ChatGPT start wherever you start — paste a prompt, get a PRD. ChatPRD forces you through a structured intake screen before anything is generated. It asks for the problem statement, the user, the success metrics, and the scope before the document begins. For PMs who struggle to front-load the constraint work, that forced intake is genuinely useful.</p>
+<table class="compare-table">
+<thead><tr><th>Dimension</th><th>ChatPRD</th><th>Claude (raw)</th><th>Claude Skill</th></tr></thead>
+<tbody>
+<tr><td>Intake enforcement</td><td>Forces structured intake via UI before writing begins</td><td>None — starts from whatever prompt you give it</td><td>Structured intake built into the skill workflow</td></tr>
+<tr><td>Template flexibility</td><td>Fixed template; hard to customise section structure</td><td>Fully flexible — will follow any template you specify</td><td>Follows NovaKit template with customisable sections</td></tr>
+<tr><td>Context depth</td><td>Captures problem, user, and metrics; misses architecture, team ownership, and locked decisions</td><td>As deep as the context you provide</td><td>Extracts five constraint categories including architecture and ownership</td></tr>
+<tr><td>Pricing</td><td>Subscription required; adds cost on top of existing AI tools</td><td>Free with Claude account; API costs if using API</td><td>One-time skill purchase; uses your existing Claude account</td></tr>
+<tr><td>Edit and iteration</td><td>Conversational refinement within ChatPRD UI</td><td>Full conversational refinement in Claude</td><td>Full conversational refinement in Claude</td></tr>
+</tbody>
+</table>
+<p>Where ChatPRD loses ground is on context depth and flexibility. Its intake captures the surface of the problem — what you're building and for whom — but does not systematically extract the constraints that determine whether the PRD survives engineering review: the current system boundaries, team ownership structure, performance constraints, and decisions that are already locked. A ChatPRD output often needs the same supplementary constraint context that a raw Claude output needs; the intake just ensures you stated the problem clearly before writing.</p>
+<p>The query <strong>"chatprd vs claude"</strong> has meaningful search volume because PMs are making exactly this decision: is a dedicated PRD tool worth the additional subscription, or does a structured Claude workflow produce equivalent output for less? The honest answer is that a Claude skill with a deeper intake than ChatPRD provides produces better PRDs than ChatPRD for PMs who are willing to front-load the constraint work. ChatPRD wins for PMs who want the intake enforced by a UI rather than by their own discipline.</p>
 <h2>The Real Problem Neither Model Solves</h2>
 <p>The reason most AI-generated PRDs fail in implementation isn't which model you used. It's that the model was never given:</p>
 <ul style="margin:0 0 22px;padding-left:24px;display:flex;flex-direction:column;gap:10px;list-style:disc;">
