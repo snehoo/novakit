@@ -169,7 +169,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="meta-dot"></span>
 <span class="post-date">20 July 2026</span>
 <span class="meta-dot"></span>
-<span class="post-readtime">7 min read</span>
+<span class="post-readtime">12 min read</span>
 </div>
 <h1 class="post-title">Claude vs ChatGPT for Creative Writing: <em>Which Writes Better Fiction?</em></h1>
 <p class="post-subtitle">Claude follows stylistic instructions more precisely and handles morally complex character work without unnecessary restrictions. ChatGPT produces competent prose. Both write flat characters by default — because neither gets psychological architecture before generating.</p>
@@ -215,7 +215,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>Both Claude and ChatGPT default to the same structural failure in fiction: characters whose inner lives are transparent. They say what they mean, feel what they show, and exist at the level of their role in the plot rather than as people with specific psychological histories that shape how they speak, deflect, and avoid.</p>
 <p>Real fiction lives in the gap between what a character says and what they mean. That gap — subtext, restraint, the thing a character can't bring themselves to say — is what makes a scene feel true rather than constructed.</p>
 <p>AI produces that gap only when it's given something to work from. Not a character description, but a psychological brief: what does this person want right now, what are they actually protecting, what makes this specific conversation difficult, and what can't they say directly. Without this architecture, both models write the archetype — the grieving father, the rebellious son, the reluctant hero — rather than a particular person in a particular situation.</p>
-<p>This is the same problem that makes <a href="why-ai-dialogue-sounds-flat.html">AI dialogue sound flat</a> — the model writes character as a function of their narrative role rather than as someone with a specific psychology that shapes every word choice.</p>
+<p>This is the same problem that makes <a href="why-ai-dialogue-sounds-flat">AI dialogue sound flat</a> — the model writes character as a function of their narrative role rather than as someone with a specific psychology that shapes every word choice.</p>
 <div class="callout callout-accent">
 <div class="callout-icon">✍️</div>
 <div class="callout-content">
@@ -232,7 +232,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <li style="line-height:1.7;"><strong>Specify what to avoid.</strong> If you don't want characters who state their feelings directly, say so. If you want no adverbs, no "he thought," no emotional interjections — name the constraints explicitly.</li>
 </ul>
 <p>With this input, Claude produces noticeably better fiction than ChatGPT under identical prompts. Without it, the difference is smaller and comes down to personal preference for their default prose styles.</p>
-<p>For short fiction specifically, the premise, genre, and character psychology all need to be in place before the first word is generated. You can go deeper on the prompt structure that actually works in <a href="short-story-prompt.html">what makes an AI short story prompt produce fiction that doesn't read like AI</a>.</p>
+<p>For short fiction specifically, the premise, genre, and character psychology all need to be in place before the first word is generated. You can go deeper on the prompt structure that actually works in <a href="short-story-prompt">what makes an AI short story prompt produce fiction that doesn't read like AI</a>.</p>
 <div class="soft-cta">
 <div class="soft-cta-left">
 <div class="soft-cta-kicker">Built for Claude</div>
@@ -240,10 +240,46 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <div class="soft-cta-sub">Runs a structured intake covering story premise, genre, prose style, and character psychological briefs before writing a single word. Produces short fiction with real subtext, distinct character voices, and a prose style you actually specified — not a default. Works with your free Claude account.</div>
 </div>
 <div class="soft-cta-right">
-<a class="btn btn-primary" href="../skills/short-story-prompt.html">Get the skill</a>
+<a class="btn btn-primary" href="../skills/short-story-prompt">Get the skill</a>
 <span class="soft-cta-price">$12 · instant download · 7-day refund</span>
 </div>
 </div>
+<h2>Genre by Genre: Where Claude's Edge Is Largest</h2>
+
+<p>The model gap is not uniform across fiction types. It's largest in the genres that demand the most from character interiority, tonal control, and instruction fidelity.</p>
+
+<h3>Literary fiction</h3>
+
+<p>This is where Claude's advantage is clearest. Literary fiction asks AI to hold a specific prose style, resist plot convenience, give characters interiority that doesn't resolve neatly, and produce prose that rewards re-reading. Claude, given a strong style brief ("spare sentences, third-person limited, no emotional explanation, Carver-adjacent"), holds those constraints further into longer outputs than ChatGPT does. ChatGPT starts well and drifts.</p>
+
+<h3>Thriller and crime fiction</h3>
+
+<p>The gap here is smaller. Both models handle plot-driven pacing well. Claude's edge appears in dialogue — antagonists who are genuinely intelligent, morally complex motives that aren't immediately transparent, scenes where the threat is implied rather than stated. ChatGPT's antagonists tend to explain themselves too clearly. Under a detailed scene brief the difference is meaningful; under a generic prompt the output is comparable.</p>
+
+<h3>Romance</h3>
+
+<p>ChatGPT often performs comparably or better here under generic prompts because its training data skews heavily toward the conventions of the genre, which are what most romance readers want. Claude's edge is in the emotional texture of difficult scenes — a relationship in trouble, a conversation that's about something other than what it's about, desire that complicates rather than simplifies. For genre romance beats, the tools are close. For emotionally complex romantic scenes, Claude's subtext handling is more reliable when the brief includes character psychology.</p>
+
+<h3>Horror and psychological fiction</h3>
+
+<p>Claude writes horror through atmosphere, implication, and what characters can't explain or look directly at — which is where the genre does its best work. ChatGPT's horror tends toward more explicit description. Neither is wrong, but readers who want their horror to work through unease rather than shock will find Claude's approach more useful. For <a href="claude-wont-write-scene">scenes Claude refuses in horror contexts</a>, the narrative framing approach matters especially here — frame the terror as something the character is experiencing, not as a catalogue of what happens to them.</p>
+
+<h3>Screenplays and scripts</h3>
+
+<p>Claude's format adherence is stronger — it holds proper screenplay format (scene headings, action blocks, dialogue, parentheticals) more consistently across longer scripts. Both models struggle with the unique economy of screen direction: telling the reader what to see without over-describing. Claude responds better to explicit instruction on this ("action blocks should be three lines maximum, no internal character state unless observable"). For <a href="dialogue-character-film-prompt">film dialogue specifically</a>, character voice differentiation is substantially better when character psychology is briefed upfront.</p>
+
+<h2>Style Instructions That Actually Work</h2>
+
+<p>The most common reason Claude doesn't produce the prose style you want is that the style instruction is too vague. "Write literary fiction" gives Claude almost nothing to work with. Here are the instruction patterns that produce reliable results:</p>
+
+<p><strong>Reference an author or work by name:</strong> "Write in the style of Kazuo Ishiguro — restrained first person, the narrator withholding more than they reveal, grief present in every sentence but never named directly." This is far more actionable than "literary, melancholy, understated." Claude has read Ishiguro. It uses that reference.</p>
+
+<p><strong>Name specific constraints on the sentence level:</strong> "No sentences longer than 12 words in action sequences. Use em dashes instead of 'and' to chain close observations. No adverbs." Constraints like these are held reliably because they're checkable at the sentence level rather than being gestalt-style descriptions.</p>
+
+<p><strong>Specify POV tightly:</strong> "Third-person limited, strictly inside Rania's perspective. No information she doesn't have. She doesn't know why Marcus is there — and neither does the reader." The model defaults to more omniscience than most literary fiction uses. The explicit POV constraint corrects that.</p>
+
+<p><strong>Say what to avoid:</strong> "No emotional explanation — if Rania is afraid, show it in what she notices and what she does, not in any sentence that names the fear." Negative constraints are often more effective than positive ones because they close off the model's easiest paths.</p>
+
 <h2>The Verdict</h2>
 <div class="verdict-banner">
 <div class="verdict-icon">📌</div>
@@ -261,11 +297,19 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </div>
 <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;">
 <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);">Does Claude write better dialogue than ChatGPT?</div>
-<div style="font-size:15px;color:var(--muted);line-height:1.7;">Claude produces better dialogue when given character psychological briefs — it creates more distinct voices, uses subtext more naturally, and avoids the "characters explaining their feelings to each other" pattern more consistently. Without psychological input, both models write dialogue where characters speak to advance the plot rather than as specific people with specific things they can't bring themselves to say directly. You can read more about the dialogue problem in <a href="why-ai-dialogue-sounds-flat.html" style="color:var(--accent);">why AI dialogue sounds flat</a>.</div>
+<div style="font-size:15px;color:var(--muted);line-height:1.7;">Claude produces better dialogue when given character psychological briefs — it creates more distinct voices, uses subtext more naturally, and avoids the "characters explaining their feelings to each other" pattern more consistently. Without psychological input, both models write dialogue where characters speak to advance the plot rather than as specific people with specific things they can't bring themselves to say directly. You can read more about the dialogue problem in <a href="why-ai-dialogue-sounds-flat" style="color:var(--accent);">why AI dialogue sounds flat</a>.</div>
+</div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);">How do I stop Claude from moralising about my characters' choices?</div>
+<div style="font-size:15px;color:var(--muted);line-height:1.7;">Claude sometimes adds editorialising — a character "realising" the consequences of their choices, a narrator reflecting on the moral weight of what just happened — that the writer didn't ask for. The most reliable fix is to include an explicit instruction at the start: "Do not editorialize about character choices. Write what happens and what characters observe without authorial comment on its moral weight." Claude follows this instruction well when it's stated directly and upfront. If it slips in over a long session, a mid-session reminder — "continue without editorial commentary on choices" — corrects it. Starting a new session with the instruction at the top is more reliable than correcting it mid-session.</div>
+</div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);">Can I use Claude to write a full novel?</div>
+<div style="font-size:15px;color:var(--muted);line-height:1.7;">Claude can contribute substantially to novel-length work but not in a single session. The practical approach for long fiction is scene-by-scene or chapter-by-chapter, with a standing brief that you paste at the start of each session — core character briefs, the prose style instruction, the story's key information and tone. Claude Pro's extended context handles more sustained work, but the standing brief approach is more reliable than relying on context window alone for a 70,000-word project. Most writers who use Claude effectively for long fiction use it as a drafting partner — writing some scenes themselves, handing specific scenes to Claude with targeted briefs, then revising together — rather than as a one-shot generator.</div>
 </div>
 <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;">
 <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text);">What is the best prompt for AI creative writing?</div>
-<div style="font-size:15px;color:var(--muted);line-height:1.7;">The best AI creative writing prompt includes: story premise (what happens), genre and subgenre, target prose style by name or influence, a psychological brief for each main character (surface want, actual want, emotional vulnerability), scene function (what changes), and explicit constraints (what to avoid). The <a href="../skills/short-story-prompt.html" style="color:var(--accent);">NovaKit Short Story Prompt skill</a> structures this intake for every story, producing fiction that reflects a specific voice and character psychology rather than a trained average.</div>
+<div style="font-size:15px;color:var(--muted);line-height:1.7;">The best AI creative writing prompt includes: story premise (what happens), genre and subgenre, target prose style by name or influence, a psychological brief for each main character (surface want, actual want, emotional vulnerability), scene function (what changes), and explicit constraints (what to avoid). The <a href="../skills/short-story-prompt" style="color:var(--accent);">NovaKit Short Story Prompt skill</a> structures this intake for every story, producing fiction that reflects a specific voice and character psychology rather than a trained average.</div>
 </div>
 </div>
 </div>
@@ -282,12 +326,12 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <section class="related-section">
 <div class="related-label">Related</div>
 <div class="related-grid">
-<a class="related-card" href="short-story-prompt.html">
+<a class="related-card" href="short-story-prompt">
 <div class="rc-cat">Creative Writing</div>
 <div class="rc-title">AI Short Story Prompt — Write Fiction That Doesn't Read Like AI</div>
 <div class="rc-meta">The prompt structure that produces fiction with real subtext and character voice</div>
 </a>
-<a class="related-card" href="why-ai-dialogue-sounds-flat.html">
+<a class="related-card" href="why-ai-dialogue-sounds-flat">
 <div class="rc-cat">Craft</div>
 <div class="rc-title">AI Dialogue Sounds Flat — How to Fix Character Voice With AI</div>
 <div class="rc-meta">Why both models default to characters who say exactly what they feel</div>
