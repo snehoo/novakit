@@ -2,15 +2,19 @@
 
 /* TEAM */
   Owner: Snehal Patel
-  Contact: snehalp@gmail.com
+  Site: https://novakit.tech/about
+  Contact: support@novakit.tech
+  LinkedIn: https://www.linkedin.com/in/snehalpateldev/
   Twitter: @snehoo
   Location: San Francisco, CA
 
 /* THANKS */
   Thanks to the Anthropic team for Claude AI
+  (NovaKit is independent and not affiliated with Anthropic)
 
 /* SITE */
+  Founded: 2026-01-15
   Standards: HTML5, CSS3
   Components: Anthropic Claude API
   Built with: Love & Code
-  Last Update: 2026-05-20
+  Last Update: 2026-08-27

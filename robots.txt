@@ -1,38 +1,352 @@
-# Allow all bots to crawl the site
+# robots.txt — novakit.tech
+# Open posture: all search and AI crawlers may read the site's content.
+# Private, legacy and internal-tooling paths are blocked for every agent.
+# NOTE: each User-agent group must repeat the Disallow list — a crawler obeys
+# only its own most-specific group and ignores the '*' group entirely.
+
+# ── Search engines — full access, minus private/legacy paths ──────────────────
 User-agent: *
+Disallow: /novakit-admin
+Disallow: /novakit-admin.html
+Disallow: /index-20may
+Disallow: /index-20may.html
+Disallow: /index-5jun
+Disallow: /index-5jun.html
+Disallow: /checkout_old
+Disallow: /checkout_old.html
+Disallow: /delivery-old
+Disallow: /delivery-old.html
+Disallow: /feedback
+Disallow: /feedback.html
+Disallow: /_seo_backup_20260709_223027/
+Disallow: /node_modules/
+Disallow: /*.bak$
+Disallow: /skills/embedded-captions/
+Disallow: /skills/faceless-explainer/
+Disallow: /skills/general-video/
+Disallow: /skills/graphic-overlays/
+Disallow: /skills/hyperframes/
+Disallow: /skills/hyperframes-animation/
+Disallow: /skills/hyperframes-cli/
+Disallow: /skills/hyperframes-core/
+Disallow: /skills/hyperframes-creative/
+Disallow: /skills/hyperframes-media/
+Disallow: /skills/hyperframes-registry/
+Disallow: /skills/motion-graphics/
+Disallow: /skills/pr-to-video/
+Disallow: /skills/product-launch-video/
+Disallow: /skills/remotion-to-hyperframes/
+Disallow: /skills/slideshow/
+Disallow: /skills/website-to-video/
 Allow: /
 
-# Explicit allow for AI citation and search bots
+# ── OpenAI ────────────────────────────────────────────────────────────────────
 User-agent: GPTBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-# Sitemap location
-Sitemap: https://novakit.tech/sitemap.xml
-
-# Disallow private/admin paths (add as needed)
-# Disallow: /admin/
-# Disallow: /private/
-
 User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+Disallow: /novakit-admin
+Disallow: /novakit-admin.html
+Disallow: /index-20may
+Disallow: /index-20may.html
+Disallow: /index-5jun
+Disallow: /index-5jun.html
+Disallow: /checkout_old
+Disallow: /checkout_old.html
+Disallow: /delivery-old
+Disallow: /delivery-old.html
+Disallow: /feedback
+Disallow: /feedback.html
+Disallow: /_seo_backup_20260709_223027/
+Disallow: /node_modules/
+Disallow: /*.bak$
+Disallow: /skills/embedded-captions/
+Disallow: /skills/faceless-explainer/
+Disallow: /skills/general-video/
+Disallow: /skills/graphic-overlays/
+Disallow: /skills/hyperframes/
+Disallow: /skills/hyperframes-animation/
+Disallow: /skills/hyperframes-cli/
+Disallow: /skills/hyperframes-core/
+Disallow: /skills/hyperframes-creative/
+Disallow: /skills/hyperframes-media/
+Disallow: /skills/hyperframes-registry/
+Disallow: /skills/motion-graphics/
+Disallow: /skills/pr-to-video/
+Disallow: /skills/product-launch-video/
+Disallow: /skills/remotion-to-hyperframes/
+Disallow: /skills/slideshow/
+Disallow: /skills/website-to-video/
 Allow: /
 
-User-agent: Anthropic-AI
+# ── Anthropic ─────────────────────────────────────────────────────────────────
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+Disallow: /novakit-admin
+Disallow: /novakit-admin.html
+Disallow: /index-20may
+Disallow: /index-20may.html
+Disallow: /index-5jun
+Disallow: /index-5jun.html
+Disallow: /checkout_old
+Disallow: /checkout_old.html
+Disallow: /delivery-old
+Disallow: /delivery-old.html
+Disallow: /feedback
+Disallow: /feedback.html
+Disallow: /_seo_backup_20260709_223027/
+Disallow: /node_modules/
+Disallow: /*.bak$
+Disallow: /skills/embedded-captions/
+Disallow: /skills/faceless-explainer/
+Disallow: /skills/general-video/
+Disallow: /skills/graphic-overlays/
+Disallow: /skills/hyperframes/
+Disallow: /skills/hyperframes-animation/
+Disallow: /skills/hyperframes-cli/
+Disallow: /skills/hyperframes-core/
+Disallow: /skills/hyperframes-creative/
+Disallow: /skills/hyperframes-media/
+Disallow: /skills/hyperframes-registry/
+Disallow: /skills/motion-graphics/
+Disallow: /skills/pr-to-video/
+Disallow: /skills/product-launch-video/
+Disallow: /skills/remotion-to-hyperframes/
+Disallow: /skills/slideshow/
+Disallow: /skills/website-to-video/
 Allow: /
 
-User-agent: CCBot
+# ── Google AI ─────────────────────────────────────────────────────────────────
+User-agent: Google-Extended
+Disallow: /novakit-admin
+Disallow: /novakit-admin.html
+Disallow: /index-20may
+Disallow: /index-20may.html
+Disallow: /index-5jun
+Disallow: /index-5jun.html
+Disallow: /checkout_old
+Disallow: /checkout_old.html
+Disallow: /delivery-old
+Disallow: /delivery-old.html
+Disallow: /feedback
+Disallow: /feedback.html
+Disallow: /_seo_backup_20260709_223027/
+Disallow: /node_modules/
+Disallow: /*.bak$
+Disallow: /skills/embedded-captions/
+Disallow: /skills/faceless-explainer/
+Disallow: /skills/general-video/
+Disallow: /skills/graphic-overlays/
+Disallow: /skills/hyperframes/
+Disallow: /skills/hyperframes-animation/
+Disallow: /skills/hyperframes-cli/
+Disallow: /skills/hyperframes-core/
+Disallow: /skills/hyperframes-creative/
+Disallow: /skills/hyperframes-media/
+Disallow: /skills/hyperframes-registry/
+Disallow: /skills/motion-graphics/
+Disallow: /skills/pr-to-video/
+Disallow: /skills/product-launch-video/
+Disallow: /skills/remotion-to-hyperframes/
+Disallow: /skills/slideshow/
+Disallow: /skills/website-to-video/
 Allow: /
 
+# ── Perplexity ────────────────────────────────────────────────────────────────
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Disallow: /novakit-admin
+Disallow: /novakit-admin.html
+Disallow: /index-20may
+Disallow: /index-20may.html
+Disallow: /index-5jun
+Disallow: /index-5jun.html
+Disallow: /checkout_old
+Disallow: /checkout_old.html
+Disallow: /delivery-old
+Disallow: /delivery-old.html
+Disallow: /feedback
+Disallow: /feedback.html
+Disallow: /_seo_backup_20260709_223027/
+Disallow: /node_modules/
+Disallow: /*.bak$
+Disallow: /skills/embedded-captions/
+Disallow: /skills/faceless-explainer/
+Disallow: /skills/general-video/
+Disallow: /skills/graphic-overlays/
+Disallow: /skills/hyperframes/
+Disallow: /skills/hyperframes-animation/
+Disallow: /skills/hyperframes-cli/
+Disallow: /skills/hyperframes-core/
+Disallow: /skills/hyperframes-creative/
+Disallow: /skills/hyperframes-media/
+Disallow: /skills/hyperframes-registry/
+Disallow: /skills/motion-graphics/
+Disallow: /skills/pr-to-video/
+Disallow: /skills/product-launch-video/
+Disallow: /skills/remotion-to-hyperframes/
+Disallow: /skills/slideshow/
+Disallow: /skills/website-to-video/
+Allow: /
+
+# ── Apple ─────────────────────────────────────────────────────────────────────
+User-agent: Applebot
+User-agent: Applebot-Extended
+Disallow: /novakit-admin
+Disallow: /novakit-admin.html
+Disallow: /index-20may
+Disallow: /index-20may.html
+Disallow: /index-5jun
+Disallow: /index-5jun.html
+Disallow: /checkout_old
+Disallow: /checkout_old.html
+Disallow: /delivery-old
+Disallow: /delivery-old.html
+Disallow: /feedback
+Disallow: /feedback.html
+Disallow: /_seo_backup_20260709_223027/
+Disallow: /node_modules/
+Disallow: /*.bak$
+Disallow: /skills/embedded-captions/
+Disallow: /skills/faceless-explainer/
+Disallow: /skills/general-video/
+Disallow: /skills/graphic-overlays/
+Disallow: /skills/hyperframes/
+Disallow: /skills/hyperframes-animation/
+Disallow: /skills/hyperframes-cli/
+Disallow: /skills/hyperframes-core/
+Disallow: /skills/hyperframes-creative/
+Disallow: /skills/hyperframes-media/
+Disallow: /skills/hyperframes-registry/
+Disallow: /skills/motion-graphics/
+Disallow: /skills/pr-to-video/
+Disallow: /skills/product-launch-video/
+Disallow: /skills/remotion-to-hyperframes/
+Disallow: /skills/slideshow/
+Disallow: /skills/website-to-video/
+Allow: /
+
+# ── Meta ──────────────────────────────────────────────────────────────────────
+User-agent: meta-externalagent
+User-agent: FacebookBot
+Disallow: /novakit-admin
+Disallow: /novakit-admin.html
+Disallow: /index-20may
+Disallow: /index-20may.html
+Disallow: /index-5jun
+Disallow: /index-5jun.html
+Disallow: /checkout_old
+Disallow: /checkout_old.html
+Disallow: /delivery-old
+Disallow: /delivery-old.html
+Disallow: /feedback
+Disallow: /feedback.html
+Disallow: /_seo_backup_20260709_223027/
+Disallow: /node_modules/
+Disallow: /*.bak$
+Disallow: /skills/embedded-captions/
+Disallow: /skills/faceless-explainer/
+Disallow: /skills/general-video/
+Disallow: /skills/graphic-overlays/
+Disallow: /skills/hyperframes/
+Disallow: /skills/hyperframes-animation/
+Disallow: /skills/hyperframes-cli/
+Disallow: /skills/hyperframes-core/
+Disallow: /skills/hyperframes-creative/
+Disallow: /skills/hyperframes-media/
+Disallow: /skills/hyperframes-registry/
+Disallow: /skills/motion-graphics/
+Disallow: /skills/pr-to-video/
+Disallow: /skills/product-launch-video/
+Disallow: /skills/remotion-to-hyperframes/
+Disallow: /skills/slideshow/
+Disallow: /skills/website-to-video/
+Allow: /
+
+# ── Amazon ────────────────────────────────────────────────────────────────────
+User-agent: Amazonbot
+Disallow: /novakit-admin
+Disallow: /novakit-admin.html
+Disallow: /index-20may
+Disallow: /index-20may.html
+Disallow: /index-5jun
+Disallow: /index-5jun.html
+Disallow: /checkout_old
+Disallow: /checkout_old.html
+Disallow: /delivery-old
+Disallow: /delivery-old.html
+Disallow: /feedback
+Disallow: /feedback.html
+Disallow: /_seo_backup_20260709_223027/
+Disallow: /node_modules/
+Disallow: /*.bak$
+Disallow: /skills/embedded-captions/
+Disallow: /skills/faceless-explainer/
+Disallow: /skills/general-video/
+Disallow: /skills/graphic-overlays/
+Disallow: /skills/hyperframes/
+Disallow: /skills/hyperframes-animation/
+Disallow: /skills/hyperframes-cli/
+Disallow: /skills/hyperframes-core/
+Disallow: /skills/hyperframes-creative/
+Disallow: /skills/hyperframes-media/
+Disallow: /skills/hyperframes-registry/
+Disallow: /skills/motion-graphics/
+Disallow: /skills/pr-to-video/
+Disallow: /skills/product-launch-video/
+Disallow: /skills/remotion-to-hyperframes/
+Disallow: /skills/slideshow/
+Disallow: /skills/website-to-video/
+Allow: /
+
+# ── Other AI / research crawlers ──────────────────────────────────────────────
 User-agent: Bytespider
+User-agent: CCBot
+User-agent: Diffbot
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: Timpibot
+User-agent: Omgilibot
+User-agent: Omgili
+User-agent: YouBot
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
+User-agent: AI2Bot
+User-agent: Kangaroo Bot
+User-agent: PetalBot
+Disallow: /novakit-admin
+Disallow: /novakit-admin.html
+Disallow: /index-20may
+Disallow: /index-20may.html
+Disallow: /index-5jun
+Disallow: /index-5jun.html
+Disallow: /checkout_old
+Disallow: /checkout_old.html
+Disallow: /delivery-old
+Disallow: /delivery-old.html
+Disallow: /feedback
+Disallow: /feedback.html
+Disallow: /_seo_backup_20260709_223027/
+Disallow: /node_modules/
+Disallow: /*.bak$
+Disallow: /skills/embedded-captions/
+Disallow: /skills/faceless-explainer/
+Disallow: /skills/general-video/
+Disallow: /skills/graphic-overlays/
+Disallow: /skills/hyperframes/
+Disallow: /skills/hyperframes-animation/
+Disallow: /skills/hyperframes-cli/
+Disallow: /skills/hyperframes-core/
+Disallow: /skills/hyperframes-creative/
+Disallow: /skills/hyperframes-media/
+Disallow: /skills/hyperframes-registry/
+Disallow: /skills/motion-graphics/
+Disallow: /skills/pr-to-video/
+Disallow: /skills/product-launch-video/
+Disallow: /skills/remotion-to-hyperframes/
+Disallow: /skills/slideshow/
+Disallow: /skills/website-to-video/
 Allow: /
+
+Sitemap: https://novakit.tech/sitemap.xml
