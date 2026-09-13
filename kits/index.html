@@ -5,25 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NovaKit Kits — AI on WhatsApp for your industry</title>
 <meta name="description" content="NovaKit Kits bring AI-powered workflows to WhatsApp for real estate, hospitality, and more. One message. Instant output. No app to learn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap">
 <style>
 :root{
-  --bg:#17151a;
-  --bg-raised:#201d24;
-  --bg-sunken:#100f13;
-  --ink:#f2eee9;
-  --ink-dim:#b6afa8;
-  --ink-faint:#7c766f;
-  --accent:#e8785c;
-  --accent-ink:#1a0f0a;
-  --line:rgba(242,238,233,0.11);
-  --line-strong:rgba(242,238,233,0.2);
+  --bg:#0d0d0b;
+  --bg-raised:#1a1a17;
+  --bg-sunken:#131311;
+  --ink:#f0efe8;
+  --ink-dim:#8a8980;
+  --ink-faint:#4a4a44;
+  --accent:#DE7356;
+  --accent-ink:#fff;
+  --line:rgba(255,255,255,0.07);
+  --line-strong:rgba(255,255,255,0.14);
   --good:#8fb99b;
   --bad:#c98a7a;
-  --font-display:"Fraunces",Georgia,serif;
-  --font-body:"IBM Plex Sans",system-ui,sans-serif;
-  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+  --font-display:"Instrument Serif",Georgia,serif;
+  --font-body:"Geist",system-ui,sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{color-scheme:dark;scroll-behavior:smooth}
@@ -71,22 +72,21 @@ nav{padding:22px 0;border-bottom:1px solid var(--line)}
 .demo-tabs{display:flex;gap:6px;background:var(--bg-sunken);border:1px solid var(--line);border-radius:12px;padding:4px}
 .demo-tab{font-family:var(--font-mono);font-size:0.7rem;padding:5px 12px;border-radius:8px;cursor:pointer;color:var(--ink-faint);transition:all 0.2s;border:none;background:transparent;white-space:nowrap}
 .demo-tab.active{background:var(--bg-raised);color:var(--ink);border:1px solid var(--line-strong)}
-.phone{width:290px;background:var(--bg-sunken);border:1px solid var(--line-strong);border-radius:26px;padding:10px;box-shadow:0 30px 80px -20px rgba(0,0,0,0.7)}
+.phone{width:360px;background:var(--bg-sunken);border:1px solid var(--line-strong);border-radius:26px;padding:10px;box-shadow:0 30px 80px -20px rgba(0,0,0,0.7)}
 .phone-head{display:flex;align-items:center;gap:9px;padding:8px 10px 12px;border-bottom:1px solid var(--line);margin-bottom:10px}
 .phone-head .av{width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:600;color:var(--accent-ink);flex:none}
 .phone-head-text b{font-size:0.82rem;font-weight:600;display:block;color:var(--ink)}
 .phone-head-text span{font-size:0.68rem;color:var(--good);font-family:var(--font-mono)}
-.thread{display:flex;flex-direction:column;gap:7px;padding:0 4px;min-height:280px}
+.thread{display:flex;flex-direction:column;gap:7px;padding:0 4px;min-height:380px;max-height:380px;overflow-y:auto;scroll-behavior:smooth}
 .bubble{max-width:88%;padding:8px 11px;border-radius:13px;font-size:0.8rem;line-height:1.45;word-break:break-word}
 .bubble.in{align-self:flex-end;background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:4px;font-weight:500}
 .bubble.out{align-self:flex-start;background:var(--bg-raised);color:var(--ink-dim);border-bottom-left-radius:4px}
 .bubble.out b{color:var(--ink);font-weight:600;display:block;margin-bottom:3px}
 .bubble.out .badge{display:inline-block;font-family:var(--font-mono);font-size:0.62rem;color:var(--good);border:1px solid rgba(143,185,155,0.3);border-radius:6px;padding:1px 6px;margin-top:6px}
+.bubble.in .badge{display:inline-block;font-family:var(--font-mono);font-size:0.62rem;color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.25);border-radius:6px;padding:1px 6px;margin-top:6px}
 .bubble.cmd{align-self:flex-end;background:transparent;border:1px dashed var(--line-strong);color:var(--accent);font-family:var(--font-mono);font-size:0.72rem;padding:5px 10px;border-radius:10px;border-bottom-right-radius:3px}
 .bubble.img-bubble{align-self:flex-end;padding:0;overflow:hidden;border-radius:13px;border-bottom-right-radius:4px;background:var(--bg-raised);border:1px solid var(--line)}
-.bubble.img-bubble .img-mock{width:180px;height:120px;background:linear-gradient(135deg,#2a2535 0%,#1e1b28 50%,#2a2535 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
-.bubble.img-bubble .img-mock .room-icon{font-size:2rem}
-.bubble.img-bubble .img-mock span{font-size:0.65rem;color:var(--ink-faint);font-family:var(--font-mono)}
+.bubble.img-bubble img{width:220px;height:155px;object-fit:cover;display:block}
 .bubble.voice-bubble{align-self:flex-end;background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:4px;display:flex;align-items:center;gap:8px;padding:10px 14px}
 .voice-waveform{display:flex;align-items:center;gap:2px;height:20px}
 .voice-waveform span{display:block;width:2.5px;background:rgba(26,15,10,0.5);border-radius:2px;animation:wave 0.8s ease-in-out infinite alternate}
@@ -499,11 +499,7 @@ const DEMOS = {
       { delay: 1500, type: 'typing' },
       { delay: 2800, type: 'remove-typing' },
       { delay: 2900, type: 'out',  content: '<b>Sea Views. Sorted.</b>\n3BHK in Andheri West. 1,450 sq ft carpet, dead sea-facing. Doesn\'t need explaining.\n\n📐 1,450 sq ft &nbsp;·&nbsp; 💰 ₹4.2 Cr' },
-      { delay: 3200, type: 'in',   content: 'TONE formal' },
-      { delay: 3600, type: 'typing' },
-      { delay: 4600, type: 'remove-typing' },
-      { delay: 4700, type: 'out',  content: '<b>Premium Coastal Residence · Andheri West</b>\nA distinguished sea-facing apartment offering 1,450 sq ft of carpet area with unobstructed Arabian Sea views, presented at ₹4.2 Crore.\n<span class="badge">✓ RERA checked</span>' },
-      { delay: 4900, type: 'meta',  content: 'Same listing. Different voice.' },
+      { delay: 3200, type: 'meta',  content: 'Same listing. Different voice.' },
     ]
   }
 };
@@ -543,7 +539,7 @@ function renderBubble(type, content, extra) {
   if (type === 'img-in') {
     const el = document.createElement('div');
     el.className = 'bubble img-bubble';
-    el.innerHTML = `<div class="img-mock"><div class="room-icon">🛋️</div><span>living-room.jpg</span></div>`;
+    el.innerHTML = `<img src="/kits/living-room.jpg" alt="living room photo">`;
     thread.appendChild(el);
     thread.scrollTop = thread.scrollHeight;
     return;
