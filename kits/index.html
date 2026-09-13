@@ -52,8 +52,9 @@
 </script>
 <style>
 /* ── Phone demo (kits-only) ──────────────────────────────────────────────── */
-.phone-col{display:flex;flex-direction:column;align-items:center;gap:12px;align-self:start;margin-top:4px;}
-.demo-caption{font-size:12px;color:var(--muted);text-align:center;}
+.hero{padding-top:44px !important;align-items:start !important;}
+.phone-col{display:flex;flex-direction:column;align-items:center;gap:12px;align-self:start;margin-top:0;}
+.demo-caption{font-size:12px;color:var(--muted);text-align:left;margin-top:14px;}
 .demo-tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px;}
 .demo-tab{font-family:'Geist Mono',monospace;font-size:12px;padding:6px 14px;border-radius:7px;cursor:pointer;color:var(--muted);transition:all .2s;border:none;background:transparent;white-space:nowrap;}
 .demo-tab.active{background:var(--bg2);color:var(--text);border:1px solid var(--border-s);}
@@ -117,6 +118,7 @@
 .demo-step:hover,.demo-step.active{border-color:var(--accent);}
 .demo-step .step-icon{font-size:1.4rem;margin-bottom:10px;}
 .demo-step h4{font-size:15px;font-weight:700;margin-bottom:4px;color:var(--text);}
+.step-tag{font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--accent);border:1px solid var(--border-s);border-radius:99px;padding:1px 8px;margin-left:6px;vertical-align:middle;}
 .demo-step p{font-size:13px;color:var(--muted);line-height:1.55;}
 
 /* kits grid */
@@ -230,6 +232,7 @@
         Start free on WhatsApp
       </a>
     </div>
+    <div class="demo-caption">🇮🇳 Hindi + English · Built for the Indian property market</div>
   </div>
 
   <!-- ANIMATED PHONE DEMO -->
@@ -240,7 +243,6 @@
       <button class="demo-tab" onclick="switchDemo('voice',this)">🎤 Voice</button>
       <button class="demo-tab" onclick="switchDemo('tone',this)">🎨 Tone</button>
     </div>
-    <div class="demo-caption">🇮🇳 Hindi + English · Built for the Indian property market</div>
 
     <div class="phone">
       <div class="phone-notch"></div>
@@ -281,7 +283,7 @@
       </div>
       <div class="demo-step" id="step-image" onclick="switchDemo('image', document.querySelectorAll('.demo-tab')[1])">
         <div class="step-icon">📸</div>
-        <h4>Send a photo</h4>
+        <h4>Send a photo <span class="step-tag">Studio</span></h4>
         <p>Send a photo of the house → it tells you what it can see, and asks you for anything it can't.</p>
       </div>
       <div class="demo-step" id="step-voice" onclick="switchDemo('voice', document.querySelectorAll('.demo-tab')[2])">
@@ -308,7 +310,7 @@
       <div class="kit-card live">
         <div class="kit-icon">🏠</div>
         <h3>novakit.realestate</h3>
-        <p>Writes your listings, handles buyer objections, drafts follow-up emails and social posts, and turns a photo into a description. Only says what your RERA number and your facts allow.</p>
+        <p>Writes your listings and drafts replies to buyer objections, any property type. Only says what your facts allow — checked against RERA before it's sent.</p>
         <span class="kit-badge live">● Live now</span>
       </div>
       <div class="kit-card">
@@ -385,15 +387,15 @@
 <div class="page-section">
   <div class="page-inner">
     <div class="section-eyebrow">What you get</div>
-    <h2 class="section-title">Six things it can do for you.<br><em>All in one plan.</em></h2>
-    <p class="section-lead">Every plan includes all six — nothing extra to unlock, nothing sold separately.</p>
+    <h2 class="section-title">What it can do for you.<br><em>Solo and Studio.</em></h2>
+    <p class="section-lead">The listing writer and objection handler are in every plan. Studio adds more formats, photos as an input, and email and social follow-ups.</p>
     <div class="feat-grid">
-      <div class="feat"><span class="tag">1</span><h3>Listing writer</h3><p>Give it the basics of a property and it writes the full listing — ready to post, in the language buyers actually read.</p></div>
-      <div class="feat"><span class="tag">2</span><h3>Airbnb and rental listing</h3><p>Same idea, but written the way a short-stay or rental listing needs to read — the details guests actually care about.</p></div>
-      <div class="feat"><span class="tag">3</span><h3>Photo to description</h3><p>Send a photo of the property. It tells you what's actually visible in the picture, and asks for anything it can't see.</p></div>
-      <div class="feat"><span class="tag">4</span><h3>Objection handler</h3><p>Buyer says the price is too high, or wants to think about it — it drafts a reply based on what's already been said.</p></div>
-      <div class="feat"><span class="tag">5</span><h3>Follow-up emails</h3><p>A set of emails to send a buyer over time — first contact, a nudge, a reminder — ready to paste wherever you send email from.</p></div>
-      <div class="feat"><span class="tag">6</span><h3>Social media posts</h3><p>A month of Instagram and Facebook posts for your listings, delivered a few at a time so you can post them as you go.</p></div>
+      <div class="feat"><span class="tag">Solo + Studio</span><h3>Listing writer</h3><p>Give it the basics of a property, any property type, and it writes the full WhatsApp listing — ready to post.</p></div>
+      <div class="feat"><span class="tag">Solo + Studio</span><h3>Voice notes</h3><p>Speak it instead of typing it, in Hindi or English. You confirm before anything is sent.</p></div>
+      <div class="feat"><span class="tag">Solo + Studio</span><h3>Objection handler</h3><p>Buyer says the price is too high, or wants to think about it — it drafts a reply based on the property's real facts.</p></div>
+      <div class="feat"><span class="tag">Studio</span><h3>More formats, one listing</h3><p>The same property written for WhatsApp, Instagram, property portals, SMS, email and Facebook — not just retyped for each one.</p></div>
+      <div class="feat"><span class="tag">Studio</span><h3>Photos as input</h3><p>Send up to 6 photos of the property. It describes what's actually visible and asks for anything it can't see — never guesses.</p></div>
+      <div class="feat"><span class="tag">Studio</span><h3>Email and social follow-ups</h3><p>A 6-email drip sequence and a 30-day social posting plan, both delivered to you as WhatsApp messages you paste and send yourself.</p></div>
     </div>
   </div>
 </div>
@@ -408,10 +410,10 @@
         <h3>Solo</h3>
         <div class="price">₹2,999<small>/month</small></div>
         <ul>
-          <li><b>1</b> WhatsApp number, just for you</li>
-          <li>All 6 modules — listings, photos, objections, emails, social posts</li>
-          <li>Text or voice, Hindi and English</li>
-          <li>Your own profile and writing style, remembered</li>
+          <li><b>1</b> person, on WhatsApp</li>
+          <li><b>50</b> listings a month</li>
+          <li>Text or voice, Hindi and English, any property type</li>
+          <li>Objection handler for buyer replies</li>
         </ul>
       </div>
       <div class="plan studio">
@@ -419,16 +421,18 @@
         <h3>Studio</h3>
         <div class="price">₹7,999<small>/month</small></div>
         <ul>
-          <li><b>3</b> WhatsApp numbers — you and your team, one account</li>
-          <li>Everything in Solo, for all 3</li>
-          <li>Upload your own brochures and price sheets — it reads from them too</li>
-          <li>Longer replies (emails, social posts) delivered as a PDF</li>
+          <li>Up to <b>5</b> people, one shared account</li>
+          <li><b>500</b> listings a month, split across your team</li>
+          <li>Same listing written for WhatsApp, Instagram, portals, SMS, email and Facebook</li>
+          <li>Photos as input, up to 6 per property</li>
+          <li>6-email follow-up sequence and a 30-day social posting plan, sent as WhatsApp messages</li>
+          <li>Objection handler remembers the last 5 messages in the conversation</li>
         </ul>
       </div>
     </div>
     <div class="trial-box">
       <span>New here?</span>
-      <span><b>7 days or 10 tries</b> — whichever comes first. The real thing, not a watered-down demo.</span>
+      <span><b>7 days or 10 listings</b> — whichever comes first. The real thing, not a watered-down demo.</span>
     </div>
   </div>
 </div>
@@ -439,7 +443,7 @@
     <div>
       <div class="lc-badge">🎁 Free trial</div>
       <h2 class="lc-heading">Try NovaKit before<br>you <em>spend a rupee.</em></h2>
-      <p class="lc-sub">Drop your number and we'll set up a 7-day free trial on the real estate kit — the real thing, not a watered-down demo. No credit card. No call needed.</p>
+      <p class="lc-sub">Drop your email and we'll set up a 7-day free trial on WhatsApp — the real thing, not a watered-down demo. No credit card. No call needed.</p>
     </div>
     <div>
       <div class="lc-skill-preview">
@@ -451,14 +455,14 @@
           </div>
         </div>
         <div class="lc-includes">
-          <div class="lc-inc">7 days or 10 tries free — real thing, no limits</div>
-          <div class="lc-inc">All 6 modules from day one</div>
+          <div class="lc-inc">7 days or 10 listings free, whichever comes first</div>
+          <div class="lc-inc">Text and voice, in Hindi or English</div>
           <div class="lc-inc">Works on WhatsApp, no new app to install</div>
         </div>
       </div>
       <form id="lc-form" onsubmit="submitTrial(event)">
         <div class="lc-input-row">
-          <input class="lc-input" id="lc-phone" type="tel" placeholder="+91 98765 43210" required autocomplete="tel">
+          <input class="lc-input" id="lc-email" type="email" placeholder="you@email.com" required autocomplete="email">
           <button class="lc-btn" type="submit" id="lc-submit">Start free</button>
         </div>
         <div class="lc-fine">No spam · No credit card · Cancel any time</div>
