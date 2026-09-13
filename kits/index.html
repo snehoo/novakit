@@ -16,12 +16,16 @@
 .demo-tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px;}
 .demo-tab{font-family:'Geist Mono',monospace;font-size:12px;padding:6px 14px;border-radius:7px;cursor:pointer;color:var(--muted);transition:all .2s;border:none;background:transparent;white-space:nowrap;}
 .demo-tab.active{background:var(--bg2);color:var(--text);border:1px solid var(--border-s);}
-.phone{width:360px;background:var(--surface);border:1px solid var(--border-s);border-radius:22px;padding:10px;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5);}
-.phone-head{display:flex;align-items:center;gap:10px;padding:8px 10px 12px;border-bottom:1px solid var(--border);margin-bottom:10px;}
+.phone{width:360px;background:var(--surface);border:1px solid var(--border-s);border-radius:38px;padding:14px 12px;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5),inset 0 0 0 2px var(--bg2),inset 0 0 0 3px var(--border-s);position:relative;}
+.phone::before{content:'';position:absolute;left:-2px;top:64px;width:3px;height:26px;background:var(--border-s);border-radius:2px 0 0 2px;box-shadow:0 40px 0 var(--border-s);}
+.phone::after{content:'';position:absolute;right:-2px;top:100px;width:3px;height:58px;background:var(--border-s);border-radius:0 2px 2px 0;}
+.phone-notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:76px;height:16px;background:var(--bg);border-radius:10px;z-index:3;}
+.phone-home{width:110px;height:4px;background:var(--border-s);border-radius:2px;margin:12px auto 0;}
+.phone-head{display:flex;align-items:center;gap:10px;padding:16px 10px 12px;border-bottom:1px solid var(--border);margin-bottom:10px;}
 .phone-av{width:30px;height:30px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex:none;}
 .phone-head-text b{font-size:13px;font-weight:700;display:block;color:var(--text);}
 .phone-head-text span{font-size:11px;color:var(--green-text);font-family:'Geist Mono',monospace;}
-.thread{display:flex;flex-direction:column;gap:7px;padding:0 4px;min-height:380px;max-height:380px;overflow-y:auto;scroll-behavior:smooth;}
+.thread{display:flex;flex-direction:column;gap:7px;padding:0 4px;min-height:495px;max-height:495px;overflow-y:auto;scroll-behavior:smooth;}
 .thread::-webkit-scrollbar{width:3px;}
 .thread::-webkit-scrollbar-thumb{background:var(--border-s);border-radius:2px;}
 .bubble{max-width:86%;padding:9px 12px;border-radius:14px;font-size:13px;line-height:1.5;word-break:break-word;}
@@ -50,7 +54,7 @@
 .typing span:nth-child(2){animation-delay:.2s}
 .typing span:nth-child(3){animation-delay:.4s}
 @keyframes blink{0%,80%,100%{transform:scale(1);opacity:.4}40%{transform:scale(1.2);opacity:1}}
-.chat-meta{font-size:11px;color:var(--faint);text-align:center;margin:2px 0;font-family:'Geist Mono',monospace;}
+.chat-meta{font-size:11px;color:var(--muted);text-align:center;margin:2px 0;font-family:'Geist Mono',monospace;}
 .composer{display:flex;align-items:center;gap:8px;margin-top:10px;padding:7px 7px 7px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:22px;}
 .composer-txt{flex:1;font-size:12px;color:var(--muted);}
 .composer-mic{width:30px;height:30px;border-radius:50%;border:1px solid var(--border-s);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);}
@@ -191,6 +195,7 @@
     </div>
 
     <div class="phone">
+      <div class="phone-notch"></div>
       <div class="phone-head">
         <div class="phone-av">NK</div>
         <div class="phone-head-text">
@@ -204,6 +209,7 @@
         <div class="composer-mic">🎤</div>
         <div class="composer-send">➤</div>
       </div>
+      <div class="phone-home"></div>
     </div>
 
     <button class="demo-replay-btn" onclick="replayDemo()">
@@ -456,7 +462,7 @@ const DEMOS = {
       { delay: 400,  type: 'img-in' },
       { delay: 1000, type: 'typing' },
       { delay: 2800, type: 'remove-typing' },
-      { delay: 2900, type: 'out',  content: '<b>I can see:</b> marble flooring, large windows, false ceiling, good daylight.\n\nTo write the listing I still need:\n① Carpet area in sq ft\n② Floor number\n③ Asking price\n\nSend those and I\'ll have the full copy ready.' },
+      { delay: 2900, type: 'out',  content: '<b>I can see:</b> marble flooring, large windows, false ceiling, good daylight.\n\nTo write the listing I still need:\n① Carpet area in sq ft\n② Floor number\n③ Asking price\n\nSend those and I\'ll have the full copy ready — I won\'t guess the rest.' },
       { delay: 3100, type: 'meta',  content: 'Never invents what it can\'t see' },
     ]
   },
@@ -469,6 +475,7 @@ const DEMOS = {
       { delay: 3200, type: 'remove-typing' },
       { delay: 3300, type: 'out',  content: '<b>Sea-Facing 3BHK · Andheri West</b>\nThe kind of home where the view does the convincing. 1,450 sq ft carpet, priced at ₹4.2 Cr.\n\n📐 1,450 sq ft · 💰 ₹4.2 Cr\n<span class="badge">✓ Hindi transcribed</span>' },
       { delay: 3500, type: 'meta',  content: 'Spoken in Hindi → listing in 8 seconds' },
+      { delay: 3700, type: 'meta',  content: 'Works the same whether you type or speak' },
     ]
   },
   tone: {
@@ -479,7 +486,7 @@ const DEMOS = {
       { delay: 1500, type: 'typing' },
       { delay: 2800, type: 'remove-typing' },
       { delay: 2900, type: 'out',  content: '<b>Sea Views. Sorted.</b>\n3BHK in Andheri West. 1,450 sq ft carpet, dead sea-facing. Doesn\'t need explaining.\n\n📐 1,450 sq ft · 💰 ₹4.2 Cr' },
-      { delay: 3200, type: 'meta',  content: 'Same listing. Different voice.' },
+      { delay: 3200, type: 'meta',  content: 'Same facts, same price — just said differently' },
     ]
   }
 };
