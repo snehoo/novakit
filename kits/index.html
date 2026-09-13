@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaKit Kits — AI on WhatsApp for your industry</title>
+<meta name="description" content="NovaKit Kits bring AI-powered workflows to WhatsApp for real estate, hospitality, and more. One message. Instant output. No app to learn.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#17151a;
+  --bg-raised:#201d24;
+  --bg-sunken:#100f13;
+  --ink:#f2eee9;
+  --ink-dim:#b6afa8;
+  --ink-faint:#7c766f;
+  --accent:#e8785c;
+  --accent-ink:#1a0f0a;
+  --line:rgba(242,238,233,0.11);
+  --line-strong:rgba(242,238,233,0.2);
+  --good:#8fb99b;
+  --bad:#c98a7a;
+  --font-display:"Fraunces",Georgia,serif;
+  --font-body:"IBM Plex Sans",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:dark;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+::selection{background:var(--accent);color:var(--accent-ink)}
+a{color:var(--accent)}
+.wrap{max-width:900px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance}
+em{font-style:italic;color:var(--accent)}
+
+/* NAV */
+nav{padding:22px 0;border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.wordmark{display:inline-flex;align-items:baseline;gap:2px;font-family:"IBM Plex Sans",sans-serif;font-size:1.2rem;font-weight:600;letter-spacing:-0.01em;text-decoration:none;color:var(--ink)}
+.wordmark .slash{color:var(--accent);font-weight:400;transform:skewX(-12deg) scaleX(0.7);display:inline-block;margin:0 -1px}
+.wordmark .suffix{color:var(--ink-faint);font-weight:400}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:0.88rem;color:var(--ink-dim);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-btn{background:var(--accent);color:var(--accent-ink)!important;font-weight:600;padding:8px 18px;border-radius:20px;font-size:0.86rem!important}
+
+/* HERO */
+.hero{padding:60px 0 0}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:0.76rem;letter-spacing:0.04em;color:var(--ink-faint);margin-bottom:16px}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.85)}}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-bottom:0}
+@media(max-width:700px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+.hero-left h1{font-size:clamp(2.1rem,5vw,3rem);line-height:1.1;letter-spacing:-0.015em;font-weight:700;margin-bottom:18px}
+.hero-left p{font-size:1.05rem;color:var(--ink-dim);line-height:1.7;margin-bottom:24px;max-width:42ch}
+.hinglish{font-family:var(--font-mono);font-size:0.88rem;color:var(--accent);margin-bottom:28px;display:block}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);font-family:var(--font-body);font-weight:600;font-size:0.98rem;padding:13px 24px;border-radius:28px;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.2s}
+.btn-primary:hover{opacity:0.88}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink-dim);font-family:var(--font-body);font-weight:500;font-size:0.95rem;padding:12px 20px;border-radius:28px;border:1px solid var(--line-strong);cursor:pointer;text-decoration:none;transition:border-color 0.2s,color 0.2s}
+.btn-ghost:hover{border-color:var(--accent);color:var(--ink)}
+.kits-pill{display:inline-flex;gap:6px;margin-top:20px}
+.kit-tag{font-family:var(--font-mono);font-size:0.72rem;padding:3px 10px;border-radius:10px;border:1px solid var(--line)}
+.kit-tag.active{border-color:var(--accent);color:var(--accent);background:rgba(232,120,92,0.07)}
+.kit-tag.soon{color:var(--ink-faint)}
+
+/* PHONE DEMO */
+.phone-col{display:flex;flex-direction:column;align-items:center;gap:12px}
+.demo-tabs{display:flex;gap:6px;background:var(--bg-sunken);border:1px solid var(--line);border-radius:12px;padding:4px}
+.demo-tab{font-family:var(--font-mono);font-size:0.7rem;padding:5px 12px;border-radius:8px;cursor:pointer;color:var(--ink-faint);transition:all 0.2s;border:none;background:transparent;white-space:nowrap}
+.demo-tab.active{background:var(--bg-raised);color:var(--ink);border:1px solid var(--line-strong)}
+.phone{width:290px;background:var(--bg-sunken);border:1px solid var(--line-strong);border-radius:26px;padding:10px;box-shadow:0 30px 80px -20px rgba(0,0,0,0.7)}
+.phone-head{display:flex;align-items:center;gap:9px;padding:8px 10px 12px;border-bottom:1px solid var(--line);margin-bottom:10px}
+.phone-head .av{width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:600;color:var(--accent-ink);flex:none}
+.phone-head-text b{font-size:0.82rem;font-weight:600;display:block;color:var(--ink)}
+.phone-head-text span{font-size:0.68rem;color:var(--good);font-family:var(--font-mono)}
+.thread{display:flex;flex-direction:column;gap:7px;padding:0 4px;min-height:280px}
+.bubble{max-width:88%;padding:8px 11px;border-radius:13px;font-size:0.8rem;line-height:1.45;word-break:break-word}
+.bubble.in{align-self:flex-end;background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:4px;font-weight:500}
+.bubble.out{align-self:flex-start;background:var(--bg-raised);color:var(--ink-dim);border-bottom-left-radius:4px}
+.bubble.out b{color:var(--ink);font-weight:600;display:block;margin-bottom:3px}
+.bubble.out .badge{display:inline-block;font-family:var(--font-mono);font-size:0.62rem;color:var(--good);border:1px solid rgba(143,185,155,0.3);border-radius:6px;padding:1px 6px;margin-top:6px}
+.bubble.cmd{align-self:flex-end;background:transparent;border:1px dashed var(--line-strong);color:var(--accent);font-family:var(--font-mono);font-size:0.72rem;padding:5px 10px;border-radius:10px;border-bottom-right-radius:3px}
+.bubble.img-bubble{align-self:flex-end;padding:0;overflow:hidden;border-radius:13px;border-bottom-right-radius:4px;background:var(--bg-raised);border:1px solid var(--line)}
+.bubble.img-bubble .img-mock{width:180px;height:120px;background:linear-gradient(135deg,#2a2535 0%,#1e1b28 50%,#2a2535 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.bubble.img-bubble .img-mock .room-icon{font-size:2rem}
+.bubble.img-bubble .img-mock span{font-size:0.65rem;color:var(--ink-faint);font-family:var(--font-mono)}
+.bubble.voice-bubble{align-self:flex-end;background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:4px;display:flex;align-items:center;gap:8px;padding:10px 14px}
+.voice-waveform{display:flex;align-items:center;gap:2px;height:20px}
+.voice-waveform span{display:block;width:2.5px;background:rgba(26,15,10,0.5);border-radius:2px;animation:wave 0.8s ease-in-out infinite alternate}
+.voice-waveform span:nth-child(1){height:6px;animation-delay:0s}
+.voice-waveform span:nth-child(2){height:14px;animation-delay:0.1s}
+.voice-waveform span:nth-child(3){height:20px;animation-delay:0.2s}
+.voice-waveform span:nth-child(4){height:12px;animation-delay:0.3s}
+.voice-waveform span:nth-child(5){height:18px;animation-delay:0.4s}
+.voice-waveform span:nth-child(6){height:8px;animation-delay:0.5s}
+.voice-waveform span:nth-child(7){height:14px;animation-delay:0.6s}
+.voice-waveform span:nth-child(8){height:6px;animation-delay:0.7s}
+@keyframes wave{from{transform:scaleY(0.5)}to{transform:scaleY(1)}}
+.voice-dur{font-family:var(--font-mono);font-size:0.72rem;color:var(--accent-ink);opacity:0.7}
+.typing{display:flex;align-items:center;gap:4px;padding:8px 12px;background:var(--bg-raised);border-radius:13px;border-bottom-left-radius:4px;align-self:flex-start;width:52px}
+.typing span{width:6px;height:6px;background:var(--ink-faint);border-radius:50%;animation:blink 1.2s ease-in-out infinite}
+.typing span:nth-child(2){animation-delay:0.2s}
+.typing span:nth-child(3){animation-delay:0.4s}
+@keyframes blink{0%,80%,100%{transform:scale(1);opacity:0.4}40%{transform:scale(1.2);opacity:1}}
+.meta{font-size:0.62rem;color:var(--ink-faint);text-align:center;margin:1px 0}
+.composer{display:flex;align-items:center;gap:8px;margin-top:10px;padding:6px 6px 6px 12px;background:var(--bg-raised);border:1px solid var(--line);border-radius:22px}
+.composer-txt{flex:1;font-family:var(--font-body);font-size:0.78rem;color:var(--ink-faint)}
+.composer-mic{width:28px;height:28px;border-radius:50%;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--ink-faint)}
+.composer-send{width:28px;height:28px;border-radius:50%;background:var(--accent);flex:none;display:flex;align-items:center;justify-content:center;color:var(--accent-ink);font-size:0.78rem;cursor:pointer}
+.demo-replay-btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:0.72rem;color:var(--ink-faint);background:transparent;border:1px solid var(--line);border-radius:20px;padding:6px 14px;cursor:pointer;transition:all 0.2s}
+.demo-replay-btn:hover{border-color:var(--accent);color:var(--accent)}
+.demo-replay-btn svg{width:11px;height:11px;flex:none}
+
+/* hidden class for animation */
+.hidden{opacity:0;pointer-events:none}
+
+/* DIVIDER */
+.section-divider{border:none;border-top:1px solid var(--line);margin:0}
+
+/* SECTIONS */
+section{padding:56px 0;border-top:1px solid var(--line)}
+.section-eyebrow{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:0.74rem;letter-spacing:0.04em;color:var(--ink-faint);margin-bottom:12px}
+.section-eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex:none}
+section h2{font-size:clamp(1.5rem,3.5vw,1.9rem);font-weight:700;line-height:1.2;letter-spacing:-0.01em;margin-bottom:14px}
+.section-lead{font-size:1.01rem;color:var(--ink-dim);max-width:54ch;line-height:1.72}
+
+/* DEMOS EXPLAINER */
+.demo-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+@media(max-width:640px){.demo-steps{grid-template-columns:1fr 1fr}}
+.demo-step{background:var(--bg-sunken);border:1px solid var(--line);border-radius:14px;padding:18px;cursor:pointer;transition:border-color 0.2s}
+.demo-step:hover,.demo-step.active{border-color:var(--accent)}
+.demo-step .step-icon{font-size:1.4rem;margin-bottom:10px}
+.demo-step h4{font-family:var(--font-body);font-size:0.9rem;font-weight:600;margin-bottom:4px;color:var(--ink)}
+.demo-step p{font-size:0.82rem;color:var(--ink-faint);line-height:1.5}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+@media(max-width:600px){.feat-grid{grid-template-columns:1fr}}
+.feat{border:1px solid var(--line);border-radius:14px;padding:20px}
+.feat .tag{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.03em;color:var(--accent);display:block;margin-bottom:8px}
+.feat h3{font-size:1rem;font-weight:600;font-family:var(--font-body);margin-bottom:6px;color:var(--ink)}
+.feat p{font-size:0.88rem;color:var(--ink-dim);line-height:1.6}
+
+/* KITS GRID */
+.kits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+@media(max-width:640px){.kits-grid{grid-template-columns:1fr 1fr}}
+.kit-card{background:var(--bg-sunken);border:1px solid var(--line);border-radius:14px;padding:20px}
+.kit-card.live{border-color:var(--accent)}
+.kit-card .kit-icon{font-size:1.5rem;margin-bottom:10px}
+.kit-card h3{font-size:0.94rem;font-weight:600;font-family:var(--font-body);color:var(--ink);margin-bottom:4px}
+.kit-card p{font-size:0.82rem;color:var(--ink-faint);line-height:1.5;margin-bottom:10px}
+.kit-badge{font-family:var(--font-mono);font-size:0.65rem;padding:2px 8px;border-radius:8px}
+.kit-badge.live{background:rgba(143,185,155,0.12);color:var(--good)}
+.kit-badge.soon{background:rgba(124,118,111,0.12);color:var(--ink-faint)}
+
+/* COMPARE */
+.compare-table{margin-top:22px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.ct-row{display:grid;grid-template-columns:1fr 1.2fr 1.2fr;border-top:1px solid var(--line)}
+.ct-row:first-child{border-top:none;background:var(--bg-sunken)}
+.ct-row>div{padding:12px 14px;font-size:0.85rem;line-height:1.42}
+.ct-row:first-child>div{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink-faint)}
+.ct-row>div:first-child{color:var(--ink-dim);border-right:1px solid var(--line);font-weight:500}
+.ct-row>div:nth-child(2){color:var(--ink-faint);border-right:1px solid var(--line)}
+.ct-row>div:nth-child(2)::before{content:"✕ ";color:var(--bad)}
+.ct-row:first-child>div:nth-child(2)::before{content:""}
+.ct-row>div:nth-child(3){color:var(--ink)}
+.ct-row>div:nth-child(3)::before{content:"✓ ";color:var(--good)}
+.ct-row:first-child>div:nth-child(3)::before{content:""}
+@media(max-width:600px){
+  .ct-row{grid-template-columns:1fr}
+  .ct-row>div:first-child{border-right:none;border-bottom:1px solid var(--line);color:var(--ink)}
+  .ct-row>div:nth-child(2){border-right:none;border-bottom:1px solid var(--line)}
+  .ct-row:first-child{display:none}
+}
+
+/* PLANS */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+@media(max-width:640px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--bg-sunken);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column}
+.plan.studio{border-color:var(--accent);position:relative}
+.plan .badge{position:absolute;top:-11px;right:18px;background:var(--accent);color:var(--accent-ink);font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.04em;padding:3px 9px;border-radius:20px;font-weight:500}
+.plan h3{font-size:1.06rem;font-family:var(--font-body);font-weight:600;color:var(--ink)}
+.plan .price{font-family:var(--font-mono);font-size:1.8rem;margin-top:8px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.plan .price small{font-size:0.84rem;color:var(--ink-faint);font-weight:400}
+.plan ul{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:8px;flex:1}
+.plan li{font-size:0.88rem;color:var(--ink-dim);padding-left:18px;position:relative;line-height:1.5}
+.plan li::before{content:"—";position:absolute;left:0;color:var(--ink-faint)}
+.plan li b{color:var(--ink);font-weight:600}
+.trial-box{margin-top:18px;padding:14px 16px;border:1px dashed var(--line-strong);border-radius:12px;font-size:0.9rem;color:var(--ink-dim);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.trial-box b{color:var(--ink);font-family:var(--font-mono);font-weight:500}
+
+/* CTA */
+.cta-section{padding:64px 0 72px;text-align:center;border-top:1px solid var(--line)}
+.cta-section h2{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:700;letter-spacing:-0.01em;margin-bottom:14px}
+.cta-section p{font-size:1.02rem;color:var(--ink-dim);max-width:44ch;margin:0 auto 28px}
+.cta-fine{margin-top:14px;font-size:0.83rem;color:var(--ink-faint)}
+
+/* FOOTER */
+footer{padding:26px 0 38px;font-size:0.84rem;color:var(--ink-faint);border-top:1px solid var(--line)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-links{display:flex;gap:20px}
+.footer-links a{color:var(--ink-faint);text-decoration:none}
+.footer-links a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap nav-inner">
+    <a href="/" class="wordmark">Nova<span class="slash">/</span>Kit<span class="suffix">.kits</span></a>
+    <div class="nav-links">
+      <a href="#kits">Kits</a>
+      <a href="#how">How it works</a>
+      <a href="#plans">Plans</a>
+      <a href="#kits" class="nav-btn">Try free →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero wrap" style="border:none;padding-bottom:56px">
+  <div class="eyebrow"><span class="dot"></span>WhatsApp AI · No new app</div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <h1>Your industry. On WhatsApp. <em>Answering in seconds.</em></h1>
+      <p>Send a voice note or two lines of text. A trained AI — built specifically for your industry — writes the reply, checks it against your rules, and sends it back before you can open another app.</p>
+      <span class="hinglish">Bas bhejo. Kaam ho gaya.</span>
+      <div class="hero-btns">
+        <a href="#kits" class="btn-primary">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 20l1.65-4.94A9 9 0 1 1 8 17.35L3 20z"/></svg>
+          Start free on WhatsApp
+        </a>
+        <button class="btn-ghost" onclick="replayDemo()">
+          <svg width="13" height="13" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4V8z" fill="currentColor"/></svg>
+          Watch the demo
+        </button>
+      </div>
+      <div class="kits-pill">
+        <span class="kit-tag active">realestate</span>
+        <span class="kit-tag soon">hospitality</span>
+        <span class="kit-tag soon">food</span>
+        <span class="kit-tag soon">+more</span>
+      </div>
+    </div>
+
+    <!-- ANIMATED PHONE DEMO -->
+    <div class="phone-col">
+      <div class="demo-tabs">
+        <button class="demo-tab active" onclick="switchDemo('text',this)">📝 Listing</button>
+        <button class="demo-tab" onclick="switchDemo('image',this)">📸 Photo</button>
+        <button class="demo-tab" onclick="switchDemo('voice',this)">🎤 Voice</button>
+        <button class="demo-tab" onclick="switchDemo('tone',this)">🎨 Tone</button>
+      </div>
+
+      <div class="phone">
+        <div class="phone-head">
+          <div class="av">NK</div>
+          <div class="phone-head-text">
+            <b>Novakit.realestate</b>
+            <span>● online</span>
+          </div>
+        </div>
+        <div class="thread" id="chat-thread">
+          <!-- Populated by JS -->
+        </div>
+        <div class="composer">
+          <span class="composer-txt" id="composer-hint">Type a property, or hold to record…</span>
+          <div class="composer-mic">🎤</div>
+          <div class="composer-send">➤</div>
+        </div>
+      </div>
+
+      <button class="demo-replay-btn" onclick="replayDemo()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.47"/></svg>
+        Replay demo
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-eyebrow"><span class="dot"></span>Four things it can do</div>
+    <h2>One WhatsApp number. Four superpowers.</h2>
+    <p class="section-lead">Click any card below to see it in the demo above.</p>
+    <div class="demo-steps">
+      <div class="demo-step active" id="step-text" onclick="switchDemo('text', document.querySelector('[onclick*=\"text\"]'))">
+        <div class="step-icon">📝</div>
+        <h4>Type a listing</h4>
+        <p>Two lines of facts → a ready, compliant listing in 6 seconds.</p>
+      </div>
+      <div class="demo-step" id="step-image" onclick="switchDemo('image', document.querySelector('[onclick*=\"image\"]'))">
+        <div class="step-icon">📸</div>
+        <h4>Send a photo</h4>
+        <p>A room photo → it describes what's visible, asks for the rest.</p>
+      </div>
+      <div class="demo-step" id="step-voice" onclick="switchDemo('voice', document.querySelector('[onclick*=\"voice\"]'))">
+        <div class="step-icon">🎤</div>
+        <h4>Record a voice note</h4>
+        <p>Hindi, English, or both — speak naturally, get the listing back in text.</p>
+      </div>
+      <div class="demo-step" id="step-tone" onclick="switchDemo('tone', document.querySelector('[onclick*=\"tone\"]'))">
+        <div class="step-icon">🎨</div>
+        <h4>Change the tone</h4>
+        <p>TONE trendy, TONE formal, TONE instagram — same listing, new voice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KITS -->
+<section id="kits">
+  <div class="wrap">
+    <div class="section-eyebrow"><span class="dot"></span>Available kits</div>
+    <h2>Built for your industry, not just AI in general.</h2>
+    <p class="section-lead">Each kit carries the vocabulary, compliance rules, and output formats that matter in that industry. A real estate kit knows RERA. A food kit knows FSSAI. A generic AI knows neither.</p>
+    <div class="kits-grid">
+      <div class="kit-card live">
+        <div class="kit-icon">🏠</div>
+        <h3>novakit.realestate</h3>
+        <p>Listings, objection handler, email drip, social calendar, photo-to-listing. RERA-compliant, India-calibrated.</p>
+        <span class="kit-badge live">● Live now</span>
+      </div>
+      <div class="kit-card">
+        <div class="kit-icon">🏨</div>
+        <h3>novakit.hospitality</h3>
+        <p>Hotels, Airbnb, PG, guest houses. Rates, amenities, review responses. No property-law crossover.</p>
+        <span class="kit-badge soon">Coming soon</span>
+      </div>
+      <div class="kit-card">
+        <div class="kit-icon">🍽️</div>
+        <h3>novakit.food</h3>
+        <p>Restaurant menus, cloud kitchens, delivery listings. FSSAI-aware. Appetite-first language.</p>
+        <span class="kit-badge soon">Coming soon</span>
+      </div>
+      <div class="kit-card">
+        <div class="kit-icon">🚗</div>
+        <h3>novakit.automotive</h3>
+        <p>Car and bike listings, dealership copy, test-drive scripts. RTO and finance compliance built in.</p>
+        <span class="kit-badge soon">Coming soon</span>
+      </div>
+      <div class="kit-card">
+        <div class="kit-icon">🎓</div>
+        <h3>novakit.education</h3>
+        <p>Course descriptions, institute profiles, admission copy. UGC and NAAC-awareness baked in.</p>
+        <span class="kit-badge soon">Coming soon</span>
+      </div>
+      <div class="kit-card">
+        <div class="kit-icon">💼</div>
+        <h3>novakit.jobs</h3>
+        <p>Job postings, recruitment copy, offer letters, company profiles. POSH and equal opportunity aware.</p>
+        <span class="kit-badge soon">Coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOT CHATGPT -->
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow"><span class="dot"></span>The obvious question</div>
+    <h2>Why not just use ChatGPT?</h2>
+    <p class="section-lead">You can. It just wasn't built for a broker stepping out of a site visit with thirty seconds and a voice note.</p>
+    <div class="compare-table">
+      <div class="ct-row"><div>What you need</div><div>ChatGPT or general AI</div><div>NovaKit Kit</div></div>
+      <div class="ct-row"><div>Where you use it</div><div>Leave WhatsApp, open another app, paste back</div><div>Same WhatsApp that's already open</div></div>
+      <div class="ct-row"><div>Voice in Hindi</div><div>Hit or miss — transcription not calibrated to Indian accents</div><div>Sarvam STT first, Whisper fallback, Hinglish normalized</div></div>
+      <div class="ct-row"><div>A fact it doesn't have</div><div>Fills the gap with something that sounds right</div><div>Asks. Never guesses.</div></div>
+      <div class="ct-row"><div>Industry rules</div><div>Doesn't know RERA, FSSAI, UGC by default</div><div>Compliance block baked into the kit lens</div></div>
+      <div class="ct-row"><div>Your tone, remembered</div><div>New chat, explain your style again</div><div>Tell it once — it stays for every job after</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow"><span class="dot"></span>What the real estate kit delivers</div>
+    <h2>Six modules. One subscription.</h2>
+    <p class="section-lead">Subscribe to a kit and every module on it is included — there is no per-feature upsell.</p>
+    <div class="feat-grid">
+      <div class="feat"><span class="tag">Module 1</span><h3>Property listing copy</h3><p>Residential, land, commercial, industrial. One message → WhatsApp copy, portal copy, and short-form — all ready to paste.</p></div>
+      <div class="feat"><span class="tag">Module 2</span><h3>Objection handler</h3><p>Buyer says "price is too high" — it replies with a response calibrated to what's already been said in this conversation.</p></div>
+      <div class="feat"><span class="tag">Module 3</span><h3>Email drip sequence</h3><p>Six buyer emails — welcome, insight, trust, objection, match, re-engagement — in one batch. Paste to your own CRM.</p></div>
+      <div class="feat"><span class="tag">Module 4</span><h3>Social content calendar</h3><p>Four weeks of Instagram and Facebook posts, delivered in small messages. Post them on your schedule.</p></div>
+      <div class="feat"><span class="tag">Module 5</span><h3>Photo-to-listing</h3><p>Send a room photo. It describes what's actually visible — marble, daylight, ceiling height — and asks for what it can't see.</p></div>
+      <div class="feat"><span class="tag">Module 6</span><h3>Photo prompts for AI images</h3><p>Don't have a photo? Generate a structured prompt for Midjourney or DALL-E based on the property spec you typed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="plans">
+  <div class="wrap">
+    <div class="section-eyebrow"><span class="dot"></span>Plans</div>
+    <h2>Two plans. No hidden charges.</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Solo</h3>
+        <div class="price">₹2,999<small>/month</small></div>
+        <ul>
+          <li><b>50</b> listings or replies a month</li>
+          <li>WhatsApp text and voice</li>
+          <li>Hindi, English, Hinglish</li>
+          <li>Buyer question replies</li>
+          <li><b>1 number</b></li>
+        </ul>
+      </div>
+      <div class="plan studio">
+        <span class="badge">For a team</span>
+        <h3>Studio</h3>
+        <div class="price">₹7,999<small>/month</small></div>
+        <ul>
+          <li><b>500</b> jobs a month</li>
+          <li>All 6 modules</li>
+          <li>Photo-to-listing</li>
+          <li>Email drip + monthly social calendar</li>
+          <li>Replies that remember past conversations</li>
+          <li><b>Up to 5 numbers</b>, one account</li>
+        </ul>
+      </div>
+    </div>
+    <div class="trial-box">
+      <span>New here?</span>
+      <span><b>7 days or 10 tries</b> — whichever comes first. The real thing, not a watered-down demo.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="wrap">
+    <h2>Always in your pocket.<br><em>Never a separate app.</em></h2>
+    <p>Send one property to this number and see what comes back. Try it once — decide after that.</p>
+    <a href="https://wa.me/+919876543210?text=Hi%2C+I%27d+like+to+try+NovaKit" class="btn-primary" style="font-size:1.05rem;padding:15px 30px">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 20l1.65-4.94A9 9 0 1 1 8 17.35L3 20z"/></svg>
+      Shuru Karo — Start Free
+    </a>
+    <p class="cta-fine">7 days or 10 tries free · No call needed · novakit.tech/kits</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>Nova<span style="color:var(--accent)">/</span>Kit<span style="color:var(--ink-faint)">.kits</span> — WhatsApp AI for every industry.</span>
+    <div class="footer-links">
+      <a href="/kits/realestate">Real Estate</a>
+      <a href="mailto:support@novakit.tech">Support</a>
+      <a href="/legal/terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Demo data ──────────────────────────────────────────────────────────────
+
+const DEMOS = {
+  text: {
+    hint: 'Type a property, or hold to record…',
+    steps: [
+      { delay: 400,  type: 'in',   content: '3bhk andheri west 1450 carpet sea facing 4.2cr' },
+      { delay: 900,  type: 'typing' },
+      { delay: 2600, type: 'remove-typing' },
+      { delay: 2700, type: 'out',  content: '<b>Sea-Facing 3BHK · Andheri West</b>\nWake up to the Arabian Sea from a home with room to breathe. 1,450 sq ft carpet — the number RERA actually needs in the ad.\n\n📐 1,450 sq ft carpet &nbsp;·&nbsp; 💰 ₹4.2 Cr\n<span class="badge">✓ RERA checked</span>' },
+      { delay: 3000, type: 'meta',  content: '6 seconds later' },
+    ]
+  },
+  image: {
+    hint: 'Send a photo, or type your property…',
+    steps: [
+      { delay: 400,  type: 'img-in' },
+      { delay: 1000, type: 'typing' },
+      { delay: 2800, type: 'remove-typing' },
+      { delay: 2900, type: 'out',  content: '<b>I can see:</b> marble flooring, large windows, false ceiling, good daylight.\n\nTo write the listing I still need:\n① Carpet area in sq ft\n② Floor number\n③ Asking price\n\nSend those and I\'ll have the full copy ready.' },
+      { delay: 3100, type: 'meta',  content: 'Never invents what it can\'t see' },
+    ]
+  },
+  voice: {
+    hint: 'Hold 🎤 to record a voice note…',
+    steps: [
+      { delay: 400,  type: 'voice-in', duration: '0:08' },
+      { delay: 1000, type: 'meta',  content: 'Teen bhk, Andheri, samundar dikhta hai, saadhe chaar crore' },
+      { delay: 1300, type: 'typing' },
+      { delay: 3200, type: 'remove-typing' },
+      { delay: 3300, type: 'out',  content: '<b>Sea-Facing 3BHK · Andheri West</b>\nThe kind of home where the view does the convincing. 1,450 sq ft carpet, priced at ₹4.2 Cr.\n\n📐 1,450 sq ft &nbsp;·&nbsp; 💰 ₹4.2 Cr\n<span class="badge">✓ Hindi transcribed</span>' },
+      { delay: 3500, type: 'meta',  content: 'Spoken in Hindi → listing in 8 seconds' },
+    ]
+  },
+  tone: {
+    hint: 'Type TONE to change the style…',
+    steps: [
+      { delay: 300,  type: 'out',  content: '<b>Sea-Facing 3BHK · Andheri West</b>\nWake up to the Arabian Sea from a home with room to breathe. 1,450 sq ft carpet.\n\n📐 1,450 sq ft &nbsp;·&nbsp; 💰 ₹4.2 Cr' },
+      { delay: 1000, type: 'in',   content: 'TONE trendy' },
+      { delay: 1500, type: 'typing' },
+      { delay: 2800, type: 'remove-typing' },
+      { delay: 2900, type: 'out',  content: '<b>Sea Views. Sorted.</b>\n3BHK in Andheri West. 1,450 sq ft carpet, dead sea-facing. Doesn\'t need explaining.\n\n📐 1,450 sq ft &nbsp;·&nbsp; 💰 ₹4.2 Cr' },
+      { delay: 3200, type: 'in',   content: 'TONE formal' },
+      { delay: 3600, type: 'typing' },
+      { delay: 4600, type: 'remove-typing' },
+      { delay: 4700, type: 'out',  content: '<b>Premium Coastal Residence · Andheri West</b>\nA distinguished sea-facing apartment offering 1,450 sq ft of carpet area with unobstructed Arabian Sea views, presented at ₹4.2 Crore.\n<span class="badge">✓ RERA checked</span>' },
+      { delay: 4900, type: 'meta',  content: 'Same listing. Different voice.' },
+    ]
+  }
+};
+
+let currentDemo = 'text';
+let timers = [];
+
+function clearTimers() {
+  timers.forEach(t => clearTimeout(t));
+  timers = [];
+}
+
+function renderBubble(type, content, extra) {
+  const thread = document.getElementById('chat-thread');
+  if (type === 'typing') {
+    const el = document.createElement('div');
+    el.className = 'typing';
+    el.id = 'typing-indicator';
+    el.innerHTML = '<span></span><span></span><span></span>';
+    thread.appendChild(el);
+    thread.scrollTop = thread.scrollHeight;
+    return;
+  }
+  if (type === 'remove-typing') {
+    const t = document.getElementById('typing-indicator');
+    if (t) t.remove();
+    return;
+  }
+  if (type === 'meta') {
+    const el = document.createElement('div');
+    el.className = 'meta';
+    el.textContent = content;
+    thread.appendChild(el);
+    thread.scrollTop = thread.scrollHeight;
+    return;
+  }
+  if (type === 'img-in') {
+    const el = document.createElement('div');
+    el.className = 'bubble img-bubble';
+    el.innerHTML = `<div class="img-mock"><div class="room-icon">🛋️</div><span>living-room.jpg</span></div>`;
+    thread.appendChild(el);
+    thread.scrollTop = thread.scrollHeight;
+    return;
+  }
+  if (type === 'voice-in') {
+    const el = document.createElement('div');
+    el.className = 'bubble voice-bubble';
+    el.innerHTML = `
+      <div class="voice-waveform">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <span class="voice-dur">${extra || '0:06'}</span>`;
+    thread.appendChild(el);
+    thread.scrollTop = thread.scrollHeight;
+    return;
+  }
+  const el = document.createElement('div');
+  el.className = 'bubble ' + (type === 'in' ? 'in' : 'out');
+  el.innerHTML = content.replace(/\n/g, '<br>');
+  thread.appendChild(el);
+  thread.scrollTop = thread.scrollHeight;
+}
+
+function runDemo(key) {
+  clearTimers();
+  const thread = document.getElementById('chat-thread');
+  thread.innerHTML = '';
+  const hint = document.getElementById('composer-hint');
+  const demo = DEMOS[key];
+  hint.textContent = demo.hint;
+
+  demo.steps.forEach(step => {
+    const t = setTimeout(() => {
+      renderBubble(step.type, step.content, step.duration);
+    }, step.delay);
+    timers.push(t);
+  });
+
+  // Update step cards
+  document.querySelectorAll('.demo-step').forEach(el => el.classList.remove('active'));
+  const stepEl = document.getElementById('step-' + key);
+  if (stepEl) stepEl.classList.add('active');
+}
+
+function switchDemo(key, tabEl) {
+  currentDemo = key;
+  document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+  if (tabEl) tabEl.classList.add('active');
+  runDemo(key);
+}
+
+function replayDemo() {
+  runDemo(currentDemo);
+}
+
+// Auto-start
+document.addEventListener('DOMContentLoaded', () => {
+  runDemo('text');
+
+  // Auto-cycle through demos every 6 seconds on load (first pass only)
+  const order = ['text', 'image', 'voice', 'tone'];
+  let idx = 0;
+  const tabs = document.querySelectorAll('.demo-tab');
+  const cycle = setInterval(() => {
+    idx++;
+    if (idx >= order.length) { clearInterval(cycle); return; }
+    const key = order[idx];
+    switchDemo(key, tabs[idx]);
+  }, 6000);
+});
+</script>
+</body>
+</html>
