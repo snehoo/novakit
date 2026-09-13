@@ -122,7 +122,7 @@
 .demo-step p{font-size:13px;color:var(--muted);line-height:1.55;}
 
 /* kits grid */
-.kits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
+.kits-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px;max-width:700px;}
 .kit-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;transition:border-color .2s;}
 .kit-card.live{border-color:var(--accent);}
 .kit-card .kit-icon{font-size:1.6rem;margin-bottom:12px;}
@@ -305,7 +305,7 @@
   <div class="page-inner">
     <div class="section-eyebrow">Available kits</div>
     <h2 class="section-title">Built for real estate first,<br><em>more on the way.</em></h2>
-    <p class="section-lead">Right now the real estate kit is live and ready to use. The others below are coming — join the trial and we'll let you know the moment yours is ready.</p>
+    <p class="section-lead">Right now the real estate kit is live. We're exploring which industry to build next, one at a time — hospitality (hotels, PGs, guest houses) is the leading candidate, since a lot of the groundwork already overlaps with real estate. Nothing else is scheduled yet.</p>
     <div class="kits-grid">
       <div class="kit-card live">
         <div class="kit-icon">🏠</div>
@@ -316,32 +316,8 @@
       <div class="kit-card">
         <div class="kit-icon">🏨</div>
         <h3>novakit.hospitality</h3>
-        <p>Hotels, Airbnb, PG, guest houses. Rates, amenities, review responses. No property-law crossover.</p>
-        <span class="kit-badge soon">Coming soon</span>
-      </div>
-      <div class="kit-card">
-        <div class="kit-icon">🍽️</div>
-        <h3>novakit.food</h3>
-        <p>Restaurant menus, cloud kitchens, delivery listings. FSSAI-aware. Appetite-first language.</p>
-        <span class="kit-badge soon">Coming soon</span>
-      </div>
-      <div class="kit-card">
-        <div class="kit-icon">🚗</div>
-        <h3>novakit.automotive</h3>
-        <p>Car and bike listings, dealership copy, test-drive scripts. RTO and finance compliance built in.</p>
-        <span class="kit-badge soon">Coming soon</span>
-      </div>
-      <div class="kit-card">
-        <div class="kit-icon">🎓</div>
-        <h3>novakit.education</h3>
-        <p>Course descriptions, institute profiles, admission copy. UGC and NAAC-awareness baked in.</p>
-        <span class="kit-badge soon">Coming soon</span>
-      </div>
-      <div class="kit-card">
-        <div class="kit-icon">💼</div>
-        <h3>novakit.jobs</h3>
-        <p>Job postings, recruitment copy, offer letters, company profiles. POSH and equal opportunity aware.</p>
-        <span class="kit-badge soon">Coming soon</span>
+        <p>Hotels, PGs, guest houses. Under consideration as the next kit — not built, not scheduled yet.</p>
+        <span class="kit-badge soon">Exploring next</span>
       </div>
     </div>
   </div>
