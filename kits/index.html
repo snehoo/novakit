@@ -10,9 +10,50 @@
 <link as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why not just use ChatGPT for property listings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can, and plenty of agents already do. The difference is where the work happens. With ChatGPT you leave WhatsApp, open another app, type the same details again, and paste the reply back. NovaKit sits inside the WhatsApp number you already use all day, so there's no app-switching between a site visit and the next call. It also won't invent a detail it wasn't given — something a general AI does regularly when a fact is missing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does NovaKit ever make up details in a listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. If you don't mention the carpet area, the floor, or the price, it asks you for that instead of guessing a number that sounds plausible. Every listing it writes only uses facts you actually sent it — nothing is filled in from a general sense of what a similar property might have."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is NovaKit compliant with RERA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every listing is checked against RERA rules before it's sent back to you — things like not promising guaranteed returns or appreciation, and including what's legally required in the ad. It's a check that runs automatically on every message, not something you have to remember to ask for."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it understand Hindi, or only English?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both, and the mix most people actually speak. Send a voice note in Hindi, English, or Hinglish — the way you'd naturally describe a property to a colleague — and you'll get a clean, ready listing back in text."
+      }
+    }
+  ]
+}
+</script>
 <style>
 /* ── Phone demo (kits-only) ──────────────────────────────────────────────── */
-.phone-col{display:flex;flex-direction:column;align-items:center;gap:12px;}
+.phone-col{display:flex;flex-direction:column;align-items:center;gap:12px;align-self:start;margin-top:4px;}
+.demo-caption{font-size:12px;color:var(--muted);text-align:center;}
 .demo-tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px;}
 .demo-tab{font-family:'Geist Mono',monospace;font-size:12px;padding:6px 14px;border-radius:7px;cursor:pointer;color:var(--muted);transition:all .2s;border:none;background:transparent;white-space:nowrap;}
 .demo-tab.active{background:var(--bg2);color:var(--text);border:1px solid var(--border-s);}
@@ -108,6 +149,12 @@
 .ct-row>div:nth-child(3)::before{content:"✓ ";color:var(--green-text);}
 .ct-row:first-child>div:nth-child(3)::before{content:"";}
 
+/* faq */
+.kfaq-list{margin-top:28px;display:flex;flex-direction:column;gap:6px;}
+.kfaq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;}
+.faq-q{font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.7;}
+
 /* features */
 .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;}
 .feat{border:1px solid var(--border);border-radius:14px;padding:24px;background:var(--surface);}
@@ -166,14 +213,14 @@
   </div>
   <div class="nav-right">
     <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">☀️</button>
-    <a href="#try" class="btn btn-primary">Try free →</a>
+    <a href="#try" class="btn btn-primary">Try free</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
   <div>
-    <div class="hero-eyebrow"><span class="live-dot"></span>For real estate agents · No new app</div>
+    <div class="hero-eyebrow"><span class="live-dot"></span>Made for Indian real estate agents</div>
     <h1>Write your listing<br>on WhatsApp.<br><em>Ready in seconds.</em></h1>
     <p class="hero-sub-text">Type a few details, or just send a voice note in Hindi or English. You get back a ready-to-post listing — same WhatsApp you already have open, no new app to download.</p>
     <p class="hero-hinglish">Bas bhejo. Kaam ho gaya.</p>
@@ -193,6 +240,7 @@
       <button class="demo-tab" onclick="switchDemo('voice',this)">🎤 Voice</button>
       <button class="demo-tab" onclick="switchDemo('tone',this)">🎨 Tone</button>
     </div>
+    <div class="demo-caption">🇮🇳 Hindi + English · Built for the Indian property market</div>
 
     <div class="phone">
       <div class="phone-notch"></div>
@@ -311,6 +359,25 @@
       <div class="ct-row"><div>RERA and other rules</div><div>Doesn't know them unless you remind it every time</div><div>Checks every listing against RERA before it's sent</div></div>
       <div class="ct-row"><div>Your writing style</div><div>Forgets it the moment you start a new chat</div><div>Tell it once — it keeps using it after</div></div>
     </div>
+
+    <div class="kfaq-list">
+      <div class="kfaq-item">
+        <h3 class="kfaq-q">Why not just use ChatGPT for property listings?</h3>
+        <p class="kfaq-a">You can, and plenty of agents already do. The difference is where the work happens. With ChatGPT you leave WhatsApp, open another app, type the same details again, and paste the reply back. NovaKit sits inside the WhatsApp number you already use all day, so there's no app-switching between a site visit and the next call. It also won't invent a detail it wasn't given — something a general AI does regularly when a fact is missing.</p>
+      </div>
+      <div class="kfaq-item">
+        <h3 class="kfaq-q">Does NovaKit ever make up details in a listing?</h3>
+        <p class="kfaq-a">No. If you don't mention the carpet area, the floor, or the price, it asks you for that instead of guessing a number that sounds plausible. Every listing it writes only uses facts you actually sent it — nothing is filled in from a general sense of what a similar property might have.</p>
+      </div>
+      <div class="kfaq-item">
+        <h3 class="kfaq-q">Is NovaKit compliant with RERA?</h3>
+        <p class="kfaq-a">Every listing is checked against RERA rules before it's sent back to you — things like not promising guaranteed returns or appreciation, and including what's legally required in the ad. It's a check that runs automatically on every message, not something you have to remember to ask for.</p>
+      </div>
+      <div class="kfaq-item">
+        <h3 class="kfaq-q">Does it understand Hindi, or only English?</h3>
+        <p class="kfaq-a">Both, and the mix most people actually speak. Send a voice note in Hindi, English, or Hinglish — the way you'd naturally describe a property to a colleague — and you'll get a clean, ready listing back in text.</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -392,7 +459,7 @@
       <form id="lc-form" onsubmit="submitTrial(event)">
         <div class="lc-input-row">
           <input class="lc-input" id="lc-phone" type="tel" placeholder="+91 98765 43210" required autocomplete="tel">
-          <button class="lc-btn" type="submit" id="lc-submit">Start free →</button>
+          <button class="lc-btn" type="submit" id="lc-submit">Start free</button>
         </div>
         <div class="lc-fine">No spam · No credit card · Cancel any time</div>
       </form>
@@ -431,7 +498,7 @@
     <a href="#how">How it works</a>
     <a href="#plans">Plans</a>
     <a href="/">Skills</a>
-    <a href="/kits/realestate">Real Estate</a>
+    <a href="/kits/blog">Blog</a>
     <a href="mailto:support@novakit.tech">Support</a>
     <a href="/legal/terms.html">Terms</a>
   </div>
