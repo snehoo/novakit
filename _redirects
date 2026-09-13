@@ -1,4 +1,5 @@
 /delivery /delivery/index.html 200
+/kits /kits/index.html 200
 
 # ── SPECIFIC RULES — must come before wildcards (first match wins) ──────────
 
