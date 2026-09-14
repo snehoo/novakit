@@ -272,7 +272,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 /* Hero card (slideshow) */
 .hero-visual{position:relative;padding:70px 0 24px;}
 .skill-demo-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;position:relative;overflow:hidden;}
-.try-kits-cta{position:absolute;top:0;right:14px;display:flex;flex-direction:column;align-items:center;text-decoration:none;z-index:15;}
+.try-kits-cta{position:absolute;top:-14px;right:40px;display:flex;flex-direction:column;align-items:center;text-decoration:none;z-index:15;}
 .try-kits-pill{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:99px;box-shadow:0 8px 20px rgba(222,115,86,0.4);white-space:nowrap;transform:rotate(-4deg);transition:transform .2s;}
 .try-kits-cta:hover .try-kits-pill{transform:rotate(-4deg) scale(1.06);}
 .try-kits-arrow{width:34px;height:44px;color:var(--accent);margin-top:-2px;}
@@ -280,7 +280,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 .float-badge{position:absolute;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:9px 14px;font-size:12px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,0.14);display:flex;align-items:center;gap:8px;white-space:nowrap;z-index:10;transition:opacity .5s,transform .5s;}
 .float-badge.hidden-badge{opacity:0;transform:translateY(6px);}
 .float-badge.show-badge{opacity:1;transform:translateY(0);}
-.fb-slop{top:4px;right:16px;}
+.fb-slop{top:78px;right:16px;}
 .fb-trend{bottom:4px;right:16px;}
 .fb-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .sdc-header{display:flex;align-items:flex-start;gap:14px;margin-bottom:10px;}
@@ -594,13 +594,8 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
 <div class="nav-links">
 <a href="#install">Install</a>
 <a href="#skills">Skills</a>
-<a href="/skills/bundles/">Bundles</a>
-<a href="/free">Free</a>
 <a href="#for-who">Who it's for</a>
-<a href="#proof">Reviews</a>
-<a href="#faq">FAQ</a>
 <a href="/blog/">Blog</a>
-<a href="/about">About</a>
 <a href="/results">Results</a>
 </div>
 <div class="nav-right">
@@ -637,9 +632,9 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
 <div class="hero-visual">
 <a href="/kits" class="try-kits-cta" aria-label="Try Kits — see WhatsApp AI for your industry">
 <span class="try-kits-pill">⭐ Try Kits</span>
-<svg class="try-kits-arrow" viewBox="0 0 40 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M32 4C14 6 4 18 8 32C10.5 40.5 19 44.5 26 41.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-<path d="M18.5 39L26 41.5L26.5 33.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<svg class="try-kits-arrow" viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M34 6C16 4 6 16 8 28C9 34 11 38 13 40" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M6 32L13 41L21 31" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 </a>
 <div class="float-badge fb-slop hidden-badge" id="badge-slop" style="color:var(--green-text)">
