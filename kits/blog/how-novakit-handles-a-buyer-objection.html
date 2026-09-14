@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How NovaKit Replies to a Buyer Objection</title>
+<meta name="description" content="A real walkthrough of NovaKit's objection handler on WhatsApp — what Solo gets, what Studio adds, and why it never invents a comparable sale to win the point.">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How NovaKit Replies to a Buyer Objection",
+  "description": "A real walkthrough of NovaKit's objection handler on WhatsApp — what Solo gets, what Studio adds, and why it never invents a comparable sale to win the point.",
+  "author": {"@type": "Organization", "name": "NovaKit"},
+  "publisher": {"@type": "Organization", "name": "NovaKit"},
+  "mainEntityOfPage": "https://novakit.tech/kits/blog/how-novakit-handles-a-buyer-objection.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do I send NovaKit when a buyer objects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Just tell it what the buyer said, the way you'd tell a colleague — 'buyer says 85 lac is too high' is enough. You don't need to categorize the objection or fill in a form. It already has the property's own facts from the listing you generated earlier, so it can respond using what's actually true about that property instead of asking you to repeat details you already gave it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I get back?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Solo, a single ready-to-send reply plus one fallback version if the first doesn't fit the moment — that's the single-shot mode. On Studio, you get the full set: a primary script, two fallback variants, a version to send before the objection even comes up, a short tone note on when to soften versus hold firm, and a suggested follow-up move. All of it is built from the property's real facts, never from a comparable sale or market stat it wasn't given."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it remember what the buyer already said?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On Studio, yes — it keeps the last 5 exchanges of that conversation in mind, so if the same buyer comes back a day later with 'still thinking about it,' it responds in context instead of asking you to re-explain the property from scratch. Solo replies to each objection on its own, without carrying that history forward, which is the main practical difference between the two plans beyond the extra reply variants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What won't it do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It won't invent a comparable sale, a market statistic, or a price trend to strengthen the reply — if you haven't given it that information, it won't manufacture it to sound more convincing. It won't send the reply for you; every script comes back to you on WhatsApp to review and send yourself. And it won't negotiate or commit to a price on your behalf — it drafts the words, you make the call."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.blog-wrap{max-width:760px;margin:0 auto;padding:70px 24px 90px;}
+.blog-crumb{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.blog-crumb a{color:var(--muted);}
+.blog-crumb a:hover{color:var(--accent);}
+.blog-h1{font-family:'Instrument Serif',serif;font-size:clamp(32px,4.5vw,46px);line-height:1.12;margin-bottom:14px;color:var(--text);}
+.blog-dek{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:36px;max-width:60ch;}
+.blog-h2{font-size:20px;font-weight:700;color:var(--text);margin:40px 0 12px;font-family:'Geist',sans-serif;}
+.blog-p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:14px;max-width:66ch;}
+.blog-p b{color:var(--text);}
+.mock-thread{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin:20px 0 28px;display:flex;flex-direction:column;gap:8px;}
+.mock-bubble{max-width:88%;padding:10px 13px;border-radius:14px;font-size:14px;line-height:1.55;}
+.mock-bubble.in{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px;font-weight:500;}
+.mock-bubble.out{align-self:flex-start;background:var(--surface2);color:var(--muted);border-bottom-left-radius:4px;border:1px solid var(--border);}
+.mock-bubble.out b{color:var(--text);display:block;margin-bottom:2px;}
+.mock-label{font-size:11px;font-family:'Geist Mono',monospace;color:var(--faint);text-align:center;margin:2px 0;}
+.block-tag{display:inline-block;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);background:var(--pill-bg);border-radius:6px;padding:2px 8px;margin-bottom:5px;}
+.plan-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 28px;}
+.plan-box{border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
+.plan-box.studio{border-color:var(--accent);}
+.plan-box h4{font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px;font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.04em;}
+.plan-box ul{margin:0;padding-left:16px;}
+.plan-box li{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:3px;}
+.doesnt-box{border:1px solid var(--border-s);border-radius:12px;padding:20px 22px;margin:20px 0 28px;background:var(--surface2);}
+.doesnt-box h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px;}
+.doesnt-box ul{margin:0;padding-left:18px;}
+.doesnt-box li{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:4px;}
+.blog-img{width:100%;border-radius:14px;overflow:hidden;margin:24px 0;border:1px solid var(--border);}
+.blog-img img{width:100%;height:auto;display:block;}
+.blog-img-credit{font-size:11px;color:var(--faint);margin-top:6px;font-family:'Geist Mono',monospace;}
+.blog-img-credit a{color:var(--faint);}
+.blog-related{margin-top:56px;padding-top:28px;border-top:1px solid var(--border);}
+.blog-related h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px;}
+.blog-related a{display:block;font-size:15px;color:var(--accent);margin-bottom:8px;}
+@media(max-width:640px){.plan-split{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img alt="NovaKit" class="logo-img logo-dark" src="/assets/nkwhite.jpg">
+    <img alt="NovaKit" class="logo-img logo-light" src="/assets/nkblack.jpg">
+  </div>
+  <div class="nav-links">
+    <a href="/kits#kits">Kits</a>
+    <a href="/kits#how">How it works</a>
+    <a href="/kits#plans">Plans</a>
+    <a href="/">Skills</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">☀️</button>
+    <a href="/kits#try" class="btn btn-primary">Try free</a>
+  </div>
+</nav>
+
+<div class="blog-wrap">
+  <div class="blog-crumb"><a href="/kits/blog">Kits blog</a> / How it works</div>
+  <h1 class="blog-h1">How NovaKit replies to a buyer objection</h1>
+  <p class="blog-dek">The second live module in the real estate kit. What you send it, what comes back on Solo versus Studio, and why it refuses to invent a comparable sale just to win an argument.</p>
+
+  <div class="blog-img">
+    <img src="https://images.pexels.com/photos/4307663/pexels-photo-4307663.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Man smiling while messaging on his phone" loading="lazy">
+  </div>
+  <p class="blog-img-credit">Photo: <a href="https://www.pexels.com/photo/happy-male-of-indian-descent-smiling-while-messaging-on-cellphone-4307663/" target="_blank" rel="noopener">Ketut Subiyanto / Pexels</a></p>
+
+  <h2 class="blog-h2">What do I actually send it?</h2>
+  <p class="blog-p">Just what the buyer said, in your own words — <b>"buyer says 85 lac is too high"</b> is enough. You don't categorize the objection or fill in a form. Because this runs in the same conversation as the listing you already generated, it already knows the property's real facts and uses those, not a template.</p>
+
+  <div class="mock-thread">
+    <div class="mock-bubble in">buyer says 85 lac is too high for a 1200 sqft 2bhk</div>
+  </div>
+
+  <h2 class="blog-h2">What comes back?</h2>
+  <p class="blog-p">A script you can send as-is, built from the property's own listed facts — not a market comparable it wasn't given, and not a stat it made up to sound more convincing.</p>
+
+  <div class="mock-thread">
+    <span class="block-tag">Primary script</span>
+    <div class="mock-bubble out">Totally fair to ask. At ₹85 Lac for 1,200 sq ft carpet, you're getting a modular kitchen with hob and chimney already fitted, built-in mirrored wardrobes, and a balcony — the kind of finishing that usually adds a separate line item after possession. Want to walk through it in person before deciding on the number?</div>
+  </div>
+
+  <h2 class="blog-h2">What's different between Solo and Studio?</h2>
+  <p class="blog-p">Solo gives you one ready reply plus a fallback if the first doesn't land — enough for most single-agent conversations. Studio gives you the full set the underlying script is built to produce: the primary reply, two fallback angles, a version to send <i>before</i> the objection comes up, a short note on when to soften versus hold firm, and a suggested next move. Same underlying facts, more of the shape around them.</p>
+
+  <div class="plan-split">
+    <div class="plan-box">
+      <h4>Solo</h4>
+      <ul>
+        <li>Primary script</li>
+        <li>One fallback variant</li>
+        <li>No memory across messages</li>
+      </ul>
+    </div>
+    <div class="plan-box studio">
+      <h4>Studio</h4>
+      <ul>
+        <li>Primary script</li>
+        <li>Two fallback variants</li>
+        <li>Pre-emption version</li>
+        <li>Tone guide</li>
+        <li>Follow-up move</li>
+        <li>Remembers last 5 exchanges</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="blog-h2">Does it remember the earlier conversation?</h2>
+  <p class="blog-p">On Studio, yes. If the same buyer messages again a day later, it responds with that history in mind instead of making you re-explain the property. On Solo, each objection is handled on its own — still useful for a one-off reply, just without the thread of memory.</p>
+
+  <div class="mock-thread">
+    <div class="mock-bubble in">still thinking about it, will let you know</div>
+    <div class="mock-bubble out">No pressure — if the modular kitchen and the balcony were the parts that stood out earlier, happy to send a couple more angles from Sector 92 whenever you're ready.</div>
+    <div class="mock-label">Studio only — replies with the earlier conversation in mind</div>
+  </div>
+
+  <div class="doesnt-box">
+    <h3>What this doesn't do</h3>
+    <ul>
+      <li>Doesn't invent a comparable sale, market stat, or price trend it wasn't given.</li>
+      <li>Doesn't send the reply for you — every script comes back to you on WhatsApp to review and send.</li>
+      <li>Doesn't negotiate or commit to a price on your behalf — it drafts the words, you make the call.</li>
+    </ul>
+  </div>
+
+  <p class="blog-p">Like the listing writer, this is a module that's actually built and live — not a roadmap item. The <a href="/kits#kits" style="color:var(--accent)">kits page</a> has the full list of what's live today versus what's still being explored.</p>
+
+  <div class="blog-related">
+    <h3>Related</h3>
+    <a href="/kits/blog/how-novakit-writes-a-listing.html">How NovaKit writes a listing</a>
+    <a href="/kits#plans">What's in Solo vs. Studio</a>
+    <a href="/kits#try">Start a 7-day free trial</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="/legal/terms.html" style="color:var(--accent);font-weight:600;">7-day free trial</a></div>
+  <div class="footer-links">
+    <a href="/kits#kits">Kits</a>
+    <a href="/kits#how">How it works</a>
+    <a href="/kits#plans">Plans</a>
+    <a href="/">Skills</a>
+    <a href="/kits/blog">Blog</a>
+    <a href="mailto:support@novakit.tech">Support</a>
+    <a href="/legal/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
+}
+</script>
+</body>
+</html>
