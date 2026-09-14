@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaKit for RERA-Registered Brokers</title>
+<meta name="description" content="What actually changes when you're a RERA-registered broker using NovaKit — your registration number, what the tool checks automatically, and what stays entirely your own responsibility.">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "NovaKit for RERA-Registered Brokers",
+  "description": "What actually changes when you're a RERA-registered broker using NovaKit — your registration number, what the tool checks automatically, and what stays entirely your own responsibility.",
+  "author": {"@type": "Organization", "name": "NovaKit"},
+  "publisher": {"@type": "Organization", "name": "NovaKit"},
+  "mainEntityOfPage": "https://novakit.tech/kits/blog/novakit-for-rera-registered-brokers.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does using NovaKit change anything about my RERA registration duties?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Section 9's requirement that a registered agent facilitate only registered-project transactions, and Section 10's bar on false statements, are your own obligations as an agent — they exist independent of any tool you use to write a message. NovaKit doesn't register you, doesn't check your registration status, and doesn't verify a project is registered. It only affects the wording of what you send, not your legal standing as a broker."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does my RERA number actually get into a listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You tell it once — send your RERA number as a plain message — and it's saved to your profile from then on. Every listing generated after that includes it automatically, the way Section 11(1)(a) requires. You don't retype it into every message, and you can update it the same way if it changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does NovaKit actually check automatically, versus what's on me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It checks the wording it generates against known misleading patterns — no guaranteed-return or assured-appreciation language — and includes your RERA number where your profile has one on file. It does not check whether the project you're listing is actually registered, does not verify your own agent registration, and gives no legal advice on a specific listing's compliance in your state. The wording check is automatic; knowing your own registration status is entirely yours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this a compliance tool, or a writing tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A writing tool with one compliance-shaped guardrail built in, not a compliance tool. It won't stop you from listing an unregistered project, because it has no way to know a project's registration status — that check has to happen on your end. What it does do is reduce one specific risk: the wording itself carrying a misleading claim, which is the part a writing tool can actually control."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.blog-wrap{max-width:760px;margin:0 auto;padding:70px 24px 90px;}
+.blog-crumb{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.blog-crumb a{color:var(--muted);}
+.blog-crumb a:hover{color:var(--accent);}
+.blog-h1{font-family:'Instrument Serif',serif;font-size:clamp(32px,4.5vw,46px);line-height:1.12;margin-bottom:14px;color:var(--text);}
+.blog-dek{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:60ch;}
+.blog-h2{font-size:20px;font-weight:700;color:var(--text);margin:40px 0 12px;font-family:'Geist',sans-serif;}
+.blog-p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:14px;max-width:66ch;}
+.blog-p b{color:var(--text);}
+.blog-img{width:100%;border-radius:14px;overflow:hidden;margin:24px 0;border:1px solid var(--border);}
+.blog-img img{width:100%;height:auto;display:block;}
+.blog-img-credit{font-size:11px;color:var(--faint);margin-top:6px;font-family:'Geist Mono',monospace;}
+.blog-img-credit a{color:var(--faint);}
+.mock-thread{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin:20px 0 28px;display:flex;flex-direction:column;gap:8px;}
+.mock-bubble{max-width:88%;padding:10px 13px;border-radius:14px;font-size:14px;line-height:1.55;}
+.mock-bubble.in{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px;font-weight:500;}
+.mock-bubble.out{align-self:flex-start;background:var(--surface2);color:var(--muted);border-bottom-left-radius:4px;border:1px solid var(--border);}
+.mock-bubble.out b{color:var(--text);display:block;margin-bottom:2px;}
+.mock-bubble.out .badge{display:inline-block;font-family:'Geist Mono',monospace;font-size:11px;color:var(--green-text);border:1px solid rgba(52,211,153,0.3);border-radius:6px;padding:1px 7px;margin-top:6px;}
+.notice-box{border:1px solid var(--border-s);border-radius:12px;padding:18px 22px;margin:0 0 28px;background:var(--surface2);}
+.notice-box p{font-size:13px;color:var(--muted);line-height:1.7;margin:0;}
+.notice-box b{color:var(--text);}
+.doesnt-box{border:1px solid var(--border-s);border-radius:12px;padding:20px 22px;margin:20px 0 28px;background:var(--surface2);}
+.doesnt-box h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px;}
+.doesnt-box ul{margin:0;padding-left:18px;}
+.doesnt-box li{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:4px;}
+.cite-list{border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin:0 0 28px;}
+.cite-list h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px;}
+.cite-list li{font-size:13px;color:var(--muted);line-height:1.8;}
+.cite-list a{color:var(--accent);}
+.blog-related{margin-top:56px;padding-top:28px;border-top:1px solid var(--border);}
+.blog-related h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px;}
+.blog-related a{display:block;font-size:15px;color:var(--accent);margin-bottom:8px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img alt="NovaKit" class="logo-img logo-dark" src="/assets/nkwhite.jpg">
+    <img alt="NovaKit" class="logo-img logo-light" src="/assets/nkblack.jpg">
+  </div>
+  <div class="nav-links">
+    <a href="/kits#kits">Kits</a>
+    <a href="/kits#how">How it works</a>
+    <a href="/kits#plans">Plans</a>
+    <a href="/kits/blog">Blog</a>
+    <a href="/">Skills</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">☀️</button>
+    <a href="/kits#try" class="btn btn-primary">Try free</a>
+  </div>
+</nav>
+
+<div class="blog-wrap">
+  <div class="blog-crumb"><a href="/kits/blog">Kits blog</a> / Built for a specific situation</div>
+  <h1 class="blog-h1">NovaKit for RERA-registered brokers</h1>
+  <p class="blog-dek">What actually changes when you're a registered agent using NovaKit — your registration number, what gets checked automatically, and what stays entirely on you.</p>
+
+  <div class="blog-img">
+    <img src="https://images.pexels.com/photos/4307817/pexels-photo-4307817.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Man working at a laptop in a modern Indian office" loading="lazy">
+  </div>
+  <p class="blog-img-credit">Photo: <a href="https://www.pexels.com/photo/young-ethnic-man-using-laptop-in-modern-workplace-4307817/" target="_blank" rel="noopener">Ketut Subiyanto / Pexels</a></p>
+
+  <div class="notice-box">
+    <p><b>This isn't legal advice.</b> It's a plain description of what NovaKit does and doesn't do relative to your own RERA obligations. See <a href="/kits/blog/rera-rules-for-whatsapp-property-ads.html" style="color:var(--accent)">RERA rules for advertising a property on WhatsApp</a> for the underlying law and sources.</p>
+  </div>
+
+  <h2 class="blog-h2">Does using NovaKit change any of my RERA duties as an agent?</h2>
+  <p class="blog-p">No. Section 9's requirement that a registered agent facilitate only registered-project transactions, and Section 10's bar on false statements and unfair trade practices, are your own obligations — they exist independent of whatever tool you use to write a message. NovaKit doesn't register you, doesn't check your registration status, and doesn't verify that a project you're listing is actually registered. It only affects the wording of what you send, not your standing as a broker.</p>
+
+  <h2 class="blog-h2">How does my RERA number actually get into a listing?</h2>
+  <p class="blog-p">You tell it once. Send your RERA number as a plain message, and it's saved to your profile from that point on — every listing generated afterward includes it automatically, the way Section 11(1)(a) requires. You're not retyping it into every message, and if it changes, you update it the same way.</p>
+
+  <div class="mock-thread">
+    <div class="mock-bubble in">my rera number is HR/GGM/1234/2026, add it to all my listings going forward</div>
+    <div class="mock-bubble out">Saved. Every listing from now on will include this automatically — no need to add it yourself.</div>
+  </div>
+
+  <h2 class="blog-h2">What does it actually check automatically, versus what's on me?</h2>
+  <p class="blog-p">It checks the wording it generates against known misleading patterns — no guaranteed-return or assured-appreciation language — and includes your RERA number where your profile has one on file. That's the automatic part. What it doesn't do: verify the project you're listing is registered, verify your own agent registration under Section 9, or give legal advice on whether a specific listing is compliant in your state. The wording check runs on every message; knowing your own registration status is entirely yours.</p>
+
+  <div class="mock-thread">
+    <div class="mock-bubble in">buyer wants guaranteed 12% returns, can you promise that in the listing</div>
+    <div class="mock-bubble out">I can't include a guaranteed-return line — that's the kind of claim Section 12 treats as misleading, and it puts you on the hook if it doesn't hold up. Want me to write the actual rental yield history instead, if you have it?<span class="badge">✓ Blocked before it was sent</span></div>
+  </div>
+
+  <h2 class="blog-h2">Is this a compliance tool, or a writing tool?</h2>
+  <p class="blog-p">A writing tool with one compliance-shaped guardrail built in — not a compliance tool. It won't stop you from listing an unregistered project, because it has no way to know a project's registration status; that check has to happen on your end, the same as it always has. What it does reduce is one specific, controllable risk: the wording itself carrying a claim that gets a buyer their money back with interest. That's the part a writing tool can actually reach.</p>
+
+  <div class="doesnt-box">
+    <h3>In short, for a RERA-registered broker</h3>
+    <ul>
+      <li><b>Changes:</b> your RERA number is set once and included automatically; guaranteed-return language is blocked before it's sent.</li>
+      <li><b>Doesn't change:</b> your own Section 9 registration, your duty to only facilitate registered-project sales, your duty under Section 10 not to misrepresent an affiliation you don't have.</li>
+    </ul>
+  </div>
+
+  <div class="cite-list">
+    <h3>Related reading</h3>
+    <ul>
+      <li><a href="/kits/blog/rera-rules-for-whatsapp-property-ads.html">RERA rules for advertising a property on WhatsApp</a> — the underlying law, with sources</li>
+    </ul>
+  </div>
+
+  <div class="blog-related">
+    <h3>Related</h3>
+    <a href="/kits/blog/how-novakit-writes-a-listing.html">How NovaKit writes a listing</a>
+    <a href="/kits/blog/how-novakit-handles-a-buyer-objection.html">How NovaKit replies to a buyer objection</a>
+    <a href="/kits#try">Start a 7-day free trial</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="/legal/terms.html" style="color:var(--accent);font-weight:600;">7-day free trial</a></div>
+  <div class="footer-links">
+    <a href="/kits#kits">Kits</a>
+    <a href="/kits#how">How it works</a>
+    <a href="/kits#plans">Plans</a>
+    <a href="/kits/blog">Blog</a>
+    <a href="/">Skills</a>
+    <a href="mailto:support@novakit.tech">Support</a>
+    <a href="/legal/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
+}
+</script>
+</body>
+</html>
