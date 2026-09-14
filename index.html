@@ -749,10 +749,6 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
 <li>Open <a href="https://claude.ai" style="color:var(--accent);text-decoration:underline;">Claude</a> and go to Customize → Skills → <a href="https://support.anthropic.com/en/articles/9126354-how-to-use-skills" style="color:var(--accent);text-decoration:underline;">Upload a skill</a>.</li>
 <li>Drag and drop the file in. It's ready to use immediately.</li>
 </ol>
-<div style="background:var(--bg2);border-radius:10px;padding:16px;margin-bottom:16px;font-size:15px;color:var(--muted);line-height:1.7;">
-<strong style="color:var(--text);">Why skills instead of prompts?</strong><br>
-          Static prompts use only training data. NovaKit skills run <a href="https://www.anthropic.com/news/contextual-retrieval" style="color:var(--accent);text-decoration:underline;">live research</a> before writing, so output adapts to current trends, not what worked during training.
-        </br></div>
 <p style="font-size:17px;color:var(--muted);line-height:1.75;margin-bottom:16px;">No code. No setup. If you can attach a file to an email, you can do this.</p>
 <div class="free-pill">✓ Free Claude account works · Pro unlocks longer outputs</div>
 </div>
@@ -1287,15 +1283,17 @@ function manualSwitch(idx) { switchSkill(idx); }
 
 
 // ── THEME ──
-// Scale install demo iframe to fill container exactly
+// Scale install demo iframe to cover its container exactly, no gaps either way
 function scaleInstallDemo(){
   const wrap = document.querySelector('.demo-iframe-zoom');
   const iframe = document.getElementById('install-demo-iframe');
   if(!wrap || !iframe) return;
   const scaleX = wrap.offsetWidth / 1920;
   const scaleY = wrap.offsetHeight / 1080;
-  // Use scaleX so width always fills — height crops naturally
-  const scale = scaleX;
+  // Use whichever axis needs the bigger scale so the scaled iframe always fully
+  // covers the container (like object-fit: cover) — using scaleX alone left a
+  // blank gap whenever the container was taller than a 16:9 crop of the width.
+  const scale = Math.max(scaleX, scaleY);
   iframe.style.transform = 'scale(' + scale + ')';
   iframe.style.transformOrigin = 'top left';
 }
