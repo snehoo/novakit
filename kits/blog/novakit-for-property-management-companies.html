@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaKit for Property Management Companies</title>
+<meta name="description" content="What actually fits for a PG, serviced-apartment, or long-term rental portfolio manager using NovaKit — and where it doesn't fit at all, honestly.">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "NovaKit for Property Management Companies",
+  "description": "What actually fits for a PG, serviced-apartment, or long-term rental portfolio manager using NovaKit — and where it doesn't fit at all, honestly.",
+  "author": {"@type": "Organization", "name": "NovaKit"},
+  "publisher": {"@type": "Organization", "name": "NovaKit"},
+  "mainEntityOfPage": "https://novakit.tech/kits/blog/novakit-for-property-management-companies.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does NovaKit support PG and serviced-apartment listings, or only sale listings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — PG, serviced apartment, and farmhouse are supported as property types within the same listing writer that handles sale listings, not a separate product. The compliance check is scoped to match: a PG or serviced-apartment listing correctly doesn't get a RERA disclaimer forced onto it, since that requirement applies to registered-project sales, not this kind of accommodation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it handle short-term, Airbnb-style nightly rentals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, and this is worth being direct about. A dedicated module for nightly-rental hosting was built and then deliberately unpublished — it shared the same compliance gate as the real estate listing writer, which was applying RERA carpet-area rules that don't make sense for a nightly stay. Rather than ship a mismatched compliance check, that module was pulled. If your portfolio is long-term rentals, PGs, or serviced apartments, the live listing writer fits. If it's short-term nightly stays, NovaKit isn't the right tool today."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a team of property managers share one account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, on Studio — up to 5 people share one account, with usage tracked per person, which fits a small portfolio-management team better than a single agent's Solo plan. Everyone still works inside their own WhatsApp conversation with the same shared kit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it manage rent collection, maintenance requests, or tenant records?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — none of that exists in the product, and this page isn't going to pretend otherwise. NovaKit writes listings and drafts replies to enquiries; it has no rent ledger, no maintenance ticketing, and no tenant database. For a full property management system, you need a dedicated PM tool. What NovaKit can do is take the writing work off a small team's plate for the listings and enquiry replies that tool doesn't handle."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.blog-wrap{max-width:760px;margin:0 auto;padding:70px 24px 90px;}
+.blog-crumb{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.blog-crumb a{color:var(--muted);}
+.blog-crumb a:hover{color:var(--accent);}
+.blog-h1{font-family:'Instrument Serif',serif;font-size:clamp(32px,4.5vw,46px);line-height:1.12;margin-bottom:14px;color:var(--text);}
+.blog-dek{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:60ch;}
+.blog-h2{font-size:20px;font-weight:700;color:var(--text);margin:40px 0 12px;font-family:'Geist',sans-serif;}
+.blog-p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:14px;max-width:66ch;}
+.blog-p b{color:var(--text);}
+.blog-img{width:100%;border-radius:14px;overflow:hidden;margin:24px 0;border:1px solid var(--border);}
+.blog-img img{width:100%;height:auto;display:block;}
+.blog-img-credit{font-size:11px;color:var(--faint);margin-top:6px;font-family:'Geist Mono',monospace;}
+.blog-img-credit a{color:var(--faint);}
+.mock-thread{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin:20px 0 28px;display:flex;flex-direction:column;gap:8px;}
+.mock-bubble{max-width:88%;padding:10px 13px;border-radius:14px;font-size:14px;line-height:1.55;}
+.mock-bubble.in{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px;font-weight:500;}
+.mock-bubble.out{align-self:flex-start;background:var(--surface2);color:var(--muted);border-bottom-left-radius:4px;border:1px solid var(--border);}
+.mock-bubble.out b{color:var(--text);display:block;margin-bottom:2px;}
+.mock-bubble.out .badge{display:inline-block;font-family:'Geist Mono',monospace;font-size:11px;color:var(--green-text);border:1px solid rgba(52,211,153,0.3);border-radius:6px;padding:1px 7px;margin-top:6px;}
+.fit-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0 28px;}
+.fit-box{border:1px solid var(--border);border-radius:12px;padding:18px 20px;}
+.fit-box.yes{border-color:var(--accent);}
+.fit-box h4{font-size:13px;font-weight:700;font-family:'Geist Mono',monospace;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px;}
+.fit-box.yes h4{color:var(--accent);}
+.fit-box.no h4{color:var(--muted);}
+.fit-box ul{margin:0;padding-left:16px;}
+.fit-box li{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:4px;}
+.doesnt-box{border:1px solid var(--border-s);border-radius:12px;padding:20px 22px;margin:20px 0 28px;background:var(--surface2);}
+.doesnt-box h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px;}
+.doesnt-box ul{margin:0;padding-left:18px;}
+.doesnt-box li{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:4px;}
+.blog-related{margin-top:56px;padding-top:28px;border-top:1px solid var(--border);}
+.blog-related h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px;}
+.blog-related a{display:block;font-size:15px;color:var(--accent);margin-bottom:8px;}
+@media(max-width:640px){.fit-split{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img alt="NovaKit" class="logo-img logo-dark" src="/assets/nkwhite.jpg">
+    <img alt="NovaKit" class="logo-img logo-light" src="/assets/nkblack.jpg">
+  </div>
+  <div class="nav-links">
+    <a href="/kits#kits">Kits</a>
+    <a href="/kits#how">How it works</a>
+    <a href="/kits#plans">Plans</a>
+    <a href="/kits/blog">Blog</a>
+    <a href="/">Skills</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">☀️</button>
+    <a href="/kits#try" class="btn btn-primary">Try free</a>
+  </div>
+</nav>
+
+<div class="blog-wrap">
+  <div class="blog-crumb"><a href="/kits/blog">Kits blog</a> / Built for a specific situation</div>
+  <h1 class="blog-h1">NovaKit for property management companies</h1>
+  <p class="blog-dek">What genuinely fits for a PG, serviced-apartment, or long-term rental portfolio — and where NovaKit isn't the right tool at all. Both matter more than a features list.</p>
+
+  <div class="blog-img">
+    <img src="https://images.pexels.com/photos/32355381/pexels-photo-32355381.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="High-rise apartment buildings in Bengaluru, India" loading="lazy">
+  </div>
+  <p class="blog-img-credit">Photo: <a href="https://www.pexels.com/photo/tall-apartment-buildings-in-bengaluru-india-32355381/" target="_blank" rel="noopener">Rakesh Rabha / Pexels</a></p>
+
+  <h2 class="blog-h2">Does it support PG and serviced-apartment listings, or only sale listings?</h2>
+  <p class="blog-p">Yes — PG, serviced apartment, and farmhouse are supported as property types within the same listing writer that handles sale listings, not a separate product you'd have to buy into. The compliance check is scoped to match: a PG or serviced-apartment listing correctly doesn't get a RERA disclaimer forced onto it, since that requirement is for registered-project sales, not this kind of accommodation.</p>
+
+  <div class="mock-thread">
+    <div class="mock-bubble in">3bhk pg for working women sector 45 gurgaon fully furnished meals included 18000/bed</div>
+    <div class="mock-bubble out"><b>3BHK PG for Women · Sector 45, Gurgaon</b>Fully furnished, meals included — a ready move-in option for working professionals. Shared and private bed options, in a residential sector close to daily conveniences.<br><br>🛏️ ₹18,000/bed · 🍽️ Meals included</div>
+  </div>
+
+  <h2 class="blog-h2">Does it handle short-term, Airbnb-style nightly rentals?</h2>
+  <p class="blog-p">No — and this is worth being direct about rather than glossing over. A dedicated module for nightly-rental hosting was actually built at one point, then deliberately taken down. It shared the same compliance gate as the real estate listing writer, which was applying RERA carpet-area rules that don't make sense for a nightly stay — rather than ship a compliance check that didn't fit, the module was pulled. If your portfolio is long-term rentals, PGs, or serviced apartments, the live listing writer fits. If it's short-term nightly stays, NovaKit isn't the right tool today.</p>
+
+  <div class="fit-split">
+    <div class="fit-box yes">
+      <h4>Fits today</h4>
+      <ul>
+        <li>PG and co-living listings</li>
+        <li>Serviced apartments</li>
+        <li>Farmhouses, long-term rentals</li>
+        <li>Enquiry replies for any of the above</li>
+      </ul>
+    </div>
+    <div class="fit-box no">
+      <h4>Doesn't fit</h4>
+      <ul>
+        <li>Airbnb-style nightly stays</li>
+        <li>Rent collection or ledgers</li>
+        <li>Maintenance ticketing</li>
+        <li>Tenant records / a CRM</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="blog-h2">Can a team of property managers share one account?</h2>
+  <p class="blog-p">Yes, on Studio — up to 5 people share one account, with usage tracked per person, which fits a small portfolio-management team better than a single agent's Solo plan. Everyone still works inside their own WhatsApp conversation with the same shared kit, rather than one number everyone crowds into.</p>
+
+  <div class="mock-thread">
+    <div class="mock-bubble in">tenant says the rent is too high for a shared room, can you help me reply</div>
+    <div class="mock-bubble out">Sure — here's a reply built on what's actually included at ₹18,000: meals, furnishing, and the location. Want a version that also mentions the private-room option at a higher rate, in case that's a better fit for them?<span class="badge">✓ Built from the listing's real facts</span></div>
+  </div>
+
+  <div class="doesnt-box">
+    <h3>What this doesn't do</h3>
+    <ul>
+      <li>No rent collection, ledgers, or payment tracking of any kind.</li>
+      <li>No maintenance ticketing or tenant issue tracking.</li>
+      <li>No tenant database or lease-document management — this is a writing tool, not a property management system.</li>
+    </ul>
+  </div>
+
+  <p class="blog-p">If you're managing a portfolio of PGs, serviced apartments, or long-term rentals and the actual bottleneck is the writing — listings, enquiry replies — this fits. If the bottleneck is tracking payments, maintenance, or leases, that's a different category of tool entirely, and this page won't pretend otherwise.</p>
+
+  <div class="blog-related">
+    <h3>Related</h3>
+    <a href="/kits/blog/novakit-for-rera-registered-brokers.html">NovaKit for RERA-registered brokers</a>
+    <a href="/kits/blog/how-novakit-writes-a-listing.html">How NovaKit writes a listing</a>
+    <a href="/kits#try">Start a 7-day free trial</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="/legal/terms.html" style="color:var(--accent);font-weight:600;">7-day free trial</a></div>
+  <div class="footer-links">
+    <a href="/kits#kits">Kits</a>
+    <a href="/kits#how">How it works</a>
+    <a href="/kits#plans">Plans</a>
+    <a href="/kits/blog">Blog</a>
+    <a href="/">Skills</a>
+    <a href="mailto:support@novakit.tech">Support</a>
+    <a href="/legal/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
+}
+</script>
+</body>
+</html>
