@@ -122,7 +122,7 @@
 .demo-step p{font-size:13px;color:var(--muted);line-height:1.55;}
 
 /* kits grid */
-.kits-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px;max-width:700px;}
+.kits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
 .kit-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;transition:border-color .2s;}
 .kit-card.live{border-color:var(--accent);}
 .kit-card .kit-icon{font-size:1.6rem;margin-bottom:12px;}
@@ -304,8 +304,8 @@
 <div class="page-section" id="kits">
   <div class="page-inner">
     <div class="section-eyebrow">Available kits</div>
-    <h2 class="section-title">Built for real estate first,<br><em>more on the way.</em></h2>
-    <p class="section-lead">Right now the real estate kit is live. We're exploring which industry to build next, one at a time — hospitality (hotels, PGs, guest houses) is the leading candidate, since a lot of the groundwork already overlaps with real estate. Nothing else is scheduled yet.</p>
+    <h2 class="section-title">Built for real estate first,<br><em>more coming.</em></h2>
+    <p class="section-lead">Right now the real estate kit writes your listings. A second layer — answering enquiries and qualifying buyers, not just writing copy — is coming to it next, and the same approach is being built out for four more industries after that.</p>
     <div class="kits-grid">
       <div class="kit-card live">
         <div class="kit-icon">🏠</div>
@@ -314,10 +314,34 @@
         <span class="kit-badge live">● Live now</span>
       </div>
       <div class="kit-card">
-        <div class="kit-icon">🏨</div>
-        <h3>novakit.hospitality</h3>
-        <p>Hotels, PGs, guest houses. Under consideration as the next kit — not built, not scheduled yet.</p>
-        <span class="kit-badge soon">Exploring next</span>
+        <div class="kit-icon">🏠➕</div>
+        <h3>novakit.realestate — Assistant</h3>
+        <p>Answers buyer questions directly from your price list, qualifies who's serious, and books the site visit — so nothing goes unanswered while you're with a client.</p>
+        <span class="kit-badge soon">Coming soon</span>
+      </div>
+      <div class="kit-card">
+        <div class="kit-icon">🛋️</div>
+        <h3>novakit.interiors</h3>
+        <p>Answers enquiries about your projects, budget, and timeline, and books the first consultation — same discipline, adapted for interior designers.</p>
+        <span class="kit-badge soon">Coming soon</span>
+      </div>
+      <div class="kit-card">
+        <div class="kit-icon">📋</div>
+        <h3>novakit.insurance</h3>
+        <p>Compares your own policy rates for a customer's exact case and hands you the serious ones to close — never advises, only quotes from what's on file.</p>
+        <span class="kit-badge soon">Coming soon</span>
+      </div>
+      <div class="kit-card">
+        <div class="kit-icon">🎓</div>
+        <h3>novakit.coaching</h3>
+        <p>Answers admission questions about class, batch, and fees, and books the counselling call — built for the exact six-week rush every admission season brings.</p>
+        <span class="kit-badge soon">Coming soon</span>
+      </div>
+      <div class="kit-card">
+        <div class="kit-icon">📦</div>
+        <h3>novakit.distribution</h3>
+        <p>Quotes bulk orders from your rate sheet and stock, and drafts the order for you to approve — for wholesalers and sellers fielding enquiries all day on WhatsApp.</p>
+        <span class="kit-badge soon">Coming soon</span>
       </div>
     </div>
   </div>
