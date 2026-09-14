@@ -113,7 +113,6 @@ A NovaKit skill is a single `.skill` file containing a structured methodology fo
 
 ## Bundles
 
-- [All Access](https://novakit.tech/skills/bundles/all-access): Every skill in the library — 63 skills, one price
 - [Founder Bundle](https://novakit.tech/skills/bundles/founder-bundle): 6 skills for founders
 - [Marketing Bundle](https://novakit.tech/skills/bundles/marketing-bundle): 5 skills for marketers
 - [Creator Bundle](https://novakit.tech/skills/bundles/creator-bundle): 7 skills for creators
