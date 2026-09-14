@@ -18,6 +18,10 @@
 .blog-cat h2{font-family:'Instrument Serif',serif;font-size:26px;margin-bottom:6px;color:var(--text);}
 .blog-cat p{font-size:14px;color:var(--muted);line-height:1.6;max-width:60ch;margin-bottom:16px;}
 .blog-empty{border:1px dashed var(--border-s);border-radius:12px;padding:16px 20px;font-size:13px;color:var(--faint);font-family:'Geist Mono',monospace;}
+.blog-post{display:block;border:1px solid var(--border);border-radius:12px;padding:18px 22px;text-decoration:none;transition:border-color .2s;}
+.blog-post:hover{border-color:var(--accent);}
+.blog-post h3{font-size:16px;font-weight:700;color:var(--text);margin-bottom:5px;}
+.blog-post p{font-size:13px;color:var(--muted);margin:0;}
 @media(max-width:768px){.page-section,.blog-hero{padding:50px 16px;}}
 </style>
 </head>
@@ -64,7 +68,10 @@
     <div class="blog-cat">
       <h2>How it works</h2>
       <p>A real look at one feature at a time — actual message wording, a sample conversation, and what it doesn't do.</p>
-      <div class="blog-empty">Posts in progress — check back soon.</div>
+      <a class="blog-post" href="/kits/blog/how-novakit-writes-a-listing.html">
+        <h3>What happens when you send NovaKit a property</h3>
+        <p>What you type, what it reads back to you, how the RERA check works, and what it won't do.</p>
+      </a>
     </div>
 
     <div class="blog-cat">

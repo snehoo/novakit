@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Happens When You Send NovaKit a Property</title>
+<meta name="description" content="A real walkthrough of NovaKit's listing writer on WhatsApp — what you send, what it reads back to you, how the RERA check works, and what it won't do.">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What Happens When You Send NovaKit a Property",
+  "description": "A real walkthrough of NovaKit's listing writer on WhatsApp — what you send, what it reads back to you, how the RERA check works, and what it won't do.",
+  "author": {"@type": "Organization", "name": "NovaKit"},
+  "publisher": {"@type": "Organization", "name": "NovaKit"},
+  "mainEntityOfPage": "https://novakit.tech/kits/blog/how-novakit-writes-a-listing.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do I actually send NovaKit to get a listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whatever you'd naturally type — a couple of lines with the facts you have, in any order, in English or Hindi. Something like '2bhk sector 92 gurgaon modular kitchen built in wardrobes balcony 1200sqft 85 lac' is enough. You don't fill in a form or follow a template; NovaKit parses the message the way a person would read it, including compound Indian pricing like '2 crore 75 lakh' rather than misreading it as 2 crore alone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does NovaKit show me what it understood before writing anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Before it generates the listing, it reads back what it parsed from your message — the property type, area, price, locality, and anything else you sent — so you can correct anything it got wrong before the listing is written. If a detail is missing, it asks for that instead of guessing it, and if a message describes two properties at once it flags that rather than merging them into one confused listing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the RERA check actually work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every listing is checked against RERA rules before it's sent back to you — things like not promising guaranteed returns or appreciation, and including your RERA number where it's required. This runs automatically on every message as part of the same pipeline that writes the listing; it isn't a separate step you have to remember to trigger, and a listing that fails the check doesn't get sent until it's fixed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does NovaKit not do when writing a listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It doesn't invent a detail you didn't give it — no assumed floor, no assumed price, no filled-in amenity. It doesn't post anything anywhere; every listing is delivered back to you on WhatsApp for you to paste and send yourself. And it doesn't schedule sends or auto-post on a timer — there's no API and no automation beyond writing the copy you asked for."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.blog-wrap{max-width:760px;margin:0 auto;padding:70px 24px 90px;}
+.blog-crumb{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.blog-crumb a{color:var(--muted);}
+.blog-crumb a:hover{color:var(--accent);}
+.blog-h1{font-family:'Instrument Serif',serif;font-size:clamp(32px,4.5vw,46px);line-height:1.12;margin-bottom:14px;color:var(--text);}
+.blog-dek{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:36px;max-width:60ch;}
+.blog-h2{font-size:20px;font-weight:700;color:var(--text);margin:40px 0 12px;font-family:'Geist',sans-serif;}
+.blog-p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:14px;max-width:66ch;}
+.blog-p b{color:var(--text);}
+.mock-thread{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;margin:20px 0 28px;display:flex;flex-direction:column;gap:8px;}
+.mock-bubble{max-width:88%;padding:10px 13px;border-radius:14px;font-size:14px;line-height:1.55;}
+.mock-bubble.in{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px;font-weight:500;}
+.mock-bubble.out{align-self:flex-start;background:var(--surface2);color:var(--muted);border-bottom-left-radius:4px;border:1px solid var(--border);}
+.mock-bubble.out b{color:var(--text);display:block;margin-bottom:2px;}
+.mock-label{font-size:11px;font-family:'Geist Mono',monospace;color:var(--faint);text-align:center;margin:2px 0;}
+.doesnt-box{border:1px solid var(--border-s);border-radius:12px;padding:20px 22px;margin:20px 0 28px;background:var(--surface2);}
+.doesnt-box h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px;}
+.doesnt-box ul{margin:0;padding-left:18px;}
+.doesnt-box li{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:4px;}
+.blog-related{margin-top:56px;padding-top:28px;border-top:1px solid var(--border);}
+.blog-related h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px;}
+.blog-related a{display:block;font-size:15px;color:var(--accent);margin-bottom:8px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img alt="NovaKit" class="logo-img logo-dark" src="/assets/nkwhite.jpg">
+    <img alt="NovaKit" class="logo-img logo-light" src="/assets/nkblack.jpg">
+  </div>
+  <div class="nav-links">
+    <a href="/kits#kits">Kits</a>
+    <a href="/kits#how">How it works</a>
+    <a href="/kits#plans">Plans</a>
+    <a href="/">Skills</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">☀️</button>
+    <a href="/kits#try" class="btn btn-primary">Try free</a>
+  </div>
+</nav>
+
+<div class="blog-wrap">
+  <div class="blog-crumb"><a href="/kits/blog">Kits blog</a> / How it works</div>
+  <h1 class="blog-h1">What happens when you send NovaKit a property</h1>
+  <p class="blog-dek">A plain walkthrough of the listing writer — the one module in the real estate kit that's actually live today. What you type, what it reads back to you, how the RERA check works, and what it deliberately doesn't do.</p>
+
+  <h2 class="blog-h2">What do I actually send it?</h2>
+  <p class="blog-p">Whatever you'd naturally type — a couple of lines with the facts you have, in any order, in English or Hindi. You don't fill in a form or follow a template. NovaKit reads the message roughly the way a person would, including compound Indian pricing like <b>"2 crore 75 lakh"</b> as one number rather than stopping at "2 crore" and losing the rest.</p>
+
+  <div class="mock-thread">
+    <div class="mock-bubble in">2bhk sector 92 gurgaon modular kitchen built in wardrobes balcony 1200sqft 85 lac</div>
+  </div>
+
+  <h2 class="blog-h2">Does it show me what it understood first?</h2>
+  <p class="blog-p">Yes — before anything is written, it reads back what it parsed: property type, area, price, locality, and whatever else you sent. If something's missing, it asks for it instead of guessing. If your message accidentally describes two properties at once, it flags that rather than quietly merging them into one wrong listing. You get the chance to correct anything before the final copy is generated.</p>
+
+  <div class="mock-thread">
+    <div class="mock-bubble out"><b>Got it — here's what I've got:</b>2BHK · Sector 92, Gurgaon · 1,200 sq ft carpet · ₹85 Lac · modular kitchen, built-in wardrobes, balcony. Anything to add or fix before I write it up?</div>
+    <div class="mock-label">you can correct anything here before it writes the listing</div>
+  </div>
+
+  <h2 class="blog-h2">How does the RERA check work?</h2>
+  <p class="blog-p">Every listing is checked against RERA rules before it comes back to you — no promising guaranteed returns or appreciation, and your RERA number included where it's required. This isn't a separate step you have to ask for; it's part of the same pipeline that writes the listing, and a listing that fails the check doesn't go out until it's fixed.</p>
+
+  <div class="mock-thread">
+    <div class="mock-bubble out"><b>2BHK · Sector 92, Gurgaon</b>Both bedrooms have cove-lit false ceilings, wall-mounted ACs, and open onto a grilled balcony. Modular kitchen with black countertop, hob and chimney. Built-in mirrored wardrobes.<br><br>📐 1,200 sq ft carpet · 💰 ₹85 Lac</div>
+    <div class="mock-label">checked against RERA before this was sent</div>
+  </div>
+
+  <h2 class="blog-h2">What if I correct something after the fact?</h2>
+  <p class="blog-p">Say the wrong carpet area up front — you can just tell it. Send the correction as a plain message and it updates the listing and offers to redo whatever else you'd already generated from it. There's no separate "edit" screen; it's still just a conversation.</p>
+
+  <div class="mock-thread">
+    <div class="mock-bubble in">sorry, it's 1,350 carpet not 1,450</div>
+    <div class="mock-bubble out">Updated — Andheri West now shows 1,350 sq ft carpet. Want me to redo the WhatsApp and portal versions?</div>
+  </div>
+
+  <div class="doesnt-box">
+    <h3>What this doesn't do</h3>
+    <ul>
+      <li>Doesn't invent a detail you didn't give it — no assumed floor, price, or amenity.</li>
+      <li>Doesn't post anything anywhere. Every listing is delivered back to you on WhatsApp for you to send yourself.</li>
+      <li>Doesn't schedule sends or auto-post on a timer — there's no API and no automation beyond writing the copy.</li>
+    </ul>
+  </div>
+
+  <p class="blog-p">This is the module that's actually built and live today. If you want to see it as a running demo instead of a description, the <a href="/kits#how" style="color:var(--accent)">kits page</a> has an animated version of this same exchange.</p>
+
+  <div class="blog-related">
+    <h3>Related</h3>
+    <a href="/kits#plans">What's in Solo vs. Studio</a>
+    <a href="/kits#try">Start a 7-day free trial</a>
+    <a href="/kits/blog">More from the kits blog</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="/legal/terms.html" style="color:var(--accent);font-weight:600;">7-day free trial</a></div>
+  <div class="footer-links">
+    <a href="/kits#kits">Kits</a>
+    <a href="/kits#how">How it works</a>
+    <a href="/kits#plans">Plans</a>
+    <a href="/">Skills</a>
+    <a href="/kits/blog">Blog</a>
+    <a href="mailto:support@novakit.tech">Support</a>
+    <a href="/legal/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
+}
+</script>
+</body>
+</html>
