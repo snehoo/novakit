@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WhatsApp Business API Limits for Property Agents</title>
+<meta name="description" content="The 24-hour window, messaging tiers, and the October 2026 pricing change — what WhatsApp's own rules actually say, and why a shared, reply-only number like NovaKit's mostly sits outside them.">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="/css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "WhatsApp Business API Limits for Property Agents",
+  "description": "The 24-hour window, messaging tiers, and the October 2026 pricing change — what WhatsApp's own rules actually say, and why a shared, reply-only number like NovaKit's mostly sits outside them.",
+  "author": {"@type": "Organization", "name": "NovaKit"},
+  "publisher": {"@type": "Organization", "name": "NovaKit"},
+  "mainEntityOfPage": "https://novakit.tech/kits/blog/whatsapp-business-api-limits-for-property-agents.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the 24-hour customer service window?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When someone messages a WhatsApp Business number, a 24-hour window opens during which the business can reply freely — any content, any format, no pre-approval needed. Each new message from that person resets the window. Outside it, a business can only reach that person with a pre-approved message template. Since NovaKit only ever replies to a message an agent sent first, every reply it generates falls inside this window — it never needs to send a template to start a conversation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are WhatsApp's messaging tiers, and do they limit how many replies I get?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Meta caps how many unique phone numbers a business can message outside the customer service window in a rolling 24 hours — starting at Tier 250 for a new, unverified number and scaling to 2,000, 10,000, 100,000, or unlimited as the number is verified and sends templates with a high quality rating. This tier system governs business-initiated outreach. It has nothing to do with how many times NovaKit can reply to you, because those replies are inside the customer service window your own message opened, not outside it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What changes on 1 October 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Starting 1 October 2026, Meta begins charging for service messages — the free-form replies a business sends inside the 24-hour window — which have been free since November 2024. Each WhatsApp Business phone number gets 1,000 free service messages a month before per-message charges apply, at the same per-market rate Meta already publishes for utility and authentication templates. The free entry-point window after a Click-to-WhatsApp ad stays exempt; ordinary replies inside the customer service window do not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't NovaKit need message templates or broadcast permissions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because NovaKit never starts a conversation — an agent messages the shared number first, and every reply is a response to that message, not an unsolicited outbound one. There's no marketing template, no opt-in flow, and no scheduled send anywhere in the product. That's a deliberate architecture choice, not just a side effect of how small the product is: the messaging-tier and template-approval rules exist specifically to govern business-initiated messaging, which NovaKit's design doesn't do."
+      }
+    }
+  ]
+}
+</script>
+<style>
+.blog-wrap{max-width:760px;margin:0 auto;padding:70px 24px 90px;}
+.blog-crumb{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.blog-crumb a{color:var(--muted);}
+.blog-crumb a:hover{color:var(--accent);}
+.blog-h1{font-family:'Instrument Serif',serif;font-size:clamp(32px,4.5vw,46px);line-height:1.12;margin-bottom:14px;color:var(--text);}
+.blog-dek{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:24px;max-width:60ch;}
+.blog-h2{font-size:20px;font-weight:700;color:var(--text);margin:40px 0 12px;font-family:'Geist',sans-serif;}
+.blog-p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:14px;max-width:66ch;}
+.blog-p b{color:var(--text);}
+.blog-img{width:100%;border-radius:14px;overflow:hidden;margin:24px 0;border:1px solid var(--border);}
+.blog-img img{width:100%;height:auto;display:block;}
+.blog-img-credit{font-size:11px;color:var(--faint);margin-top:6px;font-family:'Geist Mono',monospace;}
+.blog-img-credit a{color:var(--faint);}
+.notice-box{border:1px solid var(--border-s);border-radius:12px;padding:18px 22px;margin:0 0 28px;background:var(--surface2);}
+.notice-box p{font-size:13px;color:var(--muted);line-height:1.7;margin:0;}
+.notice-box b{color:var(--text);}
+.tier-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px;}
+.tier-table th,.tier-table td{border:1px solid var(--border);padding:9px 12px;text-align:left;}
+.tier-table th{background:var(--surface2);color:var(--text);font-weight:700;font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.04em;}
+.tier-table td{color:var(--muted);}
+.cite-list{border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin:0 0 28px;}
+.cite-list h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px;}
+.cite-list li{font-size:13px;color:var(--muted);line-height:1.8;}
+.cite-list a{color:var(--accent);}
+.doesnt-box{border:1px solid var(--border-s);border-radius:12px;padding:20px 22px;margin:20px 0 28px;background:var(--surface2);}
+.doesnt-box h3{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px;}
+.doesnt-box ul{margin:0;padding-left:18px;}
+.doesnt-box li{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:4px;}
+.blog-related{margin-top:56px;padding-top:28px;border-top:1px solid var(--border);}
+.blog-related h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px;}
+.blog-related a{display:block;font-size:15px;color:var(--accent);margin-bottom:8px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img alt="NovaKit" class="logo-img logo-dark" src="/assets/nkwhite.jpg">
+    <img alt="NovaKit" class="logo-img logo-light" src="/assets/nkblack.jpg">
+  </div>
+  <div class="nav-links">
+    <a href="/kits#kits">Kits</a>
+    <a href="/kits#how">How it works</a>
+    <a href="/kits#plans">Plans</a>
+    <a href="/">Skills</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">☀️</button>
+    <a href="/kits#try" class="btn btn-primary">Try free</a>
+  </div>
+</nav>
+
+<div class="blog-wrap">
+  <div class="blog-crumb"><a href="/kits/blog">Kits blog</a> / Rules and compliance</div>
+  <h1 class="blog-h1">WhatsApp Business API limits for property agents</h1>
+  <p class="blog-dek">The 24-hour window, messaging tiers, and the pricing change landing 1 October 2026 — what WhatsApp's own rules say, and why a shared, reply-only number like NovaKit's mostly sits outside them.</p>
+
+  <div class="notice-box">
+    <p><b>This isn't official Meta documentation.</b> WhatsApp's platform rules and pricing change on their own schedule, independent of anything on this site. Check <a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits" target="_blank" rel="noopener" style="color:var(--accent)">Meta's own developer docs</a> for the current numbers before you rely on any figure here for a business decision.</p>
+  </div>
+
+  <div class="blog-img">
+    <img src="https://images.pexels.com/photos/4307669/pexels-photo-4307669.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Man communicating on his phone" loading="lazy">
+  </div>
+  <p class="blog-img-credit">Photo: <a href="https://www.pexels.com/photo/young-man-in-turban-communicating-via-video-call-on-mobile-4307669/" target="_blank" rel="noopener">Ketut Subiyanto / Pexels</a></p>
+
+  <h2 class="blog-h2">What is the 24-hour customer service window?</h2>
+  <p class="blog-p">When someone messages a WhatsApp Business number, a 24-hour window opens during which the business can reply freely — any content, any format, no pre-approval needed. Each new message from that person resets the window. Outside it, the business can only reach them with a pre-approved message template. Since NovaKit only ever replies to a message an agent sent first, every reply it generates falls inside this window — it never needs a template to start talking to you.</p>
+
+  <h2 class="blog-h2">What are the messaging tiers, and do they limit how many replies I get?</h2>
+  <p class="blog-p">Meta caps how many unique phone numbers a business can message <i>outside</i> the customer service window, in a rolling 24 hours. A new, unverified number starts at Tier 250; verifying the business, or sending enough high-quality template messages, moves it up.</p>
+
+  <table class="tier-table">
+    <tr><th>Tier</th><th>Unique users / 24h</th><th>How you get there</th></tr>
+    <tr><td>250</td><td>250</td><td>Default for a new, unverified number</td></tr>
+    <tr><td>2,000</td><td>2,000</td><td>Business verification, or 2,000 delivered template messages in a 30-day window</td></tr>
+    <tr><td>10,000 / 100,000 / Unlimited</td><td>10K–unlimited</td><td>Automatic, if quality rating stays high and you use at least half your current limit within 7 days</td></tr>
+  </table>
+
+  <p class="blog-p">This tier system governs business-initiated outreach — a business messaging someone who hasn't messaged first. It has nothing to do with how many times NovaKit can reply to you, since those replies happen inside the customer service window your own message opened, not outside it.</p>
+
+  <h2 class="blog-h2">What changes on 1 October 2026?</h2>
+  <p class="blog-p">Starting 1 October 2026, Meta begins charging for <b>service messages</b> — the free-form replies a business sends inside the 24-hour window — which have been free since November 2024. Every WhatsApp Business phone number gets 1,000 free service messages a month before per-message charges apply, at the same per-market rate Meta already publishes for utility and authentication templates. The free 72-hour window after someone clicks a "Click to WhatsApp" ad stays exempt; ordinary replies inside the customer service window do not.</p>
+
+  <h2 class="blog-h2">Why doesn't NovaKit need message templates or broadcast permissions?</h2>
+  <p class="blog-p">Because it never starts a conversation. An agent messages the shared number first, and every reply is a response to that — not an unsolicited outbound message. There's no marketing template, no opt-in flow, and no scheduled send anywhere in the product. That's a deliberate design choice: the tier and template-approval rules above exist specifically to govern business-initiated messaging, and NovaKit's shared, reply-only number was built not to need any of it.</p>
+
+  <div class="doesnt-box">
+    <h3>What this means for you, practically</h3>
+    <ul>
+      <li>You don't need a verified WhatsApp Business Account or a messaging tier to use NovaKit — you're the one starting every exchange.</li>
+      <li>NovaKit doesn't count against your own business number's tier or template quota, because it isn't your number — it's a separate, shared number you message into.</li>
+      <li>None of this changes your obligations if you separately run your own WhatsApp Business number for marketing to your own clients — those rules above still apply to that number, in full.</li>
+    </ul>
+  </div>
+
+  <div class="cite-list">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/messaging-limits" target="_blank" rel="noopener">Meta for Developers — WhatsApp Business Platform messaging limits</a></li>
+      <li><a href="https://sendpulse.com/blog/whatsapp-service-message-pricing" target="_blank" rel="noopener">SendPulse — WhatsApp service message pricing changes, October 2026</a></li>
+      <li><a href="https://support.zendesk.com/hc/en-us/articles/11113277351322-Announcing-upcoming-changes-to-WhatsApp-Business-messaging-pricing" target="_blank" rel="noopener">Zendesk — Announcing upcoming changes to WhatsApp Business messaging pricing</a></li>
+    </ul>
+  </div>
+
+  <p class="blog-p">For the rules on what actually has to be in a property ad, see <a href="/kits/blog/rera-rules-for-whatsapp-property-ads.html" style="color:var(--accent)">RERA rules for advertising a property on WhatsApp</a>.</p>
+
+  <div class="blog-related">
+    <h3>Related</h3>
+    <a href="/kits/blog/rera-rules-for-whatsapp-property-ads.html">RERA rules for advertising a property on WhatsApp</a>
+    <a href="/kits/blog/how-novakit-writes-a-listing.html">How NovaKit writes a listing</a>
+    <a href="/kits#try">Start a 7-day free trial</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">© 2026 NovaKit · <a href="/legal/terms.html" style="color:var(--accent);font-weight:600;">7-day free trial</a></div>
+  <div class="footer-links">
+    <a href="/kits#kits">Kits</a>
+    <a href="/kits#how">How it works</a>
+    <a href="/kits#plans">Plans</a>
+    <a href="/">Skills</a>
+    <a href="/kits/blog">Blog</a>
+    <a href="mailto:support@novakit.tech">Support</a>
+    <a href="/legal/terms.html">Terms</a>
+  </div>
+</footer>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
+}
+</script>
+</body>
+</html>
