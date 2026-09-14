@@ -763,7 +763,7 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-i
 <span class="dic-label">Installation guide</span>
 </div>
 <div class="demo-iframe-zoom">
-<iframe allow="autoplay" frameborder="0" id="install-demo-iframe" src="assets/novakit_Add_a_Skill_Demo.html" title="How to install a NovaKit skill" loading="lazy"></iframe>
+<iframe allow="autoplay" frameborder="0" id="install-demo-iframe" data-src="assets/novakit_Add_a_Skill_Demo.html" title="How to install a NovaKit skill"></iframe>
 </div>
 </div>
 </div>
@@ -1302,6 +1302,25 @@ function scaleInstallDemo(){
 window.addEventListener('load', scaleInstallDemo);
 window.addEventListener('resize', scaleInstallDemo);
 setTimeout(scaleInstallDemo, 300);
+
+// Load the install-demo iframe (1.8MB, React + in-browser Babel) only once it is
+// actually about to be seen, so it never competes with initial paint / LCP.
+(function(){
+  const iframe = document.getElementById('install-demo-iframe');
+  if(!iframe || !iframe.dataset.src) return;
+  const load = () => {
+    if(iframe.src) return;
+    iframe.src = iframe.dataset.src;
+  };
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting){ load(); io.disconnect(); } });
+    }, { rootMargin: '200px' });
+    io.observe(iframe);
+  } else {
+    window.addEventListener('load', load);
+  }
+})();
 
 // FAQ accordion
 function toggleFaq(i){
