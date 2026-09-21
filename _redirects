@@ -18,6 +18,24 @@
 /blog/book-cover-prompt.html /blog/the-book-cover-brief-your-designer-actually-needs 301
 /blog/book-cover-prompt /blog/the-book-cover-brief-your-designer-actually-needs 301
 
+# Same "canonical points away, page never actually redirected" bug found
+# sitewide via a full canonical-tag audit (2026-09-22) — 6 more orphans,
+# same fix pattern.
+/blog/why-claude-wont-write-your-scene.html /blog/claude-wont-write-scene 301
+/blog/why-claude-wont-write-your-scene /blog/claude-wont-write-scene 301
+/blog/the-airbnb-listing-that-gets-booked-before-anyone-asks-about-parking.html /blog/hotel-airbnb-listing-copy 301
+/blog/the-airbnb-listing-that-gets-booked-before-anyone-asks-about-parking /blog/hotel-airbnb-listing-copy 301
+/skills/short-form-ai-video.html /skills/ai-video-prompt 301
+/skills/short-form-ai-video /skills/ai-video-prompt 301
+/skills/grant-proposal-writing.html /skills/grant-and-proposal-writing 301
+/skills/grant-proposal-writing /skills/grant-and-proposal-writing 301
+/skills/logo-brand-identity.html /skills/logo-brand-identity-prompt 301
+/skills/logo-brand-identity /skills/logo-brand-identity-prompt 301
+/skills/terms-of-service-privacy-policy.html /skills/tos-privacy-policy 301
+/skills/terms-of-service-privacy-policy /skills/tos-privacy-policy 301
+/skills/sales-page.html /skills/sales-landing-page-copy 301
+/skills/sales-page /skills/sales-landing-page-copy 301
+
 # Redirect error fixes — removed redundant rules, use wildcard for .html removal
 
 # Trailing slash fix — business-plan
