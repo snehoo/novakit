@@ -189,6 +189,12 @@
 .plan-cta:disabled{opacity:0.5;cursor:not-allowed;}
 .plan-cta:disabled:hover{background:transparent;transform:none;}
 
+/* merged trial/CTA section */
+#try .cta-btns{justify-content:flex-start;margin-top:28px;}
+#try .guarantee-strip{margin:20px 0 0;}
+#try .cta-note{margin-top:14px;}
+@media(max-width:640px){#try .cta-btns{justify-content:center;}#try .guarantee-strip{margin:20px auto 0;}}
+
 /* SIGNUP MODAL */
 .sm-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;}
 .sm-overlay.open{display:flex;}
@@ -457,7 +463,7 @@
           <li>Objection handler for buyer replies</li>
         </ul>
         <div class="plan-cta-row">
-          <button type="button" class="btn btn-ghost plan-cta" onclick="openSignupModal('trial')">Start Free Trial</button>
+          <a href="#try" class="btn btn-ghost plan-cta" onclick="startTrialFromPlan(event)">Start Free Trial</a>
           <button type="button" class="btn btn-primary plan-cta" onclick="openSignupModal('buy')">Buy Now</button>
         </div>
       </div>
@@ -485,13 +491,23 @@
   </div>
 </div>
 
-<!-- LEAD CAPTURE / FREE TRIAL -->
+<!-- FREE TRIAL / START TODAY (merged) -->
 <div class="lc-section" id="try">
   <div class="lc-inner">
     <div>
       <div class="lc-badge">🎁 Free trial</div>
-      <h2 class="lc-heading">Try NovaKit before<br>you <em>spend a rupee.</em></h2>
-      <p class="lc-sub">Drop your email and we'll set up a 7-day free trial on WhatsApp — the real thing, not a watered-down demo. No credit card. No call needed.</p>
+      <h2 class="lc-heading">Always in your pocket.<br><em>Never a separate app.</em></h2>
+      <p class="lc-sub">Send one property to this number and see what comes back — the real thing, not a watered-down demo. No credit card. No call needed.</p>
+      <div class="cta-btns">
+        <button type="button" class="btn btn-primary btn-lg" onclick="openSignupModal('trial')">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 20l1.65-4.94A9 9 0 1 1 8 17.35L3 20z"/></svg>
+          Shuru Karo — Start Free
+        </button>
+        <a href="/" class="btn btn-ghost btn-lg">See all skills</a>
+      </div>
+      <div class="guarantee-strip">
+        <span>🛡 7 days or 10 tries free · No credit card needed</span>
+      </div>
     </div>
     <div>
       <div class="lc-skill-preview">
@@ -508,38 +524,8 @@
           <div class="lc-inc">Works on WhatsApp, no new app to install</div>
         </div>
       </div>
-      <form id="lc-form" onsubmit="submitTrial(event)">
-        <div class="lc-input-row">
-          <input class="lc-input" id="lc-email" type="email" placeholder="you@email.com" required autocomplete="email">
-          <button class="lc-btn" type="submit" id="lc-submit">Start free</button>
-        </div>
-        <div class="lc-fine">No spam · No credit card · Cancel any time</div>
-      </form>
-      <div class="lc-success" id="lc-success">
-        <strong>You're in! Check WhatsApp now.</strong>
-        We'll send you a message within a few minutes to activate your 7-day trial.
-      </div>
+      <p class="cta-note">novakit.tech/kits</p>
     </div>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="cta-section">
-  <div class="cta-inner">
-    <div class="cta-kicker">Start today</div>
-    <h2>Always in your pocket.<br><em>Never a separate app.</em></h2>
-    <p>Send one property to this number and see what comes back. Try it once, then decide.</p>
-    <div class="cta-btns">
-      <a href="#try" class="btn btn-primary btn-lg">
-        <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 20l1.65-4.94A9 9 0 1 1 8 17.35L3 20z"/></svg>
-        Shuru Karo — Start Free
-      </a>
-      <a href="/" class="btn btn-ghost btn-lg">See all skills</a>
-    </div>
-    <div class="guarantee-strip">
-      <span>🛡 7 days or 10 tries free · No credit card needed</span>
-    </div>
-    <p class="cta-note">novakit.tech/kits</p>
   </div>
 </div>
 
@@ -713,19 +699,18 @@ function switchDemo(key, tabEl) {
 
 function replayDemo() { runDemo(currentDemo); }
 
-function submitTrial(e) {
-  e.preventDefault();
-  const btn = document.getElementById('lc-submit');
-  btn.disabled = true; btn.textContent = 'Sending…';
-  setTimeout(() => {
-    document.getElementById('lc-form').style.display = 'none';
-    document.getElementById('lc-success').style.display = 'block';
-  }, 800);
-}
-
 /* ── SOLO SIGNUP / BUY MODAL ─────────────────────────────────────────── */
 const SM_API_BASE = 'https://aiservices-snehoo.duckdns.org';
 let smMode = 'trial'; // 'trial' -> POST /signup, 'buy' -> POST /buy
+
+// Solo plan's "Start Free Trial": land on the #try section for context,
+// then open the same 3-field modal immediately -- no dead-end click.
+function startTrialFromPlan(e) {
+  e.preventDefault();
+  const tryEl = document.getElementById('try');
+  if (tryEl) tryEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  openSignupModal('trial');
+}
 
 function openSignupModal(mode) {
   smMode = mode === 'buy' ? 'buy' : 'trial';
