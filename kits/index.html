@@ -249,10 +249,10 @@
 
 <!-- NAV -->
 <nav>
-  <div class="logo">
+  <a href="/" class="logo">
     <img alt="NovaKit" class="logo-img logo-dark" src="/assets/nkwhite.jpg">
     <img alt="NovaKit" class="logo-img logo-light" src="/assets/nkblack.jpg">
-  </div>
+  </a>
   <div class="nav-links">
     <a href="#kits">Kits</a>
     <a href="#how">How it works</a>
@@ -463,7 +463,7 @@
           <li>Objection handler for buyer replies</li>
         </ul>
         <div class="plan-cta-row">
-          <a href="#try" class="btn btn-ghost plan-cta" onclick="startTrialFromPlan(event)">Start Free Trial</a>
+          <a href="#try" class="btn btn-ghost plan-cta">Start Free Trial</a>
           <button type="button" class="btn btn-primary plan-cta" onclick="openSignupModal('buy')">Buy Now</button>
         </div>
       </div>
@@ -503,10 +503,6 @@
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 20l1.65-4.94A9 9 0 1 1 8 17.35L3 20z"/></svg>
           Shuru Karo — Start Free
         </button>
-        <a href="/" class="btn btn-ghost btn-lg">See all skills</a>
-      </div>
-      <div class="guarantee-strip">
-        <span>🛡 7 days or 10 tries free · No credit card needed</span>
       </div>
     </div>
     <div>
@@ -523,6 +519,9 @@
           <div class="lc-inc">Text and voice, in Hindi or English</div>
           <div class="lc-inc">Works on WhatsApp, no new app to install</div>
         </div>
+      </div>
+      <div class="guarantee-strip">
+        <span>🛡 7 days or 10 tries free · No credit card needed</span>
       </div>
       <p class="cta-note">novakit.tech/kits</p>
     </div>
@@ -702,15 +701,6 @@ function replayDemo() { runDemo(currentDemo); }
 /* ── SOLO SIGNUP / BUY MODAL ─────────────────────────────────────────── */
 const SM_API_BASE = 'https://aiservices-snehoo.duckdns.org';
 let smMode = 'trial'; // 'trial' -> POST /signup, 'buy' -> POST /buy
-
-// Solo plan's "Start Free Trial": land on the #try section for context,
-// then open the same 3-field modal immediately -- no dead-end click.
-function startTrialFromPlan(e) {
-  e.preventDefault();
-  const tryEl = document.getElementById('try');
-  if (tryEl) tryEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  openSignupModal('trial');
-}
 
 function openSignupModal(mode) {
   smMode = mode === 'buy' ? 'buy' : 'trial';
