@@ -12,6 +12,12 @@
 /blog/youtube-thumbnail-prompt-blog-test.html /blog/youtube-thumbnail-ctr-guide 301
 /blog/youtube-thumbnail-prompt-blog-test /blog/youtube-thumbnail-ctr-guide 301
 
+# Book cover prompt draft, rewritten as a new page — canonical tag pointed
+# away from it but the old page was never redirected, so it stayed live,
+# sitemapped, and internally linked as a duplicate of its own replacement.
+/blog/book-cover-prompt.html /blog/the-book-cover-brief-your-designer-actually-needs 301
+/blog/book-cover-prompt /blog/the-book-cover-brief-your-designer-actually-needs 301
+
 # Redirect error fixes — removed redundant rules, use wildcard for .html removal
 
 # Trailing slash fix — business-plan
