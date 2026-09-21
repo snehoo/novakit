@@ -180,6 +180,46 @@
 .trial-box{margin-top:20px;padding:16px 18px;border:1px dashed var(--border-s);border-radius:12px;font-size:15px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;}
 .trial-box b{color:var(--text);font-family:'Geist Mono',monospace;font-weight:600;}
 
+/* PLAN CTAs */
+.plan-cta-row{display:flex;gap:10px;margin-top:22px;}
+.plan-cta{flex:1;justify-content:center;text-align:center;}
+.plan.disabled{opacity:0.55;filter:grayscale(0.4);}
+.plan.disabled .price,.plan.disabled h3{color:var(--muted);}
+.plan-badge-soon{background:var(--bg2);color:var(--muted);border:1px solid var(--border-s);}
+.plan-cta:disabled{opacity:0.5;cursor:not-allowed;}
+.plan-cta:disabled:hover{background:transparent;transform:none;}
+
+/* SIGNUP MODAL */
+.sm-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;}
+.sm-overlay.open{display:flex;}
+.sm-modal{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:32px;max-width:420px;width:100%;max-height:90vh;overflow-y:auto;position:relative;}
+.sm-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;}
+.sm-close:hover{background:var(--bg2);color:var(--text);}
+.sm-heading{font-family:'Instrument Serif',serif;font-size:26px;letter-spacing:-0.01em;margin-bottom:4px;padding-right:32px;}
+.sm-heading em{font-style:italic;color:var(--accent);}
+.sm-sub{font-size:14px;color:var(--muted);margin-bottom:22px;line-height:1.5;}
+.sm-field{margin-bottom:16px;}
+.sm-label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:7px;}
+.sm-input{width:100%;padding:12px 14px;background:var(--bg);border:1.5px solid var(--border-s);border-radius:10px;font-family:'Geist',sans-serif;font-size:15px;color:var(--text);outline:none;transition:border-color .18s;}
+.sm-input:focus{border-color:var(--accent);}
+.sm-input.error{border-color:#ef4444;}
+.sm-phone-row{display:flex;align-items:center;gap:0;}
+.sm-phone-prefix{padding:12px 12px;background:var(--bg2);border:1.5px solid var(--border-s);border-right:none;border-radius:10px 0 0 10px;color:var(--muted);font-size:15px;font-family:'Geist Mono',monospace;}
+.sm-phone-row .sm-input{border-radius:0 10px 10px 0;}
+.sm-error-msg{font-size:12.5px;color:#ef4444;margin-top:6px;display:none;}
+.sm-error-msg.show{display:block;}
+.sm-form-error{font-size:13.5px;color:#ef4444;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:10px;padding:12px 14px;margin-bottom:16px;display:none;line-height:1.5;}
+.sm-form-error.show{display:block;}
+.sm-submit{width:100%;padding:14px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-family:'Geist',sans-serif;font-size:15.5px;font-weight:700;cursor:pointer;transition:all .18s;}
+.sm-submit:hover:not(:disabled){background:var(--accent-h);transform:translateY(-1px);}
+.sm-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.sm-fine{font-size:12px;color:var(--faint);text-align:center;margin-top:12px;}
+.sm-success{display:none;text-align:center;padding:8px 0;}
+.sm-success.show{display:block;}
+.sm-success-icon{font-size:36px;margin-bottom:14px;}
+.sm-success h3{font-size:19px;margin-bottom:8px;color:var(--text);}
+.sm-success p{font-size:14px;color:var(--muted);line-height:1.55;}
+
 /* hero sub text */
 .hero-sub-text{font-size:17px;color:var(--muted);margin-bottom:28px;line-height:1.7;max-width:44ch;}
 .hero-hinglish{font-size:15px;font-weight:600;color:var(--accent);margin-bottom:28px;font-family:'Geist Mono',monospace;}
@@ -416,9 +456,13 @@
           <li>Text or voice, Hindi and English, any property type</li>
           <li>Objection handler for buyer replies</li>
         </ul>
+        <div class="plan-cta-row">
+          <button type="button" class="btn btn-ghost plan-cta" onclick="openSignupModal('trial')">Start Free Trial</button>
+          <button type="button" class="btn btn-primary plan-cta" onclick="openSignupModal('buy')">Buy Now</button>
+        </div>
       </div>
-      <div class="plan studio">
-        <span class="plan-badge">For a team</span>
+      <div class="plan studio disabled">
+        <span class="plan-badge plan-badge-soon">Coming Soon</span>
         <h3>Studio</h3>
         <div class="price">₹7,999<small>/month</small></div>
         <ul>
@@ -429,6 +473,9 @@
           <li>6-email follow-up sequence and a 30-day social posting plan, sent as WhatsApp messages</li>
           <li>Objection handler remembers the last 5 messages in the conversation</li>
         </ul>
+        <div class="plan-cta-row">
+          <button type="button" class="btn btn-ghost plan-cta" disabled>Coming Soon</button>
+        </div>
       </div>
     </div>
     <div class="trial-box">
@@ -508,6 +555,49 @@
     <a href="/legal/terms">Terms</a>
   </div>
 </footer>
+
+<!-- SIGNUP / BUY MODAL -->
+<div class="sm-overlay" id="sm-overlay" onclick="if(event.target===this)closeSignupModal()">
+  <div class="sm-modal">
+    <button type="button" class="sm-close" onclick="closeSignupModal()" aria-label="Close">✕</button>
+
+    <div id="sm-form-wrap">
+      <h3 class="sm-heading" id="sm-heading">Start your <em>free trial.</em></h3>
+      <p class="sm-sub" id="sm-sub">7 days or 10 listings, whichever comes first. No credit card.</p>
+
+      <div class="sm-form-error" id="sm-form-error"></div>
+
+      <form id="sm-form" onsubmit="submitSignup(event)" novalidate>
+        <div class="sm-field">
+          <label class="sm-label" for="sm-business">Business name</label>
+          <input class="sm-input" id="sm-business" type="text" placeholder="Sharma Properties" autocomplete="organization" required>
+          <div class="sm-error-msg" id="sm-business-err"></div>
+        </div>
+        <div class="sm-field">
+          <label class="sm-label" for="sm-phone">WhatsApp number</label>
+          <div class="sm-phone-row">
+            <span class="sm-phone-prefix">+91</span>
+            <input class="sm-input" id="sm-phone" type="tel" inputmode="numeric" placeholder="98123 45678" maxlength="10" autocomplete="tel-national" required>
+          </div>
+          <div class="sm-error-msg" id="sm-phone-err"></div>
+        </div>
+        <div class="sm-field">
+          <label class="sm-label" for="sm-email">Email</label>
+          <input class="sm-input" id="sm-email" type="email" placeholder="owner@example.com" autocomplete="email" required>
+          <div class="sm-error-msg" id="sm-email-err"></div>
+        </div>
+        <button type="submit" class="sm-submit" id="sm-submit">Start Free Trial</button>
+        <div class="sm-fine">No spam · Cancel any time</div>
+      </form>
+    </div>
+
+    <div class="sm-success" id="sm-success">
+      <div class="sm-success-icon">🎉</div>
+      <h3 id="sm-success-title">You're in!</h3>
+      <p id="sm-success-text">Check WhatsApp — we've sent your first message.</p>
+    </div>
+  </div>
+</div>
 
 <script>
 function toggleTheme() {
@@ -631,6 +721,156 @@ function submitTrial(e) {
     document.getElementById('lc-form').style.display = 'none';
     document.getElementById('lc-success').style.display = 'block';
   }, 800);
+}
+
+/* ── SOLO SIGNUP / BUY MODAL ─────────────────────────────────────────── */
+const SM_API_BASE = 'https://aiservices-snehoo.duckdns.org';
+let smMode = 'trial'; // 'trial' -> POST /signup, 'buy' -> POST /buy
+
+function openSignupModal(mode) {
+  smMode = mode === 'buy' ? 'buy' : 'trial';
+  const overlay = document.getElementById('sm-overlay');
+  const heading = document.getElementById('sm-heading');
+  const sub = document.getElementById('sm-sub');
+  const submitBtn = document.getElementById('sm-submit');
+
+  if (smMode === 'buy') {
+    heading.innerHTML = 'Buy Solo <em>now.</em>';
+    sub.textContent = '₹2,999/month. Skip the trial — you\'ll be redirected to pay by UPI/card.';
+    submitBtn.textContent = 'Continue to Payment';
+  } else {
+    heading.innerHTML = 'Start your <em>free trial.</em>';
+    sub.textContent = '7 days or 10 listings, whichever comes first. No credit card.';
+    submitBtn.textContent = 'Start Free Trial';
+  }
+
+  document.getElementById('sm-form-wrap').style.display = 'block';
+  document.getElementById('sm-success').classList.remove('show');
+  document.getElementById('sm-form').reset();
+  smClearErrors();
+  submitBtn.disabled = false;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSignupModal() {
+  document.getElementById('sm-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function smClearErrors() {
+  document.getElementById('sm-form-error').classList.remove('show');
+  document.getElementById('sm-form-error').textContent = '';
+  ['business', 'phone', 'email'].forEach(f => {
+    document.getElementById('sm-' + f + '-err').classList.remove('show');
+    document.getElementById('sm-' + f + '-err').textContent = '';
+    document.getElementById('sm-' + f).classList.remove('error');
+  });
+}
+
+function smFieldError(field, message) {
+  document.getElementById('sm-' + field).classList.add('error');
+  const err = document.getElementById('sm-' + field + '-err');
+  err.textContent = message;
+  err.classList.add('show');
+}
+
+function smFormError(message) {
+  const el = document.getElementById('sm-form-error');
+  el.textContent = message;
+  el.classList.add('show');
+}
+
+// digits-only, 10 max, as the user types
+document.addEventListener('DOMContentLoaded', () => {
+  const phoneEl = document.getElementById('sm-phone');
+  if (phoneEl) {
+    phoneEl.addEventListener('input', () => {
+      phoneEl.value = phoneEl.value.replace(/\D/g, '').slice(0, 10);
+    });
+  }
+});
+
+async function submitSignup(e) {
+  e.preventDefault();
+  smClearErrors();
+
+  const businessName = document.getElementById('sm-business').value.trim();
+  const phoneDigits = document.getElementById('sm-phone').value.trim();
+  const email = document.getElementById('sm-email').value.trim();
+
+  // client-side validation (server is still the source of truth)
+  let hasError = false;
+  if (!businessName) {
+    smFieldError('business', 'Business name is required');
+    hasError = true;
+  }
+  if (!/^\d{10}$/.test(phoneDigits)) {
+    smFieldError('phone', 'Enter a 10-digit WhatsApp number');
+    hasError = true;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    smFieldError('email', 'Enter a valid email address');
+    hasError = true;
+  }
+  if (hasError) return;
+
+  const submitBtn = document.getElementById('sm-submit');
+  const originalLabel = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = smMode === 'buy' ? 'Redirecting…' : 'Sending…';
+
+  const endpoint = smMode === 'buy' ? '/buy' : '/signup';
+  const payload = {
+    business_name: businessName,
+    phone: '91' + phoneDigits,
+    email: email
+  };
+
+  try {
+    const res = await fetch(SM_API_BASE + endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    let data = {};
+    try { data = await res.json(); } catch (_) {}
+
+    if (res.ok) {
+      if (smMode === 'buy' && data.payment_url) {
+        window.location.href = data.payment_url;
+        return;
+      }
+      document.getElementById('sm-form-wrap').style.display = 'none';
+      document.getElementById('sm-success-title').textContent = 'You\'re in!';
+      document.getElementById('sm-success-text').textContent = 'Check WhatsApp — we\'ve sent your first message.';
+      document.getElementById('sm-success').classList.add('show');
+    } else {
+      const detail = data.detail || 'Something went wrong. Please try again.';
+      if (res.status === 422 && detail === 'business_name is required') {
+        smFieldError('business', detail);
+      } else if (res.status === 422 && detail.startsWith('phone must be')) {
+        smFieldError('phone', detail);
+      } else if (res.status === 422 && detail === 'invalid email') {
+        smFieldError('email', detail);
+      } else if (res.status === 409 && detail === 'phone_already_registered') {
+        smFormError('This WhatsApp number is already registered. Message us on WhatsApp to continue.');
+      } else if (res.status === 409 && detail === 'email_already_registered') {
+        smFormError('This email is already registered.');
+      } else if (res.status === 409 && detail === 'already_registered') {
+        smFormError('This business is already registered. Message us on WhatsApp to continue.');
+      } else {
+        smFormError(detail);
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
+  } catch (err) {
+    smFormError('Could not reach the server. Check your connection and try again.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalLabel;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
