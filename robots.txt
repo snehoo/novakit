@@ -10,6 +10,9 @@ Disallow: /novakit-admin
 Disallow: /novakit-admin.html
 Disallow: /kits-admin
 Disallow: /kits-admin.html
+Disallow: /agent/
+Disallow: /brag-output-*
+Disallow: /modified/
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -50,6 +53,9 @@ Disallow: /novakit-admin
 Disallow: /novakit-admin.html
 Disallow: /kits-admin
 Disallow: /kits-admin.html
+Disallow: /agent/
+Disallow: /brag-output-*
+Disallow: /modified/
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -91,6 +97,9 @@ Disallow: /novakit-admin
 Disallow: /novakit-admin.html
 Disallow: /kits-admin
 Disallow: /kits-admin.html
+Disallow: /agent/
+Disallow: /brag-output-*
+Disallow: /modified/
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -129,6 +138,9 @@ Disallow: /novakit-admin
 Disallow: /novakit-admin.html
 Disallow: /kits-admin
 Disallow: /kits-admin.html
+Disallow: /agent/
+Disallow: /brag-output-*
+Disallow: /modified/
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -168,6 +180,9 @@ Disallow: /novakit-admin
 Disallow: /novakit-admin.html
 Disallow: /kits-admin
 Disallow: /kits-admin.html
+Disallow: /agent/
+Disallow: /brag-output-*
+Disallow: /modified/
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -207,6 +222,9 @@ Disallow: /novakit-admin
 Disallow: /novakit-admin.html
 Disallow: /kits-admin
 Disallow: /kits-admin.html
+Disallow: /agent/
+Disallow: /brag-output-*
+Disallow: /modified/
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -246,6 +264,9 @@ Disallow: /novakit-admin
 Disallow: /novakit-admin.html
 Disallow: /kits-admin
 Disallow: /kits-admin.html
+Disallow: /agent/
+Disallow: /brag-output-*
+Disallow: /modified/
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -284,6 +305,9 @@ Disallow: /novakit-admin
 Disallow: /novakit-admin.html
 Disallow: /kits-admin
 Disallow: /kits-admin.html
+Disallow: /agent/
+Disallow: /brag-output-*
+Disallow: /modified/
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -335,6 +359,9 @@ Disallow: /novakit-admin
 Disallow: /novakit-admin.html
 Disallow: /kits-admin
 Disallow: /kits-admin.html
+Disallow: /agent/
+Disallow: /brag-output-*
+Disallow: /modified/
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
