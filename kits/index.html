@@ -3,128 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NovaKit Kits — Write real estate listings on WhatsApp</title>
-<meta name="description" content="Send a photo, a voice note, or a few lines to WhatsApp and get back a ready listing — checked against RERA, nothing invented. Built for real estate agents.">
+<title>NovaKit Kits — WhatsApp AI, built per industry</title>
+<meta name="description" content="NovaKit builds a separate WhatsApp AI kit for each industry — its language, its compliance rules, its buyers. novakit.realestate is live today. Interiors, insurance, coaching, and distribution kits are on the way.">
 <link href="https://novakit.tech/kits/" rel="canonical"/>
+<link href="../assets/favicon.jpg?v=2024" rel="icon" type="image/jpeg"/>
+<link href="/favicon.ico?v=2024" rel="icon" type="image/x-icon"/>
+<link href="../assets/favicon.jpg?v=2024" rel="apple-touch-icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
 <link as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/css/main.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why not just use ChatGPT for property listings?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can, and plenty of agents already do. The difference is where the work happens. With ChatGPT you leave WhatsApp, open another app, type the same details again, and paste the reply back. NovaKit sits inside the WhatsApp number you already use all day, so there's no app-switching between a site visit and the next call. It also won't invent a detail it wasn't given — something a general AI does regularly when a fact is missing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does NovaKit ever make up details in a listing?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. If you don't mention the carpet area, the floor, or the price, it asks you for that instead of guessing a number that sounds plausible. Every listing it writes only uses facts you actually sent it — nothing is filled in from a general sense of what a similar property might have."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is NovaKit compliant with RERA?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Every listing is checked against RERA rules before it's sent back to you — things like not promising guaranteed returns or appreciation, and including what's legally required in the ad. It's a check that runs automatically on every message, not something you have to remember to ask for."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does it understand Hindi, or only English?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Both, and the mix most people actually speak. Send a voice note in Hindi, English, or Hinglish — the way you'd naturally describe a property to a colleague — and you'll get a clean, ready listing back in text."
-      }
-    }
-  ]
-}
-</script>
 <style>
-/* ── Phone demo (kits-only) ──────────────────────────────────────────────── */
-.hero{padding-top:44px !important;align-items:start !important;}
-.phone-col{display:flex;flex-direction:column;align-items:center;gap:12px;align-self:start;margin-top:0;}
-.demo-caption{font-size:12px;color:var(--muted);text-align:left;margin-top:14px;}
-.demo-tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px;}
-.demo-tab{font-family:'Geist Mono',monospace;font-size:12px;padding:6px 14px;border-radius:7px;cursor:pointer;color:var(--muted);transition:all .2s;border:none;background:transparent;white-space:nowrap;}
-.demo-tab.active{background:var(--bg2);color:var(--text);border:1px solid var(--border-s);}
-.phone{width:360px;background:var(--surface);border:1px solid var(--border-s);border-radius:38px;padding:14px 12px;box-shadow:0 30px 80px -20px rgba(0,0,0,0.5),inset 0 0 0 2px var(--bg2),inset 0 0 0 3px var(--border-s);position:relative;}
-.phone::before{content:'';position:absolute;left:-2px;top:64px;width:3px;height:26px;background:var(--border-s);border-radius:2px 0 0 2px;box-shadow:0 40px 0 var(--border-s);}
-.phone::after{content:'';position:absolute;right:-2px;top:100px;width:3px;height:58px;background:var(--border-s);border-radius:0 2px 2px 0;}
-.phone-notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:76px;height:16px;background:var(--bg);border-radius:10px;z-index:3;}
-.phone-home{width:110px;height:4px;background:var(--border-s);border-radius:2px;margin:12px auto 0;}
-.phone-head{display:flex;align-items:center;gap:10px;padding:16px 10px 12px;border-bottom:1px solid var(--border);margin-bottom:10px;}
-.phone-av{width:30px;height:30px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex:none;}
-.phone-head-text b{font-size:13px;font-weight:700;display:block;color:var(--text);}
-.phone-head-text span{font-size:11px;color:var(--green-text);font-family:'Geist Mono',monospace;}
-.thread{display:flex;flex-direction:column;gap:7px;padding:0 4px;min-height:495px;max-height:495px;overflow-y:auto;scroll-behavior:smooth;}
-.thread::-webkit-scrollbar{width:3px;}
-.thread::-webkit-scrollbar-thumb{background:var(--border-s);border-radius:2px;}
-.bubble{max-width:86%;padding:9px 12px;border-radius:14px;font-size:13px;line-height:1.5;word-break:break-word;}
-.bubble.in{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px;font-weight:500;}
-.bubble.out{align-self:flex-start;background:var(--surface2);color:var(--muted);border-bottom-left-radius:4px;border:1px solid var(--border);}
-.bubble.out b{color:var(--text);font-weight:700;display:block;margin-bottom:3px;}
-.bubble.out .badge{display:inline-block;font-family:'Geist Mono',monospace;font-size:11px;color:var(--green-text);border:1px solid rgba(52,211,153,0.3);border-radius:6px;padding:1px 7px;margin-top:6px;}
-[data-theme="light"] .bubble.out .badge{color:#059669;border-color:rgba(5,150,105,0.3);}
-.bubble.img-bubble{align-self:flex-end;padding:0;overflow:hidden;border-radius:14px;border-bottom-right-radius:4px;background:var(--surface2);border:1px solid var(--border);}
-.bubble.img-bubble img{width:220px;height:155px;object-fit:cover;display:block;}
-.bubble.voice-bubble{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px;display:flex;align-items:center;gap:10px;padding:10px 14px;}
-.voice-waveform{display:flex;align-items:center;gap:2px;height:20px;}
-.voice-waveform span{display:block;width:2.5px;background:rgba(255,255,255,0.6);border-radius:2px;animation:wave .8s ease-in-out infinite alternate;}
-.voice-waveform span:nth-child(1){height:6px;animation-delay:0s}
-.voice-waveform span:nth-child(2){height:14px;animation-delay:.1s}
-.voice-waveform span:nth-child(3){height:20px;animation-delay:.2s}
-.voice-waveform span:nth-child(4){height:12px;animation-delay:.3s}
-.voice-waveform span:nth-child(5){height:18px;animation-delay:.4s}
-.voice-waveform span:nth-child(6){height:8px;animation-delay:.5s}
-.voice-waveform span:nth-child(7){height:14px;animation-delay:.6s}
-.voice-waveform span:nth-child(8){height:6px;animation-delay:.7s}
-@keyframes wave{from{transform:scaleY(0.5)}to{transform:scaleY(1)}}
-.voice-dur{font-family:'Geist Mono',monospace;font-size:12px;color:rgba(255,255,255,0.8);}
-.typing{display:flex;align-items:center;gap:4px;padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:14px;border-bottom-left-radius:4px;align-self:flex-start;width:52px;}
-.typing span{width:6px;height:6px;background:var(--muted);border-radius:50%;animation:blink 1.2s ease-in-out infinite;}
-.typing span:nth-child(2){animation-delay:.2s}
-.typing span:nth-child(3){animation-delay:.4s}
-@keyframes blink{0%,80%,100%{transform:scale(1);opacity:.4}40%{transform:scale(1.2);opacity:1}}
-.chat-meta{font-size:11px;color:var(--muted);text-align:center;margin:2px 0;font-family:'Geist Mono',monospace;}
-.composer{display:flex;align-items:center;gap:8px;margin-top:10px;padding:7px 7px 7px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:22px;}
-.composer-txt{flex:1;font-size:12px;color:var(--muted);}
-.composer-mic{width:30px;height:30px;border-radius:50%;border:1px solid var(--border-s);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted);}
-.composer-send{width:30px;height:30px;border-radius:50%;background:var(--accent);flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;cursor:pointer;}
-.demo-replay-btn{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);background:transparent;border:1px solid var(--border-s);border-radius:8px;padding:7px 16px;cursor:pointer;transition:all .2s;font-family:'Geist',sans-serif;font-weight:500;}
-.demo-replay-btn:hover{border-color:var(--accent);color:var(--accent);}
-.demo-replay-btn svg{width:12px;height:12px;flex:none;}
-
-/* ── Kits page sections ──────────────────────────────────────────────────── */
+/* ── Kits directory page ─────────────────────────────────────────────────── */
 .page-section{padding:80px 40px;}
-.page-section.alt{background:var(--bg2);}
 .page-inner{max-width:1200px;margin:0 auto;}
-.page-inner-narrow{max-width:800px;margin:0 auto;}
-.section-lead{font-size:17px;color:var(--muted);line-height:1.72;margin-bottom:0;max-width:54ch;}
+.section-lead{font-size:17px;color:var(--muted);line-height:1.72;margin-bottom:0;max-width:60ch;}
 
-/* step cards */
-.demo-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
-.demo-step{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;cursor:pointer;transition:all .2s;}
-.demo-step:hover,.demo-step.active{border-color:var(--accent);}
-.demo-step .step-icon{font-size:1.4rem;margin-bottom:10px;}
-.demo-step h4{font-size:15px;font-weight:700;margin-bottom:4px;color:var(--text);}
-.step-tag{font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--accent);border:1px solid var(--border-s);border-radius:99px;padding:1px 8px;margin-left:6px;vertical-align:middle;}
-.demo-step p{font-size:13px;color:var(--muted);line-height:1.55;}
+.kits-intro{padding:64px 40px 8px;max-width:1200px;margin:0 auto;}
 
-/* kits grid */
 .kits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;}
-.kit-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;transition:border-color .2s;}
+.kit-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .2s;}
 .kit-card.live{border-color:var(--accent);}
 .kit-card .kit-icon{font-size:1.6rem;margin-bottom:12px;}
 .kit-card h3{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;}
@@ -133,116 +32,17 @@
 .kit-badge.live{background:var(--green-bg);color:var(--green-text);}
 .kit-badge.soon{background:var(--bg2);color:var(--muted);border:1px solid var(--border);}
 
-/* kits tags in hero */
-.kits-pill{display:flex;gap:6px;flex-wrap:wrap;margin-top:20px;}
-.kit-tag{font-family:'Geist Mono',monospace;font-size:12px;padding:4px 12px;border-radius:99px;border:1px solid var(--border-s);color:var(--muted);}
-.kit-tag.live{border-color:var(--accent);color:var(--accent);background:var(--pill-bg);}
-
-/* compare table */
-.compare-table{margin-top:28px;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
-.ct-row{display:grid;grid-template-columns:1fr 1.2fr 1.2fr;border-top:1px solid var(--border);}
-.ct-row:first-child{border-top:none;background:var(--surface2);}
-.ct-row>div{padding:13px 16px;font-size:14px;line-height:1.5;}
-.ct-row:first-child>div{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:'Geist Mono',monospace;}
-.ct-row>div:first-child{color:var(--muted);border-right:1px solid var(--border);font-weight:500;}
-.ct-row>div:nth-child(2){color:var(--muted);border-right:1px solid var(--border);}
-.ct-row>div:nth-child(2)::before{content:"✕ ";color:#c0564a;}
-.ct-row:first-child>div:nth-child(2)::before{content:"";}
-.ct-row>div:nth-child(3){color:var(--text);}
-.ct-row>div:nth-child(3)::before{content:"✓ ";color:var(--green-text);}
-.ct-row:first-child>div:nth-child(3)::before{content:"";}
-
-/* faq */
-.kfaq-list{margin-top:28px;display:flex;flex-direction:column;gap:6px;}
-.kfaq-item{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;}
-.faq-q{font-size:15px;font-weight:700;color:var(--text);margin-bottom:8px;}
-.faq-a{font-size:14px;color:var(--muted);line-height:1.7;}
-
-/* features */
-.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;}
-.feat{border:1px solid var(--border);border-radius:14px;padding:24px;background:var(--surface);}
-.feat .tag{font-family:'Geist Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px;}
-[data-theme="light"] .feat .tag{color:#b5451e;}
-.feat h3{font-size:16px;font-weight:700;margin-bottom:6px;color:var(--text);}
-.feat p{font-size:14px;color:var(--muted);line-height:1.65;}
-
-/* plans */
-.plans-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px;}
-.plan{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;display:flex;flex-direction:column;position:relative;}
-.plan.studio{border-color:var(--accent);}
-.plan-badge{position:absolute;top:-11px;right:18px;background:var(--accent);color:#fff;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.04em;padding:3px 10px;border-radius:99px;font-weight:600;}
-.plan h3{font-size:18px;font-weight:800;color:var(--text);}
-.plan .price{font-family:'Geist Mono',monospace;font-size:36px;margin-top:10px;color:var(--text);font-weight:700;}
-.plan .price small{font-size:15px;color:var(--muted);font-weight:400;}
-.plan ul{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;flex:1;}
-.plan li{font-size:14px;color:var(--muted);padding-left:20px;position:relative;line-height:1.5;}
-.plan li::before{content:"—";position:absolute;left:0;color:var(--faint);}
-.plan li b{color:var(--text);font-weight:700;}
-.trial-box{margin-top:20px;padding:16px 18px;border:1px dashed var(--border-s);border-radius:12px;font-size:15px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;}
-.trial-box b{color:var(--text);font-family:'Geist Mono',monospace;font-weight:600;}
-
-/* PLAN CTAs */
-.plan-cta-row{display:flex;gap:10px;margin-top:22px;}
-.plan-cta{flex:1;justify-content:center;text-align:center;}
-.plan.disabled{opacity:0.55;filter:grayscale(0.4);}
-.plan.disabled .price,.plan.disabled h3{color:var(--muted);}
-.plan-badge-soon{background:var(--bg2);color:var(--muted);border:1px solid var(--border-s);}
-.plan-cta:disabled{opacity:0.5;cursor:not-allowed;}
-.plan-cta:disabled:hover{background:transparent;transform:none;}
-
-/* merged trial/CTA section */
-#try .cta-btns{justify-content:flex-start;margin-top:28px;}
-#try .guarantee-strip{margin:20px 0 0;}
-#try .cta-note{margin-top:14px;}
-@media(max-width:640px){#try .cta-btns{justify-content:center;}#try .guarantee-strip{margin:20px auto 0;}}
-
-/* SIGNUP MODAL */
-.sm-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;}
-.sm-overlay.open{display:flex;}
-.sm-modal{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:32px;max-width:420px;width:100%;max-height:90vh;overflow-y:auto;position:relative;}
-.sm-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;}
-.sm-close:hover{background:var(--bg2);color:var(--text);}
-.sm-heading{font-family:'Instrument Serif',serif;font-size:26px;letter-spacing:-0.01em;margin-bottom:4px;padding-right:32px;}
-.sm-heading em{font-style:italic;color:var(--accent);}
-.sm-sub{font-size:14px;color:var(--muted);margin-bottom:22px;line-height:1.5;}
-.sm-field{margin-bottom:16px;}
-.sm-label{display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:7px;}
-.sm-input{width:100%;padding:12px 14px;background:var(--bg);border:1.5px solid var(--border-s);border-radius:10px;font-family:'Geist',sans-serif;font-size:15px;color:var(--text);outline:none;transition:border-color .18s;}
-.sm-input:focus{border-color:var(--accent);}
-.sm-input.error{border-color:#ef4444;}
-.sm-phone-row{display:flex;align-items:center;gap:0;}
-.sm-phone-prefix{padding:12px 12px;background:var(--bg2);border:1.5px solid var(--border-s);border-right:none;border-radius:10px 0 0 10px;color:var(--muted);font-size:15px;font-family:'Geist Mono',monospace;}
-.sm-phone-row .sm-input{border-radius:0 10px 10px 0;}
-.sm-error-msg{font-size:12.5px;color:#ef4444;margin-top:6px;display:none;}
-.sm-error-msg.show{display:block;}
-.sm-form-error{font-size:13.5px;color:#ef4444;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:10px;padding:12px 14px;margin-bottom:16px;display:none;line-height:1.5;}
-.sm-form-error.show{display:block;}
-.sm-submit{width:100%;padding:14px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-family:'Geist',sans-serif;font-size:15.5px;font-weight:700;cursor:pointer;transition:all .18s;}
-.sm-submit:hover:not(:disabled){background:var(--accent-h);transform:translateY(-1px);}
-.sm-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
-.sm-fine{font-size:12px;color:var(--faint);text-align:center;margin-top:12px;}
-.sm-success{display:none;text-align:center;padding:8px 0;}
-.sm-success.show{display:block;}
-.sm-success-icon{font-size:36px;margin-bottom:14px;}
-.sm-success h3{font-size:19px;margin-bottom:8px;color:var(--text);}
-.sm-success p{font-size:14px;color:var(--muted);line-height:1.55;}
-
-/* hero sub text */
-.hero-sub-text{font-size:17px;color:var(--muted);margin-bottom:28px;line-height:1.7;max-width:44ch;}
-.hero-hinglish{font-size:15px;font-weight:600;color:var(--accent);margin-bottom:28px;font-family:'Geist Mono',monospace;}
-.hero-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;}
+a.kit-card-link{display:block;text-decoration:none;color:inherit;cursor:pointer;}
+a.kit-card-link:hover{border-color:var(--accent);box-shadow:0 10px 28px -10px rgba(222,115,86,0.3);transform:translateY(-2px);}
+.kit-explore{display:block;margin-top:2px;font-size:12px;font-weight:700;color:var(--accent);}
 
 @media(max-width:768px){
-  .phone{width:100%;max-width:360px;}
-  .demo-steps{grid-template-columns:1fr 1fr;}
   .kits-grid{grid-template-columns:1fr 1fr;}
-  .feat-grid{grid-template-columns:1fr;}
-  .plans-grid{grid-template-columns:1fr;}
-  .page-section,.page-section.alt{padding:50px 16px;}
-  .ct-row{grid-template-columns:1fr;}
-  .ct-row:first-child{display:none;}
-  .ct-row>div:first-child{border-right:none;border-bottom:1px solid var(--border);}
-  .ct-row>div:nth-child(2){border-right:none;border-bottom:1px solid var(--border);}
+  .page-section{padding:50px 16px;}
+  .kits-intro{padding:40px 20px 8px;}
+}
+@media(max-width:480px){
+  .kits-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -255,112 +55,34 @@
     <img alt="NovaKit" class="logo-img logo-light" src="/assets/nkblack.jpg">
   </a>
   <div class="nav-links">
-    <a href="#kits">Kits</a>
-    <a href="#how">How it works</a>
-    <a href="#plans">Plans</a>
+    <a href="/kits">Kits</a>
     <a href="/kits/blog">Blog</a>
     <a href="/">Skills</a>
   </div>
   <div class="nav-right">
     <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">☀️</button>
-    <a href="#try" class="btn btn-primary">Try free</a>
+    <a href="/realestate" class="btn btn-primary">Try free</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <div class="hero-eyebrow"><span class="live-dot"></span>Made for Indian real estate agents</div>
-    <h1>Write your listing<br>on WhatsApp.<br><em>Ready in seconds.</em></h1>
-    <p class="hero-sub-text">Type a few details, or just send a voice note in Hindi or English. You get back a ready-to-post listing — same WhatsApp you already have open, no new app to download.</p>
-    <p class="hero-hinglish">Bas bhejo. Kaam ho gaya.</p>
-    <div class="hero-ctas">
-      <a href="#try" class="btn btn-primary btn-lg">
-        <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 20l1.65-4.94A9 9 0 1 1 8 17.35L3 20z"/></svg>
-        Start free on WhatsApp
-      </a>
-    </div>
-    <div class="demo-caption">🇮🇳 Hindi + English · Built for the Indian property market</div>
-  </div>
-
-  <!-- ANIMATED PHONE DEMO -->
-  <div class="phone-col">
-    <div class="demo-tabs">
-      <button class="demo-tab active" onclick="switchDemo('text',this)">📝 Listing</button>
-      <button class="demo-tab" onclick="switchDemo('image',this)">📸 Photo</button>
-      <button class="demo-tab" onclick="switchDemo('voice',this)">🎤 Voice</button>
-      <button class="demo-tab" onclick="switchDemo('tone',this)">🎨 Tone</button>
-    </div>
-
-    <div class="phone">
-      <div class="phone-notch"></div>
-      <div class="phone-head">
-        <div class="phone-av">NK</div>
-        <div class="phone-head-text">
-          <b>Novakit.realestate</b>
-          <span>● online</span>
-        </div>
-      </div>
-      <div class="thread" id="chat-thread"></div>
-      <div class="composer">
-        <span class="composer-txt" id="composer-hint">Type a property, or hold to record…</span>
-        <div class="composer-mic">🎤</div>
-        <div class="composer-send">➤</div>
-      </div>
-      <div class="phone-home"></div>
-    </div>
-
-    <button class="demo-replay-btn" onclick="replayDemo()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.47"/></svg>
-      Replay demo
-    </button>
-  </div>
-</div>
-
-<!-- HOW IT WORKS -->
-<div class="page-section alt" id="how">
-  <div class="page-inner">
-    <div class="section-eyebrow">How it works</div>
-    <h2 class="section-title">One WhatsApp number.<br><em>Four ways to send it a property.</em></h2>
-    <p class="section-lead">Click any card below to see it in the demo above.</p>
-    <div class="demo-steps">
-      <div class="demo-step active" id="step-text" onclick="switchDemo('text', document.querySelectorAll('.demo-tab')[0])">
-        <div class="step-icon">📝</div>
-        <h4>Type it out</h4>
-        <p>A couple of lines about the property → a ready listing back in seconds.</p>
-      </div>
-      <div class="demo-step" id="step-image" onclick="switchDemo('image', document.querySelectorAll('.demo-tab')[1])">
-        <div class="step-icon">📸</div>
-        <h4>Send a photo <span class="step-tag">Studio</span></h4>
-        <p>Send a photo of the house → it tells you what it can see, and asks you for anything it can't.</p>
-      </div>
-      <div class="demo-step" id="step-voice" onclick="switchDemo('voice', document.querySelectorAll('.demo-tab')[2])">
-        <div class="step-icon">🎤</div>
-        <h4>Send a voice note</h4>
-        <p>Speak in Hindi, English, or a mix of both — say it the way you'd say it to a colleague, and get the listing back as text.</p>
-      </div>
-      <div class="demo-step" id="step-tone" onclick="switchDemo('tone', document.querySelectorAll('.demo-tab')[3])">
-        <div class="step-icon">🎨</div>
-        <h4>Change how it sounds</h4>
-        <p>Same property, ask for a different style — one word and it rewrites it.</p>
-      </div>
-    </div>
-  </div>
+<!-- INTRO -->
+<div class="kits-intro">
+  <div class="section-eyebrow">Industry kits</div>
+  <h1 class="section-title">One system.<br><em>Every industry, its own kit.</em></h1>
+  <p class="section-lead">Each NovaKit kit is trained for how one industry actually works on WhatsApp — its language, its compliance rules, its buyers. <b>novakit.realestate</b> is live today. More are on the way.</p>
 </div>
 
 <!-- KITS -->
 <div class="page-section" id="kits">
   <div class="page-inner">
-    <div class="section-eyebrow">Available kits</div>
-    <h2 class="section-title">Built for real estate first,<br><em>more coming.</em></h2>
-    <p class="section-lead">Right now the real estate kit writes your listings. A second layer — answering enquiries and qualifying buyers, not just writing copy — is coming to it next, and the same approach is being built out for four more industries after that.</p>
     <div class="kits-grid">
-      <div class="kit-card live">
+      <a href="/realestate" class="kit-card live kit-card-link">
         <div class="kit-icon">🏠</div>
         <h3>novakit.realestate</h3>
         <p>Writes your listings and drafts replies to buyer objections, any property type. Only says what your facts allow — checked against RERA before it's sent.</p>
         <span class="kit-badge live">● Live now</span>
-      </div>
+        <span class="kit-explore">Explore →</span>
+      </a>
       <div class="kit-card">
         <div class="kit-icon">🏠➕</div>
         <h3>novakit.realestate — Assistant</h3>
@@ -395,195 +117,16 @@
   </div>
 </div>
 
-<!-- WHY NOT CHATGPT -->
-<div class="page-section alt">
-  <div class="page-inner">
-    <div class="section-eyebrow">The obvious question</div>
-    <h2 class="section-title">Why not just <em>use ChatGPT?</em></h2>
-    <p class="section-lead">You can. It just wasn't made for a broker walking out of a site visit with thirty seconds and a voice note — and it won't stop itself from making things up.</p>
-    <div class="compare-table">
-      <div class="ct-row"><div>What matters</div><div>ChatGPT or a general AI app</div><div>NovaKit</div></div>
-      <div class="ct-row"><div>Where you use it</div><div>Leave WhatsApp, open another app, come back and paste</div><div>The same WhatsApp that's already open</div></div>
-      <div class="ct-row"><div>Speaking in Hindi</div><div>Hit or miss with an Indian accent</div><div>Understands Hindi, English, and the mix most people actually speak</div></div>
-      <div class="ct-row"><div>A detail you didn't give</div><div>Guesses something that sounds right</div><div>Asks you for it instead of making it up</div></div>
-      <div class="ct-row"><div>RERA and other rules</div><div>Doesn't know them unless you remind it every time</div><div>Checks every listing against RERA before it's sent</div></div>
-      <div class="ct-row"><div>Your writing style</div><div>Forgets it the moment you start a new chat</div><div>Tell it once — it keeps using it after</div></div>
-    </div>
-
-    <div class="kfaq-list">
-      <div class="kfaq-item">
-        <h3 class="kfaq-q">Why not just use ChatGPT for property listings?</h3>
-        <p class="kfaq-a">You can, and plenty of agents already do. The difference is where the work happens. With ChatGPT you leave WhatsApp, open another app, type the same details again, and paste the reply back. NovaKit sits inside the WhatsApp number you already use all day, so there's no app-switching between a site visit and the next call. It also won't invent a detail it wasn't given — something a general AI does regularly when a fact is missing.</p>
-      </div>
-      <div class="kfaq-item">
-        <h3 class="kfaq-q">Does NovaKit ever make up details in a listing?</h3>
-        <p class="kfaq-a">No. If you don't mention the carpet area, the floor, or the price, it asks you for that instead of guessing a number that sounds plausible. Every listing it writes only uses facts you actually sent it — nothing is filled in from a general sense of what a similar property might have.</p>
-      </div>
-      <div class="kfaq-item">
-        <h3 class="kfaq-q">Is NovaKit compliant with RERA?</h3>
-        <p class="kfaq-a">Every listing is checked against RERA rules before it's sent back to you — things like not promising guaranteed returns or appreciation, and including what's legally required in the ad. It's a check that runs automatically on every message, not something you have to remember to ask for.</p>
-      </div>
-      <div class="kfaq-item">
-        <h3 class="kfaq-q">Does it understand Hindi, or only English?</h3>
-        <p class="kfaq-a">Both, and the mix most people actually speak. Send a voice note in Hindi, English, or Hinglish — the way you'd naturally describe a property to a colleague — and you'll get a clean, ready listing back in text.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PLANS -->
-<div class="page-section" id="plans">
-  <div class="page-inner-narrow">
-    <div class="section-eyebrow">Plans</div>
-    <h2 class="section-title">Two plans.<br><em>No hidden charges.</em></h2>
-    <div class="plans-grid">
-      <div class="plan">
-        <h3>Solo</h3>
-        <div class="price">₹2,999<small>/month</small></div>
-        <ul>
-          <li><b>1</b> person, on WhatsApp</li>
-          <li><b>50</b> listings a month</li>
-          <li>Text or voice, Hindi and English, any property type</li>
-          <li>Objection handler for buyer replies</li>
-        </ul>
-        <div class="plan-cta-row">
-          <a href="#try" class="btn btn-ghost plan-cta">Start Free Trial</a>
-          <button type="button" class="btn btn-primary plan-cta" onclick="openSignupModal('buy')">Buy Now</button>
-        </div>
-      </div>
-      <div class="plan studio disabled">
-        <span class="plan-badge plan-badge-soon">Coming Soon</span>
-        <h3>Studio</h3>
-        <div class="price">₹7,999<small>/month</small></div>
-        <ul>
-          <li>Up to <b>5</b> people, one shared account</li>
-          <li><b>500</b> listings a month, split across your team</li>
-          <li>Same listing written for WhatsApp, Instagram, portals, SMS, email and Facebook</li>
-          <li>Photos as input, up to 6 per property</li>
-          <li>6-email follow-up sequence and a 30-day social posting plan, sent as WhatsApp messages</li>
-          <li>Objection handler remembers the last 5 messages in the conversation</li>
-        </ul>
-        <div class="plan-cta-row">
-          <button type="button" class="btn btn-ghost plan-cta" disabled>Coming Soon</button>
-        </div>
-      </div>
-    </div>
-    <div class="trial-box">
-      <span>New here?</span>
-      <span><b>7 days or 10 listings</b> — whichever comes first. The real thing, not a watered-down demo.</span>
-    </div>
-  </div>
-</div>
-
-<!-- FEATURES -->
-<div class="page-section alt">
-  <div class="page-inner">
-    <div class="section-eyebrow">What you get</div>
-    <h2 class="section-title">What it can do for you.<br><em>Solo and Studio.</em></h2>
-    <p class="section-lead">The listing writer and objection handler are in every plan. Studio adds more formats, photos as an input, and email and social follow-ups.</p>
-    <div class="feat-grid">
-      <div class="feat"><span class="tag">Solo + Studio</span><h3>Listing writer</h3><p>Give it the basics of a property, any property type, and it writes the full WhatsApp listing — ready to post.</p></div>
-      <div class="feat"><span class="tag">Solo + Studio</span><h3>Voice notes</h3><p>Speak it instead of typing it, in Hindi or English. You confirm before anything is sent.</p></div>
-      <div class="feat"><span class="tag">Solo + Studio</span><h3>Objection handler</h3><p>Buyer says the price is too high, or wants to think about it — it drafts a reply based on the property's real facts.</p></div>
-      <div class="feat"><span class="tag">Studio</span><h3>More formats, one listing</h3><p>The same property written for WhatsApp, Instagram, property portals, SMS, email and Facebook — not just retyped for each one.</p></div>
-      <div class="feat"><span class="tag">Studio</span><h3>Photos as input</h3><p>Send up to 6 photos of the property. It describes what's actually visible and asks for anything it can't see — never guesses.</p></div>
-      <div class="feat"><span class="tag">Studio</span><h3>Email and social follow-ups</h3><p>A 6-email drip sequence and a 30-day social posting plan, both delivered to you as WhatsApp messages you paste and send yourself.</p></div>
-    </div>
-  </div>
-</div>
-
-<!-- FREE TRIAL / START TODAY (merged) -->
-<div class="lc-section" id="try">
-  <div class="lc-inner">
-    <div>
-      <div class="lc-badge">🎁 Free trial</div>
-      <h2 class="lc-heading">Always in your pocket.<br><em>Never a separate app.</em></h2>
-      <p class="lc-sub">Send one property to this number and see what comes back — the real thing, not a watered-down demo. No credit card. No call needed.</p>
-      <div class="cta-btns">
-        <button type="button" class="btn btn-primary btn-lg" onclick="openSignupModal('trial')">
-          <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 20l1.65-4.94A9 9 0 1 1 8 17.35L3 20z"/></svg>
-          Shuru Karo — Start Free
-        </button>
-      </div>
-    </div>
-    <div>
-      <div class="lc-skill-preview">
-        <div class="lc-skill-row">
-          <div class="lc-skill-icon">🏠</div>
-          <div>
-            <div class="lc-skill-name">novakit.realestate</div>
-            <div class="lc-skill-meta">WhatsApp kit · normally ₹2,999/mo · free for 7 days</div>
-          </div>
-        </div>
-        <div class="lc-includes">
-          <div class="lc-inc">7 days or 10 listings free, whichever comes first</div>
-          <div class="lc-inc">Text and voice, in Hindi or English</div>
-          <div class="lc-inc">Works on WhatsApp, no new app to install</div>
-        </div>
-      </div>
-      <div class="guarantee-strip">
-        <span>🛡 7 days or 10 tries free · No credit card needed</span>
-      </div>
-      <p class="cta-note">novakit.tech/kits</p>
-    </div>
-  </div>
-</div>
-
 <footer>
   <div class="footer-left">© 2026 NovaKit · <a href="/legal/terms" style="color:var(--accent);font-weight:600;">7-day free trial</a> · Made with ❤️ by Autonova Solutions</div>
   <div class="footer-links">
-    <a href="#kits">Kits</a>
-    <a href="#how">How it works</a>
-    <a href="#plans">Plans</a>
-    <a href="/">Skills</a>
+    <a href="/kits">Kits</a>
     <a href="/kits/blog">Blog</a>
+    <a href="/">Skills</a>
     <a href="mailto:support@novakit.tech">Support</a>
     <a href="/legal/terms">Terms</a>
   </div>
 </footer>
-
-<!-- SIGNUP / BUY MODAL -->
-<div class="sm-overlay" id="sm-overlay" onclick="if(event.target===this)closeSignupModal()">
-  <div class="sm-modal">
-    <button type="button" class="sm-close" onclick="closeSignupModal()" aria-label="Close">✕</button>
-
-    <div id="sm-form-wrap">
-      <h3 class="sm-heading" id="sm-heading">Start your <em>free trial.</em></h3>
-      <p class="sm-sub" id="sm-sub">7 days or 10 listings, whichever comes first. No credit card.</p>
-
-      <div class="sm-form-error" id="sm-form-error"></div>
-
-      <form id="sm-form" onsubmit="submitSignup(event)" novalidate>
-        <div class="sm-field">
-          <label class="sm-label" for="sm-business">Business name</label>
-          <input class="sm-input" id="sm-business" type="text" placeholder="Sharma Properties" autocomplete="organization" required>
-          <div class="sm-error-msg" id="sm-business-err"></div>
-        </div>
-        <div class="sm-field">
-          <label class="sm-label" for="sm-phone">WhatsApp number</label>
-          <div class="sm-phone-row">
-            <span class="sm-phone-prefix">+91</span>
-            <input class="sm-input" id="sm-phone" type="tel" inputmode="numeric" placeholder="98123 45678" maxlength="10" autocomplete="tel-national" required>
-          </div>
-          <div class="sm-error-msg" id="sm-phone-err"></div>
-        </div>
-        <div class="sm-field">
-          <label class="sm-label" for="sm-email">Email</label>
-          <input class="sm-input" id="sm-email" type="email" placeholder="owner@example.com" autocomplete="email" required>
-          <div class="sm-error-msg" id="sm-email-err"></div>
-        </div>
-        <button type="submit" class="sm-submit" id="sm-submit">Start Free Trial</button>
-        <div class="sm-fine">No spam · Cancel any time</div>
-      </form>
-    </div>
-
-    <div class="sm-success" id="sm-success">
-      <div class="sm-success-icon">🎉</div>
-      <h3 id="sm-success-title">You're in!</h3>
-      <p id="sm-success-text">Check WhatsApp — we've sent your first message.</p>
-    </div>
-  </div>
-</div>
 
 <script>
 function toggleTheme() {
@@ -592,274 +135,6 @@ function toggleTheme() {
   html.setAttribute('data-theme', isDark ? 'light' : 'dark');
   document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
 }
-
-const DEMOS = {
-  text: {
-    hint: 'Type a property, or hold to record…',
-    steps: [
-      { delay: 400,  type: 'in',   content: '2bhk sector 92 gurgaon modular kitchen built in wardrobes balcony 1200sqft 85 lac' },
-      { delay: 900,  type: 'typing' },
-      { delay: 2600, type: 'remove-typing' },
-      { delay: 2700, type: 'out',  content: '<b>2BHK · Sector 92, Gurgaon</b>\nBoth bedrooms have cove-lit false ceilings, wall-mounted ACs, and open onto a grilled balcony with daylight coming straight in. The living room sits under recessed lighting with a grey L-shaped sofa already in place, next to a modular kitchen with black countertop, hob and chimney. Wardrobes are built-in with mirrored, glossy shutters.\n\n📐 1,200 sq ft carpet · 💰 ₹85 Lac\n✨ Modular kitchen with hob and chimney\n✨ Wall-mounted ACs and cove lighting\n✨ Built-in mirrored wardrobes\n<span class="badge">✓ Only what you sent — nothing added</span>' },
-      { delay: 3000, type: 'meta',  content: 'Checked against RERA before it was sent' },
-    ]
-  },
-  image: {
-    hint: 'Send a photo, or type your property…',
-    steps: [
-      { delay: 400,  type: 'img-in' },
-      { delay: 1000, type: 'typing' },
-      { delay: 2800, type: 'remove-typing' },
-      { delay: 2900, type: 'out',  content: '<b>I can see:</b> marble flooring, large windows, false ceiling, good daylight.\n\nTo write the listing I still need:\n① Carpet area in sq ft\n② Floor number\n③ Asking price\n\nSend those and I\'ll have the full copy ready — I won\'t guess the rest.' },
-      { delay: 3100, type: 'meta',  content: 'Never invents what it can\'t see' },
-    ]
-  },
-  voice: {
-    hint: 'Hold 🎤 to record a voice note…',
-    steps: [
-      { delay: 400,  type: 'voice-in', duration: '0:08' },
-      { delay: 1000, type: 'meta',  content: 'Teen bhk, Andheri, samundar dikhta hai, saadhe chaar crore' },
-      { delay: 1300, type: 'typing' },
-      { delay: 3200, type: 'remove-typing' },
-      { delay: 3300, type: 'out',  content: '<b>Sea-Facing 3BHK · Andheri West</b>\nThe kind of home where the view does the convincing. 1,450 sq ft carpet, priced at ₹4.2 Cr.\n\n📐 1,450 sq ft · 💰 ₹4.2 Cr\n<span class="badge">✓ Hindi transcribed</span>' },
-      { delay: 3500, type: 'meta',  content: 'Spoken in Hindi → listing in 8 seconds' },
-      { delay: 3700, type: 'meta',  content: 'Works the same whether you type or speak' },
-    ]
-  },
-  tone: {
-    hint: 'Type TONE to change the style…',
-    steps: [
-      { delay: 300,  type: 'out',  content: '<b>Sea-Facing 3BHK · Andheri West</b>\nWake up to the Arabian Sea from a home with room to breathe. 1,450 sq ft carpet.\n\n📐 1,450 sq ft · 💰 ₹4.2 Cr' },
-      { delay: 1000, type: 'in',   content: 'TONE trendy' },
-      { delay: 1500, type: 'typing' },
-      { delay: 2800, type: 'remove-typing' },
-      { delay: 2900, type: 'out',  content: '<b>Sea Views. Sorted.</b>\n3BHK in Andheri West. 1,450 sq ft carpet, dead sea-facing. Doesn\'t need explaining.\n\n📐 1,450 sq ft · 💰 ₹4.2 Cr' },
-      { delay: 3200, type: 'meta',  content: 'Same facts, same price — just said differently' },
-    ]
-  }
-};
-
-let currentDemo = 'text', timers = [];
-function clearTimers(){ timers.forEach(t=>clearTimeout(t)); timers=[]; }
-
-function renderBubble(type, content, extra) {
-  const thread = document.getElementById('chat-thread');
-  if (type === 'typing') {
-    const el = document.createElement('div');
-    el.className = 'typing'; el.id = 'typing-indicator';
-    el.innerHTML = '<span></span><span></span><span></span>';
-    thread.appendChild(el); thread.scrollTop = thread.scrollHeight; return;
-  }
-  if (type === 'remove-typing') { const t = document.getElementById('typing-indicator'); if(t)t.remove(); return; }
-  if (type === 'meta') {
-    const el = document.createElement('div');
-    el.className = 'chat-meta'; el.textContent = content;
-    thread.appendChild(el); thread.scrollTop = thread.scrollHeight; return;
-  }
-  if (type === 'img-in') {
-    const el = document.createElement('div');
-    el.className = 'bubble img-bubble';
-    el.innerHTML = '<img src="/kits/assets/living-room.jpg" alt="living room photo">';
-    thread.appendChild(el); thread.scrollTop = thread.scrollHeight; return;
-  }
-  if (type === 'voice-in') {
-    const el = document.createElement('div');
-    el.className = 'bubble voice-bubble';
-    el.innerHTML = `<div class="voice-waveform"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="voice-dur">${extra||'0:06'}</span>`;
-    thread.appendChild(el); thread.scrollTop = thread.scrollHeight; return;
-  }
-  const el = document.createElement('div');
-  el.className = 'bubble ' + (type === 'in' ? 'in' : 'out');
-  el.innerHTML = content.replace(/\n/g,'<br>');
-  thread.appendChild(el); thread.scrollTop = thread.scrollHeight;
-}
-
-function runDemo(key) {
-  clearTimers();
-  const thread = document.getElementById('chat-thread');
-  thread.innerHTML = '';
-  const hint = document.getElementById('composer-hint');
-  const demo = DEMOS[key];
-  hint.textContent = demo.hint;
-  demo.steps.forEach(step => {
-    const t = setTimeout(() => renderBubble(step.type, step.content, step.duration), step.delay);
-    timers.push(t);
-  });
-  document.querySelectorAll('.demo-step').forEach(el => el.classList.remove('active'));
-  const stepEl = document.getElementById('step-' + key);
-  if (stepEl) stepEl.classList.add('active');
-}
-
-function switchDemo(key, tabEl) {
-  currentDemo = key;
-  document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
-  if (tabEl) tabEl.classList.add('active');
-  runDemo(key);
-}
-
-function replayDemo() { runDemo(currentDemo); }
-
-/* ── SOLO SIGNUP / BUY MODAL ─────────────────────────────────────────── */
-const SM_API_BASE = 'https://aiservices-snehoo.duckdns.org';
-let smMode = 'trial'; // 'trial' -> POST /signup, 'buy' -> POST /buy
-
-function openSignupModal(mode) {
-  smMode = mode === 'buy' ? 'buy' : 'trial';
-  const overlay = document.getElementById('sm-overlay');
-  const heading = document.getElementById('sm-heading');
-  const sub = document.getElementById('sm-sub');
-  const submitBtn = document.getElementById('sm-submit');
-
-  if (smMode === 'buy') {
-    heading.innerHTML = 'Buy Solo <em>now.</em>';
-    sub.textContent = '₹2,999/month. Skip the trial — you\'ll be redirected to pay by UPI/card.';
-    submitBtn.textContent = 'Continue to Payment';
-  } else {
-    heading.innerHTML = 'Start your <em>free trial.</em>';
-    sub.textContent = '7 days or 10 listings, whichever comes first. No credit card.';
-    submitBtn.textContent = 'Start Free Trial';
-  }
-
-  document.getElementById('sm-form-wrap').style.display = 'block';
-  document.getElementById('sm-success').classList.remove('show');
-  document.getElementById('sm-form').reset();
-  smClearErrors();
-  submitBtn.disabled = false;
-  overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeSignupModal() {
-  document.getElementById('sm-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function smClearErrors() {
-  document.getElementById('sm-form-error').classList.remove('show');
-  document.getElementById('sm-form-error').textContent = '';
-  ['business', 'phone', 'email'].forEach(f => {
-    document.getElementById('sm-' + f + '-err').classList.remove('show');
-    document.getElementById('sm-' + f + '-err').textContent = '';
-    document.getElementById('sm-' + f).classList.remove('error');
-  });
-}
-
-function smFieldError(field, message) {
-  document.getElementById('sm-' + field).classList.add('error');
-  const err = document.getElementById('sm-' + field + '-err');
-  err.textContent = message;
-  err.classList.add('show');
-}
-
-function smFormError(message) {
-  const el = document.getElementById('sm-form-error');
-  el.textContent = message;
-  el.classList.add('show');
-}
-
-// digits-only, 10 max, as the user types
-document.addEventListener('DOMContentLoaded', () => {
-  const phoneEl = document.getElementById('sm-phone');
-  if (phoneEl) {
-    phoneEl.addEventListener('input', () => {
-      phoneEl.value = phoneEl.value.replace(/\D/g, '').slice(0, 10);
-    });
-  }
-});
-
-async function submitSignup(e) {
-  e.preventDefault();
-  smClearErrors();
-
-  const businessName = document.getElementById('sm-business').value.trim();
-  const phoneDigits = document.getElementById('sm-phone').value.trim();
-  const email = document.getElementById('sm-email').value.trim();
-
-  // client-side validation (server is still the source of truth)
-  let hasError = false;
-  if (!businessName) {
-    smFieldError('business', 'Business name is required');
-    hasError = true;
-  }
-  if (!/^\d{10}$/.test(phoneDigits)) {
-    smFieldError('phone', 'Enter a 10-digit WhatsApp number');
-    hasError = true;
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    smFieldError('email', 'Enter a valid email address');
-    hasError = true;
-  }
-  if (hasError) return;
-
-  const submitBtn = document.getElementById('sm-submit');
-  const originalLabel = submitBtn.textContent;
-  submitBtn.disabled = true;
-  submitBtn.textContent = smMode === 'buy' ? 'Redirecting…' : 'Sending…';
-
-  const endpoint = smMode === 'buy' ? '/buy' : '/signup';
-  const payload = {
-    business_name: businessName,
-    phone: '91' + phoneDigits,
-    email: email
-  };
-
-  try {
-    const res = await fetch(SM_API_BASE + endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-
-    let data = {};
-    try { data = await res.json(); } catch (_) {}
-
-    if (res.ok) {
-      if (smMode === 'buy' && data.payment_url) {
-        window.location.href = data.payment_url;
-        return;
-      }
-      document.getElementById('sm-form-wrap').style.display = 'none';
-      document.getElementById('sm-success-title').textContent = 'You\'re in!';
-      document.getElementById('sm-success-text').textContent = 'Check WhatsApp — we\'ve sent your first message.';
-      document.getElementById('sm-success').classList.add('show');
-    } else {
-      const detail = data.detail || 'Something went wrong. Please try again.';
-      if (res.status === 422 && detail === 'business_name is required') {
-        smFieldError('business', detail);
-      } else if (res.status === 422 && detail.startsWith('phone must be')) {
-        smFieldError('phone', detail);
-      } else if (res.status === 422 && detail === 'invalid email') {
-        smFieldError('email', detail);
-      } else if (res.status === 409 && detail === 'phone_already_registered') {
-        smFormError('This WhatsApp number is already registered. Message us on WhatsApp to continue.');
-      } else if (res.status === 409 && detail === 'email_already_registered') {
-        smFormError('This email is already registered.');
-      } else if (res.status === 409 && detail === 'already_registered') {
-        smFormError('This business is already registered. Message us on WhatsApp to continue.');
-      } else {
-        smFormError(detail);
-      }
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalLabel;
-    }
-  } catch (err) {
-    smFormError('Could not reach the server. Check your connection and try again.');
-    submitBtn.disabled = false;
-    submitBtn.textContent = originalLabel;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  runDemo('text');
-  const order = ['text','image','voice','tone'];
-  const tabs = document.querySelectorAll('.demo-tab');
-  let idx = 0;
-  const cycle = setInterval(() => {
-    idx++;
-    if (idx >= order.length) { clearInterval(cycle); return; }
-    switchDemo(order[idx], tabs[idx]);
-  }, 6000);
-});
 </script>
 </body>
 </html>
