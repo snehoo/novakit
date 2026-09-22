@@ -8,6 +8,8 @@
 User-agent: *
 Disallow: /novakit-admin
 Disallow: /novakit-admin.html
+Disallow: /kits-admin
+Disallow: /kits-admin.html
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -46,6 +48,8 @@ User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
 Disallow: /novakit-admin
 Disallow: /novakit-admin.html
+Disallow: /kits-admin
+Disallow: /kits-admin.html
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -85,6 +89,8 @@ User-agent: Claude-User
 User-agent: anthropic-ai
 Disallow: /novakit-admin
 Disallow: /novakit-admin.html
+Disallow: /kits-admin
+Disallow: /kits-admin.html
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -121,6 +127,8 @@ Allow: /
 User-agent: Google-Extended
 Disallow: /novakit-admin
 Disallow: /novakit-admin.html
+Disallow: /kits-admin
+Disallow: /kits-admin.html
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -158,6 +166,8 @@ User-agent: PerplexityBot
 User-agent: Perplexity-User
 Disallow: /novakit-admin
 Disallow: /novakit-admin.html
+Disallow: /kits-admin
+Disallow: /kits-admin.html
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -195,6 +205,8 @@ User-agent: Applebot
 User-agent: Applebot-Extended
 Disallow: /novakit-admin
 Disallow: /novakit-admin.html
+Disallow: /kits-admin
+Disallow: /kits-admin.html
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -232,6 +244,8 @@ User-agent: meta-externalagent
 User-agent: FacebookBot
 Disallow: /novakit-admin
 Disallow: /novakit-admin.html
+Disallow: /kits-admin
+Disallow: /kits-admin.html
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -268,6 +282,8 @@ Allow: /
 User-agent: Amazonbot
 Disallow: /novakit-admin
 Disallow: /novakit-admin.html
+Disallow: /kits-admin
+Disallow: /kits-admin.html
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
@@ -317,6 +333,8 @@ User-agent: Kangaroo Bot
 User-agent: PetalBot
 Disallow: /novakit-admin
 Disallow: /novakit-admin.html
+Disallow: /kits-admin
+Disallow: /kits-admin.html
 Disallow: /index-20may
 Disallow: /index-20may.html
 Disallow: /index-5jun
