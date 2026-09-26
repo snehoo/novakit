@@ -9,6 +9,18 @@
 /blog/the-vows-that-sound-like-you-wrote-them-because-you-did.html /blog/wedding-vows-writer-ai 301
 /blog/the-vows-that-sound-like-you-wrote-them-because-you-did /blog/wedding-vows-writer-ai 301
 
+# Legacy site snapshots from prior restructures — these were falling through to
+# the soft-404 defect (fixed via 404.html) instead of redirecting anywhere. Already
+# robots.txt-disallowed and unlinked internally, but redirect properly regardless.
+/index-20may.html / 301
+/index-20may / 301
+/index-5jun.html / 301
+/index-5jun / 301
+/checkout_old.html / 301
+/checkout_old / 301
+/delivery-old.html /delivery/ 301
+/delivery-old /delivery/ 301
+
 # Old test-slug blog post → proper URL
 /blog/youtube-thumbnail-prompt-blog-test.html /blog/youtube-thumbnail-ctr-guide 301
 /blog/youtube-thumbnail-prompt-blog-test /blog/youtube-thumbnail-ctr-guide 301
