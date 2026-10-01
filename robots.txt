@@ -26,6 +26,9 @@ Disallow: /feedback.html
 Disallow: /_seo_backup_20260709_223027/
 Disallow: /node_modules/
 Disallow: /*.bak$
+Disallow: /*.py$
+Disallow: /*.csv$
+Disallow: /*.xlsx$
 Disallow: /skills/embedded-captions/
 Disallow: /skills/faceless-explainer/
 Disallow: /skills/general-video/
@@ -69,6 +72,9 @@ Disallow: /feedback.html
 Disallow: /_seo_backup_20260709_223027/
 Disallow: /node_modules/
 Disallow: /*.bak$
+Disallow: /*.py$
+Disallow: /*.csv$
+Disallow: /*.xlsx$
 Disallow: /skills/embedded-captions/
 Disallow: /skills/faceless-explainer/
 Disallow: /skills/general-video/
@@ -113,6 +119,9 @@ Disallow: /feedback.html
 Disallow: /_seo_backup_20260709_223027/
 Disallow: /node_modules/
 Disallow: /*.bak$
+Disallow: /*.py$
+Disallow: /*.csv$
+Disallow: /*.xlsx$
 Disallow: /skills/embedded-captions/
 Disallow: /skills/faceless-explainer/
 Disallow: /skills/general-video/
@@ -154,6 +163,9 @@ Disallow: /feedback.html
 Disallow: /_seo_backup_20260709_223027/
 Disallow: /node_modules/
 Disallow: /*.bak$
+Disallow: /*.py$
+Disallow: /*.csv$
+Disallow: /*.xlsx$
 Disallow: /skills/embedded-captions/
 Disallow: /skills/faceless-explainer/
 Disallow: /skills/general-video/
@@ -196,6 +208,9 @@ Disallow: /feedback.html
 Disallow: /_seo_backup_20260709_223027/
 Disallow: /node_modules/
 Disallow: /*.bak$
+Disallow: /*.py$
+Disallow: /*.csv$
+Disallow: /*.xlsx$
 Disallow: /skills/embedded-captions/
 Disallow: /skills/faceless-explainer/
 Disallow: /skills/general-video/
@@ -238,6 +253,9 @@ Disallow: /feedback.html
 Disallow: /_seo_backup_20260709_223027/
 Disallow: /node_modules/
 Disallow: /*.bak$
+Disallow: /*.py$
+Disallow: /*.csv$
+Disallow: /*.xlsx$
 Disallow: /skills/embedded-captions/
 Disallow: /skills/faceless-explainer/
 Disallow: /skills/general-video/
@@ -280,6 +298,9 @@ Disallow: /feedback.html
 Disallow: /_seo_backup_20260709_223027/
 Disallow: /node_modules/
 Disallow: /*.bak$
+Disallow: /*.py$
+Disallow: /*.csv$
+Disallow: /*.xlsx$
 Disallow: /skills/embedded-captions/
 Disallow: /skills/faceless-explainer/
 Disallow: /skills/general-video/
@@ -321,6 +342,9 @@ Disallow: /feedback.html
 Disallow: /_seo_backup_20260709_223027/
 Disallow: /node_modules/
 Disallow: /*.bak$
+Disallow: /*.py$
+Disallow: /*.csv$
+Disallow: /*.xlsx$
 Disallow: /skills/embedded-captions/
 Disallow: /skills/faceless-explainer/
 Disallow: /skills/general-video/
@@ -375,6 +399,9 @@ Disallow: /feedback.html
 Disallow: /_seo_backup_20260709_223027/
 Disallow: /node_modules/
 Disallow: /*.bak$
+Disallow: /*.py$
+Disallow: /*.csv$
+Disallow: /*.xlsx$
 Disallow: /skills/embedded-captions/
 Disallow: /skills/faceless-explainer/
 Disallow: /skills/general-video/

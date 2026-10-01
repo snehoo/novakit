@@ -24,3 +24,27 @@ skills/remotion-to-hyperframes
 skills/slideshow
 skills/website-to-video
 _seo_backup_*/
+
+# Not part of the website — keep out of the deployed repo (crawl-budget leak, Oct 2026)
+/agent/
+/brag-output-*/
+/modified/
+/*.py
+/report*.csv
+/link-log.csv
+/standalone-*
+/skipped.txt
+/stale-prices.txt
+/missing-blogs.txt
+/NovaKit_Social_Content.xlsx
+/README.md
+/VERIFICATION_REPORT.md
+/skills-lock.json
+/_config.yml
+/js/products-old.js
+/js/products.js.fixed
+/index-20may.html
+/index-5jun.html
+/checkout_old.html
+/delivery-old.html
+.DS_Store

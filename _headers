@@ -1,0 +1,15 @@
+# Keep non-content assets and admin pages out of the index
+/novakit-admin*
+  X-Robots-Tag: noindex, nofollow
+/kits-admin*
+  X-Robots-Tag: noindex, nofollow
+/feedback*
+  X-Robots-Tag: noindex
+/*.py
+  X-Robots-Tag: noindex
+/*.csv
+  X-Robots-Tag: noindex
+/*.xlsx
+  X-Robots-Tag: noindex
+/*.json
+  X-Robots-Tag: noindex
