@@ -1,4 +1,4 @@
-node_modules/
+# node_modules/ stays tracked: Cloudflare Pages Functions build has no npm install step (needs pg)
 # GSC service account key — never commit
 *-seo-agent*.json
 gsc-key.json
