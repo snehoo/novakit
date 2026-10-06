@@ -13,19 +13,19 @@
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>What a Generic AI-Written PRD Looks Like to the Engineer Reading It | NovaKit Blog</title>
-<meta content="AI PRD writing looks complete on the surface. Here's what engineers actually find when they read one — and why context-calibrated output changes the build conversation." name="description"/>
+<title>What Engineers See in an AI-Written PRD</title>
+<meta content="Happy-path acceptance criteria, scope written only as inclusions, textbook user stories and ownerless dependencies, shown on an account deletion feature." name="description"/>
 <meta content="AI PRD writing, product requirements document Claude AI, PRD quality, NovaKit PRD Writer, AI product documentation" name="keywords"/>
 <link href="https://novakit.tech/blog/prd-writer-what-engineers-see" rel="canonical"/>
 <meta content="article" property="og:type"/>
 <meta content="https://novakit.tech/blog/prd-writer-what-engineers-see" property="og:url"/>
-<meta content="What a Generic AI-Written PRD Looks Like to the Engineer Reading It" property="og:title"/>
-<meta content="Generic AI PRDs look complete. Engineers know they're not. Here's exactly what gets found — and what it costs per sprint." property="og:description"/>
+<meta content="What Engineers See in an AI-Written PRD" property="og:title"/>
+<meta content="Happy-path acceptance criteria, scope written only as inclusions, textbook user stories and ownerless dependencies, shown on an account deletion feature." property="og:description"/>
 <meta content="https://novakit.tech/og-blog-prd-writer-what-engineers-see.png" property="og:image"/>
 <meta content="NovaKit" property="og:site_name"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="What a Generic AI-Written PRD Looks Like to the Engineer Reading It" name="twitter:title"/>
-<meta content="Generic AI PRDs look complete. Engineers know they're not. Here's what gets found — and what it costs per sprint." name="twitter:description"/>
+<meta content="What Engineers See in an AI-Written PRD" name="twitter:title"/>
+<meta content="Happy-path acceptance criteria, scope written only as inclusions, textbook user stories and ownerless dependencies, shown on an account deletion feature." name="twitter:description"/>
 <meta content="https://novakit.tech/og-blog-prd-writer-what-engineers-see.png" name="twitter:image"/>
 <script type="application/ld+json">
 {
@@ -345,7 +345,6 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <p>The canonical user story format — "As a [user], I want to [action] so that [benefit]" — is fine. It's also applied identically by AI to a two-person startup shipping fast and to a 40-person product team with a formal Jira workflow. Those are different contexts. A pre-seed team needs stories tight enough to fit in a daily standup conversation. An enterprise team needs stories with enough specificity to survive a handoff to a developer who never met the person who wrote the PRD. Generic output doesn't distinguish. Every story comes out the same depth regardless of who's going to act on it.</p>
 <h3>Dependencies stated as assumptions, not as owners</h3>
 <p>"This feature depends on the notification service" is an assumption. "This feature requires a schema change to the <code>user_preferences</code> table, owned by the Platform squad. Sign-off required from Platform lead before development begins" is a dependency. The difference is whether an engineer knows what to do with the information. Generic AI doesn't know who owns what in your organisation. It can't name the table, the squad, or the sign-off process. So it writes in the passive voice about systems that exist in the abstract — and engineers either guess at the rest or escalate to you.</p>
-<!-- nk-ilink-mid --><p>That gap is exactly what the <a href="https://novakit.tech/skills/prd-writer">AI PRD Writer skill for Claude</a> was built to close.</p><!-- /nk-ilink-mid -->
 <h2 id="why-the-output-looks-right-but-reads-wrong">Why the Output Looks Right but <em>Reads Wrong</em></h2>
 <p>The structural elements are all present. Section headings match what a PRD is supposed to contain. The problem statement is coherent. The user stories parse. So why does an experienced engineer immediately sense that something is off?</p>
 <p>Because they're reading for specificity, not structure. A document written by someone who knows the system contains proper nouns — actual table names, actual team names, actual service names. It contains specific failure states that only make sense in the context of this product's existing behaviour. It makes explicit decisions about edge cases rather than leaving them open. Structure without specificity is a template. Engineers have seen a lot of templates.</p>
@@ -408,7 +407,7 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <h2 id="what-you-walk-away-with">What You <em>Walk Away With</em></h2>
 <p>A complete, calibrated PRD — problem statement, functional requirements with scope boundaries, user stories sized to your team, acceptance criteria with named edge cases, and a dependency and sign-off map. Ready to paste into Notion, Linear, or Confluence. The calibration questions that precede it take under two minutes to answer and are the mechanism by which every generic assumption gets replaced with a specific one.</p>
 <p>The goal of a PRD isn't to describe a feature. It's to make enough decisions in advance that the people implementing it can do so without interrupting the person who wrote it. A document that achieves that isn't longer or more formally structured than the one that doesn't — it's just more specific about the things engineers actually need answered. That specificity is the whole job.</p>
-<p>The Slack thread that doesn't happen is invisible. Nobody tracks the questions that weren't asked or the decisions that were made in the document instead of in a meeting. But the engineers reading your next PRD will know, within the first three sections, whether this one was written for them.</p><p>If you're starting from an AI-assisted draft, <a href="https://novakit.tech/blog/how-to-write-a-prd-with-ai">how to write a PRD with AI</a> covers the scaffolding approach that precedes this level of calibration.</p><p>The next piece most people tackle from here is <a href="https://novakit.tech/blog/pitch-deck-narrative">a pitch narrative investors actually follow</a>.</p>
+<p>The Slack thread that doesn't happen is invisible. Nobody tracks the questions that weren't asked or the decisions that were made in the document instead of in a meeting. But the engineers reading your next PRD will know, within the first three sections, whether this one was written for them.</p><p>If you're starting from an AI-assisted draft, <a href="https://novakit.tech/blog/how-to-write-a-prd-with-ai">how to write a PRD with AI</a> covers the scaffolding approach that precedes this level of calibration.</p>
 <div class="soft-cta">
 <div class="soft-cta-left">
 <div class="soft-cta-kicker">Ready to try it?</div>
@@ -420,9 +419,6 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 <span class="soft-cta-price">$15 · instant download · 7-day refund</span>
 </div>
 </div>
-<!-- nk-ilink-cta -->
-<p><strong>Put this to work:</strong> the <a href="https://novakit.tech/skills/prd-writer">AI PRD Writer skill for Claude</a> turns everything above into one guided workflow you run in a normal Claude chat. Not ready to buy? <a href="https://novakit.tech/free">Start with a free Claude skill</a> and see how it works first.</p>
-<!-- /nk-ilink-cta -->
 <!-- nk-ilink-pair --><p><strong>Related reading:</strong> <a href="https://novakit.tech/blog/prd-writer">The PRD That Makes Your Engineers Stop Asking Questions</a></p><!-- /nk-ilink-pair -->
 <div class="post-tags">
 <span class="tags-label">Tags</span>
