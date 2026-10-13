@@ -6,6 +6,15 @@
 <title>novakit.realestate: WhatsApp Listing Writer for Agents</title>
 <meta name="description" content="Send a few lines, a photo or a Hindi or English voice note on WhatsApp and get a RERA-checked property listing back. Solo plan from ₹2,999 a month.">
 <link href="https://novakit.tech/realestate/" rel="canonical"/>
+<meta property="og:type" content="website">
+<meta property="og:title" content="novakit.realestate: WhatsApp Listing Writer for Agents">
+<meta property="og:description" content="Send a few lines, a photo or a Hindi or English voice note on WhatsApp and get a RERA-checked property listing back.">
+<meta property="og:url" content="https://novakit.tech/realestate/">
+<meta property="og:image" content="https://novakit.tech/assets/og-realestate.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://novakit.tech/assets/og-realestate.jpg">
 <link href="../assets/favicon.jpg?v=2024" rel="icon" type="image/jpeg"/>
 <link href="/favicon.ico?v=2024" rel="icon" type="image/x-icon"/>
 <link href="../assets/favicon.jpg?v=2024" rel="apple-touch-icon"/>
@@ -32,7 +41,7 @@
       "name": "Does NovaKit ever make up details in a listing?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. If you don't mention the carpet area, the floor, or the price, it asks you for that instead of guessing a number that sounds plausible. Every listing it writes only uses facts you actually sent it — nothing is filled in from a general sense of what a similar property might have."
+        "text": "No. If you don't mention the carpet area, the floor, or the price, it asks you for that instead of guessing a number that sounds plausible. Every listing it writes only uses facts you actually sent it — nothing is filled in from what similar properties usually have."
       }
     },
     {
@@ -54,7 +63,26 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "novakit.realestate in 48 seconds: a property listing on WhatsApp",
+  "description": "Send a few lines, a photo or a Hindi or English voice note to one WhatsApp number and get a ready-to-post, RERA-checked property listing back.",
+  "thumbnailUrl": "https://novakit.tech/assets/video/poster-16x9.jpg",
+  "uploadDate": "2026-10-13",
+  "duration": "PT48S",
+  "contentUrl": "https://novakit.tech/assets/video/novakit-realestate-16x9.mp4",
+  "embedUrl": "https://novakit.tech/realestate/"
+}
+</script>
 <style>
+/* ── Demo video ── */
+@media(max-width:520px){.nav-wa{display:none;}}
+.vid-wrap{margin-top:28px;}
+.vid{width:100%;display:block;border-radius:14px;border:1px solid var(--border);background:#111;}
+.vid-tall{display:none;max-width:340px;margin:0 auto;}
+@media(max-width:768px){.vid-wide{display:none;}.vid-tall{display:block;}}
 /* ── Phone demo (kits-only) ──────────────────────────────────────────────── */
 .hero{padding-top:44px !important;align-items:start !important;}
 .phone-col{display:flex;flex-direction:column;align-items:center;gap:12px;align-self:start;margin-top:0;}
@@ -220,11 +248,16 @@
 .sm-success p{font-size:14px;color:var(--muted);line-height:1.55;}
 
 /* hero sub text */
+.hero-problem{font-size:15px;color:var(--muted);line-height:1.6;max-width:46ch;margin-bottom:16px;}
 .hero-sub-text{font-size:17px;color:var(--muted);margin-bottom:28px;line-height:1.7;max-width:44ch;}
 .hero-hinglish{font-size:15px;font-weight:600;color:var(--accent);margin-bottom:28px;font-family:'Geist Mono',monospace;}
 .hero-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;}
 
 @media(max-width:768px){
+  .hero>div{min-width:0;}
+  .demo-tabs{max-width:100%;overflow-x:auto;}
+  .demo-tab{padding:6px 10px;font-size:11.5px;}
+  .footer-links{flex-wrap:wrap;}
   .phone{width:100%;max-width:360px;}
   .demo-steps{grid-template-columns:1fr 1fr;}
   .feat-grid{grid-template-columns:1fr;}
@@ -254,7 +287,7 @@
   </div>
   <div class="nav-right">
     <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">☀️</button>
-    <a href="#try" class="btn btn-primary">Try free</a>
+    <a href="#try" class="btn btn-primary" onclick="openSignupModal('trial');return false;">Start free<span class="nav-wa"> on WhatsApp</span></a>
   </div>
 </nav>
 
@@ -262,11 +295,12 @@
 <div class="hero">
   <div>
     <div class="hero-eyebrow"><span class="live-dot"></span>Made for Indian real estate agents</div>
+    <p class="hero-problem">Writing every listing by hand takes far longer than the site visit did, and one careless line can break a RERA rule.</p>
     <h1>Write your listing<br>on WhatsApp.<br><em>Ready in seconds.</em></h1>
-    <p class="hero-sub-text">Type a few details, or just send a voice note in Hindi or English. You get back a ready-to-post listing — same WhatsApp you already have open, no new app to download.</p>
+    <p class="hero-sub-text">Type a few details, or send a voice note in Hindi or English. You get a ready-to-post listing back, checked against RERA, in the WhatsApp you already have open. No new app to download.</p>
     <p class="hero-hinglish">Bas bhejo. Kaam ho gaya.</p>
     <div class="hero-ctas">
-      <a href="#try" class="btn btn-primary btn-lg">
+      <a href="#try" class="btn btn-primary btn-lg" onclick="openSignupModal('trial');return false;">
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 20l1.65-4.94A9 9 0 1 1 8 17.35L3 20z"/></svg>
         Start free on WhatsApp
       </a>
@@ -308,6 +342,22 @@
   </div>
 </div>
 
+<!-- DEMO VIDEO -->
+<div class="page-section" id="video">
+  <div class="page-inner-narrow">
+    <div class="section-eyebrow">See it work</div>
+    <h2 class="section-title">48 seconds.<br><em>One WhatsApp number.</em></h2>
+    <div class="vid-wrap">
+      <video class="vid vid-wide" controls playsinline preload="none" poster="/assets/video/poster-16x9.jpg" aria-label="novakit.realestate demo video">
+        <source src="/assets/video/novakit-realestate-16x9.mp4" type="video/mp4">
+      </video>
+      <video class="vid vid-tall" controls playsinline preload="none" poster="/assets/video/poster-9x16.jpg" aria-label="novakit.realestate demo video">
+        <source src="/assets/video/novakit-realestate-9x16.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
 <!-- HOW IT WORKS -->
 <div class="page-section alt" id="how">
   <div class="page-inner">
@@ -323,7 +373,7 @@
       <div class="demo-step" id="step-image" onclick="switchDemo('image', document.querySelectorAll('.demo-tab')[1])">
         <div class="step-icon">📸</div>
         <h4>Send a photo <span class="step-tag">Studio</span></h4>
-        <p>Send a photo of the house → it tells you what it can see, and asks you for anything it can't.</p>
+        <p>Send a photo of the house → it describes what's visible and asks you for anything it can't determine.</p>
       </div>
       <div class="demo-step" id="step-voice" onclick="switchDemo('voice', document.querySelectorAll('.demo-tab')[2])">
         <div class="step-icon">🎤</div>
@@ -349,7 +399,7 @@
       <div class="ct-row"><div>What matters</div><div>ChatGPT or a general AI app</div><div>NovaKit</div></div>
       <div class="ct-row"><div>Where you use it</div><div>Leave WhatsApp, open another app, come back and paste</div><div>The same WhatsApp that's already open</div></div>
       <div class="ct-row"><div>Speaking in Hindi</div><div>Hit or miss with an Indian accent</div><div>Understands Hindi, English, and the mix most people actually speak</div></div>
-      <div class="ct-row"><div>A detail you didn't give</div><div>Guesses something that sounds right</div><div>Asks you for it instead of making it up</div></div>
+      <div class="ct-row"><div>A detail you didn't give</div><div>Fills the gap with a guess</div><div>Asks you for it instead of making it up</div></div>
       <div class="ct-row"><div>RERA and other rules</div><div>Doesn't know them unless you remind it every time</div><div>Checks every listing against RERA before it's sent</div></div>
       <div class="ct-row"><div>Your writing style</div><div>Forgets it the moment you start a new chat</div><div>Tell it once — it keeps using it after</div></div>
     </div>
@@ -361,7 +411,7 @@
       </div>
       <div class="kfaq-item">
         <h3 class="kfaq-q">Does NovaKit ever make up details in a listing?</h3>
-        <p class="kfaq-a">No. If you don't mention the carpet area, the floor, or the price, it asks you for that instead of guessing a number that sounds plausible. Every listing it writes only uses facts you actually sent it — nothing is filled in from a general sense of what a similar property might have.</p>
+        <p class="kfaq-a">No. If you don't mention the carpet area, the floor, or the price, it asks you for that instead of guessing a number that sounds plausible. Every listing it writes only uses facts you actually sent it — nothing is filled in from what similar properties usually have.</p>
       </div>
       <div class="kfaq-item">
         <h3 class="kfaq-q">Is NovaKit compliant with RERA?</h3>
@@ -391,8 +441,7 @@
           <li>Objection handler for buyer replies</li>
         </ul>
         <div class="plan-cta-row">
-          <a href="#try" class="btn btn-ghost plan-cta">Start Free Trial</a>
-          <button type="button" class="btn btn-primary plan-cta" onclick="openSignupModal('buy')">Buy Now</button>
+          <button type="button" class="btn btn-ghost plan-cta" onclick="openSignupModal('buy')">Buy Solo — ₹2,999/month</button>
         </div>
       </div>
       <div class="plan studio disabled">
@@ -430,7 +479,7 @@
       <div class="feat"><span class="tag">Solo + Studio</span><h3>Voice notes</h3><p>Speak it instead of typing it, in Hindi or English. You confirm before anything is sent.</p></div>
       <div class="feat"><span class="tag">Solo + Studio</span><h3>Objection handler</h3><p>Buyer says the price is too high, or wants to think about it — it drafts a reply based on the property's real facts.</p></div>
       <div class="feat"><span class="tag">Studio</span><h3>More formats, one listing</h3><p>The same property written for WhatsApp, Instagram, property portals, SMS, email and Facebook — not just retyped for each one.</p></div>
-      <div class="feat"><span class="tag">Studio</span><h3>Photos as input</h3><p>Send up to 6 photos of the property. It describes what's actually visible and asks for anything it can't see — never guesses.</p></div>
+      <div class="feat"><span class="tag">Studio</span><h3>Photos as input</h3><p>Send up to 6 photos of the property. It describes what's visible and asks for anything it can't see.</p></div>
       <div class="feat"><span class="tag">Studio</span><h3>Email and social follow-ups</h3><p>A 6-email drip sequence and a 30-day social posting plan, both delivered to you as WhatsApp messages you paste and send yourself.</p></div>
     </div>
   </div>
@@ -446,7 +495,7 @@
       <div class="cta-btns">
         <button type="button" class="btn btn-primary btn-lg" onclick="openSignupModal('trial')">
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 20l1.65-4.94A9 9 0 1 1 8 17.35L3 20z"/></svg>
-          Shuru Karo — Start Free
+          Start free on WhatsApp
         </button>
       </div>
     </div>
@@ -516,7 +565,7 @@
           <input class="sm-input" id="sm-email" type="email" placeholder="owner@example.com" autocomplete="email" required>
           <div class="sm-error-msg" id="sm-email-err"></div>
         </div>
-        <button type="submit" class="sm-submit" id="sm-submit">Start Free Trial</button>
+        <button type="submit" class="sm-submit" id="sm-submit">Start free on WhatsApp</button>
         <div class="sm-fine">No spam · Cancel any time</div>
       </form>
     </div>
@@ -554,7 +603,7 @@ const DEMOS = {
       { delay: 400,  type: 'img-in' },
       { delay: 1000, type: 'typing' },
       { delay: 2800, type: 'remove-typing' },
-      { delay: 2900, type: 'out',  content: '<b>I can see:</b> marble flooring, large windows, false ceiling, good daylight.\n\nTo write the listing I still need:\n① Carpet area in sq ft\n② Floor number\n③ Asking price\n\nSend those and I\'ll have the full copy ready — I won\'t guess the rest.' },
+      { delay: 2900, type: 'out',  content: '<b>Visible in the photo:</b> marble flooring, large windows, false ceiling, good daylight.\n\nTo write the listing I still need:\n① Carpet area in sq ft\n② Floor number\n③ Asking price\n\nSend those and I\'ll write the full copy — I won\'t guess the rest.' },
       { delay: 3100, type: 'meta',  content: 'Never invents what it can\'t see' },
     ]
   },
@@ -577,7 +626,7 @@ const DEMOS = {
       { delay: 1000, type: 'in',   content: 'TONE luxury' },
       { delay: 1500, type: 'typing' },
       { delay: 2800, type: 'remove-typing' },
-      { delay: 2900, type: 'out',  content: '<b>The Sea, Every Morning.</b>\nA 3BHK in Andheri West built around one thing: waking up to the Arabian Sea. 1,450 sq ft carpet, dead sea-facing, floor-to-ceiling glazing through the living room, and a wraparound balcony for evenings that don\'t need an agenda.\n\n📐 1,450 sq ft · 💰 ₹4.2 Cr\n✨ Unobstructed Arabian Sea frontage\n✨ Floor-to-ceiling glazing, wraparound balcony\n<span class="badge">✓ Only what you sent — nothing added</span>' },
+      { delay: 2900, type: 'out',  content: '<b>The Sea, Every Morning.</b>\nA 3BHK in Andheri West built around one thing: waking up to the Arabian Sea. 1,450 sq ft carpet, dead sea-facing, floor-to-ceiling glazing through the living room, and a wraparound balcony for evenings that don\'t need an agenda.\n\n📐 1,450 sq ft · 💰 ₹4.2 Cr\n✨ Unobstructed Arabian Sea frontage\n<span class="badge">✓ Only what you sent — nothing added</span>' },
       { delay: 3300, type: 'meta',  content: 'Same facts, same price — just said differently' },
     ]
   }
@@ -661,7 +710,7 @@ function openSignupModal(mode) {
   } else {
     heading.innerHTML = 'Start your <em>free trial.</em>';
     sub.textContent = '7 days or 10 listings, whichever comes first. No credit card.';
-    submitBtn.textContent = 'Start Free Trial';
+    submitBtn.textContent = 'Start free on WhatsApp';
   }
 
   document.getElementById('sm-form-wrap').style.display = 'block';

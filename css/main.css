@@ -284,7 +284,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--bg);border-bottom:1px sol
 /* ── FOOTER ── */
 footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
 .footer-left{font-size:13px;color:var(--muted);}
-.footer-links{display:flex;gap:22px;}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;}
 .footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
 .footer-links a:hover{color:var(--text);}
 .footer-social{display:flex;gap:14px;align-items:center;}
