@@ -17,7 +17,7 @@ const RANGES = {
 export async function onRequestGet({ request, env }) {
   // Simple secret header protection — set METRICS_SECRET in wrangler.jsonc vars
   const secret = request.headers.get('x-metrics-secret');
-  if (env.METRICS_SECRET && secret !== env.METRICS_SECRET) {
+  if (!env.METRICS_SECRET || secret !== env.METRICS_SECRET) {
     return new Response('Forbidden', { status: 403 });
   }
 

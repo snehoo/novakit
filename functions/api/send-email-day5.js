@@ -1,3 +1,4 @@
+import { isInternal } from './_internal.js';
 // functions/api/send-email-day5.js
 // Day 5 post-purchase email — All Access pitch.
 // Called by email-sequence-cron.js
@@ -15,6 +16,9 @@ export async function onRequestOptions() {
 }
 
 export async function onRequestPost({ request, env }) {
+  if (!(await isInternal(request, env))) {
+    return new Response('Unauthorized', { status: 401, headers: CORS });
+  }
   let body;
   try { body = await request.json(); } catch {
     return new Response('Bad JSON', { status: 400, headers: CORS });

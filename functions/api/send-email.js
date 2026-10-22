@@ -1,4 +1,6 @@
 // functions/api/send-email.js
+import { getClient } from '../_db.js';
+import { isInternal } from './_internal.js';
 // POST /api/send-email
 // Body: { to, skillName, skillSlug, fileUrls, isBundle, bundleKey, orderId }
 //
@@ -21,7 +23,37 @@ export async function onRequestPost({ request, env }) {
     return new Response('Bad JSON', { status: 400, headers: CORS });
   }
 
-  const { to, skillName, skillSlug, fileUrls, isBundle, orderId } = body;
+  let { to, skillName, skillSlug, fileUrls, isBundle, orderId } = body;
+
+  // Internal callers (cron/webhook) are trusted. Public callers (delivery page
+  // fallback) must reference a paid order for this exact address, and the skill
+  // name is taken from the DB; file links may only point at our asset host.
+  if (!(await isInternal(request, env))) {
+    let ok = false;
+    try {
+      if (typeof orderId === 'string' && typeof to === 'string') {
+        const client = await getClient(env);
+        try {
+          const { rows } = await client.query(
+            `SELECT o.buyer_email, s.name FROM orders o LEFT JOIN skills s ON s.slug = o.skill_slug
+             WHERE o.status = 'paid' AND (o.id::text = $1 OR o.razorpay_payment_id = $1) LIMIT 1`,
+            [orderId]
+          );
+          const r = rows[0];
+          if (r && r.buyer_email && r.buyer_email.toLowerCase().trim() === to.toLowerCase().trim()) {
+            ok = true;
+            if (r.name) skillName = r.name;
+          }
+        } finally { await client.end(); }
+      }
+    } catch (e) { ok = false; }
+    const urlsOk = Array.isArray(fileUrls) && fileUrls.length > 0 &&
+      fileUrls.every(u => typeof u === 'string' && u.startsWith('https://assets.novakit.tech/'));
+    if (!ok || !urlsOk) {
+      return new Response('Unauthorized', { status: 401, headers: CORS });
+    }
+  }
+
   if (!to || !skillName || !fileUrls?.length) {
     return new Response('Missing required fields', { status: 400, headers: CORS });
   }

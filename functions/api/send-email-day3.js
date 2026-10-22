@@ -1,3 +1,4 @@
+import { isInternal } from './_internal.js';
 // functions/api/send-email-day3.js
 // Day 3 post-purchase email — before/after cross-sell.
 // Shows a concrete output comparison and surfaces one complementary skill.
@@ -38,6 +39,9 @@ const CROSS_SELL = {
 const DEFAULT_CROSS_SELL = { slug: 'content-calendar', name: 'Content Calendar', price: '$8', pitch: 'Plan 30 days of AI-assisted content in one session.' };
 
 export async function onRequestPost({ request, env }) {
+  if (!(await isInternal(request, env))) {
+    return new Response('Unauthorized', { status: 401, headers: CORS });
+  }
   let body;
   try { body = await request.json(); } catch {
     return new Response('Bad JSON', { status: 400, headers: CORS });

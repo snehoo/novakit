@@ -1,3 +1,4 @@
+import { isInternal } from './_internal.js';
 // functions/api/send-email-day7.js
 // CHANGES vs previous version:
 //   - Accepts `orderUuid` in body
@@ -172,6 +173,9 @@ function buildDay7Html({ skillName, skillSlug, bundle, orderId, feedbackUrl }) {
 }
 
 export async function onRequestPost({ request, env }) {
+  if (!(await isInternal(request, env))) {
+    return new Response('Unauthorized', { status: 401, headers: CORS });
+  }
   let body;
   try { body = await request.json(); } catch {
     return new Response('Bad JSON', { status: 400, headers: CORS });

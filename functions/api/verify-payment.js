@@ -53,9 +53,10 @@ export async function onRequestPost({ request, env, ctx }) {
     });
   }
 
-  // 1. Verify signature (skip if no payment link params — direct API payment)
-  if (signature && paymentLinkId) {
-    const valid = await verifySignature(env, paymentLinkId, paymentLinkRefId || '', paymentLinkStatus || 'paid', paymentId, signature);
+  // 1. Signature is mandatory (proves the payment link redirect is genuine).
+  {
+    const valid = !!(signature && paymentLinkId) &&
+      await verifySignature(env, paymentLinkId, paymentLinkRefId || '', paymentLinkStatus || 'paid', paymentId, signature);
     if (!valid) {
       return new Response(JSON.stringify({ error: 'Invalid signature' }), {
         status: 403, headers: { 'Content-Type': 'application/json', ...CORS }
@@ -105,6 +106,13 @@ export async function onRequestPost({ request, env, ctx }) {
     }
 
     const skill = skillRows[0];
+
+    // The charged amount must cover the skill the client claims (sku is client-supplied).
+    if (payment.currency === 'USD' && Number(payment.amount) < Number(skill.price_cents)) {
+      return new Response(JSON.stringify({ error: 'Payment amount does not match this product' }), {
+        status: 403, headers: { 'Content-Type': 'application/json', ...CORS }
+      });
+    }
 
     // 4. Check if order already exists (re-visit of delivery page)
     const { rows: existingOrder } = await client.query(

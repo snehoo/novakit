@@ -9,6 +9,7 @@
 //   4 → [Day 14] → 5
 
 import { getClient } from '../_db.js';
+import { internalHeaders } from './_internal.js';
 
 export async function scheduled(event, env, ctx) {
   ctx.waitUntil(runSequence(env));
@@ -17,7 +18,10 @@ export async function scheduled(event, env, ctx) {
 export async function onRequestGet({ env }) {
   try {
     const result = await runSequence(env);
-    return new Response(JSON.stringify(result), {
+    // Counts only: the detailed log contains buyer emails and must not be public.
+    const counts = {};
+    for (const [k, v] of Object.entries(result || {})) counts[k] = Array.isArray(v) ? v.length : v;
+    return new Response(JSON.stringify(counts), {
       status: 200,
       headers: { 'Content-Type': 'application/json' }
     });
@@ -56,7 +60,7 @@ async function runSequence(env) {
 
         const res = await fetch(`${baseUrl}/api/send-email-day2`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: await internalHeaders(env),
           body: JSON.stringify({
             to: order.buyer_email, skillName,
             skillSlug: order.skill_slug,
@@ -96,7 +100,7 @@ async function runSequence(env) {
 
         const res = await fetch(`${baseUrl}/api/send-email-day3`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: await internalHeaders(env),
           body: JSON.stringify({
             to: order.buyer_email, skillName,
             skillSlug: order.skill_slug,
@@ -135,7 +139,7 @@ async function runSequence(env) {
 
         const res = await fetch(`${baseUrl}/api/send-email-day5`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: await internalHeaders(env),
           body: JSON.stringify({
             to: order.buyer_email, skillName,
             orderId: order.razorpay_payment_id,
@@ -175,7 +179,7 @@ async function runSequence(env) {
 
         const res = await fetch(`${baseUrl}/api/send-email-day7`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: await internalHeaders(env),
           body: JSON.stringify({
             to: order.buyer_email, skillName,
             skillSlug: order.skill_slug,

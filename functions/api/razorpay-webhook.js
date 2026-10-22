@@ -91,6 +91,7 @@ const RZP_SHORT_TO_SKU = {
 };
 
 async function verifyRazorpaySignature(rawBody, signature, secret) {
+  if (!secret || !/^[0-9a-f]{64}$/i.test(signature)) return false;
   const key = await crypto.subtle.importKey(
     'raw',
     new TextEncoder().encode(secret),
