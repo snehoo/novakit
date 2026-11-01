@@ -473,8 +473,8 @@ let bumpChecked  = false;
 if(!sku.endsWith('-bundle') && sku !== 'all-access'){
   const bundleEntry = Object.entries(window.NK_PRODUCTS).find(([slug, p]) => {
     return slug.endsWith('-bundle') &&
-           Array.isArray(p.fileUrls) &&
-           p.fileUrls.some(url => url === skill.fileUrl);
+           Array.isArray(p.includes) &&
+           p.includes.includes(skill.name);
   });
   if(bundleEntry){
     const [bSlug, bundle] = bundleEntry;
@@ -494,7 +494,7 @@ if(!sku.endsWith('-bundle') && sku !== 'all-access'){
     document.getElementById('ob-title').textContent =
       'Yes — upgrade to the ' + bundle.name + ' ($' + bundle.price + ' total)';
     document.getElementById('ob-sub').textContent =
-      'Get ' + (bundle.fileUrls ? bundle.fileUrls.length : 'all') + ' skills for $' + bundle.price +
+      'Get ' + (bundle.includes ? bundle.includes.length : 'all') + ' skills for $' + bundle.price +
       ' — only $' + savings + ' more than you\'re paying now. One-time offer.';
     document.getElementById('order-bump').style.display = 'block';
   }

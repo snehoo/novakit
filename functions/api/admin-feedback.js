@@ -9,6 +9,7 @@
 //   recent:  [{ created_at, skill_name, rating, worked, comment, source }, ...]
 // }
 
+import { safeEqual } from './_internal.js';
 import { getClient } from '../_db.js';
 
 const CORS = {
@@ -32,7 +33,7 @@ const RANGE_DAYS = { '7d': 7, '30d': 30, '90d': 90, 'all': 3650 };
 export async function onRequestGet({ request, env }) {
   // auth — same secret as /api/metrics
   const supplied = request.headers.get('x-metrics-secret');
-  if (!env.METRICS_SECRET || supplied !== env.METRICS_SECRET) {
+  if (!env.METRICS_SECRET || !safeEqual(supplied || '', env.METRICS_SECRET)) {
     return json({ error: 'Unauthorized' }, 401);
   }
 

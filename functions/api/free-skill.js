@@ -7,6 +7,7 @@
 // 3. Fetches LinkedIn Post Engine file URL from R2
 // 4. Sends delivery email via Resend
 // Env: BREVO_API_KEY, RESEND_API_KEY, R2_BUCKET
+import { limited, tooMany } from './_ratelimit.js';
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
@@ -22,6 +23,7 @@ export async function onRequestOptions() {
 }
 
 export async function onRequestPost({ request, env }) {
+  if (await limited(env, request, 'free-skill')) return tooMany(CORS);
   let body;
   try { body = await request.json(); } catch {
     return new Response('Bad JSON', { status: 400, headers: CORS });

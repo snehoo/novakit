@@ -3,6 +3,7 @@
 // Body: { email, source, utmSource, utmMedium, utmCampaign }
 // Adds contact to Brevo list 8 (NovaKit-Leads).
 // Env: BREVO_API_KEY
+import { limited, tooMany } from './_ratelimit.js';
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
@@ -15,6 +16,7 @@ export async function onRequestOptions() {
 }
 
 export async function onRequestPost({ request, env }) {
+  if (await limited(env, request, 'subscribe')) return tooMany(CORS);
   let body;
   try { body = await request.json(); } catch {
     return new Response('Bad JSON', { status: 400, headers: CORS });

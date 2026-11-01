@@ -6,6 +6,7 @@
 //   { type: 'download', skillSlug: 'video-script-engine', orderId: '...', buyerHash: '...' }
 //   { type: 'search',   query: 'instagram caption', resultCount: 0, sessionId: '...' }
 
+import { overLimit, tooMany } from './_ratelimit.js';
 import { getClient, classifySource } from '../_db.js';
 
 const CORS = {
@@ -28,6 +29,7 @@ export async function onRequestPost({ request, env }) {
 
   const client = await getClient(env);
   try {
+    if (await overLimit(client, request, 'track')) return tooMany(CORS);
     switch (body.type) {
 
       case 'pageview': {

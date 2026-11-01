@@ -268,15 +268,8 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
     var icon = product.icon || '\u26a1';
     var type = product.type || (isBundle ? 'Bundle' : 'Individual skill');
 
-    // File URLs: use from API first, fall back to products.js
+    // File URLs come only from the API, which checks the payment first.
     var resolvedUrls = data.fileUrls || [];
-    if (!resolvedUrls.length) {
-      if (isBundle && product.fileUrls && product.fileUrls.length) {
-        resolvedUrls = product.fileUrls;
-      } else if (product.fileUrl) {
-        resolvedUrls = [product.fileUrl];
-      }
-    }
 
     $loading.style.display = 'none';
     $success.style.display = 'block';

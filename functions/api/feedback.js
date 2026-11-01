@@ -5,6 +5,7 @@
 // Token is stateless: HMAC-SHA256(FEEDBACK_SECRET, orderId) truncated to 32 hex chars.
 // Required env: FEEDBACK_SECRET
 
+import { limited, tooMany } from './_ratelimit.js';
 import { getClient } from '../_db.js';
 
 const CORS = {
@@ -87,6 +88,7 @@ export async function onRequestGet({ request, env }) {
 
 // ── POST — upsert feedback ──────────────────────────────────────────────────
 export async function onRequestPost({ request, env }) {
+  if (await limited(env, request, 'feedback')) return tooMany();
   let body;
   try { body = await request.json(); } catch { return json({ error: 'Bad JSON' }, 400); }
 

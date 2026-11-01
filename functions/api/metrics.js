@@ -5,6 +5,7 @@
 // Protect this endpoint! Add a secret header check or Cloudflare Access rule
 // so only you can read it.
 
+import { safeEqual } from './_internal.js';
 import { getClient } from '../_db.js';
 
 const RANGES = {
@@ -17,7 +18,7 @@ const RANGES = {
 export async function onRequestGet({ request, env }) {
   // Simple secret header protection — set METRICS_SECRET in wrangler.jsonc vars
   const secret = request.headers.get('x-metrics-secret');
-  if (!env.METRICS_SECRET || secret !== env.METRICS_SECRET) {
+  if (!env.METRICS_SECRET || !safeEqual(secret || '', env.METRICS_SECRET)) {
     return new Response('Forbidden', { status: 403 });
   }
 

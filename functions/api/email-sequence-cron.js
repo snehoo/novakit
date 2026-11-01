@@ -9,13 +9,23 @@
 //   4 → [Day 14] → 5
 
 import { getClient } from '../_db.js';
-import { internalHeaders } from './_internal.js';
+import { internalHeaders, safeEqual } from './_internal.js';
 
 export async function scheduled(event, env, ctx) {
   ctx.waitUntil(runSequence(env));
 }
 
-export async function onRequestGet({ env }) {
+// The scheduler (cron-job.org or similar) must send CRON_SECRET, as the
+// x-cron-secret header or ?key=. Fails closed when the secret is unset: an
+// open GET let anyone trigger the whole buyer email sequence on demand.
+export async function onRequestGet({ request, env }) {
+  const url = new URL(request.url);
+  const supplied = request.headers.get('x-cron-secret') || url.searchParams.get('key') || '';
+  if (!env.CRON_SECRET || !safeEqual(supplied, env.CRON_SECRET)) {
+    return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+      status: 401, headers: { 'Content-Type': 'application/json' }
+    });
+  }
   try {
     const result = await runSequence(env);
     // Counts only: the detailed log contains buyer emails and must not be public.

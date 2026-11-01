@@ -8,6 +8,8 @@
 // 4. Returns { skillName, fileUrls, email, orderId }
 
 import { getClient, sha256 } from '../_db.js';
+import { safeEqual } from './_internal.js';
+import { skuForShortUrl } from './_plinks.js';
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
@@ -35,7 +37,7 @@ async function verifySignature(env, paymentLinkId, paymentLinkRefId, paymentLink
   );
   const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(payload));
   const computed = Array.from(new Uint8Array(sig)).map(b => b.toString(16).padStart(2, '0')).join('');
-  return computed === signature;
+  return safeEqual(computed, String(signature || ''));
 }
 
 export async function onRequestPost({ request, env, ctx }) {
@@ -74,6 +76,30 @@ export async function onRequestPost({ request, env, ctx }) {
     payment = await res.json();
   } catch (err) {
     return new Response(JSON.stringify({ error: 'Could not fetch payment: ' + err.message }), {
+      status: 502, headers: { 'Content-Type': 'application/json', ...CORS }
+    });
+  }
+
+  // 2b. The product unlocked must be the product this payment link sells.
+  // sku is client-supplied; the old guard compared amounts for USD only, so
+  // an INR (or any non-USD) payment for the cheapest link could claim the
+  // most expensive sku. Binding the link to its sku closes it for every
+  // currency, and does not depend on prices staying in sync.
+  try {
+    const res = await fetch(`https://api.razorpay.com/v1/payment_links/${paymentLinkId}`, {
+      headers: { 'Authorization': razorpayAuth(env) }
+    });
+    if (!res.ok) throw new Error('Razorpay API error: ' + res.status);
+    const link = await res.json();
+    const linkSku = (link.notes && link.notes.skill_slug) || skuForShortUrl(link.short_url);
+    if (!linkSku || linkSku !== sku) {
+      console.warn('[verify-payment] sku mismatch', { sku, linkSku, paymentLinkId });
+      return new Response(JSON.stringify({ error: 'Payment does not match this product' }), {
+        status: 403, headers: { 'Content-Type': 'application/json', ...CORS }
+      });
+    }
+  } catch (err) {
+    return new Response(JSON.stringify({ error: 'Could not verify payment link: ' + err.message }), {
       status: 502, headers: { 'Content-Type': 'application/json', ...CORS }
     });
   }
@@ -126,12 +152,12 @@ export async function onRequestPost({ request, env, ctx }) {
       `INSERT INTO orders
          (razorpay_order_id, razorpay_payment_id, buyer_hash, buyer_email,
           skill_slug, bundle_key, amount_cents, currency, status, paid_at)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, 'USD', 'paid', NOW())
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, 'paid', NOW())
        ON CONFLICT (razorpay_order_id) DO UPDATE
          SET razorpay_payment_id = EXCLUDED.razorpay_payment_id,
              buyer_email = EXCLUDED.buyer_email,
              status = 'paid'`,
-      [paymentId, paymentId, buyerHash, buyerEmail, sku, skill.bundle_key, amountCents]
+      [paymentId, paymentId, buyerHash, buyerEmail, sku, skill.bundle_key, amountCents, payment.currency || 'USD']
     );
 
     // 6. Only update buyer stats for new orders
@@ -148,9 +174,38 @@ export async function onRequestPost({ request, env, ctx }) {
     }
 
     
+    // 6b. Resolve file URLs BEFORE the emails that use them. They were
+    // resolved after; `fileUrls` in the buyer email hit the `let` before its
+    // declaration, threw, and the first delivery-page load returned 500.
+    let fileUrls = [];
+
+    if (isBundle) {
+      // Get all skills in this bundle
+      const { rows: bundleSkills } = await client.query(
+        `SELECT slug FROM skills WHERE bundle_key = $1 AND category != 'Bundle'`,
+        [sku]
+      );
+      for (const s of bundleSkills) {
+        const listed = await env.R2_BUCKET.list({ prefix: `skill/nk-${s.slug}-` });
+        for (const obj of listed.objects) {
+          fileUrls.push(`https://assets.novakit.tech/${obj.key}`);
+        }
+      }
+    } else {
+      const listed = await env.R2_BUCKET.list({ prefix: `skill/nk-${sku}-` });
+      for (const obj of listed.objects) {
+        fileUrls.push(`https://assets.novakit.tech/${obj.key}`);
+      }
+    }
+
+    // Fallback: use fileUrl from products data pattern if R2 list returns nothing
+    if (!fileUrls.length) {
+      fileUrls = [`https://assets.novakit.tech/skill/nk-${sku}.skill`];
+    }
+
     // 7. Notify seller of new sale, fire-and-forget
     if (isNewOrder && env.RESEND_API_KEY) {
-      const amountDisplay = '$' + (amountCents / 100).toFixed(2);
+      const amountDisplay = (payment.currency === 'INR' ? '₹' : payment.currency === 'USD' ? '$' : (payment.currency || '') + ' ') + (amountCents / 100).toFixed(2);
       fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${env.RESEND_API_KEY}` },
@@ -241,33 +296,6 @@ export async function onRequestPost({ request, env, ctx }) {
       [paymentId]
     );
     const orderId = orderRows[0]?.id;
-
-    // 9. Get file URLs for this skill/bundle
-    let fileUrls = [];
-
-    if (isBundle) {
-      // Get all skills in this bundle
-      const { rows: bundleSkills } = await client.query(
-        `SELECT slug FROM skills WHERE bundle_key = $1 AND category != 'Bundle'`,
-        [sku]
-      );
-      for (const s of bundleSkills) {
-        const listed = await env.R2_BUCKET.list({ prefix: `skill/nk-${s.slug}-` });
-        for (const obj of listed.objects) {
-          fileUrls.push(`https://assets.novakit.tech/${obj.key}`);
-        }
-      }
-    } else {
-      const listed = await env.R2_BUCKET.list({ prefix: `skill/nk-${sku}-` });
-      for (const obj of listed.objects) {
-        fileUrls.push(`https://assets.novakit.tech/${obj.key}`);
-      }
-    }
-
-    // Fallback: use fileUrl from products data pattern if R2 list returns nothing
-    if (!fileUrls.length) {
-      fileUrls = [`https://assets.novakit.tech/skill/nk-${sku}.skill`];
-    }
 
     return new Response(JSON.stringify({
       ok: true,
