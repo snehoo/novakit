@@ -8,6 +8,7 @@
 // 4. Sends delivery email via Resend
 // Env: BREVO_API_KEY, RESEND_API_KEY, R2_BUCKET
 import { limited, tooMany } from './_ratelimit.js';
+import { signedUrl } from './_files.js';
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
@@ -59,18 +60,19 @@ export async function onRequestPost({ request, env }) {
     }).catch(e => console.warn('[brevo] free-skill lead sync failed:', e.message));
   }
 
-  // 2. Get skill file URL from R2
+  // 2. Signed download link (the bucket is private). "free" skips the order
+  // check; the link still only opens this one file.
   let fileUrl = '';
   try {
     const listed = await env.R2_BUCKET.list({ prefix: `skill/nk-${FREE_SKILL_SLUG}` });
-    if (listed.objects.length > 0) {
-      fileUrl = `https://assets.novakit.tech/${listed.objects[0].key}`;
-    }
+    const key = listed.objects[0]?.key || `skill/nk-${FREE_SKILL_SLUG}.skill`;
+    fileUrl = await signedUrl(env, 'free', key);
   } catch (e) {
-    console.warn('[free-skill] R2 list error:', e.message);
+    console.warn('[free-skill] link error:', e.message);
+    return new Response(JSON.stringify({ error: 'Could not prepare your download — please try again.' }), {
+      status: 503, headers: { 'Content-Type': 'application/json', ...CORS }
+    });
   }
-  // Fallback if R2 list fails
-  if (!fileUrl) fileUrl = `https://assets.novakit.tech/skill/nk-${FREE_SKILL_SLUG}.skill`;
 
   // 3. Send delivery email via Resend
   if (!env.RESEND_API_KEY) {

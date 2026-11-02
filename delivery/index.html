@@ -291,7 +291,7 @@ code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;font-si
       btns.innerHTML = '<a href="' + resolvedUrls[0] + '" download="' + fname + '.skill" class="download-btn"><span class="download-btn-name">⬇ Download ' + skillName + '.skill</span><span class="download-btn-arrow">↓</span></a>';
     } else {
       btns.innerHTML = resolvedUrls.map(function(url, i) {
-        var fn = url.split('/').pop().replace('nk-','').replace(/-[a-f0-9]+\.skill$/,'.skill');
+        var fn = decodeURIComponent(url.split('?')[0].split('/').pop()).replace('nk-','').replace(/-[a-f0-9]+\.skill$/,'.skill');
         return '<a href="' + url + '" download class="download-btn ' + (i > 0 ? 'secondary' : '') + '"><span class="download-btn-name">⬇ ' + fn + '</span><span class="download-btn-arrow">↓</span></a>';
       }).join('');
     }

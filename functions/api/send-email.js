@@ -48,7 +48,7 @@ export async function onRequestPost({ request, env }) {
       }
     } catch (e) { ok = false; }
     const urlsOk = Array.isArray(fileUrls) && fileUrls.length > 0 &&
-      fileUrls.every(u => typeof u === 'string' && u.startsWith('https://assets.novakit.tech/'));
+      fileUrls.every(u => typeof u === 'string' && u.startsWith('https://novakit.tech/api/download/'));
     if (!ok || !urlsOk) {
       return new Response('Unauthorized', { status: 401, headers: CORS });
     }
@@ -60,10 +60,7 @@ export async function onRequestPost({ request, env }) {
 
   // Build file links HTML
   const fileLinksHtml = fileUrls.map(url => {
-    const filename = url.split('/').pop();
-    const displayName = filename
-      .replace('nk-', '')
-      .replace(/(-[a-f0-9]+\.skill)$/, '.skill');
+    const displayName = decodeURIComponent(url.split('?')[0].split('/').pop());
     return `<a href="${url}" style="display:inline-block;margin:8px 0;padding:12px 20px;background:#DE7356;color:#ffffff;text-decoration:none;border-radius:8px;font-weight:600;font-size:14px;">⬇ Download ${displayName}</a>`;
   }).join('\n');
 

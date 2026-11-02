@@ -12,6 +12,7 @@
 import { getClient, sha256 } from '../_db.js';
 
 import { RZP_SHORT_TO_SKU } from './_plinks.js';
+import { signedUrlsForOrder } from './_files.js';
 
 async function verifyRazorpaySignature(rawBody, signature, secret) {
   if (!secret || !/^[0-9a-f]{64}$/i.test(signature)) return false;
@@ -154,27 +155,12 @@ export async function onRequestPost({ request, env }) {
 
         // Send delivery email to buyer
         if (buyerEmail && env.RESEND_API_KEY && skillSlug) {
-          // Get file URLs from R2
+          // Signed /api/download links tied to this payment (bucket is private).
           let fileUrls = [];
           try {
-            const isBundle = skillSlug.endsWith('-bundle') || skillSlug === 'all-access';
-            if (isBundle) {
-              const { rows: bundleSkills } = await client.query(
-                `SELECT slug FROM skills WHERE bundle_key = $1 AND category != 'Bundle'`,
-                [skillSlug]
-              );
-              for (const s of bundleSkills) {
-                const listed = await env.R2_BUCKET.list({ prefix: `skill/nk-${s.slug}-` });
-                for (const obj of listed.objects) fileUrls.push(`https://assets.novakit.tech/${obj.key}`);
-              }
-            } else {
-              const listed = await env.R2_BUCKET.list({ prefix: `skill/nk-${skillSlug}-` });
-              for (const obj of listed.objects) fileUrls.push(`https://assets.novakit.tech/${obj.key}`);
-            }
-            if (!fileUrls.length) fileUrls = [`https://assets.novakit.tech/skill/nk-${skillSlug}.skill`];
+            fileUrls = await signedUrlsForOrder(env, client, payment.id, skillSlug);
           } catch (e) {
-            console.warn('[webhook] R2 list error:', e.message);
-            fileUrls = [`https://assets.novakit.tech/skill/nk-${skillSlug}.skill`];
+            console.warn('[webhook] file link error:', e.message);
           }
 
           const { rows: skillNameRows } = await client.query(

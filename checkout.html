@@ -393,7 +393,7 @@ if (rzpPaymentId) {
     // Build download buttons
     var fileUrls = data.fileUrls || [];
     var dlButtons = fileUrls.map(function(url) {
-      var fname = url.split('/').pop();
+      var fname = decodeURIComponent(url.split('?')[0].split('/').pop());
       return '<a class="dl-btn" href="' + url + '" download="' + fname + '" target="_blank">' +
         '<span class="dl-name">⬇ ' + fname + '</span>' +
         '<span class="dl-arrow">↓</span></a>';

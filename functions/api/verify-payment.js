@@ -10,6 +10,7 @@
 import { getClient, sha256 } from '../_db.js';
 import { safeEqual } from './_internal.js';
 import { skuForShortUrl } from './_plinks.js';
+import { signedUrlsForOrder } from './_files.js';
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
@@ -174,34 +175,11 @@ export async function onRequestPost({ request, env, ctx }) {
     }
 
     
-    // 6b. Resolve file URLs BEFORE the emails that use them. They were
-    // resolved after; `fileUrls` in the buyer email hit the `let` before its
-    // declaration, threw, and the first delivery-page load returned 500.
-    let fileUrls = [];
-
-    if (isBundle) {
-      // Get all skills in this bundle
-      const { rows: bundleSkills } = await client.query(
-        `SELECT slug FROM skills WHERE bundle_key = $1 AND category != 'Bundle'`,
-        [sku]
-      );
-      for (const s of bundleSkills) {
-        const listed = await env.R2_BUCKET.list({ prefix: `skill/nk-${s.slug}-` });
-        for (const obj of listed.objects) {
-          fileUrls.push(`https://assets.novakit.tech/${obj.key}`);
-        }
-      }
-    } else {
-      const listed = await env.R2_BUCKET.list({ prefix: `skill/nk-${sku}-` });
-      for (const obj of listed.objects) {
-        fileUrls.push(`https://assets.novakit.tech/${obj.key}`);
-      }
-    }
-
-    // Fallback: use fileUrl from products data pattern if R2 list returns nothing
-    if (!fileUrls.length) {
-      fileUrls = [`https://assets.novakit.tech/skill/nk-${sku}.skill`];
-    }
+    // 6b. Resolve file links BEFORE the emails that use them (they were
+    // resolved after; `fileUrls` hit the `let` before its declaration and the
+    // first delivery-page load returned 500). Signed /api/download links: the
+    // bucket is private, and each link is tied to this order.
+    const fileUrls = await signedUrlsForOrder(env, client, paymentId, sku);
 
     // 7. Notify seller of new sale, fire-and-forget
     if (isNewOrder && env.RESEND_API_KEY) {
