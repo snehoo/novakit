@@ -14,7 +14,7 @@ const deny = (status, msg) => new Response(msg, {
 export async function onRequestGet({ request, env }) {
   const t = new URL(request.url).searchParams.get('t');
   const tok = await readToken(env, t);
-  if (!tok) return deny(403, 'This download link is invalid or has expired. Email support@novakit.tech and we will send a fresh one.');
+  if (!tok) return deny(403, 'This download link is invalid or has expired. Get fresh links at https://novakit.tech/resend (payment ID + email), or email support@novakit.tech.');
   if (!tok.k.startsWith('skill/')) return deny(403, 'Not a downloadable file.');
 
   if (tok.o !== 'free') {

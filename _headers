@@ -16,6 +16,8 @@
   X-Robots-Tag: noindex, nofollow
 /feedback*
   X-Robots-Tag: noindex
+/resend*
+  X-Robots-Tag: noindex
 /*.py
   X-Robots-Tag: noindex
 /*.csv
